@@ -73,6 +73,7 @@ impl GetMediaOutput {
 pub mod get_media_output {
     
     /// A builder for [`GetMediaOutput`](crate::output::GetMediaOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,

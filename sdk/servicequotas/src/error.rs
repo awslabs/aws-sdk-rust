@@ -188,6 +188,7 @@ impl std::error::Error for TooManyRequestsException {}
 pub mod too_many_requests_exception {
     
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -248,6 +249,7 @@ impl std::error::Error for ServiceException {}
 pub mod service_exception {
     
     /// A builder for [`ServiceException`](crate::error::ServiceException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -308,6 +310,7 @@ impl std::error::Error for NoSuchResourceException {}
 pub mod no_such_resource_exception {
     
     /// A builder for [`NoSuchResourceException`](crate::error::NoSuchResourceException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -368,6 +371,7 @@ impl std::error::Error for IllegalArgumentException {}
 pub mod illegal_argument_exception {
     
     /// A builder for [`IllegalArgumentException`](crate::error::IllegalArgumentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -428,6 +432,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
     
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -673,6 +678,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
     
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -733,6 +739,7 @@ impl std::error::Error for TagPolicyViolationException {}
 pub mod tag_policy_violation_exception {
     
     /// A builder for [`TagPolicyViolationException`](crate::error::TagPolicyViolationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1002,6 +1009,7 @@ impl std::error::Error for ResourceAlreadyExistsException {}
 pub mod resource_already_exists_exception {
     
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1062,6 +1070,7 @@ impl std::error::Error for QuotaExceededException {}
 pub mod quota_exceeded_exception {
     
     /// A builder for [`QuotaExceededException`](crate::error::QuotaExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1122,6 +1131,7 @@ impl std::error::Error for InvalidResourceStateException {}
 pub mod invalid_resource_state_exception {
     
     /// A builder for [`InvalidResourceStateException`](crate::error::InvalidResourceStateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1182,6 +1192,7 @@ impl std::error::Error for DependencyAccessDeniedException {}
 pub mod dependency_access_denied_exception {
     
     /// A builder for [`DependencyAccessDeniedException`](crate::error::DependencyAccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1463,6 +1474,7 @@ impl std::error::Error for TemplatesNotAvailableInRegionException {}
 pub mod templates_not_available_in_region_exception {
     
     /// A builder for [`TemplatesNotAvailableInRegionException`](crate::error::TemplatesNotAvailableInRegionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1523,6 +1535,7 @@ impl std::error::Error for NoAvailableOrganizationException {}
 pub mod no_available_organization_exception {
     
     /// A builder for [`NoAvailableOrganizationException`](crate::error::NoAvailableOrganizationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1583,6 +1596,7 @@ impl std::error::Error for AwsServiceAccessNotEnabledException {}
 pub mod aws_service_access_not_enabled_exception {
     
     /// A builder for [`AwsServiceAccessNotEnabledException`](crate::error::AwsServiceAccessNotEnabledException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1965,6 +1979,7 @@ impl std::error::Error for InvalidPaginationTokenException {}
 pub mod invalid_pagination_token_exception {
     
     /// A builder for [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3803,6 +3818,7 @@ impl std::error::Error for ServiceQuotaTemplateNotInUseException {}
 pub mod service_quota_template_not_in_use_exception {
     
     /// A builder for [`ServiceQuotaTemplateNotInUseException`](crate::error::ServiceQuotaTemplateNotInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4466,6 +4482,7 @@ impl std::error::Error for OrganizationNotInAllFeaturesModeException {}
 pub mod organization_not_in_all_features_mode_exception {
     
     /// A builder for [`OrganizationNotInAllFeaturesModeException`](crate::error::OrganizationNotInAllFeaturesModeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

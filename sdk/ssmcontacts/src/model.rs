@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
     
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -189,6 +190,7 @@ impl ContactChannelAddress {
 pub mod contact_channel_address {
     
     /// A builder for [`ContactChannelAddress`](crate::model::ContactChannelAddress).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simple_address: std::option::Option<std::string::String>,
@@ -249,6 +251,7 @@ impl Plan {
 pub mod plan {
     
     /// A builder for [`Plan`](crate::model::Plan).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stages: std::option::Option<std::vec::Vec<crate::model::Stage>>,
@@ -312,6 +315,7 @@ impl Stage {
 pub mod stage {
     
     /// A builder for [`Stage`](crate::model::Stage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_minutes: std::option::Option<i32>,
@@ -387,6 +391,7 @@ impl Target {
 pub mod target {
     
     /// A builder for [`Target`](crate::model::Target).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_target_info: std::option::Option<crate::model::ChannelTargetInfo>,
@@ -456,6 +461,7 @@ impl ContactTargetInfo {
 pub mod contact_target_info {
     
     /// A builder for [`ContactTargetInfo`](crate::model::ContactTargetInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -525,6 +531,7 @@ impl ChannelTargetInfo {
 pub mod channel_target_info {
     
     /// A builder for [`ChannelTargetInfo`](crate::model::ChannelTargetInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_id: std::option::Option<std::string::String>,
@@ -594,6 +601,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -705,6 +713,7 @@ impl Page {
 pub mod page {
     
     /// A builder for [`Page`](crate::model::Page).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_arn: std::option::Option<std::string::String>,
@@ -860,6 +869,7 @@ impl Receipt {
 pub mod receipt {
     
     /// A builder for [`Receipt`](crate::model::Receipt).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_arn: std::option::Option<std::string::String>,
@@ -1078,6 +1088,7 @@ impl Engagement {
 pub mod engagement {
     
     /// A builder for [`Engagement`](crate::model::Engagement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engagement_arn: std::option::Option<std::string::String>,
@@ -1195,6 +1206,7 @@ impl TimeRange {
 pub mod time_range {
     
     /// A builder for [`TimeRange`](crate::model::TimeRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1278,6 +1290,7 @@ impl Contact {
 pub mod contact {
     
     /// A builder for [`Contact`](crate::model::Contact).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -1491,6 +1504,7 @@ impl ContactChannel {
 pub mod contact_channel {
     
     /// A builder for [`ContactChannel`](crate::model::ContactChannel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_arn: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod generate_data_set_input {
     
     /// A builder for [`GenerateDataSetInput`](crate::input::GenerateDataSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_type: std::option::Option<crate::model::DataSetType>,
@@ -253,6 +254,7 @@ impl GenerateDataSetInput {
 pub mod start_support_data_export_input {
     
     /// A builder for [`StartSupportDataExportInput`](crate::input::StartSupportDataExportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_type: std::option::Option<crate::model::SupportDataSetType>,

@@ -7,7 +7,7 @@ pub fn add_headers_invoke_endpoint(
         let formatted_2 = inner_1.as_str();
                         if !formatted_2.is_empty() {
                             let header_value = formatted_2;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("content_type", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -21,7 +21,7 @@ pub fn add_headers_invoke_endpoint(
         let formatted_4 = inner_3.as_str();
                         if !formatted_4.is_empty() {
                             let header_value = formatted_4;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("accept", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -35,7 +35,7 @@ pub fn add_headers_invoke_endpoint(
         let formatted_6 = inner_5.as_str();
                         if !formatted_6.is_empty() {
                             let header_value = formatted_6;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("custom_attributes", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &"*** Sensitive Data Redacted ***",
@@ -49,7 +49,7 @@ pub fn add_headers_invoke_endpoint(
         let formatted_8 = inner_7.as_str();
                         if !formatted_8.is_empty() {
                             let header_value = formatted_8;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("target_model", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -63,7 +63,7 @@ pub fn add_headers_invoke_endpoint(
         let formatted_10 = inner_9.as_str();
                         if !formatted_10.is_empty() {
                             let header_value = formatted_10;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("target_variant", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -77,7 +77,7 @@ pub fn add_headers_invoke_endpoint(
         let formatted_12 = inner_11.as_str();
                         if !formatted_12.is_empty() {
                             let header_value = formatted_12;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("target_container_hostname", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -91,7 +91,7 @@ pub fn add_headers_invoke_endpoint(
         let formatted_14 = inner_13.as_str();
                         if !formatted_14.is_empty() {
                             let header_value = formatted_14;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("inference_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -105,7 +105,7 @@ pub fn add_headers_invoke_endpoint(
         let formatted_16 = inner_15.as_str();
                         if !formatted_16.is_empty() {
                             let header_value = formatted_16;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("enable_explanations", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -126,7 +126,7 @@ pub fn add_headers_invoke_endpoint_async(
         let formatted_18 = inner_17.as_str();
                         if !formatted_18.is_empty() {
                             let header_value = formatted_18;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("content_type", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -140,7 +140,7 @@ pub fn add_headers_invoke_endpoint_async(
         let formatted_20 = inner_19.as_str();
                         if !formatted_20.is_empty() {
                             let header_value = formatted_20;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("accept", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -154,7 +154,7 @@ pub fn add_headers_invoke_endpoint_async(
         let formatted_22 = inner_21.as_str();
                         if !formatted_22.is_empty() {
                             let header_value = formatted_22;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("custom_attributes", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &"*** Sensitive Data Redacted ***",
@@ -168,7 +168,7 @@ pub fn add_headers_invoke_endpoint_async(
         let formatted_24 = inner_23.as_str();
                         if !formatted_24.is_empty() {
                             let header_value = formatted_24;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("inference_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -182,7 +182,7 @@ pub fn add_headers_invoke_endpoint_async(
         let formatted_26 = inner_25.as_str();
                         if !formatted_26.is_empty() {
                             let header_value = formatted_26;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("input_location", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -197,7 +197,7 @@ pub fn add_headers_invoke_endpoint_async(
         let formatted_28 = encoder.encode();
                         if !formatted_28.is_empty() {
                             let header_value = formatted_28;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("request_ttl_seconds", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,

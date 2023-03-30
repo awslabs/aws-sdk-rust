@@ -217,6 +217,7 @@ impl UpdateVirtualInterfaceAttributesOutput {
 pub mod update_virtual_interface_attributes_output {
     
     /// A builder for [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -771,6 +772,7 @@ impl UpdateLagOutput {
 pub mod update_lag_output {
     
     /// A builder for [`UpdateLagOutput`](crate::output::UpdateLagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
@@ -1102,6 +1104,7 @@ impl UpdateDirectConnectGatewayAssociationOutput {
 pub mod update_direct_connect_gateway_association_output {
     
     /// A builder for [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
@@ -1152,6 +1155,7 @@ impl UpdateDirectConnectGatewayOutput {
 pub mod update_direct_connect_gateway_output {
     
     /// A builder for [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
@@ -1375,6 +1379,7 @@ impl UpdateConnectionOutput {
 pub mod update_connection_output {
     
     /// A builder for [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -1707,6 +1712,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1736,6 +1742,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1774,6 +1781,7 @@ impl StopBgpFailoverTestOutput {
 pub mod stop_bgp_failover_test_output {
     
     /// A builder for [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_test: std::option::Option<crate::model::VirtualInterfaceTestHistory>,
@@ -1824,6 +1832,7 @@ impl StartBgpFailoverTestOutput {
 pub mod start_bgp_failover_test_output {
     
     /// A builder for [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_test: std::option::Option<crate::model::VirtualInterfaceTestHistory>,
@@ -1881,6 +1890,7 @@ impl ListVirtualInterfaceTestHistoryOutput {
 pub mod list_virtual_interface_test_history_output {
     
     /// A builder for [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_test_history: std::option::Option<std::vec::Vec<crate::model::VirtualInterfaceTestHistory>>,
@@ -1956,6 +1966,7 @@ impl DisassociateMacSecKeyOutput {
 pub mod disassociate_mac_sec_key_output {
     
     /// A builder for [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -2197,6 +2208,7 @@ impl DisassociateConnectionFromLagOutput {
 pub mod disassociate_connection_from_lag_output {
     
     /// A builder for [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -2538,6 +2550,7 @@ impl DescribeVirtualInterfacesOutput {
 pub mod describe_virtual_interfaces_output {
     
     /// A builder for [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interfaces: std::option::Option<std::vec::Vec<crate::model::VirtualInterface>>,
@@ -2594,6 +2607,7 @@ impl DescribeVirtualGatewaysOutput {
 pub mod describe_virtual_gateways_output {
     
     /// A builder for [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateways: std::option::Option<std::vec::Vec<crate::model::VirtualGateway>>,
@@ -2650,6 +2664,7 @@ impl DescribeTagsOutput {
 pub mod describe_tags_output {
     
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -2727,6 +2742,7 @@ impl DescribeRouterConfigurationOutput {
 pub mod describe_router_configuration_output {
     
     /// A builder for [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_router_config: std::option::Option<std::string::String>,
@@ -2813,6 +2829,7 @@ impl DescribeLocationsOutput {
 pub mod describe_locations_output {
     
     /// A builder for [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locations: std::option::Option<std::vec::Vec<crate::model::Location>>,
@@ -2876,6 +2893,7 @@ impl DescribeLoaOutput {
 pub mod describe_loa_output {
     
     /// A builder for [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa_content: std::option::Option<aws_smithy_types::Blob>,
@@ -2938,6 +2956,7 @@ impl DescribeLagsOutput {
 pub mod describe_lags_output {
     
     /// A builder for [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lags: std::option::Option<std::vec::Vec<crate::model::Lag>>,
@@ -2994,6 +3013,7 @@ impl DescribeInterconnectsOutput {
 pub mod describe_interconnects_output {
     
     /// A builder for [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnects: std::option::Option<std::vec::Vec<crate::model::Interconnect>>,
@@ -3050,6 +3070,7 @@ impl DescribeInterconnectLoaOutput {
 pub mod describe_interconnect_loa_output {
     
     /// A builder for [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa: std::option::Option<crate::model::Loa>,
@@ -3100,6 +3121,7 @@ impl DescribeHostedConnectionsOutput {
 pub mod describe_hosted_connections_output {
     
     /// A builder for [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -3163,6 +3185,7 @@ impl DescribeDirectConnectGatewaysOutput {
 pub mod describe_direct_connect_gateways_output {
     
     /// A builder for [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateways: std::option::Option<std::vec::Vec<crate::model::DirectConnectGateway>>,
@@ -3238,6 +3261,7 @@ impl DescribeDirectConnectGatewayAttachmentsOutput {
 pub mod describe_direct_connect_gateway_attachments_output {
     
     /// A builder for [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_attachments: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAttachment>>,
@@ -3313,6 +3337,7 @@ impl DescribeDirectConnectGatewayAssociationsOutput {
 pub mod describe_direct_connect_gateway_associations_output {
     
     /// A builder for [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_associations: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociation>>,
@@ -3388,6 +3413,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutput {
 pub mod describe_direct_connect_gateway_association_proposals_output {
     
     /// A builder for [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposals: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociationProposal>>,
@@ -3473,6 +3499,7 @@ impl DescribeCustomerMetadataOutput {
 pub mod describe_customer_metadata_output {
     
     /// A builder for [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agreements: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>,
@@ -3551,6 +3578,7 @@ impl DescribeConnectionsOnInterconnectOutput {
 pub mod describe_connections_on_interconnect_output {
     
     /// A builder for [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -3607,6 +3635,7 @@ impl DescribeConnectionsOutput {
 pub mod describe_connections_output {
     
     /// A builder for [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -3663,6 +3692,7 @@ impl DescribeConnectionLoaOutput {
 pub mod describe_connection_loa_output {
     
     /// A builder for [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa: std::option::Option<crate::model::Loa>,
@@ -3735,6 +3765,7 @@ impl DeleteVirtualInterfaceOutput {
 pub mod delete_virtual_interface_output {
     
     /// A builder for [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -3967,6 +3998,7 @@ impl DeleteLagOutput {
 pub mod delete_lag_output {
     
     /// A builder for [`DeleteLagOutput`](crate::output::DeleteLagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
@@ -4316,6 +4348,7 @@ impl DeleteInterconnectOutput {
 pub mod delete_interconnect_output {
     
     /// A builder for [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_state: std::option::Option<crate::model::InterconnectState>,
@@ -4384,6 +4417,7 @@ impl DeleteDirectConnectGatewayAssociationProposalOutput {
 pub mod delete_direct_connect_gateway_association_proposal_output {
     
     /// A builder for [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposal: std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
@@ -4434,6 +4468,7 @@ impl DeleteDirectConnectGatewayAssociationOutput {
 pub mod delete_direct_connect_gateway_association_output {
     
     /// A builder for [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
@@ -4484,6 +4519,7 @@ impl DeleteDirectConnectGatewayOutput {
 pub mod delete_direct_connect_gateway_output {
     
     /// A builder for [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
@@ -4707,6 +4743,7 @@ impl DeleteConnectionOutput {
 pub mod delete_connection_output {
     
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -5048,6 +5085,7 @@ impl DeleteBgpPeerOutput {
 pub mod delete_bgp_peer_output {
     
     /// A builder for [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
@@ -5098,6 +5136,7 @@ impl CreateTransitVirtualInterfaceOutput {
 pub mod create_transit_virtual_interface_output {
     
     /// A builder for [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
@@ -5347,6 +5386,7 @@ impl CreatePublicVirtualInterfaceOutput {
 pub mod create_public_virtual_interface_output {
     
     /// A builder for [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -5940,6 +5980,7 @@ impl CreatePrivateVirtualInterfaceOutput {
 pub mod create_private_virtual_interface_output {
     
     /// A builder for [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -6494,6 +6535,7 @@ impl CreateLagOutput {
 pub mod create_lag_output {
     
     /// A builder for [`CreateLagOutput`](crate::output::CreateLagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
@@ -6941,6 +6983,7 @@ impl CreateInterconnectOutput {
 pub mod create_interconnect_output {
     
     /// A builder for [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
@@ -7183,6 +7226,7 @@ impl CreateDirectConnectGatewayAssociationProposalOutput {
 pub mod create_direct_connect_gateway_association_proposal_output {
     
     /// A builder for [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposal: std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
@@ -7233,6 +7277,7 @@ impl CreateDirectConnectGatewayAssociationOutput {
 pub mod create_direct_connect_gateway_association_output {
     
     /// A builder for [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
@@ -7283,6 +7328,7 @@ impl CreateDirectConnectGatewayOutput {
 pub mod create_direct_connect_gateway_output {
     
     /// A builder for [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
@@ -7506,6 +7552,7 @@ impl CreateConnectionOutput {
 pub mod create_connection_output {
     
     /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -7847,6 +7894,7 @@ impl CreateBgpPeerOutput {
 pub mod create_bgp_peer_output {
     
     /// A builder for [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
@@ -7919,6 +7967,7 @@ impl ConfirmTransitVirtualInterfaceOutput {
 pub mod confirm_transit_virtual_interface_output {
     
     /// A builder for [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -8013,6 +8062,7 @@ impl ConfirmPublicVirtualInterfaceOutput {
 pub mod confirm_public_virtual_interface_output {
     
     /// A builder for [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -8107,6 +8157,7 @@ impl ConfirmPrivateVirtualInterfaceOutput {
 pub mod confirm_private_virtual_interface_output {
     
     /// A builder for [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -8179,6 +8230,7 @@ impl ConfirmCustomerAgreementOutput {
 pub mod confirm_customer_agreement_output {
     
     /// A builder for [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -8251,6 +8303,7 @@ impl ConfirmConnectionOutput {
 pub mod confirm_connection_output {
     
     /// A builder for [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -8522,6 +8575,7 @@ impl AssociateVirtualInterfaceOutput {
 pub mod associate_virtual_interface_output {
     
     /// A builder for [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -8923,6 +8977,7 @@ impl AssociateMacSecKeyOutput {
 pub mod associate_mac_sec_key_output {
     
     /// A builder for [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -9164,6 +9219,7 @@ impl AssociateHostedConnectionOutput {
 pub mod associate_hosted_connection_output {
     
     /// A builder for [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -9678,6 +9734,7 @@ impl AssociateConnectionWithLagOutput {
 pub mod associate_connection_with_lag_output {
     
     /// A builder for [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -10019,6 +10076,7 @@ impl AllocateTransitVirtualInterfaceOutput {
 pub mod allocate_transit_virtual_interface_output {
     
     /// A builder for [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
@@ -10268,6 +10326,7 @@ impl AllocatePublicVirtualInterfaceOutput {
 pub mod allocate_public_virtual_interface_output {
     
     /// A builder for [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -10861,6 +10920,7 @@ impl AllocatePrivateVirtualInterfaceOutput {
 pub mod allocate_private_virtual_interface_output {
     
     /// A builder for [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -11428,6 +11488,7 @@ impl AllocateHostedConnectionOutput {
 pub mod allocate_hosted_connection_output {
     
     /// A builder for [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -11942,6 +12003,7 @@ impl AllocateConnectionOnInterconnectOutput {
 pub mod allocate_connection_on_interconnect_output {
     
     /// A builder for [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -12283,6 +12345,7 @@ impl AcceptDirectConnectGatewayAssociationProposalOutput {
 pub mod accept_direct_connect_gateway_association_proposal_output {
     
     /// A builder for [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,

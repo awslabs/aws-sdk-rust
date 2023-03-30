@@ -96,6 +96,7 @@ impl  std::fmt::Debug for StartSnapshotOutput  {
 pub mod start_snapshot_output {
     
     /// A builder for [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -283,6 +284,7 @@ impl PutSnapshotBlockOutput {
 pub mod put_snapshot_block_output {
     
     /// A builder for [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checksum: std::option::Option<std::string::String>,
@@ -384,6 +386,7 @@ impl  std::fmt::Debug for ListSnapshotBlocksOutput  {
 pub mod list_snapshot_blocks_output {
     
     /// A builder for [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
@@ -527,6 +530,7 @@ impl ListChangedBlocksOutput {
 pub mod list_changed_blocks_output {
     
     /// A builder for [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) changed_blocks: std::option::Option<std::vec::Vec<crate::model::ChangedBlock>>,
@@ -660,6 +664,7 @@ impl  std::fmt::Debug for GetSnapshotBlockOutput  {
 pub mod get_snapshot_block_output {
     
     /// A builder for [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) data_length: std::option::Option<i32>,
@@ -757,6 +762,7 @@ impl CompleteSnapshotOutput {
 pub mod complete_snapshot_output {
     
     /// A builder for [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,

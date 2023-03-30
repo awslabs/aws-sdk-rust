@@ -176,6 +176,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -236,6 +237,7 @@ impl std::error::Error for InvalidStateException {}
 pub mod invalid_state_exception {
     
     /// A builder for [`InvalidStateException`](crate::error::InvalidStateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -296,6 +298,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
     
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -356,6 +359,7 @@ impl std::error::Error for InternalServiceErrorException {}
 pub mod internal_service_error_exception {
     
     /// A builder for [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4302,6 +4306,7 @@ impl std::error::Error for ServiceQuotaExceededException {}
 pub mod service_quota_exceeded_exception {
     
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

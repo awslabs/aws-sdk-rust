@@ -2592,7 +2592,7 @@ mod put_bucket_lifecycle_configuration_request_test {
             ("content-md5", "JP8DTuCSH6yDC8wNGg4+mA==")
         ];
         aws_smithy_protocol_test::assert_ok(
-        aws_smithy_protocol_test::validate_headers(&http_request.headers(), expected_headers)
+        aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers)
         );
         let body = http_request.body().bytes().expect("body should be strict");
         aws_smithy_protocol_test::assert_ok(
@@ -2979,7 +2979,7 @@ mod put_object_request_test {
             ("content-type", "text/html")
         ];
         aws_smithy_protocol_test::assert_ok(
-        aws_smithy_protocol_test::validate_headers(&http_request.headers(), expected_headers)
+        aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers)
         );
     }
     /// This test validates that if a content-length is specified, that only one content-length header is sent
@@ -3020,7 +3020,7 @@ mod put_object_request_test {
             ("content-length", "2")
         ];
         aws_smithy_protocol_test::assert_ok(
-        aws_smithy_protocol_test::validate_headers(&http_request.headers(), expected_headers)
+        aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers)
         );
     }
     

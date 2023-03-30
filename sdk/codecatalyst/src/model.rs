@@ -39,6 +39,7 @@ impl SpaceSummary {
 pub mod space_summary {
     
     /// A builder for [`SpaceSummary`](crate::model::SpaceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -139,6 +140,7 @@ impl ProjectSummary {
 pub mod project_summary {
     
     /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -227,6 +229,7 @@ impl ProjectListFilter {
 pub mod project_list_filter {
     
     /// A builder for [`ProjectListFilter`](crate::model::ProjectListFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::FilterKey>,
@@ -509,6 +512,7 @@ impl ListSourceRepositoriesItem {
 pub mod list_source_repositories_item {
     
     /// A builder for [`ListSourceRepositoriesItem`](crate::model::ListSourceRepositoriesItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -628,6 +632,7 @@ impl ListSourceRepositoryBranchesItem {
 pub mod list_source_repository_branches_item {
     
     /// A builder for [`ListSourceRepositoryBranchesItem`](crate::model::ListSourceRepositoryBranchesItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#ref: std::option::Option<std::string::String>,
@@ -841,6 +846,7 @@ impl  std::fmt::Debug for DevEnvironmentAccessDetails  {
 pub mod dev_environment_access_details {
     
     /// A builder for [`DevEnvironmentAccessDetails`](crate::model::DevEnvironmentAccessDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) stream_url: std::option::Option<std::string::String>,
@@ -918,6 +924,7 @@ impl DevEnvironmentSessionConfiguration {
 pub mod dev_environment_session_configuration {
     
     /// A builder for [`DevEnvironmentSessionConfiguration`](crate::model::DevEnvironmentSessionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_type: std::option::Option<crate::model::DevEnvironmentSessionType>,
@@ -987,6 +994,7 @@ impl ExecuteCommandSessionConfiguration {
 pub mod execute_command_session_configuration {
     
     /// A builder for [`ExecuteCommandSessionConfiguration`](crate::model::ExecuteCommandSessionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command: std::option::Option<std::string::String>,
@@ -1236,6 +1244,7 @@ impl IdeConfiguration {
 pub mod ide_configuration {
     
     /// A builder for [`IdeConfiguration`](crate::model::IdeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) runtime: std::option::Option<std::string::String>,
@@ -1382,6 +1391,7 @@ impl DevEnvironmentSummary {
 pub mod dev_environment_summary {
     
     /// A builder for [`DevEnvironmentSummary`](crate::model::DevEnvironmentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -1593,6 +1603,7 @@ impl PersistentStorage {
 pub mod persistent_storage {
     
     /// A builder for [`PersistentStorage`](crate::model::PersistentStorage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_gi_b: std::option::Option<i32>,
@@ -1654,6 +1665,7 @@ impl Ide {
 pub mod ide {
     
     /// A builder for [`Ide`](crate::model::Ide).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) runtime: std::option::Option<std::string::String>,
@@ -1723,6 +1735,7 @@ impl DevEnvironmentRepositorySummary {
 pub mod dev_environment_repository_summary {
     
     /// A builder for [`DevEnvironmentRepositorySummary`](crate::model::DevEnvironmentRepositorySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -1799,6 +1812,7 @@ impl Filter {
 pub mod filter {
     
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1883,6 +1897,7 @@ impl PersistentStorageConfiguration {
 pub mod persistent_storage_configuration {
     
     /// A builder for [`PersistentStorageConfiguration`](crate::model::PersistentStorageConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_gi_b: std::option::Option<i32>,
@@ -1944,6 +1959,7 @@ impl RepositoryInput {
 pub mod repository_input {
     
     /// A builder for [`RepositoryInput`](crate::model::RepositoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -2104,6 +2120,7 @@ impl EventLogEntry {
 pub mod event_log_entry {
     
     /// A builder for [`EventLogEntry`](crate::model::EventLogEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2329,6 +2346,7 @@ impl EventPayload {
 pub mod event_payload {
     
     /// A builder for [`EventPayload`](crate::model::EventPayload).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -2398,6 +2416,7 @@ impl ProjectInformation {
 pub mod project_information {
     
     /// A builder for [`ProjectInformation`](crate::model::ProjectInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2481,6 +2500,7 @@ impl UserIdentity {
 pub mod user_identity {
     
     /// A builder for [`UserIdentity`](crate::model::UserIdentity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_type: std::option::Option<crate::model::UserType>,
@@ -2832,6 +2852,7 @@ impl AccessTokenSummary {
 pub mod access_token_summary {
     
     /// A builder for [`AccessTokenSummary`](crate::model::AccessTokenSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2913,6 +2934,7 @@ impl EmailAddress {
 pub mod email_address {
     
     /// A builder for [`EmailAddress`](crate::model::EmailAddress).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email: std::option::Option<std::string::String>,

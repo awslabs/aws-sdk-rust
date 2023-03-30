@@ -19,6 +19,7 @@ impl TimeToLive {
 pub mod time_to_live {
     
     /// A builder for [`TimeToLive`](crate::model::TimeToLive).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::TimeToLiveStatus>,
@@ -151,6 +152,7 @@ impl PointInTimeRecovery {
 pub mod point_in_time_recovery {
     
     /// A builder for [`PointInTimeRecovery`](crate::model::PointInTimeRecovery).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::PointInTimeRecoveryStatus>,
@@ -306,6 +308,7 @@ impl EncryptionSpecification {
 pub mod encryption_specification {
     
     /// A builder for [`EncryptionSpecification`](crate::model::EncryptionSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EncryptionType>,
@@ -484,6 +487,7 @@ impl CapacitySpecification {
 pub mod capacity_specification {
     
     /// A builder for [`CapacitySpecification`](crate::model::CapacitySpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) throughput_mode: std::option::Option<crate::model::ThroughputMode>,
@@ -655,6 +659,7 @@ impl ColumnDefinition {
 pub mod column_definition {
     
     /// A builder for [`ColumnDefinition`](crate::model::ColumnDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -726,6 +731,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -802,6 +808,7 @@ impl TableSummary {
 pub mod table_summary {
     
     /// A builder for [`TableSummary`](crate::model::TableSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -883,6 +890,7 @@ impl KeyspaceSummary {
 pub mod keyspace_summary {
     
     /// A builder for [`KeyspaceSummary`](crate::model::KeyspaceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -945,6 +953,7 @@ impl Comment {
 pub mod comment {
     
     /// A builder for [`Comment`](crate::model::Comment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1002,6 +1011,7 @@ impl PointInTimeRecoverySummary {
 pub mod point_in_time_recovery_summary {
     
     /// A builder for [`PointInTimeRecoverySummary`](crate::model::PointInTimeRecoverySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::PointInTimeRecoveryStatus>,
@@ -1096,6 +1106,7 @@ impl CapacitySpecificationSummary {
 pub mod capacity_specification_summary {
     
     /// A builder for [`CapacitySpecificationSummary`](crate::model::CapacitySpecificationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) throughput_mode: std::option::Option<crate::model::ThroughputMode>,
@@ -1211,6 +1222,7 @@ impl SchemaDefinition {
 pub mod schema_definition {
     
     /// A builder for [`SchemaDefinition`](crate::model::SchemaDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) all_columns: std::option::Option<std::vec::Vec<crate::model::ColumnDefinition>>,
@@ -1321,6 +1333,7 @@ impl StaticColumn {
 pub mod static_column {
     
     /// A builder for [`StaticColumn`](crate::model::StaticColumn).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1378,6 +1391,7 @@ impl ClusteringKey {
 pub mod clustering_key {
     
     /// A builder for [`ClusteringKey`](crate::model::ClusteringKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1522,6 +1536,7 @@ impl PartitionKey {
 pub mod partition_key {
     
     /// A builder for [`PartitionKey`](crate::model::PartitionKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

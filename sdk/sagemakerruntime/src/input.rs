@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod invoke_endpoint_input {
     
     /// A builder for [`InvokeEndpointInput`](crate::input::InvokeEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
@@ -251,6 +252,7 @@ impl InvokeEndpointInput {
 pub mod invoke_endpoint_async_input {
     
     /// A builder for [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,

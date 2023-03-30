@@ -17,6 +17,7 @@ impl UpdateStageOutput {
 pub mod update_stage_output {
     
     /// A builder for [`UpdateStageOutput`](crate::output::UpdateStageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stage: std::option::Option<crate::model::StageDetails>,
@@ -67,6 +68,7 @@ impl UpdateSnapshotOutput {
 pub mod update_snapshot_output {
     
     /// A builder for [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::SnapshotDetails>,
@@ -117,6 +119,7 @@ impl UpdateGameConfigurationOutput {
 pub mod update_game_configuration_output {
     
     /// A builder for [`UpdateGameConfigurationOutput`](crate::output::UpdateGameConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_configuration: std::option::Option<crate::model::GameConfigurationDetails>,
@@ -167,6 +170,7 @@ impl UpdateGameOutput {
 pub mod update_game_output {
     
     /// A builder for [`UpdateGameOutput`](crate::output::UpdateGameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game: std::option::Option<crate::model::GameDetails>,
@@ -208,6 +212,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -237,6 +242,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -275,6 +281,7 @@ impl StartStageDeploymentOutput {
 pub mod start_stage_deployment_output {
     
     /// A builder for [`StartStageDeploymentOutput`](crate::output::StartStageDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stage_deployment: std::option::Option<crate::model::StageDeploymentDetails>,
@@ -325,6 +332,7 @@ impl StartGeneratedCodeJobOutput {
 pub mod start_generated_code_job_output {
     
     /// A builder for [`StartGeneratedCodeJobOutput`](crate::output::StartGeneratedCodeJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) generated_code_job_id: std::option::Option<std::string::String>,
@@ -375,6 +383,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -440,6 +449,7 @@ impl ListStagesOutput {
 pub mod list_stages_output {
     
     /// A builder for [`ListStagesOutput`](crate::output::ListStagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stages: std::option::Option<std::vec::Vec<crate::model::StageSummary>>,
@@ -519,6 +529,7 @@ impl ListStageDeploymentsOutput {
 pub mod list_stage_deployments_output {
     
     /// A builder for [`ListStageDeploymentsOutput`](crate::output::ListStageDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stage_deployments: std::option::Option<std::vec::Vec<crate::model::StageDeploymentSummary>>,
@@ -598,6 +609,7 @@ impl ListSnapshotsOutput {
 pub mod list_snapshots_output {
     
     /// A builder for [`ListSnapshotsOutput`](crate::output::ListSnapshotsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshots: std::option::Option<std::vec::Vec<crate::model::SnapshotSummary>>,
@@ -677,6 +689,7 @@ impl ListGeneratedCodeJobsOutput {
 pub mod list_generated_code_jobs_output {
     
     /// A builder for [`ListGeneratedCodeJobsOutput`](crate::output::ListGeneratedCodeJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) generated_code_jobs: std::option::Option<std::vec::Vec<crate::model::GeneratedCodeJobDetails>>,
@@ -756,6 +769,7 @@ impl ListGamesOutput {
 pub mod list_games_output {
     
     /// A builder for [`ListGamesOutput`](crate::output::ListGamesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) games: std::option::Option<std::vec::Vec<crate::model::GameSummary>>,
@@ -835,6 +849,7 @@ impl ListExtensionVersionsOutput {
 pub mod list_extension_versions_output {
     
     /// A builder for [`ListExtensionVersionsOutput`](crate::output::ListExtensionVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) extension_versions: std::option::Option<std::vec::Vec<crate::model::ExtensionVersionDetails>>,
@@ -914,6 +929,7 @@ impl ListExtensionsOutput {
 pub mod list_extensions_output {
     
     /// A builder for [`ListExtensionsOutput`](crate::output::ListExtensionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) extensions: std::option::Option<std::vec::Vec<crate::model::ExtensionDetails>>,
@@ -984,6 +1000,7 @@ impl ImportGameConfigurationOutput {
 pub mod import_game_configuration_output {
     
     /// A builder for [`ImportGameConfigurationOutput`](crate::output::ImportGameConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_configuration: std::option::Option<crate::model::GameConfigurationDetails>,
@@ -1034,6 +1051,7 @@ impl GetStageDeploymentOutput {
 pub mod get_stage_deployment_output {
     
     /// A builder for [`GetStageDeploymentOutput`](crate::output::GetStageDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stage_deployment: std::option::Option<crate::model::StageDeploymentDetails>,
@@ -1084,6 +1102,7 @@ impl GetStageOutput {
 pub mod get_stage_output {
     
     /// A builder for [`GetStageOutput`](crate::output::GetStageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stage: std::option::Option<crate::model::StageDetails>,
@@ -1134,6 +1153,7 @@ impl GetSnapshotOutput {
 pub mod get_snapshot_output {
     
     /// A builder for [`GetSnapshotOutput`](crate::output::GetSnapshotOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::SnapshotDetails>,
@@ -1184,6 +1204,7 @@ impl GetPlayerConnectionStatusOutput {
 pub mod get_player_connection_status_output {
     
     /// A builder for [`GetPlayerConnectionStatusOutput`](crate::output::GetPlayerConnectionStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -1240,6 +1261,7 @@ impl GetGeneratedCodeJobOutput {
 pub mod get_generated_code_job_output {
     
     /// A builder for [`GetGeneratedCodeJobOutput`](crate::output::GetGeneratedCodeJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) generated_code_job: std::option::Option<crate::model::GeneratedCodeJobDetails>,
@@ -1290,6 +1312,7 @@ impl GetGameConfigurationOutput {
 pub mod get_game_configuration_output {
     
     /// A builder for [`GetGameConfigurationOutput`](crate::output::GetGameConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_configuration: std::option::Option<crate::model::GameConfigurationDetails>,
@@ -1340,6 +1363,7 @@ impl GetGameOutput {
 pub mod get_game_output {
     
     /// A builder for [`GetGameOutput`](crate::output::GetGameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game: std::option::Option<crate::model::GameDetails>,
@@ -1390,6 +1414,7 @@ impl GetExtensionVersionOutput {
 pub mod get_extension_version_output {
     
     /// A builder for [`GetExtensionVersionOutput`](crate::output::GetExtensionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) extension_version: std::option::Option<crate::model::ExtensionVersionDetails>,
@@ -1440,6 +1465,7 @@ impl GetExtensionOutput {
 pub mod get_extension_output {
     
     /// A builder for [`GetExtensionOutput`](crate::output::GetExtensionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) extension: std::option::Option<crate::model::ExtensionDetails>,
@@ -1492,6 +1518,7 @@ impl ExportSnapshotOutput {
 pub mod export_snapshot_output {
     
     /// A builder for [`ExportSnapshotOutput`](crate::output::ExportSnapshotOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_url: std::option::Option<std::string::String>,
@@ -1551,6 +1578,7 @@ impl DisconnectPlayerOutput {
 pub mod disconnect_player_output {
     
     /// A builder for [`DisconnectPlayerOutput`](crate::output::DisconnectPlayerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disconnect_successes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1616,6 +1644,7 @@ pub struct DeleteStageOutput  {
 pub mod delete_stage_output {
     
     /// A builder for [`DeleteStageOutput`](crate::output::DeleteStageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1645,6 +1674,7 @@ pub struct DeleteGameOutput  {
 pub mod delete_game_output {
     
     /// A builder for [`DeleteGameOutput`](crate::output::DeleteGameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1683,6 +1713,7 @@ impl CreateStageOutput {
 pub mod create_stage_output {
     
     /// A builder for [`CreateStageOutput`](crate::output::CreateStageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stage: std::option::Option<crate::model::StageDetails>,
@@ -1733,6 +1764,7 @@ impl CreateSnapshotOutput {
 pub mod create_snapshot_output {
     
     /// A builder for [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::SnapshotDetails>,
@@ -1783,6 +1815,7 @@ impl CreateGameOutput {
 pub mod create_game_output {
     
     /// A builder for [`CreateGameOutput`](crate::output::CreateGameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game: std::option::Option<crate::model::GameDetails>,

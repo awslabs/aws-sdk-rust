@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_get_record_input {
     
     /// A builder for [`BatchGetRecordInput`](crate::input::BatchGetRecordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifiers: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
@@ -118,6 +119,7 @@ impl BatchGetRecordInput {
 pub mod delete_record_input {
     
     /// A builder for [`DeleteRecordInput`](crate::input::DeleteRecordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
@@ -293,6 +295,7 @@ impl DeleteRecordInput {
 pub mod get_record_input {
     
     /// A builder for [`GetRecordInput`](crate::input::GetRecordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
@@ -450,6 +453,7 @@ impl GetRecordInput {
 pub mod put_record_input {
     
     /// A builder for [`PutRecordInput`](crate::input::PutRecordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,

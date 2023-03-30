@@ -17,6 +17,7 @@ impl WithdrawByoipCidrOutput {
 pub mod withdraw_byoip_cidr_output {
     
     /// A builder for [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
@@ -67,6 +68,7 @@ impl UpdateListenerOutput {
 pub mod update_listener_output {
     
     /// A builder for [`UpdateListenerOutput`](crate::output::UpdateListenerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::Listener>,
@@ -117,6 +119,7 @@ impl UpdateEndpointGroupOutput {
 pub mod update_endpoint_group_output {
     
     /// A builder for [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group: std::option::Option<crate::model::EndpointGroup>,
@@ -167,6 +170,7 @@ impl UpdateCustomRoutingListenerOutput {
 pub mod update_custom_routing_listener_output {
     
     /// A builder for [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::CustomRoutingListener>,
@@ -217,6 +221,7 @@ impl UpdateCustomRoutingAcceleratorAttributesOutput {
 pub mod update_custom_routing_accelerator_attributes_output {
     
     /// A builder for [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_attributes: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
@@ -267,6 +272,7 @@ impl UpdateCustomRoutingAcceleratorOutput {
 pub mod update_custom_routing_accelerator_output {
     
     /// A builder for [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
@@ -317,6 +323,7 @@ impl UpdateAcceleratorAttributesOutput {
 pub mod update_accelerator_attributes_output {
     
     /// A builder for [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
@@ -367,6 +374,7 @@ impl UpdateAcceleratorOutput {
 pub mod update_accelerator_output {
     
     /// A builder for [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::Accelerator>,
@@ -408,6 +416,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -437,6 +446,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -466,6 +476,7 @@ pub struct RemoveEndpointsOutput  {
 pub mod remove_endpoints_output {
     
     /// A builder for [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -495,6 +506,7 @@ pub struct RemoveCustomRoutingEndpointsOutput  {
 pub mod remove_custom_routing_endpoints_output {
     
     /// A builder for [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -533,6 +545,7 @@ impl ProvisionByoipCidrOutput {
 pub mod provision_byoip_cidr_output {
     
     /// A builder for [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
@@ -583,6 +596,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -646,6 +660,7 @@ impl ListListenersOutput {
 pub mod list_listeners_output {
     
     /// A builder for [`ListListenersOutput`](crate::output::ListListenersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -721,6 +736,7 @@ impl ListEndpointGroupsOutput {
 pub mod list_endpoint_groups_output {
     
     /// A builder for [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_groups: std::option::Option<std::vec::Vec<crate::model::EndpointGroup>>,
@@ -796,6 +812,7 @@ impl ListCustomRoutingPortMappingsByDestinationOutput {
 pub mod list_custom_routing_port_mappings_by_destination_output {
     
     /// A builder for [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_port_mappings: std::option::Option<std::vec::Vec<crate::model::DestinationPortMapping>>,
@@ -871,6 +888,7 @@ impl ListCustomRoutingPortMappingsOutput {
 pub mod list_custom_routing_port_mappings_output {
     
     /// A builder for [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_mappings: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
@@ -946,6 +964,7 @@ impl ListCustomRoutingListenersOutput {
 pub mod list_custom_routing_listeners_output {
     
     /// A builder for [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::CustomRoutingListener>>,
@@ -1021,6 +1040,7 @@ impl ListCustomRoutingEndpointGroupsOutput {
 pub mod list_custom_routing_endpoint_groups_output {
     
     /// A builder for [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_groups: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>,
@@ -1096,6 +1116,7 @@ impl ListCustomRoutingAcceleratorsOutput {
 pub mod list_custom_routing_accelerators_output {
     
     /// A builder for [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerators: std::option::Option<std::vec::Vec<crate::model::CustomRoutingAccelerator>>,
@@ -1171,6 +1192,7 @@ impl ListByoipCidrsOutput {
 pub mod list_byoip_cidrs_output {
     
     /// A builder for [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byoip_cidrs: std::option::Option<std::vec::Vec<crate::model::ByoipCidr>>,
@@ -1246,6 +1268,7 @@ impl ListAcceleratorsOutput {
 pub mod list_accelerators_output {
     
     /// A builder for [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerators: std::option::Option<std::vec::Vec<crate::model::Accelerator>>,
@@ -1314,6 +1337,7 @@ impl DescribeListenerOutput {
 pub mod describe_listener_output {
     
     /// A builder for [`DescribeListenerOutput`](crate::output::DescribeListenerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::Listener>,
@@ -1364,6 +1388,7 @@ impl DescribeEndpointGroupOutput {
 pub mod describe_endpoint_group_output {
     
     /// A builder for [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group: std::option::Option<crate::model::EndpointGroup>,
@@ -1414,6 +1439,7 @@ impl DescribeCustomRoutingListenerOutput {
 pub mod describe_custom_routing_listener_output {
     
     /// A builder for [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::CustomRoutingListener>,
@@ -1464,6 +1490,7 @@ impl DescribeCustomRoutingEndpointGroupOutput {
 pub mod describe_custom_routing_endpoint_group_output {
     
     /// A builder for [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
@@ -1514,6 +1541,7 @@ impl DescribeCustomRoutingAcceleratorAttributesOutput {
 pub mod describe_custom_routing_accelerator_attributes_output {
     
     /// A builder for [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_attributes: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
@@ -1564,6 +1592,7 @@ impl DescribeCustomRoutingAcceleratorOutput {
 pub mod describe_custom_routing_accelerator_output {
     
     /// A builder for [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
@@ -1614,6 +1643,7 @@ impl DescribeAcceleratorAttributesOutput {
 pub mod describe_accelerator_attributes_output {
     
     /// A builder for [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
@@ -1664,6 +1694,7 @@ impl DescribeAcceleratorOutput {
 pub mod describe_accelerator_output {
     
     /// A builder for [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::Accelerator>,
@@ -1714,6 +1745,7 @@ impl DeprovisionByoipCidrOutput {
 pub mod deprovision_byoip_cidr_output {
     
     /// A builder for [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
@@ -1755,6 +1787,7 @@ pub struct DenyCustomRoutingTrafficOutput  {
 pub mod deny_custom_routing_traffic_output {
     
     /// A builder for [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1784,6 +1817,7 @@ pub struct DeleteListenerOutput  {
 pub mod delete_listener_output {
     
     /// A builder for [`DeleteListenerOutput`](crate::output::DeleteListenerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1813,6 +1847,7 @@ pub struct DeleteEndpointGroupOutput  {
 pub mod delete_endpoint_group_output {
     
     /// A builder for [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1842,6 +1877,7 @@ pub struct DeleteCustomRoutingListenerOutput  {
 pub mod delete_custom_routing_listener_output {
     
     /// A builder for [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1871,6 +1907,7 @@ pub struct DeleteCustomRoutingEndpointGroupOutput  {
 pub mod delete_custom_routing_endpoint_group_output {
     
     /// A builder for [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1900,6 +1937,7 @@ pub struct DeleteCustomRoutingAcceleratorOutput  {
 pub mod delete_custom_routing_accelerator_output {
     
     /// A builder for [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1929,6 +1967,7 @@ pub struct DeleteAcceleratorOutput  {
 pub mod delete_accelerator_output {
     
     /// A builder for [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1967,6 +2006,7 @@ impl CreateListenerOutput {
 pub mod create_listener_output {
     
     /// A builder for [`CreateListenerOutput`](crate::output::CreateListenerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::Listener>,
@@ -2017,6 +2057,7 @@ impl CreateEndpointGroupOutput {
 pub mod create_endpoint_group_output {
     
     /// A builder for [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group: std::option::Option<crate::model::EndpointGroup>,
@@ -2067,6 +2108,7 @@ impl CreateCustomRoutingListenerOutput {
 pub mod create_custom_routing_listener_output {
     
     /// A builder for [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::CustomRoutingListener>,
@@ -2117,6 +2159,7 @@ impl CreateCustomRoutingEndpointGroupOutput {
 pub mod create_custom_routing_endpoint_group_output {
     
     /// A builder for [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
@@ -2167,6 +2210,7 @@ impl CreateCustomRoutingAcceleratorOutput {
 pub mod create_custom_routing_accelerator_output {
     
     /// A builder for [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
@@ -2217,6 +2261,7 @@ impl CreateAcceleratorOutput {
 pub mod create_accelerator_output {
     
     /// A builder for [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::Accelerator>,
@@ -2258,6 +2303,7 @@ pub struct AllowCustomRoutingTrafficOutput  {
 pub mod allow_custom_routing_traffic_output {
     
     /// A builder for [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2296,6 +2342,7 @@ impl AdvertiseByoipCidrOutput {
 pub mod advertise_byoip_cidr_output {
     
     /// A builder for [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
@@ -2353,6 +2400,7 @@ impl AddEndpointsOutput {
 pub mod add_endpoints_output {
     
     /// A builder for [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_descriptions: std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
@@ -2428,6 +2476,7 @@ impl AddCustomRoutingEndpointsOutput {
 pub mod add_custom_routing_endpoints_output {
     
     /// A builder for [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_descriptions: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>,

@@ -25,6 +25,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -157,6 +158,7 @@ impl Backup {
 pub mod backup {
     
     /// A builder for [`Backup`](crate::model::Backup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -523,6 +525,7 @@ impl Cluster {
 pub mod cluster {
     
     /// A builder for [`Cluster`](crate::model::Cluster).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_policy: std::option::Option<crate::model::BackupPolicy>,
@@ -787,6 +790,7 @@ impl Certificates {
 pub mod certificates {
     
     /// A builder for [`Certificates`](crate::model::Certificates).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_csr: std::option::Option<std::string::String>,
@@ -1051,6 +1055,7 @@ impl Hsm {
 pub mod hsm {
     
     /// A builder for [`Hsm`](crate::model::Hsm).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -1289,6 +1294,7 @@ impl BackupRetentionPolicy {
 pub mod backup_retention_policy {
     
     /// A builder for [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::BackupRetentionType>,
@@ -1526,6 +1532,7 @@ impl DestinationBackup {
 pub mod destination_backup {
     
     /// A builder for [`DestinationBackup`](crate::model::DestinationBackup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,

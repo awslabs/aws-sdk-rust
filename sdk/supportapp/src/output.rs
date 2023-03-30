@@ -66,6 +66,7 @@ impl UpdateSlackChannelConfigurationOutput {
 pub mod update_slack_channel_configuration_output {
     
     /// A builder for [`UpdateSlackChannelConfigurationOutput`](crate::output::UpdateSlackChannelConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
@@ -214,6 +215,7 @@ impl RegisterSlackWorkspaceForOrganizationOutput {
 pub mod register_slack_workspace_for_organization_output {
     
     /// A builder for [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
@@ -279,6 +281,7 @@ pub struct PutAccountAliasOutput  {
 pub mod put_account_alias_output {
     
     /// A builder for [`PutAccountAliasOutput`](crate::output::PutAccountAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -324,6 +327,7 @@ impl ListSlackWorkspaceConfigurationsOutput {
 pub mod list_slack_workspace_configurations_output {
     
     /// A builder for [`ListSlackWorkspaceConfigurationsOutput`](crate::output::ListSlackWorkspaceConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -399,6 +403,7 @@ impl ListSlackChannelConfigurationsOutput {
 pub mod list_slack_channel_configurations_output {
     
     /// A builder for [`ListSlackChannelConfigurationsOutput`](crate::output::ListSlackChannelConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -467,6 +472,7 @@ impl GetAccountAliasOutput {
 pub mod get_account_alias_output {
     
     /// A builder for [`GetAccountAliasOutput`](crate::output::GetAccountAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_alias: std::option::Option<std::string::String>,
@@ -508,6 +514,7 @@ pub struct DeleteSlackWorkspaceConfigurationOutput  {
 pub mod delete_slack_workspace_configuration_output {
     
     /// A builder for [`DeleteSlackWorkspaceConfigurationOutput`](crate::output::DeleteSlackWorkspaceConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -537,6 +544,7 @@ pub struct DeleteSlackChannelConfigurationOutput  {
 pub mod delete_slack_channel_configuration_output {
     
     /// A builder for [`DeleteSlackChannelConfigurationOutput`](crate::output::DeleteSlackChannelConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -566,6 +574,7 @@ pub struct DeleteAccountAliasOutput  {
 pub mod delete_account_alias_output {
     
     /// A builder for [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -595,6 +604,7 @@ pub struct CreateSlackChannelConfigurationOutput  {
 pub mod create_slack_channel_configuration_output {
     
     /// A builder for [`CreateSlackChannelConfigurationOutput`](crate::output::CreateSlackChannelConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

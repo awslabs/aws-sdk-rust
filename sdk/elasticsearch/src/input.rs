@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod accept_inbound_cross_cluster_search_connection_input {
     
     /// A builder for [`AcceptInboundCrossClusterSearchConnectionInput`](crate::input::AcceptInboundCrossClusterSearchConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_cluster_search_connection_id: std::option::Option<std::string::String>,
@@ -114,6 +115,7 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
 pub mod add_tags_input {
     
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -239,6 +241,7 @@ impl AddTagsInput {
 pub mod associate_package_input {
     
     /// A builder for [`AssociatePackageInput`](crate::input::AssociatePackageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -366,6 +369,7 @@ impl AssociatePackageInput {
 pub mod authorize_vpc_endpoint_access_input {
     
     /// A builder for [`AuthorizeVpcEndpointAccessInput`](crate::input::AuthorizeVpcEndpointAccessInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -491,6 +495,7 @@ impl AuthorizeVpcEndpointAccessInput {
 pub mod cancel_elasticsearch_service_software_update_input {
     
     /// A builder for [`CancelElasticsearchServiceSoftwareUpdateInput`](crate::input::CancelElasticsearchServiceSoftwareUpdateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -598,6 +603,7 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
 pub mod create_elasticsearch_domain_input {
     
     /// A builder for [`CreateElasticsearchDomainInput`](crate::input::CreateElasticsearchDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -903,6 +909,7 @@ impl CreateElasticsearchDomainInput {
 pub mod create_outbound_cross_cluster_search_connection_input {
     
     /// A builder for [`CreateOutboundCrossClusterSearchConnectionInput`](crate::input::CreateOutboundCrossClusterSearchConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_domain_info: std::option::Option<crate::model::DomainInformation>,
@@ -1034,6 +1041,7 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
 pub mod create_package_input {
     
     /// A builder for [`CreatePackageInput`](crate::input::CreatePackageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_name: std::option::Option<std::string::String>,
@@ -1177,6 +1185,7 @@ impl CreatePackageInput {
 pub mod create_vpc_endpoint_input {
     
     /// A builder for [`CreateVpcEndpointInput`](crate::input::CreateVpcEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -1308,6 +1317,7 @@ impl CreateVpcEndpointInput {
 pub mod delete_elasticsearch_domain_input {
     
     /// A builder for [`DeleteElasticsearchDomainInput`](crate::input::DeleteElasticsearchDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1417,6 +1427,7 @@ impl DeleteElasticsearchDomainInput {
 pub mod delete_elasticsearch_service_role_input {
     
     /// A builder for [`DeleteElasticsearchServiceRoleInput`](crate::input::DeleteElasticsearchServiceRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1508,6 +1519,7 @@ impl DeleteElasticsearchServiceRoleInput {
 pub mod delete_inbound_cross_cluster_search_connection_input {
     
     /// A builder for [`DeleteInboundCrossClusterSearchConnectionInput`](crate::input::DeleteInboundCrossClusterSearchConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_cluster_search_connection_id: std::option::Option<std::string::String>,
@@ -1617,6 +1629,7 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
 pub mod delete_outbound_cross_cluster_search_connection_input {
     
     /// A builder for [`DeleteOutboundCrossClusterSearchConnectionInput`](crate::input::DeleteOutboundCrossClusterSearchConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_cluster_search_connection_id: std::option::Option<std::string::String>,
@@ -1726,6 +1739,7 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
 pub mod delete_package_input {
     
     /// A builder for [`DeletePackageInput`](crate::input::DeletePackageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -1835,6 +1849,7 @@ impl DeletePackageInput {
 pub mod delete_vpc_endpoint_input {
     
     /// A builder for [`DeleteVpcEndpointInput`](crate::input::DeleteVpcEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
@@ -1944,6 +1959,7 @@ impl DeleteVpcEndpointInput {
 pub mod describe_domain_auto_tunes_input {
     
     /// A builder for [`DescribeDomainAutoTunesInput`](crate::input::DescribeDomainAutoTunesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2082,6 +2098,7 @@ impl DescribeDomainAutoTunesInput {
 pub mod describe_domain_change_progress_input {
     
     /// A builder for [`DescribeDomainChangeProgressInput`](crate::input::DescribeDomainChangeProgressInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2213,6 +2230,7 @@ impl DescribeDomainChangeProgressInput {
 pub mod describe_elasticsearch_domain_input {
     
     /// A builder for [`DescribeElasticsearchDomainInput`](crate::input::DescribeElasticsearchDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2322,6 +2340,7 @@ impl DescribeElasticsearchDomainInput {
 pub mod describe_elasticsearch_domain_config_input {
     
     /// A builder for [`DescribeElasticsearchDomainConfigInput`](crate::input::DescribeElasticsearchDomainConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2431,6 +2450,7 @@ impl DescribeElasticsearchDomainConfigInput {
 pub mod describe_elasticsearch_domains_input {
     
     /// A builder for [`DescribeElasticsearchDomainsInput`](crate::input::DescribeElasticsearchDomainsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2544,6 +2564,7 @@ impl DescribeElasticsearchDomainsInput {
 pub mod describe_elasticsearch_instance_type_limits_input {
     
     /// A builder for [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::input::DescribeElasticsearchInstanceTypeLimitsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2693,6 +2714,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
 pub mod describe_inbound_cross_cluster_search_connections_input {
     
     /// A builder for [`DescribeInboundCrossClusterSearchConnectionsInput`](crate::input::DescribeInboundCrossClusterSearchConnectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -2847,6 +2869,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
 pub mod describe_outbound_cross_cluster_search_connections_input {
     
     /// A builder for [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::input::DescribeOutboundCrossClusterSearchConnectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -3001,6 +3024,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
 pub mod describe_packages_input {
     
     /// A builder for [`DescribePackagesInput`](crate::input::DescribePackagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::DescribePackagesFilter>>,
@@ -3139,6 +3163,7 @@ impl DescribePackagesInput {
 pub mod describe_reserved_elasticsearch_instance_offerings_input {
     
     /// A builder for [`DescribeReservedElasticsearchInstanceOfferingsInput`](crate::input::DescribeReservedElasticsearchInstanceOfferingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_elasticsearch_instance_offering_id: std::option::Option<std::string::String>,
@@ -3285,6 +3310,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
 pub mod describe_reserved_elasticsearch_instances_input {
     
     /// A builder for [`DescribeReservedElasticsearchInstancesInput`](crate::input::DescribeReservedElasticsearchInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_elasticsearch_instance_id: std::option::Option<std::string::String>,
@@ -3431,6 +3457,7 @@ impl DescribeReservedElasticsearchInstancesInput {
 pub mod describe_vpc_endpoints_input {
     
     /// A builder for [`DescribeVpcEndpointsInput`](crate::input::DescribeVpcEndpointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3544,6 +3571,7 @@ impl DescribeVpcEndpointsInput {
 pub mod dissociate_package_input {
     
     /// A builder for [`DissociatePackageInput`](crate::input::DissociatePackageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -3671,6 +3699,7 @@ impl DissociatePackageInput {
 pub mod get_compatible_elasticsearch_versions_input {
     
     /// A builder for [`GetCompatibleElasticsearchVersionsInput`](crate::input::GetCompatibleElasticsearchVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3784,6 +3813,7 @@ impl GetCompatibleElasticsearchVersionsInput {
 pub mod get_package_version_history_input {
     
     /// A builder for [`GetPackageVersionHistoryInput`](crate::input::GetPackageVersionHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -3931,6 +3961,7 @@ impl GetPackageVersionHistoryInput {
 pub mod get_upgrade_history_input {
     
     /// A builder for [`GetUpgradeHistoryInput`](crate::input::GetUpgradeHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4078,6 +4109,7 @@ impl GetUpgradeHistoryInput {
 pub mod get_upgrade_status_input {
     
     /// A builder for [`GetUpgradeStatusInput`](crate::input::GetUpgradeStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4187,6 +4219,7 @@ impl GetUpgradeStatusInput {
 pub mod list_domain_names_input {
     
     /// A builder for [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
@@ -4300,6 +4333,7 @@ impl ListDomainNamesInput {
 pub mod list_domains_for_package_input {
     
     /// A builder for [`ListDomainsForPackageInput`](crate::input::ListDomainsForPackageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -4447,6 +4481,7 @@ impl ListDomainsForPackageInput {
 pub mod list_elasticsearch_instance_types_input {
     
     /// A builder for [`ListElasticsearchInstanceTypesInput`](crate::input::ListElasticsearchInstanceTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elasticsearch_version: std::option::Option<std::string::String>,
@@ -4611,6 +4646,7 @@ impl ListElasticsearchInstanceTypesInput {
 pub mod list_elasticsearch_versions_input {
     
     /// A builder for [`ListElasticsearchVersionsInput`](crate::input::ListElasticsearchVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4740,6 +4776,7 @@ impl ListElasticsearchVersionsInput {
 pub mod list_packages_for_domain_input {
     
     /// A builder for [`ListPackagesForDomainInput`](crate::input::ListPackagesForDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4887,6 +4924,7 @@ impl ListPackagesForDomainInput {
 pub mod list_tags_input {
     
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5001,6 +5039,7 @@ impl ListTagsInput {
 pub mod list_vpc_endpoint_access_input {
     
     /// A builder for [`ListVpcEndpointAccessInput`](crate::input::ListVpcEndpointAccessInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -5132,6 +5171,7 @@ impl ListVpcEndpointAccessInput {
 pub mod list_vpc_endpoints_input {
     
     /// A builder for [`ListVpcEndpointsInput`](crate::input::ListVpcEndpointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5245,6 +5285,7 @@ impl ListVpcEndpointsInput {
 pub mod list_vpc_endpoints_for_domain_input {
     
     /// A builder for [`ListVpcEndpointsForDomainInput`](crate::input::ListVpcEndpointsForDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -5376,6 +5417,7 @@ impl ListVpcEndpointsForDomainInput {
 pub mod purchase_reserved_elasticsearch_instance_offering_input {
     
     /// A builder for [`PurchaseReservedElasticsearchInstanceOfferingInput`](crate::input::PurchaseReservedElasticsearchInstanceOfferingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_elasticsearch_instance_offering_id: std::option::Option<std::string::String>,
@@ -5508,6 +5550,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
 pub mod reject_inbound_cross_cluster_search_connection_input {
     
     /// A builder for [`RejectInboundCrossClusterSearchConnectionInput`](crate::input::RejectInboundCrossClusterSearchConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_cluster_search_connection_id: std::option::Option<std::string::String>,
@@ -5617,6 +5660,7 @@ impl RejectInboundCrossClusterSearchConnectionInput {
 pub mod remove_tags_input {
     
     /// A builder for [`RemoveTagsInput`](crate::input::RemoveTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5742,6 +5786,7 @@ impl RemoveTagsInput {
 pub mod revoke_vpc_endpoint_access_input {
     
     /// A builder for [`RevokeVpcEndpointAccessInput`](crate::input::RevokeVpcEndpointAccessInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -5867,6 +5912,7 @@ impl RevokeVpcEndpointAccessInput {
 pub mod start_elasticsearch_service_software_update_input {
     
     /// A builder for [`StartElasticsearchServiceSoftwareUpdateInput`](crate::input::StartElasticsearchServiceSoftwareUpdateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -5974,6 +6020,7 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
 pub mod update_elasticsearch_domain_config_input {
     
     /// A builder for [`UpdateElasticsearchDomainConfigInput`](crate::input::UpdateElasticsearchDomainConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -6267,6 +6314,7 @@ impl UpdateElasticsearchDomainConfigInput {
 pub mod update_package_input {
     
     /// A builder for [`UpdatePackageInput`](crate::input::UpdatePackageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -6410,6 +6458,7 @@ impl UpdatePackageInput {
 pub mod update_vpc_endpoint_input {
     
     /// A builder for [`UpdateVpcEndpointInput`](crate::input::UpdateVpcEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
@@ -6529,6 +6578,7 @@ impl UpdateVpcEndpointInput {
 pub mod upgrade_elasticsearch_domain_input {
     
     /// A builder for [`UpgradeElasticsearchDomainInput`](crate::input::UpgradeElasticsearchDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod get_service_settings_input {
     
     /// A builder for [`GetServiceSettingsInput`](crate::input::GetServiceSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -96,6 +97,7 @@ impl GetServiceSettingsInput {
 pub mod list_linux_subscription_instances_input {
     
     /// A builder for [`ListLinuxSubscriptionInstancesInput`](crate::input::ListLinuxSubscriptionInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -267,6 +269,7 @@ impl ListLinuxSubscriptionInstancesInput {
 pub mod list_linux_subscriptions_input {
     
     /// A builder for [`ListLinuxSubscriptionsInput`](crate::input::ListLinuxSubscriptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -424,6 +427,7 @@ impl ListLinuxSubscriptionsInput {
 pub mod update_service_settings_input {
     
     /// A builder for [`UpdateServiceSettingsInput`](crate::input::UpdateServiceSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) linux_subscriptions_discovery: std::option::Option<crate::model::LinuxSubscriptionsDiscovery>,

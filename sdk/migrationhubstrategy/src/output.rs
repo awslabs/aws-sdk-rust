@@ -8,6 +8,7 @@ pub struct UpdateServerConfigOutput  {
 pub mod update_server_config_output {
     
     /// A builder for [`UpdateServerConfigOutput`](crate::output::UpdateServerConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UpdateApplicationComponentConfigOutput  {
 pub mod update_application_component_config_output {
     
     /// A builder for [`UpdateApplicationComponentConfigOutput`](crate::output::UpdateApplicationComponentConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct StopAssessmentOutput  {
 pub mod stop_assessment_output {
     
     /// A builder for [`StopAssessmentOutput`](crate::output::StopAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -104,6 +107,7 @@ impl StartRecommendationReportGenerationOutput {
 pub mod start_recommendation_report_generation_output {
     
     /// A builder for [`StartRecommendationReportGenerationOutput`](crate::output::StartRecommendationReportGenerationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -154,6 +158,7 @@ impl StartImportFileTaskOutput {
 pub mod start_import_file_task_output {
     
     /// A builder for [`StartImportFileTaskOutput`](crate::output::StartImportFileTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -204,6 +209,7 @@ impl StartAssessmentOutput {
 pub mod start_assessment_output {
     
     /// A builder for [`StartAssessmentOutput`](crate::output::StartAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -245,6 +251,7 @@ pub struct PutPortfolioPreferencesOutput  {
 pub mod put_portfolio_preferences_output {
     
     /// A builder for [`PutPortfolioPreferencesOutput`](crate::output::PutPortfolioPreferencesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -290,6 +297,7 @@ impl ListServersOutput {
 pub mod list_servers_output {
     
     /// A builder for [`ListServersOutput`](crate::output::ListServersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_infos: std::option::Option<std::vec::Vec<crate::model::ServerDetail>>,
@@ -365,6 +373,7 @@ impl ListImportFileTaskOutput {
 pub mod list_import_file_task_output {
     
     /// A builder for [`ListImportFileTaskOutput`](crate::output::ListImportFileTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_infos: std::option::Option<std::vec::Vec<crate::model::ImportFileTaskInformation>>,
@@ -440,6 +449,7 @@ impl ListCollectorsOutput {
 pub mod list_collectors_output {
     
     /// A builder for [`ListCollectorsOutput`](crate::output::ListCollectorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collectors: std::option::Option<std::vec::Vec<crate::model::Collector>>,
@@ -515,6 +525,7 @@ impl ListApplicationComponentsOutput {
 pub mod list_application_components_output {
     
     /// A builder for [`ListApplicationComponentsOutput`](crate::output::ListApplicationComponentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_component_infos: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentDetail>>,
@@ -583,6 +594,7 @@ impl GetServerStrategiesOutput {
 pub mod get_server_strategies_output {
     
     /// A builder for [`GetServerStrategiesOutput`](crate::output::GetServerStrategiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_strategies: std::option::Option<std::vec::Vec<crate::model::ServerStrategy>>,
@@ -653,6 +665,7 @@ impl GetServerDetailsOutput {
 pub mod get_server_details_output {
     
     /// A builder for [`GetServerDetailsOutput`](crate::output::GetServerDetailsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -740,6 +753,7 @@ impl GetRecommendationReportDetailsOutput {
 pub mod get_recommendation_report_details_output {
     
     /// A builder for [`GetRecommendationReportDetailsOutput`](crate::output::GetRecommendationReportDetailsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -802,6 +816,7 @@ impl GetPortfolioSummaryOutput {
 pub mod get_portfolio_summary_output {
     
     /// A builder for [`GetPortfolioSummaryOutput`](crate::output::GetPortfolioSummaryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_summary: std::option::Option<crate::model::AssessmentSummary>,
@@ -873,6 +888,7 @@ impl GetPortfolioPreferencesOutput {
 pub mod get_portfolio_preferences_output {
     
     /// A builder for [`GetPortfolioPreferencesOutput`](crate::output::GetPortfolioPreferencesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prioritize_business_goals: std::option::Option<crate::model::PrioritizeBusinessGoals>,
@@ -959,6 +975,7 @@ impl GetLatestAssessmentIdOutput {
 pub mod get_latest_assessment_id_output {
     
     /// A builder for [`GetLatestAssessmentIdOutput`](crate::output::GetLatestAssessmentIdOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1079,6 +1096,7 @@ impl GetImportFileTaskOutput {
 pub mod get_import_file_task_output {
     
     /// A builder for [`GetImportFileTaskOutput`](crate::output::GetImportFileTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1263,6 +1281,7 @@ impl GetAssessmentOutput {
 pub mod get_assessment_output {
     
     /// A builder for [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1343,6 +1362,7 @@ impl GetApplicationComponentStrategiesOutput {
 pub mod get_application_component_strategies_output {
     
     /// A builder for [`GetApplicationComponentStrategiesOutput`](crate::output::GetApplicationComponentStrategiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_component_strategies: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentStrategy>>,
@@ -1420,6 +1440,7 @@ impl GetApplicationComponentDetailsOutput {
 pub mod get_application_component_details_output {
     
     /// A builder for [`GetApplicationComponentDetailsOutput`](crate::output::GetApplicationComponentDetailsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_component_detail: std::option::Option<crate::model::ApplicationComponentDetail>,

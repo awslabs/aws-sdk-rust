@@ -8,6 +8,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -75,6 +77,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -131,6 +134,7 @@ impl DescribeAcceleratorTypesOutput {
 pub mod describe_accelerator_types_output {
     
     /// A builder for [`DescribeAcceleratorTypesOutput`](crate::output::DescribeAcceleratorTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_types: std::option::Option<std::vec::Vec<crate::model::AcceleratorType>>,
@@ -194,6 +198,7 @@ impl DescribeAcceleratorsOutput {
 pub mod describe_accelerators_output {
     
     /// A builder for [`DescribeAcceleratorsOutput`](crate::output::DescribeAcceleratorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_set: std::option::Option<std::vec::Vec<crate::model::ElasticInferenceAccelerator>>,
@@ -262,6 +267,7 @@ impl DescribeAcceleratorOfferingsOutput {
 pub mod describe_accelerator_offerings_output {
     
     /// A builder for [`DescribeAcceleratorOfferingsOutput`](crate::output::DescribeAcceleratorOfferingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_type_offerings: std::option::Option<std::vec::Vec<crate::model::AcceleratorTypeOffering>>,

@@ -176,6 +176,7 @@ impl std::error::Error for ValidationError {}
 pub mod validation_error {
     
     /// A builder for [`ValidationError`](crate::error::ValidationError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -236,6 +237,7 @@ impl std::error::Error for ServiceUnavailable {}
 pub mod service_unavailable {
     
     /// A builder for [`ServiceUnavailable`](crate::error::ServiceUnavailable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -296,6 +298,7 @@ impl std::error::Error for InternalFailure {}
 pub mod internal_failure {
     
     /// A builder for [`InternalFailure`](crate::error::InternalFailure).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -356,6 +359,7 @@ impl std::error::Error for AccessForbidden {}
 pub mod access_forbidden {
     
     /// A builder for [`AccessForbidden`](crate::error::AccessForbidden).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -577,6 +581,7 @@ impl std::error::Error for ResourceNotFound {}
 pub mod resource_not_found {
     
     /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

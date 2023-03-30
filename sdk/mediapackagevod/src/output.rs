@@ -59,6 +59,7 @@ impl UpdatePackagingGroupOutput {
 pub mod update_packaging_group_output {
     
     /// A builder for [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approximate_asset_count: std::option::Option<i32>,
@@ -179,6 +180,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -208,6 +210,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -246,6 +249,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -309,6 +313,7 @@ impl ListPackagingGroupsOutput {
 pub mod list_packaging_groups_output {
     
     /// A builder for [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -384,6 +389,7 @@ impl ListPackagingConfigurationsOutput {
 pub mod list_packaging_configurations_output {
     
     /// A builder for [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -459,6 +465,7 @@ impl ListAssetsOutput {
 pub mod list_assets_output {
     
     /// A builder for [`ListAssetsOutput`](crate::output::ListAssetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::AssetShallow>>,
@@ -569,6 +576,7 @@ impl DescribePackagingGroupOutput {
 pub mod describe_packaging_group_output {
     
     /// A builder for [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approximate_asset_count: std::option::Option<i32>,
@@ -747,6 +755,7 @@ impl DescribePackagingConfigurationOutput {
 pub mod describe_packaging_configuration_output {
     
     /// A builder for [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -943,6 +952,7 @@ impl DescribeAssetOutput {
 pub mod describe_asset_output {
     
     /// A builder for [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1092,6 +1102,7 @@ pub struct DeletePackagingGroupOutput  {
 pub mod delete_packaging_group_output {
     
     /// A builder for [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1121,6 +1132,7 @@ pub struct DeletePackagingConfigurationOutput  {
 pub mod delete_packaging_configuration_output {
     
     /// A builder for [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1150,6 +1162,7 @@ pub struct DeleteAssetOutput  {
 pub mod delete_asset_output {
     
     /// A builder for [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1223,6 +1236,7 @@ impl CreatePackagingGroupOutput {
 pub mod create_packaging_group_output {
     
     /// A builder for [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1388,6 +1402,7 @@ impl CreatePackagingConfigurationOutput {
 pub mod create_packaging_configuration_output {
     
     /// A builder for [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1584,6 +1599,7 @@ impl CreateAssetOutput {
 pub mod create_asset_output {
     
     /// A builder for [`CreateAssetOutput`](crate::output::CreateAssetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1777,6 +1793,7 @@ impl ConfigureLogsOutput {
 pub mod configure_logs_output {
     
     /// A builder for [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

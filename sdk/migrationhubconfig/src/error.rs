@@ -197,6 +197,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
     
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -270,6 +271,7 @@ impl std::error::Error for ServiceUnavailableException {}
 pub mod service_unavailable_exception {
     
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -330,6 +332,7 @@ impl std::error::Error for InvalidInputException {}
 pub mod invalid_input_exception {
     
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -390,6 +393,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
     
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -450,6 +454,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
     
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -844,6 +849,7 @@ impl std::error::Error for DryRunOperation {}
 pub mod dry_run_operation {
     
     /// A builder for [`DryRunOperation`](crate::error::DryRunOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

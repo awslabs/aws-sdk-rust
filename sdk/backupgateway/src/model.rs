@@ -53,6 +53,7 @@ impl VirtualMachine {
 pub mod virtual_machine {
     
     /// A builder for [`VirtualMachine`](crate::model::VirtualMachine).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_name: std::option::Option<std::string::String>,
@@ -205,6 +206,7 @@ impl VirtualMachineDetails {
 pub mod virtual_machine_details {
     
     /// A builder for [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_name: std::option::Option<std::string::String>,
@@ -348,6 +350,7 @@ impl VmwareTag {
 pub mod vmware_tag {
     
     /// A builder for [`VmwareTag`](crate::model::VmwareTag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vmware_category: std::option::Option<std::string::String>,
@@ -451,6 +454,7 @@ impl Hypervisor {
 pub mod hypervisor {
     
     /// A builder for [`Hypervisor`](crate::model::Hypervisor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -648,6 +652,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -768,6 +773,7 @@ impl HypervisorDetails {
 pub mod hypervisor_details {
     
     /// A builder for [`HypervisorDetails`](crate::model::HypervisorDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -1034,6 +1040,7 @@ impl VmwareToAwsTagMapping {
 pub mod vmware_to_aws_tag_mapping {
     
     /// A builder for [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vmware_category: std::option::Option<std::string::String>,
@@ -1148,6 +1155,7 @@ impl Gateway {
 pub mod gateway {
     
     /// A builder for [`Gateway`](crate::model::Gateway).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -1372,6 +1380,7 @@ impl GatewayDetails {
 pub mod gateway_details {
     
     /// A builder for [`GatewayDetails`](crate::model::GatewayDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -1527,6 +1536,7 @@ impl MaintenanceStartTime {
 pub mod maintenance_start_time {
     
     /// A builder for [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) day_of_month: std::option::Option<i32>,
@@ -1656,6 +1666,7 @@ impl BandwidthRateLimitInterval {
 pub mod bandwidth_rate_limit_interval {
     
     /// A builder for [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) average_upload_rate_limit_in_bits_per_sec: std::option::Option<i64>,

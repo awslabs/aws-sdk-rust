@@ -17,6 +17,7 @@ impl UpdateDatasetEntriesOutput {
 pub mod update_dataset_entries_output {
     
     /// A builder for [`UpdateDatasetEntriesOutput`](crate::output::UpdateDatasetEntriesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
@@ -58,6 +59,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -87,6 +89,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -125,6 +128,7 @@ impl StopModelOutput {
 pub mod stop_model_output {
     
     /// A builder for [`StopModelOutput`](crate::output::StopModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelHostingStatus>,
@@ -175,6 +179,7 @@ impl StartModelPackagingJobOutput {
 pub mod start_model_packaging_job_output {
     
     /// A builder for [`StartModelPackagingJobOutput`](crate::output::StartModelPackagingJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -225,6 +230,7 @@ impl StartModelOutput {
 pub mod start_model_output {
     
     /// A builder for [`StartModelOutput`](crate::output::StartModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelHostingStatus>,
@@ -275,6 +281,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -338,6 +345,7 @@ impl ListProjectsOutput {
 pub mod list_projects_output {
     
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) projects: std::option::Option<std::vec::Vec<crate::model::ProjectMetadata>>,
@@ -413,6 +421,7 @@ impl ListModelsOutput {
 pub mod list_models_output {
     
     /// A builder for [`ListModelsOutput`](crate::output::ListModelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) models: std::option::Option<std::vec::Vec<crate::model::ModelMetadata>>,
@@ -488,6 +497,7 @@ impl ListModelPackagingJobsOutput {
 pub mod list_model_packaging_jobs_output {
     
     /// A builder for [`ListModelPackagingJobsOutput`](crate::output::ListModelPackagingJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_packaging_jobs: std::option::Option<std::vec::Vec<crate::model::ModelPackagingJobMetadata>>,
@@ -563,6 +573,7 @@ impl ListDatasetEntriesOutput {
 pub mod list_dataset_entries_output {
     
     /// A builder for [`ListDatasetEntriesOutput`](crate::output::ListDatasetEntriesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_entries: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -631,6 +642,7 @@ impl DetectAnomaliesOutput {
 pub mod detect_anomalies_output {
     
     /// A builder for [`DetectAnomaliesOutput`](crate::output::DetectAnomaliesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detect_anomaly_result: std::option::Option<crate::model::DetectAnomalyResult>,
@@ -681,6 +693,7 @@ impl DescribeProjectOutput {
 pub mod describe_project_output {
     
     /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_description: std::option::Option<crate::model::ProjectDescription>,
@@ -731,6 +744,7 @@ impl DescribeModelPackagingJobOutput {
 pub mod describe_model_packaging_job_output {
     
     /// A builder for [`DescribeModelPackagingJobOutput`](crate::output::DescribeModelPackagingJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_packaging_description: std::option::Option<crate::model::ModelPackagingDescription>,
@@ -781,6 +795,7 @@ impl DescribeModelOutput {
 pub mod describe_model_output {
     
     /// A builder for [`DescribeModelOutput`](crate::output::DescribeModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_description: std::option::Option<crate::model::ModelDescription>,
@@ -831,6 +846,7 @@ impl DescribeDatasetOutput {
 pub mod describe_dataset_output {
     
     /// A builder for [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_description: std::option::Option<crate::model::DatasetDescription>,
@@ -881,6 +897,7 @@ impl DeleteProjectOutput {
 pub mod delete_project_output {
     
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
@@ -931,6 +948,7 @@ impl DeleteModelOutput {
 pub mod delete_model_output {
     
     /// A builder for [`DeleteModelOutput`](crate::output::DeleteModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_arn: std::option::Option<std::string::String>,
@@ -972,6 +990,7 @@ pub struct DeleteDatasetOutput  {
 pub mod delete_dataset_output {
     
     /// A builder for [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1010,6 +1029,7 @@ impl CreateProjectOutput {
 pub mod create_project_output {
     
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_metadata: std::option::Option<crate::model::ProjectMetadata>,
@@ -1060,6 +1080,7 @@ impl CreateModelOutput {
 pub mod create_model_output {
     
     /// A builder for [`CreateModelOutput`](crate::output::CreateModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_metadata: std::option::Option<crate::model::ModelMetadata>,
@@ -1110,6 +1131,7 @@ impl CreateDatasetOutput {
 pub mod create_dataset_output {
     
     /// A builder for [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_metadata: std::option::Option<crate::model::DatasetMetadata>,

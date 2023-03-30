@@ -32,6 +32,7 @@ impl AcceleratorType {
 pub mod accelerator_type {
     
     /// A builder for [`AcceleratorType`](crate::model::AcceleratorType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_type_name: std::option::Option<std::string::String>,
@@ -119,6 +120,7 @@ impl KeyValuePair {
 pub mod key_value_pair {
     
     /// A builder for [`KeyValuePair`](crate::model::KeyValuePair).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -182,6 +184,7 @@ impl MemoryInfo {
 pub mod memory_info {
     
     /// A builder for [`MemoryInfo`](crate::model::MemoryInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_mi_b: std::option::Option<i32>,
@@ -261,6 +264,7 @@ impl ElasticInferenceAccelerator {
 pub mod elastic_inference_accelerator {
     
     /// A builder for [`ElasticInferenceAccelerator`](crate::model::ElasticInferenceAccelerator).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_health: std::option::Option<crate::model::ElasticInferenceAcceleratorHealth>,
@@ -359,6 +363,7 @@ impl ElasticInferenceAcceleratorHealth {
 pub mod elastic_inference_accelerator_health {
     
     /// A builder for [`ElasticInferenceAcceleratorHealth`](crate::model::ElasticInferenceAcceleratorHealth).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -416,6 +421,7 @@ impl Filter {
 pub mod filter {
     
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -498,6 +504,7 @@ impl AcceleratorTypeOffering {
 pub mod accelerator_type_offering {
     
     /// A builder for [`AcceleratorTypeOffering`](crate::model::AcceleratorTypeOffering).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_type: std::option::Option<std::string::String>,

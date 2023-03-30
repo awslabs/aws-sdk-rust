@@ -164,6 +164,7 @@ impl std::error::Error for TooManyRequestsException {}
 pub mod too_many_requests_exception {
     
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -224,6 +225,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
     
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -284,6 +286,7 @@ impl std::error::Error for BadRequestException {}
 pub mod bad_request_exception {
     
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -493,6 +496,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
     
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -899,6 +903,7 @@ impl std::error::Error for SendingPausedException {}
 pub mod sending_paused_exception {
     
     /// A builder for [`SendingPausedException`](crate::error::SendingPausedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -959,6 +964,7 @@ impl std::error::Error for MessageRejected {}
 pub mod message_rejected {
     
     /// A builder for [`MessageRejected`](crate::error::MessageRejected).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1019,6 +1025,7 @@ impl std::error::Error for MailFromDomainNotVerifiedException {}
 pub mod mail_from_domain_not_verified_exception {
     
     /// A builder for [`MailFromDomainNotVerifiedException`](crate::error::MailFromDomainNotVerifiedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1079,6 +1086,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
     
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1139,6 +1147,7 @@ impl std::error::Error for AccountSuspendedException {}
 pub mod account_suspended_exception {
     
     /// A builder for [`AccountSuspendedException`](crate::error::AccountSuspendedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1771,6 +1780,7 @@ impl std::error::Error for AlreadyExistsException {}
 pub mod already_exists_exception {
     
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

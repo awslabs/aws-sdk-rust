@@ -33,6 +33,7 @@ impl UpdateVocabularyFilterOutput {
 pub mod update_vocabulary_filter_output {
     
     /// A builder for [`UpdateVocabularyFilterOutput`](crate::output::UpdateVocabularyFilterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -132,6 +133,7 @@ impl UpdateVocabularyOutput {
 pub mod update_vocabulary_output {
     
     /// A builder for [`UpdateVocabularyOutput`](crate::output::UpdateVocabularyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
@@ -243,6 +245,7 @@ impl UpdateMedicalVocabularyOutput {
 pub mod update_medical_vocabulary_output {
     
     /// A builder for [`UpdateMedicalVocabularyOutput`](crate::output::UpdateMedicalVocabularyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
@@ -331,6 +334,7 @@ impl UpdateCallAnalyticsCategoryOutput {
 pub mod update_call_analytics_category_output {
     
     /// A builder for [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,
@@ -372,6 +376,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -401,6 +406,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -439,6 +445,7 @@ impl StartTranscriptionJobOutput {
 pub mod start_transcription_job_output {
     
     /// A builder for [`StartTranscriptionJobOutput`](crate::output::StartTranscriptionJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcription_job: std::option::Option<crate::model::TranscriptionJob>,
@@ -489,6 +496,7 @@ impl StartMedicalTranscriptionJobOutput {
 pub mod start_medical_transcription_job_output {
     
     /// A builder for [`StartMedicalTranscriptionJobOutput`](crate::output::StartMedicalTranscriptionJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) medical_transcription_job: std::option::Option<crate::model::MedicalTranscriptionJob>,
@@ -539,6 +547,7 @@ impl StartCallAnalyticsJobOutput {
 pub mod start_call_analytics_job_output {
     
     /// A builder for [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
@@ -596,6 +605,7 @@ impl ListVocabularyFiltersOutput {
 pub mod list_vocabulary_filters_output {
     
     /// A builder for [`ListVocabularyFiltersOutput`](crate::output::ListVocabularyFiltersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -678,6 +688,7 @@ impl ListVocabulariesOutput {
 pub mod list_vocabularies_output {
     
     /// A builder for [`ListVocabulariesOutput`](crate::output::ListVocabulariesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VocabularyState>,
@@ -772,6 +783,7 @@ impl ListTranscriptionJobsOutput {
 pub mod list_transcription_jobs_output {
     
     /// A builder for [`ListTranscriptionJobsOutput`](crate::output::ListTranscriptionJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::TranscriptionJobStatus>,
@@ -859,6 +871,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -941,6 +954,7 @@ impl ListMedicalVocabulariesOutput {
 pub mod list_medical_vocabularies_output {
     
     /// A builder for [`ListMedicalVocabulariesOutput`](crate::output::ListMedicalVocabulariesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VocabularyState>,
@@ -1035,6 +1049,7 @@ impl ListMedicalTranscriptionJobsOutput {
 pub mod list_medical_transcription_jobs_output {
     
     /// A builder for [`ListMedicalTranscriptionJobsOutput`](crate::output::ListMedicalTranscriptionJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::TranscriptionJobStatus>,
@@ -1122,6 +1137,7 @@ impl ListLanguageModelsOutput {
 pub mod list_language_models_output {
     
     /// A builder for [`ListLanguageModelsOutput`](crate::output::ListLanguageModelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1204,6 +1220,7 @@ impl ListCallAnalyticsJobsOutput {
 pub mod list_call_analytics_jobs_output {
     
     /// A builder for [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::CallAnalyticsJobStatus>,
@@ -1291,6 +1308,7 @@ impl ListCallAnalyticsCategoriesOutput {
 pub mod list_call_analytics_categories_output {
     
     /// A builder for [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1382,6 +1400,7 @@ impl GetVocabularyFilterOutput {
 pub mod get_vocabulary_filter_output {
     
     /// A builder for [`GetVocabularyFilterOutput`](crate::output::GetVocabularyFilterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -1507,6 +1526,7 @@ impl GetVocabularyOutput {
 pub mod get_vocabulary_output {
     
     /// A builder for [`GetVocabularyOutput`](crate::output::GetVocabularyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
@@ -1619,6 +1639,7 @@ impl GetTranscriptionJobOutput {
 pub mod get_transcription_job_output {
     
     /// A builder for [`GetTranscriptionJobOutput`](crate::output::GetTranscriptionJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcription_job: std::option::Option<crate::model::TranscriptionJob>,
@@ -1706,6 +1727,7 @@ impl GetMedicalVocabularyOutput {
 pub mod get_medical_vocabulary_output {
     
     /// A builder for [`GetMedicalVocabularyOutput`](crate::output::GetMedicalVocabularyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
@@ -1818,6 +1840,7 @@ impl GetMedicalTranscriptionJobOutput {
 pub mod get_medical_transcription_job_output {
     
     /// A builder for [`GetMedicalTranscriptionJobOutput`](crate::output::GetMedicalTranscriptionJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) medical_transcription_job: std::option::Option<crate::model::MedicalTranscriptionJob>,
@@ -1868,6 +1891,7 @@ impl GetCallAnalyticsJobOutput {
 pub mod get_call_analytics_job_output {
     
     /// A builder for [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
@@ -1918,6 +1942,7 @@ impl GetCallAnalyticsCategoryOutput {
 pub mod get_call_analytics_category_output {
     
     /// A builder for [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,
@@ -1972,6 +1997,7 @@ impl DescribeLanguageModelOutput {
 pub mod describe_language_model_output {
     
     /// A builder for [`DescribeLanguageModelOutput`](crate::output::DescribeLanguageModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_model: std::option::Option<crate::model::LanguageModel>,
@@ -2017,6 +2043,7 @@ pub struct DeleteVocabularyFilterOutput  {
 pub mod delete_vocabulary_filter_output {
     
     /// A builder for [`DeleteVocabularyFilterOutput`](crate::output::DeleteVocabularyFilterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2046,6 +2073,7 @@ pub struct DeleteVocabularyOutput  {
 pub mod delete_vocabulary_output {
     
     /// A builder for [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2075,6 +2103,7 @@ pub struct DeleteTranscriptionJobOutput  {
 pub mod delete_transcription_job_output {
     
     /// A builder for [`DeleteTranscriptionJobOutput`](crate::output::DeleteTranscriptionJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2104,6 +2133,7 @@ pub struct DeleteMedicalVocabularyOutput  {
 pub mod delete_medical_vocabulary_output {
     
     /// A builder for [`DeleteMedicalVocabularyOutput`](crate::output::DeleteMedicalVocabularyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2133,6 +2163,7 @@ pub struct DeleteMedicalTranscriptionJobOutput  {
 pub mod delete_medical_transcription_job_output {
     
     /// A builder for [`DeleteMedicalTranscriptionJobOutput`](crate::output::DeleteMedicalTranscriptionJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2162,6 +2193,7 @@ pub struct DeleteLanguageModelOutput  {
 pub mod delete_language_model_output {
     
     /// A builder for [`DeleteLanguageModelOutput`](crate::output::DeleteLanguageModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2191,6 +2223,7 @@ pub struct DeleteCallAnalyticsJobOutput  {
 pub mod delete_call_analytics_job_output {
     
     /// A builder for [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2220,6 +2253,7 @@ pub struct DeleteCallAnalyticsCategoryOutput  {
 pub mod delete_call_analytics_category_output {
     
     /// A builder for [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2274,6 +2308,7 @@ impl CreateVocabularyFilterOutput {
 pub mod create_vocabulary_filter_output {
     
     /// A builder for [`CreateVocabularyFilterOutput`](crate::output::CreateVocabularyFilterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -2380,6 +2415,7 @@ impl CreateVocabularyOutput {
 pub mod create_vocabulary_output {
     
     /// A builder for [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
@@ -2510,6 +2546,7 @@ impl CreateMedicalVocabularyOutput {
 pub mod create_medical_vocabulary_output {
     
     /// A builder for [`CreateMedicalVocabularyOutput`](crate::output::CreateMedicalVocabularyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
@@ -2638,6 +2675,7 @@ impl CreateLanguageModelOutput {
 pub mod create_language_model_output {
     
     /// A builder for [`CreateLanguageModelOutput`](crate::output::CreateLanguageModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<crate::model::ClmLanguageCode>,
@@ -2736,6 +2774,7 @@ impl CreateCallAnalyticsCategoryOutput {
 pub mod create_call_analytics_category_output {
     
     /// A builder for [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,

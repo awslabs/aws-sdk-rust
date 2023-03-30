@@ -8,6 +8,7 @@ pub struct PostToConnectionOutput  {
 pub mod post_to_connection_output {
     
     /// A builder for [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -60,6 +61,7 @@ impl GetConnectionOutput {
 pub mod get_connection_output {
     
     /// A builder for [`GetConnectionOutput`](crate::output::GetConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connected_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -125,6 +127,7 @@ pub struct DeleteConnectionOutput  {
 pub mod delete_connection_output {
     
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

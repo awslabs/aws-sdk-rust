@@ -164,6 +164,7 @@ impl std::error::Error for ServiceUnavailableException {}
 pub mod service_unavailable_exception {
     
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -224,6 +225,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -284,6 +286,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
     
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -740,6 +743,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
     
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1246,6 +1250,7 @@ impl std::error::Error for MalformedQueryException {}
 pub mod malformed_query_exception {
     
     /// A builder for [`MalformedQueryException`](crate::error::MalformedQueryException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_compile_error: std::option::Option<crate::model::QueryCompileError>,
@@ -1318,6 +1323,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
     
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1539,6 +1545,7 @@ impl std::error::Error for OperationAbortedException {}
 pub mod operation_aborted_exception {
     
     /// A builder for [`OperationAbortedException`](crate::error::OperationAbortedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2372,6 +2379,7 @@ impl std::error::Error for UnrecognizedClientException {}
 pub mod unrecognized_client_exception {
     
     /// A builder for [`UnrecognizedClientException`](crate::error::UnrecognizedClientException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2443,6 +2451,7 @@ impl std::error::Error for InvalidSequenceTokenException {}
 pub mod invalid_sequence_token_exception {
     
     /// A builder for [`InvalidSequenceTokenException`](crate::error::InvalidSequenceTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expected_sequence_token: std::option::Option<std::string::String>,
@@ -2526,6 +2535,7 @@ impl std::error::Error for DataAlreadyAcceptedException {}
 pub mod data_already_accepted_exception {
     
     /// A builder for [`DataAlreadyAcceptedException`](crate::error::DataAlreadyAcceptedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expected_sequence_token: std::option::Option<std::string::String>,
@@ -6941,6 +6951,7 @@ impl std::error::Error for ResourceAlreadyExistsException {}
 pub mod resource_already_exists_exception {
     
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7484,6 +7495,7 @@ impl std::error::Error for InvalidOperationException {}
 pub mod invalid_operation_exception {
     
     /// A builder for [`InvalidOperationException`](crate::error::InvalidOperationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

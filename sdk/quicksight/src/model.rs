@@ -227,6 +227,7 @@ impl User {
 pub mod user {
     
     /// A builder for [`User`](crate::model::User).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -616,6 +617,7 @@ impl ResourcePermission {
 pub mod resource_permission {
     
     /// A builder for [`ResourcePermission`](crate::model::ResourcePermission).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principal: std::option::Option<std::string::String>,
@@ -708,6 +710,7 @@ impl ThemeAlias {
 pub mod theme_alias {
     
     /// A builder for [`ThemeAlias`](crate::model::ThemeAlias).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -910,6 +913,7 @@ impl ThemeConfiguration {
 pub mod theme_configuration {
     
     /// A builder for [`ThemeConfiguration`](crate::model::ThemeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_color_palette: std::option::Option<crate::model::DataColorPalette>,
@@ -996,6 +1000,7 @@ impl Typography {
 pub mod typography {
     
     /// A builder for [`Typography`](crate::model::Typography).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) font_families: std::option::Option<std::vec::Vec<crate::model::Font>>,
@@ -1052,6 +1057,7 @@ impl Font {
 pub mod font {
     
     /// A builder for [`Font`](crate::model::Font).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) font_family: std::option::Option<std::string::String>,
@@ -1109,6 +1115,7 @@ impl SheetStyle {
 pub mod sheet_style {
     
     /// A builder for [`SheetStyle`](crate::model::SheetStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tile: std::option::Option<crate::model::TileStyle>,
@@ -1178,6 +1185,7 @@ impl TileLayoutStyle {
 pub mod tile_layout_style {
     
     /// A builder for [`TileLayoutStyle`](crate::model::TileLayoutStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gutter: std::option::Option<crate::model::GutterStyle>,
@@ -1240,6 +1248,7 @@ impl MarginStyle {
 pub mod margin_style {
     
     /// A builder for [`MarginStyle`](crate::model::MarginStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) show: std::option::Option<bool>,
@@ -1290,6 +1299,7 @@ impl GutterStyle {
 pub mod gutter_style {
     
     /// A builder for [`GutterStyle`](crate::model::GutterStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) show: std::option::Option<bool>,
@@ -1340,6 +1350,7 @@ impl TileStyle {
 pub mod tile_style {
     
     /// A builder for [`TileStyle`](crate::model::TileStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) border: std::option::Option<crate::model::BorderStyle>,
@@ -1390,6 +1401,7 @@ impl BorderStyle {
 pub mod border_style {
     
     /// A builder for [`BorderStyle`](crate::model::BorderStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) show: std::option::Option<bool>,
@@ -1545,6 +1557,7 @@ impl UiColorPalette {
 pub mod ui_color_palette {
     
     /// A builder for [`UiColorPalette`](crate::model::UiColorPalette).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_foreground: std::option::Option<std::string::String>,
@@ -1789,6 +1802,7 @@ impl DataColorPalette {
 pub mod data_color_palette {
     
     /// A builder for [`DataColorPalette`](crate::model::DataColorPalette).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) colors: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1889,6 +1903,7 @@ impl TemplateAlias {
 pub mod template_alias {
     
     /// A builder for [`TemplateAlias`](crate::model::TemplateAlias).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_name: std::option::Option<std::string::String>,
@@ -2011,6 +2026,7 @@ impl TemplateVersionDefinition {
 pub mod template_version_definition {
     
     /// A builder for [`TemplateVersionDefinition`](crate::model::TemplateVersionDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_configurations: std::option::Option<std::vec::Vec<crate::model::DataSetConfiguration>>,
@@ -2175,6 +2191,7 @@ impl AnalysisDefaults {
 pub mod analysis_defaults {
     
     /// A builder for [`AnalysisDefaults`](crate::model::AnalysisDefaults).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_new_sheet_configuration: std::option::Option<crate::model::DefaultNewSheetConfiguration>,
@@ -2239,6 +2256,7 @@ impl DefaultNewSheetConfiguration {
 pub mod default_new_sheet_configuration {
     
     /// A builder for [`DefaultNewSheetConfiguration`](crate::model::DefaultNewSheetConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interactive_layout_configuration: std::option::Option<crate::model::DefaultInteractiveLayoutConfiguration>,
@@ -2395,6 +2413,7 @@ impl DefaultPaginatedLayoutConfiguration {
 pub mod default_paginated_layout_configuration {
     
     /// A builder for [`DefaultPaginatedLayoutConfiguration`](crate::model::DefaultPaginatedLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) section_based: std::option::Option<crate::model::DefaultSectionBasedLayoutConfiguration>,
@@ -2445,6 +2464,7 @@ impl DefaultSectionBasedLayoutConfiguration {
 pub mod default_section_based_layout_configuration {
     
     /// A builder for [`DefaultSectionBasedLayoutConfiguration`](crate::model::DefaultSectionBasedLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canvas_size_options: std::option::Option<crate::model::SectionBasedLayoutCanvasSizeOptions>,
@@ -2495,6 +2515,7 @@ impl SectionBasedLayoutCanvasSizeOptions {
 pub mod section_based_layout_canvas_size_options {
     
     /// A builder for [`SectionBasedLayoutCanvasSizeOptions`](crate::model::SectionBasedLayoutCanvasSizeOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) paper_canvas_size_options: std::option::Option<crate::model::SectionBasedLayoutPaperCanvasSizeOptions>,
@@ -2567,6 +2588,7 @@ impl SectionBasedLayoutPaperCanvasSizeOptions {
 pub mod section_based_layout_paper_canvas_size_options {
     
     /// A builder for [`SectionBasedLayoutPaperCanvasSizeOptions`](crate::model::SectionBasedLayoutPaperCanvasSizeOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) paper_size: std::option::Option<crate::model::PaperSize>,
@@ -2670,6 +2692,7 @@ impl Spacing {
 pub mod spacing {
     
     /// A builder for [`Spacing`](crate::model::Spacing).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) top: std::option::Option<std::string::String>,
@@ -2972,6 +2995,7 @@ impl DefaultInteractiveLayoutConfiguration {
 pub mod default_interactive_layout_configuration {
     
     /// A builder for [`DefaultInteractiveLayoutConfiguration`](crate::model::DefaultInteractiveLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grid: std::option::Option<crate::model::DefaultGridLayoutConfiguration>,
@@ -3034,6 +3058,7 @@ impl DefaultFreeFormLayoutConfiguration {
 pub mod default_free_form_layout_configuration {
     
     /// A builder for [`DefaultFreeFormLayoutConfiguration`](crate::model::DefaultFreeFormLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canvas_size_options: std::option::Option<crate::model::FreeFormLayoutCanvasSizeOptions>,
@@ -3084,6 +3109,7 @@ impl FreeFormLayoutCanvasSizeOptions {
 pub mod free_form_layout_canvas_size_options {
     
     /// A builder for [`FreeFormLayoutCanvasSizeOptions`](crate::model::FreeFormLayoutCanvasSizeOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) screen_canvas_size_options: std::option::Option<crate::model::FreeFormLayoutScreenCanvasSizeOptions>,
@@ -3134,6 +3160,7 @@ impl FreeFormLayoutScreenCanvasSizeOptions {
 pub mod free_form_layout_screen_canvas_size_options {
     
     /// A builder for [`FreeFormLayoutScreenCanvasSizeOptions`](crate::model::FreeFormLayoutScreenCanvasSizeOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) optimized_view_port_width: std::option::Option<std::string::String>,
@@ -3184,6 +3211,7 @@ impl DefaultGridLayoutConfiguration {
 pub mod default_grid_layout_configuration {
     
     /// A builder for [`DefaultGridLayoutConfiguration`](crate::model::DefaultGridLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canvas_size_options: std::option::Option<crate::model::GridLayoutCanvasSizeOptions>,
@@ -3234,6 +3262,7 @@ impl GridLayoutCanvasSizeOptions {
 pub mod grid_layout_canvas_size_options {
     
     /// A builder for [`GridLayoutCanvasSizeOptions`](crate::model::GridLayoutCanvasSizeOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) screen_canvas_size_options: std::option::Option<crate::model::GridLayoutScreenCanvasSizeOptions>,
@@ -3299,6 +3328,7 @@ impl GridLayoutScreenCanvasSizeOptions {
 pub mod grid_layout_screen_canvas_size_options {
     
     /// A builder for [`GridLayoutScreenCanvasSizeOptions`](crate::model::GridLayoutScreenCanvasSizeOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resize_option: std::option::Option<crate::model::ResizeOption>,
@@ -3465,6 +3495,7 @@ impl ColumnConfiguration {
 pub mod column_configuration {
     
     /// A builder for [`ColumnConfiguration`](crate::model::ColumnConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column: std::option::Option<crate::model::ColumnIdentifier>,
@@ -3635,6 +3666,7 @@ impl FormatConfiguration {
 pub mod format_configuration {
     
     /// A builder for [`FormatConfiguration`](crate::model::FormatConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) string_format_configuration: std::option::Option<crate::model::StringFormatConfiguration>,
@@ -3723,6 +3755,7 @@ impl DateTimeFormatConfiguration {
 pub mod date_time_format_configuration {
     
     /// A builder for [`DateTimeFormatConfiguration`](crate::model::DateTimeFormatConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) date_time_format: std::option::Option<std::string::String>,
@@ -3812,6 +3845,7 @@ impl NumericFormatConfiguration {
 pub mod numeric_format_configuration {
     
     /// A builder for [`NumericFormatConfiguration`](crate::model::NumericFormatConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_display_format_configuration: std::option::Option<crate::model::NumberDisplayFormatConfiguration>,
@@ -3933,6 +3967,7 @@ impl  std::fmt::Debug for PercentageDisplayFormatConfiguration  {
 pub mod percentage_display_format_configuration {
     
     /// A builder for [`PercentageDisplayFormatConfiguration`](crate::model::PercentageDisplayFormatConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -4062,6 +4097,7 @@ impl  std::fmt::Debug for NullValueFormatConfiguration  {
 pub mod null_value_format_configuration {
     
     /// A builder for [`NullValueFormatConfiguration`](crate::model::NullValueFormatConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) null_string: std::option::Option<std::string::String>,
@@ -4119,6 +4155,7 @@ impl NegativeValueConfiguration {
 pub mod negative_value_configuration {
     
     /// A builder for [`NegativeValueConfiguration`](crate::model::NegativeValueConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) display_mode: std::option::Option<crate::model::NegativeValueDisplayMode>,
@@ -4251,6 +4288,7 @@ impl DecimalPlacesConfiguration {
 pub mod decimal_places_configuration {
     
     /// A builder for [`DecimalPlacesConfiguration`](crate::model::DecimalPlacesConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decimal_places: std::option::Option<i64>,
@@ -4308,6 +4346,7 @@ impl NumericSeparatorConfiguration {
 pub mod numeric_separator_configuration {
     
     /// A builder for [`NumericSeparatorConfiguration`](crate::model::NumericSeparatorConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decimal_separator: std::option::Option<crate::model::NumericSeparatorSymbol>,
@@ -4377,6 +4416,7 @@ impl ThousandSeparatorOptions {
 pub mod thousand_separator_options {
     
     /// A builder for [`ThousandSeparatorOptions`](crate::model::ThousandSeparatorOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) symbol: std::option::Option<crate::model::NumericSeparatorSymbol>,
@@ -4671,6 +4711,7 @@ impl  std::fmt::Debug for CurrencyDisplayFormatConfiguration  {
 pub mod currency_display_format_configuration {
     
     /// A builder for [`CurrencyDisplayFormatConfiguration`](crate::model::CurrencyDisplayFormatConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -4976,6 +5017,7 @@ impl  std::fmt::Debug for NumberDisplayFormatConfiguration  {
 pub mod number_display_format_configuration {
     
     /// A builder for [`NumberDisplayFormatConfiguration`](crate::model::NumberDisplayFormatConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -5111,6 +5153,7 @@ impl NumberFormatConfiguration {
 pub mod number_format_configuration {
     
     /// A builder for [`NumberFormatConfiguration`](crate::model::NumberFormatConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format_configuration: std::option::Option<crate::model::NumericFormatConfiguration>,
@@ -5168,6 +5211,7 @@ impl StringFormatConfiguration {
 pub mod string_format_configuration {
     
     /// A builder for [`StringFormatConfiguration`](crate::model::StringFormatConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) null_value_format_configuration: std::option::Option<crate::model::NullValueFormatConfiguration>,
@@ -5237,6 +5281,7 @@ impl ColumnIdentifier {
 pub mod column_identifier {
     
     /// A builder for [`ColumnIdentifier`](crate::model::ColumnIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_identifier: std::option::Option<std::string::String>,
@@ -5338,6 +5383,7 @@ impl FilterGroup {
 pub mod filter_group {
     
     /// A builder for [`FilterGroup`](crate::model::FilterGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_group_id: std::option::Option<std::string::String>,
@@ -5617,6 +5663,7 @@ impl FilterScopeConfiguration {
 pub mod filter_scope_configuration {
     
     /// A builder for [`FilterScopeConfiguration`](crate::model::FilterScopeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selected_sheets: std::option::Option<crate::model::SelectedSheetsFilterScopeConfiguration>,
@@ -5668,6 +5715,7 @@ impl SelectedSheetsFilterScopeConfiguration {
 pub mod selected_sheets_filter_scope_configuration {
     
     /// A builder for [`SelectedSheetsFilterScopeConfiguration`](crate::model::SelectedSheetsFilterScopeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sheet_visual_scoping_configurations: std::option::Option<std::vec::Vec<crate::model::SheetVisualScopingConfiguration>>,
@@ -5746,6 +5794,7 @@ impl SheetVisualScopingConfiguration {
 pub mod sheet_visual_scoping_configuration {
     
     /// A builder for [`SheetVisualScopingConfiguration`](crate::model::SheetVisualScopingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sheet_id: std::option::Option<std::string::String>,
@@ -5961,6 +6010,7 @@ impl Filter {
 pub mod filter {
     
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_filter: std::option::Option<crate::model::CategoryFilter>,
@@ -6120,6 +6170,7 @@ impl TopBottomFilter {
 pub mod top_bottom_filter {
     
     /// A builder for [`TopBottomFilter`](crate::model::TopBottomFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_id: std::option::Option<std::string::String>,
@@ -6375,6 +6426,7 @@ impl AggregationSortConfiguration {
 pub mod aggregation_sort_configuration {
     
     /// A builder for [`AggregationSortConfiguration`](crate::model::AggregationSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column: std::option::Option<crate::model::ColumnIdentifier>,
@@ -6492,6 +6544,7 @@ impl AggregationFunction {
 pub mod aggregation_function {
     
     /// A builder for [`AggregationFunction`](crate::model::AggregationFunction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) numerical_aggregation_function: std::option::Option<crate::model::NumericalAggregationFunction>,
@@ -6793,6 +6846,7 @@ impl NumericalAggregationFunction {
 pub mod numerical_aggregation_function {
     
     /// A builder for [`NumericalAggregationFunction`](crate::model::NumericalAggregationFunction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simple_numerical_aggregation: std::option::Option<crate::model::SimpleNumericalAggregationFunction>,
@@ -6881,6 +6935,7 @@ impl PercentileAggregation {
 pub mod percentile_aggregation {
     
     /// A builder for [`PercentileAggregation`](crate::model::PercentileAggregation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percentile_value: std::option::Option<f64>,
@@ -7227,6 +7282,7 @@ impl RelativeDatesFilter {
 pub mod relative_dates_filter {
     
     /// A builder for [`RelativeDatesFilter`](crate::model::RelativeDatesFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_id: std::option::Option<std::string::String>,
@@ -7431,6 +7487,7 @@ impl ExcludePeriodConfiguration {
 pub mod exclude_period_configuration {
     
     /// A builder for [`ExcludePeriodConfiguration`](crate::model::ExcludePeriodConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amount: std::option::Option<i32>,
@@ -7710,6 +7767,7 @@ impl AnchorDateConfiguration {
 pub mod anchor_date_configuration {
     
     /// A builder for [`AnchorDateConfiguration`](crate::model::AnchorDateConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anchor_option: std::option::Option<crate::model::AnchorOption>,
@@ -7921,6 +7979,7 @@ impl TimeRangeFilter {
 pub mod time_range_filter {
     
     /// A builder for [`TimeRangeFilter`](crate::model::TimeRangeFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_id: std::option::Option<std::string::String>,
@@ -8092,6 +8151,7 @@ impl TimeRangeFilterValue {
 pub mod time_range_filter_value {
     
     /// A builder for [`TimeRangeFilterValue`](crate::model::TimeRangeFilterValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_value: std::option::Option<aws_smithy_types::DateTime>,
@@ -8181,6 +8241,7 @@ impl  std::fmt::Debug for RollingDateConfiguration  {
 pub mod rolling_date_configuration {
     
     /// A builder for [`RollingDateConfiguration`](crate::model::RollingDateConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) data_set_identifier: std::option::Option<std::string::String>,
@@ -8283,6 +8344,7 @@ impl TimeEqualityFilter {
 pub mod time_equality_filter {
     
     /// A builder for [`TimeEqualityFilter`](crate::model::TimeEqualityFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_id: std::option::Option<std::string::String>,
@@ -8450,6 +8512,7 @@ impl NumericEqualityFilter {
 pub mod numeric_equality_filter {
     
     /// A builder for [`NumericEqualityFilter`](crate::model::NumericEqualityFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_id: std::option::Option<std::string::String>,
@@ -8831,6 +8894,7 @@ impl NumericRangeFilter {
 pub mod numeric_range_filter {
     
     /// A builder for [`NumericRangeFilter`](crate::model::NumericRangeFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_id: std::option::Option<std::string::String>,
@@ -9000,6 +9064,7 @@ impl NumericRangeFilterValue {
 pub mod numeric_range_filter_value {
     
     /// A builder for [`NumericRangeFilterValue`](crate::model::NumericRangeFilterValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_value: std::option::Option<f64>,
@@ -9077,6 +9142,7 @@ impl CategoryFilter {
 pub mod category_filter {
     
     /// A builder for [`CategoryFilter`](crate::model::CategoryFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_id: std::option::Option<std::string::String>,
@@ -9166,6 +9232,7 @@ impl CategoryFilterConfiguration {
 pub mod category_filter_configuration {
     
     /// A builder for [`CategoryFilterConfiguration`](crate::model::CategoryFilterConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_list_configuration: std::option::Option<crate::model::FilterListConfiguration>,
@@ -9288,6 +9355,7 @@ impl CustomFilterConfiguration {
 pub mod custom_filter_configuration {
     
     /// A builder for [`CustomFilterConfiguration`](crate::model::CustomFilterConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) match_operator: std::option::Option<crate::model::CategoryFilterMatchOperator>,
@@ -9622,6 +9690,7 @@ impl CustomFilterListConfiguration {
 pub mod custom_filter_list_configuration {
     
     /// A builder for [`CustomFilterListConfiguration`](crate::model::CustomFilterListConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) match_operator: std::option::Option<crate::model::CategoryFilterMatchOperator>,
@@ -9750,6 +9819,7 @@ impl FilterListConfiguration {
 pub mod filter_list_configuration {
     
     /// A builder for [`FilterListConfiguration`](crate::model::FilterListConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) match_operator: std::option::Option<crate::model::CategoryFilterMatchOperator>,
@@ -9859,6 +9929,7 @@ impl ParameterDeclaration {
 pub mod parameter_declaration {
     
     /// A builder for [`ParameterDeclaration`](crate::model::ParameterDeclaration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) string_parameter_declaration: std::option::Option<crate::model::StringParameterDeclaration>,
@@ -9966,6 +10037,7 @@ impl DateTimeParameterDeclaration {
 pub mod date_time_parameter_declaration {
     
     /// A builder for [`DateTimeParameterDeclaration`](crate::model::DateTimeParameterDeclaration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -10075,6 +10147,7 @@ impl  std::fmt::Debug for DateTimeValueWhenUnsetConfiguration  {
 pub mod date_time_value_when_unset_configuration {
     
     /// A builder for [`DateTimeValueWhenUnsetConfiguration`](crate::model::DateTimeValueWhenUnsetConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) value_when_unset_option: std::option::Option<crate::model::ValueWhenUnsetOption>,
@@ -10249,6 +10322,7 @@ impl DateTimeDefaultValues {
 pub mod date_time_default_values {
     
     /// A builder for [`DateTimeDefaultValues`](crate::model::DateTimeDefaultValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dynamic_value: std::option::Option<crate::model::DynamicDefaultValue>,
@@ -10343,6 +10417,7 @@ impl DynamicDefaultValue {
 pub mod dynamic_default_value {
     
     /// A builder for [`DynamicDefaultValue`](crate::model::DynamicDefaultValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name_column: std::option::Option<crate::model::ColumnIdentifier>,
@@ -10438,6 +10513,7 @@ impl IntegerParameterDeclaration {
 pub mod integer_parameter_declaration {
     
     /// A builder for [`IntegerParameterDeclaration`](crate::model::IntegerParameterDeclaration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_value_type: std::option::Option<crate::model::ParameterValueType>,
@@ -10548,6 +10624,7 @@ impl  std::fmt::Debug for IntegerValueWhenUnsetConfiguration  {
 pub mod integer_value_when_unset_configuration {
     
     /// A builder for [`IntegerValueWhenUnsetConfiguration`](crate::model::IntegerValueWhenUnsetConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) value_when_unset_option: std::option::Option<crate::model::ValueWhenUnsetOption>,
@@ -10633,6 +10710,7 @@ impl IntegerDefaultValues {
 pub mod integer_default_values {
     
     /// A builder for [`IntegerDefaultValues`](crate::model::IntegerDefaultValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dynamic_value: std::option::Option<crate::model::DynamicDefaultValue>,
@@ -10804,6 +10882,7 @@ impl DecimalParameterDeclaration {
 pub mod decimal_parameter_declaration {
     
     /// A builder for [`DecimalParameterDeclaration`](crate::model::DecimalParameterDeclaration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_value_type: std::option::Option<crate::model::ParameterValueType>,
@@ -10913,6 +10992,7 @@ impl  std::fmt::Debug for DecimalValueWhenUnsetConfiguration  {
 pub mod decimal_value_when_unset_configuration {
     
     /// A builder for [`DecimalValueWhenUnsetConfiguration`](crate::model::DecimalValueWhenUnsetConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) value_when_unset_option: std::option::Option<crate::model::ValueWhenUnsetOption>,
@@ -10998,6 +11078,7 @@ impl DecimalDefaultValues {
 pub mod decimal_default_values {
     
     /// A builder for [`DecimalDefaultValues`](crate::model::DecimalDefaultValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dynamic_value: std::option::Option<crate::model::DynamicDefaultValue>,
@@ -11087,6 +11168,7 @@ impl StringParameterDeclaration {
 pub mod string_parameter_declaration {
     
     /// A builder for [`StringParameterDeclaration`](crate::model::StringParameterDeclaration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_value_type: std::option::Option<crate::model::ParameterValueType>,
@@ -11196,6 +11278,7 @@ impl  std::fmt::Debug for StringValueWhenUnsetConfiguration  {
 pub mod string_value_when_unset_configuration {
     
     /// A builder for [`StringValueWhenUnsetConfiguration`](crate::model::StringValueWhenUnsetConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) value_when_unset_option: std::option::Option<crate::model::ValueWhenUnsetOption>,
@@ -11281,6 +11364,7 @@ impl StringDefaultValues {
 pub mod string_default_values {
     
     /// A builder for [`StringDefaultValues`](crate::model::StringDefaultValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dynamic_value: std::option::Option<crate::model::DynamicDefaultValue>,
@@ -11372,6 +11456,7 @@ impl  std::fmt::Debug for CalculatedField  {
 pub mod calculated_field {
     
     /// A builder for [`CalculatedField`](crate::model::CalculatedField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) data_set_identifier: std::option::Option<std::string::String>,
@@ -11539,6 +11624,7 @@ impl SheetDefinition {
 pub mod sheet_definition {
     
     /// A builder for [`SheetDefinition`](crate::model::SheetDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sheet_id: std::option::Option<std::string::String>,
@@ -11759,6 +11845,7 @@ impl SheetControlLayout {
 pub mod sheet_control_layout {
     
     /// A builder for [`SheetControlLayout`](crate::model::SheetControlLayout).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::SheetControlLayoutConfiguration>,
@@ -11809,6 +11896,7 @@ impl SheetControlLayoutConfiguration {
 pub mod sheet_control_layout_configuration {
     
     /// A builder for [`SheetControlLayoutConfiguration`](crate::model::SheetControlLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grid_layout: std::option::Option<crate::model::GridLayoutConfiguration>,
@@ -11867,6 +11955,7 @@ impl GridLayoutConfiguration {
 pub mod grid_layout_configuration {
     
     /// A builder for [`GridLayoutConfiguration`](crate::model::GridLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elements: std::option::Option<std::vec::Vec<crate::model::GridLayoutElement>>,
@@ -11970,6 +12059,7 @@ impl GridLayoutElement {
 pub mod grid_layout_element {
     
     /// A builder for [`GridLayoutElement`](crate::model::GridLayoutElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) element_id: std::option::Option<std::string::String>,
@@ -12174,6 +12264,7 @@ impl Layout {
 pub mod layout {
     
     /// A builder for [`Layout`](crate::model::Layout).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::LayoutConfiguration>,
@@ -12239,6 +12330,7 @@ impl LayoutConfiguration {
 pub mod layout_configuration {
     
     /// A builder for [`LayoutConfiguration`](crate::model::LayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grid_layout: std::option::Option<crate::model::GridLayoutConfiguration>,
@@ -12334,6 +12426,7 @@ impl SectionBasedLayoutConfiguration {
 pub mod section_based_layout_configuration {
     
     /// A builder for [`SectionBasedLayoutConfiguration`](crate::model::SectionBasedLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) header_sections: std::option::Option<std::vec::Vec<crate::model::HeaderFooterSectionConfiguration>>,
@@ -12452,6 +12545,7 @@ impl HeaderFooterSectionConfiguration {
 pub mod header_footer_section_configuration {
     
     /// A builder for [`HeaderFooterSectionConfiguration`](crate::model::HeaderFooterSectionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) section_id: std::option::Option<std::string::String>,
@@ -12537,6 +12631,7 @@ impl SectionStyle {
 pub mod section_style {
     
     /// A builder for [`SectionStyle`](crate::model::SectionStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) height: std::option::Option<std::string::String>,
@@ -12603,6 +12698,7 @@ impl SectionLayoutConfiguration {
 pub mod section_layout_configuration {
     
     /// A builder for [`SectionLayoutConfiguration`](crate::model::SectionLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) free_form_layout: std::option::Option<crate::model::FreeFormSectionLayoutConfiguration>,
@@ -12653,6 +12749,7 @@ impl FreeFormSectionLayoutConfiguration {
 pub mod free_form_section_layout_configuration {
     
     /// A builder for [`FreeFormSectionLayoutConfiguration`](crate::model::FreeFormSectionLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elements: std::option::Option<std::vec::Vec<crate::model::FreeFormLayoutElement>>,
@@ -12786,6 +12883,7 @@ impl FreeFormLayoutElement {
 pub mod free_form_layout_element {
     
     /// A builder for [`FreeFormLayoutElement`](crate::model::FreeFormLayoutElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) element_id: std::option::Option<std::string::String>,
@@ -12974,6 +13072,7 @@ impl LoadingAnimation {
 pub mod loading_animation {
     
     /// A builder for [`LoadingAnimation`](crate::model::LoadingAnimation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -13031,6 +13130,7 @@ impl FreeFormLayoutElementBackgroundStyle {
 pub mod free_form_layout_element_background_style {
     
     /// A builder for [`FreeFormLayoutElementBackgroundStyle`](crate::model::FreeFormLayoutElementBackgroundStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -13100,6 +13200,7 @@ impl FreeFormLayoutElementBorderStyle {
 pub mod free_form_layout_element_border_style {
     
     /// A builder for [`FreeFormLayoutElementBorderStyle`](crate::model::FreeFormLayoutElementBorderStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -13177,6 +13278,7 @@ impl  std::fmt::Debug for SheetElementRenderingRule  {
 pub mod sheet_element_rendering_rule {
     
     /// A builder for [`SheetElementRenderingRule`](crate::model::SheetElementRenderingRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -13255,6 +13357,7 @@ impl SheetElementConfigurationOverrides {
 pub mod sheet_element_configuration_overrides {
     
     /// A builder for [`SheetElementConfigurationOverrides`](crate::model::SheetElementConfigurationOverrides).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -13334,6 +13437,7 @@ impl BodySectionConfiguration {
 pub mod body_section_configuration {
     
     /// A builder for [`BodySectionConfiguration`](crate::model::BodySectionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) section_id: std::option::Option<std::string::String>,
@@ -13420,6 +13524,7 @@ impl SectionPageBreakConfiguration {
 pub mod section_page_break_configuration {
     
     /// A builder for [`SectionPageBreakConfiguration`](crate::model::SectionPageBreakConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) after: std::option::Option<crate::model::SectionAfterPageBreak>,
@@ -13470,6 +13575,7 @@ impl SectionAfterPageBreak {
 pub mod section_after_page_break {
     
     /// A builder for [`SectionAfterPageBreak`](crate::model::SectionAfterPageBreak).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SectionPageBreakStatus>,
@@ -13602,6 +13708,7 @@ impl BodySectionContent {
 pub mod body_section_content {
     
     /// A builder for [`BodySectionContent`](crate::model::BodySectionContent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layout: std::option::Option<crate::model::SectionLayoutConfiguration>,
@@ -13659,6 +13766,7 @@ impl FreeFormLayoutConfiguration {
 pub mod free_form_layout_configuration {
     
     /// A builder for [`FreeFormLayoutConfiguration`](crate::model::FreeFormLayoutConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elements: std::option::Option<std::vec::Vec<crate::model::FreeFormLayoutElement>>,
@@ -13734,6 +13842,7 @@ impl SheetTextBox {
 pub mod sheet_text_box {
     
     /// A builder for [`SheetTextBox`](crate::model::SheetTextBox).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sheet_text_box_id: std::option::Option<std::string::String>,
@@ -13986,6 +14095,7 @@ impl Visual {
 pub mod visual {
     
     /// A builder for [`Visual`](crate::model::Visual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_visual: std::option::Option<crate::model::TableVisual>,
@@ -14345,6 +14455,7 @@ impl EmptyVisual {
 pub mod empty_visual {
     
     /// A builder for [`EmptyVisual`](crate::model::EmptyVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -14465,6 +14576,7 @@ impl VisualCustomAction {
 pub mod visual_custom_action {
     
     /// A builder for [`VisualCustomAction`](crate::model::VisualCustomAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_action_id: std::option::Option<std::string::String>,
@@ -14603,6 +14715,7 @@ impl VisualCustomActionOperation {
 pub mod visual_custom_action_operation {
     
     /// A builder for [`VisualCustomActionOperation`](crate::model::VisualCustomActionOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_operation: std::option::Option<crate::model::CustomActionFilterOperation>,
@@ -14689,6 +14802,7 @@ impl CustomActionSetParametersOperation {
 pub mod custom_action_set_parameters_operation {
     
     /// A builder for [`CustomActionSetParametersOperation`](crate::model::CustomActionSetParametersOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_value_configurations: std::option::Option<std::vec::Vec<crate::model::SetParameterValueConfiguration>>,
@@ -14754,6 +14868,7 @@ impl SetParameterValueConfiguration {
 pub mod set_parameter_value_configuration {
     
     /// A builder for [`SetParameterValueConfiguration`](crate::model::SetParameterValueConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_parameter_name: std::option::Option<std::string::String>,
@@ -14840,6 +14955,7 @@ impl DestinationParameterValueConfiguration {
 pub mod destination_parameter_value_configuration {
     
     /// A builder for [`DestinationParameterValueConfiguration`](crate::model::DestinationParameterValueConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_values_configuration: std::option::Option<crate::model::CustomValuesConfiguration>,
@@ -15012,6 +15128,7 @@ impl CustomValuesConfiguration {
 pub mod custom_values_configuration {
     
     /// A builder for [`CustomValuesConfiguration`](crate::model::CustomValuesConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) include_null_value: std::option::Option<bool>,
@@ -15098,6 +15215,7 @@ impl CustomParameterValues {
 pub mod custom_parameter_values {
     
     /// A builder for [`CustomParameterValues`](crate::model::CustomParameterValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) string_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15227,6 +15345,7 @@ impl CustomActionUrlOperation {
 pub mod custom_action_url_operation {
     
     /// A builder for [`CustomActionUrlOperation`](crate::model::CustomActionUrlOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url_template: std::option::Option<std::string::String>,
@@ -15389,6 +15508,7 @@ impl CustomActionNavigationOperation {
 pub mod custom_action_navigation_operation {
     
     /// A builder for [`CustomActionNavigationOperation`](crate::model::CustomActionNavigationOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) local_navigation_configuration: std::option::Option<crate::model::LocalNavigationConfiguration>,
@@ -15439,6 +15559,7 @@ impl LocalNavigationConfiguration {
 pub mod local_navigation_configuration {
     
     /// A builder for [`LocalNavigationConfiguration`](crate::model::LocalNavigationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_sheet_id: std::option::Option<std::string::String>,
@@ -15496,6 +15617,7 @@ impl CustomActionFilterOperation {
 pub mod custom_action_filter_operation {
     
     /// A builder for [`CustomActionFilterOperation`](crate::model::CustomActionFilterOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selected_fields_configuration: std::option::Option<crate::model::FilterOperationSelectedFieldsConfiguration>,
@@ -15559,6 +15681,7 @@ impl FilterOperationTargetVisualsConfiguration {
 pub mod filter_operation_target_visuals_configuration {
     
     /// A builder for [`FilterOperationTargetVisualsConfiguration`](crate::model::FilterOperationTargetVisualsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) same_sheet_target_visual_configuration: std::option::Option<crate::model::SameSheetTargetVisualConfiguration>,
@@ -15625,6 +15748,7 @@ impl SameSheetTargetVisualConfiguration {
 pub mod same_sheet_target_visual_configuration {
     
     /// A builder for [`SameSheetTargetVisualConfiguration`](crate::model::SameSheetTargetVisualConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_visuals: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15794,6 +15918,7 @@ impl FilterOperationSelectedFieldsConfiguration {
 pub mod filter_operation_selected_fields_configuration {
     
     /// A builder for [`FilterOperationSelectedFieldsConfiguration`](crate::model::FilterOperationSelectedFieldsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selected_fields: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16065,6 +16190,7 @@ impl CustomContentVisual {
 pub mod custom_content_visual {
     
     /// A builder for [`CustomContentVisual`](crate::model::CustomContentVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -16195,6 +16321,7 @@ impl CustomContentConfiguration {
 pub mod custom_content_configuration {
     
     /// A builder for [`CustomContentConfiguration`](crate::model::CustomContentConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_url: std::option::Option<std::string::String>,
@@ -16450,6 +16577,7 @@ impl VisualSubtitleLabelOptions {
 pub mod visual_subtitle_label_options {
     
     /// A builder for [`VisualSubtitleLabelOptions`](crate::model::VisualSubtitleLabelOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -16520,6 +16648,7 @@ impl LongFormatText {
 pub mod long_format_text {
     
     /// A builder for [`LongFormatText`](crate::model::LongFormatText).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) plain_text: std::option::Option<std::string::String>,
@@ -16589,6 +16718,7 @@ impl VisualTitleLabelOptions {
 pub mod visual_title_label_options {
     
     /// A builder for [`VisualTitleLabelOptions`](crate::model::VisualTitleLabelOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -16659,6 +16789,7 @@ impl ShortFormatText {
 pub mod short_format_text {
     
     /// A builder for [`ShortFormatText`](crate::model::ShortFormatText).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) plain_text: std::option::Option<std::string::String>,
@@ -16750,6 +16881,7 @@ impl SankeyDiagramVisual {
 pub mod sankey_diagram_visual {
     
     /// A builder for [`SankeyDiagramVisual`](crate::model::SankeyDiagramVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -16868,6 +17000,7 @@ impl SankeyDiagramChartConfiguration {
 pub mod sankey_diagram_chart_configuration {
     
     /// A builder for [`SankeyDiagramChartConfiguration`](crate::model::SankeyDiagramChartConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::SankeyDiagramFieldWells>,
@@ -16998,6 +17131,7 @@ impl DataLabelOptions {
 pub mod data_label_options {
     
     /// A builder for [`DataLabelOptions`](crate::model::DataLabelOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -17260,6 +17394,7 @@ impl FontConfiguration {
 pub mod font_configuration {
     
     /// A builder for [`FontConfiguration`](crate::model::FontConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) font_size: std::option::Option<crate::model::FontSize>,
@@ -17440,6 +17575,7 @@ impl FontWeight {
 pub mod font_weight {
     
     /// A builder for [`FontWeight`](crate::model::FontWeight).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::FontWeightName>,
@@ -17654,6 +17790,7 @@ impl FontSize {
 pub mod font_size {
     
     /// A builder for [`FontSize`](crate::model::FontSize).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relative: std::option::Option<crate::model::RelativeFontSize>,
@@ -18019,6 +18156,7 @@ impl DataLabelType {
 pub mod data_label_type {
     
     /// A builder for [`DataLabelType`](crate::model::DataLabelType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_label_type: std::option::Option<crate::model::FieldLabelType>,
@@ -18117,6 +18255,7 @@ impl MaximumLabelType {
 pub mod maximum_label_type {
     
     /// A builder for [`MaximumLabelType`](crate::model::MaximumLabelType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -18167,6 +18306,7 @@ impl MinimumLabelType {
 pub mod minimum_label_type {
     
     /// A builder for [`MinimumLabelType`](crate::model::MinimumLabelType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -18217,6 +18357,7 @@ impl RangeEndsLabelType {
 pub mod range_ends_label_type {
     
     /// A builder for [`RangeEndsLabelType`](crate::model::RangeEndsLabelType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -18290,6 +18431,7 @@ impl  std::fmt::Debug for DataPathLabelType  {
 pub mod data_path_label_type {
     
     /// A builder for [`DataPathLabelType`](crate::model::DataPathLabelType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -18380,6 +18522,7 @@ impl FieldLabelType {
 pub mod field_label_type {
     
     /// A builder for [`FieldLabelType`](crate::model::FieldLabelType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -18456,6 +18599,7 @@ impl SankeyDiagramSortConfiguration {
 pub mod sankey_diagram_sort_configuration {
     
     /// A builder for [`SankeyDiagramSortConfiguration`](crate::model::SankeyDiagramSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weight_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -18551,6 +18695,7 @@ impl ItemsLimitConfiguration {
 pub mod items_limit_configuration {
     
     /// A builder for [`ItemsLimitConfiguration`](crate::model::ItemsLimitConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items_limit: std::option::Option<i64>,
@@ -18710,6 +18855,7 @@ impl FieldSortOptions {
 pub mod field_sort_options {
     
     /// A builder for [`FieldSortOptions`](crate::model::FieldSortOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_sort: std::option::Option<crate::model::FieldSort>,
@@ -18786,6 +18932,7 @@ impl ColumnSort {
 pub mod column_sort {
     
     /// A builder for [`ColumnSort`](crate::model::ColumnSort).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sort_by: std::option::Option<crate::model::ColumnIdentifier>,
@@ -18875,6 +19022,7 @@ impl FieldSort {
 pub mod field_sort {
     
     /// A builder for [`FieldSort`](crate::model::FieldSort).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -18945,6 +19093,7 @@ impl SankeyDiagramFieldWells {
 pub mod sankey_diagram_field_wells {
     
     /// A builder for [`SankeyDiagramFieldWells`](crate::model::SankeyDiagramFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sankey_diagram_aggregated_field_wells: std::option::Option<crate::model::SankeyDiagramAggregatedFieldWells>,
@@ -19009,6 +19158,7 @@ impl SankeyDiagramAggregatedFieldWells {
 pub mod sankey_diagram_aggregated_field_wells {
     
     /// A builder for [`SankeyDiagramAggregatedFieldWells`](crate::model::SankeyDiagramAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -19122,6 +19272,7 @@ impl MeasureField {
 pub mod measure_field {
     
     /// A builder for [`MeasureField`](crate::model::MeasureField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) numerical_measure_field: std::option::Option<crate::model::NumericalMeasureField>,
@@ -19223,6 +19374,7 @@ impl  std::fmt::Debug for CalculatedMeasureField  {
 pub mod calculated_measure_field {
     
     /// A builder for [`CalculatedMeasureField`](crate::model::CalculatedMeasureField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -19314,6 +19466,7 @@ impl DateMeasureField {
 pub mod date_measure_field {
     
     /// A builder for [`DateMeasureField`](crate::model::DateMeasureField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -19421,6 +19574,7 @@ impl CategoricalMeasureField {
 pub mod categorical_measure_field {
     
     /// A builder for [`CategoricalMeasureField`](crate::model::CategoricalMeasureField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -19528,6 +19682,7 @@ impl NumericalMeasureField {
 pub mod numerical_measure_field {
     
     /// A builder for [`NumericalMeasureField`](crate::model::NumericalMeasureField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -19628,6 +19783,7 @@ impl DimensionField {
 pub mod dimension_field {
     
     /// A builder for [`DimensionField`](crate::model::DimensionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) numerical_dimension_field: std::option::Option<crate::model::NumericalDimensionField>,
@@ -19752,6 +19908,7 @@ impl DateDimensionField {
 pub mod date_dimension_field {
     
     /// A builder for [`DateDimensionField`](crate::model::DateDimensionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -19893,6 +20050,7 @@ impl CategoricalDimensionField {
 pub mod categorical_dimension_field {
     
     /// A builder for [`CategoricalDimensionField`](crate::model::CategoricalDimensionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -20000,6 +20158,7 @@ impl NumericalDimensionField {
 pub mod numerical_dimension_field {
     
     /// A builder for [`NumericalDimensionField`](crate::model::NumericalDimensionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -20122,6 +20281,7 @@ impl InsightVisual {
 pub mod insight_visual {
     
     /// A builder for [`InsightVisual`](crate::model::InsightVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -20245,6 +20405,7 @@ impl InsightConfiguration {
 pub mod insight_configuration {
     
     /// A builder for [`InsightConfiguration`](crate::model::InsightConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computations: std::option::Option<std::vec::Vec<crate::model::Computation>>,
@@ -20313,6 +20474,7 @@ impl CustomNarrativeOptions {
 pub mod custom_narrative_options {
     
     /// A builder for [`CustomNarrativeOptions`](crate::model::CustomNarrativeOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) narrative: std::option::Option<std::string::String>,
@@ -20427,6 +20589,7 @@ impl Computation {
 pub mod computation {
     
     /// A builder for [`Computation`](crate::model::Computation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) top_bottom_ranked: std::option::Option<crate::model::TopBottomRankedComputation>,
@@ -20663,6 +20826,7 @@ impl ForecastComputation {
 pub mod forecast_computation {
     
     /// A builder for [`ForecastComputation`](crate::model::ForecastComputation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computation_id: std::option::Option<std::string::String>,
@@ -20937,6 +21101,7 @@ impl UniqueValuesComputation {
 pub mod unique_values_computation {
     
     /// A builder for [`UniqueValuesComputation`](crate::model::UniqueValuesComputation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computation_id: std::option::Option<std::string::String>,
@@ -21039,6 +21204,7 @@ impl GrowthRateComputation {
 pub mod growth_rate_computation {
     
     /// A builder for [`GrowthRateComputation`](crate::model::GrowthRateComputation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computation_id: std::option::Option<std::string::String>,
@@ -21174,6 +21340,7 @@ impl PeriodToDateComputation {
 pub mod period_to_date_computation {
     
     /// A builder for [`PeriodToDateComputation`](crate::model::PeriodToDateComputation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computation_id: std::option::Option<std::string::String>,
@@ -21301,6 +21468,7 @@ impl PeriodOverPeriodComputation {
 pub mod period_over_period_computation {
     
     /// A builder for [`PeriodOverPeriodComputation`](crate::model::PeriodOverPeriodComputation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computation_id: std::option::Option<std::string::String>,
@@ -21415,6 +21583,7 @@ impl MetricComparisonComputation {
 pub mod metric_comparison_computation {
     
     /// A builder for [`MetricComparisonComputation`](crate::model::MetricComparisonComputation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computation_id: std::option::Option<std::string::String>,
@@ -21549,6 +21718,7 @@ impl MaximumMinimumComputation {
 pub mod maximum_minimum_computation {
     
     /// A builder for [`MaximumMinimumComputation`](crate::model::MaximumMinimumComputation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computation_id: std::option::Option<std::string::String>,
@@ -21751,6 +21921,7 @@ impl TotalAggregationComputation {
 pub mod total_aggregation_computation {
     
     /// A builder for [`TotalAggregationComputation`](crate::model::TotalAggregationComputation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computation_id: std::option::Option<std::string::String>,
@@ -21882,6 +22053,7 @@ impl TopBottomMoversComputation {
 pub mod top_bottom_movers_computation {
     
     /// A builder for [`TopBottomMoversComputation`](crate::model::TopBottomMoversComputation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computation_id: std::option::Option<std::string::String>,
@@ -22232,6 +22404,7 @@ impl TopBottomRankedComputation {
 pub mod top_bottom_ranked_computation {
     
     /// A builder for [`TopBottomRankedComputation`](crate::model::TopBottomRankedComputation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computation_id: std::option::Option<std::string::String>,
@@ -22387,6 +22560,7 @@ impl WordCloudVisual {
 pub mod word_cloud_visual {
     
     /// A builder for [`WordCloudVisual`](crate::model::WordCloudVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -22523,6 +22697,7 @@ impl ColumnHierarchy {
 pub mod column_hierarchy {
     
     /// A builder for [`ColumnHierarchy`](crate::model::ColumnHierarchy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) explicit_hierarchy: std::option::Option<crate::model::ExplicitHierarchy>,
@@ -22611,6 +22786,7 @@ impl PredefinedHierarchy {
 pub mod predefined_hierarchy {
     
     /// A builder for [`PredefinedHierarchy`](crate::model::PredefinedHierarchy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hierarchy_id: std::option::Option<std::string::String>,
@@ -22712,6 +22888,7 @@ impl DrillDownFilter {
 pub mod drill_down_filter {
     
     /// A builder for [`DrillDownFilter`](crate::model::DrillDownFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) numeric_equality_filter: std::option::Option<crate::model::NumericEqualityDrillDownFilter>,
@@ -22807,6 +22984,7 @@ impl TimeRangeDrillDownFilter {
 pub mod time_range_drill_down_filter {
     
     /// A builder for [`TimeRangeDrillDownFilter`](crate::model::TimeRangeDrillDownFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column: std::option::Option<crate::model::ColumnIdentifier>,
@@ -22900,6 +23078,7 @@ impl CategoryDrillDownFilter {
 pub mod category_drill_down_filter {
     
     /// A builder for [`CategoryDrillDownFilter`](crate::model::CategoryDrillDownFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column: std::option::Option<crate::model::ColumnIdentifier>,
@@ -22975,6 +23154,7 @@ impl NumericEqualityDrillDownFilter {
 pub mod numeric_equality_drill_down_filter {
     
     /// A builder for [`NumericEqualityDrillDownFilter`](crate::model::NumericEqualityDrillDownFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column: std::option::Option<crate::model::ColumnIdentifier>,
@@ -23045,6 +23225,7 @@ impl DateTimeHierarchy {
 pub mod date_time_hierarchy {
     
     /// A builder for [`DateTimeHierarchy`](crate::model::DateTimeHierarchy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hierarchy_id: std::option::Option<std::string::String>,
@@ -23127,6 +23308,7 @@ impl ExplicitHierarchy {
 pub mod explicit_hierarchy {
     
     /// A builder for [`ExplicitHierarchy`](crate::model::ExplicitHierarchy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hierarchy_id: std::option::Option<std::string::String>,
@@ -23234,6 +23416,7 @@ impl WordCloudChartConfiguration {
 pub mod word_cloud_chart_configuration {
     
     /// A builder for [`WordCloudChartConfiguration`](crate::model::WordCloudChartConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::WordCloudFieldWells>,
@@ -23355,6 +23538,7 @@ impl WordCloudOptions {
 pub mod word_cloud_options {
     
     /// A builder for [`WordCloudOptions`](crate::model::WordCloudOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) word_orientation: std::option::Option<crate::model::WordCloudWordOrientation>,
@@ -23907,6 +24091,7 @@ impl ChartAxisLabelOptions {
 pub mod chart_axis_label_options {
     
     /// A builder for [`ChartAxisLabelOptions`](crate::model::ChartAxisLabelOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -24009,6 +24194,7 @@ impl AxisLabelOptions {
 pub mod axis_label_options {
     
     /// A builder for [`AxisLabelOptions`](crate::model::AxisLabelOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) font_configuration: std::option::Option<crate::model::FontConfiguration>,
@@ -24090,6 +24276,7 @@ impl AxisLabelReferenceOptions {
 pub mod axis_label_reference_options {
     
     /// A builder for [`AxisLabelReferenceOptions`](crate::model::AxisLabelReferenceOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -24159,6 +24346,7 @@ impl WordCloudSortConfiguration {
 pub mod word_cloud_sort_configuration {
     
     /// A builder for [`WordCloudSortConfiguration`](crate::model::WordCloudSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_items_limit: std::option::Option<crate::model::ItemsLimitConfiguration>,
@@ -24228,6 +24416,7 @@ impl WordCloudFieldWells {
 pub mod word_cloud_field_wells {
     
     /// A builder for [`WordCloudFieldWells`](crate::model::WordCloudFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) word_cloud_aggregated_field_wells: std::option::Option<crate::model::WordCloudAggregatedFieldWells>,
@@ -24285,6 +24474,7 @@ impl WordCloudAggregatedFieldWells {
 pub mod word_cloud_aggregated_field_wells {
     
     /// A builder for [`WordCloudAggregatedFieldWells`](crate::model::WordCloudAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_by: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -24388,6 +24578,7 @@ impl HistogramVisual {
 pub mod histogram_visual {
     
     /// A builder for [`HistogramVisual`](crate::model::HistogramVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -24541,6 +24732,7 @@ impl HistogramConfiguration {
 pub mod histogram_configuration {
     
     /// A builder for [`HistogramConfiguration`](crate::model::HistogramConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::HistogramFieldWells>,
@@ -24682,6 +24874,7 @@ impl VisualPalette {
 pub mod visual_palette {
     
     /// A builder for [`VisualPalette`](crate::model::VisualPalette).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chart_color: std::option::Option<std::string::String>,
@@ -24764,6 +24957,7 @@ impl DataPathColor {
 pub mod data_path_color {
     
     /// A builder for [`DataPathColor`](crate::model::DataPathColor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) element: std::option::Option<crate::model::DataPathValue>,
@@ -24853,6 +25047,7 @@ impl  std::fmt::Debug for DataPathValue  {
 pub mod data_path_value {
     
     /// A builder for [`DataPathValue`](crate::model::DataPathValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -24945,6 +25140,7 @@ impl TooltipOptions {
 pub mod tooltip_options {
     
     /// A builder for [`TooltipOptions`](crate::model::TooltipOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tooltip_visibility: std::option::Option<crate::model::Visibility>,
@@ -25049,6 +25245,7 @@ impl FieldBasedTooltip {
 pub mod field_based_tooltip {
     
     /// A builder for [`FieldBasedTooltip`](crate::model::FieldBasedTooltip).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggregation_visibility: std::option::Option<crate::model::Visibility>,
@@ -25145,6 +25342,7 @@ impl TooltipItem {
 pub mod tooltip_item {
     
     /// A builder for [`TooltipItem`](crate::model::TooltipItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_tooltip_item: std::option::Option<crate::model::FieldTooltipItem>,
@@ -25228,6 +25426,7 @@ impl ColumnTooltipItem {
 pub mod column_tooltip_item {
     
     /// A builder for [`ColumnTooltipItem`](crate::model::ColumnTooltipItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column: std::option::Option<crate::model::ColumnIdentifier>,
@@ -25328,6 +25527,7 @@ impl FieldTooltipItem {
 pub mod field_tooltip_item {
     
     /// A builder for [`FieldTooltipItem`](crate::model::FieldTooltipItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -25587,6 +25787,7 @@ impl HistogramBinOptions {
 pub mod histogram_bin_options {
     
     /// A builder for [`HistogramBinOptions`](crate::model::HistogramBinOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selected_bin_type: std::option::Option<crate::model::HistogramBinType>,
@@ -25680,6 +25881,7 @@ impl BinWidthOptions {
 pub mod bin_width_options {
     
     /// A builder for [`BinWidthOptions`](crate::model::BinWidthOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<f64>,
@@ -25742,6 +25944,7 @@ impl BinCountOptions {
 pub mod bin_count_options {
     
     /// A builder for [`BinCountOptions`](crate::model::BinCountOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i32>,
@@ -25909,6 +26112,7 @@ impl AxisDisplayOptions {
 pub mod axis_display_options {
     
     /// A builder for [`AxisDisplayOptions`](crate::model::AxisDisplayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tick_label_options: std::option::Option<crate::model::AxisTickLabelOptions>,
@@ -26026,6 +26230,7 @@ impl ScrollBarOptions {
 pub mod scroll_bar_options {
     
     /// A builder for [`ScrollBarOptions`](crate::model::ScrollBarOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -26088,6 +26293,7 @@ impl VisibleRangeOptions {
 pub mod visible_range_options {
     
     /// A builder for [`VisibleRangeOptions`](crate::model::VisibleRangeOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percent_range: std::option::Option<crate::model::PercentVisibleRange>,
@@ -26145,6 +26351,7 @@ impl PercentVisibleRange {
 pub mod percent_visible_range {
     
     /// A builder for [`PercentVisibleRange`](crate::model::PercentVisibleRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from: std::option::Option<f64>,
@@ -26215,6 +26422,7 @@ impl AxisDataOptions {
 pub mod axis_data_options {
     
     /// A builder for [`AxisDataOptions`](crate::model::AxisDataOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) numeric_axis_options: std::option::Option<crate::model::NumericAxisOptions>,
@@ -26277,6 +26485,7 @@ impl DateAxisOptions {
 pub mod date_axis_options {
     
     /// A builder for [`DateAxisOptions`](crate::model::DateAxisOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) missing_date_visibility: std::option::Option<crate::model::Visibility>,
@@ -26334,6 +26543,7 @@ impl NumericAxisOptions {
 pub mod numeric_axis_options {
     
     /// A builder for [`NumericAxisOptions`](crate::model::NumericAxisOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scale: std::option::Option<crate::model::AxisScale>,
@@ -26404,6 +26614,7 @@ impl AxisDisplayRange {
 pub mod axis_display_range {
     
     /// A builder for [`AxisDisplayRange`](crate::model::AxisDisplayRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_max: std::option::Option<crate::model::AxisDisplayMinMaxRange>,
@@ -26457,6 +26668,7 @@ pub struct AxisDisplayDataDrivenRange  {
 pub mod axis_display_data_driven_range {
     
     /// A builder for [`AxisDisplayDataDrivenRange`](crate::model::AxisDisplayDataDrivenRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -26502,6 +26714,7 @@ impl AxisDisplayMinMaxRange {
 pub mod axis_display_min_max_range {
     
     /// A builder for [`AxisDisplayMinMaxRange`](crate::model::AxisDisplayMinMaxRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) minimum: std::option::Option<f64>,
@@ -26572,6 +26785,7 @@ impl AxisScale {
 pub mod axis_scale {
     
     /// A builder for [`AxisScale`](crate::model::AxisScale).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) linear: std::option::Option<crate::model::AxisLinearScale>,
@@ -26634,6 +26848,7 @@ impl AxisLogarithmicScale {
 pub mod axis_logarithmic_scale {
     
     /// A builder for [`AxisLogarithmicScale`](crate::model::AxisLogarithmicScale).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base: std::option::Option<f64>,
@@ -26692,6 +26907,7 @@ impl AxisLinearScale {
 pub mod axis_linear_scale {
     
     /// A builder for [`AxisLinearScale`](crate::model::AxisLinearScale).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) step_count: std::option::Option<i32>,
@@ -26761,6 +26977,7 @@ impl AxisTickLabelOptions {
 pub mod axis_tick_label_options {
     
     /// A builder for [`AxisTickLabelOptions`](crate::model::AxisTickLabelOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_options: std::option::Option<crate::model::LabelOptions>,
@@ -26837,6 +27054,7 @@ impl LabelOptions {
 pub mod label_options {
     
     /// A builder for [`LabelOptions`](crate::model::LabelOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -26911,6 +27129,7 @@ impl HistogramFieldWells {
 pub mod histogram_field_wells {
     
     /// A builder for [`HistogramFieldWells`](crate::model::HistogramFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) histogram_aggregated_field_wells: std::option::Option<crate::model::HistogramAggregatedFieldWells>,
@@ -26961,6 +27180,7 @@ impl HistogramAggregatedFieldWells {
 pub mod histogram_aggregated_field_wells {
     
     /// A builder for [`HistogramAggregatedFieldWells`](crate::model::HistogramAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::MeasureField>>,
@@ -27053,6 +27273,7 @@ impl WaterfallVisual {
 pub mod waterfall_visual {
     
     /// A builder for [`WaterfallVisual`](crate::model::WaterfallVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -27238,6 +27459,7 @@ impl WaterfallChartConfiguration {
 pub mod waterfall_chart_configuration {
     
     /// A builder for [`WaterfallChartConfiguration`](crate::model::WaterfallChartConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::WaterfallChartFieldWells>,
@@ -27436,6 +27658,7 @@ impl LegendOptions {
 pub mod legend_options {
     
     /// A builder for [`LegendOptions`](crate::model::LegendOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -27638,6 +27861,7 @@ impl WaterfallChartOptions {
 pub mod waterfall_chart_options {
     
     /// A builder for [`WaterfallChartOptions`](crate::model::WaterfallChartOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_bar_label: std::option::Option<std::string::String>,
@@ -27695,6 +27919,7 @@ impl WaterfallChartSortConfiguration {
 pub mod waterfall_chart_sort_configuration {
     
     /// A builder for [`WaterfallChartSortConfiguration`](crate::model::WaterfallChartSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -27763,6 +27988,7 @@ impl WaterfallChartFieldWells {
 pub mod waterfall_chart_field_wells {
     
     /// A builder for [`WaterfallChartFieldWells`](crate::model::WaterfallChartFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) waterfall_chart_aggregated_field_wells: std::option::Option<crate::model::WaterfallChartAggregatedFieldWells>,
@@ -27827,6 +28053,7 @@ impl WaterfallChartAggregatedFieldWells {
 pub mod waterfall_chart_aggregated_field_wells {
     
     /// A builder for [`WaterfallChartAggregatedFieldWells`](crate::model::WaterfallChartAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) categories: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -27955,6 +28182,7 @@ impl BoxPlotVisual {
 pub mod box_plot_visual {
     
     /// A builder for [`BoxPlotVisual`](crate::model::BoxPlotVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -28147,6 +28375,7 @@ impl BoxPlotChartConfiguration {
 pub mod box_plot_chart_configuration {
     
     /// A builder for [`BoxPlotChartConfiguration`](crate::model::BoxPlotChartConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::BoxPlotFieldWells>,
@@ -28352,6 +28581,7 @@ impl ReferenceLine {
 pub mod reference_line {
     
     /// A builder for [`ReferenceLine`](crate::model::ReferenceLine).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::WidgetStatus>,
@@ -28499,6 +28729,7 @@ impl ReferenceLineLabelConfiguration {
 pub mod reference_line_label_configuration {
     
     /// A builder for [`ReferenceLineLabelConfiguration`](crate::model::ReferenceLineLabelConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value_label_configuration: std::option::Option<crate::model::ReferenceLineValueLabelConfiguration>,
@@ -28796,6 +29027,7 @@ impl ReferenceLineCustomLabelConfiguration {
 pub mod reference_line_custom_label_configuration {
     
     /// A builder for [`ReferenceLineCustomLabelConfiguration`](crate::model::ReferenceLineCustomLabelConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_label: std::option::Option<std::string::String>,
@@ -28861,6 +29093,7 @@ impl ReferenceLineValueLabelConfiguration {
 pub mod reference_line_value_label_configuration {
     
     /// A builder for [`ReferenceLineValueLabelConfiguration`](crate::model::ReferenceLineValueLabelConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relative_position: std::option::Option<crate::model::ReferenceLineValueLabelRelativePosition>,
@@ -29030,6 +29263,7 @@ impl ReferenceLineStyleConfiguration {
 pub mod reference_line_style_configuration {
     
     /// A builder for [`ReferenceLineStyleConfiguration`](crate::model::ReferenceLineStyleConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pattern: std::option::Option<crate::model::ReferenceLinePatternType>,
@@ -29211,6 +29445,7 @@ impl ReferenceLineDataConfiguration {
 pub mod reference_line_data_configuration {
     
     /// A builder for [`ReferenceLineDataConfiguration`](crate::model::ReferenceLineDataConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_configuration: std::option::Option<crate::model::ReferenceLineStaticDataConfiguration>,
@@ -29389,6 +29624,7 @@ impl ReferenceLineDynamicDataConfiguration {
 pub mod reference_line_dynamic_data_configuration {
     
     /// A builder for [`ReferenceLineDynamicDataConfiguration`](crate::model::ReferenceLineDynamicDataConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column: std::option::Option<crate::model::ColumnIdentifier>,
@@ -29470,6 +29706,7 @@ impl  std::fmt::Debug for ReferenceLineStaticDataConfiguration  {
 pub mod reference_line_static_data_configuration {
     
     /// A builder for [`ReferenceLineStaticDataConfiguration`](crate::model::ReferenceLineStaticDataConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) value: std::option::Option<f64>,
@@ -29542,6 +29779,7 @@ impl BoxPlotOptions {
 pub mod box_plot_options {
     
     /// A builder for [`BoxPlotOptions`](crate::model::BoxPlotOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) style_options: std::option::Option<crate::model::BoxPlotStyleOptions>,
@@ -29616,6 +29854,7 @@ impl BoxPlotStyleOptions {
 pub mod box_plot_style_options {
     
     /// A builder for [`BoxPlotStyleOptions`](crate::model::BoxPlotStyleOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fill_style: std::option::Option<crate::model::BoxPlotFillStyle>,
@@ -29755,6 +29994,7 @@ impl BoxPlotSortConfiguration {
 pub mod box_plot_sort_configuration {
     
     /// A builder for [`BoxPlotSortConfiguration`](crate::model::BoxPlotSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -29830,6 +30070,7 @@ impl PaginationConfiguration {
 pub mod pagination_configuration {
     
     /// A builder for [`PaginationConfiguration`](crate::model::PaginationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_size: std::option::Option<i64>,
@@ -29893,6 +30134,7 @@ impl BoxPlotFieldWells {
 pub mod box_plot_field_wells {
     
     /// A builder for [`BoxPlotFieldWells`](crate::model::BoxPlotFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) box_plot_aggregated_field_wells: std::option::Option<crate::model::BoxPlotAggregatedFieldWells>,
@@ -29950,6 +30192,7 @@ impl BoxPlotAggregatedFieldWells {
 pub mod box_plot_aggregated_field_wells {
     
     /// A builder for [`BoxPlotAggregatedFieldWells`](crate::model::BoxPlotAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_by: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -30061,6 +30304,7 @@ impl ComboChartVisual {
 pub mod combo_chart_visual {
     
     /// A builder for [`ComboChartVisual`](crate::model::ComboChartVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -30302,6 +30546,7 @@ impl ComboChartConfiguration {
 pub mod combo_chart_configuration {
     
     /// A builder for [`ComboChartConfiguration`](crate::model::ComboChartConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::ComboChartFieldWells>,
@@ -30660,6 +30905,7 @@ impl ComboChartSortConfiguration {
 pub mod combo_chart_sort_configuration {
     
     /// A builder for [`ComboChartSortConfiguration`](crate::model::ComboChartSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -30759,6 +31005,7 @@ impl ComboChartFieldWells {
 pub mod combo_chart_field_wells {
     
     /// A builder for [`ComboChartFieldWells`](crate::model::ComboChartFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) combo_chart_aggregated_field_wells: std::option::Option<crate::model::ComboChartAggregatedFieldWells>,
@@ -30830,6 +31077,7 @@ impl ComboChartAggregatedFieldWells {
 pub mod combo_chart_aggregated_field_wells {
     
     /// A builder for [`ComboChartAggregatedFieldWells`](crate::model::ComboChartAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -30976,6 +31224,7 @@ impl ScatterPlotVisual {
 pub mod scatter_plot_visual {
     
     /// A builder for [`ScatterPlotVisual`](crate::model::ScatterPlotVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -31154,6 +31403,7 @@ impl ScatterPlotConfiguration {
 pub mod scatter_plot_configuration {
     
     /// A builder for [`ScatterPlotConfiguration`](crate::model::ScatterPlotConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::ScatterPlotFieldWells>,
@@ -31308,6 +31558,7 @@ impl ScatterPlotFieldWells {
 pub mod scatter_plot_field_wells {
     
     /// A builder for [`ScatterPlotFieldWells`](crate::model::ScatterPlotFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scatter_plot_categorically_aggregated_field_wells: std::option::Option<crate::model::ScatterPlotCategoricallyAggregatedFieldWells>,
@@ -31388,6 +31639,7 @@ impl ScatterPlotUnaggregatedFieldWells {
 pub mod scatter_plot_unaggregated_field_wells {
     
     /// A builder for [`ScatterPlotUnaggregatedFieldWells`](crate::model::ScatterPlotUnaggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) x_axis: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -31509,6 +31761,7 @@ impl ScatterPlotCategoricallyAggregatedFieldWells {
 pub mod scatter_plot_categorically_aggregated_field_wells {
     
     /// A builder for [`ScatterPlotCategoricallyAggregatedFieldWells`](crate::model::ScatterPlotCategoricallyAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) x_axis: std::option::Option<std::vec::Vec<crate::model::MeasureField>>,
@@ -31659,6 +31912,7 @@ impl FunnelChartVisual {
 pub mod funnel_chart_visual {
     
     /// A builder for [`FunnelChartVisual`](crate::model::FunnelChartVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -31823,6 +32077,7 @@ impl FunnelChartConfiguration {
 pub mod funnel_chart_configuration {
     
     /// A builder for [`FunnelChartConfiguration`](crate::model::FunnelChartConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::FunnelChartFieldWells>,
@@ -31989,6 +32244,7 @@ impl FunnelChartDataLabelOptions {
 pub mod funnel_chart_data_label_options {
     
     /// A builder for [`FunnelChartDataLabelOptions`](crate::model::FunnelChartDataLabelOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -32217,6 +32473,7 @@ impl FunnelChartSortConfiguration {
 pub mod funnel_chart_sort_configuration {
     
     /// A builder for [`FunnelChartSortConfiguration`](crate::model::FunnelChartSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -32286,6 +32543,7 @@ impl FunnelChartFieldWells {
 pub mod funnel_chart_field_wells {
     
     /// A builder for [`FunnelChartFieldWells`](crate::model::FunnelChartFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) funnel_chart_aggregated_field_wells: std::option::Option<crate::model::FunnelChartAggregatedFieldWells>,
@@ -32343,6 +32601,7 @@ impl FunnelChartAggregatedFieldWells {
 pub mod funnel_chart_aggregated_field_wells {
     
     /// A builder for [`FunnelChartAggregatedFieldWells`](crate::model::FunnelChartAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -32460,6 +32719,7 @@ impl FilledMapVisual {
 pub mod filled_map_visual {
     
     /// A builder for [`FilledMapVisual`](crate::model::FilledMapVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -32594,6 +32854,7 @@ impl FilledMapConditionalFormatting {
 pub mod filled_map_conditional_formatting {
     
     /// A builder for [`FilledMapConditionalFormatting`](crate::model::FilledMapConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conditional_formatting_options: std::option::Option<std::vec::Vec<crate::model::FilledMapConditionalFormattingOption>>,
@@ -32650,6 +32911,7 @@ impl FilledMapConditionalFormattingOption {
 pub mod filled_map_conditional_formatting_option {
     
     /// A builder for [`FilledMapConditionalFormattingOption`](crate::model::FilledMapConditionalFormattingOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shape: std::option::Option<crate::model::FilledMapShapeConditionalFormatting>,
@@ -32707,6 +32969,7 @@ impl FilledMapShapeConditionalFormatting {
 pub mod filled_map_shape_conditional_formatting {
     
     /// A builder for [`FilledMapShapeConditionalFormatting`](crate::model::FilledMapShapeConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -32769,6 +33032,7 @@ impl ShapeConditionalFormat {
 pub mod shape_conditional_format {
     
     /// A builder for [`ShapeConditionalFormat`](crate::model::ShapeConditionalFormat).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) background_color: std::option::Option<crate::model::ConditionalFormattingColor>,
@@ -32826,6 +33090,7 @@ impl ConditionalFormattingColor {
 pub mod conditional_formatting_color {
     
     /// A builder for [`ConditionalFormattingColor`](crate::model::ConditionalFormattingColor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solid: std::option::Option<crate::model::ConditionalFormattingSolidColor>,
@@ -32903,6 +33168,7 @@ impl  std::fmt::Debug for ConditionalFormattingGradientColor  {
 pub mod conditional_formatting_gradient_color {
     
     /// A builder for [`ConditionalFormattingGradientColor`](crate::model::ConditionalFormattingGradientColor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -32973,6 +33239,7 @@ impl GradientColor {
 pub mod gradient_color {
     
     /// A builder for [`GradientColor`](crate::model::GradientColor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stops: std::option::Option<std::vec::Vec<crate::model::GradientStop>>,
@@ -33043,6 +33310,7 @@ impl GradientStop {
 pub mod gradient_stop {
     
     /// A builder for [`GradientStop`](crate::model::GradientStop).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gradient_offset: std::option::Option<f64>,
@@ -33133,6 +33401,7 @@ impl  std::fmt::Debug for ConditionalFormattingSolidColor  {
 pub mod conditional_formatting_solid_color {
     
     /// A builder for [`ConditionalFormattingSolidColor`](crate::model::ConditionalFormattingSolidColor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -33238,6 +33507,7 @@ impl FilledMapConfiguration {
 pub mod filled_map_configuration {
     
     /// A builder for [`FilledMapConfiguration`](crate::model::FilledMapConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::FilledMapFieldWells>,
@@ -33348,6 +33618,7 @@ impl GeospatialMapStyleOptions {
 pub mod geospatial_map_style_options {
     
     /// A builder for [`GeospatialMapStyleOptions`](crate::model::GeospatialMapStyleOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_map_style: std::option::Option<crate::model::BaseMapStyleType>,
@@ -33497,6 +33768,7 @@ impl GeospatialWindowOptions {
 pub mod geospatial_window_options {
     
     /// A builder for [`GeospatialWindowOptions`](crate::model::GeospatialWindowOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bounds: std::option::Option<crate::model::GeospatialCoordinateBounds>,
@@ -33662,6 +33934,7 @@ impl GeospatialCoordinateBounds {
 pub mod geospatial_coordinate_bounds {
     
     /// A builder for [`GeospatialCoordinateBounds`](crate::model::GeospatialCoordinateBounds).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) north: std::option::Option<f64>,
@@ -33748,6 +34021,7 @@ impl FilledMapSortConfiguration {
 pub mod filled_map_sort_configuration {
     
     /// A builder for [`FilledMapSortConfiguration`](crate::model::FilledMapSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -33805,6 +34079,7 @@ impl FilledMapFieldWells {
 pub mod filled_map_field_wells {
     
     /// A builder for [`FilledMapFieldWells`](crate::model::FilledMapFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filled_map_aggregated_field_wells: std::option::Option<crate::model::FilledMapAggregatedFieldWells>,
@@ -33862,6 +34137,7 @@ impl FilledMapAggregatedFieldWells {
 pub mod filled_map_aggregated_field_wells {
     
     /// A builder for [`FilledMapAggregatedFieldWells`](crate::model::FilledMapAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geospatial: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -33972,6 +34248,7 @@ impl GeospatialMapVisual {
 pub mod geospatial_map_visual {
     
     /// A builder for [`GeospatialMapVisual`](crate::model::GeospatialMapVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -34136,6 +34413,7 @@ impl GeospatialMapConfiguration {
 pub mod geospatial_map_configuration {
     
     /// A builder for [`GeospatialMapConfiguration`](crate::model::GeospatialMapConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::GeospatialMapFieldWells>,
@@ -34265,6 +34543,7 @@ impl GeospatialPointStyleOptions {
 pub mod geospatial_point_style_options {
     
     /// A builder for [`GeospatialPointStyleOptions`](crate::model::GeospatialPointStyleOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selected_point_style: std::option::Option<crate::model::GeospatialSelectedPointStyle>,
@@ -34327,6 +34606,7 @@ impl ClusterMarkerConfiguration {
 pub mod cluster_marker_configuration {
     
     /// A builder for [`ClusterMarkerConfiguration`](crate::model::ClusterMarkerConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_marker: std::option::Option<crate::model::ClusterMarker>,
@@ -34377,6 +34657,7 @@ impl ClusterMarker {
 pub mod cluster_marker {
     
     /// A builder for [`ClusterMarker`](crate::model::ClusterMarker).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simple_cluster_marker: std::option::Option<crate::model::SimpleClusterMarker>,
@@ -34427,6 +34708,7 @@ impl SimpleClusterMarker {
 pub mod simple_cluster_marker {
     
     /// A builder for [`SimpleClusterMarker`](crate::model::SimpleClusterMarker).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) color: std::option::Option<std::string::String>,
@@ -34560,6 +34842,7 @@ impl GeospatialMapFieldWells {
 pub mod geospatial_map_field_wells {
     
     /// A builder for [`GeospatialMapFieldWells`](crate::model::GeospatialMapFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geospatial_map_aggregated_field_wells: std::option::Option<crate::model::GeospatialMapAggregatedFieldWells>,
@@ -34624,6 +34907,7 @@ impl GeospatialMapAggregatedFieldWells {
 pub mod geospatial_map_aggregated_field_wells {
     
     /// A builder for [`GeospatialMapAggregatedFieldWells`](crate::model::GeospatialMapAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geospatial: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -34752,6 +35036,7 @@ impl TreeMapVisual {
 pub mod tree_map_visual {
     
     /// A builder for [`TreeMapVisual`](crate::model::TreeMapVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -34930,6 +35215,7 @@ impl TreeMapConfiguration {
 pub mod tree_map_configuration {
     
     /// A builder for [`TreeMapConfiguration`](crate::model::TreeMapConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::TreeMapFieldWells>,
@@ -35090,6 +35376,7 @@ impl ColorScale {
 pub mod color_scale {
     
     /// A builder for [`ColorScale`](crate::model::ColorScale).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) colors: std::option::Option<std::vec::Vec<crate::model::DataColor>>,
@@ -35177,6 +35464,7 @@ impl DataColor {
 pub mod data_color {
     
     /// A builder for [`DataColor`](crate::model::DataColor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) color: std::option::Option<std::string::String>,
@@ -35328,6 +35616,7 @@ impl TreeMapSortConfiguration {
 pub mod tree_map_sort_configuration {
     
     /// A builder for [`TreeMapSortConfiguration`](crate::model::TreeMapSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tree_map_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -35397,6 +35686,7 @@ impl TreeMapFieldWells {
 pub mod tree_map_field_wells {
     
     /// A builder for [`TreeMapFieldWells`](crate::model::TreeMapFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tree_map_aggregated_field_wells: std::option::Option<crate::model::TreeMapAggregatedFieldWells>,
@@ -35461,6 +35751,7 @@ impl TreeMapAggregatedFieldWells {
 pub mod tree_map_aggregated_field_wells {
     
     /// A builder for [`TreeMapAggregatedFieldWells`](crate::model::TreeMapAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -35589,6 +35880,7 @@ impl HeatMapVisual {
 pub mod heat_map_visual {
     
     /// A builder for [`HeatMapVisual`](crate::model::HeatMapVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -35760,6 +36052,7 @@ impl HeatMapConfiguration {
 pub mod heat_map_configuration {
     
     /// A builder for [`HeatMapConfiguration`](crate::model::HeatMapConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::HeatMapFieldWells>,
@@ -35915,6 +36208,7 @@ impl HeatMapSortConfiguration {
 pub mod heat_map_sort_configuration {
     
     /// A builder for [`HeatMapSortConfiguration`](crate::model::HeatMapSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) heat_map_row_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -36014,6 +36308,7 @@ impl HeatMapFieldWells {
 pub mod heat_map_field_wells {
     
     /// A builder for [`HeatMapFieldWells`](crate::model::HeatMapFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) heat_map_aggregated_field_wells: std::option::Option<crate::model::HeatMapAggregatedFieldWells>,
@@ -36078,6 +36373,7 @@ impl HeatMapAggregatedFieldWells {
 pub mod heat_map_aggregated_field_wells {
     
     /// A builder for [`HeatMapAggregatedFieldWells`](crate::model::HeatMapAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rows: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -36206,6 +36502,7 @@ impl LineChartVisual {
 pub mod line_chart_visual {
     
     /// A builder for [`LineChartVisual`](crate::model::LineChartVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -36454,6 +36751,7 @@ impl LineChartConfiguration {
 pub mod line_chart_configuration {
     
     /// A builder for [`LineChartConfiguration`](crate::model::LineChartConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::LineChartFieldWells>,
@@ -36751,6 +37049,7 @@ impl ContributionAnalysisDefault {
 pub mod contribution_analysis_default {
     
     /// A builder for [`ContributionAnalysisDefault`](crate::model::ContributionAnalysisDefault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) measure_field_id: std::option::Option<std::string::String>,
@@ -36827,6 +37126,7 @@ impl SeriesItem {
 pub mod series_item {
     
     /// A builder for [`SeriesItem`](crate::model::SeriesItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_series_item: std::option::Option<crate::model::FieldSeriesItem>,
@@ -36920,6 +37220,7 @@ impl  std::fmt::Debug for DataFieldSeriesItem  {
 pub mod data_field_series_item {
     
     /// A builder for [`DataFieldSeriesItem`](crate::model::DataFieldSeriesItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -37023,6 +37324,7 @@ impl LineChartSeriesSettings {
 pub mod line_chart_series_settings {
     
     /// A builder for [`LineChartSeriesSettings`](crate::model::LineChartSeriesSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) line_style_settings: std::option::Option<crate::model::LineChartLineStyleSettings>,
@@ -37120,6 +37422,7 @@ impl LineChartMarkerStyleSettings {
 pub mod line_chart_marker_style_settings {
     
     /// A builder for [`LineChartMarkerStyleSettings`](crate::model::LineChartMarkerStyleSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker_visibility: std::option::Option<crate::model::Visibility>,
@@ -37358,6 +37661,7 @@ impl LineChartLineStyleSettings {
 pub mod line_chart_line_style_settings {
     
     /// A builder for [`LineChartLineStyleSettings`](crate::model::LineChartLineStyleSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) line_visibility: std::option::Option<crate::model::Visibility>,
@@ -37652,6 +37956,7 @@ impl FieldSeriesItem {
 pub mod field_series_item {
     
     /// A builder for [`FieldSeriesItem`](crate::model::FieldSeriesItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -37740,6 +38045,7 @@ impl LineChartDefaultSeriesSettings {
 pub mod line_chart_default_series_settings {
     
     /// A builder for [`LineChartDefaultSeriesSettings`](crate::model::LineChartDefaultSeriesSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) axis_binding: std::option::Option<crate::model::AxisBinding>,
@@ -37821,6 +38127,7 @@ impl LineSeriesAxisDisplayOptions {
 pub mod line_series_axis_display_options {
     
     /// A builder for [`LineSeriesAxisDisplayOptions`](crate::model::LineSeriesAxisDisplayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) axis_options: std::option::Option<crate::model::AxisDisplayOptions>,
@@ -37899,6 +38206,7 @@ impl MissingDataConfiguration {
 pub mod missing_data_configuration {
     
     /// A builder for [`MissingDataConfiguration`](crate::model::MissingDataConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) treatment_option: std::option::Option<crate::model::MissingDataTreatmentOption>,
@@ -38064,6 +38372,7 @@ impl SmallMultiplesOptions {
 pub mod small_multiples_options {
     
     /// A builder for [`SmallMultiplesOptions`](crate::model::SmallMultiplesOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_visible_rows: std::option::Option<i64>,
@@ -38198,6 +38507,7 @@ impl PanelConfiguration {
 pub mod panel_configuration {
     
     /// A builder for [`PanelConfiguration`](crate::model::PanelConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<crate::model::PanelTitleOptions>,
@@ -38445,6 +38755,7 @@ impl PanelTitleOptions {
 pub mod panel_title_options {
     
     /// A builder for [`PanelTitleOptions`](crate::model::PanelTitleOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -38705,6 +39016,7 @@ impl ForecastConfiguration {
 pub mod forecast_configuration {
     
     /// A builder for [`ForecastConfiguration`](crate::model::ForecastConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast_properties: std::option::Option<crate::model::TimeBasedForecastProperties>,
@@ -38774,6 +39086,7 @@ impl ForecastScenario {
 pub mod forecast_scenario {
     
     /// A builder for [`ForecastScenario`](crate::model::ForecastScenario).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_point_scenario: std::option::Option<crate::model::WhatIfPointScenario>,
@@ -38850,6 +39163,7 @@ impl WhatIfRangeScenario {
 pub mod what_if_range_scenario {
     
     /// A builder for [`WhatIfRangeScenario`](crate::model::WhatIfRangeScenario).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -38932,6 +39246,7 @@ impl WhatIfPointScenario {
 pub mod what_if_point_scenario {
     
     /// A builder for [`WhatIfPointScenario`](crate::model::WhatIfPointScenario).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
@@ -39038,6 +39353,7 @@ impl TimeBasedForecastProperties {
 pub mod time_based_forecast_properties {
     
     /// A builder for [`TimeBasedForecastProperties`](crate::model::TimeBasedForecastProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) periods_forward: std::option::Option<i32>,
@@ -39184,6 +39500,7 @@ impl LineChartSortConfiguration {
 pub mod line_chart_sort_configuration {
     
     /// A builder for [`LineChartSortConfiguration`](crate::model::LineChartSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -39294,6 +39611,7 @@ impl LineChartFieldWells {
 pub mod line_chart_field_wells {
     
     /// A builder for [`LineChartFieldWells`](crate::model::LineChartFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) line_chart_aggregated_field_wells: std::option::Option<crate::model::LineChartAggregatedFieldWells>,
@@ -39365,6 +39683,7 @@ impl LineChartAggregatedFieldWells {
 pub mod line_chart_aggregated_field_wells {
     
     /// A builder for [`LineChartAggregatedFieldWells`](crate::model::LineChartAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -39511,6 +39830,7 @@ impl GaugeChartVisual {
 pub mod gauge_chart_visual {
     
     /// A builder for [`GaugeChartVisual`](crate::model::GaugeChartVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -39627,6 +39947,7 @@ impl GaugeChartConditionalFormatting {
 pub mod gauge_chart_conditional_formatting {
     
     /// A builder for [`GaugeChartConditionalFormatting`](crate::model::GaugeChartConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conditional_formatting_options: std::option::Option<std::vec::Vec<crate::model::GaugeChartConditionalFormattingOption>>,
@@ -39690,6 +40011,7 @@ impl GaugeChartConditionalFormattingOption {
 pub mod gauge_chart_conditional_formatting_option {
     
     /// A builder for [`GaugeChartConditionalFormattingOption`](crate::model::GaugeChartConditionalFormattingOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_value: std::option::Option<crate::model::GaugeChartPrimaryValueConditionalFormatting>,
@@ -39752,6 +40074,7 @@ impl GaugeChartArcConditionalFormatting {
 pub mod gauge_chart_arc_conditional_formatting {
     
     /// A builder for [`GaugeChartArcConditionalFormatting`](crate::model::GaugeChartArcConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) foreground_color: std::option::Option<crate::model::ConditionalFormattingColor>,
@@ -39809,6 +40132,7 @@ impl GaugeChartPrimaryValueConditionalFormatting {
 pub mod gauge_chart_primary_value_conditional_formatting {
     
     /// A builder for [`GaugeChartPrimaryValueConditionalFormatting`](crate::model::GaugeChartPrimaryValueConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text_color: std::option::Option<crate::model::ConditionalFormattingColor>,
@@ -39878,6 +40202,7 @@ impl ConditionalFormattingIcon {
 pub mod conditional_formatting_icon {
     
     /// A builder for [`ConditionalFormattingIcon`](crate::model::ConditionalFormattingIcon).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) icon_set: std::option::Option<crate::model::ConditionalFormattingIconSet>,
@@ -39971,6 +40296,7 @@ impl  std::fmt::Debug for ConditionalFormattingCustomIconCondition  {
 pub mod conditional_formatting_custom_icon_condition {
     
     /// A builder for [`ConditionalFormattingCustomIconCondition`](crate::model::ConditionalFormattingCustomIconCondition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -40067,6 +40393,7 @@ impl ConditionalFormattingIconDisplayConfiguration {
 pub mod conditional_formatting_icon_display_configuration {
     
     /// A builder for [`ConditionalFormattingIconDisplayConfiguration`](crate::model::ConditionalFormattingIconDisplayConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) icon_display_option: std::option::Option<crate::model::ConditionalFormattingIconDisplayOption>,
@@ -40201,6 +40528,7 @@ impl ConditionalFormattingCustomIconOptions {
 pub mod conditional_formatting_custom_icon_options {
     
     /// A builder for [`ConditionalFormattingCustomIconOptions`](crate::model::ConditionalFormattingCustomIconOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) icon: std::option::Option<crate::model::Icon>,
@@ -40480,6 +40808,7 @@ impl  std::fmt::Debug for ConditionalFormattingIconSet  {
 pub mod conditional_formatting_icon_set {
     
     /// A builder for [`ConditionalFormattingIconSet`](crate::model::ConditionalFormattingIconSet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -40705,6 +41034,7 @@ impl GaugeChartConfiguration {
 pub mod gauge_chart_configuration {
     
     /// A builder for [`GaugeChartConfiguration`](crate::model::GaugeChartConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::GaugeChartFieldWells>,
@@ -40831,6 +41161,7 @@ impl GaugeChartOptions {
 pub mod gauge_chart_options {
     
     /// A builder for [`GaugeChartOptions`](crate::model::GaugeChartOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_value_display_type: std::option::Option<crate::model::PrimaryValueDisplayType>,
@@ -40936,6 +41267,7 @@ impl ArcConfiguration {
 pub mod arc_configuration {
     
     /// A builder for [`ArcConfiguration`](crate::model::ArcConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arc_angle: std::option::Option<f64>,
@@ -41092,6 +41424,7 @@ impl ArcAxisConfiguration {
 pub mod arc_axis_configuration {
     
     /// A builder for [`ArcAxisConfiguration`](crate::model::ArcAxisConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) range: std::option::Option<crate::model::ArcAxisDisplayRange>,
@@ -41162,6 +41495,7 @@ impl ArcAxisDisplayRange {
 pub mod arc_axis_display_range {
     
     /// A builder for [`ArcAxisDisplayRange`](crate::model::ArcAxisDisplayRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<f64>,
@@ -41241,6 +41575,7 @@ impl ComparisonConfiguration {
 pub mod comparison_configuration {
     
     /// A builder for [`ComparisonConfiguration`](crate::model::ComparisonConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comparison_method: std::option::Option<crate::model::ComparisonMethod>,
@@ -41321,6 +41656,7 @@ impl ComparisonFormatConfiguration {
 pub mod comparison_format_configuration {
     
     /// A builder for [`ComparisonFormatConfiguration`](crate::model::ComparisonFormatConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_display_format_configuration: std::option::Option<crate::model::NumberDisplayFormatConfiguration>,
@@ -41564,6 +41900,7 @@ impl GaugeChartFieldWells {
 pub mod gauge_chart_field_wells {
     
     /// A builder for [`GaugeChartFieldWells`](crate::model::GaugeChartFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::MeasureField>>,
@@ -41681,6 +42018,7 @@ impl PieChartVisual {
 pub mod pie_chart_visual {
     
     /// A builder for [`PieChartVisual`](crate::model::PieChartVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -41873,6 +42211,7 @@ impl PieChartConfiguration {
 pub mod pie_chart_configuration {
     
     /// A builder for [`PieChartConfiguration`](crate::model::PieChartConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::PieChartFieldWells>,
@@ -42068,6 +42407,7 @@ impl DonutOptions {
 pub mod donut_options {
     
     /// A builder for [`DonutOptions`](crate::model::DonutOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arc_options: std::option::Option<crate::model::ArcOptions>,
@@ -42142,6 +42482,7 @@ impl DonutCenterOptions {
 pub mod donut_center_options {
     
     /// A builder for [`DonutCenterOptions`](crate::model::DonutCenterOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_visibility: std::option::Option<crate::model::Visibility>,
@@ -42192,6 +42533,7 @@ impl ArcOptions {
 pub mod arc_options {
     
     /// A builder for [`ArcOptions`](crate::model::ArcOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arc_thickness: std::option::Option<crate::model::ArcThickness>,
@@ -42355,6 +42697,7 @@ impl PieChartSortConfiguration {
 pub mod pie_chart_sort_configuration {
     
     /// A builder for [`PieChartSortConfiguration`](crate::model::PieChartSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -42454,6 +42797,7 @@ impl PieChartFieldWells {
 pub mod pie_chart_field_wells {
     
     /// A builder for [`PieChartFieldWells`](crate::model::PieChartFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pie_chart_aggregated_field_wells: std::option::Option<crate::model::PieChartAggregatedFieldWells>,
@@ -42518,6 +42862,7 @@ impl PieChartAggregatedFieldWells {
 pub mod pie_chart_aggregated_field_wells {
     
     /// A builder for [`PieChartAggregatedFieldWells`](crate::model::PieChartAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -42653,6 +42998,7 @@ impl KpiVisual {
 pub mod kpi_visual {
     
     /// A builder for [`KpiVisual`](crate::model::KpiVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -42787,6 +43133,7 @@ impl KpiConditionalFormatting {
 pub mod kpi_conditional_formatting {
     
     /// A builder for [`KpiConditionalFormatting`](crate::model::KpiConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conditional_formatting_options: std::option::Option<std::vec::Vec<crate::model::KpiConditionalFormattingOption>>,
@@ -42850,6 +43197,7 @@ impl KpiConditionalFormattingOption {
 pub mod kpi_conditional_formatting_option {
     
     /// A builder for [`KpiConditionalFormattingOption`](crate::model::KpiConditionalFormattingOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_value: std::option::Option<crate::model::KpiPrimaryValueConditionalFormatting>,
@@ -42912,6 +43260,7 @@ impl KpiProgressBarConditionalFormatting {
 pub mod kpi_progress_bar_conditional_formatting {
     
     /// A builder for [`KpiProgressBarConditionalFormatting`](crate::model::KpiProgressBarConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) foreground_color: std::option::Option<crate::model::ConditionalFormattingColor>,
@@ -42969,6 +43318,7 @@ impl KpiPrimaryValueConditionalFormatting {
 pub mod kpi_primary_value_conditional_formatting {
     
     /// A builder for [`KpiPrimaryValueConditionalFormatting`](crate::model::KpiPrimaryValueConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text_color: std::option::Option<crate::model::ConditionalFormattingColor>,
@@ -43045,6 +43395,7 @@ impl KpiConfiguration {
 pub mod kpi_configuration {
     
     /// A builder for [`KpiConfiguration`](crate::model::KpiConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::KpiFieldWells>,
@@ -43161,6 +43512,7 @@ impl KpiOptions {
 pub mod kpi_options {
     
     /// A builder for [`KpiOptions`](crate::model::KpiOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_bar: std::option::Option<crate::model::ProgressBarOptions>,
@@ -43283,6 +43635,7 @@ impl SecondaryValueOptions {
 pub mod secondary_value_options {
     
     /// A builder for [`SecondaryValueOptions`](crate::model::SecondaryValueOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -43333,6 +43686,7 @@ impl TrendArrowOptions {
 pub mod trend_arrow_options {
     
     /// A builder for [`TrendArrowOptions`](crate::model::TrendArrowOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -43383,6 +43737,7 @@ impl ProgressBarOptions {
 pub mod progress_bar_options {
     
     /// A builder for [`ProgressBarOptions`](crate::model::ProgressBarOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -43433,6 +43788,7 @@ impl KpiSortConfiguration {
 pub mod kpi_sort_configuration {
     
     /// A builder for [`KpiSortConfiguration`](crate::model::KpiSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trend_group_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -43503,6 +43859,7 @@ impl KpiFieldWells {
 pub mod kpi_field_wells {
     
     /// A builder for [`KpiFieldWells`](crate::model::KpiFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::MeasureField>>,
@@ -43640,6 +43997,7 @@ impl BarChartVisual {
 pub mod bar_chart_visual {
     
     /// A builder for [`BarChartVisual`](crate::model::BarChartVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -43875,6 +44233,7 @@ impl BarChartConfiguration {
 pub mod bar_chart_configuration {
     
     /// A builder for [`BarChartConfiguration`](crate::model::BarChartConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::BarChartFieldWells>,
@@ -44242,6 +44601,7 @@ impl BarChartSortConfiguration {
 pub mod bar_chart_sort_configuration {
     
     /// A builder for [`BarChartSortConfiguration`](crate::model::BarChartSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -44371,6 +44731,7 @@ impl BarChartFieldWells {
 pub mod bar_chart_field_wells {
     
     /// A builder for [`BarChartFieldWells`](crate::model::BarChartFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bar_chart_aggregated_field_wells: std::option::Option<crate::model::BarChartAggregatedFieldWells>,
@@ -44442,6 +44803,7 @@ impl BarChartAggregatedFieldWells {
 pub mod bar_chart_aggregated_field_wells {
     
     /// A builder for [`BarChartAggregatedFieldWells`](crate::model::BarChartAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -44588,6 +44950,7 @@ impl PivotTableVisual {
 pub mod pivot_table_visual {
     
     /// A builder for [`PivotTableVisual`](crate::model::PivotTableVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -44704,6 +45067,7 @@ impl PivotTableConditionalFormatting {
 pub mod pivot_table_conditional_formatting {
     
     /// A builder for [`PivotTableConditionalFormatting`](crate::model::PivotTableConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conditional_formatting_options: std::option::Option<std::vec::Vec<crate::model::PivotTableConditionalFormattingOption>>,
@@ -44760,6 +45124,7 @@ impl PivotTableConditionalFormattingOption {
 pub mod pivot_table_conditional_formatting_option {
     
     /// A builder for [`PivotTableConditionalFormattingOption`](crate::model::PivotTableConditionalFormattingOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell: std::option::Option<crate::model::PivotTableCellConditionalFormatting>,
@@ -44824,6 +45189,7 @@ impl PivotTableCellConditionalFormatting {
 pub mod pivot_table_cell_conditional_formatting {
     
     /// A builder for [`PivotTableCellConditionalFormatting`](crate::model::PivotTableCellConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -44898,6 +45264,7 @@ impl PivotTableConditionalFormattingScope {
 pub mod pivot_table_conditional_formatting_scope {
     
     /// A builder for [`PivotTableConditionalFormattingScope`](crate::model::PivotTableConditionalFormattingScope).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role: std::option::Option<crate::model::PivotTableConditionalFormattingScopeRole>,
@@ -45049,6 +45416,7 @@ impl TextConditionalFormat {
 pub mod text_conditional_format {
     
     /// A builder for [`TextConditionalFormat`](crate::model::TextConditionalFormat).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) background_color: std::option::Option<crate::model::ConditionalFormattingColor>,
@@ -45158,6 +45526,7 @@ impl PivotTableConfiguration {
 pub mod pivot_table_configuration {
     
     /// A builder for [`PivotTableConfiguration`](crate::model::PivotTableConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::PivotTableFieldWells>,
@@ -45275,6 +45644,7 @@ impl PivotTablePaginatedReportOptions {
 pub mod pivot_table_paginated_report_options {
     
     /// A builder for [`PivotTablePaginatedReportOptions`](crate::model::PivotTablePaginatedReportOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vertical_overflow_visibility: std::option::Option<crate::model::Visibility>,
@@ -45344,6 +45714,7 @@ impl PivotTableFieldOptions {
 pub mod pivot_table_field_options {
     
     /// A builder for [`PivotTableFieldOptions`](crate::model::PivotTableFieldOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selected_field_options: std::option::Option<std::vec::Vec<crate::model::PivotTableFieldOption>>,
@@ -45425,6 +45796,7 @@ impl PivotTableDataPathOption {
 pub mod pivot_table_data_path_option {
     
     /// A builder for [`PivotTableDataPathOption`](crate::model::PivotTableDataPathOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_path_list: std::option::Option<std::vec::Vec<crate::model::DataPathValue>>,
@@ -45507,6 +45879,7 @@ impl PivotTableFieldOption {
 pub mod pivot_table_field_option {
     
     /// A builder for [`PivotTableFieldOption`](crate::model::PivotTableFieldOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -45602,6 +45975,7 @@ impl PivotTableTotalOptions {
 pub mod pivot_table_total_options {
     
     /// A builder for [`PivotTableTotalOptions`](crate::model::PivotTableTotalOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) row_subtotal_options: std::option::Option<crate::model::SubtotalOptions>,
@@ -45730,6 +46104,7 @@ impl PivotTotalOptions {
 pub mod pivot_total_options {
     
     /// A builder for [`PivotTotalOptions`](crate::model::PivotTotalOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) totals_visibility: std::option::Option<crate::model::Visibility>,
@@ -45901,6 +46276,7 @@ impl TableCellStyle {
 pub mod table_cell_style {
     
     /// A builder for [`TableCellStyle`](crate::model::TableCellStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -46042,6 +46418,7 @@ impl GlobalTableBorderOptions {
 pub mod global_table_border_options {
     
     /// A builder for [`GlobalTableBorderOptions`](crate::model::GlobalTableBorderOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uniform_border: std::option::Option<crate::model::TableBorderOptions>,
@@ -46139,6 +46516,7 @@ impl TableSideBorderOptions {
 pub mod table_side_border_options {
     
     /// A builder for [`TableSideBorderOptions`](crate::model::TableSideBorderOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inner_vertical: std::option::Option<crate::model::TableBorderOptions>,
@@ -46263,6 +46641,7 @@ impl TableBorderOptions {
 pub mod table_border_options {
     
     /// A builder for [`TableBorderOptions`](crate::model::TableBorderOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) color: std::option::Option<std::string::String>,
@@ -46794,6 +47173,7 @@ impl SubtotalOptions {
 pub mod subtotal_options {
     
     /// A builder for [`SubtotalOptions`](crate::model::SubtotalOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) totals_visibility: std::option::Option<crate::model::Visibility>,
@@ -46922,6 +47302,7 @@ impl PivotTableFieldSubtotalOptions {
 pub mod pivot_table_field_subtotal_options {
     
     /// A builder for [`PivotTableFieldSubtotalOptions`](crate::model::PivotTableFieldSubtotalOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -47115,6 +47496,7 @@ impl PivotTableOptions {
 pub mod pivot_table_options {
     
     /// A builder for [`PivotTableOptions`](crate::model::PivotTableOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_placement: std::option::Option<crate::model::PivotTableMetricPlacement>,
@@ -47268,6 +47650,7 @@ impl RowAlternateColorOptions {
 pub mod row_alternate_color_options {
     
     /// A builder for [`RowAlternateColorOptions`](crate::model::RowAlternateColorOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::WidgetStatus>,
@@ -47418,6 +47801,7 @@ impl PivotTableSortConfiguration {
 pub mod pivot_table_sort_configuration {
     
     /// A builder for [`PivotTableSortConfiguration`](crate::model::PivotTableSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_sort_options: std::option::Option<std::vec::Vec<crate::model::PivotFieldSortOptions>>,
@@ -47481,6 +47865,7 @@ impl PivotFieldSortOptions {
 pub mod pivot_field_sort_options {
     
     /// A builder for [`PivotFieldSortOptions`](crate::model::PivotFieldSortOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -47557,6 +47942,7 @@ impl PivotTableSortBy {
 pub mod pivot_table_sort_by {
     
     /// A builder for [`PivotTableSortBy`](crate::model::PivotTableSortBy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<crate::model::FieldSort>,
@@ -47638,6 +48024,7 @@ impl DataPathSort {
 pub mod data_path_sort {
     
     /// A builder for [`DataPathSort`](crate::model::DataPathSort).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direction: std::option::Option<crate::model::SortDirection>,
@@ -47707,6 +48094,7 @@ impl PivotTableFieldWells {
 pub mod pivot_table_field_wells {
     
     /// A builder for [`PivotTableFieldWells`](crate::model::PivotTableFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pivot_table_aggregated_field_wells: std::option::Option<crate::model::PivotTableAggregatedFieldWells>,
@@ -47771,6 +48159,7 @@ impl PivotTableAggregatedFieldWells {
 pub mod pivot_table_aggregated_field_wells {
     
     /// A builder for [`PivotTableAggregatedFieldWells`](crate::model::PivotTableAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rows: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -47899,6 +48288,7 @@ impl TableVisual {
 pub mod table_visual {
     
     /// A builder for [`TableVisual`](crate::model::TableVisual).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visual_id: std::option::Option<std::string::String>,
@@ -48015,6 +48405,7 @@ impl TableConditionalFormatting {
 pub mod table_conditional_formatting {
     
     /// A builder for [`TableConditionalFormatting`](crate::model::TableConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conditional_formatting_options: std::option::Option<std::vec::Vec<crate::model::TableConditionalFormattingOption>>,
@@ -48078,6 +48469,7 @@ impl TableConditionalFormattingOption {
 pub mod table_conditional_formatting_option {
     
     /// A builder for [`TableConditionalFormattingOption`](crate::model::TableConditionalFormattingOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell: std::option::Option<crate::model::TableCellConditionalFormatting>,
@@ -48147,6 +48539,7 @@ impl TableRowConditionalFormatting {
 pub mod table_row_conditional_formatting {
     
     /// A builder for [`TableRowConditionalFormatting`](crate::model::TableRowConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) background_color: std::option::Option<crate::model::ConditionalFormattingColor>,
@@ -48216,6 +48609,7 @@ impl TableCellConditionalFormatting {
 pub mod table_cell_conditional_formatting {
     
     /// A builder for [`TableCellConditionalFormatting`](crate::model::TableCellConditionalFormatting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -48320,6 +48714,7 @@ impl TableConfiguration {
 pub mod table_configuration {
     
     /// A builder for [`TableConfiguration`](crate::model::TableConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_wells: std::option::Option<crate::model::TableFieldWells>,
@@ -48448,6 +48843,7 @@ impl TableInlineVisualization {
 pub mod table_inline_visualization {
     
     /// A builder for [`TableInlineVisualization`](crate::model::TableInlineVisualization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_bars: std::option::Option<crate::model::DataBarsOptions>,
@@ -48512,6 +48908,7 @@ impl DataBarsOptions {
 pub mod data_bars_options {
     
     /// A builder for [`DataBarsOptions`](crate::model::DataBarsOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -48593,6 +48990,7 @@ impl TablePaginatedReportOptions {
 pub mod table_paginated_report_options {
     
     /// A builder for [`TablePaginatedReportOptions`](crate::model::TablePaginatedReportOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vertical_overflow_visibility: std::option::Option<crate::model::Visibility>,
@@ -48662,6 +49060,7 @@ impl TableFieldOptions {
 pub mod table_field_options {
     
     /// A builder for [`TableFieldOptions`](crate::model::TableFieldOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selected_field_options: std::option::Option<std::vec::Vec<crate::model::TableFieldOption>>,
@@ -48764,6 +49163,7 @@ impl TableFieldOption {
 pub mod table_field_option {
     
     /// A builder for [`TableFieldOption`](crate::model::TableFieldOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -48869,6 +49269,7 @@ impl TableFieldUrlConfiguration {
 pub mod table_field_url_configuration {
     
     /// A builder for [`TableFieldUrlConfiguration`](crate::model::TableFieldUrlConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link_configuration: std::option::Option<crate::model::TableFieldLinkConfiguration>,
@@ -48931,6 +49332,7 @@ impl TableFieldImageConfiguration {
 pub mod table_field_image_configuration {
     
     /// A builder for [`TableFieldImageConfiguration`](crate::model::TableFieldImageConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sizing_options: std::option::Option<crate::model::TableCellImageSizingConfiguration>,
@@ -48981,6 +49383,7 @@ impl TableCellImageSizingConfiguration {
 pub mod table_cell_image_sizing_configuration {
     
     /// A builder for [`TableCellImageSizingConfiguration`](crate::model::TableCellImageSizingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_cell_image_scaling_configuration: std::option::Option<crate::model::TableCellImageScalingConfiguration>,
@@ -49125,6 +49528,7 @@ impl TableFieldLinkConfiguration {
 pub mod table_field_link_configuration {
     
     /// A builder for [`TableFieldLinkConfiguration`](crate::model::TableFieldLinkConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<crate::model::UrlTargetConfiguration>,
@@ -49194,6 +49598,7 @@ impl TableFieldLinkContentConfiguration {
 pub mod table_field_link_content_configuration {
     
     /// A builder for [`TableFieldLinkContentConfiguration`](crate::model::TableFieldLinkContentConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_text_content: std::option::Option<crate::model::TableFieldCustomTextContent>,
@@ -49256,6 +49661,7 @@ impl TableFieldCustomIconContent {
 pub mod table_field_custom_icon_content {
     
     /// A builder for [`TableFieldCustomIconContent`](crate::model::TableFieldCustomIconContent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) icon: std::option::Option<crate::model::TableFieldIconSetType>,
@@ -49390,6 +49796,7 @@ impl TableFieldCustomTextContent {
 pub mod table_field_custom_text_content {
     
     /// A builder for [`TableFieldCustomTextContent`](crate::model::TableFieldCustomTextContent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -49480,6 +49887,7 @@ impl TotalOptions {
 pub mod total_options {
     
     /// A builder for [`TotalOptions`](crate::model::TotalOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) totals_visibility: std::option::Option<crate::model::Visibility>,
@@ -49599,6 +50007,7 @@ impl TableOptions {
 pub mod table_options {
     
     /// A builder for [`TableOptions`](crate::model::TableOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) orientation: std::option::Option<crate::model::TableOrientation>,
@@ -49774,6 +50183,7 @@ impl TableSortConfiguration {
 pub mod table_sort_configuration {
     
     /// A builder for [`TableSortConfiguration`](crate::model::TableSortConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) row_sort: std::option::Option<std::vec::Vec<crate::model::FieldSortOptions>>,
@@ -49850,6 +50260,7 @@ impl TableFieldWells {
 pub mod table_field_wells {
     
     /// A builder for [`TableFieldWells`](crate::model::TableFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_aggregated_field_wells: std::option::Option<crate::model::TableAggregatedFieldWells>,
@@ -49912,6 +50323,7 @@ impl TableUnaggregatedFieldWells {
 pub mod table_unaggregated_field_wells {
     
     /// A builder for [`TableUnaggregatedFieldWells`](crate::model::TableUnaggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::UnaggregatedField>>,
@@ -49982,6 +50394,7 @@ impl UnaggregatedField {
 pub mod unaggregated_field {
     
     /// A builder for [`UnaggregatedField`](crate::model::UnaggregatedField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
@@ -50063,6 +50476,7 @@ impl TableAggregatedFieldWells {
 pub mod table_aggregated_field_wells {
     
     /// A builder for [`TableAggregatedFieldWells`](crate::model::TableAggregatedFieldWells).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_by: std::option::Option<std::vec::Vec<crate::model::DimensionField>>,
@@ -50180,6 +50594,7 @@ impl FilterControl {
 pub mod filter_control {
     
     /// A builder for [`FilterControl`](crate::model::FilterControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) date_time_picker: std::option::Option<crate::model::FilterDateTimePickerControl>,
@@ -50323,6 +50738,7 @@ impl FilterRelativeDateTimeControl {
 pub mod filter_relative_date_time_control {
     
     /// A builder for [`FilterRelativeDateTimeControl`](crate::model::FilterRelativeDateTimeControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_control_id: std::option::Option<std::string::String>,
@@ -50416,6 +50832,7 @@ impl RelativeDateTimeControlDisplayOptions {
 pub mod relative_date_time_control_display_options {
     
     /// A builder for [`RelativeDateTimeControlDisplayOptions`](crate::model::RelativeDateTimeControlDisplayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title_options: std::option::Option<crate::model::LabelOptions>,
@@ -50535,6 +50952,7 @@ impl FilterSliderControl {
 pub mod filter_slider_control {
     
     /// A builder for [`FilterSliderControl`](crate::model::FilterSliderControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_control_id: std::option::Option<std::string::String>,
@@ -50762,6 +51180,7 @@ impl SliderControlDisplayOptions {
 pub mod slider_control_display_options {
     
     /// A builder for [`SliderControlDisplayOptions`](crate::model::SliderControlDisplayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title_options: std::option::Option<crate::model::LabelOptions>,
@@ -50840,6 +51259,7 @@ impl FilterTextAreaControl {
 pub mod filter_text_area_control {
     
     /// A builder for [`FilterTextAreaControl`](crate::model::FilterTextAreaControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_control_id: std::option::Option<std::string::String>,
@@ -50945,6 +51365,7 @@ impl TextAreaControlDisplayOptions {
 pub mod text_area_control_display_options {
     
     /// A builder for [`TextAreaControlDisplayOptions`](crate::model::TextAreaControlDisplayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title_options: std::option::Option<crate::model::LabelOptions>,
@@ -51007,6 +51428,7 @@ impl TextControlPlaceholderOptions {
 pub mod text_control_placeholder_options {
     
     /// A builder for [`TextControlPlaceholderOptions`](crate::model::TextControlPlaceholderOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -51078,6 +51500,7 @@ impl FilterTextFieldControl {
 pub mod filter_text_field_control {
     
     /// A builder for [`FilterTextFieldControl`](crate::model::FilterTextFieldControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_control_id: std::option::Option<std::string::String>,
@@ -51171,6 +51594,7 @@ impl TextFieldControlDisplayOptions {
 pub mod text_field_control_display_options {
     
     /// A builder for [`TextFieldControlDisplayOptions`](crate::model::TextFieldControlDisplayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title_options: std::option::Option<crate::model::LabelOptions>,
@@ -51283,6 +51707,7 @@ impl FilterDropDownControl {
 pub mod filter_drop_down_control {
     
     /// A builder for [`FilterDropDownControl`](crate::model::FilterDropDownControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_control_id: std::option::Option<std::string::String>,
@@ -51413,6 +51838,7 @@ impl CascadingControlConfiguration {
 pub mod cascading_control_configuration {
     
     /// A builder for [`CascadingControlConfiguration`](crate::model::CascadingControlConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_controls: std::option::Option<std::vec::Vec<crate::model::CascadingControlSource>>,
@@ -51476,6 +51902,7 @@ impl CascadingControlSource {
 pub mod cascading_control_source {
     
     /// A builder for [`CascadingControlSource`](crate::model::CascadingControlSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_sheet_control_id: std::option::Option<std::string::String>,
@@ -51538,6 +51965,7 @@ impl FilterSelectableValues {
 pub mod filter_selectable_values {
     
     /// A builder for [`FilterSelectableValues`](crate::model::FilterSelectableValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -51683,6 +52111,7 @@ impl DropDownControlDisplayOptions {
 pub mod drop_down_control_display_options {
     
     /// A builder for [`DropDownControlDisplayOptions`](crate::model::DropDownControlDisplayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) select_all_options: std::option::Option<crate::model::ListControlSelectAllOptions>,
@@ -51745,6 +52174,7 @@ impl ListControlSelectAllOptions {
 pub mod list_control_select_all_options {
     
     /// A builder for [`ListControlSelectAllOptions`](crate::model::ListControlSelectAllOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -51845,6 +52275,7 @@ impl FilterListControl {
 pub mod filter_list_control {
     
     /// A builder for [`FilterListControl`](crate::model::FilterListControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_control_id: std::option::Option<std::string::String>,
@@ -51989,6 +52420,7 @@ impl ListControlDisplayOptions {
 pub mod list_control_display_options {
     
     /// A builder for [`ListControlDisplayOptions`](crate::model::ListControlDisplayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) search_options: std::option::Option<crate::model::ListControlSearchOptions>,
@@ -52063,6 +52495,7 @@ impl ListControlSearchOptions {
 pub mod list_control_search_options {
     
     /// A builder for [`ListControlSearchOptions`](crate::model::ListControlSearchOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -52149,6 +52582,7 @@ impl FilterDateTimePickerControl {
 pub mod filter_date_time_picker_control {
     
     /// A builder for [`FilterDateTimePickerControl`](crate::model::FilterDateTimePickerControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_control_id: std::option::Option<std::string::String>,
@@ -52344,6 +52778,7 @@ impl DateTimePickerControlDisplayOptions {
 pub mod date_time_picker_control_display_options {
     
     /// A builder for [`DateTimePickerControlDisplayOptions`](crate::model::DateTimePickerControlDisplayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title_options: std::option::Option<crate::model::LabelOptions>,
@@ -52442,6 +52877,7 @@ impl ParameterControl {
 pub mod parameter_control {
     
     /// A builder for [`ParameterControl`](crate::model::ParameterControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) date_time_picker: std::option::Option<crate::model::ParameterDateTimePickerControl>,
@@ -52594,6 +53030,7 @@ impl ParameterSliderControl {
 pub mod parameter_slider_control {
     
     /// A builder for [`ParameterSliderControl`](crate::model::ParameterSliderControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_control_id: std::option::Option<std::string::String>,
@@ -52747,6 +53184,7 @@ impl ParameterTextAreaControl {
 pub mod parameter_text_area_control {
     
     /// A builder for [`ParameterTextAreaControl`](crate::model::ParameterTextAreaControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_control_id: std::option::Option<std::string::String>,
@@ -52866,6 +53304,7 @@ impl ParameterTextFieldControl {
 pub mod parameter_text_field_control {
     
     /// A builder for [`ParameterTextFieldControl`](crate::model::ParameterTextFieldControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_control_id: std::option::Option<std::string::String>,
@@ -52994,6 +53433,7 @@ impl ParameterDropDownControl {
 pub mod parameter_drop_down_control {
     
     /// A builder for [`ParameterDropDownControl`](crate::model::ParameterDropDownControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_control_id: std::option::Option<std::string::String>,
@@ -53123,6 +53563,7 @@ impl ParameterSelectableValues {
 pub mod parameter_selectable_values {
     
     /// A builder for [`ParameterSelectableValues`](crate::model::ParameterSelectableValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -53233,6 +53674,7 @@ impl ParameterListControl {
 pub mod parameter_list_control {
     
     /// A builder for [`ParameterListControl`](crate::model::ParameterListControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_control_id: std::option::Option<std::string::String>,
@@ -53376,6 +53818,7 @@ impl ParameterDateTimePickerControl {
 pub mod parameter_date_time_picker_control {
     
     /// A builder for [`ParameterDateTimePickerControl`](crate::model::ParameterDateTimePickerControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_control_id: std::option::Option<std::string::String>,
@@ -53476,6 +53919,7 @@ impl DataSetConfiguration {
 pub mod data_set_configuration {
     
     /// A builder for [`DataSetConfiguration`](crate::model::DataSetConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) placeholder: std::option::Option<std::string::String>,
@@ -53563,6 +54007,7 @@ impl ColumnGroupSchema {
 pub mod column_group_schema {
     
     /// A builder for [`ColumnGroupSchema`](crate::model::ColumnGroupSchema).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -53631,6 +54076,7 @@ impl ColumnGroupColumnSchema {
 pub mod column_group_column_schema {
     
     /// A builder for [`ColumnGroupColumnSchema`](crate::model::ColumnGroupColumnSchema).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -53681,6 +54127,7 @@ impl DataSetSchema {
 pub mod data_set_schema {
     
     /// A builder for [`DataSetSchema`](crate::model::DataSetSchema).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_schema_list: std::option::Option<std::vec::Vec<crate::model::ColumnSchema>>,
@@ -53751,6 +54198,7 @@ impl ColumnSchema {
 pub mod column_schema {
     
     /// A builder for [`ColumnSchema`](crate::model::ColumnSchema).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -53832,6 +54280,7 @@ impl TemplateSourceEntity {
 pub mod template_source_entity {
     
     /// A builder for [`TemplateSourceEntity`](crate::model::TemplateSourceEntity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_analysis: std::option::Option<crate::model::TemplateSourceAnalysis>,
@@ -53894,6 +54343,7 @@ impl TemplateSourceTemplate {
 pub mod template_source_template {
     
     /// A builder for [`TemplateSourceTemplate`](crate::model::TemplateSourceTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -53951,6 +54401,7 @@ impl TemplateSourceAnalysis {
 pub mod template_source_analysis {
     
     /// A builder for [`TemplateSourceAnalysis`](crate::model::TemplateSourceAnalysis).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -54026,6 +54477,7 @@ impl DataSetReference {
 pub mod data_set_reference {
     
     /// A builder for [`DataSetReference`](crate::model::DataSetReference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_placeholder: std::option::Option<std::string::String>,
@@ -54196,6 +54648,7 @@ impl Group {
 pub mod group {
     
     /// A builder for [`Group`](crate::model::Group).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -54282,6 +54735,7 @@ impl SslProperties {
 pub mod ssl_properties {
     
     /// A builder for [`SslProperties`](crate::model::SslProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disable_ssl: std::option::Option<bool>,
@@ -54333,6 +54787,7 @@ impl VpcConnectionProperties {
 pub mod vpc_connection_properties {
     
     /// A builder for [`VpcConnectionProperties`](crate::model::VpcConnectionProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connection_arn: std::option::Option<std::string::String>,
@@ -54406,6 +54861,7 @@ impl  std::fmt::Debug for DataSourceCredentials  {
 pub mod data_source_credentials {
     
     /// A builder for [`DataSourceCredentials`](crate::model::DataSourceCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) credential_pair: std::option::Option<crate::model::CredentialPair>,
@@ -54503,6 +54959,7 @@ impl CredentialPair {
 pub mod credential_pair {
     
     /// A builder for [`CredentialPair`](crate::model::CredentialPair).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -54871,6 +55328,7 @@ impl DatabricksParameters {
 pub mod databricks_parameters {
     
     /// A builder for [`DatabricksParameters`](crate::model::DatabricksParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -54953,6 +55411,7 @@ impl ExasolParameters {
 pub mod exasol_parameters {
     
     /// A builder for [`ExasolParameters`](crate::model::ExasolParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -55016,6 +55475,7 @@ impl AmazonOpenSearchParameters {
 pub mod amazon_open_search_parameters {
     
     /// A builder for [`AmazonOpenSearchParameters`](crate::model::AmazonOpenSearchParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -55073,6 +55533,7 @@ impl TwitterParameters {
 pub mod twitter_parameters {
     
     /// A builder for [`TwitterParameters`](crate::model::TwitterParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query: std::option::Option<std::string::String>,
@@ -55150,6 +55611,7 @@ impl TeradataParameters {
 pub mod teradata_parameters {
     
     /// A builder for [`TeradataParameters`](crate::model::TeradataParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -55239,6 +55701,7 @@ impl SqlServerParameters {
 pub mod sql_server_parameters {
     
     /// A builder for [`SqlServerParameters`](crate::model::SqlServerParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -55321,6 +55784,7 @@ impl SparkParameters {
 pub mod spark_parameters {
     
     /// A builder for [`SparkParameters`](crate::model::SparkParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -55398,6 +55862,7 @@ impl SnowflakeParameters {
 pub mod snowflake_parameters {
     
     /// A builder for [`SnowflakeParameters`](crate::model::SnowflakeParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -55472,6 +55937,7 @@ impl ServiceNowParameters {
 pub mod service_now_parameters {
     
     /// A builder for [`ServiceNowParameters`](crate::model::ServiceNowParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_base_url: std::option::Option<std::string::String>,
@@ -55522,6 +55988,7 @@ impl S3Parameters {
 pub mod s3_parameters {
     
     /// A builder for [`S3Parameters`](crate::model::S3Parameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_file_location: std::option::Option<crate::model::ManifestFileLocation>,
@@ -55579,6 +56046,7 @@ impl ManifestFileLocation {
 pub mod manifest_file_location {
     
     /// A builder for [`ManifestFileLocation`](crate::model::ManifestFileLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -55662,6 +56130,7 @@ impl RedshiftParameters {
 pub mod redshift_parameters {
     
     /// A builder for [`RedshiftParameters`](crate::model::RedshiftParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -55756,6 +56225,7 @@ impl RdsParameters {
 pub mod rds_parameters {
     
     /// A builder for [`RdsParameters`](crate::model::RdsParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -55832,6 +56302,7 @@ impl PrestoParameters {
 pub mod presto_parameters {
     
     /// A builder for [`PrestoParameters`](crate::model::PrestoParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -55921,6 +56392,7 @@ impl PostgreSqlParameters {
 pub mod postgre_sql_parameters {
     
     /// A builder for [`PostgreSqlParameters`](crate::model::PostgreSqlParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -56010,6 +56482,7 @@ impl OracleParameters {
 pub mod oracle_parameters {
     
     /// A builder for [`OracleParameters`](crate::model::OracleParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -56099,6 +56572,7 @@ impl MySqlParameters {
 pub mod my_sql_parameters {
     
     /// A builder for [`MySqlParameters`](crate::model::MySqlParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -56188,6 +56662,7 @@ impl MariaDbParameters {
 pub mod maria_db_parameters {
     
     /// A builder for [`MariaDbParameters`](crate::model::MariaDbParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -56263,6 +56738,7 @@ impl JiraParameters {
 pub mod jira_parameters {
     
     /// A builder for [`JiraParameters`](crate::model::JiraParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_base_url: std::option::Option<std::string::String>,
@@ -56313,6 +56789,7 @@ impl AwsIotAnalyticsParameters {
 pub mod aws_iot_analytics_parameters {
     
     /// A builder for [`AwsIotAnalyticsParameters`](crate::model::AwsIotAnalyticsParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_name: std::option::Option<std::string::String>,
@@ -56377,6 +56854,7 @@ impl AuroraPostgreSqlParameters {
 pub mod aurora_postgre_sql_parameters {
     
     /// A builder for [`AuroraPostgreSqlParameters`](crate::model::AuroraPostgreSqlParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -56466,6 +56944,7 @@ impl AuroraParameters {
 pub mod aurora_parameters {
     
     /// A builder for [`AuroraParameters`](crate::model::AuroraParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -56548,6 +57027,7 @@ impl AthenaParameters {
 pub mod athena_parameters {
     
     /// A builder for [`AthenaParameters`](crate::model::AthenaParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) work_group: std::option::Option<std::string::String>,
@@ -56610,6 +57090,7 @@ impl AmazonElasticsearchParameters {
 pub mod amazon_elasticsearch_parameters {
     
     /// A builder for [`AmazonElasticsearchParameters`](crate::model::AmazonElasticsearchParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -56667,6 +57148,7 @@ impl DataSetUsageConfiguration {
 pub mod data_set_usage_configuration {
     
     /// A builder for [`DataSetUsageConfiguration`](crate::model::DataSetUsageConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disable_use_as_direct_query_source: std::option::Option<bool>,
@@ -56738,6 +57220,7 @@ impl ColumnLevelPermissionRule {
 pub mod column_level_permission_rule {
     
     /// A builder for [`ColumnLevelPermissionRule`](crate::model::ColumnLevelPermissionRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principals: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -56819,6 +57302,7 @@ impl RowLevelPermissionTagConfiguration {
 pub mod row_level_permission_tag_configuration {
     
     /// A builder for [`RowLevelPermissionTagConfiguration`](crate::model::RowLevelPermissionTagConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -56918,6 +57402,7 @@ impl  std::fmt::Debug for RowLevelPermissionTagRule  {
 pub mod row_level_permission_tag_rule {
     
     /// A builder for [`RowLevelPermissionTagRule`](crate::model::RowLevelPermissionTagRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -57127,6 +57612,7 @@ impl RowLevelPermissionDataSet {
 pub mod row_level_permission_data_set {
     
     /// A builder for [`RowLevelPermissionDataSet`](crate::model::RowLevelPermissionDataSet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -57398,6 +57884,7 @@ impl FieldFolder {
 pub mod field_folder {
     
     /// A builder for [`FieldFolder`](crate::model::FieldFolder).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -57466,6 +57953,7 @@ impl ColumnGroup {
 pub mod column_group {
     
     /// A builder for [`ColumnGroup`](crate::model::ColumnGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_spatial_column_group: std::option::Option<crate::model::GeoSpatialColumnGroup>,
@@ -57530,6 +58018,7 @@ impl GeoSpatialColumnGroup {
 pub mod geo_spatial_column_group {
     
     /// A builder for [`GeoSpatialColumnGroup`](crate::model::GeoSpatialColumnGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -57783,6 +58272,7 @@ impl LogicalTable {
 pub mod logical_table {
     
     /// A builder for [`LogicalTable`](crate::model::LogicalTable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<std::string::String>,
@@ -57877,6 +58367,7 @@ impl LogicalTableSource {
 pub mod logical_table_source {
     
     /// A builder for [`LogicalTableSource`](crate::model::LogicalTableSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) join_instruction: std::option::Option<crate::model::JoinInstruction>,
@@ -57986,6 +58477,7 @@ impl JoinInstruction {
 pub mod join_instruction {
     
     /// A builder for [`JoinInstruction`](crate::model::JoinInstruction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) left_operand: std::option::Option<std::string::String>,
@@ -58188,6 +58680,7 @@ impl JoinKeyProperties {
 pub mod join_key_properties {
     
     /// A builder for [`JoinKeyProperties`](crate::model::JoinKeyProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unique_key: std::option::Option<bool>,
@@ -58343,6 +58836,7 @@ impl UntagColumnOperation {
 pub mod untag_column_operation {
     
     /// A builder for [`UntagColumnOperation`](crate::model::UntagColumnOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_name: std::option::Option<std::string::String>,
@@ -58504,6 +58998,7 @@ impl TagColumnOperation {
 pub mod tag_column_operation {
     
     /// A builder for [`TagColumnOperation`](crate::model::TagColumnOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_name: std::option::Option<std::string::String>,
@@ -58583,6 +59078,7 @@ impl ColumnTag {
 pub mod column_tag {
     
     /// A builder for [`ColumnTag`](crate::model::ColumnTag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_geographic_role: std::option::Option<crate::model::GeoSpatialDataRole>,
@@ -58645,6 +59141,7 @@ impl ColumnDescription {
 pub mod column_description {
     
     /// A builder for [`ColumnDescription`](crate::model::ColumnDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -58816,6 +59313,7 @@ impl CastColumnTypeOperation {
 pub mod cast_column_type_operation {
     
     /// A builder for [`CastColumnTypeOperation`](crate::model::CastColumnTypeOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_name: std::option::Option<std::string::String>,
@@ -58989,6 +59487,7 @@ impl RenameColumnOperation {
 pub mod rename_column_operation {
     
     /// A builder for [`RenameColumnOperation`](crate::model::RenameColumnOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_name: std::option::Option<std::string::String>,
@@ -59051,6 +59550,7 @@ impl CreateColumnsOperation {
 pub mod create_columns_operation {
     
     /// A builder for [`CreateColumnsOperation`](crate::model::CreateColumnsOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) columns: std::option::Option<std::vec::Vec<crate::model::CalculatedColumn>>,
@@ -59130,6 +59630,7 @@ impl  std::fmt::Debug for CalculatedColumn  {
 pub mod calculated_column {
     
     /// A builder for [`CalculatedColumn`](crate::model::CalculatedColumn).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) column_name: std::option::Option<std::string::String>,
@@ -59220,6 +59721,7 @@ impl  std::fmt::Debug for FilterOperation  {
 pub mod filter_operation {
     
     /// A builder for [`FilterOperation`](crate::model::FilterOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) condition_expression: std::option::Option<std::string::String>,
@@ -59277,6 +59779,7 @@ impl ProjectOperation {
 pub mod project_operation {
     
     /// A builder for [`ProjectOperation`](crate::model::ProjectOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) projected_columns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -59405,6 +59908,7 @@ impl S3Source {
 pub mod s3_source {
     
     /// A builder for [`S3Source`](crate::model::S3Source).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_arn: std::option::Option<std::string::String>,
@@ -59496,6 +60000,7 @@ impl InputColumn {
 pub mod input_column {
     
     /// A builder for [`InputColumn`](crate::model::InputColumn).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -59693,6 +60198,7 @@ impl UploadSettings {
 pub mod upload_settings {
     
     /// A builder for [`UploadSettings`](crate::model::UploadSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<crate::model::FileFormat>,
@@ -59996,6 +60502,7 @@ impl CustomSql {
 pub mod custom_sql {
     
     /// A builder for [`CustomSql`](crate::model::CustomSql).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_arn: std::option::Option<std::string::String>,
@@ -60116,6 +60623,7 @@ impl RelationalTable {
 pub mod relational_table {
     
     /// A builder for [`RelationalTable`](crate::model::RelationalTable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_arn: std::option::Option<std::string::String>,
@@ -60220,6 +60728,7 @@ impl LinkSharingConfiguration {
 pub mod link_sharing_configuration {
     
     /// A builder for [`LinkSharingConfiguration`](crate::model::LinkSharingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -60322,6 +60831,7 @@ impl DashboardVersionDefinition {
 pub mod dashboard_version_definition {
     
     /// A builder for [`DashboardVersionDefinition`](crate::model::DashboardVersionDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_identifier_declarations: std::option::Option<std::vec::Vec<crate::model::DataSetIdentifierDeclaration>>,
@@ -60491,6 +61001,7 @@ impl DataSetIdentifierDeclaration {
 pub mod data_set_identifier_declaration {
     
     /// A builder for [`DataSetIdentifierDeclaration`](crate::model::DataSetIdentifierDeclaration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -60574,6 +61085,7 @@ impl DashboardPublishOptions {
 pub mod dashboard_publish_options {
     
     /// A builder for [`DashboardPublishOptions`](crate::model::DashboardPublishOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_hoc_filtering_option: std::option::Option<crate::model::AdHocFilteringOption>,
@@ -60660,6 +61172,7 @@ impl DashboardVisualPublishOptions {
 pub mod dashboard_visual_publish_options {
     
     /// A builder for [`DashboardVisualPublishOptions`](crate::model::DashboardVisualPublishOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_hidden_fields_option: std::option::Option<crate::model::ExportHiddenFieldsOption>,
@@ -60710,6 +61223,7 @@ impl ExportHiddenFieldsOption {
 pub mod export_hidden_fields_option {
     
     /// A builder for [`ExportHiddenFieldsOption`](crate::model::ExportHiddenFieldsOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_status: std::option::Option<crate::model::DashboardBehavior>,
@@ -60842,6 +61356,7 @@ impl SheetControlsOption {
 pub mod sheet_controls_option {
     
     /// A builder for [`SheetControlsOption`](crate::model::SheetControlsOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility_state: std::option::Option<crate::model::DashboardUiState>,
@@ -60974,6 +61489,7 @@ impl ExportToCsvOption {
 pub mod export_to_csv_option {
     
     /// A builder for [`ExportToCsvOption`](crate::model::ExportToCsvOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_status: std::option::Option<crate::model::DashboardBehavior>,
@@ -61024,6 +61540,7 @@ impl AdHocFilteringOption {
 pub mod ad_hoc_filtering_option {
     
     /// A builder for [`AdHocFilteringOption`](crate::model::AdHocFilteringOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_status: std::option::Option<crate::model::DashboardBehavior>,
@@ -61095,6 +61612,7 @@ impl Parameters {
 pub mod parameters {
     
     /// A builder for [`Parameters`](crate::model::Parameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) string_parameters: std::option::Option<std::vec::Vec<crate::model::StringParameter>>,
@@ -61212,6 +61730,7 @@ impl DateTimeParameter {
 pub mod date_time_parameter {
     
     /// A builder for [`DateTimeParameter`](crate::model::DateTimeParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -61287,6 +61806,7 @@ impl DecimalParameter {
 pub mod decimal_parameter {
     
     /// A builder for [`DecimalParameter`](crate::model::DecimalParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -61362,6 +61882,7 @@ impl IntegerParameter {
 pub mod integer_parameter {
     
     /// A builder for [`IntegerParameter`](crate::model::IntegerParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -61437,6 +61958,7 @@ impl StringParameter {
 pub mod string_parameter {
     
     /// A builder for [`StringParameter`](crate::model::StringParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -61505,6 +62027,7 @@ impl DashboardSourceEntity {
 pub mod dashboard_source_entity {
     
     /// A builder for [`DashboardSourceEntity`](crate::model::DashboardSourceEntity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_template: std::option::Option<crate::model::DashboardSourceTemplate>,
@@ -61562,6 +62085,7 @@ impl DashboardSourceTemplate {
 pub mod dashboard_source_template {
     
     /// A builder for [`DashboardSourceTemplate`](crate::model::DashboardSourceTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_references: std::option::Option<std::vec::Vec<crate::model::DataSetReference>>,
@@ -61678,6 +62202,7 @@ impl AnalysisDefinition {
 pub mod analysis_definition {
     
     /// A builder for [`AnalysisDefinition`](crate::model::AnalysisDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_identifier_declarations: std::option::Option<std::vec::Vec<crate::model::DataSetIdentifierDeclaration>>,
@@ -61842,6 +62367,7 @@ impl AnalysisSourceEntity {
 pub mod analysis_source_entity {
     
     /// A builder for [`AnalysisSourceEntity`](crate::model::AnalysisSourceEntity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_template: std::option::Option<crate::model::AnalysisSourceTemplate>,
@@ -61899,6 +62425,7 @@ impl AnalysisSourceTemplate {
 pub mod analysis_source_template {
     
     /// A builder for [`AnalysisSourceTemplate`](crate::model::AnalysisSourceTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_references: std::option::Option<std::vec::Vec<crate::model::DataSetReference>>,
@@ -61974,6 +62501,7 @@ impl AccountCustomization {
 pub mod account_customization {
     
     /// A builder for [`AccountCustomization`](crate::model::AccountCustomization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_theme: std::option::Option<std::string::String>,
@@ -62043,6 +62571,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -62119,6 +62648,7 @@ impl GroupSearchFilter {
 pub mod group_search_filter {
     
     /// A builder for [`GroupSearchFilter`](crate::model::GroupSearchFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operator: std::option::Option<crate::model::GroupFilterOperator>,
@@ -62382,6 +62912,7 @@ impl FolderSummary {
 pub mod folder_summary {
     
     /// A builder for [`FolderSummary`](crate::model::FolderSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -62607,6 +63138,7 @@ impl FolderSearchFilter {
 pub mod folder_search_filter {
     
     /// A builder for [`FolderSearchFilter`](crate::model::FolderSearchFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operator: std::option::Option<crate::model::FilterOperator>,
@@ -62929,6 +63461,7 @@ impl DataSourceSummary {
 pub mod data_source_summary {
     
     /// A builder for [`DataSourceSummary`](crate::model::DataSourceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -63273,6 +63806,7 @@ impl DataSourceSearchFilter {
 pub mod data_source_search_filter {
     
     /// A builder for [`DataSourceSearchFilter`](crate::model::DataSourceSearchFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operator: std::option::Option<crate::model::FilterOperator>,
@@ -63513,6 +64047,7 @@ impl DataSetSummary {
 pub mod data_set_summary {
     
     /// A builder for [`DataSetSummary`](crate::model::DataSetSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -63697,6 +64232,7 @@ impl DataSetSearchFilter {
 pub mod data_set_search_filter {
     
     /// A builder for [`DataSetSearchFilter`](crate::model::DataSetSearchFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operator: std::option::Option<crate::model::FilterOperator>,
@@ -63937,6 +64473,7 @@ impl DashboardSummary {
 pub mod dashboard_summary {
     
     /// A builder for [`DashboardSummary`](crate::model::DashboardSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -64095,6 +64632,7 @@ impl DashboardSearchFilter {
 pub mod dashboard_search_filter {
     
     /// A builder for [`DashboardSearchFilter`](crate::model::DashboardSearchFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operator: std::option::Option<crate::model::FilterOperator>,
@@ -64333,6 +64871,7 @@ impl AnalysisSummary {
 pub mod analysis_summary {
     
     /// A builder for [`AnalysisSummary`](crate::model::AnalysisSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -64479,6 +65018,7 @@ impl AnalysisSearchFilter {
 pub mod analysis_search_filter {
     
     /// A builder for [`AnalysisSearchFilter`](crate::model::AnalysisSearchFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operator: std::option::Option<crate::model::FilterOperator>,
@@ -64710,6 +65250,7 @@ impl ThemeVersionSummary {
 pub mod theme_version_summary {
     
     /// A builder for [`ThemeVersionSummary`](crate::model::ThemeVersionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_number: std::option::Option<i64>,
@@ -64843,6 +65384,7 @@ impl ThemeSummary {
 pub mod theme_summary {
     
     /// A builder for [`ThemeSummary`](crate::model::ThemeSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -65068,6 +65610,7 @@ impl TemplateVersionSummary {
 pub mod template_version_summary {
     
     /// A builder for [`TemplateVersionSummary`](crate::model::TemplateVersionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -65201,6 +65744,7 @@ impl TemplateSummary {
 pub mod template_summary {
     
     /// A builder for [`TemplateSummary`](crate::model::TemplateSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -65346,6 +65890,7 @@ impl NamespaceInfoV2 {
 pub mod namespace_info_v2 {
     
     /// A builder for [`NamespaceInfoV2`](crate::model::NamespaceInfoV2).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -65463,6 +66008,7 @@ impl NamespaceError {
 pub mod namespace_error {
     
     /// A builder for [`NamespaceError`](crate::model::NamespaceError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::NamespaceErrorType>,
@@ -65851,6 +66397,7 @@ impl Ingestion {
 pub mod ingestion {
     
     /// A builder for [`Ingestion`](crate::model::Ingestion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -66202,6 +66749,7 @@ impl QueueInfo {
 pub mod queue_info {
     
     /// A builder for [`QueueInfo`](crate::model::QueueInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) waiting_on_ingestion: std::option::Option<std::string::String>,
@@ -66278,6 +66826,7 @@ impl RowInfo {
 pub mod row_info {
     
     /// A builder for [`RowInfo`](crate::model::RowInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rows_ingested: std::option::Option<i64>,
@@ -66359,6 +66908,7 @@ impl ErrorInfo {
 pub mod error_info {
     
     /// A builder for [`ErrorInfo`](crate::model::ErrorInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::IngestionErrorType>,
@@ -66822,6 +67372,7 @@ impl ActiveIamPolicyAssignment {
 pub mod active_iam_policy_assignment {
     
     /// A builder for [`ActiveIamPolicyAssignment`](crate::model::ActiveIamPolicyAssignment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assignment_name: std::option::Option<std::string::String>,
@@ -66891,6 +67442,7 @@ impl IamPolicyAssignmentSummary {
 pub mod iam_policy_assignment_summary {
     
     /// A builder for [`IamPolicyAssignmentSummary`](crate::model::IamPolicyAssignmentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assignment_name: std::option::Option<std::string::String>,
@@ -66960,6 +67512,7 @@ impl GroupMember {
 pub mod group_member {
     
     /// A builder for [`GroupMember`](crate::model::GroupMember).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -67029,6 +67582,7 @@ impl MemberIdArnPair {
 pub mod member_id_arn_pair {
     
     /// A builder for [`MemberIdArnPair`](crate::model::MemberIdArnPair).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -67175,6 +67729,7 @@ impl DataSource {
 pub mod data_source {
     
     /// A builder for [`DataSource`](crate::model::DataSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -67382,6 +67937,7 @@ impl DataSourceErrorInfo {
 pub mod data_source_error_info {
     
     /// A builder for [`DataSourceErrorInfo`](crate::model::DataSourceErrorInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DataSourceErrorInfoType>,
@@ -67591,6 +68147,7 @@ impl DashboardVersionSummary {
 pub mod dashboard_version_summary {
     
     /// A builder for [`DashboardVersionSummary`](crate::model::DashboardVersionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -67825,6 +68382,7 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
 pub mod registered_user_embedding_experience_configuration {
     
     /// A builder for [`RegisteredUserEmbeddingExperienceConfiguration`](crate::model::RegisteredUserEmbeddingExperienceConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard: std::option::Option<crate::model::RegisteredUserDashboardEmbeddingConfiguration>,
@@ -67927,6 +68485,7 @@ impl RegisteredUserDashboardVisualEmbeddingConfiguration {
 pub mod registered_user_dashboard_visual_embedding_configuration {
     
     /// A builder for [`RegisteredUserDashboardVisualEmbeddingConfiguration`](crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_dashboard_visual_id: std::option::Option<crate::model::DashboardVisualId>,
@@ -67999,6 +68558,7 @@ impl DashboardVisualId {
 pub mod dashboard_visual_id {
     
     /// A builder for [`DashboardVisualId`](crate::model::DashboardVisualId).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -68075,6 +68635,7 @@ impl RegisteredUserQSearchBarEmbeddingConfiguration {
 pub mod registered_user_q_search_bar_embedding_configuration {
     
     /// A builder for [`RegisteredUserQSearchBarEmbeddingConfiguration`](crate::model::RegisteredUserQSearchBarEmbeddingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_topic_id: std::option::Option<std::string::String>,
@@ -68145,6 +68706,7 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
 pub mod registered_user_quick_sight_console_embedding_configuration {
     
     /// A builder for [`RegisteredUserQuickSightConsoleEmbeddingConfiguration`](crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_path: std::option::Option<std::string::String>,
@@ -68215,6 +68777,7 @@ impl RegisteredUserDashboardEmbeddingConfiguration {
 pub mod registered_user_dashboard_embedding_configuration {
     
     /// A builder for [`RegisteredUserDashboardEmbeddingConfiguration`](crate::model::RegisteredUserDashboardEmbeddingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_dashboard_id: std::option::Option<std::string::String>,
@@ -68281,6 +68844,7 @@ impl AnonymousUserEmbeddingExperienceConfiguration {
 pub mod anonymous_user_embedding_experience_configuration {
     
     /// A builder for [`AnonymousUserEmbeddingExperienceConfiguration`](crate::model::AnonymousUserEmbeddingExperienceConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard: std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
@@ -68357,6 +68921,7 @@ impl AnonymousUserQSearchBarEmbeddingConfiguration {
 pub mod anonymous_user_q_search_bar_embedding_configuration {
     
     /// A builder for [`AnonymousUserQSearchBarEmbeddingConfiguration`](crate::model::AnonymousUserQSearchBarEmbeddingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_topic_id: std::option::Option<std::string::String>,
@@ -68411,6 +68976,7 @@ impl AnonymousUserDashboardVisualEmbeddingConfiguration {
 pub mod anonymous_user_dashboard_visual_embedding_configuration {
     
     /// A builder for [`AnonymousUserDashboardVisualEmbeddingConfiguration`](crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_dashboard_visual_id: std::option::Option<crate::model::DashboardVisualId>,
@@ -68465,6 +69031,7 @@ impl AnonymousUserDashboardEmbeddingConfiguration {
 pub mod anonymous_user_dashboard_embedding_configuration {
     
     /// A builder for [`AnonymousUserDashboardEmbeddingConfiguration`](crate::model::AnonymousUserDashboardEmbeddingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_dashboard_id: std::option::Option<std::string::String>,
@@ -68532,6 +69099,7 @@ impl  std::fmt::Debug for SessionTag  {
 pub mod session_tag {
     
     /// A builder for [`SessionTag`](crate::model::SessionTag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -68644,6 +69212,7 @@ impl Theme {
 pub mod theme {
     
     /// A builder for [`Theme`](crate::model::Theme).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -68815,6 +69384,7 @@ impl ThemeVersion {
 pub mod theme_version {
     
     /// A builder for [`ThemeVersion`](crate::model::ThemeVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_number: std::option::Option<i64>,
@@ -68962,6 +69532,7 @@ impl ThemeError {
 pub mod theme_error {
     
     /// A builder for [`ThemeError`](crate::model::ThemeError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ThemeErrorType>,
@@ -69115,6 +69686,7 @@ impl TemplateError {
 pub mod template_error {
     
     /// A builder for [`TemplateError`](crate::model::TemplateError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::TemplateErrorType>,
@@ -69195,6 +69767,7 @@ impl Entity {
 pub mod entity {
     
     /// A builder for [`Entity`](crate::model::Entity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -69373,6 +69946,7 @@ impl Template {
 pub mod template {
     
     /// A builder for [`Template`](crate::model::Template).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -69557,6 +70131,7 @@ impl TemplateVersion {
 pub mod template_version {
     
     /// A builder for [`TemplateVersion`](crate::model::TemplateVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -69746,6 +70321,7 @@ impl Sheet {
 pub mod sheet {
     
     /// A builder for [`Sheet`](crate::model::Sheet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sheet_id: std::option::Option<std::string::String>,
@@ -69843,6 +70419,7 @@ impl IamPolicyAssignment {
 pub mod iam_policy_assignment {
     
     /// A builder for [`IamPolicyAssignment`](crate::model::IamPolicyAssignment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -70001,6 +70578,7 @@ impl Folder {
 pub mod folder {
     
     /// A builder for [`Folder`](crate::model::Folder).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -70234,6 +70812,7 @@ impl DataSet {
 pub mod data_set {
     
     /// A builder for [`DataSet`](crate::model::DataSet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -70515,6 +71094,7 @@ impl OutputColumn {
 pub mod output_column {
     
     /// A builder for [`OutputColumn`](crate::model::OutputColumn).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -70603,6 +71183,7 @@ impl DashboardError {
 pub mod dashboard_error {
     
     /// A builder for [`DashboardError`](crate::model::DashboardError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DashboardErrorType>,
@@ -70847,6 +71428,7 @@ impl Dashboard {
 pub mod dashboard {
     
     /// A builder for [`Dashboard`](crate::model::Dashboard).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -71032,6 +71614,7 @@ impl DashboardVersion {
 pub mod dashboard_version {
     
     /// A builder for [`DashboardVersion`](crate::model::DashboardVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -71222,6 +71805,7 @@ impl AnalysisError {
 pub mod analysis_error {
     
     /// A builder for [`AnalysisError`](crate::model::AnalysisError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AnalysisErrorType>,
@@ -71487,6 +72071,7 @@ impl Analysis {
 pub mod analysis {
     
     /// A builder for [`Analysis`](crate::model::Analysis).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
@@ -71698,6 +72283,7 @@ impl AccountInfo {
 pub mod account_info {
     
     /// A builder for [`AccountInfo`](crate::model::AccountInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_name: std::option::Option<std::string::String>,
@@ -71918,6 +72504,7 @@ impl AccountSettings {
 pub mod account_settings {
     
     /// A builder for [`AccountSettings`](crate::model::AccountSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_name: std::option::Option<std::string::String>,
@@ -72206,6 +72793,7 @@ impl FolderMember {
 pub mod folder_member {
     
     /// A builder for [`FolderMember`](crate::model::FolderMember).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -72289,6 +72877,7 @@ impl SignupResponse {
 pub mod signup_response {
     
     /// A builder for [`SignupResponse`](crate::model::SignupResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_user: std::option::Option<bool>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod accept_attachment_input {
     
     /// A builder for [`AcceptAttachmentInput`](crate::input::AcceptAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
@@ -114,6 +115,7 @@ impl AcceptAttachmentInput {
 pub mod associate_connect_peer_input {
     
     /// A builder for [`AssociateConnectPeerInput`](crate::input::AssociateConnectPeerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -263,6 +265,7 @@ impl AssociateConnectPeerInput {
 pub mod associate_customer_gateway_input {
     
     /// A builder for [`AssociateCustomerGatewayInput`](crate::input::AssociateCustomerGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_gateway_arn: std::option::Option<std::string::String>,
@@ -412,6 +415,7 @@ impl AssociateCustomerGatewayInput {
 pub mod associate_link_input {
     
     /// A builder for [`AssociateLinkInput`](crate::input::AssociateLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -549,6 +553,7 @@ impl AssociateLinkInput {
 pub mod associate_transit_gateway_connect_peer_input {
     
     /// A builder for [`AssociateTransitGatewayConnectPeerInput`](crate::input::AssociateTransitGatewayConnectPeerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -698,6 +703,7 @@ impl AssociateTransitGatewayConnectPeerInput {
 pub mod create_connect_attachment_input {
     
     /// A builder for [`CreateConnectAttachmentInput`](crate::input::CreateConnectAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -874,6 +880,7 @@ impl CreateConnectAttachmentInput {
 pub mod create_connection_input {
     
     /// A builder for [`CreateConnectionInput`](crate::input::CreateConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -1067,6 +1074,7 @@ impl CreateConnectionInput {
 pub mod create_connect_peer_input {
     
     /// A builder for [`CreateConnectPeerInput`](crate::input::CreateConnectPeerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_attachment_id: std::option::Option<std::string::String>,
@@ -1261,6 +1269,7 @@ impl CreateConnectPeerInput {
 pub mod create_core_network_input {
     
     /// A builder for [`CreateCoreNetworkInput`](crate::input::CreateCoreNetworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -1425,6 +1434,7 @@ impl CreateCoreNetworkInput {
 pub mod create_device_input {
     
     /// A builder for [`CreateDeviceInput`](crate::input::CreateDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -1676,6 +1686,7 @@ impl CreateDeviceInput {
 pub mod create_global_network_input {
     
     /// A builder for [`CreateGlobalNetworkInput`](crate::input::CreateGlobalNetworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1803,6 +1814,7 @@ impl CreateGlobalNetworkInput {
 pub mod create_link_input {
     
     /// A builder for [`CreateLinkInput`](crate::input::CreateLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -2000,6 +2012,7 @@ impl CreateLinkInput {
 pub mod create_site_input {
     
     /// A builder for [`CreateSiteInput`](crate::input::CreateSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -2177,6 +2190,7 @@ impl CreateSiteInput {
 pub mod create_site_to_site_vpn_attachment_input {
     
     /// A builder for [`CreateSiteToSiteVpnAttachmentInput`](crate::input::CreateSiteToSiteVpnAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -2329,6 +2343,7 @@ impl CreateSiteToSiteVpnAttachmentInput {
 pub mod create_transit_gateway_peering_input {
     
     /// A builder for [`CreateTransitGatewayPeeringInput`](crate::input::CreateTransitGatewayPeeringInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -2481,6 +2496,7 @@ impl CreateTransitGatewayPeeringInput {
 pub mod create_transit_gateway_route_table_attachment_input {
     
     /// A builder for [`CreateTransitGatewayRouteTableAttachmentInput`](crate::input::CreateTransitGatewayRouteTableAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peering_id: std::option::Option<std::string::String>,
@@ -2633,6 +2649,7 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
 pub mod create_vpc_attachment_input {
     
     /// A builder for [`CreateVpcAttachmentInput`](crate::input::CreateVpcAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -2815,6 +2832,7 @@ impl CreateVpcAttachmentInput {
 pub mod delete_attachment_input {
     
     /// A builder for [`DeleteAttachmentInput`](crate::input::DeleteAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
@@ -2924,6 +2942,7 @@ impl DeleteAttachmentInput {
 pub mod delete_connection_input {
     
     /// A builder for [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -3051,6 +3070,7 @@ impl DeleteConnectionInput {
 pub mod delete_connect_peer_input {
     
     /// A builder for [`DeleteConnectPeerInput`](crate::input::DeleteConnectPeerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peer_id: std::option::Option<std::string::String>,
@@ -3160,6 +3180,7 @@ impl DeleteConnectPeerInput {
 pub mod delete_core_network_input {
     
     /// A builder for [`DeleteCoreNetworkInput`](crate::input::DeleteCoreNetworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -3269,6 +3290,7 @@ impl DeleteCoreNetworkInput {
 pub mod delete_core_network_policy_version_input {
     
     /// A builder for [`DeleteCoreNetworkPolicyVersionInput`](crate::input::DeleteCoreNetworkPolicyVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -3396,6 +3418,7 @@ impl DeleteCoreNetworkPolicyVersionInput {
 pub mod delete_device_input {
     
     /// A builder for [`DeleteDeviceInput`](crate::input::DeleteDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -3523,6 +3546,7 @@ impl DeleteDeviceInput {
 pub mod delete_global_network_input {
     
     /// A builder for [`DeleteGlobalNetworkInput`](crate::input::DeleteGlobalNetworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -3632,6 +3656,7 @@ impl DeleteGlobalNetworkInput {
 pub mod delete_link_input {
     
     /// A builder for [`DeleteLinkInput`](crate::input::DeleteLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -3759,6 +3784,7 @@ impl DeleteLinkInput {
 pub mod delete_peering_input {
     
     /// A builder for [`DeletePeeringInput`](crate::input::DeletePeeringInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peering_id: std::option::Option<std::string::String>,
@@ -3868,6 +3894,7 @@ impl DeletePeeringInput {
 pub mod delete_resource_policy_input {
     
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3977,6 +4004,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_site_input {
     
     /// A builder for [`DeleteSiteInput`](crate::input::DeleteSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -4104,6 +4132,7 @@ impl DeleteSiteInput {
 pub mod deregister_transit_gateway_input {
     
     /// A builder for [`DeregisterTransitGatewayInput`](crate::input::DeregisterTransitGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -4231,6 +4260,7 @@ impl DeregisterTransitGatewayInput {
 pub mod describe_global_networks_input {
     
     /// A builder for [`DescribeGlobalNetworksInput`](crate::input::DescribeGlobalNetworksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4386,6 +4416,7 @@ impl DescribeGlobalNetworksInput {
 pub mod disassociate_connect_peer_input {
     
     /// A builder for [`DisassociateConnectPeerInput`](crate::input::DisassociateConnectPeerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -4513,6 +4544,7 @@ impl DisassociateConnectPeerInput {
 pub mod disassociate_customer_gateway_input {
     
     /// A builder for [`DisassociateCustomerGatewayInput`](crate::input::DisassociateCustomerGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -4640,6 +4672,7 @@ impl DisassociateCustomerGatewayInput {
 pub mod disassociate_link_input {
     
     /// A builder for [`DisassociateLinkInput`](crate::input::DisassociateLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -4790,6 +4823,7 @@ impl DisassociateLinkInput {
 pub mod disassociate_transit_gateway_connect_peer_input {
     
     /// A builder for [`DisassociateTransitGatewayConnectPeerInput`](crate::input::DisassociateTransitGatewayConnectPeerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -4917,6 +4951,7 @@ impl DisassociateTransitGatewayConnectPeerInput {
 pub mod execute_core_network_change_set_input {
     
     /// A builder for [`ExecuteCoreNetworkChangeSetInput`](crate::input::ExecuteCoreNetworkChangeSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -5044,6 +5079,7 @@ impl ExecuteCoreNetworkChangeSetInput {
 pub mod get_connect_attachment_input {
     
     /// A builder for [`GetConnectAttachmentInput`](crate::input::GetConnectAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
@@ -5153,6 +5189,7 @@ impl GetConnectAttachmentInput {
 pub mod get_connections_input {
     
     /// A builder for [`GetConnectionsInput`](crate::input::GetConnectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -5343,6 +5380,7 @@ impl GetConnectionsInput {
 pub mod get_connect_peer_input {
     
     /// A builder for [`GetConnectPeerInput`](crate::input::GetConnectPeerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peer_id: std::option::Option<std::string::String>,
@@ -5452,6 +5490,7 @@ impl GetConnectPeerInput {
 pub mod get_connect_peer_associations_input {
     
     /// A builder for [`GetConnectPeerAssociationsInput`](crate::input::GetConnectPeerAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -5625,6 +5664,7 @@ impl GetConnectPeerAssociationsInput {
 pub mod get_core_network_input {
     
     /// A builder for [`GetCoreNetworkInput`](crate::input::GetCoreNetworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -5734,6 +5774,7 @@ impl GetCoreNetworkInput {
 pub mod get_core_network_change_events_input {
     
     /// A builder for [`GetCoreNetworkChangeEventsInput`](crate::input::GetCoreNetworkChangeEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -5900,6 +5941,7 @@ impl GetCoreNetworkChangeEventsInput {
 pub mod get_core_network_change_set_input {
     
     /// A builder for [`GetCoreNetworkChangeSetInput`](crate::input::GetCoreNetworkChangeSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -6066,6 +6108,7 @@ impl GetCoreNetworkChangeSetInput {
 pub mod get_core_network_policy_input {
     
     /// A builder for [`GetCoreNetworkPolicyInput`](crate::input::GetCoreNetworkPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -6214,6 +6257,7 @@ impl GetCoreNetworkPolicyInput {
 pub mod get_customer_gateway_associations_input {
     
     /// A builder for [`GetCustomerGatewayAssociationsInput`](crate::input::GetCustomerGatewayAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -6387,6 +6431,7 @@ impl GetCustomerGatewayAssociationsInput {
 pub mod get_devices_input {
     
     /// A builder for [`GetDevicesInput`](crate::input::GetDevicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -6577,6 +6622,7 @@ impl GetDevicesInput {
 pub mod get_link_associations_input {
     
     /// A builder for [`GetLinkAssociationsInput`](crate::input::GetLinkAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -6759,6 +6805,7 @@ impl GetLinkAssociationsInput {
 pub mod get_links_input {
     
     /// A builder for [`GetLinksInput`](crate::input::GetLinksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -6983,6 +7030,7 @@ impl GetLinksInput {
 pub mod get_network_resource_counts_input {
     
     /// A builder for [`GetNetworkResourceCountsInput`](crate::input::GetNetworkResourceCountsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -7192,6 +7240,7 @@ impl GetNetworkResourceCountsInput {
 pub mod get_network_resource_relationships_input {
     
     /// A builder for [`GetNetworkResourceRelationshipsInput`](crate::input::GetNetworkResourceRelationshipsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -7486,6 +7535,7 @@ impl GetNetworkResourceRelationshipsInput {
 pub mod get_network_resources_input {
     
     /// A builder for [`GetNetworkResourcesInput`](crate::input::GetNetworkResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -7780,6 +7830,7 @@ impl GetNetworkResourcesInput {
 pub mod get_network_routes_input {
     
     /// A builder for [`GetNetworkRoutesInput`](crate::input::GetNetworkRoutesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -8049,6 +8100,7 @@ impl GetNetworkRoutesInput {
 pub mod get_network_telemetry_input {
     
     /// A builder for [`GetNetworkTelemetryInput`](crate::input::GetNetworkTelemetryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -8343,6 +8395,7 @@ impl GetNetworkTelemetryInput {
 pub mod get_resource_policy_input {
     
     /// A builder for [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -8452,6 +8505,7 @@ impl GetResourcePolicyInput {
 pub mod get_route_analysis_input {
     
     /// A builder for [`GetRouteAnalysisInput`](crate::input::GetRouteAnalysisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -8579,6 +8633,7 @@ impl GetRouteAnalysisInput {
 pub mod get_sites_input {
     
     /// A builder for [`GetSitesInput`](crate::input::GetSitesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -8752,6 +8807,7 @@ impl GetSitesInput {
 pub mod get_site_to_site_vpn_attachment_input {
     
     /// A builder for [`GetSiteToSiteVpnAttachmentInput`](crate::input::GetSiteToSiteVpnAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
@@ -8861,6 +8917,7 @@ impl GetSiteToSiteVpnAttachmentInput {
 pub mod get_transit_gateway_connect_peer_associations_input {
     
     /// A builder for [`GetTransitGatewayConnectPeerAssociationsInput`](crate::input::GetTransitGatewayConnectPeerAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -9034,6 +9091,7 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
 pub mod get_transit_gateway_peering_input {
     
     /// A builder for [`GetTransitGatewayPeeringInput`](crate::input::GetTransitGatewayPeeringInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peering_id: std::option::Option<std::string::String>,
@@ -9143,6 +9201,7 @@ impl GetTransitGatewayPeeringInput {
 pub mod get_transit_gateway_registrations_input {
     
     /// A builder for [`GetTransitGatewayRegistrationsInput`](crate::input::GetTransitGatewayRegistrationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -9316,6 +9375,7 @@ impl GetTransitGatewayRegistrationsInput {
 pub mod get_transit_gateway_route_table_attachment_input {
     
     /// A builder for [`GetTransitGatewayRouteTableAttachmentInput`](crate::input::GetTransitGatewayRouteTableAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
@@ -9425,6 +9485,7 @@ impl GetTransitGatewayRouteTableAttachmentInput {
 pub mod get_vpc_attachment_input {
     
     /// A builder for [`GetVpcAttachmentInput`](crate::input::GetVpcAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
@@ -9534,6 +9595,7 @@ impl GetVpcAttachmentInput {
 pub mod list_attachments_input {
     
     /// A builder for [`ListAttachmentsInput`](crate::input::ListAttachmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -9732,6 +9794,7 @@ impl ListAttachmentsInput {
 pub mod list_connect_peers_input {
     
     /// A builder for [`ListConnectPeersInput`](crate::input::ListConnectPeersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -9896,6 +9959,7 @@ impl ListConnectPeersInput {
 pub mod list_core_network_policy_versions_input {
     
     /// A builder for [`ListCoreNetworkPolicyVersionsInput`](crate::input::ListCoreNetworkPolicyVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -10044,6 +10108,7 @@ impl ListCoreNetworkPolicyVersionsInput {
 pub mod list_core_networks_input {
     
     /// A builder for [`ListCoreNetworksInput`](crate::input::ListCoreNetworksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -10174,6 +10239,7 @@ impl ListCoreNetworksInput {
 pub mod list_organization_service_access_status_input {
     
     /// A builder for [`ListOrganizationServiceAccessStatusInput`](crate::input::ListOrganizationServiceAccessStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -10304,6 +10370,7 @@ impl ListOrganizationServiceAccessStatusInput {
 pub mod list_peerings_input {
     
     /// A builder for [`ListPeeringsInput`](crate::input::ListPeeringsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -10502,6 +10569,7 @@ impl ListPeeringsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10611,6 +10679,7 @@ impl ListTagsForResourceInput {
 pub mod put_core_network_policy_input {
     
     /// A builder for [`PutCoreNetworkPolicyInput`](crate::input::PutCoreNetworkPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -10775,6 +10844,7 @@ impl PutCoreNetworkPolicyInput {
 pub mod put_resource_policy_input {
     
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_document: std::option::Option<std::string::String>,
@@ -10900,6 +10970,7 @@ impl PutResourcePolicyInput {
 pub mod register_transit_gateway_input {
     
     /// A builder for [`RegisterTransitGatewayInput`](crate::input::RegisterTransitGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -11025,6 +11096,7 @@ impl RegisterTransitGatewayInput {
 pub mod reject_attachment_input {
     
     /// A builder for [`RejectAttachmentInput`](crate::input::RejectAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
@@ -11134,6 +11206,7 @@ impl RejectAttachmentInput {
 pub mod restore_core_network_policy_version_input {
     
     /// A builder for [`RestoreCoreNetworkPolicyVersionInput`](crate::input::RestoreCoreNetworkPolicyVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -11261,6 +11334,7 @@ impl RestoreCoreNetworkPolicyVersionInput {
 pub mod start_organization_service_access_update_input {
     
     /// A builder for [`StartOrganizationServiceAccessUpdateInput`](crate::input::StartOrganizationServiceAccessUpdateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
@@ -11368,6 +11442,7 @@ impl StartOrganizationServiceAccessUpdateInput {
 pub mod start_route_analysis_input {
     
     /// A builder for [`StartRouteAnalysisInput`](crate::input::StartRouteAnalysisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -11531,6 +11606,7 @@ impl StartRouteAnalysisInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -11662,6 +11738,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -11799,6 +11876,7 @@ impl UntagResourceInput {
 pub mod update_connection_input {
     
     /// A builder for [`UpdateConnectionInput`](crate::input::UpdateConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -11968,6 +12046,7 @@ impl UpdateConnectionInput {
 pub mod update_core_network_input {
     
     /// A builder for [`UpdateCoreNetworkInput`](crate::input::UpdateCoreNetworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -12093,6 +12172,7 @@ impl UpdateCoreNetworkInput {
 pub mod update_device_input {
     
     /// A builder for [`UpdateDeviceInput`](crate::input::UpdateDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -12344,6 +12424,7 @@ impl UpdateDeviceInput {
 pub mod update_global_network_input {
     
     /// A builder for [`UpdateGlobalNetworkInput`](crate::input::UpdateGlobalNetworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -12471,6 +12552,7 @@ impl UpdateGlobalNetworkInput {
 pub mod update_link_input {
     
     /// A builder for [`UpdateLinkInput`](crate::input::UpdateLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -12656,6 +12738,7 @@ impl UpdateLinkInput {
 pub mod update_network_resource_metadata_input {
     
     /// A builder for [`UpdateNetworkResourceMetadataInput`](crate::input::UpdateNetworkResourceMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -12805,6 +12888,7 @@ impl UpdateNetworkResourceMetadataInput {
 pub mod update_site_input {
     
     /// A builder for [`UpdateSiteInput`](crate::input::UpdateSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -12982,6 +13066,7 @@ impl UpdateSiteInput {
 pub mod update_vpc_attachment_input {
     
     /// A builder for [`UpdateVpcAttachmentInput`](crate::input::UpdateVpcAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,

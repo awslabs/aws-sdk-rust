@@ -8,6 +8,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct StopAccessLoggingOutput  {
 pub mod stop_access_logging_output {
     
     /// A builder for [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -95,6 +98,7 @@ pub struct StartAccessLoggingOutput  {
 pub mod start_access_logging_output {
     
     /// A builder for [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -124,6 +128,7 @@ pub struct PutMetricPolicyOutput  {
 pub mod put_metric_policy_output {
     
     /// A builder for [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -153,6 +158,7 @@ pub struct PutLifecyclePolicyOutput  {
 pub mod put_lifecycle_policy_output {
     
     /// A builder for [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -182,6 +188,7 @@ pub struct PutCorsPolicyOutput  {
 pub mod put_cors_policy_output {
     
     /// A builder for [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -211,6 +218,7 @@ pub struct PutContainerPolicyOutput  {
 pub mod put_container_policy_output {
     
     /// A builder for [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -249,6 +257,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -312,6 +321,7 @@ impl ListContainersOutput {
 pub mod list_containers_output {
     
     /// A builder for [`ListContainersOutput`](crate::output::ListContainersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
@@ -380,6 +390,7 @@ impl GetMetricPolicyOutput {
 pub mod get_metric_policy_output {
     
     /// A builder for [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_policy: std::option::Option<crate::model::MetricPolicy>,
@@ -430,6 +441,7 @@ impl GetLifecyclePolicyOutput {
 pub mod get_lifecycle_policy_output {
     
     /// A builder for [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_policy: std::option::Option<std::string::String>,
@@ -480,6 +492,7 @@ impl GetCorsPolicyOutput {
 pub mod get_cors_policy_output {
     
     /// A builder for [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cors_policy: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
@@ -536,6 +549,7 @@ impl GetContainerPolicyOutput {
 pub mod get_container_policy_output {
     
     /// A builder for [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -586,6 +600,7 @@ impl DescribeContainerOutput {
 pub mod describe_container_output {
     
     /// A builder for [`DescribeContainerOutput`](crate::output::DescribeContainerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container: std::option::Option<crate::model::Container>,
@@ -627,6 +642,7 @@ pub struct DeleteMetricPolicyOutput  {
 pub mod delete_metric_policy_output {
     
     /// A builder for [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -656,6 +672,7 @@ pub struct DeleteLifecyclePolicyOutput  {
 pub mod delete_lifecycle_policy_output {
     
     /// A builder for [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -685,6 +702,7 @@ pub struct DeleteCorsPolicyOutput  {
 pub mod delete_cors_policy_output {
     
     /// A builder for [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -714,6 +732,7 @@ pub struct DeleteContainerPolicyOutput  {
 pub mod delete_container_policy_output {
     
     /// A builder for [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -743,6 +762,7 @@ pub struct DeleteContainerOutput  {
 pub mod delete_container_output {
     
     /// A builder for [`DeleteContainerOutput`](crate::output::DeleteContainerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -805,6 +825,7 @@ impl CreateContainerOutput {
 pub mod create_container_output {
     
     /// A builder for [`CreateContainerOutput`](crate::output::CreateContainerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container: std::option::Option<crate::model::Container>,

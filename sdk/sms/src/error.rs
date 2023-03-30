@@ -224,6 +224,7 @@ impl std::error::Error for UnauthorizedOperationException {}
 pub mod unauthorized_operation_exception {
     
     /// A builder for [`UnauthorizedOperationException`](crate::error::UnauthorizedOperationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -284,6 +285,7 @@ impl std::error::Error for TemporarilyUnavailableException {}
 pub mod temporarily_unavailable_exception {
     
     /// A builder for [`TemporarilyUnavailableException`](crate::error::TemporarilyUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -344,6 +346,7 @@ impl std::error::Error for ServerCannotBeReplicatedException {}
 pub mod server_cannot_be_replicated_exception {
     
     /// A builder for [`ServerCannotBeReplicatedException`](crate::error::ServerCannotBeReplicatedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -404,6 +407,7 @@ impl std::error::Error for ReplicationJobNotFoundException {}
 pub mod replication_job_not_found_exception {
     
     /// A builder for [`ReplicationJobNotFoundException`](crate::error::ReplicationJobNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -464,6 +468,7 @@ impl std::error::Error for OperationNotPermittedException {}
 pub mod operation_not_permitted_exception {
     
     /// A builder for [`OperationNotPermittedException`](crate::error::OperationNotPermittedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -524,6 +529,7 @@ impl std::error::Error for MissingRequiredParameterException {}
 pub mod missing_required_parameter_exception {
     
     /// A builder for [`MissingRequiredParameterException`](crate::error::MissingRequiredParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -584,6 +590,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
     
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -644,6 +651,7 @@ impl std::error::Error for InternalError {}
 pub mod internal_error {
     
     /// A builder for [`InternalError`](crate::error::InternalError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1360,6 +1368,7 @@ impl std::error::Error for ReplicationRunLimitExceededException {}
 pub mod replication_run_limit_exceeded_exception {
     
     /// A builder for [`ReplicationRunLimitExceededException`](crate::error::ReplicationRunLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1420,6 +1429,7 @@ impl std::error::Error for DryRunOperationException {}
 pub mod dry_run_operation_exception {
     
     /// A builder for [`DryRunOperationException`](crate::error::DryRunOperationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2929,6 +2939,7 @@ impl std::error::Error for NoConnectorsAvailableException {}
 pub mod no_connectors_available_exception {
     
     /// A builder for [`NoConnectorsAvailableException`](crate::error::NoConnectorsAvailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6125,6 +6136,7 @@ impl std::error::Error for ReplicationJobAlreadyExistsException {}
 pub mod replication_job_already_exists_exception {
     
     /// A builder for [`ReplicationJobAlreadyExistsException`](crate::error::ReplicationJobAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

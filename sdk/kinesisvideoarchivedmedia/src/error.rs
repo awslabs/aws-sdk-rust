@@ -178,6 +178,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -238,6 +239,7 @@ impl std::error::Error for NotAuthorizedException {}
 pub mod not_authorized_exception {
     
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -298,6 +300,7 @@ impl std::error::Error for InvalidArgumentException {}
 pub mod invalid_argument_exception {
     
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -358,6 +361,7 @@ impl std::error::Error for ClientLimitExceededException {}
 pub mod client_limit_exceeded_exception {
     
     /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -916,6 +920,7 @@ impl std::error::Error for UnsupportedStreamMediaTypeException {}
 pub mod unsupported_stream_media_type_exception {
     
     /// A builder for [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -976,6 +981,7 @@ impl std::error::Error for NoDataRetentionException {}
 pub mod no_data_retention_exception {
     
     /// A builder for [`NoDataRetentionException`](crate::error::NoDataRetentionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1036,6 +1042,7 @@ impl std::error::Error for MissingCodecPrivateDataException {}
 pub mod missing_codec_private_data_exception {
     
     /// A builder for [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1096,6 +1103,7 @@ impl std::error::Error for InvalidCodecPrivateDataException {}
 pub mod invalid_codec_private_data_exception {
     
     /// A builder for [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1564,6 +1572,7 @@ impl std::error::Error for InvalidMediaFrameException {}
 pub mod invalid_media_frame_exception {
     
     /// A builder for [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

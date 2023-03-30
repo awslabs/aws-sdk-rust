@@ -152,6 +152,7 @@ impl std::error::Error for ThrottledException {}
 pub mod throttled_exception {
     
     /// A builder for [`ThrottledException`](crate::error::ThrottledException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -212,6 +213,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
     
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -543,6 +545,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -773,6 +776,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
     
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1268,6 +1272,7 @@ impl std::error::Error for PolicySizeLimitExceededException {}
 pub mod policy_size_limit_exceeded_exception {
     
     /// A builder for [`PolicySizeLimitExceededException`](crate::error::PolicySizeLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1328,6 +1333,7 @@ impl std::error::Error for PolicyCountLimitExceededException {}
 pub mod policy_count_limit_exceeded_exception {
     
     /// A builder for [`PolicyCountLimitExceededException`](crate::error::PolicyCountLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1388,6 +1394,7 @@ impl std::error::Error for MalformedPolicyDocumentException {}
 pub mod malformed_policy_document_exception {
     
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1448,6 +1455,7 @@ impl std::error::Error for LockoutPreventionException {}
 pub mod lockout_prevention_exception {
     
     /// A builder for [`LockoutPreventionException`](crate::error::LockoutPreventionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1508,6 +1516,7 @@ impl std::error::Error for InvalidPolicyRevisionIdException {}
 pub mod invalid_policy_revision_id_exception {
     
     /// A builder for [`InvalidPolicyRevisionIdException`](crate::error::InvalidPolicyRevisionIdException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4229,6 +4238,7 @@ impl std::error::Error for RuleLimitExceededException {}
 pub mod rule_limit_exceeded_exception {
     
     /// A builder for [`RuleLimitExceededException`](crate::error::RuleLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

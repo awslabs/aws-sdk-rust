@@ -176,6 +176,7 @@ impl std::error::Error for PipelineNotFoundException {}
 pub mod pipeline_not_found_exception {
     
     /// A builder for [`PipelineNotFoundException`](crate::error::PipelineNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -236,6 +237,7 @@ impl std::error::Error for PipelineDeletedException {}
 pub mod pipeline_deleted_exception {
     
     /// A builder for [`PipelineDeletedException`](crate::error::PipelineDeletedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -296,6 +298,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
     
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -356,6 +359,7 @@ impl std::error::Error for InternalServiceError {}
 pub mod internal_service_error {
     
     /// A builder for [`InternalServiceError`](crate::error::InternalServiceError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -577,6 +581,7 @@ impl std::error::Error for TaskNotFoundException {}
 pub mod task_not_found_exception {
     
     /// A builder for [`TaskNotFoundException`](crate::error::TaskNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

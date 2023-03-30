@@ -125,7 +125,7 @@ return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("A valid par
 if let Some(access_point_name) = access_point_name { #[allow(unused_variables)]
 if let Some(access_point_arn) = crate::endpoint_lib::arn::parse_arn(access_point_name, _diagnostic_collector) { #[allow(unused_variables)]
 if let Some(arn_type) = access_point_arn.resource_id()
-.get(0).cloned() { if !((arn_type) == ("")) {
+.first().cloned() { if !((arn_type) == ("")) {
                                 if (access_point_arn.service()) == ("s3-outposts") {
                                 if (*use_dual_stack) == (true) {
                                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid configuration: Outpost Access Points do not support dual-stack"
@@ -313,7 +313,7 @@ return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN
 if let Some(bucket) = bucket { #[allow(unused_variables)]
 if let Some(bucket_arn) = crate::endpoint_lib::arn::parse_arn(bucket, _diagnostic_collector) { #[allow(unused_variables)]
 if let Some(arn_type) = bucket_arn.resource_id()
-.get(0).cloned() { if !((arn_type) == ("")) {
+.first().cloned() { if !((arn_type) == ("")) {
                                 if (bucket_arn.service()) == ("s3-outposts") {
                                 if (*use_dual_stack) == (true) {
                                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid configuration: Outpost buckets do not support dual-stack"

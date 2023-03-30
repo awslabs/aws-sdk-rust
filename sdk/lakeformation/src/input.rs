@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_lf_tags_to_resource_input {
     
     /// A builder for [`AddLfTagsToResourceInput`](crate::input::AddLfTagsToResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -142,6 +143,7 @@ impl AddLfTagsToResourceInput {
 pub mod assume_decorated_role_with_saml_input {
     
     /// A builder for [`AssumeDecoratedRoleWithSamlInput`](crate::input::AssumeDecoratedRoleWithSamlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_assertion: std::option::Option<std::string::String>,
@@ -285,6 +287,7 @@ impl AssumeDecoratedRoleWithSamlInput {
 pub mod batch_grant_permissions_input {
     
     /// A builder for [`BatchGrantPermissionsInput`](crate::input::BatchGrantPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -410,6 +413,7 @@ impl BatchGrantPermissionsInput {
 pub mod batch_revoke_permissions_input {
     
     /// A builder for [`BatchRevokePermissionsInput`](crate::input::BatchRevokePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -535,6 +539,7 @@ impl BatchRevokePermissionsInput {
 pub mod cancel_transaction_input {
     
     /// A builder for [`CancelTransactionInput`](crate::input::CancelTransactionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -642,6 +647,7 @@ impl CancelTransactionInput {
 pub mod commit_transaction_input {
     
     /// A builder for [`CommitTransactionInput`](crate::input::CommitTransactionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -749,6 +755,7 @@ impl CommitTransactionInput {
 pub mod create_data_cells_filter_input {
     
     /// A builder for [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_data: std::option::Option<crate::model::DataCellsFilter>,
@@ -856,6 +863,7 @@ impl CreateDataCellsFilterInput {
 pub mod create_lf_tag_input {
     
     /// A builder for [`CreateLfTagInput`](crate::input::CreateLfTagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -993,6 +1001,7 @@ impl CreateLfTagInput {
 pub mod delete_data_cells_filter_input {
     
     /// A builder for [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_catalog_id: std::option::Option<std::string::String>,
@@ -1136,6 +1145,7 @@ impl DeleteDataCellsFilterInput {
 pub mod delete_lf_tag_input {
     
     /// A builder for [`DeleteLfTagInput`](crate::input::DeleteLfTagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -1255,6 +1265,7 @@ impl DeleteLfTagInput {
 pub mod delete_objects_on_cancel_input {
     
     /// A builder for [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -1416,6 +1427,7 @@ impl DeleteObjectsOnCancelInput {
 pub mod deregister_resource_input {
     
     /// A builder for [`DeregisterResourceInput`](crate::input::DeregisterResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1523,6 +1535,7 @@ impl DeregisterResourceInput {
 pub mod describe_resource_input {
     
     /// A builder for [`DescribeResourceInput`](crate::input::DescribeResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1630,6 +1643,7 @@ impl DescribeResourceInput {
 pub mod describe_transaction_input {
     
     /// A builder for [`DescribeTransactionInput`](crate::input::DescribeTransactionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -1737,6 +1751,7 @@ impl DescribeTransactionInput {
 pub mod extend_transaction_input {
     
     /// A builder for [`ExtendTransactionInput`](crate::input::ExtendTransactionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -1844,6 +1859,7 @@ impl ExtendTransactionInput {
 pub mod get_data_lake_settings_input {
     
     /// A builder for [`GetDataLakeSettingsInput`](crate::input::GetDataLakeSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -1951,6 +1967,7 @@ impl GetDataLakeSettingsInput {
 pub mod get_effective_permissions_for_path_input {
     
     /// A builder for [`GetEffectivePermissionsForPathInput`](crate::input::GetEffectivePermissionsForPathInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -2094,6 +2111,7 @@ impl GetEffectivePermissionsForPathInput {
 pub mod get_lf_tag_input {
     
     /// A builder for [`GetLfTagInput`](crate::input::GetLfTagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -2213,6 +2231,7 @@ impl GetLfTagInput {
 pub mod get_query_state_input {
     
     /// A builder for [`GetQueryStateInput`](crate::input::GetQueryStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
@@ -2324,6 +2343,7 @@ impl GetQueryStateInput {
 pub mod get_query_statistics_input {
     
     /// A builder for [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
@@ -2435,6 +2455,7 @@ impl GetQueryStatisticsInput {
 pub mod get_resource_lf_tags_input {
     
     /// A builder for [`GetResourceLfTagsInput`](crate::input::GetResourceLfTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -2566,6 +2587,7 @@ impl GetResourceLfTagsInput {
 pub mod get_table_objects_input {
     
     /// A builder for [`GetTableObjectsInput`](crate::input::GetTableObjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -2767,6 +2789,7 @@ impl GetTableObjectsInput {
 pub mod get_temporary_glue_partition_credentials_input {
     
     /// A builder for [`GetTemporaryGluePartitionCredentialsInput`](crate::input::GetTemporaryGluePartitionCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_arn: std::option::Option<std::string::String>,
@@ -2946,6 +2969,7 @@ impl GetTemporaryGluePartitionCredentialsInput {
 pub mod get_temporary_glue_table_credentials_input {
     
     /// A builder for [`GetTemporaryGlueTableCredentialsInput`](crate::input::GetTemporaryGlueTableCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_arn: std::option::Option<std::string::String>,
@@ -3113,6 +3137,7 @@ impl GetTemporaryGlueTableCredentialsInput {
 pub mod get_work_unit_results_input {
     
     /// A builder for [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
@@ -3258,6 +3283,7 @@ impl GetWorkUnitResultsInput {
 pub mod get_work_units_input {
     
     /// A builder for [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3393,6 +3419,7 @@ impl GetWorkUnitsInput {
 pub mod grant_permissions_input {
     
     /// A builder for [`GrantPermissionsInput`](crate::input::GrantPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -3562,6 +3589,7 @@ impl GrantPermissionsInput {
 pub mod list_data_cells_filter_input {
     
     /// A builder for [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table: std::option::Option<crate::model::TableResource>,
@@ -3693,6 +3721,7 @@ impl ListDataCellsFilterInput {
 pub mod list_lf_tags_input {
     
     /// A builder for [`ListLfTagsInput`](crate::input::ListLfTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -3836,6 +3865,7 @@ impl ListLfTagsInput {
 pub mod list_permissions_input {
     
     /// A builder for [`ListPermissionsInput`](crate::input::ListPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -4017,6 +4047,7 @@ impl ListPermissionsInput {
 pub mod list_resources_input {
     
     /// A builder for [`ListResourcesInput`](crate::input::ListResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_condition_list: std::option::Option<std::vec::Vec<crate::model::FilterCondition>>,
@@ -4154,6 +4185,7 @@ impl ListResourcesInput {
 pub mod list_table_storage_optimizers_input {
     
     /// A builder for [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -4321,6 +4353,7 @@ impl ListTableStorageOptimizersInput {
 pub mod list_transactions_input {
     
     /// A builder for [`ListTransactionsInput`](crate::input::ListTransactionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -4464,6 +4497,7 @@ impl ListTransactionsInput {
 pub mod put_data_lake_settings_input {
     
     /// A builder for [`PutDataLakeSettingsInput`](crate::input::PutDataLakeSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -4583,6 +4617,7 @@ impl PutDataLakeSettingsInput {
 pub mod register_resource_input {
     
     /// A builder for [`RegisterResourceInput`](crate::input::RegisterResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4716,6 +4751,7 @@ impl RegisterResourceInput {
 pub mod remove_lf_tags_from_resource_input {
     
     /// A builder for [`RemoveLfTagsFromResourceInput`](crate::input::RemoveLfTagsFromResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -4853,6 +4889,7 @@ impl RemoveLfTagsFromResourceInput {
 pub mod revoke_permissions_input {
     
     /// A builder for [`RevokePermissionsInput`](crate::input::RevokePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -5020,6 +5057,7 @@ impl RevokePermissionsInput {
 pub mod search_databases_by_lf_tags_input {
     
     /// A builder for [`SearchDatabasesByLfTagsInput`](crate::input::SearchDatabasesByLfTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5169,6 +5207,7 @@ impl SearchDatabasesByLfTagsInput {
 pub mod search_tables_by_lf_tags_input {
     
     /// A builder for [`SearchTablesByLfTagsInput`](crate::input::SearchTablesByLfTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5318,6 +5357,7 @@ impl SearchTablesByLfTagsInput {
 pub mod start_query_planning_input {
     
     /// A builder for [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) query_planning_context: std::option::Option<crate::model::QueryPlanningContext>,
@@ -5449,6 +5489,7 @@ impl StartQueryPlanningInput {
 pub mod start_transaction_input {
     
     /// A builder for [`StartTransactionInput`](crate::input::StartTransactionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_type: std::option::Option<crate::model::TransactionType>,
@@ -5556,6 +5597,7 @@ impl StartTransactionInput {
 pub mod update_lf_tag_input {
     
     /// A builder for [`UpdateLfTagInput`](crate::input::UpdateLfTagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -5711,6 +5753,7 @@ impl UpdateLfTagInput {
 pub mod update_resource_input {
     
     /// A builder for [`UpdateResourceInput`](crate::input::UpdateResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -5830,6 +5873,7 @@ impl UpdateResourceInput {
 pub mod update_table_objects_input {
     
     /// A builder for [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -5991,6 +6035,7 @@ impl UpdateTableObjectsInput {
 pub mod update_table_storage_optimizer_input {
     
     /// A builder for [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,

@@ -45,6 +45,7 @@ impl CostCategorySplitChargeRule {
 pub mod cost_category_split_charge_rule {
     
     /// A builder for [`CostCategorySplitChargeRule`](crate::model::CostCategorySplitChargeRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -156,6 +157,7 @@ impl CostCategorySplitChargeRuleParameter {
 pub mod cost_category_split_charge_rule_parameter {
     
     /// A builder for [`CostCategorySplitChargeRuleParameter`](crate::model::CostCategorySplitChargeRuleParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::CostCategorySplitChargeRuleParameterType>,
@@ -413,6 +415,7 @@ impl CostCategoryRule {
 pub mod cost_category_rule {
     
     /// A builder for [`CostCategoryRule`](crate::model::CostCategoryRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -594,6 +597,7 @@ impl CostCategoryInheritedValueDimension {
 pub mod cost_category_inherited_value_dimension {
     
     /// A builder for [`CostCategoryInheritedValueDimension`](crate::model::CostCategoryInheritedValueDimension).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimension_name: std::option::Option<crate::model::CostCategoryInheritedValueDimensionName>,
@@ -811,6 +815,7 @@ impl Expression {
 pub mod expression {
     
     /// A builder for [`Expression`](crate::model::Expression).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) or: std::option::Option<std::vec::Vec<crate::model::Expression>>,
@@ -949,6 +954,7 @@ impl CostCategoryValues {
 pub mod cost_category_values {
     
     /// A builder for [`CostCategoryValues`](crate::model::CostCategoryValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1163,6 +1169,7 @@ impl TagValues {
 pub mod tag_values {
     
     /// A builder for [`TagValues`](crate::model::TagValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1273,6 +1280,7 @@ impl DimensionValues {
 pub mod dimension_values {
     
     /// A builder for [`DimensionValues`](crate::model::DimensionValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::Dimension>,
@@ -1702,6 +1710,7 @@ impl UpdateCostAllocationTagsStatusError {
 pub mod update_cost_allocation_tags_status_error {
     
     /// A builder for [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -1783,6 +1792,7 @@ impl CostAllocationTagStatusEntry {
 pub mod cost_allocation_tag_status_entry {
     
     /// A builder for [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -1941,6 +1951,7 @@ impl Subscriber {
 pub mod subscriber {
     
     /// A builder for [`Subscriber`](crate::model::Subscriber).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
@@ -2275,6 +2286,7 @@ impl ResourceTag {
 pub mod resource_tag {
     
     /// A builder for [`ResourceTag`](crate::model::ResourceTag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2452,6 +2464,7 @@ impl GenerationSummary {
 pub mod generation_summary {
     
     /// A builder for [`GenerationSummary`](crate::model::GenerationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -2687,6 +2700,7 @@ impl CostCategoryReference {
 pub mod cost_category_reference {
     
     /// A builder for [`CostCategoryReference`](crate::model::CostCategoryReference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
@@ -2841,6 +2855,7 @@ impl CostCategoryProcessingStatus {
 pub mod cost_category_processing_status {
     
     /// A builder for [`CostCategoryProcessingStatus`](crate::model::CostCategoryProcessingStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component: std::option::Option<crate::model::CostCategoryStatusComponent>,
@@ -3076,6 +3091,7 @@ impl CostAllocationTag {
 pub mod cost_allocation_tag {
     
     /// A builder for [`CostAllocationTag`](crate::model::CostAllocationTag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -3253,6 +3269,7 @@ impl ForecastResult {
 pub mod forecast_result {
     
     /// A builder for [`ForecastResult`](crate::model::ForecastResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
@@ -3346,6 +3363,7 @@ impl DateInterval {
 pub mod date_interval {
     
     /// A builder for [`DateInterval`](crate::model::DateInterval).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<std::string::String>,
@@ -3415,6 +3433,7 @@ impl MetricValue {
 pub mod metric_value {
     
     /// A builder for [`MetricValue`](crate::model::MetricValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amount: std::option::Option<std::string::String>,
@@ -3678,6 +3697,7 @@ impl SortDefinition {
 pub mod sort_definition {
     
     /// A builder for [`SortDefinition`](crate::model::SortDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -3836,6 +3856,7 @@ impl SavingsPlansUtilizationAggregates {
 pub mod savings_plans_utilization_aggregates {
     
     /// A builder for [`SavingsPlansUtilizationAggregates`](crate::model::SavingsPlansUtilizationAggregates).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
@@ -3924,6 +3945,7 @@ impl SavingsPlansAmortizedCommitment {
 pub mod savings_plans_amortized_commitment {
     
     /// A builder for [`SavingsPlansAmortizedCommitment`](crate::model::SavingsPlansAmortizedCommitment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amortized_recurring_commitment: std::option::Option<std::string::String>,
@@ -4005,6 +4027,7 @@ impl SavingsPlansSavings {
 pub mod savings_plans_savings {
     
     /// A builder for [`SavingsPlansSavings`](crate::model::SavingsPlansSavings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) net_savings: std::option::Option<std::string::String>,
@@ -4088,6 +4111,7 @@ impl SavingsPlansUtilization {
 pub mod savings_plans_utilization {
     
     /// A builder for [`SavingsPlansUtilization`](crate::model::SavingsPlansUtilization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_commitment: std::option::Option<std::string::String>,
@@ -4202,6 +4226,7 @@ impl SavingsPlansUtilizationDetail {
 pub mod savings_plans_utilization_detail {
     
     /// A builder for [`SavingsPlansUtilizationDetail`](crate::model::SavingsPlansUtilizationDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_arn: std::option::Option<std::string::String>,
@@ -4419,6 +4444,7 @@ impl SavingsPlansUtilizationByTime {
 pub mod savings_plans_utilization_by_time {
     
     /// A builder for [`SavingsPlansUtilizationByTime`](crate::model::SavingsPlansUtilizationByTime).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
@@ -4547,6 +4573,7 @@ impl SavingsPlansPurchaseRecommendation {
 pub mod savings_plans_purchase_recommendation {
     
     /// A builder for [`SavingsPlansPurchaseRecommendation`](crate::model::SavingsPlansPurchaseRecommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_scope: std::option::Option<crate::model::AccountScope>,
@@ -4745,6 +4772,7 @@ impl SavingsPlansPurchaseRecommendationSummary {
 pub mod savings_plans_purchase_recommendation_summary {
     
     /// A builder for [`SavingsPlansPurchaseRecommendationSummary`](crate::model::SavingsPlansPurchaseRecommendationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) estimated_roi: std::option::Option<std::string::String>,
@@ -5020,6 +5048,7 @@ impl SavingsPlansPurchaseRecommendationDetail {
 pub mod savings_plans_purchase_recommendation_detail {
     
     /// A builder for [`SavingsPlansPurchaseRecommendationDetail`](crate::model::SavingsPlansPurchaseRecommendationDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plans_details: std::option::Option<crate::model::SavingsPlansDetails>,
@@ -5264,6 +5293,7 @@ impl SavingsPlansDetails {
 pub mod savings_plans_details {
     
     /// A builder for [`SavingsPlansDetails`](crate::model::SavingsPlansDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
@@ -5792,6 +5822,7 @@ impl SavingsPlansPurchaseRecommendationMetadata {
 pub mod savings_plans_purchase_recommendation_metadata {
     
     /// A builder for [`SavingsPlansPurchaseRecommendationMetadata`](crate::model::SavingsPlansPurchaseRecommendationMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -5880,6 +5911,7 @@ impl SavingsPlansCoverage {
 pub mod savings_plans_coverage {
     
     /// A builder for [`SavingsPlansCoverage`](crate::model::SavingsPlansCoverage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5981,6 +6013,7 @@ impl SavingsPlansCoverageData {
 pub mod savings_plans_coverage_data {
     
     /// A builder for [`SavingsPlansCoverageData`](crate::model::SavingsPlansCoverageData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) spend_covered_by_savings_plans: std::option::Option<std::string::String>,
@@ -6074,6 +6107,7 @@ impl GroupDefinition {
 pub mod group_definition {
     
     /// A builder for [`GroupDefinition`](crate::model::GroupDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::GroupDefinitionType>,
@@ -6230,6 +6264,7 @@ impl RightsizingRecommendationConfiguration {
 pub mod rightsizing_recommendation_configuration {
     
     /// A builder for [`RightsizingRecommendationConfiguration`](crate::model::RightsizingRecommendationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_target: std::option::Option<crate::model::RecommendationTarget>,
@@ -6410,6 +6445,7 @@ impl RightsizingRecommendation {
 pub mod rightsizing_recommendation {
     
     /// A builder for [`RightsizingRecommendation`](crate::model::RightsizingRecommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -6685,6 +6721,7 @@ impl TerminateRecommendationDetail {
 pub mod terminate_recommendation_detail {
     
     /// A builder for [`TerminateRecommendationDetail`](crate::model::TerminateRecommendationDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) estimated_monthly_savings: std::option::Option<std::string::String>,
@@ -6747,6 +6784,7 @@ impl ModifyRecommendationDetail {
 pub mod modify_recommendation_detail {
     
     /// A builder for [`ModifyRecommendationDetail`](crate::model::ModifyRecommendationDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_instances: std::option::Option<std::vec::Vec<crate::model::TargetInstance>>,
@@ -6845,6 +6883,7 @@ impl TargetInstance {
 pub mod target_instance {
     
     /// A builder for [`TargetInstance`](crate::model::TargetInstance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) estimated_monthly_cost: std::option::Option<std::string::String>,
@@ -7071,6 +7110,7 @@ impl ResourceUtilization {
 pub mod resource_utilization {
     
     /// A builder for [`ResourceUtilization`](crate::model::ResourceUtilization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_resource_utilization: std::option::Option<crate::model::Ec2ResourceUtilization>,
@@ -7156,6 +7196,7 @@ impl Ec2ResourceUtilization {
 pub mod ec2_resource_utilization {
     
     /// A builder for [`Ec2ResourceUtilization`](crate::model::Ec2ResourceUtilization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_cpu_utilization_percentage: std::option::Option<std::string::String>,
@@ -7287,6 +7328,7 @@ impl NetworkResourceUtilization {
 pub mod network_resource_utilization {
     
     /// A builder for [`NetworkResourceUtilization`](crate::model::NetworkResourceUtilization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_in_bytes_per_second: std::option::Option<std::string::String>,
@@ -7394,6 +7436,7 @@ impl DiskResourceUtilization {
 pub mod disk_resource_utilization {
     
     /// A builder for [`DiskResourceUtilization`](crate::model::DiskResourceUtilization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_read_ops_per_second: std::option::Option<std::string::String>,
@@ -7501,6 +7544,7 @@ impl EbsResourceUtilization {
 pub mod ebs_resource_utilization {
     
     /// A builder for [`EbsResourceUtilization`](crate::model::EbsResourceUtilization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ebs_read_ops_per_second: std::option::Option<std::string::String>,
@@ -7587,6 +7631,7 @@ impl ResourceDetails {
 pub mod resource_details {
     
     /// A builder for [`ResourceDetails`](crate::model::ResourceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_resource_details: std::option::Option<crate::model::Ec2ResourceDetails>,
@@ -7693,6 +7738,7 @@ impl Ec2ResourceDetails {
 pub mod ec2_resource_details {
     
     /// A builder for [`Ec2ResourceDetails`](crate::model::Ec2ResourceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hourly_on_demand_rate: std::option::Option<std::string::String>,
@@ -7991,6 +8037,7 @@ impl CurrentInstance {
 pub mod current_instance {
     
     /// A builder for [`CurrentInstance`](crate::model::CurrentInstance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -8188,6 +8235,7 @@ impl RightsizingRecommendationSummary {
 pub mod rightsizing_recommendation_summary {
     
     /// A builder for [`RightsizingRecommendationSummary`](crate::model::RightsizingRecommendationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_recommendation_count: std::option::Option<std::string::String>,
@@ -8295,6 +8343,7 @@ impl RightsizingRecommendationMetadata {
 pub mod rightsizing_recommendation_metadata {
     
     /// A builder for [`RightsizingRecommendationMetadata`](crate::model::RightsizingRecommendationMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -8493,6 +8542,7 @@ impl ReservationAggregates {
 pub mod reservation_aggregates {
     
     /// A builder for [`ReservationAggregates`](crate::model::ReservationAggregates).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) utilization_percentage: std::option::Option<std::string::String>,
@@ -8749,6 +8799,7 @@ impl UtilizationByTime {
 pub mod utilization_by_time {
     
     /// A builder for [`UtilizationByTime`](crate::model::UtilizationByTime).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
@@ -8850,6 +8901,7 @@ impl ReservationUtilizationGroup {
 pub mod reservation_utilization_group {
     
     /// A builder for [`ReservationUtilizationGroup`](crate::model::ReservationUtilizationGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -8984,6 +9036,7 @@ impl ReservationPurchaseRecommendation {
 pub mod reservation_purchase_recommendation {
     
     /// A builder for [`ReservationPurchaseRecommendation`](crate::model::ReservationPurchaseRecommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_scope: std::option::Option<crate::model::AccountScope>,
@@ -9126,6 +9179,7 @@ impl ReservationPurchaseRecommendationSummary {
 pub mod reservation_purchase_recommendation_summary {
     
     /// A builder for [`ReservationPurchaseRecommendationSummary`](crate::model::ReservationPurchaseRecommendationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_estimated_monthly_savings_amount: std::option::Option<std::string::String>,
@@ -9326,6 +9380,7 @@ impl ReservationPurchaseRecommendationDetail {
 pub mod reservation_purchase_recommendation_detail {
     
     /// A builder for [`ReservationPurchaseRecommendationDetail`](crate::model::ReservationPurchaseRecommendationDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -9620,6 +9675,7 @@ impl InstanceDetails {
 pub mod instance_details {
     
     /// A builder for [`InstanceDetails`](crate::model::InstanceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_instance_details: std::option::Option<crate::model::Ec2InstanceDetails>,
@@ -9746,6 +9802,7 @@ impl EsInstanceDetails {
 pub mod es_instance_details {
     
     /// A builder for [`EsInstanceDetails`](crate::model::EsInstanceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_class: std::option::Option<std::string::String>,
@@ -9881,6 +9938,7 @@ impl ElastiCacheInstanceDetails {
 pub mod elasti_cache_instance_details {
     
     /// A builder for [`ElastiCacheInstanceDetails`](crate::model::ElastiCacheInstanceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) family: std::option::Option<std::string::String>,
@@ -10021,6 +10079,7 @@ impl RedshiftInstanceDetails {
 pub mod redshift_instance_details {
     
     /// A builder for [`RedshiftInstanceDetails`](crate::model::RedshiftInstanceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) family: std::option::Option<std::string::String>,
@@ -10177,6 +10236,7 @@ impl RdsInstanceDetails {
 pub mod rds_instance_details {
     
     /// A builder for [`RdsInstanceDetails`](crate::model::RdsInstanceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) family: std::option::Option<std::string::String>,
@@ -10374,6 +10434,7 @@ impl Ec2InstanceDetails {
 pub mod ec2_instance_details {
     
     /// A builder for [`Ec2InstanceDetails`](crate::model::Ec2InstanceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) family: std::option::Option<std::string::String>,
@@ -10510,6 +10571,7 @@ impl ServiceSpecification {
 pub mod service_specification {
     
     /// A builder for [`ServiceSpecification`](crate::model::ServiceSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_specification: std::option::Option<crate::model::Ec2Specification>,
@@ -10560,6 +10622,7 @@ impl Ec2Specification {
 pub mod ec2_specification {
     
     /// A builder for [`Ec2Specification`](crate::model::Ec2Specification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_class: std::option::Option<crate::model::OfferingClass>,
@@ -10699,6 +10762,7 @@ impl ReservationPurchaseRecommendationMetadata {
 pub mod reservation_purchase_recommendation_metadata {
     
     /// A builder for [`ReservationPurchaseRecommendationMetadata`](crate::model::ReservationPurchaseRecommendationMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -10775,6 +10839,7 @@ impl Coverage {
 pub mod coverage {
     
     /// A builder for [`Coverage`](crate::model::Coverage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) coverage_hours: std::option::Option<crate::model::CoverageHours>,
@@ -10849,6 +10914,7 @@ impl CoverageCost {
 pub mod coverage_cost {
     
     /// A builder for [`CoverageCost`](crate::model::CoverageCost).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) on_demand_cost: std::option::Option<std::string::String>,
@@ -10921,6 +10987,7 @@ impl CoverageNormalizedUnits {
 pub mod coverage_normalized_units {
     
     /// A builder for [`CoverageNormalizedUnits`](crate::model::CoverageNormalizedUnits).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) on_demand_normalized_units: std::option::Option<std::string::String>,
@@ -11028,6 +11095,7 @@ impl CoverageHours {
 pub mod coverage_hours {
     
     /// A builder for [`CoverageHours`](crate::model::CoverageHours).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) on_demand_hours: std::option::Option<std::string::String>,
@@ -11128,6 +11196,7 @@ impl CoverageByTime {
 pub mod coverage_by_time {
     
     /// A builder for [`CoverageByTime`](crate::model::CoverageByTime).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
@@ -11215,6 +11284,7 @@ impl ReservationCoverageGroup {
 pub mod reservation_coverage_group {
     
     /// A builder for [`ReservationCoverageGroup`](crate::model::ReservationCoverageGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -11290,6 +11360,7 @@ impl DimensionValuesWithAttributes {
 pub mod dimension_values_with_attributes {
     
     /// A builder for [`DimensionValuesWithAttributes`](crate::model::DimensionValuesWithAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -11466,6 +11537,7 @@ impl ResultByTime {
 pub mod result_by_time {
     
     /// A builder for [`ResultByTime`](crate::model::ResultByTime).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
@@ -11572,6 +11644,7 @@ impl Group {
 pub mod group {
     
     /// A builder for [`Group`](crate::model::Group).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11719,6 +11792,7 @@ impl AnomalySubscription {
 pub mod anomaly_subscription {
     
     /// A builder for [`AnomalySubscription`](crate::model::AnomalySubscription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
@@ -12017,6 +12091,7 @@ impl AnomalyMonitor {
 pub mod anomaly_monitor {
     
     /// A builder for [`AnomalyMonitor`](crate::model::AnomalyMonitor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
@@ -12451,6 +12526,7 @@ impl Anomaly {
 pub mod anomaly {
     
     /// A builder for [`Anomaly`](crate::model::Anomaly).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_id: std::option::Option<std::string::String>,
@@ -12631,6 +12707,7 @@ impl Impact {
 pub mod impact {
     
     /// A builder for [`Impact`](crate::model::Impact).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_impact: std::option::Option<f64>,
@@ -12738,6 +12815,7 @@ impl AnomalyScore {
 pub mod anomaly_score {
     
     /// A builder for [`AnomalyScore`](crate::model::AnomalyScore).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_score: std::option::Option<f64>,
@@ -12830,6 +12908,7 @@ impl RootCause {
 pub mod root_cause {
     
     /// A builder for [`RootCause`](crate::model::RootCause).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<std::string::String>,
@@ -12942,6 +13021,7 @@ impl TotalImpactFilter {
 pub mod total_impact_filter {
     
     /// A builder for [`TotalImpactFilter`](crate::model::TotalImpactFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) numeric_operator: std::option::Option<crate::model::NumericOperator>,
@@ -13127,6 +13207,7 @@ impl AnomalyDateInterval {
 pub mod anomaly_date_interval {
     
     /// A builder for [`AnomalyDateInterval`](crate::model::AnomalyDateInterval).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_date: std::option::Option<std::string::String>,
@@ -13245,6 +13326,7 @@ impl CostCategory {
 pub mod cost_category {
     
     /// A builder for [`CostCategory`](crate::model::CostCategory).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,

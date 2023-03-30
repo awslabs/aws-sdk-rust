@@ -17,6 +17,7 @@ impl UpdateStackOutput {
 pub mod update_stack_output {
     
     /// A builder for [`UpdateStackOutput`](crate::output::UpdateStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack: std::option::Option<crate::model::Stack>,
@@ -58,6 +59,7 @@ pub struct UpdateImagePermissionsOutput  {
 pub mod update_image_permissions_output {
     
     /// A builder for [`UpdateImagePermissionsOutput`](crate::output::UpdateImagePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -96,6 +98,7 @@ impl UpdateFleetOutput {
 pub mod update_fleet_output {
     
     /// A builder for [`UpdateFleetOutput`](crate::output::UpdateFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<crate::model::Fleet>,
@@ -146,6 +149,7 @@ impl UpdateEntitlementOutput {
 pub mod update_entitlement_output {
     
     /// A builder for [`UpdateEntitlementOutput`](crate::output::UpdateEntitlementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlement: std::option::Option<crate::model::Entitlement>,
@@ -196,6 +200,7 @@ impl UpdateDirectoryConfigOutput {
 pub mod update_directory_config_output {
     
     /// A builder for [`UpdateDirectoryConfigOutput`](crate::output::UpdateDirectoryConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_config: std::option::Option<crate::model::DirectoryConfig>,
@@ -246,6 +251,7 @@ impl UpdateApplicationOutput {
 pub mod update_application_output {
     
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::Application>,
@@ -287,6 +293,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -316,6 +323,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -354,6 +362,7 @@ impl StopImageBuilderOutput {
 pub mod stop_image_builder_output {
     
     /// A builder for [`StopImageBuilderOutput`](crate::output::StopImageBuilderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_builder: std::option::Option<crate::model::ImageBuilder>,
@@ -395,6 +404,7 @@ pub struct StopFleetOutput  {
 pub mod stop_fleet_output {
     
     /// A builder for [`StopFleetOutput`](crate::output::StopFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -433,6 +443,7 @@ impl StartImageBuilderOutput {
 pub mod start_image_builder_output {
     
     /// A builder for [`StartImageBuilderOutput`](crate::output::StartImageBuilderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_builder: std::option::Option<crate::model::ImageBuilder>,
@@ -474,6 +485,7 @@ pub struct StartFleetOutput  {
 pub mod start_fleet_output {
     
     /// A builder for [`StartFleetOutput`](crate::output::StartFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -512,6 +524,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -575,6 +588,7 @@ impl ListEntitledApplicationsOutput {
 pub mod list_entitled_applications_output {
     
     /// A builder for [`ListEntitledApplicationsOutput`](crate::output::ListEntitledApplicationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitled_applications: std::option::Option<std::vec::Vec<crate::model::EntitledApplication>>,
@@ -650,6 +664,7 @@ impl ListAssociatedStacksOutput {
 pub mod list_associated_stacks_output {
     
     /// A builder for [`ListAssociatedStacksOutput`](crate::output::ListAssociatedStacksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -725,6 +740,7 @@ impl ListAssociatedFleetsOutput {
 pub mod list_associated_fleets_output {
     
     /// A builder for [`ListAssociatedFleetsOutput`](crate::output::ListAssociatedFleetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -784,6 +800,7 @@ pub struct ExpireSessionOutput  {
 pub mod expire_session_output {
     
     /// A builder for [`ExpireSessionOutput`](crate::output::ExpireSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -813,6 +830,7 @@ pub struct EnableUserOutput  {
 pub mod enable_user_output {
     
     /// A builder for [`EnableUserOutput`](crate::output::EnableUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -842,6 +860,7 @@ pub struct DisassociateFleetOutput  {
 pub mod disassociate_fleet_output {
     
     /// A builder for [`DisassociateFleetOutput`](crate::output::DisassociateFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -871,6 +890,7 @@ pub struct DisassociateApplicationFromEntitlementOutput  {
 pub mod disassociate_application_from_entitlement_output {
     
     /// A builder for [`DisassociateApplicationFromEntitlementOutput`](crate::output::DisassociateApplicationFromEntitlementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -900,6 +920,7 @@ pub struct DisassociateApplicationFleetOutput  {
 pub mod disassociate_application_fleet_output {
     
     /// A builder for [`DisassociateApplicationFleetOutput`](crate::output::DisassociateApplicationFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -929,6 +950,7 @@ pub struct DisableUserOutput  {
 pub mod disable_user_output {
     
     /// A builder for [`DisableUserOutput`](crate::output::DisableUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -974,6 +996,7 @@ impl DescribeUserStackAssociationsOutput {
 pub mod describe_user_stack_associations_output {
     
     /// A builder for [`DescribeUserStackAssociationsOutput`](crate::output::DescribeUserStackAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_stack_associations: std::option::Option<std::vec::Vec<crate::model::UserStackAssociation>>,
@@ -1049,6 +1072,7 @@ impl DescribeUsersOutput {
 pub mod describe_users_output {
     
     /// A builder for [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -1124,6 +1148,7 @@ impl DescribeUsageReportSubscriptionsOutput {
 pub mod describe_usage_report_subscriptions_output {
     
     /// A builder for [`DescribeUsageReportSubscriptionsOutput`](crate::output::DescribeUsageReportSubscriptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_report_subscriptions: std::option::Option<std::vec::Vec<crate::model::UsageReportSubscription>>,
@@ -1199,6 +1224,7 @@ impl DescribeStacksOutput {
 pub mod describe_stacks_output {
     
     /// A builder for [`DescribeStacksOutput`](crate::output::DescribeStacksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stacks: std::option::Option<std::vec::Vec<crate::model::Stack>>,
@@ -1274,6 +1300,7 @@ impl DescribeSessionsOutput {
 pub mod describe_sessions_output {
     
     /// A builder for [`DescribeSessionsOutput`](crate::output::DescribeSessionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
@@ -1349,6 +1376,7 @@ impl DescribeImagesOutput {
 pub mod describe_images_output {
     
     /// A builder for [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) images: std::option::Option<std::vec::Vec<crate::model::Image>>,
@@ -1431,6 +1459,7 @@ impl DescribeImagePermissionsOutput {
 pub mod describe_image_permissions_output {
     
     /// A builder for [`DescribeImagePermissionsOutput`](crate::output::DescribeImagePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1518,6 +1547,7 @@ impl DescribeImageBuildersOutput {
 pub mod describe_image_builders_output {
     
     /// A builder for [`DescribeImageBuildersOutput`](crate::output::DescribeImageBuildersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_builders: std::option::Option<std::vec::Vec<crate::model::ImageBuilder>>,
@@ -1593,6 +1623,7 @@ impl DescribeFleetsOutput {
 pub mod describe_fleets_output {
     
     /// A builder for [`DescribeFleetsOutput`](crate::output::DescribeFleetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleets: std::option::Option<std::vec::Vec<crate::model::Fleet>>,
@@ -1668,6 +1699,7 @@ impl DescribeEntitlementsOutput {
 pub mod describe_entitlements_output {
     
     /// A builder for [`DescribeEntitlementsOutput`](crate::output::DescribeEntitlementsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
@@ -1743,6 +1775,7 @@ impl DescribeDirectoryConfigsOutput {
 pub mod describe_directory_configs_output {
     
     /// A builder for [`DescribeDirectoryConfigsOutput`](crate::output::DescribeDirectoryConfigsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_configs: std::option::Option<std::vec::Vec<crate::model::DirectoryConfig>>,
@@ -1818,6 +1851,7 @@ impl DescribeApplicationsOutput {
 pub mod describe_applications_output {
     
     /// A builder for [`DescribeApplicationsOutput`](crate::output::DescribeApplicationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -1893,6 +1927,7 @@ impl DescribeApplicationFleetAssociationsOutput {
 pub mod describe_application_fleet_associations_output {
     
     /// A builder for [`DescribeApplicationFleetAssociationsOutput`](crate::output::DescribeApplicationFleetAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_fleet_associations: std::option::Option<std::vec::Vec<crate::model::ApplicationFleetAssociation>>,
@@ -1968,6 +2003,7 @@ impl DescribeAppBlocksOutput {
 pub mod describe_app_blocks_output {
     
     /// A builder for [`DescribeAppBlocksOutput`](crate::output::DescribeAppBlocksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_blocks: std::option::Option<std::vec::Vec<crate::model::AppBlock>>,
@@ -2027,6 +2063,7 @@ pub struct DeleteUserOutput  {
 pub mod delete_user_output {
     
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2056,6 +2093,7 @@ pub struct DeleteUsageReportSubscriptionOutput  {
 pub mod delete_usage_report_subscription_output {
     
     /// A builder for [`DeleteUsageReportSubscriptionOutput`](crate::output::DeleteUsageReportSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2085,6 +2123,7 @@ pub struct DeleteStackOutput  {
 pub mod delete_stack_output {
     
     /// A builder for [`DeleteStackOutput`](crate::output::DeleteStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2114,6 +2153,7 @@ pub struct DeleteImagePermissionsOutput  {
 pub mod delete_image_permissions_output {
     
     /// A builder for [`DeleteImagePermissionsOutput`](crate::output::DeleteImagePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2152,6 +2192,7 @@ impl DeleteImageBuilderOutput {
 pub mod delete_image_builder_output {
     
     /// A builder for [`DeleteImageBuilderOutput`](crate::output::DeleteImageBuilderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_builder: std::option::Option<crate::model::ImageBuilder>,
@@ -2202,6 +2243,7 @@ impl DeleteImageOutput {
 pub mod delete_image_output {
     
     /// A builder for [`DeleteImageOutput`](crate::output::DeleteImageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
@@ -2243,6 +2285,7 @@ pub struct DeleteFleetOutput  {
 pub mod delete_fleet_output {
     
     /// A builder for [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2272,6 +2315,7 @@ pub struct DeleteEntitlementOutput  {
 pub mod delete_entitlement_output {
     
     /// A builder for [`DeleteEntitlementOutput`](crate::output::DeleteEntitlementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2301,6 +2345,7 @@ pub struct DeleteDirectoryConfigOutput  {
 pub mod delete_directory_config_output {
     
     /// A builder for [`DeleteDirectoryConfigOutput`](crate::output::DeleteDirectoryConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2330,6 +2375,7 @@ pub struct DeleteApplicationOutput  {
 pub mod delete_application_output {
     
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2359,6 +2405,7 @@ pub struct DeleteAppBlockOutput  {
 pub mod delete_app_block_output {
     
     /// A builder for [`DeleteAppBlockOutput`](crate::output::DeleteAppBlockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2388,6 +2435,7 @@ pub struct CreateUserOutput  {
 pub mod create_user_output {
     
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2435,6 +2483,7 @@ impl CreateUsageReportSubscriptionOutput {
 pub mod create_usage_report_subscription_output {
     
     /// A builder for [`CreateUsageReportSubscriptionOutput`](crate::output::CreateUsageReportSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
@@ -2506,6 +2555,7 @@ impl CreateUpdatedImageOutput {
 pub mod create_updated_image_output {
     
     /// A builder for [`CreateUpdatedImageOutput`](crate::output::CreateUpdatedImageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
@@ -2576,6 +2626,7 @@ impl CreateStreamingUrlOutput {
 pub mod create_streaming_url_output {
     
     /// A builder for [`CreateStreamingUrlOutput`](crate::output::CreateStreamingUrlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_url: std::option::Option<std::string::String>,
@@ -2638,6 +2689,7 @@ impl CreateStackOutput {
 pub mod create_stack_output {
     
     /// A builder for [`CreateStackOutput`](crate::output::CreateStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack: std::option::Option<crate::model::Stack>,
@@ -2695,6 +2747,7 @@ impl CreateImageBuilderStreamingUrlOutput {
 pub mod create_image_builder_streaming_url_output {
     
     /// A builder for [`CreateImageBuilderStreamingUrlOutput`](crate::output::CreateImageBuilderStreamingUrlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_url: std::option::Option<std::string::String>,
@@ -2757,6 +2810,7 @@ impl CreateImageBuilderOutput {
 pub mod create_image_builder_output {
     
     /// A builder for [`CreateImageBuilderOutput`](crate::output::CreateImageBuilderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_builder: std::option::Option<crate::model::ImageBuilder>,
@@ -2807,6 +2861,7 @@ impl CreateFleetOutput {
 pub mod create_fleet_output {
     
     /// A builder for [`CreateFleetOutput`](crate::output::CreateFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<crate::model::Fleet>,
@@ -2857,6 +2912,7 @@ impl CreateEntitlementOutput {
 pub mod create_entitlement_output {
     
     /// A builder for [`CreateEntitlementOutput`](crate::output::CreateEntitlementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlement: std::option::Option<crate::model::Entitlement>,
@@ -2907,6 +2963,7 @@ impl CreateDirectoryConfigOutput {
 pub mod create_directory_config_output {
     
     /// A builder for [`CreateDirectoryConfigOutput`](crate::output::CreateDirectoryConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_config: std::option::Option<crate::model::DirectoryConfig>,
@@ -2957,6 +3014,7 @@ impl CreateApplicationOutput {
 pub mod create_application_output {
     
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::Application>,
@@ -3007,6 +3065,7 @@ impl CreateAppBlockOutput {
 pub mod create_app_block_output {
     
     /// A builder for [`CreateAppBlockOutput`](crate::output::CreateAppBlockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_block: std::option::Option<crate::model::AppBlock>,
@@ -3057,6 +3116,7 @@ impl CopyImageOutput {
 pub mod copy_image_output {
     
     /// A builder for [`CopyImageOutput`](crate::output::CopyImageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_image_name: std::option::Option<std::string::String>,
@@ -3107,6 +3167,7 @@ impl BatchDisassociateUserStackOutput {
 pub mod batch_disassociate_user_stack_output {
     
     /// A builder for [`BatchDisassociateUserStackOutput`](crate::output::BatchDisassociateUserStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::UserStackAssociationError>>,
@@ -3163,6 +3224,7 @@ impl BatchAssociateUserStackOutput {
 pub mod batch_associate_user_stack_output {
     
     /// A builder for [`BatchAssociateUserStackOutput`](crate::output::BatchAssociateUserStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::UserStackAssociationError>>,
@@ -3210,6 +3272,7 @@ pub struct AssociateFleetOutput  {
 pub mod associate_fleet_output {
     
     /// A builder for [`AssociateFleetOutput`](crate::output::AssociateFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3239,6 +3302,7 @@ pub struct AssociateApplicationToEntitlementOutput  {
 pub mod associate_application_to_entitlement_output {
     
     /// A builder for [`AssociateApplicationToEntitlementOutput`](crate::output::AssociateApplicationToEntitlementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3277,6 +3341,7 @@ impl AssociateApplicationFleetOutput {
 pub mod associate_application_fleet_output {
     
     /// A builder for [`AssociateApplicationFleetOutput`](crate::output::AssociateApplicationFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_fleet_association: std::option::Option<crate::model::ApplicationFleetAssociation>,

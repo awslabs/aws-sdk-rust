@@ -24,6 +24,7 @@ impl UpdateEnrollmentStatusOutput {
 pub mod update_enrollment_status_output {
     
     /// A builder for [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -77,6 +78,7 @@ pub struct PutRecommendationPreferencesOutput  {
 pub mod put_recommendation_preferences_output {
     
     /// A builder for [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -124,6 +126,7 @@ impl GetRecommendationSummariesOutput {
 pub mod get_recommendation_summaries_output {
     
     /// A builder for [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -203,6 +206,7 @@ impl GetRecommendationPreferencesOutput {
 pub mod get_recommendation_preferences_output {
     
     /// A builder for [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -282,6 +286,7 @@ impl GetLambdaFunctionRecommendationsOutput {
 pub mod get_lambda_function_recommendations_output {
     
     /// A builder for [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -361,6 +366,7 @@ impl GetEnrollmentStatusesForOrganizationOutput {
 pub mod get_enrollment_statuses_for_organization_output {
     
     /// A builder for [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_enrollment_statuses: std::option::Option<std::vec::Vec<crate::model::AccountEnrollmentStatus>>,
@@ -461,6 +467,7 @@ impl GetEnrollmentStatusOutput {
 pub mod get_enrollment_status_output {
     
     /// A builder for [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -581,6 +588,7 @@ impl GetEffectiveRecommendationPreferencesOutput {
 pub mod get_effective_recommendation_preferences_output {
     
     /// A builder for [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enhanced_infrastructure_metrics: std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
@@ -669,6 +677,7 @@ impl GetEcsServiceRecommendationsOutput {
 pub mod get_ecs_service_recommendations_output {
     
     /// A builder for [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -755,6 +764,7 @@ impl GetEcsServiceRecommendationProjectedMetricsOutput {
 pub mod get_ecs_service_recommendation_projected_metrics_output {
     
     /// A builder for [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommended_option_projected_metrics: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendedOptionProjectedMetric>>,
@@ -811,6 +821,7 @@ impl GetEc2RecommendationProjectedMetricsOutput {
 pub mod get_ec2_recommendation_projected_metrics_output {
     
     /// A builder for [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommended_option_projected_metrics: std::option::Option<std::vec::Vec<crate::model::RecommendedOptionProjectedMetric>>,
@@ -885,6 +896,7 @@ impl GetEc2InstanceRecommendationsOutput {
 pub mod get_ec2_instance_recommendations_output {
     
     /// A builder for [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -993,6 +1005,7 @@ impl GetEbsVolumeRecommendationsOutput {
 pub mod get_ebs_volume_recommendations_output {
     
     /// A builder for [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1101,6 +1114,7 @@ impl GetAutoScalingGroupRecommendationsOutput {
 pub mod get_auto_scaling_group_recommendations_output {
     
     /// A builder for [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1200,6 +1214,7 @@ impl ExportLambdaFunctionRecommendationsOutput {
 pub mod export_lambda_function_recommendations_output {
     
     /// A builder for [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1273,6 +1288,7 @@ impl ExportEcsServiceRecommendationsOutput {
 pub mod export_ecs_service_recommendations_output {
     
     /// A builder for [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1346,6 +1362,7 @@ impl ExportEc2InstanceRecommendationsOutput {
 pub mod export_ec2_instance_recommendations_output {
     
     /// A builder for [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1419,6 +1436,7 @@ impl ExportEbsVolumeRecommendationsOutput {
 pub mod export_ebs_volume_recommendations_output {
     
     /// A builder for [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1492,6 +1510,7 @@ impl ExportAutoScalingGroupRecommendationsOutput {
 pub mod export_auto_scaling_group_recommendations_output {
     
     /// A builder for [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1565,6 +1584,7 @@ impl DescribeRecommendationExportJobsOutput {
 pub mod describe_recommendation_export_jobs_output {
     
     /// A builder for [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_export_jobs: std::option::Option<std::vec::Vec<crate::model::RecommendationExportJob>>,
@@ -1626,6 +1646,7 @@ pub struct DeleteRecommendationPreferencesOutput  {
 pub mod delete_recommendation_preferences_output {
     
     /// A builder for [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

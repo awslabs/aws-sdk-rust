@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_device_with_placement_input {
     
     /// A builder for [`AssociateDeviceWithPlacementInput`](crate::input::AssociateDeviceWithPlacementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -166,6 +167,7 @@ impl AssociateDeviceWithPlacementInput {
 pub mod create_placement_input {
     
     /// A builder for [`CreatePlacementInput`](crate::input::CreatePlacementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) placement_name: std::option::Option<std::string::String>,
@@ -309,6 +311,7 @@ impl CreatePlacementInput {
 pub mod create_project_input {
     
     /// A builder for [`CreateProjectInput`](crate::input::CreateProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -458,6 +461,7 @@ impl CreateProjectInput {
 pub mod delete_placement_input {
     
     /// A builder for [`DeletePlacementInput`](crate::input::DeletePlacementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) placement_name: std::option::Option<std::string::String>,
@@ -585,6 +589,7 @@ impl DeletePlacementInput {
 pub mod delete_project_input {
     
     /// A builder for [`DeleteProjectInput`](crate::input::DeleteProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -694,6 +699,7 @@ impl DeleteProjectInput {
 pub mod describe_placement_input {
     
     /// A builder for [`DescribePlacementInput`](crate::input::DescribePlacementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) placement_name: std::option::Option<std::string::String>,
@@ -821,6 +827,7 @@ impl DescribePlacementInput {
 pub mod describe_project_input {
     
     /// A builder for [`DescribeProjectInput`](crate::input::DescribeProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -930,6 +937,7 @@ impl DescribeProjectInput {
 pub mod disassociate_device_from_placement_input {
     
     /// A builder for [`DisassociateDeviceFromPlacementInput`](crate::input::DisassociateDeviceFromPlacementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1075,6 +1083,7 @@ impl DisassociateDeviceFromPlacementInput {
 pub mod get_devices_in_placement_input {
     
     /// A builder for [`GetDevicesInPlacementInput`](crate::input::GetDevicesInPlacementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1202,6 +1211,7 @@ impl GetDevicesInPlacementInput {
 pub mod list_placements_input {
     
     /// A builder for [`ListPlacementsInput`](crate::input::ListPlacementsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1350,6 +1360,7 @@ impl ListPlacementsInput {
 pub mod list_projects_input {
     
     /// A builder for [`ListProjectsInput`](crate::input::ListProjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1480,6 +1491,7 @@ impl ListProjectsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1589,6 +1601,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1720,6 +1733,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1857,6 +1871,7 @@ impl UntagResourceInput {
 pub mod update_placement_input {
     
     /// A builder for [`UpdatePlacementInput`](crate::input::UpdatePlacementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) placement_name: std::option::Option<std::string::String>,
@@ -2006,6 +2021,7 @@ impl UpdatePlacementInput {
 pub mod update_project_input {
     
     /// A builder for [`UpdateProjectInput`](crate::input::UpdateProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,

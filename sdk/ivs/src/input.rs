@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_get_channel_input {
     
     /// A builder for [`BatchGetChannelInput`](crate::input::BatchGetChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -118,6 +119,7 @@ impl BatchGetChannelInput {
 pub mod batch_get_stream_key_input {
     
     /// A builder for [`BatchGetStreamKeyInput`](crate::input::BatchGetStreamKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -231,6 +233,7 @@ impl BatchGetStreamKeyInput {
 pub mod create_channel_input {
     
     /// A builder for [`CreateChannelInput`](crate::input::CreateChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -413,6 +416,7 @@ impl CreateChannelInput {
 pub mod create_recording_configuration_input {
     
     /// A builder for [`CreateRecordingConfigurationInput`](crate::input::CreateRecordingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -575,6 +579,7 @@ impl CreateRecordingConfigurationInput {
 pub mod create_stream_key_input {
     
     /// A builder for [`CreateStreamKeyInput`](crate::input::CreateStreamKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -700,6 +705,7 @@ impl CreateStreamKeyInput {
 pub mod delete_channel_input {
     
     /// A builder for [`DeleteChannelInput`](crate::input::DeleteChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -807,6 +813,7 @@ impl DeleteChannelInput {
 pub mod delete_playback_key_pair_input {
     
     /// A builder for [`DeletePlaybackKeyPairInput`](crate::input::DeletePlaybackKeyPairInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -914,6 +921,7 @@ impl DeletePlaybackKeyPairInput {
 pub mod delete_recording_configuration_input {
     
     /// A builder for [`DeleteRecordingConfigurationInput`](crate::input::DeleteRecordingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1021,6 +1029,7 @@ impl DeleteRecordingConfigurationInput {
 pub mod delete_stream_key_input {
     
     /// A builder for [`DeleteStreamKeyInput`](crate::input::DeleteStreamKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1128,6 +1137,7 @@ impl DeleteStreamKeyInput {
 pub mod get_channel_input {
     
     /// A builder for [`GetChannelInput`](crate::input::GetChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1235,6 +1245,7 @@ impl GetChannelInput {
 pub mod get_playback_key_pair_input {
     
     /// A builder for [`GetPlaybackKeyPairInput`](crate::input::GetPlaybackKeyPairInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1342,6 +1353,7 @@ impl GetPlaybackKeyPairInput {
 pub mod get_recording_configuration_input {
     
     /// A builder for [`GetRecordingConfigurationInput`](crate::input::GetRecordingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1449,6 +1461,7 @@ impl GetRecordingConfigurationInput {
 pub mod get_stream_input {
     
     /// A builder for [`GetStreamInput`](crate::input::GetStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -1556,6 +1569,7 @@ impl GetStreamInput {
 pub mod get_stream_key_input {
     
     /// A builder for [`GetStreamKeyInput`](crate::input::GetStreamKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1663,6 +1677,7 @@ impl GetStreamKeyInput {
 pub mod get_stream_session_input {
     
     /// A builder for [`GetStreamSessionInput`](crate::input::GetStreamSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -1782,6 +1797,7 @@ impl GetStreamSessionInput {
 pub mod import_playback_key_pair_input {
     
     /// A builder for [`ImportPlaybackKeyPairInput`](crate::input::ImportPlaybackKeyPairInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_key_material: std::option::Option<std::string::String>,
@@ -1919,6 +1935,7 @@ impl ImportPlaybackKeyPairInput {
 pub mod list_channels_input {
     
     /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_by_name: std::option::Option<std::string::String>,
@@ -2063,6 +2080,7 @@ impl ListChannelsInput {
 pub mod list_playback_key_pairs_input {
     
     /// A builder for [`ListPlaybackKeyPairsInput`](crate::input::ListPlaybackKeyPairsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2183,6 +2201,7 @@ impl ListPlaybackKeyPairsInput {
 pub mod list_recording_configurations_input {
     
     /// A builder for [`ListRecordingConfigurationsInput`](crate::input::ListRecordingConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2303,6 +2322,7 @@ impl ListRecordingConfigurationsInput {
 pub mod list_stream_keys_input {
     
     /// A builder for [`ListStreamKeysInput`](crate::input::ListStreamKeysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -2435,6 +2455,7 @@ impl ListStreamKeysInput {
 pub mod list_streams_input {
     
     /// A builder for [`ListStreamsInput`](crate::input::ListStreamsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_by: std::option::Option<crate::model::StreamFilters>,
@@ -2567,6 +2588,7 @@ impl ListStreamsInput {
 pub mod list_stream_sessions_input {
     
     /// A builder for [`ListStreamSessionsInput`](crate::input::ListStreamSessionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -2699,6 +2721,7 @@ impl ListStreamSessionsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2808,6 +2831,7 @@ impl ListTagsForResourceInput {
 pub mod put_metadata_input {
     
     /// A builder for [`PutMetadataInput`](crate::input::PutMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -2935,6 +2959,7 @@ impl PutMetadataInput {
 pub mod stop_stream_input {
     
     /// A builder for [`StopStreamInput`](crate::input::StopStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -3042,6 +3067,7 @@ impl StopStreamInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3173,6 +3199,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3310,6 +3337,7 @@ impl UntagResourceInput {
 pub mod update_channel_input {
     
     /// A builder for [`UpdateChannelInput`](crate::input::UpdateChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod abort_environment_update_input {
     
     /// A builder for [`AbortEnvironmentUpdateInput`](crate::input::AbortEnvironmentUpdateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -124,6 +125,7 @@ impl AbortEnvironmentUpdateInput {
 pub mod apply_environment_managed_action_input {
     
     /// A builder for [`ApplyEnvironmentManagedActionInput`](crate::input::ApplyEnvironmentManagedActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -255,6 +257,7 @@ impl ApplyEnvironmentManagedActionInput {
 pub mod associate_environment_operations_role_input {
     
     /// A builder for [`AssociateEnvironmentOperationsRoleInput`](crate::input::AssociateEnvironmentOperationsRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -374,6 +377,7 @@ impl AssociateEnvironmentOperationsRoleInput {
 pub mod check_dns_availability_input {
     
     /// A builder for [`CheckDnsAvailabilityInput`](crate::input::CheckDnsAvailabilityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cname_prefix: std::option::Option<std::string::String>,
@@ -481,6 +485,7 @@ impl CheckDnsAvailabilityInput {
 pub mod compose_environments_input {
     
     /// A builder for [`ComposeEnvironmentsInput`](crate::input::ComposeEnvironmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -618,6 +623,7 @@ impl ComposeEnvironmentsInput {
 pub mod create_application_input {
     
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -769,6 +775,7 @@ impl CreateApplicationInput {
 pub mod create_application_version_input {
     
     /// A builder for [`CreateApplicationVersionInput`](crate::input::CreateApplicationVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -994,6 +1001,7 @@ impl CreateApplicationVersionInput {
 pub mod create_configuration_template_input {
     
     /// A builder for [`CreateConfigurationTemplateInput`](crate::input::CreateConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -1225,6 +1233,7 @@ impl CreateConfigurationTemplateInput {
 pub mod create_environment_input {
     
     /// A builder for [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -1524,6 +1533,7 @@ impl CreateEnvironmentInput {
 pub mod create_platform_version_input {
     
     /// A builder for [`CreatePlatformVersionInput`](crate::input::CreatePlatformVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_name: std::option::Option<std::string::String>,
@@ -1705,6 +1715,7 @@ impl CreatePlatformVersionInput {
 pub mod create_storage_location_input {
     
     /// A builder for [`CreateStorageLocationInput`](crate::input::CreateStorageLocationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1797,6 +1808,7 @@ impl CreateStorageLocationInput {
 pub mod delete_application_input {
     
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -1916,6 +1928,7 @@ impl DeleteApplicationInput {
 pub mod delete_application_version_input {
     
     /// A builder for [`DeleteApplicationVersionInput`](crate::input::DeleteApplicationVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -2047,6 +2060,7 @@ impl DeleteApplicationVersionInput {
 pub mod delete_configuration_template_input {
     
     /// A builder for [`DeleteConfigurationTemplateInput`](crate::input::DeleteConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -2166,6 +2180,7 @@ impl DeleteConfigurationTemplateInput {
 pub mod delete_environment_configuration_input {
     
     /// A builder for [`DeleteEnvironmentConfigurationInput`](crate::input::DeleteEnvironmentConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -2285,6 +2300,7 @@ impl DeleteEnvironmentConfigurationInput {
 pub mod delete_platform_version_input {
     
     /// A builder for [`DeletePlatformVersionInput`](crate::input::DeletePlatformVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_arn: std::option::Option<std::string::String>,
@@ -2392,6 +2408,7 @@ impl DeletePlatformVersionInput {
 pub mod describe_account_attributes_input {
     
     /// A builder for [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2484,6 +2501,7 @@ impl DescribeAccountAttributesInput {
 pub mod describe_applications_input {
     
     /// A builder for [`DescribeApplicationsInput`](crate::input::DescribeApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2597,6 +2615,7 @@ impl DescribeApplicationsInput {
 pub mod describe_application_versions_input {
     
     /// A builder for [`DescribeApplicationVersionsInput`](crate::input::DescribeApplicationVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -2750,6 +2769,7 @@ impl DescribeApplicationVersionsInput {
 pub mod describe_configuration_options_input {
     
     /// A builder for [`DescribeConfigurationOptionsInput`](crate::input::DescribeConfigurationOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -2923,6 +2943,7 @@ impl DescribeConfigurationOptionsInput {
 pub mod describe_configuration_settings_input {
     
     /// A builder for [`DescribeConfigurationSettingsInput`](crate::input::DescribeConfigurationSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -3058,6 +3079,7 @@ impl DescribeConfigurationSettingsInput {
 pub mod describe_environment_health_input {
     
     /// A builder for [`DescribeEnvironmentHealthInput`](crate::input::DescribeEnvironmentHealthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -3199,6 +3221,7 @@ impl DescribeEnvironmentHealthInput {
 pub mod describe_environment_managed_action_history_input {
     
     /// A builder for [`DescribeEnvironmentManagedActionHistoryInput`](crate::input::DescribeEnvironmentManagedActionHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -3342,6 +3365,7 @@ impl DescribeEnvironmentManagedActionHistoryInput {
 pub mod describe_environment_managed_actions_input {
     
     /// A builder for [`DescribeEnvironmentManagedActionsInput`](crate::input::DescribeEnvironmentManagedActionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -3473,6 +3497,7 @@ impl DescribeEnvironmentManagedActionsInput {
 pub mod describe_environment_resources_input {
     
     /// A builder for [`DescribeEnvironmentResourcesInput`](crate::input::DescribeEnvironmentResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -3596,6 +3621,7 @@ impl DescribeEnvironmentResourcesInput {
 pub mod describe_environments_input {
     
     /// A builder for [`DescribeEnvironmentsInput`](crate::input::DescribeEnvironmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -3807,6 +3833,7 @@ impl DescribeEnvironmentsInput {
 pub mod describe_events_input {
     
     /// A builder for [`DescribeEventsInput`](crate::input::DescribeEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -4046,6 +4073,7 @@ impl DescribeEventsInput {
 pub mod describe_instances_health_input {
     
     /// A builder for [`DescribeInstancesHealthInput`](crate::input::DescribeInstancesHealthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -4195,6 +4223,7 @@ impl DescribeInstancesHealthInput {
 pub mod describe_platform_version_input {
     
     /// A builder for [`DescribePlatformVersionInput`](crate::input::DescribePlatformVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_arn: std::option::Option<std::string::String>,
@@ -4302,6 +4331,7 @@ impl DescribePlatformVersionInput {
 pub mod disassociate_environment_operations_role_input {
     
     /// A builder for [`DisassociateEnvironmentOperationsRoleInput`](crate::input::DisassociateEnvironmentOperationsRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -4409,6 +4439,7 @@ impl DisassociateEnvironmentOperationsRoleInput {
 pub mod list_available_solution_stacks_input {
     
     /// A builder for [`ListAvailableSolutionStacksInput`](crate::input::ListAvailableSolutionStacksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4501,6 +4532,7 @@ impl ListAvailableSolutionStacksInput {
 pub mod list_platform_branches_input {
     
     /// A builder for [`ListPlatformBranchesInput`](crate::input::ListPlatformBranchesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::SearchFilter>>,
@@ -4686,6 +4718,7 @@ impl ListPlatformBranchesInput {
 pub mod list_platform_versions_input {
     
     /// A builder for [`ListPlatformVersionsInput`](crate::input::ListPlatformVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::PlatformFilter>>,
@@ -4825,6 +4858,7 @@ impl ListPlatformVersionsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4934,6 +4968,7 @@ impl ListTagsForResourceInput {
 pub mod rebuild_environment_input {
     
     /// A builder for [`RebuildEnvironmentInput`](crate::input::RebuildEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -5057,6 +5092,7 @@ impl RebuildEnvironmentInput {
 pub mod request_environment_info_input {
     
     /// A builder for [`RequestEnvironmentInfoInput`](crate::input::RequestEnvironmentInfoInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -5196,6 +5232,7 @@ impl RequestEnvironmentInfoInput {
 pub mod restart_app_server_input {
     
     /// A builder for [`RestartAppServerInput`](crate::input::RestartAppServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -5319,6 +5356,7 @@ impl RestartAppServerInput {
 pub mod retrieve_environment_info_input {
     
     /// A builder for [`RetrieveEnvironmentInfoInput`](crate::input::RetrieveEnvironmentInfoInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -5458,6 +5496,7 @@ impl RetrieveEnvironmentInfoInput {
 pub mod swap_environment_cnam_es_input {
     
     /// A builder for [`SwapEnvironmentCnamEsInput`](crate::input::SwapEnvironmentCnamEsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_environment_id: std::option::Option<std::string::String>,
@@ -5609,6 +5648,7 @@ impl SwapEnvironmentCnamEsInput {
 pub mod terminate_environment_input {
     
     /// A builder for [`TerminateEnvironmentInput`](crate::input::TerminateEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -5770,6 +5810,7 @@ impl TerminateEnvironmentInput {
 pub mod update_application_input {
     
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -5891,6 +5932,7 @@ impl UpdateApplicationInput {
 pub mod update_application_resource_lifecycle_input {
     
     /// A builder for [`UpdateApplicationResourceLifecycleInput`](crate::input::UpdateApplicationResourceLifecycleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -6010,6 +6052,7 @@ impl UpdateApplicationResourceLifecycleInput {
 pub mod update_application_version_input {
     
     /// A builder for [`UpdateApplicationVersionInput`](crate::input::UpdateApplicationVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -6145,6 +6188,7 @@ impl UpdateApplicationVersionInput {
 pub mod update_configuration_template_input {
     
     /// A builder for [`UpdateConfigurationTemplateInput`](crate::input::UpdateConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -6318,6 +6362,7 @@ impl UpdateConfigurationTemplateInput {
 pub mod update_environment_input {
     
     /// A builder for [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -6577,6 +6622,7 @@ impl UpdateEnvironmentInput {
 pub mod update_tags_for_resource_input {
     
     /// A builder for [`UpdateTagsForResourceInput`](crate::input::UpdateTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6726,6 +6772,7 @@ impl UpdateTagsForResourceInput {
 pub mod validate_configuration_settings_input {
     
     /// A builder for [`ValidateConfigurationSettingsInput`](crate::input::ValidateConfigurationSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,

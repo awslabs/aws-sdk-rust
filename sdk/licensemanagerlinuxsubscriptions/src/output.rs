@@ -45,6 +45,7 @@ impl UpdateServiceSettingsOutput {
 pub mod update_service_settings_output {
     
     /// A builder for [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) linux_subscriptions_discovery: std::option::Option<crate::model::LinuxSubscriptionsDiscovery>,
@@ -162,6 +163,7 @@ impl ListLinuxSubscriptionsOutput {
 pub mod list_linux_subscriptions_output {
     
     /// A builder for [`ListLinuxSubscriptionsOutput`](crate::output::ListLinuxSubscriptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
@@ -237,6 +239,7 @@ impl ListLinuxSubscriptionInstancesOutput {
 pub mod list_linux_subscription_instances_output {
     
     /// A builder for [`ListLinuxSubscriptionInstancesOutput`](crate::output::ListLinuxSubscriptionInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -333,6 +336,7 @@ impl GetServiceSettingsOutput {
 pub mod get_service_settings_output {
     
     /// A builder for [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) linux_subscriptions_discovery: std::option::Option<crate::model::LinuxSubscriptionsDiscovery>,

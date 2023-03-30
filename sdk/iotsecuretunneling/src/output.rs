@@ -8,6 +8,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -98,6 +100,7 @@ impl  std::fmt::Debug for RotateTunnelAccessTokenOutput  {
 pub mod rotate_tunnel_access_token_output {
     
     /// A builder for [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) tunnel_arn: std::option::Option<std::string::String>,
@@ -212,6 +215,7 @@ impl  std::fmt::Debug for OpenTunnelOutput  {
 pub mod open_tunnel_output {
     
     /// A builder for [`OpenTunnelOutput`](crate::output::OpenTunnelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
@@ -315,6 +319,7 @@ impl ListTunnelsOutput {
 pub mod list_tunnels_output {
     
     /// A builder for [`ListTunnelsOutput`](crate::output::ListTunnelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_summaries: std::option::Option<std::vec::Vec<crate::model::TunnelSummary>>,
@@ -383,6 +388,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -439,6 +445,7 @@ impl DescribeTunnelOutput {
 pub mod describe_tunnel_output {
     
     /// A builder for [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel: std::option::Option<crate::model::Tunnel>,
@@ -480,6 +487,7 @@ pub struct CloseTunnelOutput  {
 pub mod close_tunnel_output {
     
     /// A builder for [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

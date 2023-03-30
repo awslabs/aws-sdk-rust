@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_get_field_input {
     
     /// A builder for [`BatchGetFieldInput`](crate::input::BatchGetFieldInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -136,6 +137,7 @@ impl BatchGetFieldInput {
 pub mod batch_put_field_options_input {
     
     /// A builder for [`BatchPutFieldOptionsInput`](crate::input::BatchPutFieldOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -285,6 +287,7 @@ impl BatchPutFieldOptionsInput {
 pub mod create_case_input {
     
     /// A builder for [`CreateCaseInput`](crate::input::CreateCaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -443,6 +446,7 @@ impl CreateCaseInput {
 pub mod create_domain_input {
     
     /// A builder for [`CreateDomainInput`](crate::input::CreateDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -550,6 +554,7 @@ impl CreateDomainInput {
 pub mod create_field_input {
     
     /// A builder for [`CreateFieldInput`](crate::input::CreateFieldInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -699,6 +704,7 @@ impl CreateFieldInput {
 pub mod create_layout_input {
     
     /// A builder for [`CreateLayoutInput`](crate::input::CreateLayoutInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -836,6 +842,7 @@ impl CreateLayoutInput {
 pub mod create_related_item_input {
     
     /// A builder for [`CreateRelatedItemInput`](crate::input::CreateRelatedItemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -991,6 +998,7 @@ impl CreateRelatedItemInput {
 pub mod create_template_input {
     
     /// A builder for [`CreateTemplateInput`](crate::input::CreateTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1170,6 +1178,7 @@ impl CreateTemplateInput {
 pub mod get_case_input {
     
     /// A builder for [`GetCaseInput`](crate::input::GetCaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id: std::option::Option<std::string::String>,
@@ -1331,6 +1340,7 @@ impl GetCaseInput {
 pub mod get_case_event_configuration_input {
     
     /// A builder for [`GetCaseEventConfigurationInput`](crate::input::GetCaseEventConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1440,6 +1450,7 @@ impl GetCaseEventConfigurationInput {
 pub mod get_domain_input {
     
     /// A builder for [`GetDomainInput`](crate::input::GetDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1549,6 +1560,7 @@ impl GetDomainInput {
 pub mod get_layout_input {
     
     /// A builder for [`GetLayoutInput`](crate::input::GetLayoutInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1676,6 +1688,7 @@ impl GetLayoutInput {
 pub mod get_template_input {
     
     /// A builder for [`GetTemplateInput`](crate::input::GetTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1803,6 +1816,7 @@ impl GetTemplateInput {
 pub mod list_cases_for_contact_input {
     
     /// A builder for [`ListCasesForContactInput`](crate::input::ListCasesForContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1952,6 +1966,7 @@ impl ListCasesForContactInput {
 pub mod list_domains_input {
     
     /// A builder for [`ListDomainsInput`](crate::input::ListDomainsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2082,6 +2097,7 @@ impl ListDomainsInput {
 pub mod list_field_options_input {
     
     /// A builder for [`ListFieldOptionsInput`](crate::input::ListFieldOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -2273,6 +2289,7 @@ impl ListFieldOptionsInput {
 pub mod list_fields_input {
     
     /// A builder for [`ListFieldsInput`](crate::input::ListFieldsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -2421,6 +2438,7 @@ impl ListFieldsInput {
 pub mod list_layouts_input {
     
     /// A builder for [`ListLayoutsInput`](crate::input::ListLayoutsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -2569,6 +2587,7 @@ impl ListLayoutsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2678,6 +2697,7 @@ impl ListTagsForResourceInput {
 pub mod list_templates_input {
     
     /// A builder for [`ListTemplatesInput`](crate::input::ListTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -2851,6 +2871,7 @@ impl ListTemplatesInput {
 pub mod put_case_event_configuration_input {
     
     /// A builder for [`PutCaseEventConfigurationInput`](crate::input::PutCaseEventConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -2976,6 +2997,7 @@ impl PutCaseEventConfigurationInput {
 pub mod search_cases_input {
     
     /// A builder for [`SearchCasesInput`](crate::input::SearchCasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -3173,6 +3195,7 @@ impl SearchCasesInput {
 pub mod search_related_items_input {
     
     /// A builder for [`SearchRelatedItemsInput`](crate::input::SearchRelatedItemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -3346,6 +3369,7 @@ impl SearchRelatedItemsInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3477,6 +3501,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3614,6 +3639,7 @@ impl UntagResourceInput {
 pub mod update_case_input {
     
     /// A builder for [`UpdateCaseInput`](crate::input::UpdateCaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -3763,6 +3789,7 @@ impl UpdateCaseInput {
 pub mod update_field_input {
     
     /// A builder for [`UpdateFieldInput`](crate::input::UpdateFieldInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -3918,6 +3945,7 @@ impl UpdateFieldInput {
 pub mod update_layout_input {
     
     /// A builder for [`UpdateLayoutInput`](crate::input::UpdateLayoutInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -4073,6 +4101,7 @@ impl UpdateLayoutInput {
 pub mod update_template_input {
     
     /// A builder for [`UpdateTemplateInput`](crate::input::UpdateTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,

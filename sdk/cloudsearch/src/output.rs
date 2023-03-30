@@ -18,6 +18,7 @@ impl UpdateServiceAccessPoliciesOutput {
 pub mod update_service_access_policies_output {
     
     /// A builder for [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
@@ -68,6 +69,7 @@ impl UpdateScalingParametersOutput {
 pub mod update_scaling_parameters_output {
     
     /// A builder for [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
@@ -118,6 +120,7 @@ impl UpdateDomainEndpointOptionsOutput {
 pub mod update_domain_endpoint_options_output {
     
     /// A builder for [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
@@ -168,6 +171,7 @@ impl UpdateAvailabilityOptionsOutput {
 pub mod update_availability_options_output {
     
     /// A builder for [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_options: std::option::Option<crate::model::AvailabilityOptionsStatus>,
@@ -218,6 +222,7 @@ impl ListDomainNamesOutput {
 pub mod list_domain_names_output {
     
     /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -274,6 +279,7 @@ impl IndexDocumentsOutput {
 pub mod index_documents_output {
     
     /// A builder for [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -330,6 +336,7 @@ impl DescribeSuggestersOutput {
 pub mod describe_suggesters_output {
     
     /// A builder for [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggesters: std::option::Option<std::vec::Vec<crate::model::SuggesterStatus>>,
@@ -386,6 +393,7 @@ impl DescribeServiceAccessPoliciesOutput {
 pub mod describe_service_access_policies_output {
     
     /// A builder for [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
@@ -436,6 +444,7 @@ impl DescribeScalingParametersOutput {
 pub mod describe_scaling_parameters_output {
     
     /// A builder for [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
@@ -486,6 +495,7 @@ impl DescribeIndexFieldsOutput {
 pub mod describe_index_fields_output {
     
     /// A builder for [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_fields: std::option::Option<std::vec::Vec<crate::model::IndexFieldStatus>>,
@@ -542,6 +552,7 @@ impl DescribeExpressionsOutput {
 pub mod describe_expressions_output {
     
     /// A builder for [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expressions: std::option::Option<std::vec::Vec<crate::model::ExpressionStatus>>,
@@ -598,6 +609,7 @@ impl DescribeDomainsOutput {
 pub mod describe_domains_output {
     
     /// A builder for [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status_list: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
@@ -654,6 +666,7 @@ impl DescribeDomainEndpointOptionsOutput {
 pub mod describe_domain_endpoint_options_output {
     
     /// A builder for [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
@@ -704,6 +717,7 @@ impl DescribeAvailabilityOptionsOutput {
 pub mod describe_availability_options_output {
     
     /// A builder for [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_options: std::option::Option<crate::model::AvailabilityOptionsStatus>,
@@ -754,6 +768,7 @@ impl DescribeAnalysisSchemesOutput {
 pub mod describe_analysis_schemes_output {
     
     /// A builder for [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_schemes: std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>,
@@ -810,6 +825,7 @@ impl DeleteSuggesterOutput {
 pub mod delete_suggester_output {
     
     /// A builder for [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggester: std::option::Option<crate::model::SuggesterStatus>,
@@ -860,6 +876,7 @@ impl DeleteIndexFieldOutput {
 pub mod delete_index_field_output {
     
     /// A builder for [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_field: std::option::Option<crate::model::IndexFieldStatus>,
@@ -910,6 +927,7 @@ impl DeleteExpressionOutput {
 pub mod delete_expression_output {
     
     /// A builder for [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<crate::model::ExpressionStatus>,
@@ -960,6 +978,7 @@ impl DeleteDomainOutput {
 pub mod delete_domain_output {
     
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
@@ -1010,6 +1029,7 @@ impl DeleteAnalysisSchemeOutput {
 pub mod delete_analysis_scheme_output {
     
     /// A builder for [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
@@ -1060,6 +1080,7 @@ impl DefineSuggesterOutput {
 pub mod define_suggester_output {
     
     /// A builder for [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggester: std::option::Option<crate::model::SuggesterStatus>,
@@ -1110,6 +1131,7 @@ impl DefineIndexFieldOutput {
 pub mod define_index_field_output {
     
     /// A builder for [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_field: std::option::Option<crate::model::IndexFieldStatus>,
@@ -1160,6 +1182,7 @@ impl DefineExpressionOutput {
 pub mod define_expression_output {
     
     /// A builder for [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<crate::model::ExpressionStatus>,
@@ -1210,6 +1233,7 @@ impl DefineAnalysisSchemeOutput {
 pub mod define_analysis_scheme_output {
     
     /// A builder for [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
@@ -1260,6 +1284,7 @@ impl CreateDomainOutput {
 pub mod create_domain_output {
     
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
@@ -1310,6 +1335,7 @@ impl BuildSuggestersOutput {
 pub mod build_suggesters_output {
     
     /// A builder for [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,

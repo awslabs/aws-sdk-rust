@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod get_role_credentials_input {
     
     /// A builder for [`GetRoleCredentialsInput`](crate::input::GetRoleCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -160,6 +161,7 @@ impl GetRoleCredentialsInput {
 pub mod list_account_roles_input {
     
     /// A builder for [`ListAccountRolesInput`](crate::input::ListAccountRolesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -332,6 +334,7 @@ impl ListAccountRolesInput {
 pub mod list_accounts_input {
     
     /// A builder for [`ListAccountsInput`](crate::input::ListAccountsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -485,6 +488,7 @@ impl ListAccountsInput {
 pub mod logout_input {
     
     /// A builder for [`LogoutInput`](crate::input::LogoutInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,

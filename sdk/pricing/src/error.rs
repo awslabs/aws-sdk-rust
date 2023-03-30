@@ -188,6 +188,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
     
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -248,6 +249,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
     
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -308,6 +310,7 @@ impl std::error::Error for InvalidNextTokenException {}
 pub mod invalid_next_token_exception {
     
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -368,6 +371,7 @@ impl std::error::Error for InternalErrorException {}
 pub mod internal_error_exception {
     
     /// A builder for [`InternalErrorException`](crate::error::InternalErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -428,6 +432,7 @@ impl std::error::Error for ExpiredNextTokenException {}
 pub mod expired_next_token_exception {
     
     /// A builder for [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

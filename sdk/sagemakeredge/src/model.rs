@@ -53,6 +53,7 @@ impl DeploymentResult {
 pub mod deployment_result {
     
     /// A builder for [`DeploymentResult`](crate::model::DeploymentResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_name: std::option::Option<std::string::String>,
@@ -218,6 +219,7 @@ impl DeploymentModel {
 pub mod deployment_model {
     
     /// A builder for [`DeploymentModel`](crate::model::DeploymentModel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_handle: std::option::Option<std::string::String>,
@@ -544,6 +546,7 @@ impl Model {
 pub mod model {
     
     /// A builder for [`Model`](crate::model::Model).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
@@ -669,6 +672,7 @@ impl EdgeMetric {
 pub mod edge_metric {
     
     /// A builder for [`EdgeMetric`](crate::model::EdgeMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimension: std::option::Option<std::string::String>,
@@ -777,6 +781,7 @@ impl EdgeDeployment {
 pub mod edge_deployment {
     
     /// A builder for [`EdgeDeployment`](crate::model::EdgeDeployment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_name: std::option::Option<std::string::String>,
@@ -890,6 +895,7 @@ impl Definition {
 pub mod definition {
     
     /// A builder for [`Definition`](crate::model::Definition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_handle: std::option::Option<std::string::String>,
@@ -983,6 +989,7 @@ impl Checksum {
 pub mod checksum {
     
     /// A builder for [`Checksum`](crate::model::Checksum).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ChecksumType>,

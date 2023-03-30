@@ -127,6 +127,7 @@ impl LedgerEncryptionDescription {
 pub mod ledger_encryption_description {
     
     /// A builder for [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -401,6 +402,7 @@ impl KinesisConfiguration {
 pub mod kinesis_configuration {
     
     /// A builder for [`KinesisConfiguration`](crate::model::KinesisConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -479,6 +481,7 @@ impl LedgerSummary {
 pub mod ledger_summary {
     
     /// A builder for [`LedgerSummary`](crate::model::LedgerSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -617,6 +620,7 @@ impl JournalS3ExportDescription {
 pub mod journal_s3_export_description {
     
     /// A builder for [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
@@ -888,6 +892,7 @@ impl S3ExportConfiguration {
 pub mod s3_export_configuration {
     
     /// A builder for [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -991,6 +996,7 @@ impl S3EncryptionConfiguration {
 pub mod s3_encryption_configuration {
     
     /// A builder for [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_encryption_type: std::option::Option<crate::model::S3ObjectEncryptionType>,
@@ -1303,6 +1309,7 @@ impl JournalKinesisStreamDescription {
 pub mod journal_kinesis_stream_description {
     
     /// A builder for [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
@@ -1659,6 +1666,7 @@ impl  std::fmt::Debug for ValueHolder  {
 pub mod value_holder {
     
     /// A builder for [`ValueHolder`](crate::model::ValueHolder).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) ion_text: std::option::Option<std::string::String>,

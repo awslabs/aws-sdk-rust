@@ -24,6 +24,7 @@ impl InvokeEndpointAsyncOutput {
 pub mod invoke_endpoint_async_output {
     
     /// A builder for [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_id: std::option::Option<std::string::String>,
@@ -125,6 +126,7 @@ impl  std::fmt::Debug for InvokeEndpointOutput  {
 pub mod invoke_endpoint_output {
     
     /// A builder for [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_types::Blob>,

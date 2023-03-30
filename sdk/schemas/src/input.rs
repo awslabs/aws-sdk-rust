@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_discoverer_input {
     
     /// A builder for [`CreateDiscovererInput`](crate::input::CreateDiscovererInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -155,6 +156,7 @@ impl CreateDiscovererInput {
 pub mod create_registry_input {
     
     /// A builder for [`CreateRegistryInput`](crate::input::CreateRegistryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -298,6 +300,7 @@ impl CreateRegistryInput {
 pub mod create_schema_input {
     
     /// A builder for [`CreateSchemaInput`](crate::input::CreateSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
@@ -483,6 +486,7 @@ impl CreateSchemaInput {
 pub mod delete_discoverer_input {
     
     /// A builder for [`DeleteDiscovererInput`](crate::input::DeleteDiscovererInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
@@ -592,6 +596,7 @@ impl DeleteDiscovererInput {
 pub mod delete_registry_input {
     
     /// A builder for [`DeleteRegistryInput`](crate::input::DeleteRegistryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -701,6 +706,7 @@ impl DeleteRegistryInput {
 pub mod delete_resource_policy_input {
     
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -814,6 +820,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_schema_input {
     
     /// A builder for [`DeleteSchemaInput`](crate::input::DeleteSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -941,6 +948,7 @@ impl DeleteSchemaInput {
 pub mod delete_schema_version_input {
     
     /// A builder for [`DeleteSchemaVersionInput`](crate::input::DeleteSchemaVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -1086,6 +1094,7 @@ impl DeleteSchemaVersionInput {
 pub mod describe_code_binding_input {
     
     /// A builder for [`DescribeCodeBindingInput`](crate::input::DescribeCodeBindingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language: std::option::Option<std::string::String>,
@@ -1253,6 +1262,7 @@ impl DescribeCodeBindingInput {
 pub mod describe_discoverer_input {
     
     /// A builder for [`DescribeDiscovererInput`](crate::input::DescribeDiscovererInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
@@ -1362,6 +1372,7 @@ impl DescribeDiscovererInput {
 pub mod describe_registry_input {
     
     /// A builder for [`DescribeRegistryInput`](crate::input::DescribeRegistryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -1471,6 +1482,7 @@ impl DescribeRegistryInput {
 pub mod describe_schema_input {
     
     /// A builder for [`DescribeSchemaInput`](crate::input::DescribeSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -1620,6 +1632,7 @@ impl DescribeSchemaInput {
 pub mod export_schema_input {
     
     /// A builder for [`ExportSchemaInput`](crate::input::ExportSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -1787,6 +1800,7 @@ impl ExportSchemaInput {
 pub mod get_code_binding_source_input {
     
     /// A builder for [`GetCodeBindingSourceInput`](crate::input::GetCodeBindingSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language: std::option::Option<std::string::String>,
@@ -1954,6 +1968,7 @@ impl GetCodeBindingSourceInput {
 pub mod get_discovered_schema_input {
     
     /// A builder for [`GetDiscoveredSchemaInput`](crate::input::GetDiscoveredSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2079,6 +2094,7 @@ impl GetDiscoveredSchemaInput {
 pub mod get_resource_policy_input {
     
     /// A builder for [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -2192,6 +2208,7 @@ impl GetResourcePolicyInput {
 pub mod list_discoverers_input {
     
     /// A builder for [`ListDiscoverersInput`](crate::input::ListDiscoverersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id_prefix: std::option::Option<std::string::String>,
@@ -2355,6 +2372,7 @@ impl ListDiscoverersInput {
 pub mod list_registries_input {
     
     /// A builder for [`ListRegistriesInput`](crate::input::ListRegistriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
@@ -2518,6 +2536,7 @@ impl ListRegistriesInput {
 pub mod list_schemas_input {
     
     /// A builder for [`ListSchemasInput`](crate::input::ListSchemasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
@@ -2682,6 +2701,7 @@ impl ListSchemasInput {
 pub mod list_schema_versions_input {
     
     /// A builder for [`ListSchemaVersionsInput`](crate::input::ListSchemaVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
@@ -2847,6 +2867,7 @@ impl ListSchemaVersionsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2956,6 +2977,7 @@ impl ListTagsForResourceInput {
 pub mod put_code_binding_input {
     
     /// A builder for [`PutCodeBindingInput`](crate::input::PutCodeBindingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language: std::option::Option<std::string::String>,
@@ -3123,6 +3145,7 @@ impl PutCodeBindingInput {
 pub mod put_resource_policy_input {
     
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -3264,6 +3287,7 @@ impl PutResourcePolicyInput {
 pub mod search_schemas_input {
     
     /// A builder for [`SearchSchemasInput`](crate::input::SearchSchemasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keywords: std::option::Option<std::string::String>,
@@ -3429,6 +3453,7 @@ impl SearchSchemasInput {
 pub mod start_discoverer_input {
     
     /// A builder for [`StartDiscovererInput`](crate::input::StartDiscovererInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
@@ -3538,6 +3563,7 @@ impl StartDiscovererInput {
 pub mod stop_discoverer_input {
     
     /// A builder for [`StopDiscovererInput`](crate::input::StopDiscovererInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
@@ -3647,6 +3673,7 @@ impl StopDiscovererInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3778,6 +3805,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3915,6 +3943,7 @@ impl UntagResourceInput {
 pub mod update_discoverer_input {
     
     /// A builder for [`UpdateDiscovererInput`](crate::input::UpdateDiscovererInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4053,6 +4082,7 @@ impl UpdateDiscovererInput {
 pub mod update_registry_input {
     
     /// A builder for [`UpdateRegistryInput`](crate::input::UpdateRegistryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4178,6 +4208,7 @@ impl UpdateRegistryInput {
 pub mod update_schema_input {
     
     /// A builder for [`UpdateSchemaInput`](crate::input::UpdateSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token_id: std::option::Option<std::string::String>,

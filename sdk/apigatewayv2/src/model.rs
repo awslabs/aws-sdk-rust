@@ -220,6 +220,7 @@ impl RouteSettings {
 pub mod route_settings {
     
     /// A builder for [`RouteSettings`](crate::model::RouteSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_trace_enabled: std::option::Option<bool>,
@@ -416,6 +417,7 @@ impl AccessLogSettings {
 pub mod access_log_settings {
     
     /// A builder for [`AccessLogSettings`](crate::model::AccessLogSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_arn: std::option::Option<std::string::String>,
@@ -478,6 +480,7 @@ impl ParameterConstraints {
 pub mod parameter_constraints {
     
     /// A builder for [`ParameterConstraints`](crate::model::ParameterConstraints).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) required: std::option::Option<bool>,
@@ -703,6 +706,7 @@ impl TlsConfig {
 pub mod tls_config {
     
     /// A builder for [`TlsConfig`](crate::model::TlsConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name_to_verify: std::option::Option<std::string::String>,
@@ -1019,6 +1023,7 @@ impl TlsConfigInput {
 pub mod tls_config_input {
     
     /// A builder for [`TlsConfigInput`](crate::model::TlsConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name_to_verify: std::option::Option<std::string::String>,
@@ -1091,6 +1096,7 @@ impl MutualTlsAuthentication {
 pub mod mutual_tls_authentication {
     
     /// A builder for [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) truststore_uri: std::option::Option<std::string::String>,
@@ -1242,6 +1248,7 @@ impl DomainNameConfiguration {
 pub mod domain_name_configuration {
     
     /// A builder for [`DomainNameConfiguration`](crate::model::DomainNameConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_domain_name: std::option::Option<std::string::String>,
@@ -1671,6 +1678,7 @@ impl MutualTlsAuthenticationInput {
 pub mod mutual_tls_authentication_input {
     
     /// A builder for [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) truststore_uri: std::option::Option<std::string::String>,
@@ -1843,6 +1851,7 @@ impl JwtConfiguration {
 pub mod jwt_configuration {
     
     /// A builder for [`JwtConfiguration`](crate::model::JwtConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audience: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2118,6 +2127,7 @@ impl Cors {
 pub mod cors {
     
     /// A builder for [`Cors`](crate::model::Cors).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_credentials: std::option::Option<bool>,
@@ -2310,6 +2320,7 @@ impl VpcLink {
 pub mod vpc_link {
     
     /// A builder for [`VpcLink`](crate::model::VpcLink).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2565,6 +2576,7 @@ impl Stage {
 pub mod stage {
     
     /// A builder for [`Stage`](crate::model::Stage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
@@ -2875,6 +2887,7 @@ impl Route {
 pub mod route {
     
     /// A builder for [`Route`](crate::model::Route).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
@@ -3117,6 +3130,7 @@ impl RouteResponse {
 pub mod route_response {
     
     /// A builder for [`RouteResponse`](crate::model::RouteResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_selection_expression: std::option::Option<std::string::String>,
@@ -3255,6 +3269,7 @@ impl Model {
 pub mod model {
     
     /// A builder for [`Model`](crate::model::Model).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -3532,6 +3547,7 @@ impl Integration {
 pub mod integration {
     
     /// A builder for [`Integration`](crate::model::Integration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
@@ -3917,6 +3933,7 @@ impl IntegrationResponse {
 pub mod integration_response {
     
     /// A builder for [`IntegrationResponse`](crate::model::IntegrationResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -4073,6 +4090,7 @@ impl DomainName {
 pub mod domain_name {
     
     /// A builder for [`DomainName`](crate::model::DomainName).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_mapping_selection_expression: std::option::Option<std::string::String>,
@@ -4218,6 +4236,7 @@ impl Deployment {
 pub mod deployment {
     
     /// A builder for [`Deployment`](crate::model::Deployment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_deployed: std::option::Option<bool>,
@@ -4419,6 +4438,7 @@ impl Authorizer {
 pub mod authorizer {
     
     /// A builder for [`Authorizer`](crate::model::Authorizer).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorizer_credentials_arn: std::option::Option<std::string::String>,
@@ -4722,6 +4742,7 @@ impl Api {
 pub mod api {
     
     /// A builder for [`Api`](crate::model::Api).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_endpoint: std::option::Option<std::string::String>,
@@ -4994,6 +5015,7 @@ impl ApiMapping {
 pub mod api_mapping {
     
     /// A builder for [`ApiMapping`](crate::model::ApiMapping).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,

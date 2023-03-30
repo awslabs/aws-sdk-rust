@@ -205,6 +205,7 @@ impl std::error::Error for VersionMismatchException {}
 pub mod version_mismatch_exception {
     
     /// A builder for [`VersionMismatchException`](crate::error::VersionMismatchException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -265,6 +266,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -330,6 +332,7 @@ impl std::error::Error for ResourceInUseException {}
 pub mod resource_in_use_exception {
     
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -390,6 +393,7 @@ impl std::error::Error for NotAuthorizedException {}
 pub mod not_authorized_exception {
     
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -450,6 +454,7 @@ impl std::error::Error for InvalidArgumentException {}
 pub mod invalid_argument_exception {
     
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -510,6 +515,7 @@ impl std::error::Error for ClientLimitExceededException {}
 pub mod client_limit_exceeded_exception {
     
     /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -748,6 +754,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
     
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -986,6 +993,7 @@ impl std::error::Error for NoDataRetentionException {}
 pub mod no_data_retention_exception {
     
     /// A builder for [`NoDataRetentionException`](crate::error::NoDataRetentionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1741,6 +1749,7 @@ impl std::error::Error for InvalidResourceFormatException {}
 pub mod invalid_resource_format_exception {
     
     /// A builder for [`InvalidResourceFormatException`](crate::error::InvalidResourceFormatException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2123,6 +2132,7 @@ impl std::error::Error for TagsPerResourceExceededLimitException {}
 pub mod tags_per_resource_exceeded_limit_exception {
     
     /// A builder for [`TagsPerResourceExceededLimitException`](crate::error::TagsPerResourceExceededLimitException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4464,6 +4474,7 @@ impl std::error::Error for StreamEdgeConfigurationNotFoundException {}
 pub mod stream_edge_configuration_not_found_exception {
     
     /// A builder for [`StreamEdgeConfigurationNotFoundException`](crate::error::StreamEdgeConfigurationNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5070,6 +5081,7 @@ impl std::error::Error for InvalidDeviceException {}
 pub mod invalid_device_exception {
     
     /// A builder for [`InvalidDeviceException`](crate::error::InvalidDeviceException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5130,6 +5142,7 @@ impl std::error::Error for DeviceStreamLimitExceededException {}
 pub mod device_stream_limit_exceeded_exception {
     
     /// A builder for [`DeviceStreamLimitExceededException`](crate::error::DeviceStreamLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5190,6 +5203,7 @@ impl std::error::Error for AccountStreamLimitExceededException {}
 pub mod account_stream_limit_exceeded_exception {
     
     /// A builder for [`AccountStreamLimitExceededException`](crate::error::AccountStreamLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5428,6 +5442,7 @@ impl std::error::Error for AccountChannelLimitExceededException {}
 pub mod account_channel_limit_exceeded_exception {
     
     /// A builder for [`AccountChannelLimitExceededException`](crate::error::AccountChannelLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

@@ -188,6 +188,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
     
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -248,6 +249,7 @@ impl std::error::Error for InvalidTokenException {}
 pub mod invalid_token_exception {
     
     /// A builder for [`InvalidTokenException`](crate::error::InvalidTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -308,6 +310,7 @@ impl std::error::Error for InternalServiceErrorException {}
 pub mod internal_service_error_exception {
     
     /// A builder for [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -368,6 +371,7 @@ impl std::error::Error for ExpiredTokenException {}
 pub mod expired_token_exception {
     
     /// A builder for [`ExpiredTokenException`](crate::error::ExpiredTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -428,6 +432,7 @@ impl std::error::Error for DisabledApiException {}
 pub mod disabled_api_exception {
     
     /// A builder for [`DisabledApiException`](crate::error::DisabledApiException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -685,6 +690,7 @@ impl std::error::Error for PlatformNotSupportedException {}
 pub mod platform_not_supported_exception {
     
     /// A builder for [`PlatformNotSupportedException`](crate::error::PlatformNotSupportedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -745,6 +751,7 @@ impl std::error::Error for InvalidRegionException {}
 pub mod invalid_region_exception {
     
     /// A builder for [`InvalidRegionException`](crate::error::InvalidRegionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -805,6 +812,7 @@ impl std::error::Error for InvalidPublicKeyVersionException {}
 pub mod invalid_public_key_version_exception {
     
     /// A builder for [`InvalidPublicKeyVersionException`](crate::error::InvalidPublicKeyVersionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -865,6 +873,7 @@ impl std::error::Error for InvalidProductCodeException {}
 pub mod invalid_product_code_exception {
     
     /// A builder for [`InvalidProductCodeException`](crate::error::InvalidProductCodeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -925,6 +934,7 @@ impl std::error::Error for CustomerNotEntitledException {}
 pub mod customer_not_entitled_exception {
     
     /// A builder for [`CustomerNotEntitledException`](crate::error::CustomerNotEntitledException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1208,6 +1218,7 @@ impl std::error::Error for TimestampOutOfBoundsException {}
 pub mod timestamp_out_of_bounds_exception {
     
     /// A builder for [`TimestampOutOfBoundsException`](crate::error::TimestampOutOfBoundsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1268,6 +1279,7 @@ impl std::error::Error for InvalidUsageDimensionException {}
 pub mod invalid_usage_dimension_exception {
     
     /// A builder for [`InvalidUsageDimensionException`](crate::error::InvalidUsageDimensionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1328,6 +1340,7 @@ impl std::error::Error for InvalidUsageAllocationsException {}
 pub mod invalid_usage_allocations_exception {
     
     /// A builder for [`InvalidUsageAllocationsException`](crate::error::InvalidUsageAllocationsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1388,6 +1401,7 @@ impl std::error::Error for InvalidTagException {}
 pub mod invalid_tag_exception {
     
     /// A builder for [`InvalidTagException`](crate::error::InvalidTagException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1448,6 +1462,7 @@ impl std::error::Error for InvalidEndpointRegionException {}
 pub mod invalid_endpoint_region_exception {
     
     /// A builder for [`InvalidEndpointRegionException`](crate::error::InvalidEndpointRegionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1508,6 +1523,7 @@ impl std::error::Error for DuplicateRequestException {}
 pub mod duplicate_request_exception {
     
     /// A builder for [`DuplicateRequestException`](crate::error::DuplicateRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1778,6 +1794,7 @@ impl std::error::Error for InvalidCustomerIdentifierException {}
 pub mod invalid_customer_identifier_exception {
     
     /// A builder for [`InvalidCustomerIdentifierException`](crate::error::InvalidCustomerIdentifierException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

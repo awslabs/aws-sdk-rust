@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_scaling_plan_input {
     
     /// A builder for [`CreateScalingPlanInput`](crate::input::CreateScalingPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
@@ -151,6 +152,7 @@ impl CreateScalingPlanInput {
 pub mod delete_scaling_plan_input {
     
     /// A builder for [`DeleteScalingPlanInput`](crate::input::DeleteScalingPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
@@ -275,6 +277,7 @@ impl DeleteScalingPlanInput {
 pub mod describe_scaling_plan_resources_input {
     
     /// A builder for [`DescribeScalingPlanResourcesInput`](crate::input::DescribeScalingPlanResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
@@ -423,6 +426,7 @@ impl DescribeScalingPlanResourcesInput {
 pub mod describe_scaling_plans_input {
     
     /// A builder for [`DescribeScalingPlansInput`](crate::input::DescribeScalingPlansInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -599,6 +603,7 @@ impl DescribeScalingPlansInput {
 pub mod get_scaling_plan_resource_forecast_data_input {
     
     /// A builder for [`GetScalingPlanResourceForecastDataInput`](crate::input::GetScalingPlanResourceForecastDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
@@ -809,6 +814,7 @@ impl GetScalingPlanResourceForecastDataInput {
 pub mod update_scaling_plan_input {
     
     /// A builder for [`UpdateScalingPlanInput`](crate::input::UpdateScalingPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,

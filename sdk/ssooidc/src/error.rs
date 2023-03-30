@@ -204,6 +204,7 @@ impl std::error::Error for UnauthorizedClientException {}
 pub mod unauthorized_client_exception {
     
     /// A builder for [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -304,6 +305,7 @@ impl std::error::Error for SlowDownException {}
 pub mod slow_down_exception {
     
     /// A builder for [`SlowDownException`](crate::error::SlowDownException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -404,6 +406,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
     
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -504,6 +507,7 @@ impl std::error::Error for InvalidClientException {}
 pub mod invalid_client_exception {
     
     /// A builder for [`InvalidClientException`](crate::error::InvalidClientException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -604,6 +608,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
     
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -853,6 +858,7 @@ impl std::error::Error for InvalidScopeException {}
 pub mod invalid_scope_exception {
     
     /// A builder for [`InvalidScopeException`](crate::error::InvalidScopeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -953,6 +959,7 @@ impl std::error::Error for InvalidClientMetadataException {}
 pub mod invalid_client_metadata_exception {
     
     /// A builder for [`InvalidClientMetadataException`](crate::error::InvalidClientMetadataException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -1286,6 +1293,7 @@ impl std::error::Error for UnsupportedGrantTypeException {}
 pub mod unsupported_grant_type_exception {
     
     /// A builder for [`UnsupportedGrantTypeException`](crate::error::UnsupportedGrantTypeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -1386,6 +1394,7 @@ impl std::error::Error for InvalidGrantException {}
 pub mod invalid_grant_exception {
     
     /// A builder for [`InvalidGrantException`](crate::error::InvalidGrantException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -1486,6 +1495,7 @@ impl std::error::Error for ExpiredTokenException {}
 pub mod expired_token_exception {
     
     /// A builder for [`ExpiredTokenException`](crate::error::ExpiredTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -1586,6 +1596,7 @@ impl std::error::Error for AuthorizationPendingException {}
 pub mod authorization_pending_exception {
     
     /// A builder for [`AuthorizationPendingException`](crate::error::AuthorizationPendingException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -1686,6 +1697,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
     
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,

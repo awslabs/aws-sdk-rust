@@ -7,7 +7,7 @@ pub fn add_headers_post_content(
         let formatted_2 = aws_smithy_types::base64::encode(&inner_1);
                         if !formatted_2.is_empty() {
                             let header_value = formatted_2;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("session_attributes", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &"*** Sensitive Data Redacted ***",
@@ -21,7 +21,7 @@ pub fn add_headers_post_content(
         let formatted_4 = aws_smithy_types::base64::encode(&inner_3);
                         if !formatted_4.is_empty() {
                             let header_value = formatted_4;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("request_attributes", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &"*** Sensitive Data Redacted ***",
@@ -35,7 +35,7 @@ pub fn add_headers_post_content(
         let formatted_6 = inner_5.as_str();
                         if !formatted_6.is_empty() {
                             let header_value = formatted_6;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("content_type", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -49,7 +49,7 @@ pub fn add_headers_post_content(
         let formatted_8 = inner_7.as_str();
                         if !formatted_8.is_empty() {
                             let header_value = formatted_8;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("accept", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -63,7 +63,7 @@ pub fn add_headers_post_content(
         let formatted_10 = aws_smithy_types::base64::encode(&inner_9);
                         if !formatted_10.is_empty() {
                             let header_value = formatted_10;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("active_contexts", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &"*** Sensitive Data Redacted ***",
@@ -84,7 +84,7 @@ pub fn add_headers_put_session(
         let formatted_12 = inner_11.as_str();
                         if !formatted_12.is_empty() {
                             let header_value = formatted_12;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("accept", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,

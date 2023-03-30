@@ -176,6 +176,7 @@ impl std::error::Error for PayloadTooLargeException {}
 pub mod payload_too_large_exception {
     
     /// A builder for [`PayloadTooLargeException`](crate::error::PayloadTooLargeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -236,6 +237,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
     
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -296,6 +298,7 @@ impl std::error::Error for GoneException {}
 pub mod gone_exception {
     
     /// A builder for [`GoneException`](crate::error::GoneException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -356,6 +359,7 @@ impl std::error::Error for ForbiddenException {}
 pub mod forbidden_exception {
     
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

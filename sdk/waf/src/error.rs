@@ -248,6 +248,7 @@ impl std::error::Error for WafStaleDataException {}
 pub mod waf_stale_data_exception {
     
     /// A builder for [`WafStaleDataException`](crate::error::WafStaleDataException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -308,6 +309,7 @@ impl std::error::Error for WafNonexistentItemException {}
 pub mod waf_nonexistent_item_exception {
     
     /// A builder for [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -374,6 +376,7 @@ impl std::error::Error for WafNonexistentContainerException {}
 pub mod waf_nonexistent_container_exception {
     
     /// A builder for [`WafNonexistentContainerException`](crate::error::WafNonexistentContainerException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -434,6 +437,7 @@ impl std::error::Error for WafLimitsExceededException {}
 pub mod waf_limits_exceeded_exception {
     
     /// A builder for [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -528,6 +532,7 @@ impl std::error::Error for WafInvalidParameterException {}
 pub mod waf_invalid_parameter_exception {
     
     /// A builder for [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<crate::model::ParameterExceptionField>,
@@ -631,6 +636,7 @@ impl std::error::Error for WafInvalidOperationException {}
 pub mod waf_invalid_operation_exception {
     
     /// A builder for [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -691,6 +697,7 @@ impl std::error::Error for WafInvalidAccountException {}
 pub mod waf_invalid_account_exception {
     
     /// A builder for [`WafInvalidAccountException`](crate::error::WafInvalidAccountException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -751,6 +758,7 @@ impl std::error::Error for WafInternalErrorException {}
 pub mod waf_internal_error_exception {
     
     /// A builder for [`WafInternalErrorException`](crate::error::WafInternalErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1060,6 +1068,7 @@ impl std::error::Error for WafSubscriptionNotFoundException {}
 pub mod waf_subscription_not_found_exception {
     
     /// A builder for [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1124,6 +1133,7 @@ impl std::error::Error for WafReferencedItemException {}
 pub mod waf_referenced_item_exception {
     
     /// A builder for [`WafReferencedItemException`](crate::error::WafReferencedItemException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2298,6 +2308,7 @@ impl std::error::Error for WafInvalidRegexPatternException {}
 pub mod waf_invalid_regex_pattern_exception {
     
     /// A builder for [`WafInvalidRegexPatternException`](crate::error::WafInvalidRegexPatternException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2568,6 +2579,7 @@ impl std::error::Error for WafDisallowedNameException {}
 pub mod waf_disallowed_name_exception {
     
     /// A builder for [`WafDisallowedNameException`](crate::error::WafDisallowedNameException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3744,6 +3756,7 @@ impl std::error::Error for WafTagOperationInternalErrorException {}
 pub mod waf_tag_operation_internal_error_exception {
     
     /// A builder for [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3804,6 +3817,7 @@ impl std::error::Error for WafTagOperationException {}
 pub mod waf_tag_operation_exception {
     
     /// A builder for [`WafTagOperationException`](crate::error::WafTagOperationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3864,6 +3878,7 @@ impl std::error::Error for WafBadRequestException {}
 pub mod waf_bad_request_exception {
     
     /// A builder for [`WafBadRequestException`](crate::error::WafBadRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4291,6 +4306,7 @@ impl std::error::Error for WafInvalidPermissionPolicyException {}
 pub mod waf_invalid_permission_policy_exception {
     
     /// A builder for [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4500,6 +4516,7 @@ impl std::error::Error for WafServiceLinkedRoleErrorException {}
 pub mod waf_service_linked_role_error_exception {
     
     /// A builder for [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9247,6 +9264,7 @@ impl std::error::Error for WafNonEmptyEntityException {}
 pub mod waf_non_empty_entity_exception {
     
     /// A builder for [`WafNonEmptyEntityException`](crate::error::WafNonEmptyEntityException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12094,6 +12112,7 @@ impl std::error::Error for WafEntityMigrationException {}
 pub mod waf_entity_migration_exception {
     
     /// A builder for [`WafEntityMigrationException`](crate::error::WafEntityMigrationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

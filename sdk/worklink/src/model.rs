@@ -109,6 +109,7 @@ impl WebsiteCaSummary {
 pub mod website_ca_summary {
     
     /// A builder for [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) website_ca_id: std::option::Option<std::string::String>,
@@ -204,6 +205,7 @@ impl WebsiteAuthorizationProviderSummary {
 pub mod website_authorization_provider_summary {
     
     /// A builder for [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_provider_id: std::option::Option<std::string::String>,
@@ -416,6 +418,7 @@ impl FleetSummary {
 pub mod fleet_summary {
     
     /// A builder for [`FleetSummary`](crate::model::FleetSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -679,6 +682,7 @@ impl DomainSummary {
 pub mod domain_summary {
     
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -884,6 +888,7 @@ impl DeviceSummary {
 pub mod device_summary {
     
     /// A builder for [`DeviceSummary`](crate::model::DeviceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,

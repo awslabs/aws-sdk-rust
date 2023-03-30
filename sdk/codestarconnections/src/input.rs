@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_connection_input {
     
     /// A builder for [`CreateConnectionInput`](crate::input::CreateConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_type: std::option::Option<crate::model::ProviderType>,
@@ -159,6 +160,7 @@ impl CreateConnectionInput {
 pub mod create_host_input {
     
     /// A builder for [`CreateHostInput`](crate::input::CreateHostInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -324,6 +326,7 @@ impl CreateHostInput {
 pub mod delete_connection_input {
     
     /// A builder for [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -440,6 +443,7 @@ impl DeleteConnectionInput {
 pub mod delete_host_input {
     
     /// A builder for [`DeleteHostInput`](crate::input::DeleteHostInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_arn: std::option::Option<std::string::String>,
@@ -552,6 +556,7 @@ impl DeleteHostInput {
 pub mod get_connection_input {
     
     /// A builder for [`GetConnectionInput`](crate::input::GetConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -664,6 +669,7 @@ impl GetConnectionInput {
 pub mod get_host_input {
     
     /// A builder for [`GetHostInput`](crate::input::GetHostInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_arn: std::option::Option<std::string::String>,
@@ -776,6 +782,7 @@ impl GetHostInput {
 pub mod list_connections_input {
     
     /// A builder for [`ListConnectionsInput`](crate::input::ListConnectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_type_filter: std::option::Option<crate::model::ProviderType>,
@@ -925,6 +932,7 @@ impl ListConnectionsInput {
 pub mod list_hosts_input {
     
     /// A builder for [`ListHostsInput`](crate::input::ListHostsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1050,6 +1058,7 @@ impl ListHostsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1162,6 +1171,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1292,6 +1302,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1422,6 +1433,7 @@ impl UntagResourceInput {
 pub mod update_host_input {
     
     /// A builder for [`UpdateHostInput`](crate::input::UpdateHostInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_arn: std::option::Option<std::string::String>,

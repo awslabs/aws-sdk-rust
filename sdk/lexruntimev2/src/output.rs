@@ -88,6 +88,7 @@ impl RecognizeUtteranceOutput {
 pub mod recognize_utterance_output {
     
     /// A builder for [`RecognizeUtteranceOutput`](crate::output::RecognizeUtteranceOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_mode: std::option::Option<std::string::String>,
@@ -283,6 +284,7 @@ impl RecognizeTextOutput {
 pub mod recognize_text_output {
     
     /// A builder for [`RecognizeTextOutput`](crate::output::RecognizeTextOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -439,6 +441,7 @@ impl PutSessionOutput {
 pub mod put_session_output {
     
     /// A builder for [`PutSessionOutput`](crate::output::PutSessionOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -577,6 +580,7 @@ impl GetSessionOutput {
 pub mod get_session_output {
     
     /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -700,6 +704,7 @@ impl DeleteSessionOutput {
 pub mod delete_session_output {
     
     /// A builder for [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,

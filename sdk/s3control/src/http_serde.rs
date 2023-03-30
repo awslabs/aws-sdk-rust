@@ -7,7 +7,7 @@ pub fn add_headers_create_access_point(
         let formatted_2 = inner_1.as_str();
                         if !formatted_2.is_empty() {
                             let header_value = formatted_2;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -28,7 +28,7 @@ pub fn add_headers_create_access_point_for_object_lambda(
         let formatted_4 = inner_3.as_str();
                         if !formatted_4.is_empty() {
                             let header_value = formatted_4;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -49,7 +49,7 @@ pub fn add_headers_create_bucket(
         let formatted_6 = inner_5.as_str();
                         if !formatted_6.is_empty() {
                             let header_value = formatted_6;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("acl", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -63,7 +63,7 @@ pub fn add_headers_create_bucket(
         let formatted_8 = inner_7.as_str();
                         if !formatted_8.is_empty() {
                             let header_value = formatted_8;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("grant_full_control", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -77,7 +77,7 @@ pub fn add_headers_create_bucket(
         let formatted_10 = inner_9.as_str();
                         if !formatted_10.is_empty() {
                             let header_value = formatted_10;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("grant_read", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -91,7 +91,7 @@ pub fn add_headers_create_bucket(
         let formatted_12 = inner_11.as_str();
                         if !formatted_12.is_empty() {
                             let header_value = formatted_12;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("grant_read_acp", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -105,7 +105,7 @@ pub fn add_headers_create_bucket(
         let formatted_14 = inner_13.as_str();
                         if !formatted_14.is_empty() {
                             let header_value = formatted_14;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("grant_write", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -119,7 +119,7 @@ pub fn add_headers_create_bucket(
         let formatted_16 = inner_15.as_str();
                         if !formatted_16.is_empty() {
                             let header_value = formatted_16;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("grant_write_acp", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -134,7 +134,7 @@ pub fn add_headers_create_bucket(
         let formatted_17 = encoder.encode();
                         if !formatted_17.is_empty() {
                             let header_value = formatted_17;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("object_lock_enabled_for_bucket", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -148,7 +148,7 @@ pub fn add_headers_create_bucket(
         let formatted_19 = inner_18.as_str();
                         if !formatted_19.is_empty() {
                             let header_value = formatted_19;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("outpost_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -169,7 +169,7 @@ pub fn add_headers_create_job(
         let formatted_21 = inner_20.as_str();
                         if !formatted_21.is_empty() {
                             let header_value = formatted_21;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -190,7 +190,7 @@ pub fn add_headers_create_multi_region_access_point(
         let formatted_23 = inner_22.as_str();
                         if !formatted_23.is_empty() {
                             let header_value = formatted_23;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -211,7 +211,7 @@ pub fn add_headers_delete_access_point(
         let formatted_25 = inner_24.as_str();
                         if !formatted_25.is_empty() {
                             let header_value = formatted_25;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -232,7 +232,7 @@ pub fn add_headers_delete_access_point_for_object_lambda(
         let formatted_27 = inner_26.as_str();
                         if !formatted_27.is_empty() {
                             let header_value = formatted_27;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -253,7 +253,7 @@ pub fn add_headers_delete_access_point_policy(
         let formatted_29 = inner_28.as_str();
                         if !formatted_29.is_empty() {
                             let header_value = formatted_29;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -274,7 +274,7 @@ pub fn add_headers_delete_access_point_policy_for_object_lambda(
         let formatted_31 = inner_30.as_str();
                         if !formatted_31.is_empty() {
                             let header_value = formatted_31;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -295,7 +295,7 @@ pub fn add_headers_delete_bucket(
         let formatted_33 = inner_32.as_str();
                         if !formatted_33.is_empty() {
                             let header_value = formatted_33;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -316,7 +316,7 @@ pub fn add_headers_delete_bucket_lifecycle_configuration(
         let formatted_35 = inner_34.as_str();
                         if !formatted_35.is_empty() {
                             let header_value = formatted_35;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -337,7 +337,7 @@ pub fn add_headers_delete_bucket_policy(
         let formatted_37 = inner_36.as_str();
                         if !formatted_37.is_empty() {
                             let header_value = formatted_37;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -358,7 +358,7 @@ pub fn add_headers_delete_bucket_tagging(
         let formatted_39 = inner_38.as_str();
                         if !formatted_39.is_empty() {
                             let header_value = formatted_39;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -379,7 +379,7 @@ pub fn add_headers_delete_job_tagging(
         let formatted_41 = inner_40.as_str();
                         if !formatted_41.is_empty() {
                             let header_value = formatted_41;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -400,7 +400,7 @@ pub fn add_headers_delete_multi_region_access_point(
         let formatted_43 = inner_42.as_str();
                         if !formatted_43.is_empty() {
                             let header_value = formatted_43;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -421,7 +421,7 @@ pub fn add_headers_delete_public_access_block(
         let formatted_45 = inner_44.as_str();
                         if !formatted_45.is_empty() {
                             let header_value = formatted_45;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -442,7 +442,7 @@ pub fn add_headers_delete_storage_lens_configuration(
         let formatted_47 = inner_46.as_str();
                         if !formatted_47.is_empty() {
                             let header_value = formatted_47;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -463,7 +463,7 @@ pub fn add_headers_delete_storage_lens_configuration_tagging(
         let formatted_49 = inner_48.as_str();
                         if !formatted_49.is_empty() {
                             let header_value = formatted_49;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -484,7 +484,7 @@ pub fn add_headers_describe_job(
         let formatted_51 = inner_50.as_str();
                         if !formatted_51.is_empty() {
                             let header_value = formatted_51;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -505,7 +505,7 @@ pub fn add_headers_describe_multi_region_access_point_operation(
         let formatted_53 = inner_52.as_str();
                         if !formatted_53.is_empty() {
                             let header_value = formatted_53;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -526,7 +526,7 @@ pub fn add_headers_get_access_point(
         let formatted_55 = inner_54.as_str();
                         if !formatted_55.is_empty() {
                             let header_value = formatted_55;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -547,7 +547,7 @@ pub fn add_headers_get_access_point_configuration_for_object_lambda(
         let formatted_57 = inner_56.as_str();
                         if !formatted_57.is_empty() {
                             let header_value = formatted_57;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -568,7 +568,7 @@ pub fn add_headers_get_access_point_for_object_lambda(
         let formatted_59 = inner_58.as_str();
                         if !formatted_59.is_empty() {
                             let header_value = formatted_59;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -589,7 +589,7 @@ pub fn add_headers_get_access_point_policy(
         let formatted_61 = inner_60.as_str();
                         if !formatted_61.is_empty() {
                             let header_value = formatted_61;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -610,7 +610,7 @@ pub fn add_headers_get_access_point_policy_for_object_lambda(
         let formatted_63 = inner_62.as_str();
                         if !formatted_63.is_empty() {
                             let header_value = formatted_63;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -631,7 +631,7 @@ pub fn add_headers_get_access_point_policy_status(
         let formatted_65 = inner_64.as_str();
                         if !formatted_65.is_empty() {
                             let header_value = formatted_65;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -652,7 +652,7 @@ pub fn add_headers_get_access_point_policy_status_for_object_lambda(
         let formatted_67 = inner_66.as_str();
                         if !formatted_67.is_empty() {
                             let header_value = formatted_67;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -673,7 +673,7 @@ pub fn add_headers_get_bucket(
         let formatted_69 = inner_68.as_str();
                         if !formatted_69.is_empty() {
                             let header_value = formatted_69;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -694,7 +694,7 @@ pub fn add_headers_get_bucket_lifecycle_configuration(
         let formatted_71 = inner_70.as_str();
                         if !formatted_71.is_empty() {
                             let header_value = formatted_71;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -715,7 +715,7 @@ pub fn add_headers_get_bucket_policy(
         let formatted_73 = inner_72.as_str();
                         if !formatted_73.is_empty() {
                             let header_value = formatted_73;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -736,7 +736,7 @@ pub fn add_headers_get_bucket_tagging(
         let formatted_75 = inner_74.as_str();
                         if !formatted_75.is_empty() {
                             let header_value = formatted_75;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -757,7 +757,7 @@ pub fn add_headers_get_bucket_versioning(
         let formatted_77 = inner_76.as_str();
                         if !formatted_77.is_empty() {
                             let header_value = formatted_77;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -778,7 +778,7 @@ pub fn add_headers_get_job_tagging(
         let formatted_79 = inner_78.as_str();
                         if !formatted_79.is_empty() {
                             let header_value = formatted_79;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -799,7 +799,7 @@ pub fn add_headers_get_multi_region_access_point(
         let formatted_81 = inner_80.as_str();
                         if !formatted_81.is_empty() {
                             let header_value = formatted_81;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -820,7 +820,7 @@ pub fn add_headers_get_multi_region_access_point_policy(
         let formatted_83 = inner_82.as_str();
                         if !formatted_83.is_empty() {
                             let header_value = formatted_83;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -841,7 +841,7 @@ pub fn add_headers_get_multi_region_access_point_policy_status(
         let formatted_85 = inner_84.as_str();
                         if !formatted_85.is_empty() {
                             let header_value = formatted_85;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -862,7 +862,7 @@ pub fn add_headers_get_multi_region_access_point_routes(
         let formatted_87 = inner_86.as_str();
                         if !formatted_87.is_empty() {
                             let header_value = formatted_87;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -883,7 +883,7 @@ pub fn add_headers_get_public_access_block(
         let formatted_89 = inner_88.as_str();
                         if !formatted_89.is_empty() {
                             let header_value = formatted_89;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -904,7 +904,7 @@ pub fn add_headers_get_storage_lens_configuration(
         let formatted_91 = inner_90.as_str();
                         if !formatted_91.is_empty() {
                             let header_value = formatted_91;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -925,7 +925,7 @@ pub fn add_headers_get_storage_lens_configuration_tagging(
         let formatted_93 = inner_92.as_str();
                         if !formatted_93.is_empty() {
                             let header_value = formatted_93;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -946,7 +946,7 @@ pub fn add_headers_list_access_points(
         let formatted_95 = inner_94.as_str();
                         if !formatted_95.is_empty() {
                             let header_value = formatted_95;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -967,7 +967,7 @@ pub fn add_headers_list_access_points_for_object_lambda(
         let formatted_97 = inner_96.as_str();
                         if !formatted_97.is_empty() {
                             let header_value = formatted_97;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -988,7 +988,7 @@ pub fn add_headers_list_jobs(
         let formatted_99 = inner_98.as_str();
                         if !formatted_99.is_empty() {
                             let header_value = formatted_99;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1009,7 +1009,7 @@ pub fn add_headers_list_multi_region_access_points(
         let formatted_101 = inner_100.as_str();
                         if !formatted_101.is_empty() {
                             let header_value = formatted_101;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1030,7 +1030,7 @@ pub fn add_headers_list_regional_buckets(
         let formatted_103 = inner_102.as_str();
                         if !formatted_103.is_empty() {
                             let header_value = formatted_103;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1044,7 +1044,7 @@ pub fn add_headers_list_regional_buckets(
         let formatted_105 = inner_104.as_str();
                         if !formatted_105.is_empty() {
                             let header_value = formatted_105;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("outpost_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1065,7 +1065,7 @@ pub fn add_headers_list_storage_lens_configurations(
         let formatted_107 = inner_106.as_str();
                         if !formatted_107.is_empty() {
                             let header_value = formatted_107;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1086,7 +1086,7 @@ pub fn add_headers_put_access_point_configuration_for_object_lambda(
         let formatted_109 = inner_108.as_str();
                         if !formatted_109.is_empty() {
                             let header_value = formatted_109;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1107,7 +1107,7 @@ pub fn add_headers_put_access_point_policy(
         let formatted_111 = inner_110.as_str();
                         if !formatted_111.is_empty() {
                             let header_value = formatted_111;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1128,7 +1128,7 @@ pub fn add_headers_put_access_point_policy_for_object_lambda(
         let formatted_113 = inner_112.as_str();
                         if !formatted_113.is_empty() {
                             let header_value = formatted_113;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1149,7 +1149,7 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
         let formatted_115 = inner_114.as_str();
                         if !formatted_115.is_empty() {
                             let header_value = formatted_115;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1170,7 +1170,7 @@ pub fn add_headers_put_bucket_policy(
         let formatted_117 = inner_116.as_str();
                         if !formatted_117.is_empty() {
                             let header_value = formatted_117;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1185,7 +1185,7 @@ pub fn add_headers_put_bucket_policy(
         let formatted_118 = encoder.encode();
                         if !formatted_118.is_empty() {
                             let header_value = formatted_118;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("confirm_remove_self_bucket_access", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1206,7 +1206,7 @@ pub fn add_headers_put_bucket_tagging(
         let formatted_120 = inner_119.as_str();
                         if !formatted_120.is_empty() {
                             let header_value = formatted_120;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1227,7 +1227,7 @@ pub fn add_headers_put_bucket_versioning(
         let formatted_122 = inner_121.as_str();
                         if !formatted_122.is_empty() {
                             let header_value = formatted_122;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1241,7 +1241,7 @@ pub fn add_headers_put_bucket_versioning(
         let formatted_124 = inner_123.as_str();
                         if !formatted_124.is_empty() {
                             let header_value = formatted_124;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("mfa", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1262,7 +1262,7 @@ pub fn add_headers_put_job_tagging(
         let formatted_126 = inner_125.as_str();
                         if !formatted_126.is_empty() {
                             let header_value = formatted_126;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1283,7 +1283,7 @@ pub fn add_headers_put_multi_region_access_point_policy(
         let formatted_128 = inner_127.as_str();
                         if !formatted_128.is_empty() {
                             let header_value = formatted_128;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1304,7 +1304,7 @@ pub fn add_headers_put_public_access_block(
         let formatted_130 = inner_129.as_str();
                         if !formatted_130.is_empty() {
                             let header_value = formatted_130;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1325,7 +1325,7 @@ pub fn add_headers_put_storage_lens_configuration(
         let formatted_132 = inner_131.as_str();
                         if !formatted_132.is_empty() {
                             let header_value = formatted_132;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1346,7 +1346,7 @@ pub fn add_headers_put_storage_lens_configuration_tagging(
         let formatted_134 = inner_133.as_str();
                         if !formatted_134.is_empty() {
                             let header_value = formatted_134;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1367,7 +1367,7 @@ pub fn add_headers_submit_multi_region_access_point_routes(
         let formatted_136 = inner_135.as_str();
                         if !formatted_136.is_empty() {
                             let header_value = formatted_136;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1388,7 +1388,7 @@ pub fn add_headers_update_job_priority(
         let formatted_138 = inner_137.as_str();
                         if !formatted_138.is_empty() {
                             let header_value = formatted_138;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1409,7 +1409,7 @@ pub fn add_headers_update_job_status(
         let formatted_140 = inner_139.as_str();
                         if !formatted_140.is_empty() {
                             let header_value = formatted_140;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("account_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,

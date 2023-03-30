@@ -9,6 +9,7 @@ pub struct UpdateServiceSettingOutput  {
 pub mod update_service_setting_output {
     
     /// A builder for [`UpdateServiceSettingOutput`](crate::output::UpdateServiceSettingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -38,6 +39,7 @@ pub struct UpdateResourceDataSyncOutput  {
 pub mod update_resource_data_sync_output {
     
     /// A builder for [`UpdateResourceDataSyncOutput`](crate::output::UpdateResourceDataSyncOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -167,6 +169,7 @@ impl UpdatePatchBaselineOutput {
 pub mod update_patch_baseline_output {
     
     /// A builder for [`UpdatePatchBaselineOutput`](crate::output::UpdatePatchBaselineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -391,6 +394,7 @@ impl UpdateOpsMetadataOutput {
 pub mod update_ops_metadata_output {
     
     /// A builder for [`UpdateOpsMetadataOutput`](crate::output::UpdateOpsMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_metadata_arn: std::option::Option<std::string::String>,
@@ -432,6 +436,7 @@ pub struct UpdateOpsItemOutput  {
 pub mod update_ops_item_output {
     
     /// A builder for [`UpdateOpsItemOutput`](crate::output::UpdateOpsItemOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -461,6 +466,7 @@ pub struct UpdateManagedInstanceRoleOutput  {
 pub mod update_managed_instance_role_output {
     
     /// A builder for [`UpdateManagedInstanceRoleOutput`](crate::output::UpdateManagedInstanceRoleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -626,6 +632,7 @@ impl  std::fmt::Debug for UpdateMaintenanceWindowTaskOutput  {
 pub mod update_maintenance_window_task_output {
     
     /// A builder for [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -933,6 +940,7 @@ impl  std::fmt::Debug for UpdateMaintenanceWindowTargetOutput  {
 pub mod update_maintenance_window_target_output {
     
     /// A builder for [`UpdateMaintenanceWindowTargetOutput`](crate::output::UpdateMaintenanceWindowTargetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -1156,6 +1164,7 @@ impl  std::fmt::Debug for UpdateMaintenanceWindowOutput  {
 pub mod update_maintenance_window_output {
     
     /// A builder for [`UpdateMaintenanceWindowOutput`](crate::output::UpdateMaintenanceWindowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -1351,6 +1360,7 @@ pub struct UpdateDocumentMetadataOutput  {
 pub mod update_document_metadata_output {
     
     /// A builder for [`UpdateDocumentMetadataOutput`](crate::output::UpdateDocumentMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1389,6 +1399,7 @@ impl UpdateDocumentDefaultVersionOutput {
 pub mod update_document_default_version_output {
     
     /// A builder for [`UpdateDocumentDefaultVersionOutput`](crate::output::UpdateDocumentDefaultVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<crate::model::DocumentDefaultVersionDescription>,
@@ -1439,6 +1450,7 @@ impl UpdateDocumentOutput {
 pub mod update_document_output {
     
     /// A builder for [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_description: std::option::Option<crate::model::DocumentDescription>,
@@ -1489,6 +1501,7 @@ impl UpdateAssociationStatusOutput {
 pub mod update_association_status_output {
     
     /// A builder for [`UpdateAssociationStatusOutput`](crate::output::UpdateAssociationStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_description: std::option::Option<crate::model::AssociationDescription>,
@@ -1539,6 +1552,7 @@ impl UpdateAssociationOutput {
 pub mod update_association_output {
     
     /// A builder for [`UpdateAssociationOutput`](crate::output::UpdateAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_description: std::option::Option<crate::model::AssociationDescription>,
@@ -1596,6 +1610,7 @@ impl UnlabelParameterVersionOutput {
 pub mod unlabel_parameter_version_output {
     
     /// A builder for [`UnlabelParameterVersionOutput`](crate::output::UnlabelParameterVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) removed_labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1670,6 +1685,7 @@ impl TerminateSessionOutput {
 pub mod terminate_session_output {
     
     /// A builder for [`TerminateSessionOutput`](crate::output::TerminateSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -1711,6 +1727,7 @@ pub struct StopAutomationExecutionOutput  {
 pub mod stop_automation_execution_output {
     
     /// A builder for [`StopAutomationExecutionOutput`](crate::output::StopAutomationExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1767,6 +1784,7 @@ impl StartSessionOutput {
 pub mod start_session_output {
     
     /// A builder for [`StartSessionOutput`](crate::output::StartSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -1845,6 +1863,7 @@ impl StartChangeRequestExecutionOutput {
 pub mod start_change_request_execution_output {
     
     /// A builder for [`StartChangeRequestExecutionOutput`](crate::output::StartChangeRequestExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automation_execution_id: std::option::Option<std::string::String>,
@@ -1895,6 +1914,7 @@ impl StartAutomationExecutionOutput {
 pub mod start_automation_execution_output {
     
     /// A builder for [`StartAutomationExecutionOutput`](crate::output::StartAutomationExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automation_execution_id: std::option::Option<std::string::String>,
@@ -1936,6 +1956,7 @@ pub struct StartAssociationsOnceOutput  {
 pub mod start_associations_once_output {
     
     /// A builder for [`StartAssociationsOnceOutput`](crate::output::StartAssociationsOnceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1974,6 +1995,7 @@ impl SendCommandOutput {
 pub mod send_command_output {
     
     /// A builder for [`SendCommandOutput`](crate::output::SendCommandOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command: std::option::Option<crate::model::Command>,
@@ -2015,6 +2037,7 @@ pub struct SendAutomationSignalOutput  {
 pub mod send_automation_signal_output {
     
     /// A builder for [`SendAutomationSignalOutput`](crate::output::SendAutomationSignalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2071,6 +2094,7 @@ impl ResumeSessionOutput {
 pub mod resume_session_output {
     
     /// A builder for [`ResumeSessionOutput`](crate::output::ResumeSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -2149,6 +2173,7 @@ impl ResetServiceSettingOutput {
 pub mod reset_service_setting_output {
     
     /// A builder for [`ResetServiceSettingOutput`](crate::output::ResetServiceSettingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_setting: std::option::Option<crate::model::ServiceSetting>,
@@ -2190,6 +2215,7 @@ pub struct RemoveTagsFromResourceOutput  {
 pub mod remove_tags_from_resource_output {
     
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2228,6 +2254,7 @@ impl RegisterTaskWithMaintenanceWindowOutput {
 pub mod register_task_with_maintenance_window_output {
     
     /// A builder for [`RegisterTaskWithMaintenanceWindowOutput`](crate::output::RegisterTaskWithMaintenanceWindowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_task_id: std::option::Option<std::string::String>,
@@ -2278,6 +2305,7 @@ impl RegisterTargetWithMaintenanceWindowOutput {
 pub mod register_target_with_maintenance_window_output {
     
     /// A builder for [`RegisterTargetWithMaintenanceWindowOutput`](crate::output::RegisterTargetWithMaintenanceWindowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_target_id: std::option::Option<std::string::String>,
@@ -2335,6 +2363,7 @@ impl RegisterPatchBaselineForPatchGroupOutput {
 pub mod register_patch_baseline_for_patch_group_output {
     
     /// A builder for [`RegisterPatchBaselineForPatchGroupOutput`](crate::output::RegisterPatchBaselineForPatchGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -2397,6 +2426,7 @@ impl RegisterDefaultPatchBaselineOutput {
 pub mod register_default_patch_baseline_output {
     
     /// A builder for [`RegisterDefaultPatchBaselineOutput`](crate::output::RegisterDefaultPatchBaselineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -2454,6 +2484,7 @@ impl PutResourcePolicyOutput {
 pub mod put_resource_policy_output {
     
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -2523,6 +2554,7 @@ impl PutParameterOutput {
 pub mod put_parameter_output {
     
     /// A builder for [`PutParameterOutput`](crate::output::PutParameterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<i64>,
@@ -2586,6 +2618,7 @@ impl PutInventoryOutput {
 pub mod put_inventory_output {
     
     /// A builder for [`PutInventoryOutput`](crate::output::PutInventoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2627,6 +2660,7 @@ pub struct PutComplianceItemsOutput  {
 pub mod put_compliance_items_output {
     
     /// A builder for [`PutComplianceItemsOutput`](crate::output::PutComplianceItemsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2656,6 +2690,7 @@ pub struct ModifyDocumentPermissionOutput  {
 pub mod modify_document_permission_output {
     
     /// A builder for [`ModifyDocumentPermissionOutput`](crate::output::ModifyDocumentPermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2694,6 +2729,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2757,6 +2793,7 @@ impl ListResourceDataSyncOutput {
 pub mod list_resource_data_sync_output {
     
     /// A builder for [`ListResourceDataSyncOutput`](crate::output::ListResourceDataSyncOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_data_sync_items: std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncItem>>,
@@ -2832,6 +2869,7 @@ impl ListResourceComplianceSummariesOutput {
 pub mod list_resource_compliance_summaries_output {
     
     /// A builder for [`ListResourceComplianceSummariesOutput`](crate::output::ListResourceComplianceSummariesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_compliance_summary_items: std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
@@ -2907,6 +2945,7 @@ impl ListOpsMetadataOutput {
 pub mod list_ops_metadata_output {
     
     /// A builder for [`ListOpsMetadataOutput`](crate::output::ListOpsMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_metadata_list: std::option::Option<std::vec::Vec<crate::model::OpsMetadata>>,
@@ -2982,6 +3021,7 @@ impl ListOpsItemRelatedItemsOutput {
 pub mod list_ops_item_related_items_output {
     
     /// A builder for [`ListOpsItemRelatedItemsOutput`](crate::output::ListOpsItemRelatedItemsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3057,6 +3097,7 @@ impl ListOpsItemEventsOutput {
 pub mod list_ops_item_events_output {
     
     /// A builder for [`ListOpsItemEventsOutput`](crate::output::ListOpsItemEventsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3160,6 +3201,7 @@ impl ListInventoryEntriesOutput {
 pub mod list_inventory_entries_output {
     
     /// A builder for [`ListInventoryEntriesOutput`](crate::output::ListInventoryEntriesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -3283,6 +3325,7 @@ impl ListDocumentVersionsOutput {
 pub mod list_document_versions_output {
     
     /// A builder for [`ListDocumentVersionsOutput`](crate::output::ListDocumentVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_versions: std::option::Option<std::vec::Vec<crate::model::DocumentVersionInfo>>,
@@ -3358,6 +3401,7 @@ impl ListDocumentsOutput {
 pub mod list_documents_output {
     
     /// A builder for [`ListDocumentsOutput`](crate::output::ListDocumentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_identifiers: std::option::Option<std::vec::Vec<crate::model::DocumentIdentifier>>,
@@ -3454,6 +3498,7 @@ impl ListDocumentMetadataHistoryOutput {
 pub mod list_document_metadata_history_output {
     
     /// A builder for [`ListDocumentMetadataHistoryOutput`](crate::output::ListDocumentMetadataHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3559,6 +3604,7 @@ impl ListComplianceSummariesOutput {
 pub mod list_compliance_summaries_output {
     
     /// A builder for [`ListComplianceSummariesOutput`](crate::output::ListComplianceSummariesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_summary_items: std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryItem>>,
@@ -3634,6 +3680,7 @@ impl ListComplianceItemsOutput {
 pub mod list_compliance_items_output {
     
     /// A builder for [`ListComplianceItemsOutput`](crate::output::ListComplianceItemsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_items: std::option::Option<std::vec::Vec<crate::model::ComplianceItem>>,
@@ -3709,6 +3756,7 @@ impl ListCommandsOutput {
 pub mod list_commands_output {
     
     /// A builder for [`ListCommandsOutput`](crate::output::ListCommandsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commands: std::option::Option<std::vec::Vec<crate::model::Command>>,
@@ -3784,6 +3832,7 @@ impl ListCommandInvocationsOutput {
 pub mod list_command_invocations_output {
     
     /// A builder for [`ListCommandInvocationsOutput`](crate::output::ListCommandInvocationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command_invocations: std::option::Option<std::vec::Vec<crate::model::CommandInvocation>>,
@@ -3859,6 +3908,7 @@ impl ListAssociationVersionsOutput {
 pub mod list_association_versions_output {
     
     /// A builder for [`ListAssociationVersionsOutput`](crate::output::ListAssociationVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_versions: std::option::Option<std::vec::Vec<crate::model::AssociationVersionInfo>>,
@@ -3934,6 +3984,7 @@ impl ListAssociationsOutput {
 pub mod list_associations_output {
     
     /// A builder for [`ListAssociationsOutput`](crate::output::ListAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associations: std::option::Option<std::vec::Vec<crate::model::Association>>,
@@ -4009,6 +4060,7 @@ impl LabelParameterVersionOutput {
 pub mod label_parameter_version_output {
     
     /// A builder for [`LabelParameterVersionOutput`](crate::output::LabelParameterVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invalid_labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4078,6 +4130,7 @@ impl GetServiceSettingOutput {
 pub mod get_service_setting_output {
     
     /// A builder for [`GetServiceSettingOutput`](crate::output::GetServiceSettingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_setting: std::option::Option<crate::model::ServiceSetting>,
@@ -4135,6 +4188,7 @@ impl GetResourcePoliciesOutput {
 pub mod get_resource_policies_output {
     
     /// A builder for [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4217,6 +4271,7 @@ impl GetPatchBaselineForPatchGroupOutput {
 pub mod get_patch_baseline_for_patch_group_output {
     
     /// A builder for [`GetPatchBaselineForPatchGroupOutput`](crate::output::GetPatchBaselineForPatchGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -4389,6 +4444,7 @@ impl GetPatchBaselineOutput {
 pub mod get_patch_baseline_output {
     
     /// A builder for [`GetPatchBaselineOutput`](crate::output::GetPatchBaselineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -4638,6 +4694,7 @@ impl GetParametersByPathOutput {
 pub mod get_parameters_by_path_output {
     
     /// A builder for [`GetParametersByPathOutput`](crate::output::GetParametersByPathOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -4713,6 +4770,7 @@ impl GetParametersOutput {
 pub mod get_parameters_output {
     
     /// A builder for [`GetParametersOutput`](crate::output::GetParametersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -4794,6 +4852,7 @@ impl GetParameterHistoryOutput {
 pub mod get_parameter_history_output {
     
     /// A builder for [`GetParameterHistoryOutput`](crate::output::GetParameterHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::ParameterHistory>>,
@@ -4862,6 +4921,7 @@ impl GetParameterOutput {
 pub mod get_parameter_output {
     
     /// A builder for [`GetParameterOutput`](crate::output::GetParameterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter: std::option::Option<crate::model::Parameter>,
@@ -4919,6 +4979,7 @@ impl GetOpsSummaryOutput {
 pub mod get_ops_summary_output {
     
     /// A builder for [`GetOpsSummaryOutput`](crate::output::GetOpsSummaryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::OpsEntity>>,
@@ -5001,6 +5062,7 @@ impl GetOpsMetadataOutput {
 pub mod get_ops_metadata_output {
     
     /// A builder for [`GetOpsMetadataOutput`](crate::output::GetOpsMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -5081,6 +5143,7 @@ impl GetOpsItemOutput {
 pub mod get_ops_item_output {
     
     /// A builder for [`GetOpsItemOutput`](crate::output::GetOpsItemOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_item: std::option::Option<crate::model::OpsItem>,
@@ -5274,6 +5337,7 @@ impl  std::fmt::Debug for GetMaintenanceWindowTaskOutput  {
 pub mod get_maintenance_window_task_output {
     
     /// A builder for [`GetMaintenanceWindowTaskOutput`](crate::output::GetMaintenanceWindowTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -5650,6 +5714,7 @@ impl  std::fmt::Debug for GetMaintenanceWindowExecutionTaskInvocationOutput  {
 pub mod get_maintenance_window_execution_task_invocation_output {
     
     /// A builder for [`GetMaintenanceWindowExecutionTaskInvocationOutput`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
@@ -5983,6 +6048,7 @@ impl  std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput  {
 pub mod get_maintenance_window_execution_task_output {
     
     /// A builder for [`GetMaintenanceWindowExecutionTaskOutput`](crate::output::GetMaintenanceWindowExecutionTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
@@ -6284,6 +6350,7 @@ impl GetMaintenanceWindowExecutionOutput {
 pub mod get_maintenance_window_execution_output {
     
     /// A builder for [`GetMaintenanceWindowExecutionOutput`](crate::output::GetMaintenanceWindowExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
@@ -6519,6 +6586,7 @@ impl  std::fmt::Debug for GetMaintenanceWindowOutput  {
 pub mod get_maintenance_window_output {
     
     /// A builder for [`GetMaintenanceWindowOutput`](crate::output::GetMaintenanceWindowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -6769,6 +6837,7 @@ impl GetInventorySchemaOutput {
 pub mod get_inventory_schema_output {
     
     /// A builder for [`GetInventorySchemaOutput`](crate::output::GetInventorySchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schemas: std::option::Option<std::vec::Vec<crate::model::InventoryItemSchema>>,
@@ -6844,6 +6913,7 @@ impl GetInventoryOutput {
 pub mod get_inventory_output {
     
     /// A builder for [`GetInventoryOutput`](crate::output::GetInventoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::InventoryResultEntity>>,
@@ -7000,6 +7070,7 @@ impl GetDocumentOutput {
 pub mod get_document_output {
     
     /// A builder for [`GetDocumentOutput`](crate::output::GetDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7231,6 +7302,7 @@ impl GetDeployablePatchSnapshotForInstanceOutput {
 pub mod get_deployable_patch_snapshot_for_instance_output {
     
     /// A builder for [`GetDeployablePatchSnapshotForInstanceOutput`](crate::output::GetDeployablePatchSnapshotForInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -7324,6 +7396,7 @@ impl GetDefaultPatchBaselineOutput {
 pub mod get_default_patch_baseline_output {
     
     /// A builder for [`GetDefaultPatchBaselineOutput`](crate::output::GetDefaultPatchBaselineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -7393,6 +7466,7 @@ impl GetConnectionStatusOutput {
 pub mod get_connection_status_output {
     
     /// A builder for [`GetConnectionStatusOutput`](crate::output::GetConnectionStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<std::string::String>,
@@ -7599,6 +7673,7 @@ impl GetCommandInvocationOutput {
 pub mod get_command_invocation_output {
     
     /// A builder for [`GetCommandInvocationOutput`](crate::output::GetCommandInvocationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command_id: std::option::Option<std::string::String>,
@@ -7888,6 +7963,7 @@ impl GetCalendarStateOutput {
 pub mod get_calendar_state_output {
     
     /// A builder for [`GetCalendarStateOutput`](crate::output::GetCalendarStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::CalendarState>,
@@ -7962,6 +8038,7 @@ impl GetAutomationExecutionOutput {
 pub mod get_automation_execution_output {
     
     /// A builder for [`GetAutomationExecutionOutput`](crate::output::GetAutomationExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automation_execution: std::option::Option<crate::model::AutomationExecution>,
@@ -8003,6 +8080,7 @@ pub struct DisassociateOpsItemRelatedItemOutput  {
 pub mod disassociate_ops_item_related_item_output {
     
     /// A builder for [`DisassociateOpsItemRelatedItemOutput`](crate::output::DisassociateOpsItemRelatedItemOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -8048,6 +8126,7 @@ impl DescribeSessionsOutput {
 pub mod describe_sessions_output {
     
     /// A builder for [`DescribeSessionsOutput`](crate::output::DescribeSessionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
@@ -8123,6 +8202,7 @@ impl DescribePatchPropertiesOutput {
 pub mod describe_patch_properties_output {
     
     /// A builder for [`DescribePatchPropertiesOutput`](crate::output::DescribePatchPropertiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) properties: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
@@ -8272,6 +8352,7 @@ impl DescribePatchGroupStateOutput {
 pub mod describe_patch_group_state_output {
     
     /// A builder for [`DescribePatchGroupStateOutput`](crate::output::DescribePatchGroupStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<i32>,
@@ -8479,6 +8560,7 @@ impl DescribePatchGroupsOutput {
 pub mod describe_patch_groups_output {
     
     /// A builder for [`DescribePatchGroupsOutput`](crate::output::DescribePatchGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mappings: std::option::Option<std::vec::Vec<crate::model::PatchGroupPatchBaselineMapping>>,
@@ -8562,6 +8644,7 @@ impl DescribePatchBaselinesOutput {
 pub mod describe_patch_baselines_output {
     
     /// A builder for [`DescribePatchBaselinesOutput`](crate::output::DescribePatchBaselinesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_identities: std::option::Option<std::vec::Vec<crate::model::PatchBaselineIdentity>>,
@@ -8637,6 +8720,7 @@ impl DescribeParametersOutput {
 pub mod describe_parameters_output {
     
     /// A builder for [`DescribeParametersOutput`](crate::output::DescribeParametersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::ParameterMetadata>>,
@@ -8712,6 +8796,7 @@ impl DescribeOpsItemsOutput {
 pub mod describe_ops_items_output {
     
     /// A builder for [`DescribeOpsItemsOutput`](crate::output::DescribeOpsItemsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8787,6 +8872,7 @@ impl DescribeMaintenanceWindowTasksOutput {
 pub mod describe_maintenance_window_tasks_output {
     
     /// A builder for [`DescribeMaintenanceWindowTasksOutput`](crate::output::DescribeMaintenanceWindowTasksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTask>>,
@@ -8862,6 +8948,7 @@ impl DescribeMaintenanceWindowTargetsOutput {
 pub mod describe_maintenance_window_targets_output {
     
     /// A builder for [`DescribeMaintenanceWindowTargetsOutput`](crate::output::DescribeMaintenanceWindowTargetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTarget>>,
@@ -8937,6 +9024,7 @@ impl DescribeMaintenanceWindowsForTargetOutput {
 pub mod describe_maintenance_windows_for_target_output {
     
     /// A builder for [`DescribeMaintenanceWindowsForTargetOutput`](crate::output::DescribeMaintenanceWindowsForTargetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>,
@@ -9012,6 +9100,7 @@ impl DescribeMaintenanceWindowScheduleOutput {
 pub mod describe_maintenance_window_schedule_output {
     
     /// A builder for [`DescribeMaintenanceWindowScheduleOutput`](crate::output::DescribeMaintenanceWindowScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_window_executions: std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
@@ -9087,6 +9176,7 @@ impl DescribeMaintenanceWindowsOutput {
 pub mod describe_maintenance_windows_output {
     
     /// A builder for [`DescribeMaintenanceWindowsOutput`](crate::output::DescribeMaintenanceWindowsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentity>>,
@@ -9162,6 +9252,7 @@ impl DescribeMaintenanceWindowExecutionTasksOutput {
 pub mod describe_maintenance_window_execution_tasks_output {
     
     /// A builder for [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::output::DescribeMaintenanceWindowExecutionTasksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_execution_task_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskIdentity>>,
@@ -9237,6 +9328,7 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
 pub mod describe_maintenance_window_execution_task_invocations_output {
     
     /// A builder for [`DescribeMaintenanceWindowExecutionTaskInvocationsOutput`](crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_execution_task_invocation_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskInvocationIdentity>>,
@@ -9312,6 +9404,7 @@ impl DescribeMaintenanceWindowExecutionsOutput {
 pub mod describe_maintenance_window_executions_output {
     
     /// A builder for [`DescribeMaintenanceWindowExecutionsOutput`](crate::output::DescribeMaintenanceWindowExecutionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_executions: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecution>>,
@@ -9387,6 +9480,7 @@ impl DescribeInventoryDeletionsOutput {
 pub mod describe_inventory_deletions_output {
     
     /// A builder for [`DescribeInventoryDeletionsOutput`](crate::output::DescribeInventoryDeletionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inventory_deletions: std::option::Option<std::vec::Vec<crate::model::InventoryDeletionStatusItem>>,
@@ -9462,6 +9556,7 @@ impl DescribeInstancePatchStatesForPatchGroupOutput {
 pub mod describe_instance_patch_states_for_patch_group_output {
     
     /// A builder for [`DescribeInstancePatchStatesForPatchGroupOutput`](crate::output::DescribeInstancePatchStatesForPatchGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
@@ -9537,6 +9632,7 @@ impl DescribeInstancePatchStatesOutput {
 pub mod describe_instance_patch_states_output {
     
     /// A builder for [`DescribeInstancePatchStatesOutput`](crate::output::DescribeInstancePatchStatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
@@ -9630,6 +9726,7 @@ impl DescribeInstancePatchesOutput {
 pub mod describe_instance_patches_output {
     
     /// A builder for [`DescribeInstancePatchesOutput`](crate::output::DescribeInstancePatchesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) patches: std::option::Option<std::vec::Vec<crate::model::PatchComplianceData>>,
@@ -9723,6 +9820,7 @@ impl DescribeInstanceInformationOutput {
 pub mod describe_instance_information_output {
     
     /// A builder for [`DescribeInstanceInformationOutput`](crate::output::DescribeInstanceInformationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_information_list: std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>,
@@ -9798,6 +9896,7 @@ impl DescribeInstanceAssociationsStatusOutput {
 pub mod describe_instance_associations_status_output {
     
     /// A builder for [`DescribeInstanceAssociationsStatusOutput`](crate::output::DescribeInstanceAssociationsStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_association_status_infos: std::option::Option<std::vec::Vec<crate::model::InstanceAssociationStatusInfo>>,
@@ -9873,6 +9972,7 @@ impl DescribeEffectivePatchesForPatchBaselineOutput {
 pub mod describe_effective_patches_for_patch_baseline_output {
     
     /// A builder for [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::output::DescribeEffectivePatchesForPatchBaselineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) effective_patches: std::option::Option<std::vec::Vec<crate::model::EffectivePatch>>,
@@ -9948,6 +10048,7 @@ impl DescribeEffectiveInstanceAssociationsOutput {
 pub mod describe_effective_instance_associations_output {
     
     /// A builder for [`DescribeEffectiveInstanceAssociationsOutput`](crate::output::DescribeEffectiveInstanceAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associations: std::option::Option<std::vec::Vec<crate::model::InstanceAssociation>>,
@@ -10030,6 +10131,7 @@ impl DescribeDocumentPermissionOutput {
 pub mod describe_document_permission_output {
     
     /// A builder for [`DescribeDocumentPermissionOutput`](crate::output::DescribeDocumentPermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10116,6 +10218,7 @@ impl DescribeDocumentOutput {
 pub mod describe_document_output {
     
     /// A builder for [`DescribeDocumentOutput`](crate::output::DescribeDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::DocumentDescription>,
@@ -10173,6 +10276,7 @@ impl DescribeAvailablePatchesOutput {
 pub mod describe_available_patches_output {
     
     /// A builder for [`DescribeAvailablePatchesOutput`](crate::output::DescribeAvailablePatchesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) patches: std::option::Option<std::vec::Vec<crate::model::Patch>>,
@@ -10248,6 +10352,7 @@ impl DescribeAutomationStepExecutionsOutput {
 pub mod describe_automation_step_executions_output {
     
     /// A builder for [`DescribeAutomationStepExecutionsOutput`](crate::output::DescribeAutomationStepExecutionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) step_executions: std::option::Option<std::vec::Vec<crate::model::StepExecution>>,
@@ -10323,6 +10428,7 @@ impl DescribeAutomationExecutionsOutput {
 pub mod describe_automation_executions_output {
     
     /// A builder for [`DescribeAutomationExecutionsOutput`](crate::output::DescribeAutomationExecutionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automation_execution_metadata_list: std::option::Option<std::vec::Vec<crate::model::AutomationExecutionMetadata>>,
@@ -10398,6 +10504,7 @@ impl DescribeAssociationExecutionTargetsOutput {
 pub mod describe_association_execution_targets_output {
     
     /// A builder for [`DescribeAssociationExecutionTargetsOutput`](crate::output::DescribeAssociationExecutionTargetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_execution_targets: std::option::Option<std::vec::Vec<crate::model::AssociationExecutionTarget>>,
@@ -10473,6 +10580,7 @@ impl DescribeAssociationExecutionsOutput {
 pub mod describe_association_executions_output {
     
     /// A builder for [`DescribeAssociationExecutionsOutput`](crate::output::DescribeAssociationExecutionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_executions: std::option::Option<std::vec::Vec<crate::model::AssociationExecution>>,
@@ -10541,6 +10649,7 @@ impl DescribeAssociationOutput {
 pub mod describe_association_output {
     
     /// A builder for [`DescribeAssociationOutput`](crate::output::DescribeAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_description: std::option::Option<crate::model::AssociationDescription>,
@@ -10598,6 +10707,7 @@ impl DescribeActivationsOutput {
 pub mod describe_activations_output {
     
     /// A builder for [`DescribeActivationsOutput`](crate::output::DescribeActivationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activation_list: std::option::Option<std::vec::Vec<crate::model::Activation>>,
@@ -10673,6 +10783,7 @@ impl DeregisterTaskFromMaintenanceWindowOutput {
 pub mod deregister_task_from_maintenance_window_output {
     
     /// A builder for [`DeregisterTaskFromMaintenanceWindowOutput`](crate::output::DeregisterTaskFromMaintenanceWindowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -10742,6 +10853,7 @@ impl DeregisterTargetFromMaintenanceWindowOutput {
 pub mod deregister_target_from_maintenance_window_output {
     
     /// A builder for [`DeregisterTargetFromMaintenanceWindowOutput`](crate::output::DeregisterTargetFromMaintenanceWindowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -10811,6 +10923,7 @@ impl DeregisterPatchBaselineForPatchGroupOutput {
 pub mod deregister_patch_baseline_for_patch_group_output {
     
     /// A builder for [`DeregisterPatchBaselineForPatchGroupOutput`](crate::output::DeregisterPatchBaselineForPatchGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -10864,6 +10977,7 @@ pub struct DeregisterManagedInstanceOutput  {
 pub mod deregister_managed_instance_output {
     
     /// A builder for [`DeregisterManagedInstanceOutput`](crate::output::DeregisterManagedInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -10893,6 +11007,7 @@ pub struct DeleteResourcePolicyOutput  {
 pub mod delete_resource_policy_output {
     
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -10922,6 +11037,7 @@ pub struct DeleteResourceDataSyncOutput  {
 pub mod delete_resource_data_sync_output {
     
     /// A builder for [`DeleteResourceDataSyncOutput`](crate::output::DeleteResourceDataSyncOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -10960,6 +11076,7 @@ impl DeletePatchBaselineOutput {
 pub mod delete_patch_baseline_output {
     
     /// A builder for [`DeletePatchBaselineOutput`](crate::output::DeletePatchBaselineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -11017,6 +11134,7 @@ impl DeleteParametersOutput {
 pub mod delete_parameters_output {
     
     /// A builder for [`DeleteParametersOutput`](crate::output::DeleteParametersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deleted_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11082,6 +11200,7 @@ pub struct DeleteParameterOutput  {
 pub mod delete_parameter_output {
     
     /// A builder for [`DeleteParameterOutput`](crate::output::DeleteParameterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -11111,6 +11230,7 @@ pub struct DeleteOpsMetadataOutput  {
 pub mod delete_ops_metadata_output {
     
     /// A builder for [`DeleteOpsMetadataOutput`](crate::output::DeleteOpsMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -11149,6 +11269,7 @@ impl DeleteMaintenanceWindowOutput {
 pub mod delete_maintenance_window_output {
     
     /// A builder for [`DeleteMaintenanceWindowOutput`](crate::output::DeleteMaintenanceWindowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -11213,6 +11334,7 @@ impl DeleteInventoryOutput {
 pub mod delete_inventory_output {
     
     /// A builder for [`DeleteInventoryOutput`](crate::output::DeleteInventoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deletion_id: std::option::Option<std::string::String>,
@@ -11278,6 +11400,7 @@ pub struct DeleteDocumentOutput  {
 pub mod delete_document_output {
     
     /// A builder for [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -11307,6 +11430,7 @@ pub struct DeleteAssociationOutput  {
 pub mod delete_association_output {
     
     /// A builder for [`DeleteAssociationOutput`](crate::output::DeleteAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -11336,6 +11460,7 @@ pub struct DeleteActivationOutput  {
 pub mod delete_activation_output {
     
     /// A builder for [`DeleteActivationOutput`](crate::output::DeleteActivationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -11365,6 +11490,7 @@ pub struct CreateResourceDataSyncOutput  {
 pub mod create_resource_data_sync_output {
     
     /// A builder for [`CreateResourceDataSyncOutput`](crate::output::CreateResourceDataSyncOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -11403,6 +11529,7 @@ impl CreatePatchBaselineOutput {
 pub mod create_patch_baseline_output {
     
     /// A builder for [`CreatePatchBaselineOutput`](crate::output::CreatePatchBaselineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -11453,6 +11580,7 @@ impl CreateOpsMetadataOutput {
 pub mod create_ops_metadata_output {
     
     /// A builder for [`CreateOpsMetadataOutput`](crate::output::CreateOpsMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_metadata_arn: std::option::Option<std::string::String>,
@@ -11510,6 +11638,7 @@ impl CreateOpsItemOutput {
 pub mod create_ops_item_output {
     
     /// A builder for [`CreateOpsItemOutput`](crate::output::CreateOpsItemOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_item_id: std::option::Option<std::string::String>,
@@ -11572,6 +11701,7 @@ impl CreateMaintenanceWindowOutput {
 pub mod create_maintenance_window_output {
     
     /// A builder for [`CreateMaintenanceWindowOutput`](crate::output::CreateMaintenanceWindowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -11622,6 +11752,7 @@ impl CreateDocumentOutput {
 pub mod create_document_output {
     
     /// A builder for [`CreateDocumentOutput`](crate::output::CreateDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_description: std::option::Option<crate::model::DocumentDescription>,
@@ -11679,6 +11810,7 @@ impl CreateAssociationBatchOutput {
 pub mod create_association_batch_output {
     
     /// A builder for [`CreateAssociationBatchOutput`](crate::output::CreateAssociationBatchOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful: std::option::Option<std::vec::Vec<crate::model::AssociationDescription>>,
@@ -11753,6 +11885,7 @@ impl CreateAssociationOutput {
 pub mod create_association_output {
     
     /// A builder for [`CreateAssociationOutput`](crate::output::CreateAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_description: std::option::Option<crate::model::AssociationDescription>,
@@ -11810,6 +11943,7 @@ impl CreateActivationOutput {
 pub mod create_activation_output {
     
     /// A builder for [`CreateActivationOutput`](crate::output::CreateActivationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activation_id: std::option::Option<std::string::String>,
@@ -11872,6 +12006,7 @@ impl CancelMaintenanceWindowExecutionOutput {
 pub mod cancel_maintenance_window_execution_output {
     
     /// A builder for [`CancelMaintenanceWindowExecutionOutput`](crate::output::CancelMaintenanceWindowExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
@@ -11913,6 +12048,7 @@ pub struct CancelCommandOutput  {
 pub mod cancel_command_output {
     
     /// A builder for [`CancelCommandOutput`](crate::output::CancelCommandOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -11951,6 +12087,7 @@ impl AssociateOpsItemRelatedItemOutput {
 pub mod associate_ops_item_related_item_output {
     
     /// A builder for [`AssociateOpsItemRelatedItemOutput`](crate::output::AssociateOpsItemRelatedItemOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -11992,6 +12129,7 @@ pub struct AddTagsToResourceOutput  {
 pub mod add_tags_to_resource_output {
     
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

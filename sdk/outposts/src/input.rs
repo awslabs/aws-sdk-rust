@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_order_input {
     
     /// A builder for [`CancelOrderInput`](crate::input::CancelOrderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) order_id: std::option::Option<std::string::String>,
@@ -114,6 +115,7 @@ impl CancelOrderInput {
 pub mod create_order_input {
     
     /// A builder for [`CreateOrderInput`](crate::input::CreateOrderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_identifier: std::option::Option<std::string::String>,
@@ -263,6 +265,7 @@ impl CreateOrderInput {
 pub mod create_outpost_input {
     
     /// A builder for [`CreateOutpostInput`](crate::input::CreateOutpostInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -448,6 +451,7 @@ impl CreateOutpostInput {
 pub mod create_site_input {
     
     /// A builder for [`CreateSiteInput`](crate::input::CreateSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -633,6 +637,7 @@ impl CreateSiteInput {
 pub mod delete_outpost_input {
     
     /// A builder for [`DeleteOutpostInput`](crate::input::DeleteOutpostInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
@@ -742,6 +747,7 @@ impl DeleteOutpostInput {
 pub mod delete_site_input {
     
     /// A builder for [`DeleteSiteInput`](crate::input::DeleteSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,
@@ -851,6 +857,7 @@ impl DeleteSiteInput {
 pub mod get_catalog_item_input {
     
     /// A builder for [`GetCatalogItemInput`](crate::input::GetCatalogItemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_item_id: std::option::Option<std::string::String>,
@@ -960,6 +967,7 @@ impl GetCatalogItemInput {
 pub mod get_connection_input {
     
     /// A builder for [`GetConnectionInput`](crate::input::GetConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -1069,6 +1077,7 @@ impl GetConnectionInput {
 pub mod get_order_input {
     
     /// A builder for [`GetOrderInput`](crate::input::GetOrderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) order_id: std::option::Option<std::string::String>,
@@ -1178,6 +1187,7 @@ impl GetOrderInput {
 pub mod get_outpost_input {
     
     /// A builder for [`GetOutpostInput`](crate::input::GetOutpostInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
@@ -1287,6 +1297,7 @@ impl GetOutpostInput {
 pub mod get_outpost_instance_types_input {
     
     /// A builder for [`GetOutpostInstanceTypesInput`](crate::input::GetOutpostInstanceTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
@@ -1435,6 +1446,7 @@ impl GetOutpostInstanceTypesInput {
 pub mod get_site_input {
     
     /// A builder for [`GetSiteInput`](crate::input::GetSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,
@@ -1544,6 +1556,7 @@ impl GetSiteInput {
 pub mod get_site_address_input {
     
     /// A builder for [`GetSiteAddressInput`](crate::input::GetSiteAddressInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,
@@ -1673,6 +1686,7 @@ impl GetSiteAddressInput {
 pub mod list_assets_input {
     
     /// A builder for [`ListAssetsInput`](crate::input::ListAssetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_identifier: std::option::Option<std::string::String>,
@@ -1871,6 +1885,7 @@ impl ListAssetsInput {
 pub mod list_catalog_items_input {
     
     /// A builder for [`ListCatalogItemsInput`](crate::input::ListCatalogItemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2076,6 +2091,7 @@ impl ListCatalogItemsInput {
 pub mod list_orders_input {
     
     /// A builder for [`ListOrdersInput`](crate::input::ListOrdersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_identifier_filter: std::option::Option<std::string::String>,
@@ -2223,6 +2239,7 @@ impl ListOrdersInput {
 pub mod list_outposts_input {
     
     /// A builder for [`ListOutpostsInput`](crate::input::ListOutpostsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2428,6 +2445,7 @@ impl ListOutpostsInput {
 pub mod list_sites_input {
     
     /// A builder for [`ListSitesInput`](crate::input::ListSitesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2633,6 +2651,7 @@ impl ListSitesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2742,6 +2761,7 @@ impl ListTagsForResourceInput {
 pub mod start_connection_input {
     
     /// A builder for [`StartConnectionInput`](crate::input::StartConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_serial_number: std::option::Option<std::string::String>,
@@ -2886,6 +2906,7 @@ impl StartConnectionInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3017,6 +3038,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3154,6 +3176,7 @@ impl UntagResourceInput {
 pub mod update_outpost_input {
     
     /// A builder for [`UpdateOutpostInput`](crate::input::UpdateOutpostInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
@@ -3303,6 +3326,7 @@ impl UpdateOutpostInput {
 pub mod update_site_input {
     
     /// A builder for [`UpdateSiteInput`](crate::input::UpdateSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,
@@ -3452,6 +3476,7 @@ impl UpdateSiteInput {
 pub mod update_site_address_input {
     
     /// A builder for [`UpdateSiteAddressInput`](crate::input::UpdateSiteAddressInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,
@@ -3589,6 +3614,7 @@ impl UpdateSiteAddressInput {
 pub mod update_site_rack_physical_properties_input {
     
     /// A builder for [`UpdateSiteRackPhysicalPropertiesInput`](crate::input::UpdateSiteRackPhysicalPropertiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,

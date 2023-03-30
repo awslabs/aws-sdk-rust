@@ -176,6 +176,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
     
     /// A builder for [`ValidationException`](crate::error::ValidationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -236,6 +237,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -296,6 +298,7 @@ impl std::error::Error for ResourceInUseException {}
 pub mod resource_in_use_exception {
     
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -356,6 +359,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
     
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1110,6 +1114,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
     
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3362,6 +3367,7 @@ impl std::error::Error for BadRequestException {}
 pub mod bad_request_exception {
     
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4179,6 +4185,7 @@ impl std::error::Error for TagsAlreadyExistException {}
 pub mod tags_already_exist_exception {
     
     /// A builder for [`TagsAlreadyExistException`](crate::error::TagsAlreadyExistException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4239,6 +4246,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
     
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

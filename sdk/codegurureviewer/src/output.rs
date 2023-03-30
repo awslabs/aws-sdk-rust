@@ -8,6 +8,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct PutRecommendationFeedbackOutput  {
 pub mod put_recommendation_feedback_output {
     
     /// A builder for [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -112,6 +115,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -183,6 +187,7 @@ impl ListRepositoryAssociationsOutput {
 pub mod list_repository_associations_output {
     
     /// A builder for [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_association_summaries: std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>>,
@@ -258,6 +263,7 @@ impl ListRecommendationsOutput {
 pub mod list_recommendations_output {
     
     /// A builder for [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_summaries: std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
@@ -333,6 +339,7 @@ impl ListRecommendationFeedbackOutput {
 pub mod list_recommendation_feedback_output {
     
     /// A builder for [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_feedback_summaries: std::option::Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>,
@@ -408,6 +415,7 @@ impl ListCodeReviewsOutput {
 pub mod list_code_reviews_output {
     
     /// A builder for [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review_summaries: std::option::Option<std::vec::Vec<crate::model::CodeReviewSummary>>,
@@ -491,6 +499,7 @@ impl DisassociateRepositoryOutput {
 pub mod disassociate_repository_output {
     
     /// A builder for [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_association: std::option::Option<crate::model::RepositoryAssociation>,
@@ -582,6 +591,7 @@ impl DescribeRepositoryAssociationOutput {
 pub mod describe_repository_association_output {
     
     /// A builder for [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_association: std::option::Option<crate::model::RepositoryAssociation>,
@@ -658,6 +668,7 @@ impl DescribeRecommendationFeedbackOutput {
 pub mod describe_recommendation_feedback_output {
     
     /// A builder for [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_feedback: std::option::Option<crate::model::RecommendationFeedback>,
@@ -708,6 +719,7 @@ impl DescribeCodeReviewOutput {
 pub mod describe_code_review_output {
     
     /// A builder for [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review: std::option::Option<crate::model::CodeReview>,
@@ -758,6 +770,7 @@ impl CreateCodeReviewOutput {
 pub mod create_code_review_output {
     
     /// A builder for [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review: std::option::Option<crate::model::CodeReview>,
@@ -823,6 +836,7 @@ impl AssociateRepositoryOutput {
 pub mod associate_repository_output {
     
     /// A builder for [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_association: std::option::Option<crate::model::RepositoryAssociation>,

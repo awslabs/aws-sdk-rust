@@ -25,6 +25,7 @@ impl TemplateLocation {
 pub mod template_location {
     
     /// A builder for [`TemplateLocation`](crate::model::TemplateLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -87,6 +88,7 @@ impl Environment {
 pub mod environment {
     
     /// A builder for [`Environment`](crate::model::Environment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
@@ -144,6 +146,7 @@ impl RenderingEngine {
 pub mod rendering_engine {
     
     /// A builder for [`RenderingEngine`](crate::model::RenderingEngine).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::RenderingEngineType>,
@@ -290,6 +293,7 @@ impl RobotSoftwareSuite {
 pub mod robot_software_suite {
     
     /// A builder for [`RobotSoftwareSuite`](crate::model::RobotSoftwareSuite).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::RobotSoftwareSuiteType>,
@@ -538,6 +542,7 @@ impl SimulationSoftwareSuite {
 pub mod simulation_software_suite {
     
     /// A builder for [`SimulationSoftwareSuite`](crate::model::SimulationSoftwareSuite).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SimulationSoftwareSuiteType>,
@@ -708,6 +713,7 @@ impl Source {
 pub mod source {
     
     /// A builder for [`Source`](crate::model::Source).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -895,6 +901,7 @@ impl SourceConfig {
 pub mod source_config {
     
     /// A builder for [`SourceConfig`](crate::model::SourceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -1175,6 +1182,7 @@ impl DeploymentApplicationConfig {
 pub mod deployment_application_config {
     
     /// A builder for [`DeploymentApplicationConfig`](crate::model::DeploymentApplicationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -1277,6 +1285,7 @@ impl DeploymentLaunchConfig {
 pub mod deployment_launch_config {
     
     /// A builder for [`DeploymentLaunchConfig`](crate::model::DeploymentLaunchConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_name: std::option::Option<std::string::String>,
@@ -1402,6 +1411,7 @@ impl DeploymentConfig {
 pub mod deployment_config {
     
     /// A builder for [`DeploymentConfig`](crate::model::DeploymentConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) concurrent_deployment_percentage: std::option::Option<i32>,
@@ -1502,6 +1512,7 @@ impl S3Object {
 pub mod s3_object {
     
     /// A builder for [`S3Object`](crate::model::S3Object).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -1727,6 +1738,7 @@ impl SimulationJobSummary {
 pub mod simulation_job_summary {
     
     /// A builder for [`SimulationJobSummary`](crate::model::SimulationJobSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2192,6 +2204,7 @@ impl SimulationJobRequest {
 pub mod simulation_job_request {
     
     /// A builder for [`SimulationJobRequest`](crate::model::SimulationJobRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_location: std::option::Option<crate::model::OutputLocation>,
@@ -2445,6 +2458,7 @@ impl Compute {
 pub mod compute {
     
     /// A builder for [`Compute`](crate::model::Compute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation_unit_limit: std::option::Option<i32>,
@@ -2533,6 +2547,7 @@ impl VpcConfig {
 pub mod vpc_config {
     
     /// A builder for [`VpcConfig`](crate::model::VpcConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2656,6 +2671,7 @@ impl DataSourceConfig {
 pub mod data_source_config {
     
     /// A builder for [`DataSourceConfig`](crate::model::DataSourceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2918,6 +2934,7 @@ impl SimulationApplicationConfig {
 pub mod simulation_application_config {
     
     /// A builder for [`SimulationApplicationConfig`](crate::model::SimulationApplicationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -3112,6 +3129,7 @@ impl Tool {
 pub mod tool {
     
     /// A builder for [`Tool`](crate::model::Tool).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_ui: std::option::Option<bool>,
@@ -3292,6 +3310,7 @@ impl WorldConfig {
 pub mod world_config {
     
     /// A builder for [`WorldConfig`](crate::model::WorldConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) world: std::option::Option<std::string::String>,
@@ -3400,6 +3419,7 @@ impl UploadConfiguration {
 pub mod upload_configuration {
     
     /// A builder for [`UploadConfiguration`](crate::model::UploadConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3637,6 +3657,7 @@ impl LaunchConfig {
 pub mod launch_config {
     
     /// A builder for [`LaunchConfig`](crate::model::LaunchConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_name: std::option::Option<std::string::String>,
@@ -3762,6 +3783,7 @@ impl PortForwardingConfig {
 pub mod port_forwarding_config {
     
     /// A builder for [`PortForwardingConfig`](crate::model::PortForwardingConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_mappings: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
@@ -3832,6 +3854,7 @@ impl PortMapping {
 pub mod port_mapping {
     
     /// A builder for [`PortMapping`](crate::model::PortMapping).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_port: std::option::Option<i32>,
@@ -3965,6 +3988,7 @@ impl RobotApplicationConfig {
 pub mod robot_application_config {
     
     /// A builder for [`RobotApplicationConfig`](crate::model::RobotApplicationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -4201,6 +4225,7 @@ impl LoggingConfig {
 pub mod logging_config {
     
     /// A builder for [`LoggingConfig`](crate::model::LoggingConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_all_ros_topics: std::option::Option<bool>,
@@ -4264,6 +4289,7 @@ impl OutputLocation {
 pub mod output_location {
     
     /// A builder for [`OutputLocation`](crate::model::OutputLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -4347,6 +4373,7 @@ impl FailedCreateSimulationJobRequest {
 pub mod failed_create_simulation_job_request {
     
     /// A builder for [`FailedCreateSimulationJobRequest`](crate::model::FailedCreateSimulationJobRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request: std::option::Option<crate::model::SimulationJobRequest>,
@@ -4748,6 +4775,7 @@ impl BatchPolicy {
 pub mod batch_policy {
     
     /// A builder for [`BatchPolicy`](crate::model::BatchPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_in_seconds: std::option::Option<i64>,
@@ -4959,6 +4987,7 @@ impl TemplateSummary {
 pub mod template_summary {
     
     /// A builder for [`TemplateSummary`](crate::model::TemplateSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5078,6 +5107,7 @@ impl WorldSummary {
 pub mod world_summary {
     
     /// A builder for [`WorldSummary`](crate::model::WorldSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5171,6 +5201,7 @@ impl Filter {
 pub mod filter {
     
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5369,6 +5400,7 @@ impl WorldGenerationJobSummary {
 pub mod world_generation_job_summary {
     
     /// A builder for [`WorldGenerationJobSummary`](crate::model::WorldGenerationJobSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5589,6 +5621,7 @@ impl WorldCount {
 pub mod world_count {
     
     /// A builder for [`WorldCount`](crate::model::WorldCount).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) floorplan_count: std::option::Option<i32>,
@@ -5862,6 +5895,7 @@ impl WorldExportJobSummary {
 pub mod world_export_job_summary {
     
     /// A builder for [`WorldExportJobSummary`](crate::model::WorldExportJobSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6300,6 +6334,7 @@ impl SimulationJobBatchSummary {
 pub mod simulation_job_batch_summary {
     
     /// A builder for [`SimulationJobBatchSummary`](crate::model::SimulationJobBatchSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6574,6 +6609,7 @@ impl SimulationApplicationSummary {
 pub mod simulation_application_summary {
     
     /// A builder for [`SimulationApplicationSummary`](crate::model::SimulationApplicationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6740,6 +6776,7 @@ impl Robot {
 pub mod robot {
     
     /// A builder for [`Robot`](crate::model::Robot).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7021,6 +7058,7 @@ impl RobotApplicationSummary {
 pub mod robot_application_summary {
     
     /// A builder for [`RobotApplicationSummary`](crate::model::RobotApplicationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7154,6 +7192,7 @@ impl Fleet {
 pub mod fleet {
     
     /// A builder for [`Fleet`](crate::model::Fleet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7313,6 +7352,7 @@ impl DeploymentJob {
 pub mod deployment_job {
     
     /// A builder for [`DeploymentJob`](crate::model::DeploymentJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7467,6 +7507,7 @@ impl FinishedWorldsSummary {
 pub mod finished_worlds_summary {
     
     /// A builder for [`FinishedWorldsSummary`](crate::model::FinishedWorldsSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finished_count: std::option::Option<i32>,
@@ -7555,6 +7596,7 @@ impl FailureSummary {
 pub mod failure_summary {
     
     /// A builder for [`FailureSummary`](crate::model::FailureSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_failure_count: std::option::Option<i32>,
@@ -7702,6 +7744,7 @@ impl WorldFailure {
 pub mod world_failure {
     
     /// A builder for [`WorldFailure`](crate::model::WorldFailure).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failure_code: std::option::Option<crate::model::WorldGenerationJobErrorCode>,
@@ -8059,6 +8102,7 @@ impl ComputeResponse {
 pub mod compute_response {
     
     /// A builder for [`ComputeResponse`](crate::model::ComputeResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation_unit_limit: std::option::Option<i32>,
@@ -8147,6 +8191,7 @@ impl NetworkInterface {
 pub mod network_interface {
     
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
@@ -8242,6 +8287,7 @@ impl VpcConfigResponse {
 pub mod vpc_config_response {
     
     /// A builder for [`VpcConfigResponse`](crate::model::VpcConfigResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8377,6 +8423,7 @@ impl DataSource {
 pub mod data_source {
     
     /// A builder for [`DataSource`](crate::model::DataSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8496,6 +8543,7 @@ impl S3KeyOutput {
 pub mod s3_key_output {
     
     /// A builder for [`S3KeyOutput`](crate::model::S3KeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_key: std::option::Option<std::string::String>,
@@ -8600,6 +8648,7 @@ impl RobotDeployment {
 pub mod robot_deployment {
     
     /// A builder for [`RobotDeployment`](crate::model::RobotDeployment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -8819,6 +8868,7 @@ impl ProgressDetail {
 pub mod progress_detail {
     
     /// A builder for [`ProgressDetail`](crate::model::ProgressDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) current_progress: std::option::Option<crate::model::RobotDeploymentStep>,
@@ -9256,6 +9306,7 @@ impl SimulationJob {
 pub mod simulation_job {
     
     /// A builder for [`SimulationJob`](crate::model::SimulationJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

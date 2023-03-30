@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod abort_document_version_upload_input {
     
     /// A builder for [`AbortDocumentVersionUploadInput`](crate::input::AbortDocumentVersionUploadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -154,6 +155,7 @@ impl AbortDocumentVersionUploadInput {
 pub mod activate_user_input {
     
     /// A builder for [`ActivateUserInput`](crate::input::ActivateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -284,6 +286,7 @@ impl ActivateUserInput {
 pub mod add_resource_permissions_input {
     
     /// A builder for [`AddResourcePermissionsInput`](crate::input::AddResourcePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -450,6 +453,7 @@ impl AddResourcePermissionsInput {
 pub mod create_comment_input {
     
     /// A builder for [`CreateCommentInput`](crate::input::CreateCommentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -669,6 +673,7 @@ impl CreateCommentInput {
 pub mod create_custom_metadata_input {
     
     /// A builder for [`CreateCustomMetadataInput`](crate::input::CreateCustomMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -845,6 +850,7 @@ impl CreateCustomMetadataInput {
 pub mod create_folder_input {
     
     /// A builder for [`CreateFolderInput`](crate::input::CreateFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -986,6 +992,7 @@ impl CreateFolderInput {
 pub mod create_labels_input {
     
     /// A builder for [`CreateLabelsInput`](crate::input::CreateLabelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -1139,6 +1146,7 @@ impl CreateLabelsInput {
 pub mod create_notification_subscription_input {
     
     /// A builder for [`CreateNotificationSubscriptionInput`](crate::input::CreateNotificationSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -1288,6 +1296,7 @@ impl CreateNotificationSubscriptionInput {
 pub mod create_user_input {
     
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -1507,6 +1516,7 @@ impl CreateUserInput {
 pub mod deactivate_user_input {
     
     /// A builder for [`DeactivateUserInput`](crate::input::DeactivateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -1637,6 +1647,7 @@ impl DeactivateUserInput {
 pub mod delete_comment_input {
     
     /// A builder for [`DeleteCommentInput`](crate::input::DeleteCommentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -1805,6 +1816,7 @@ impl DeleteCommentInput {
 pub mod delete_custom_metadata_input {
     
     /// A builder for [`DeleteCustomMetadataInput`](crate::input::DeleteCustomMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -2001,6 +2013,7 @@ impl DeleteCustomMetadataInput {
 pub mod delete_document_input {
     
     /// A builder for [`DeleteDocumentInput`](crate::input::DeleteDocumentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -2131,6 +2144,7 @@ impl DeleteDocumentInput {
 pub mod delete_document_version_input {
     
     /// A builder for [`DeleteDocumentVersionInput`](crate::input::DeleteDocumentVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -2301,6 +2315,7 @@ impl DeleteDocumentVersionInput {
 pub mod delete_folder_input {
     
     /// A builder for [`DeleteFolderInput`](crate::input::DeleteFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -2431,6 +2446,7 @@ impl DeleteFolderInput {
 pub mod delete_folder_contents_input {
     
     /// A builder for [`DeleteFolderContentsInput`](crate::input::DeleteFolderContentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -2561,6 +2577,7 @@ impl DeleteFolderContentsInput {
 pub mod delete_labels_input {
     
     /// A builder for [`DeleteLabelsInput`](crate::input::DeleteLabelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -2739,6 +2756,7 @@ impl DeleteLabelsInput {
 pub mod delete_notification_subscription_input {
     
     /// A builder for [`DeleteNotificationSubscriptionInput`](crate::input::DeleteNotificationSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_id: std::option::Option<std::string::String>,
@@ -2866,6 +2884,7 @@ impl DeleteNotificationSubscriptionInput {
 pub mod delete_user_input {
     
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -2996,6 +3015,7 @@ impl DeleteUserInput {
 pub mod describe_activities_input {
     
     /// A builder for [`DescribeActivitiesInput`](crate::input::DescribeActivitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -3273,6 +3293,7 @@ impl DescribeActivitiesInput {
 pub mod describe_comments_input {
     
     /// A builder for [`DescribeCommentsInput`](crate::input::DescribeCommentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -3463,6 +3484,7 @@ impl DescribeCommentsInput {
 pub mod describe_document_versions_input {
     
     /// A builder for [`DescribeDocumentVersionsInput`](crate::input::DescribeDocumentVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -3670,6 +3692,7 @@ impl DescribeDocumentVersionsInput {
 pub mod describe_folder_contents_input {
     
     /// A builder for [`DescribeFolderContentsInput`](crate::input::DescribeFolderContentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -3913,6 +3936,7 @@ impl DescribeFolderContentsInput {
 pub mod describe_groups_input {
     
     /// A builder for [`DescribeGroupsInput`](crate::input::DescribeGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -4102,6 +4126,7 @@ impl DescribeGroupsInput {
 pub mod describe_notification_subscriptions_input {
     
     /// A builder for [`DescribeNotificationSubscriptionsInput`](crate::input::DescribeNotificationSubscriptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -4250,6 +4275,7 @@ impl DescribeNotificationSubscriptionsInput {
 pub mod describe_resource_permissions_input {
     
     /// A builder for [`DescribeResourcePermissionsInput`](crate::input::DescribeResourcePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -4439,6 +4465,7 @@ impl DescribeResourcePermissionsInput {
 pub mod describe_root_folders_input {
     
     /// A builder for [`DescribeRootFoldersInput`](crate::input::DescribeRootFoldersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -4591,6 +4618,7 @@ impl DescribeRootFoldersInput {
 pub mod describe_users_input {
     
     /// A builder for [`DescribeUsersInput`](crate::input::DescribeUsersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -4881,6 +4909,7 @@ impl DescribeUsersInput {
 pub mod get_current_user_input {
     
     /// A builder for [`GetCurrentUserInput`](crate::input::GetCurrentUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -4992,6 +5021,7 @@ impl GetCurrentUserInput {
 pub mod get_document_input {
     
     /// A builder for [`GetDocumentInput`](crate::input::GetDocumentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -5144,6 +5174,7 @@ impl GetDocumentInput {
 pub mod get_document_path_input {
     
     /// A builder for [`GetDocumentPathInput`](crate::input::GetDocumentPathInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -5333,6 +5364,7 @@ impl GetDocumentPathInput {
 pub mod get_document_version_input {
     
     /// A builder for [`GetDocumentVersionInput`](crate::input::GetDocumentVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -5522,6 +5554,7 @@ impl GetDocumentVersionInput {
 pub mod get_folder_input {
     
     /// A builder for [`GetFolderInput`](crate::input::GetFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -5674,6 +5707,7 @@ impl GetFolderInput {
 pub mod get_folder_path_input {
     
     /// A builder for [`GetFolderPathInput`](crate::input::GetFolderPathInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -5863,6 +5897,7 @@ impl GetFolderPathInput {
 pub mod get_resources_input {
     
     /// A builder for [`GetResourcesInput`](crate::input::GetResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -6051,6 +6086,7 @@ impl GetResourcesInput {
 pub mod initiate_document_version_upload_input {
     
     /// A builder for [`InitiateDocumentVersionUploadInput`](crate::input::InitiateDocumentVersionUploadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -6257,6 +6293,7 @@ impl InitiateDocumentVersionUploadInput {
 pub mod remove_all_resource_permissions_input {
     
     /// A builder for [`RemoveAllResourcePermissionsInput`](crate::input::RemoveAllResourcePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -6387,6 +6424,7 @@ impl RemoveAllResourcePermissionsInput {
 pub mod remove_resource_permission_input {
     
     /// A builder for [`RemoveResourcePermissionInput`](crate::input::RemoveResourcePermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -6559,6 +6597,7 @@ impl RemoveResourcePermissionInput {
 pub mod restore_document_versions_input {
     
     /// A builder for [`RestoreDocumentVersionsInput`](crate::input::RestoreDocumentVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -6689,6 +6728,7 @@ impl RestoreDocumentVersionsInput {
 pub mod update_document_input {
     
     /// A builder for [`UpdateDocumentInput`](crate::input::UpdateDocumentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -6862,6 +6902,7 @@ impl UpdateDocumentInput {
 pub mod update_document_version_input {
     
     /// A builder for [`UpdateDocumentVersionInput`](crate::input::UpdateDocumentVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -7028,6 +7069,7 @@ impl UpdateDocumentVersionInput {
 pub mod update_folder_input {
     
     /// A builder for [`UpdateFolderInput`](crate::input::UpdateFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -7201,6 +7243,7 @@ impl UpdateFolderInput {
 pub mod update_user_input {
     
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod list_realtime_contact_analysis_segments_input {
     
     /// A builder for [`ListRealtimeContactAnalysisSegmentsInput`](crate::input::ListRealtimeContactAnalysisSegmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,

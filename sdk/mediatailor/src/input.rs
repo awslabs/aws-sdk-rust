@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod configure_logs_for_playback_configuration_input {
     
     /// A builder for [`ConfigureLogsForPlaybackConfigurationInput`](crate::input::ConfigureLogsForPlaybackConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percent_enabled: std::option::Option<i32>,
@@ -127,6 +128,7 @@ impl ConfigureLogsForPlaybackConfigurationInput {
 pub mod create_channel_input {
     
     /// A builder for [`CreateChannelInput`](crate::input::CreateChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -316,6 +318,7 @@ impl CreateChannelInput {
 pub mod create_live_source_input {
     
     /// A builder for [`CreateLiveSourceInput`](crate::input::CreateLiveSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_package_configurations: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
@@ -483,6 +486,7 @@ impl CreateLiveSourceInput {
 pub mod create_prefetch_schedule_input {
     
     /// A builder for [`CreatePrefetchScheduleInput`](crate::input::CreatePrefetchScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) consumption: std::option::Option<crate::model::PrefetchConsumption>,
@@ -650,6 +654,7 @@ impl CreatePrefetchScheduleInput {
 pub mod create_program_input {
     
     /// A builder for [`CreateProgramInput`](crate::input::CreateProgramInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
@@ -847,6 +852,7 @@ impl CreateProgramInput {
 pub mod create_source_location_input {
     
     /// A builder for [`CreateSourceLocationInput`](crate::input::CreateSourceLocationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
@@ -1032,6 +1038,7 @@ impl CreateSourceLocationInput {
 pub mod create_vod_source_input {
     
     /// A builder for [`CreateVodSourceInput`](crate::input::CreateVodSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_package_configurations: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
@@ -1199,6 +1206,7 @@ impl CreateVodSourceInput {
 pub mod delete_channel_input {
     
     /// A builder for [`DeleteChannelInput`](crate::input::DeleteChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -1308,6 +1316,7 @@ impl DeleteChannelInput {
 pub mod delete_channel_policy_input {
     
     /// A builder for [`DeleteChannelPolicyInput`](crate::input::DeleteChannelPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -1417,6 +1426,7 @@ impl DeleteChannelPolicyInput {
 pub mod delete_live_source_input {
     
     /// A builder for [`DeleteLiveSourceInput`](crate::input::DeleteLiveSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) live_source_name: std::option::Option<std::string::String>,
@@ -1544,6 +1554,7 @@ impl DeleteLiveSourceInput {
 pub mod delete_playback_configuration_input {
     
     /// A builder for [`DeletePlaybackConfigurationInput`](crate::input::DeletePlaybackConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1653,6 +1664,7 @@ impl DeletePlaybackConfigurationInput {
 pub mod delete_prefetch_schedule_input {
     
     /// A builder for [`DeletePrefetchScheduleInput`](crate::input::DeletePrefetchScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1780,6 +1792,7 @@ impl DeletePrefetchScheduleInput {
 pub mod delete_program_input {
     
     /// A builder for [`DeleteProgramInput`](crate::input::DeleteProgramInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -1907,6 +1920,7 @@ impl DeleteProgramInput {
 pub mod delete_source_location_input {
     
     /// A builder for [`DeleteSourceLocationInput`](crate::input::DeleteSourceLocationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
@@ -2016,6 +2030,7 @@ impl DeleteSourceLocationInput {
 pub mod delete_vod_source_input {
     
     /// A builder for [`DeleteVodSourceInput`](crate::input::DeleteVodSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
@@ -2143,6 +2158,7 @@ impl DeleteVodSourceInput {
 pub mod describe_channel_input {
     
     /// A builder for [`DescribeChannelInput`](crate::input::DescribeChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -2252,6 +2268,7 @@ impl DescribeChannelInput {
 pub mod describe_live_source_input {
     
     /// A builder for [`DescribeLiveSourceInput`](crate::input::DescribeLiveSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) live_source_name: std::option::Option<std::string::String>,
@@ -2379,6 +2396,7 @@ impl DescribeLiveSourceInput {
 pub mod describe_program_input {
     
     /// A builder for [`DescribeProgramInput`](crate::input::DescribeProgramInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -2506,6 +2524,7 @@ impl DescribeProgramInput {
 pub mod describe_source_location_input {
     
     /// A builder for [`DescribeSourceLocationInput`](crate::input::DescribeSourceLocationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
@@ -2615,6 +2634,7 @@ impl DescribeSourceLocationInput {
 pub mod describe_vod_source_input {
     
     /// A builder for [`DescribeVodSourceInput`](crate::input::DescribeVodSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
@@ -2742,6 +2762,7 @@ impl DescribeVodSourceInput {
 pub mod get_channel_policy_input {
     
     /// A builder for [`GetChannelPolicyInput`](crate::input::GetChannelPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -2851,6 +2872,7 @@ impl GetChannelPolicyInput {
 pub mod get_channel_schedule_input {
     
     /// A builder for [`GetChannelScheduleInput`](crate::input::GetChannelScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -3021,6 +3043,7 @@ impl GetChannelScheduleInput {
 pub mod get_playback_configuration_input {
     
     /// A builder for [`GetPlaybackConfigurationInput`](crate::input::GetPlaybackConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3130,6 +3153,7 @@ impl GetPlaybackConfigurationInput {
 pub mod get_prefetch_schedule_input {
     
     /// A builder for [`GetPrefetchScheduleInput`](crate::input::GetPrefetchScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3257,6 +3281,7 @@ impl GetPrefetchScheduleInput {
 pub mod list_alerts_input {
     
     /// A builder for [`ListAlertsInput`](crate::input::ListAlertsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3404,6 +3429,7 @@ impl ListAlertsInput {
 pub mod list_channels_input {
     
     /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3533,6 +3559,7 @@ impl ListChannelsInput {
 pub mod list_live_sources_input {
     
     /// A builder for [`ListLiveSourcesInput`](crate::input::ListLiveSourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3680,6 +3707,7 @@ impl ListLiveSourcesInput {
 pub mod list_playback_configurations_input {
     
     /// A builder for [`ListPlaybackConfigurationsInput`](crate::input::ListPlaybackConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3809,6 +3837,7 @@ impl ListPlaybackConfigurationsInput {
 pub mod list_prefetch_schedules_input {
     
     /// A builder for [`ListPrefetchSchedulesInput`](crate::input::ListPrefetchSchedulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3965,6 +3994,7 @@ impl ListPrefetchSchedulesInput {
 pub mod list_source_locations_input {
     
     /// A builder for [`ListSourceLocationsInput`](crate::input::ListSourceLocationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4094,6 +4124,7 @@ impl ListSourceLocationsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4203,6 +4234,7 @@ impl ListTagsForResourceInput {
 pub mod list_vod_sources_input {
     
     /// A builder for [`ListVodSourcesInput`](crate::input::ListVodSourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4350,6 +4382,7 @@ impl ListVodSourcesInput {
 pub mod put_channel_policy_input {
     
     /// A builder for [`PutChannelPolicyInput`](crate::input::PutChannelPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -4475,6 +4508,7 @@ impl PutChannelPolicyInput {
 pub mod put_playback_configuration_input {
     
     /// A builder for [`PutPlaybackConfigurationInput`](crate::input::PutPlaybackConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_decision_server_url: std::option::Option<std::string::String>,
@@ -4751,6 +4785,7 @@ impl PutPlaybackConfigurationInput {
 pub mod start_channel_input {
     
     /// A builder for [`StartChannelInput`](crate::input::StartChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -4860,6 +4895,7 @@ impl StartChannelInput {
 pub mod stop_channel_input {
     
     /// A builder for [`StopChannelInput`](crate::input::StopChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -4969,6 +5005,7 @@ impl StopChannelInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5100,6 +5137,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5237,6 +5275,7 @@ impl UntagResourceInput {
 pub mod update_channel_input {
     
     /// A builder for [`UpdateChannelInput`](crate::input::UpdateChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -5380,6 +5419,7 @@ impl UpdateChannelInput {
 pub mod update_live_source_input {
     
     /// A builder for [`UpdateLiveSourceInput`](crate::input::UpdateLiveSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_package_configurations: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
@@ -5529,6 +5569,7 @@ impl UpdateLiveSourceInput {
 pub mod update_source_location_input {
     
     /// A builder for [`UpdateSourceLocationInput`](crate::input::UpdateSourceLocationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
@@ -5696,6 +5737,7 @@ impl UpdateSourceLocationInput {
 pub mod update_vod_source_input {
     
     /// A builder for [`UpdateVodSourceInput`](crate::input::UpdateVodSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_package_configurations: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,

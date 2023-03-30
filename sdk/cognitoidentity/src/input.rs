@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_identity_pool_input {
     
     /// A builder for [`CreateIdentityPoolInput`](crate::input::CreateIdentityPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_name: std::option::Option<std::string::String>,
@@ -246,6 +247,7 @@ impl CreateIdentityPoolInput {
 pub mod delete_identities_input {
     
     /// A builder for [`DeleteIdentitiesInput`](crate::input::DeleteIdentitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_ids_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -364,6 +366,7 @@ impl DeleteIdentitiesInput {
 pub mod delete_identity_pool_input {
     
     /// A builder for [`DeleteIdentityPoolInput`](crate::input::DeleteIdentityPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -476,6 +479,7 @@ impl DeleteIdentityPoolInput {
 pub mod describe_identity_input {
     
     /// A builder for [`DescribeIdentityInput`](crate::input::DescribeIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
@@ -588,6 +592,7 @@ impl DescribeIdentityInput {
 pub mod describe_identity_pool_input {
     
     /// A builder for [`DescribeIdentityPoolInput`](crate::input::DescribeIdentityPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -700,6 +705,7 @@ impl DescribeIdentityPoolInput {
 pub mod get_credentials_for_identity_input {
     
     /// A builder for [`GetCredentialsForIdentityInput`](crate::input::GetCredentialsForIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
@@ -847,6 +853,7 @@ impl GetCredentialsForIdentityInput {
 pub mod get_id_input {
     
     /// A builder for [`GetIdInput`](crate::input::GetIdInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1014,6 +1021,7 @@ impl GetIdInput {
 pub mod get_identity_pool_roles_input {
     
     /// A builder for [`GetIdentityPoolRolesInput`](crate::input::GetIdentityPoolRolesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -1126,6 +1134,7 @@ impl GetIdentityPoolRolesInput {
 pub mod get_open_id_token_input {
     
     /// A builder for [`GetOpenIdTokenInput`](crate::input::GetOpenIdTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
@@ -1257,6 +1266,7 @@ impl GetOpenIdTokenInput {
 pub mod get_open_id_token_for_developer_identity_input {
     
     /// A builder for [`GetOpenIdTokenForDeveloperIdentityInput`](crate::input::GetOpenIdTokenForDeveloperIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -1433,6 +1443,7 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
 pub mod get_principal_tag_attribute_map_input {
     
     /// A builder for [`GetPrincipalTagAttributeMapInput`](crate::input::GetPrincipalTagAttributeMapInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -1557,6 +1568,7 @@ impl GetPrincipalTagAttributeMapInput {
 pub mod list_identities_input {
     
     /// A builder for [`ListIdentitiesInput`](crate::input::ListIdentitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -1707,6 +1719,7 @@ impl ListIdentitiesInput {
 pub mod list_identity_pools_input {
     
     /// A builder for [`ListIdentityPoolsInput`](crate::input::ListIdentityPoolsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1832,6 +1845,7 @@ impl ListIdentityPoolsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1944,6 +1958,7 @@ impl ListTagsForResourceInput {
 pub mod lookup_developer_identity_input {
     
     /// A builder for [`LookupDeveloperIdentityInput`](crate::input::LookupDeveloperIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -2105,6 +2120,7 @@ impl LookupDeveloperIdentityInput {
 pub mod merge_developer_identities_input {
     
     /// A builder for [`MergeDeveloperIdentitiesInput`](crate::input::MergeDeveloperIdentitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_user_identifier: std::option::Option<std::string::String>,
@@ -2253,6 +2269,7 @@ impl MergeDeveloperIdentitiesInput {
 pub mod set_identity_pool_roles_input {
     
     /// A builder for [`SetIdentityPoolRolesInput`](crate::input::SetIdentityPoolRolesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -2403,6 +2420,7 @@ impl SetIdentityPoolRolesInput {
 pub mod set_principal_tag_attribute_map_input {
     
     /// A builder for [`SetPrincipalTagAttributeMapInput`](crate::input::SetPrincipalTagAttributeMapInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -2557,6 +2575,7 @@ impl SetPrincipalTagAttributeMapInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2687,6 +2706,7 @@ impl TagResourceInput {
 pub mod unlink_developer_identity_input {
     
     /// A builder for [`UnlinkDeveloperIdentityInput`](crate::input::UnlinkDeveloperIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
@@ -2835,6 +2855,7 @@ impl UnlinkDeveloperIdentityInput {
 pub mod unlink_identity_input {
     
     /// A builder for [`UnlinkIdentityInput`](crate::input::UnlinkIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
@@ -2984,6 +3005,7 @@ impl UnlinkIdentityInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3114,6 +3136,7 @@ impl UntagResourceInput {
 pub mod update_identity_pool_input {
     
     /// A builder for [`UpdateIdentityPoolInput`](crate::input::UpdateIdentityPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,

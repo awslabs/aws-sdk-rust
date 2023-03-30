@@ -192,6 +192,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -252,6 +253,7 @@ impl std::error::Error for ResourceInUseException {}
 pub mod resource_in_use_exception {
     
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -316,6 +318,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
     
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -376,6 +379,7 @@ impl std::error::Error for InvalidEndpointException {}
 pub mod invalid_endpoint_exception {
     
     /// A builder for [`InvalidEndpointException`](crate::error::InvalidEndpointException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -436,6 +440,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
     
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1011,6 +1016,7 @@ impl std::error::Error for TransactionConflictException {}
 pub mod transaction_conflict_exception {
     
     /// A builder for [`TransactionConflictException`](crate::error::TransactionConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1071,6 +1077,7 @@ impl std::error::Error for RequestLimitExceeded {}
 pub mod request_limit_exceeded {
     
     /// A builder for [`RequestLimitExceeded`](crate::error::RequestLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1131,6 +1138,7 @@ impl std::error::Error for ProvisionedThroughputExceededException {}
 pub mod provisioned_throughput_exceeded_exception {
     
     /// A builder for [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1191,6 +1199,7 @@ impl std::error::Error for ItemCollectionSizeLimitExceededException {}
 pub mod item_collection_size_limit_exceeded_exception {
     
     /// A builder for [`ItemCollectionSizeLimitExceededException`](crate::error::ItemCollectionSizeLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1251,6 +1260,7 @@ impl std::error::Error for ConditionalCheckFailedException {}
 pub mod conditional_check_failed_exception {
     
     /// A builder for [`ConditionalCheckFailedException`](crate::error::ConditionalCheckFailedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1500,6 +1510,7 @@ impl std::error::Error for ReplicaNotFoundException {}
 pub mod replica_not_found_exception {
     
     /// A builder for [`ReplicaNotFoundException`](crate::error::ReplicaNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1560,6 +1571,7 @@ impl std::error::Error for IndexNotFoundException {}
 pub mod index_not_found_exception {
     
     /// A builder for [`IndexNotFoundException`](crate::error::IndexNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1620,6 +1632,7 @@ impl std::error::Error for GlobalTableNotFoundException {}
 pub mod global_table_not_found_exception {
     
     /// A builder for [`GlobalTableNotFoundException`](crate::error::GlobalTableNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1853,6 +1866,7 @@ impl std::error::Error for TableNotFoundException {}
 pub mod table_not_found_exception {
     
     /// A builder for [`TableNotFoundException`](crate::error::TableNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1913,6 +1927,7 @@ impl std::error::Error for ReplicaAlreadyExistsException {}
 pub mod replica_already_exists_exception {
     
     /// A builder for [`ReplicaAlreadyExistsException`](crate::error::ReplicaAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2247,6 +2262,7 @@ impl std::error::Error for ContinuousBackupsUnavailableException {}
 pub mod continuous_backups_unavailable_exception {
     
     /// A builder for [`ContinuousBackupsUnavailableException`](crate::error::ContinuousBackupsUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2753,6 +2769,7 @@ impl std::error::Error for TransactionInProgressException {}
 pub mod transaction_in_progress_exception {
     
     /// A builder for [`TransactionInProgressException`](crate::error::TransactionInProgressException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2906,6 +2923,7 @@ impl std::error::Error for TransactionCanceledException {}
 pub mod transaction_canceled_exception {
     
     /// A builder for [`TransactionCanceledException`](crate::error::TransactionCanceledException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2984,6 +3002,7 @@ impl std::error::Error for IdempotentParameterMismatchException {}
 pub mod idempotent_parameter_mismatch_exception {
     
     /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3828,6 +3847,7 @@ impl std::error::Error for TableInUseException {}
 pub mod table_in_use_exception {
     
     /// A builder for [`TableInUseException`](crate::error::TableInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3888,6 +3908,7 @@ impl std::error::Error for TableAlreadyExistsException {}
 pub mod table_already_exists_exception {
     
     /// A builder for [`TableAlreadyExistsException`](crate::error::TableAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3948,6 +3969,7 @@ impl std::error::Error for PointInTimeRecoveryUnavailableException {}
 pub mod point_in_time_recovery_unavailable_exception {
     
     /// A builder for [`PointInTimeRecoveryUnavailableException`](crate::error::PointInTimeRecoveryUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4008,6 +4030,7 @@ impl std::error::Error for InvalidRestoreTimeException {}
 pub mod invalid_restore_time_exception {
     
     /// A builder for [`InvalidRestoreTimeException`](crate::error::InvalidRestoreTimeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4257,6 +4280,7 @@ impl std::error::Error for BackupNotFoundException {}
 pub mod backup_not_found_exception {
     
     /// A builder for [`BackupNotFoundException`](crate::error::BackupNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4317,6 +4341,7 @@ impl std::error::Error for BackupInUseException {}
 pub mod backup_in_use_exception {
     
     /// A builder for [`BackupInUseException`](crate::error::BackupInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5759,6 +5784,7 @@ impl std::error::Error for ImportConflictException {}
 pub mod import_conflict_exception {
     
     /// A builder for [`ImportConflictException`](crate::error::ImportConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6157,6 +6183,7 @@ impl std::error::Error for InvalidExportTimeException {}
 pub mod invalid_export_time_exception {
     
     /// A builder for [`InvalidExportTimeException`](crate::error::InvalidExportTimeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6217,6 +6244,7 @@ impl std::error::Error for ExportConflictException {}
 pub mod export_conflict_exception {
     
     /// A builder for [`ExportConflictException`](crate::error::ExportConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6743,6 +6771,7 @@ impl std::error::Error for DuplicateItemException {}
 pub mod duplicate_item_exception {
     
     /// A builder for [`DuplicateItemException`](crate::error::DuplicateItemException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7907,6 +7936,7 @@ impl std::error::Error for ImportNotFoundException {}
 pub mod import_not_found_exception {
     
     /// A builder for [`ImportNotFoundException`](crate::error::ImportNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8382,6 +8412,7 @@ impl std::error::Error for ExportNotFoundException {}
 pub mod export_not_found_exception {
     
     /// A builder for [`ExportNotFoundException`](crate::error::ExportNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9787,6 +9818,7 @@ impl std::error::Error for GlobalTableAlreadyExistsException {}
 pub mod global_table_already_exists_exception {
     
     /// A builder for [`GlobalTableAlreadyExistsException`](crate::error::GlobalTableAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

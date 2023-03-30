@@ -8,6 +8,7 @@ pub struct UpdateWirelessGatewayOutput  {
 pub mod update_wireless_gateway_output {
     
     /// A builder for [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UpdateWirelessDeviceOutput  {
 pub mod update_wireless_device_output {
     
     /// A builder for [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct UpdateResourcePositionOutput  {
 pub mod update_resource_position_output {
     
     /// A builder for [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -95,6 +98,7 @@ pub struct UpdateResourceEventConfigurationOutput  {
 pub mod update_resource_event_configuration_output {
     
     /// A builder for [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -125,6 +129,7 @@ pub struct UpdatePositionOutput  {
 pub mod update_position_output {
     
     /// A builder for [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -154,6 +159,7 @@ pub struct UpdatePartnerAccountOutput  {
 pub mod update_partner_account_output {
     
     /// A builder for [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -183,6 +189,7 @@ pub struct UpdateNetworkAnalyzerConfigurationOutput  {
 pub mod update_network_analyzer_configuration_output {
     
     /// A builder for [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -212,6 +219,7 @@ pub struct UpdateMulticastGroupOutput  {
 pub mod update_multicast_group_output {
     
     /// A builder for [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -241,6 +249,7 @@ pub struct UpdateLogLevelsByResourceTypesOutput  {
 pub mod update_log_levels_by_resource_types_output {
     
     /// A builder for [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -270,6 +279,7 @@ pub struct UpdateFuotaTaskOutput  {
 pub mod update_fuota_task_output {
     
     /// A builder for [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -299,6 +309,7 @@ pub struct UpdateEventConfigurationByResourceTypesOutput  {
 pub mod update_event_configuration_by_resource_types_output {
     
     /// A builder for [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -328,6 +339,7 @@ pub struct UpdateDestinationOutput  {
 pub mod update_destination_output {
     
     /// A builder for [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -357,6 +369,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -395,6 +408,7 @@ impl TestWirelessDeviceOutput {
 pub mod test_wireless_device_output {
     
     /// A builder for [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
@@ -436,6 +450,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -465,6 +480,7 @@ pub struct StartMulticastGroupSessionOutput  {
 pub mod start_multicast_group_session_output {
     
     /// A builder for [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -494,6 +510,7 @@ pub struct StartFuotaTaskOutput  {
 pub mod start_fuota_task_output {
     
     /// A builder for [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -523,6 +540,7 @@ pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput  {
 pub mod start_bulk_disassociate_wireless_device_from_multicast_group_output {
     
     /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -552,6 +570,7 @@ pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupOutput  {
 pub mod start_bulk_associate_wireless_device_with_multicast_group_output {
     
     /// A builder for [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -590,6 +609,7 @@ impl SendDataToWirelessDeviceOutput {
 pub mod send_data_to_wireless_device_output {
     
     /// A builder for [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -640,6 +660,7 @@ impl SendDataToMulticastGroupOutput {
 pub mod send_data_to_multicast_group_output {
     
     /// A builder for [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -681,6 +702,7 @@ pub struct ResetResourceLogLevelOutput  {
 pub mod reset_resource_log_level_output {
     
     /// A builder for [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -710,6 +732,7 @@ pub struct ResetAllResourceLogLevelsOutput  {
 pub mod reset_all_resource_log_levels_output {
     
     /// A builder for [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -739,6 +762,7 @@ pub struct PutResourceLogLevelOutput  {
 pub mod put_resource_log_level_output {
     
     /// A builder for [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -769,6 +793,7 @@ pub struct PutPositionConfigurationOutput  {
 pub mod put_position_configuration_output {
     
     /// A builder for [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -814,6 +839,7 @@ impl ListWirelessGatewayTaskDefinitionsOutput {
 pub mod list_wireless_gateway_task_definitions_output {
     
     /// A builder for [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -889,6 +915,7 @@ impl ListWirelessGatewaysOutput {
 pub mod list_wireless_gateways_output {
     
     /// A builder for [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -964,6 +991,7 @@ impl ListWirelessDevicesOutput {
 pub mod list_wireless_devices_output {
     
     /// A builder for [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1032,6 +1060,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1095,6 +1124,7 @@ impl ListServiceProfilesOutput {
 pub mod list_service_profiles_output {
     
     /// A builder for [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1170,6 +1200,7 @@ impl ListQueuedMessagesOutput {
 pub mod list_queued_messages_output {
     
     /// A builder for [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1246,6 +1277,7 @@ impl ListPositionConfigurationsOutput {
 pub mod list_position_configurations_output {
     
     /// A builder for [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) position_configuration_list: std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>,
@@ -1321,6 +1353,7 @@ impl ListPartnerAccountsOutput {
 pub mod list_partner_accounts_output {
     
     /// A builder for [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1396,6 +1429,7 @@ impl ListNetworkAnalyzerConfigurationsOutput {
 pub mod list_network_analyzer_configurations_output {
     
     /// A builder for [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1471,6 +1505,7 @@ impl ListMulticastGroupsByFuotaTaskOutput {
 pub mod list_multicast_groups_by_fuota_task_output {
     
     /// A builder for [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1546,6 +1581,7 @@ impl ListMulticastGroupsOutput {
 pub mod list_multicast_groups_output {
     
     /// A builder for [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1621,6 +1657,7 @@ impl ListFuotaTasksOutput {
 pub mod list_fuota_tasks_output {
     
     /// A builder for [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1696,6 +1733,7 @@ impl ListEventConfigurationsOutput {
 pub mod list_event_configurations_output {
     
     /// A builder for [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1771,6 +1809,7 @@ impl ListDeviceProfilesOutput {
 pub mod list_device_profiles_output {
     
     /// A builder for [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1846,6 +1885,7 @@ impl ListDestinationsOutput {
 pub mod list_destinations_output {
     
     /// A builder for [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1935,6 +1975,7 @@ impl GetWirelessGatewayTaskDefinitionOutput {
 pub mod get_wireless_gateway_task_definition_output {
     
     /// A builder for [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_create_tasks: std::option::Option<bool>,
@@ -2050,6 +2091,7 @@ impl GetWirelessGatewayTaskOutput {
 pub mod get_wireless_gateway_task_output {
     
     /// A builder for [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_gateway_id: std::option::Option<std::string::String>,
@@ -2162,6 +2204,7 @@ impl GetWirelessGatewayStatisticsOutput {
 pub mod get_wireless_gateway_statistics_output {
     
     /// A builder for [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_gateway_id: std::option::Option<std::string::String>,
@@ -2236,6 +2279,7 @@ impl GetWirelessGatewayFirmwareInformationOutput {
 pub mod get_wireless_gateway_firmware_information_output {
     
     /// A builder for [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanGatewayCurrentVersion>,
@@ -2293,6 +2337,7 @@ impl GetWirelessGatewayCertificateOutput {
 pub mod get_wireless_gateway_certificate_output {
     
     /// A builder for [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iot_certificate_id: std::option::Option<std::string::String>,
@@ -2397,6 +2442,7 @@ impl GetWirelessGatewayOutput {
 pub mod get_wireless_gateway_output {
     
     /// A builder for [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2540,6 +2586,7 @@ impl GetWirelessDeviceStatisticsOutput {
 pub mod get_wireless_device_statistics_output {
     
     /// A builder for [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
@@ -2696,6 +2743,7 @@ impl GetWirelessDeviceOutput {
 pub mod get_wireless_device_output {
     
     /// A builder for [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WirelessDeviceType>,
@@ -2887,6 +2935,7 @@ impl GetServiceProfileOutput {
 pub mod get_service_profile_output {
     
     /// A builder for [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2987,6 +3036,7 @@ impl GetServiceEndpointOutput {
 pub mod get_service_endpoint_output {
     
     /// A builder for [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::WirelessGatewayServiceType>,
@@ -3061,6 +3111,7 @@ impl GetResourcePositionOutput {
 pub mod get_resource_position_output {
     
     /// A builder for [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_json_payload: std::option::Option<aws_smithy_types::Blob>,
@@ -3111,6 +3162,7 @@ impl GetResourceLogLevelOutput {
 pub mod get_resource_log_level_output {
     
     /// A builder for [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
@@ -3189,6 +3241,7 @@ impl GetResourceEventConfigurationOutput {
 pub mod get_resource_event_configuration_output {
     
     /// A builder for [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_registration_state: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
@@ -3287,6 +3340,7 @@ impl GetPositionEstimateOutput {
 pub mod get_position_estimate_output {
     
     /// A builder for [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_json_payload: std::option::Option<aws_smithy_types::Blob>,
@@ -3345,6 +3399,7 @@ impl GetPositionConfigurationOutput {
 pub mod get_position_configuration_output {
     
     /// A builder for [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solvers: std::option::Option<crate::model::PositionSolverDetails>,
@@ -3443,6 +3498,7 @@ impl GetPositionOutput {
 pub mod get_position_output {
     
     /// A builder for [`GetPositionOutput`](crate::output::GetPositionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) position: std::option::Option<std::vec::Vec<f32>>,
@@ -3566,6 +3622,7 @@ impl GetPartnerAccountOutput {
 pub mod get_partner_account_output {
     
     /// A builder for [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkAccountInfoWithFingerprint>,
@@ -3664,6 +3721,7 @@ impl GetNetworkAnalyzerConfigurationOutput {
 pub mod get_network_analyzer_configuration_output {
     
     /// A builder for [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trace_content: std::option::Option<crate::model::TraceContent>,
@@ -3786,6 +3844,7 @@ impl GetMulticastGroupSessionOutput {
 pub mod get_multicast_group_session_output {
     
     /// A builder for [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
@@ -3878,6 +3937,7 @@ impl GetMulticastGroupOutput {
 pub mod get_multicast_group_output {
     
     /// A builder for [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4014,6 +4074,7 @@ impl GetLogLevelsByResourceTypesOutput {
 pub mod get_log_levels_by_resource_types_output {
     
     /// A builder for [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_log_level: std::option::Option<crate::model::LogLevel>,
@@ -4156,6 +4217,7 @@ impl GetFuotaTaskOutput {
 pub mod get_fuota_task_output {
     
     /// A builder for [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4330,6 +4392,7 @@ impl GetEventConfigurationByResourceTypesOutput {
 pub mod get_event_configuration_by_resource_types_output {
     
     /// A builder for [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_registration_state: std::option::Option<crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>,
@@ -4449,6 +4512,7 @@ impl GetDeviceProfileOutput {
 pub mod get_device_profile_output {
     
     /// A builder for [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4570,6 +4634,7 @@ impl GetDestinationOutput {
 pub mod get_destination_output {
     
     /// A builder for [`GetDestinationOutput`](crate::output::GetDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4671,6 +4736,7 @@ pub struct DisassociateWirelessGatewayFromThingOutput  {
 pub mod disassociate_wireless_gateway_from_thing_output {
     
     /// A builder for [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4700,6 +4766,7 @@ pub struct DisassociateWirelessGatewayFromCertificateOutput  {
 pub mod disassociate_wireless_gateway_from_certificate_output {
     
     /// A builder for [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4729,6 +4796,7 @@ pub struct DisassociateWirelessDeviceFromThingOutput  {
 pub mod disassociate_wireless_device_from_thing_output {
     
     /// A builder for [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4758,6 +4826,7 @@ pub struct DisassociateWirelessDeviceFromMulticastGroupOutput  {
 pub mod disassociate_wireless_device_from_multicast_group_output {
     
     /// A builder for [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4787,6 +4856,7 @@ pub struct DisassociateWirelessDeviceFromFuotaTaskOutput  {
 pub mod disassociate_wireless_device_from_fuota_task_output {
     
     /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4816,6 +4886,7 @@ pub struct DisassociateMulticastGroupFromFuotaTaskOutput  {
 pub mod disassociate_multicast_group_from_fuota_task_output {
     
     /// A builder for [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4845,6 +4916,7 @@ pub struct DisassociateAwsAccountFromPartnerAccountOutput  {
 pub mod disassociate_aws_account_from_partner_account_output {
     
     /// A builder for [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4874,6 +4946,7 @@ pub struct DeleteWirelessGatewayTaskDefinitionOutput  {
 pub mod delete_wireless_gateway_task_definition_output {
     
     /// A builder for [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4903,6 +4976,7 @@ pub struct DeleteWirelessGatewayTaskOutput  {
 pub mod delete_wireless_gateway_task_output {
     
     /// A builder for [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4932,6 +5006,7 @@ pub struct DeleteWirelessGatewayOutput  {
 pub mod delete_wireless_gateway_output {
     
     /// A builder for [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4961,6 +5036,7 @@ pub struct DeleteWirelessDeviceOutput  {
 pub mod delete_wireless_device_output {
     
     /// A builder for [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4990,6 +5066,7 @@ pub struct DeleteServiceProfileOutput  {
 pub mod delete_service_profile_output {
     
     /// A builder for [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5019,6 +5096,7 @@ pub struct DeleteQueuedMessagesOutput  {
 pub mod delete_queued_messages_output {
     
     /// A builder for [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5048,6 +5126,7 @@ pub struct DeleteNetworkAnalyzerConfigurationOutput  {
 pub mod delete_network_analyzer_configuration_output {
     
     /// A builder for [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5077,6 +5156,7 @@ pub struct DeleteMulticastGroupOutput  {
 pub mod delete_multicast_group_output {
     
     /// A builder for [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5106,6 +5186,7 @@ pub struct DeleteFuotaTaskOutput  {
 pub mod delete_fuota_task_output {
     
     /// A builder for [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5135,6 +5216,7 @@ pub struct DeleteDeviceProfileOutput  {
 pub mod delete_device_profile_output {
     
     /// A builder for [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5164,6 +5246,7 @@ pub struct DeleteDestinationOutput  {
 pub mod delete_destination_output {
     
     /// A builder for [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5209,6 +5292,7 @@ impl CreateWirelessGatewayTaskDefinitionOutput {
 pub mod create_wireless_gateway_task_definition_output {
     
     /// A builder for [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5278,6 +5362,7 @@ impl CreateWirelessGatewayTaskOutput {
 pub mod create_wireless_gateway_task_output {
     
     /// A builder for [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_gateway_task_definition_id: std::option::Option<std::string::String>,
@@ -5347,6 +5432,7 @@ impl CreateWirelessGatewayOutput {
 pub mod create_wireless_gateway_output {
     
     /// A builder for [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5416,6 +5502,7 @@ impl CreateWirelessDeviceOutput {
 pub mod create_wireless_device_output {
     
     /// A builder for [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5485,6 +5572,7 @@ impl CreateServiceProfileOutput {
 pub mod create_service_profile_output {
     
     /// A builder for [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5554,6 +5642,7 @@ impl CreateNetworkAnalyzerConfigurationOutput {
 pub mod create_network_analyzer_configuration_output {
     
     /// A builder for [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5623,6 +5712,7 @@ impl CreateMulticastGroupOutput {
 pub mod create_multicast_group_output {
     
     /// A builder for [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5692,6 +5782,7 @@ impl CreateFuotaTaskOutput {
 pub mod create_fuota_task_output {
     
     /// A builder for [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5761,6 +5852,7 @@ impl CreateDeviceProfileOutput {
 pub mod create_device_profile_output {
     
     /// A builder for [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5830,6 +5922,7 @@ impl CreateDestinationOutput {
 pub mod create_destination_output {
     
     /// A builder for [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5883,6 +5976,7 @@ pub struct CancelMulticastGroupSessionOutput  {
 pub mod cancel_multicast_group_session_output {
     
     /// A builder for [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5912,6 +6006,7 @@ pub struct AssociateWirelessGatewayWithThingOutput  {
 pub mod associate_wireless_gateway_with_thing_output {
     
     /// A builder for [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5950,6 +6045,7 @@ impl AssociateWirelessGatewayWithCertificateOutput {
 pub mod associate_wireless_gateway_with_certificate_output {
     
     /// A builder for [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iot_certificate_id: std::option::Option<std::string::String>,
@@ -5991,6 +6087,7 @@ pub struct AssociateWirelessDeviceWithThingOutput  {
 pub mod associate_wireless_device_with_thing_output {
     
     /// A builder for [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -6020,6 +6117,7 @@ pub struct AssociateWirelessDeviceWithMulticastGroupOutput  {
 pub mod associate_wireless_device_with_multicast_group_output {
     
     /// A builder for [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -6049,6 +6147,7 @@ pub struct AssociateWirelessDeviceWithFuotaTaskOutput  {
 pub mod associate_wireless_device_with_fuota_task_output {
     
     /// A builder for [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -6078,6 +6177,7 @@ pub struct AssociateMulticastGroupWithFuotaTaskOutput  {
 pub mod associate_multicast_group_with_fuota_task_output {
     
     /// A builder for [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -6123,6 +6223,7 @@ impl AssociateAwsAccountWithPartnerAccountOutput {
 pub mod associate_aws_account_with_partner_account_output {
     
     /// A builder for [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkAccountInfo>,

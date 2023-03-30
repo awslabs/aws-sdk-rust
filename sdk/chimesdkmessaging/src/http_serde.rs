@@ -7,7 +7,7 @@ pub fn add_headers_associate_channel_flow(
         let formatted_2 = inner_1.as_str();
                         if !formatted_2.is_empty() {
                             let header_value = formatted_2;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -28,7 +28,7 @@ pub fn add_headers_batch_create_channel_membership(
         let formatted_4 = inner_3.as_str();
                         if !formatted_4.is_empty() {
                             let header_value = formatted_4;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -49,7 +49,7 @@ pub fn add_headers_create_channel(
         let formatted_6 = inner_5.as_str();
                         if !formatted_6.is_empty() {
                             let header_value = formatted_6;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -70,7 +70,7 @@ pub fn add_headers_create_channel_ban(
         let formatted_8 = inner_7.as_str();
                         if !formatted_8.is_empty() {
                             let header_value = formatted_8;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -91,7 +91,7 @@ pub fn add_headers_create_channel_membership(
         let formatted_10 = inner_9.as_str();
                         if !formatted_10.is_empty() {
                             let header_value = formatted_10;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -112,7 +112,7 @@ pub fn add_headers_create_channel_moderator(
         let formatted_12 = inner_11.as_str();
                         if !formatted_12.is_empty() {
                             let header_value = formatted_12;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -133,7 +133,7 @@ pub fn add_headers_delete_channel(
         let formatted_14 = inner_13.as_str();
                         if !formatted_14.is_empty() {
                             let header_value = formatted_14;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -154,7 +154,7 @@ pub fn add_headers_delete_channel_ban(
         let formatted_16 = inner_15.as_str();
                         if !formatted_16.is_empty() {
                             let header_value = formatted_16;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -175,7 +175,7 @@ pub fn add_headers_delete_channel_membership(
         let formatted_18 = inner_17.as_str();
                         if !formatted_18.is_empty() {
                             let header_value = formatted_18;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -196,7 +196,7 @@ pub fn add_headers_delete_channel_message(
         let formatted_20 = inner_19.as_str();
                         if !formatted_20.is_empty() {
                             let header_value = formatted_20;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -217,7 +217,7 @@ pub fn add_headers_delete_channel_moderator(
         let formatted_22 = inner_21.as_str();
                         if !formatted_22.is_empty() {
                             let header_value = formatted_22;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -238,7 +238,7 @@ pub fn add_headers_describe_channel(
         let formatted_24 = inner_23.as_str();
                         if !formatted_24.is_empty() {
                             let header_value = formatted_24;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -259,7 +259,7 @@ pub fn add_headers_describe_channel_ban(
         let formatted_26 = inner_25.as_str();
                         if !formatted_26.is_empty() {
                             let header_value = formatted_26;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -280,7 +280,7 @@ pub fn add_headers_describe_channel_membership(
         let formatted_28 = inner_27.as_str();
                         if !formatted_28.is_empty() {
                             let header_value = formatted_28;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -301,7 +301,7 @@ pub fn add_headers_describe_channel_membership_for_app_instance_user(
         let formatted_30 = inner_29.as_str();
                         if !formatted_30.is_empty() {
                             let header_value = formatted_30;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -322,7 +322,7 @@ pub fn add_headers_describe_channel_moderated_by_app_instance_user(
         let formatted_32 = inner_31.as_str();
                         if !formatted_32.is_empty() {
                             let header_value = formatted_32;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -343,7 +343,7 @@ pub fn add_headers_describe_channel_moderator(
         let formatted_34 = inner_33.as_str();
                         if !formatted_34.is_empty() {
                             let header_value = formatted_34;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -364,7 +364,7 @@ pub fn add_headers_disassociate_channel_flow(
         let formatted_36 = inner_35.as_str();
                         if !formatted_36.is_empty() {
                             let header_value = formatted_36;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -385,7 +385,7 @@ pub fn add_headers_get_channel_membership_preferences(
         let formatted_38 = inner_37.as_str();
                         if !formatted_38.is_empty() {
                             let header_value = formatted_38;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -406,7 +406,7 @@ pub fn add_headers_get_channel_message(
         let formatted_40 = inner_39.as_str();
                         if !formatted_40.is_empty() {
                             let header_value = formatted_40;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -427,7 +427,7 @@ pub fn add_headers_get_channel_message_status(
         let formatted_42 = inner_41.as_str();
                         if !formatted_42.is_empty() {
                             let header_value = formatted_42;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -448,7 +448,7 @@ pub fn add_headers_list_channel_bans(
         let formatted_44 = inner_43.as_str();
                         if !formatted_44.is_empty() {
                             let header_value = formatted_44;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -469,7 +469,7 @@ pub fn add_headers_list_channel_memberships(
         let formatted_46 = inner_45.as_str();
                         if !formatted_46.is_empty() {
                             let header_value = formatted_46;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -490,7 +490,7 @@ pub fn add_headers_list_channel_memberships_for_app_instance_user(
         let formatted_48 = inner_47.as_str();
                         if !formatted_48.is_empty() {
                             let header_value = formatted_48;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -511,7 +511,7 @@ pub fn add_headers_list_channel_messages(
         let formatted_50 = inner_49.as_str();
                         if !formatted_50.is_empty() {
                             let header_value = formatted_50;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -532,7 +532,7 @@ pub fn add_headers_list_channel_moderators(
         let formatted_52 = inner_51.as_str();
                         if !formatted_52.is_empty() {
                             let header_value = formatted_52;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -553,7 +553,7 @@ pub fn add_headers_list_channels(
         let formatted_54 = inner_53.as_str();
                         if !formatted_54.is_empty() {
                             let header_value = formatted_54;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -574,7 +574,7 @@ pub fn add_headers_list_channels_moderated_by_app_instance_user(
         let formatted_56 = inner_55.as_str();
                         if !formatted_56.is_empty() {
                             let header_value = formatted_56;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -595,7 +595,7 @@ pub fn add_headers_list_sub_channels(
         let formatted_58 = inner_57.as_str();
                         if !formatted_58.is_empty() {
                             let header_value = formatted_58;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -616,7 +616,7 @@ pub fn add_headers_put_channel_membership_preferences(
         let formatted_60 = inner_59.as_str();
                         if !formatted_60.is_empty() {
                             let header_value = formatted_60;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -637,7 +637,7 @@ pub fn add_headers_redact_channel_message(
         let formatted_62 = inner_61.as_str();
                         if !formatted_62.is_empty() {
                             let header_value = formatted_62;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -658,7 +658,7 @@ pub fn add_headers_search_channels(
         let formatted_64 = inner_63.as_str();
                         if !formatted_64.is_empty() {
                             let header_value = formatted_64;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -679,7 +679,7 @@ pub fn add_headers_send_channel_message(
         let formatted_66 = inner_65.as_str();
                         if !formatted_66.is_empty() {
                             let header_value = formatted_66;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -700,7 +700,7 @@ pub fn add_headers_update_channel(
         let formatted_68 = inner_67.as_str();
                         if !formatted_68.is_empty() {
                             let header_value = formatted_68;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -721,7 +721,7 @@ pub fn add_headers_update_channel_message(
         let formatted_70 = inner_69.as_str();
                         if !formatted_70.is_empty() {
                             let header_value = formatted_70;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -742,7 +742,7 @@ pub fn add_headers_update_channel_read_marker(
         let formatted_72 = inner_71.as_str();
                         if !formatted_72.is_empty() {
                             let header_value = formatted_72;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("chime_bearer", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,

@@ -17,6 +17,7 @@ impl UpdateResolverRuleOutput {
 pub mod update_resolver_rule_output {
     
     /// A builder for [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule: std::option::Option<crate::model::ResolverRule>,
@@ -67,6 +68,7 @@ impl UpdateResolverEndpointOutput {
 pub mod update_resolver_endpoint_output {
     
     /// A builder for [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
@@ -117,6 +119,7 @@ impl UpdateResolverDnssecConfigOutput {
 pub mod update_resolver_dnssec_config_output {
     
     /// A builder for [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
@@ -167,6 +170,7 @@ impl UpdateResolverConfigOutput {
 pub mod update_resolver_config_output {
     
     /// A builder for [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_config: std::option::Option<crate::model::ResolverConfig>,
@@ -217,6 +221,7 @@ impl UpdateFirewallRuleGroupAssociationOutput {
 pub mod update_firewall_rule_group_association_output {
     
     /// A builder for [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
@@ -267,6 +272,7 @@ impl UpdateFirewallRuleOutput {
 pub mod update_firewall_rule_output {
     
     /// A builder for [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule: std::option::Option<crate::model::FirewallRule>,
@@ -338,6 +344,7 @@ impl UpdateFirewallDomainsOutput {
 pub mod update_firewall_domains_output {
     
     /// A builder for [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -424,6 +431,7 @@ impl UpdateFirewallConfigOutput {
 pub mod update_firewall_config_output {
     
     /// A builder for [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_config: std::option::Option<crate::model::FirewallConfig>,
@@ -465,6 +473,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -494,6 +503,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -532,6 +542,7 @@ impl PutResolverRulePolicyOutput {
 pub mod put_resolver_rule_policy_output {
     
     /// A builder for [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -583,6 +594,7 @@ impl PutResolverQueryLogConfigPolicyOutput {
 pub mod put_resolver_query_log_config_policy_output {
     
     /// A builder for [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -634,6 +646,7 @@ impl PutFirewallRuleGroupPolicyOutput {
 pub mod put_firewall_rule_group_policy_output {
     
     /// A builder for [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -692,6 +705,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -774,6 +788,7 @@ impl ListResolverRulesOutput {
 pub mod list_resolver_rules_output {
     
     /// A builder for [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -868,6 +883,7 @@ impl ListResolverRuleAssociationsOutput {
 pub mod list_resolver_rule_associations_output {
     
     /// A builder for [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -969,6 +985,7 @@ impl ListResolverQueryLogConfigsOutput {
 pub mod list_resolver_query_log_configs_output {
     
     /// A builder for [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1084,6 +1101,7 @@ impl ListResolverQueryLogConfigAssociationsOutput {
 pub mod list_resolver_query_log_config_associations_output {
     
     /// A builder for [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1192,6 +1210,7 @@ impl ListResolverEndpointsOutput {
 pub mod list_resolver_endpoints_output {
     
     /// A builder for [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1286,6 +1305,7 @@ impl ListResolverEndpointIpAddressesOutput {
 pub mod list_resolver_endpoint_ip_addresses_output {
     
     /// A builder for [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1375,6 +1395,7 @@ impl ListResolverDnssecConfigsOutput {
 pub mod list_resolver_dnssec_configs_output {
     
     /// A builder for [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1454,6 +1475,7 @@ impl ListResolverConfigsOutput {
 pub mod list_resolver_configs_output {
     
     /// A builder for [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1533,6 +1555,7 @@ impl ListFirewallRulesOutput {
 pub mod list_firewall_rules_output {
     
     /// A builder for [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1612,6 +1635,7 @@ impl ListFirewallRuleGroupsOutput {
 pub mod list_firewall_rule_groups_output {
     
     /// A builder for [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1691,6 +1715,7 @@ impl ListFirewallRuleGroupAssociationsOutput {
 pub mod list_firewall_rule_group_associations_output {
     
     /// A builder for [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1770,6 +1795,7 @@ impl ListFirewallDomainsOutput {
 pub mod list_firewall_domains_output {
     
     /// A builder for [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1849,6 +1875,7 @@ impl ListFirewallDomainListsOutput {
 pub mod list_firewall_domain_lists_output {
     
     /// A builder for [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1926,6 +1953,7 @@ impl ListFirewallConfigsOutput {
 pub mod list_firewall_configs_output {
     
     /// A builder for [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2015,6 +2043,7 @@ impl ImportFirewallDomainsOutput {
 pub mod import_firewall_domains_output {
     
     /// A builder for [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2101,6 +2130,7 @@ impl GetResolverRulePolicyOutput {
 pub mod get_resolver_rule_policy_output {
     
     /// A builder for [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule_policy: std::option::Option<std::string::String>,
@@ -2151,6 +2181,7 @@ impl GetResolverRuleAssociationOutput {
 pub mod get_resolver_rule_association_output {
     
     /// A builder for [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
@@ -2201,6 +2232,7 @@ impl GetResolverRuleOutput {
 pub mod get_resolver_rule_output {
     
     /// A builder for [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule: std::option::Option<crate::model::ResolverRule>,
@@ -2251,6 +2283,7 @@ impl GetResolverQueryLogConfigPolicyOutput {
 pub mod get_resolver_query_log_config_policy_output {
     
     /// A builder for [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config_policy: std::option::Option<std::string::String>,
@@ -2301,6 +2334,7 @@ impl GetResolverQueryLogConfigAssociationOutput {
 pub mod get_resolver_query_log_config_association_output {
     
     /// A builder for [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
@@ -2351,6 +2385,7 @@ impl GetResolverQueryLogConfigOutput {
 pub mod get_resolver_query_log_config_output {
     
     /// A builder for [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
@@ -2401,6 +2436,7 @@ impl GetResolverEndpointOutput {
 pub mod get_resolver_endpoint_output {
     
     /// A builder for [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
@@ -2451,6 +2487,7 @@ impl GetResolverDnssecConfigOutput {
 pub mod get_resolver_dnssec_config_output {
     
     /// A builder for [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
@@ -2501,6 +2538,7 @@ impl GetResolverConfigOutput {
 pub mod get_resolver_config_output {
     
     /// A builder for [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_config: std::option::Option<crate::model::ResolverConfig>,
@@ -2551,6 +2589,7 @@ impl GetFirewallRuleGroupPolicyOutput {
 pub mod get_firewall_rule_group_policy_output {
     
     /// A builder for [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_policy: std::option::Option<std::string::String>,
@@ -2601,6 +2640,7 @@ impl GetFirewallRuleGroupAssociationOutput {
 pub mod get_firewall_rule_group_association_output {
     
     /// A builder for [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
@@ -2651,6 +2691,7 @@ impl GetFirewallRuleGroupOutput {
 pub mod get_firewall_rule_group_output {
     
     /// A builder for [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
@@ -2701,6 +2742,7 @@ impl GetFirewallDomainListOutput {
 pub mod get_firewall_domain_list_output {
     
     /// A builder for [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
@@ -2751,6 +2793,7 @@ impl GetFirewallConfigOutput {
 pub mod get_firewall_config_output {
     
     /// A builder for [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_config: std::option::Option<crate::model::FirewallConfig>,
@@ -2801,6 +2844,7 @@ impl DisassociateResolverRuleOutput {
 pub mod disassociate_resolver_rule_output {
     
     /// A builder for [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
@@ -2851,6 +2895,7 @@ impl DisassociateResolverQueryLogConfigOutput {
 pub mod disassociate_resolver_query_log_config_output {
     
     /// A builder for [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
@@ -2901,6 +2946,7 @@ impl DisassociateResolverEndpointIpAddressOutput {
 pub mod disassociate_resolver_endpoint_ip_address_output {
     
     /// A builder for [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
@@ -2951,6 +2997,7 @@ impl DisassociateFirewallRuleGroupOutput {
 pub mod disassociate_firewall_rule_group_output {
     
     /// A builder for [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
@@ -3001,6 +3048,7 @@ impl DeleteResolverRuleOutput {
 pub mod delete_resolver_rule_output {
     
     /// A builder for [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule: std::option::Option<crate::model::ResolverRule>,
@@ -3051,6 +3099,7 @@ impl DeleteResolverQueryLogConfigOutput {
 pub mod delete_resolver_query_log_config_output {
     
     /// A builder for [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
@@ -3101,6 +3150,7 @@ impl DeleteResolverEndpointOutput {
 pub mod delete_resolver_endpoint_output {
     
     /// A builder for [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
@@ -3151,6 +3201,7 @@ impl DeleteFirewallRuleGroupOutput {
 pub mod delete_firewall_rule_group_output {
     
     /// A builder for [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
@@ -3201,6 +3252,7 @@ impl DeleteFirewallRuleOutput {
 pub mod delete_firewall_rule_output {
     
     /// A builder for [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule: std::option::Option<crate::model::FirewallRule>,
@@ -3251,6 +3303,7 @@ impl DeleteFirewallDomainListOutput {
 pub mod delete_firewall_domain_list_output {
     
     /// A builder for [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
@@ -3301,6 +3354,7 @@ impl CreateResolverRuleOutput {
 pub mod create_resolver_rule_output {
     
     /// A builder for [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule: std::option::Option<crate::model::ResolverRule>,
@@ -3351,6 +3405,7 @@ impl CreateResolverQueryLogConfigOutput {
 pub mod create_resolver_query_log_config_output {
     
     /// A builder for [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
@@ -3401,6 +3456,7 @@ impl CreateResolverEndpointOutput {
 pub mod create_resolver_endpoint_output {
     
     /// A builder for [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
@@ -3451,6 +3507,7 @@ impl CreateFirewallRuleGroupOutput {
 pub mod create_firewall_rule_group_output {
     
     /// A builder for [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
@@ -3501,6 +3558,7 @@ impl CreateFirewallRuleOutput {
 pub mod create_firewall_rule_output {
     
     /// A builder for [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule: std::option::Option<crate::model::FirewallRule>,
@@ -3551,6 +3609,7 @@ impl CreateFirewallDomainListOutput {
 pub mod create_firewall_domain_list_output {
     
     /// A builder for [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
@@ -3601,6 +3660,7 @@ impl AssociateResolverRuleOutput {
 pub mod associate_resolver_rule_output {
     
     /// A builder for [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
@@ -3651,6 +3711,7 @@ impl AssociateResolverQueryLogConfigOutput {
 pub mod associate_resolver_query_log_config_output {
     
     /// A builder for [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
@@ -3701,6 +3762,7 @@ impl AssociateResolverEndpointIpAddressOutput {
 pub mod associate_resolver_endpoint_ip_address_output {
     
     /// A builder for [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
@@ -3751,6 +3813,7 @@ impl AssociateFirewallRuleGroupOutput {
 pub mod associate_firewall_rule_group_output {
     
     /// A builder for [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,

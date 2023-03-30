@@ -17,6 +17,7 @@ impl UpdateTableOutput {
 pub mod update_table_output {
     
     /// A builder for [`UpdateTableOutput`](crate::output::UpdateTableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -58,6 +59,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -87,6 +89,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -125,6 +128,7 @@ impl RestoreTableOutput {
 pub mod restore_table_output {
     
     /// A builder for [`RestoreTableOutput`](crate::output::RestoreTableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) restored_table_arn: std::option::Option<std::string::String>,
@@ -182,6 +186,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -257,6 +262,7 @@ impl ListTablesOutput {
 pub mod list_tables_output {
     
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -332,6 +338,7 @@ impl ListKeyspacesOutput {
 pub mod list_keyspaces_output {
     
     /// A builder for [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -481,6 +488,7 @@ impl GetTableOutput {
 pub mod get_table_output {
     
     /// A builder for [`GetTableOutput`](crate::output::GetTableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -674,6 +682,7 @@ impl GetKeyspaceOutput {
 pub mod get_keyspace_output {
     
     /// A builder for [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -727,6 +736,7 @@ pub struct DeleteTableOutput  {
 pub mod delete_table_output {
     
     /// A builder for [`DeleteTableOutput`](crate::output::DeleteTableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -756,6 +766,7 @@ pub struct DeleteKeyspaceOutput  {
 pub mod delete_keyspace_output {
     
     /// A builder for [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -794,6 +805,7 @@ impl CreateTableOutput {
 pub mod create_table_output {
     
     /// A builder for [`CreateTableOutput`](crate::output::CreateTableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -844,6 +856,7 @@ impl CreateKeyspaceOutput {
 pub mod create_keyspace_output {
     
     /// A builder for [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

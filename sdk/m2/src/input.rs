@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_batch_job_execution_input {
     
     /// A builder for [`CancelBatchJobExecutionInput`](crate::input::CancelBatchJobExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -132,6 +133,7 @@ impl CancelBatchJobExecutionInput {
 pub mod create_application_input {
     
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -320,6 +322,7 @@ impl CreateApplicationInput {
 pub mod create_data_set_import_task_input {
     
     /// A builder for [`CreateDataSetImportTaskInput`](crate::input::CreateDataSetImportTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -460,6 +463,7 @@ impl CreateDataSetImportTaskInput {
 pub mod create_deployment_input {
     
     /// A builder for [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -612,6 +616,7 @@ impl CreateDeploymentInput {
 pub mod create_environment_input {
     
     /// A builder for [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -903,6 +908,7 @@ impl CreateEnvironmentInput {
 pub mod delete_application_input {
     
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1012,6 +1018,7 @@ impl DeleteApplicationInput {
 pub mod delete_application_from_environment_input {
     
     /// A builder for [`DeleteApplicationFromEnvironmentInput`](crate::input::DeleteApplicationFromEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1139,6 +1146,7 @@ impl DeleteApplicationFromEnvironmentInput {
 pub mod delete_environment_input {
     
     /// A builder for [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -1248,6 +1256,7 @@ impl DeleteEnvironmentInput {
 pub mod get_application_input {
     
     /// A builder for [`GetApplicationInput`](crate::input::GetApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1357,6 +1366,7 @@ impl GetApplicationInput {
 pub mod get_application_version_input {
     
     /// A builder for [`GetApplicationVersionInput`](crate::input::GetApplicationVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1484,6 +1494,7 @@ impl GetApplicationVersionInput {
 pub mod get_batch_job_execution_input {
     
     /// A builder for [`GetBatchJobExecutionInput`](crate::input::GetBatchJobExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1611,6 +1622,7 @@ impl GetBatchJobExecutionInput {
 pub mod get_data_set_details_input {
     
     /// A builder for [`GetDataSetDetailsInput`](crate::input::GetDataSetDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1738,6 +1750,7 @@ impl GetDataSetDetailsInput {
 pub mod get_data_set_import_task_input {
     
     /// A builder for [`GetDataSetImportTaskInput`](crate::input::GetDataSetImportTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1865,6 +1878,7 @@ impl GetDataSetImportTaskInput {
 pub mod get_deployment_input {
     
     /// A builder for [`GetDeploymentInput`](crate::input::GetDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
@@ -1992,6 +2006,7 @@ impl GetDeploymentInput {
 pub mod get_environment_input {
     
     /// A builder for [`GetEnvironmentInput`](crate::input::GetEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -2101,6 +2116,7 @@ impl GetEnvironmentInput {
 pub mod list_applications_input {
     
     /// A builder for [`ListApplicationsInput`](crate::input::ListApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2273,6 +2289,7 @@ impl ListApplicationsInput {
 pub mod list_application_versions_input {
     
     /// A builder for [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2421,6 +2438,7 @@ impl ListApplicationVersionsInput {
 pub mod list_batch_job_definitions_input {
     
     /// A builder for [`ListBatchJobDefinitionsInput`](crate::input::ListBatchJobDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2586,6 +2604,7 @@ impl ListBatchJobDefinitionsInput {
 pub mod list_batch_job_executions_input {
     
     /// A builder for [`ListBatchJobExecutionsInput`](crate::input::ListBatchJobExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2827,6 +2846,7 @@ impl ListBatchJobExecutionsInput {
 pub mod list_data_set_import_history_input {
     
     /// A builder for [`ListDataSetImportHistoryInput`](crate::input::ListDataSetImportHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2975,6 +2995,7 @@ impl ListDataSetImportHistoryInput {
 pub mod list_data_sets_input {
     
     /// A builder for [`ListDataSetsInput`](crate::input::ListDataSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3140,6 +3161,7 @@ impl ListDataSetsInput {
 pub mod list_deployments_input {
     
     /// A builder for [`ListDeploymentsInput`](crate::input::ListDeploymentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3288,6 +3310,7 @@ impl ListDeploymentsInput {
 pub mod list_engine_versions_input {
     
     /// A builder for [`ListEngineVersionsInput`](crate::input::ListEngineVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
@@ -3435,6 +3458,7 @@ impl ListEngineVersionsInput {
 pub mod list_environments_input {
     
     /// A builder for [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3607,6 +3631,7 @@ impl ListEnvironmentsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3716,6 +3741,7 @@ impl ListTagsForResourceInput {
 pub mod start_application_input {
     
     /// A builder for [`StartApplicationInput`](crate::input::StartApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3825,6 +3851,7 @@ impl StartApplicationInput {
 pub mod start_batch_job_input {
     
     /// A builder for [`StartBatchJobInput`](crate::input::StartBatchJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3968,6 +3995,7 @@ impl StartBatchJobInput {
 pub mod stop_application_input {
     
     /// A builder for [`StopApplicationInput`](crate::input::StopApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -4094,6 +4122,7 @@ impl StopApplicationInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4225,6 +4254,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4362,6 +4392,7 @@ impl UntagResourceInput {
 pub mod update_application_input {
     
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -4511,6 +4542,7 @@ impl UpdateApplicationInput {
 pub mod update_environment_input {
     
     /// A builder for [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,

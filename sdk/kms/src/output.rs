@@ -33,6 +33,7 @@ impl VerifyMacOutput {
 pub mod verify_mac_output {
     
     /// A builder for [`VerifyMacOutput`](crate::output::VerifyMacOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -124,6 +125,7 @@ impl VerifyOutput {
 pub mod verify_output {
     
     /// A builder for [`VerifyOutput`](crate::output::VerifyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -190,6 +192,7 @@ pub struct UpdatePrimaryRegionOutput  {
 pub mod update_primary_region_output {
     
     /// A builder for [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -219,6 +222,7 @@ pub struct UpdateKeyDescriptionOutput  {
 pub mod update_key_description_output {
     
     /// A builder for [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -248,6 +252,7 @@ pub struct UpdateCustomKeyStoreOutput  {
 pub mod update_custom_key_store_output {
     
     /// A builder for [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -277,6 +282,7 @@ pub struct UpdateAliasOutput  {
 pub mod update_alias_output {
     
     /// A builder for [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -306,6 +312,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -335,6 +342,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -397,6 +405,7 @@ impl SignOutput {
 pub mod sign_output {
     
     /// A builder for [`SignOutput`](crate::output::SignOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -508,6 +517,7 @@ impl ScheduleKeyDeletionOutput {
 pub mod schedule_key_deletion_output {
     
     /// A builder for [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -591,6 +601,7 @@ pub struct RevokeGrantOutput  {
 pub mod revoke_grant_output {
     
     /// A builder for [`RevokeGrantOutput`](crate::output::RevokeGrantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -620,6 +631,7 @@ pub struct RetireGrantOutput  {
 pub mod retire_grant_output {
     
     /// A builder for [`RetireGrantOutput`](crate::output::RetireGrantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -672,6 +684,7 @@ impl ReplicateKeyOutput {
 pub mod replicate_key_output {
     
     /// A builder for [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replica_key_metadata: std::option::Option<crate::model::KeyMetadata>,
@@ -780,6 +793,7 @@ impl ReEncryptOutput {
 pub mod re_encrypt_output {
     
     /// A builder for [`ReEncryptOutput`](crate::output::ReEncryptOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -869,6 +883,7 @@ pub struct PutKeyPolicyOutput  {
 pub mod put_key_policy_output {
     
     /// A builder for [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -921,6 +936,7 @@ impl ListRetirableGrantsOutput {
 pub mod list_retirable_grants_output {
     
     /// A builder for [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
@@ -1022,6 +1038,7 @@ impl ListResourceTagsOutput {
 pub mod list_resource_tags_output {
     
     /// A builder for [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1123,6 +1140,7 @@ impl ListKeysOutput {
 pub mod list_keys_output {
     
     /// A builder for [`ListKeysOutput`](crate::output::ListKeysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keys: std::option::Option<std::vec::Vec<crate::model::KeyListEntry>>,
@@ -1218,6 +1236,7 @@ impl ListKeyPoliciesOutput {
 pub mod list_key_policies_output {
     
     /// A builder for [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1313,6 +1332,7 @@ impl ListGrantsOutput {
 pub mod list_grants_output {
     
     /// A builder for [`ListGrantsOutput`](crate::output::ListGrantsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
@@ -1408,6 +1428,7 @@ impl ListAliasesOutput {
 pub mod list_aliases_output {
     
     /// A builder for [`ListAliasesOutput`](crate::output::ListAliasesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::AliasListEntry>>,
@@ -1480,6 +1501,7 @@ pub struct ImportKeyMaterialOutput  {
 pub mod import_key_material_output {
     
     /// A builder for [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1576,6 +1598,7 @@ impl GetPublicKeyOutput {
 pub mod get_public_key_output {
     
     /// A builder for [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -1757,6 +1780,7 @@ impl  std::fmt::Debug for GetParametersForImportOutput  {
 pub mod get_parameters_for_import_output {
     
     /// A builder for [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -1853,6 +1877,7 @@ impl GetKeyRotationStatusOutput {
 pub mod get_key_rotation_status_output {
     
     /// A builder for [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_rotation_enabled: std::option::Option<bool>,
@@ -1904,6 +1929,7 @@ impl GetKeyPolicyOutput {
 pub mod get_key_policy_output {
     
     /// A builder for [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1961,6 +1987,7 @@ impl  std::fmt::Debug for GenerateRandomOutput  {
 pub mod generate_random_output {
     
     /// A builder for [`GenerateRandomOutput`](crate::output::GenerateRandomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) plaintext: std::option::Option<aws_smithy_types::Blob>,
@@ -2034,6 +2061,7 @@ impl GenerateMacOutput {
 pub mod generate_mac_output {
     
     /// A builder for [`GenerateMacOutput`](crate::output::GenerateMacOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mac: std::option::Option<aws_smithy_types::Blob>,
@@ -2117,6 +2145,7 @@ impl GenerateDataKeyWithoutPlaintextOutput {
 pub mod generate_data_key_without_plaintext_output {
     
     /// A builder for [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -2200,6 +2229,7 @@ impl GenerateDataKeyPairWithoutPlaintextOutput {
 pub mod generate_data_key_pair_without_plaintext_output {
     
     /// A builder for [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) private_key_ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -2325,6 +2355,7 @@ impl  std::fmt::Debug for GenerateDataKeyPairOutput  {
 pub mod generate_data_key_pair_output {
     
     /// A builder for [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) private_key_ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -2457,6 +2488,7 @@ impl  std::fmt::Debug for GenerateDataKeyOutput  {
 pub mod generate_data_key_output {
     
     /// A builder for [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -2554,6 +2586,7 @@ impl EncryptOutput {
 pub mod encrypt_output {
     
     /// A builder for [`EncryptOutput`](crate::output::EncryptOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -2619,6 +2652,7 @@ pub struct EnableKeyRotationOutput  {
 pub mod enable_key_rotation_output {
     
     /// A builder for [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2648,6 +2682,7 @@ pub struct EnableKeyOutput  {
 pub mod enable_key_output {
     
     /// A builder for [`EnableKeyOutput`](crate::output::EnableKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2677,6 +2712,7 @@ pub struct DisconnectCustomKeyStoreOutput  {
 pub mod disconnect_custom_key_store_output {
     
     /// A builder for [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2706,6 +2742,7 @@ pub struct DisableKeyRotationOutput  {
 pub mod disable_key_rotation_output {
     
     /// A builder for [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2735,6 +2772,7 @@ pub struct DisableKeyOutput  {
 pub mod disable_key_output {
     
     /// A builder for [`DisableKeyOutput`](crate::output::DisableKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2773,6 +2811,7 @@ impl DescribeKeyOutput {
 pub mod describe_key_output {
     
     /// A builder for [`DescribeKeyOutput`](crate::output::DescribeKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_metadata: std::option::Option<crate::model::KeyMetadata>,
@@ -2837,6 +2876,7 @@ impl DescribeCustomKeyStoresOutput {
 pub mod describe_custom_key_stores_output {
     
     /// A builder for [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_stores: std::option::Option<std::vec::Vec<crate::model::CustomKeyStoresListEntry>>,
@@ -2909,6 +2949,7 @@ pub struct DeleteImportedKeyMaterialOutput  {
 pub mod delete_imported_key_material_output {
     
     /// A builder for [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2938,6 +2979,7 @@ pub struct DeleteCustomKeyStoreOutput  {
 pub mod delete_custom_key_store_output {
     
     /// A builder for [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2967,6 +3009,7 @@ pub struct DeleteAliasOutput  {
 pub mod delete_alias_output {
     
     /// A builder for [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3028,6 +3071,7 @@ impl  std::fmt::Debug for DecryptOutput  {
 pub mod decrypt_output {
     
     /// A builder for [`DecryptOutput`](crate::output::DecryptOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -3111,6 +3155,7 @@ impl CreateKeyOutput {
 pub mod create_key_output {
     
     /// A builder for [`CreateKeyOutput`](crate::output::CreateKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_metadata: std::option::Option<crate::model::KeyMetadata>,
@@ -3172,6 +3217,7 @@ impl CreateGrantOutput {
 pub mod create_grant_output {
     
     /// A builder for [`CreateGrantOutput`](crate::output::CreateGrantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_token: std::option::Option<std::string::String>,
@@ -3238,6 +3284,7 @@ impl CreateCustomKeyStoreOutput {
 pub mod create_custom_key_store_output {
     
     /// A builder for [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
@@ -3279,6 +3326,7 @@ pub struct CreateAliasOutput  {
 pub mod create_alias_output {
     
     /// A builder for [`CreateAliasOutput`](crate::output::CreateAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3308,6 +3356,7 @@ pub struct ConnectCustomKeyStoreOutput  {
 pub mod connect_custom_key_store_output {
     
     /// A builder for [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3346,6 +3395,7 @@ impl CancelKeyDeletionOutput {
 pub mod cancel_key_deletion_output {
     
     /// A builder for [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,

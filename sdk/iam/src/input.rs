@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_client_id_to_open_id_connect_provider_input {
     
     /// A builder for [`AddClientIdToOpenIdConnectProviderInput`](crate::input::AddClientIdToOpenIdConnectProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -124,6 +125,7 @@ impl AddClientIdToOpenIdConnectProviderInput {
 pub mod add_role_to_instance_profile_input {
     
     /// A builder for [`AddRoleToInstanceProfileInput`](crate::input::AddRoleToInstanceProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
@@ -247,6 +249,7 @@ impl AddRoleToInstanceProfileInput {
 pub mod add_user_to_group_input {
     
     /// A builder for [`AddUserToGroupInput`](crate::input::AddUserToGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -370,6 +373,7 @@ impl AddUserToGroupInput {
 pub mod attach_group_policy_input {
     
     /// A builder for [`AttachGroupPolicyInput`](crate::input::AttachGroupPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -493,6 +497,7 @@ impl AttachGroupPolicyInput {
 pub mod attach_role_policy_input {
     
     /// A builder for [`AttachRolePolicyInput`](crate::input::AttachRolePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -616,6 +621,7 @@ impl AttachRolePolicyInput {
 pub mod attach_user_policy_input {
     
     /// A builder for [`AttachUserPolicyInput`](crate::input::AttachUserPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -739,6 +745,7 @@ impl AttachUserPolicyInput {
 pub mod change_password_input {
     
     /// A builder for [`ChangePasswordInput`](crate::input::ChangePasswordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) old_password: std::option::Option<std::string::String>,
@@ -868,6 +875,7 @@ impl ChangePasswordInput {
 pub mod create_access_key_input {
     
     /// A builder for [`CreateAccessKeyInput`](crate::input::CreateAccessKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -977,6 +985,7 @@ impl CreateAccessKeyInput {
 pub mod create_account_alias_input {
     
     /// A builder for [`CreateAccountAliasInput`](crate::input::CreateAccountAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_alias: std::option::Option<std::string::String>,
@@ -1086,6 +1095,7 @@ impl CreateAccountAliasInput {
 pub mod create_group_input {
     
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -1211,6 +1221,7 @@ impl CreateGroupInput {
 pub mod create_instance_profile_input {
     
     /// A builder for [`CreateInstanceProfileInput`](crate::input::CreateInstanceProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
@@ -1358,6 +1369,7 @@ impl CreateInstanceProfileInput {
 pub mod create_login_profile_input {
     
     /// A builder for [`CreateLoginProfileInput`](crate::input::CreateLoginProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -1503,6 +1515,7 @@ impl CreateLoginProfileInput {
 pub mod create_open_id_connect_provider_input {
     
     /// A builder for [`CreateOpenIdConnectProviderInput`](crate::input::CreateOpenIdConnectProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -1680,6 +1693,7 @@ impl CreateOpenIdConnectProviderInput {
 pub mod create_policy_input {
     
     /// A builder for [`CreatePolicyInput`](crate::input::CreatePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -1879,6 +1893,7 @@ impl CreatePolicyInput {
 pub mod create_policy_version_input {
     
     /// A builder for [`CreatePolicyVersionInput`](crate::input::CreatePolicyVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -2033,6 +2048,7 @@ impl CreatePolicyVersionInput {
 pub mod create_role_input {
     
     /// A builder for [`CreateRoleInput`](crate::input::CreateRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -2246,6 +2262,7 @@ impl CreateRoleInput {
 pub mod create_saml_provider_input {
     
     /// A builder for [`CreateSamlProviderInput`](crate::input::CreateSamlProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_metadata_document: std::option::Option<std::string::String>,
@@ -2391,6 +2408,7 @@ impl CreateSamlProviderInput {
 pub mod create_service_linked_role_input {
     
     /// A builder for [`CreateServiceLinkedRoleInput`](crate::input::CreateServiceLinkedRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_service_name: std::option::Option<std::string::String>,
@@ -2528,6 +2546,7 @@ impl CreateServiceLinkedRoleInput {
 pub mod create_service_specific_credential_input {
     
     /// A builder for [`CreateServiceSpecificCredentialInput`](crate::input::CreateServiceSpecificCredentialInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -2649,6 +2668,7 @@ impl CreateServiceSpecificCredentialInput {
 pub mod create_user_input {
     
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -2808,6 +2828,7 @@ impl CreateUserInput {
 pub mod create_virtual_mfa_device_input {
     
     /// A builder for [`CreateVirtualMfaDeviceInput`](crate::input::CreateVirtualMfaDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -2955,6 +2976,7 @@ impl CreateVirtualMfaDeviceInput {
 pub mod deactivate_mfa_device_input {
     
     /// A builder for [`DeactivateMfaDeviceInput`](crate::input::DeactivateMfaDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -3078,6 +3100,7 @@ impl DeactivateMfaDeviceInput {
 pub mod delete_access_key_input {
     
     /// A builder for [`DeleteAccessKeyInput`](crate::input::DeleteAccessKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -3201,6 +3224,7 @@ impl DeleteAccessKeyInput {
 pub mod delete_account_alias_input {
     
     /// A builder for [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_alias: std::option::Option<std::string::String>,
@@ -3310,6 +3334,7 @@ impl DeleteAccountAliasInput {
 pub mod delete_account_password_policy_input {
     
     /// A builder for [`DeleteAccountPasswordPolicyInput`](crate::input::DeleteAccountPasswordPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3402,6 +3427,7 @@ impl DeleteAccountPasswordPolicyInput {
 pub mod delete_group_input {
     
     /// A builder for [`DeleteGroupInput`](crate::input::DeleteGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -3511,6 +3537,7 @@ impl DeleteGroupInput {
 pub mod delete_group_policy_input {
     
     /// A builder for [`DeleteGroupPolicyInput`](crate::input::DeleteGroupPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -3634,6 +3661,7 @@ impl DeleteGroupPolicyInput {
 pub mod delete_instance_profile_input {
     
     /// A builder for [`DeleteInstanceProfileInput`](crate::input::DeleteInstanceProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
@@ -3743,6 +3771,7 @@ impl DeleteInstanceProfileInput {
 pub mod delete_login_profile_input {
     
     /// A builder for [`DeleteLoginProfileInput`](crate::input::DeleteLoginProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -3852,6 +3881,7 @@ impl DeleteLoginProfileInput {
 pub mod delete_open_id_connect_provider_input {
     
     /// A builder for [`DeleteOpenIdConnectProviderInput`](crate::input::DeleteOpenIdConnectProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -3959,6 +3989,7 @@ impl DeleteOpenIdConnectProviderInput {
 pub mod delete_policy_input {
     
     /// A builder for [`DeletePolicyInput`](crate::input::DeletePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -4068,6 +4099,7 @@ impl DeletePolicyInput {
 pub mod delete_policy_version_input {
     
     /// A builder for [`DeletePolicyVersionInput`](crate::input::DeletePolicyVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -4193,6 +4225,7 @@ impl DeletePolicyVersionInput {
 pub mod delete_role_input {
     
     /// A builder for [`DeleteRoleInput`](crate::input::DeleteRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -4302,6 +4335,7 @@ impl DeleteRoleInput {
 pub mod delete_role_permissions_boundary_input {
     
     /// A builder for [`DeleteRolePermissionsBoundaryInput`](crate::input::DeleteRolePermissionsBoundaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -4409,6 +4443,7 @@ impl DeleteRolePermissionsBoundaryInput {
 pub mod delete_role_policy_input {
     
     /// A builder for [`DeleteRolePolicyInput`](crate::input::DeleteRolePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -4532,6 +4567,7 @@ impl DeleteRolePolicyInput {
 pub mod delete_saml_provider_input {
     
     /// A builder for [`DeleteSamlProviderInput`](crate::input::DeleteSamlProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_provider_arn: std::option::Option<std::string::String>,
@@ -4639,6 +4675,7 @@ impl DeleteSamlProviderInput {
 pub mod delete_server_certificate_input {
     
     /// A builder for [`DeleteServerCertificateInput`](crate::input::DeleteServerCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_certificate_name: std::option::Option<std::string::String>,
@@ -4748,6 +4785,7 @@ impl DeleteServerCertificateInput {
 pub mod delete_service_linked_role_input {
     
     /// A builder for [`DeleteServiceLinkedRoleInput`](crate::input::DeleteServiceLinkedRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -4855,6 +4893,7 @@ impl DeleteServiceLinkedRoleInput {
 pub mod delete_service_specific_credential_input {
     
     /// A builder for [`DeleteServiceSpecificCredentialInput`](crate::input::DeleteServiceSpecificCredentialInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -4978,6 +5017,7 @@ impl DeleteServiceSpecificCredentialInput {
 pub mod delete_signing_certificate_input {
     
     /// A builder for [`DeleteSigningCertificateInput`](crate::input::DeleteSigningCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -5101,6 +5141,7 @@ impl DeleteSigningCertificateInput {
 pub mod delete_ssh_public_key_input {
     
     /// A builder for [`DeleteSshPublicKeyInput`](crate::input::DeleteSshPublicKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -5224,6 +5265,7 @@ impl DeleteSshPublicKeyInput {
 pub mod delete_user_input {
     
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -5333,6 +5375,7 @@ impl DeleteUserInput {
 pub mod delete_user_permissions_boundary_input {
     
     /// A builder for [`DeleteUserPermissionsBoundaryInput`](crate::input::DeleteUserPermissionsBoundaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -5440,6 +5483,7 @@ impl DeleteUserPermissionsBoundaryInput {
 pub mod delete_user_policy_input {
     
     /// A builder for [`DeleteUserPolicyInput`](crate::input::DeleteUserPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -5563,6 +5607,7 @@ impl DeleteUserPolicyInput {
 pub mod delete_virtual_mfa_device_input {
     
     /// A builder for [`DeleteVirtualMfaDeviceInput`](crate::input::DeleteVirtualMfaDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) serial_number: std::option::Option<std::string::String>,
@@ -5672,6 +5717,7 @@ impl DeleteVirtualMfaDeviceInput {
 pub mod detach_group_policy_input {
     
     /// A builder for [`DetachGroupPolicyInput`](crate::input::DetachGroupPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -5795,6 +5841,7 @@ impl DetachGroupPolicyInput {
 pub mod detach_role_policy_input {
     
     /// A builder for [`DetachRolePolicyInput`](crate::input::DetachRolePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -5918,6 +5965,7 @@ impl DetachRolePolicyInput {
 pub mod detach_user_policy_input {
     
     /// A builder for [`DetachUserPolicyInput`](crate::input::DetachUserPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -6041,6 +6089,7 @@ impl DetachUserPolicyInput {
 pub mod enable_mfa_device_input {
     
     /// A builder for [`EnableMfaDeviceInput`](crate::input::EnableMfaDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -6200,6 +6249,7 @@ impl EnableMfaDeviceInput {
 pub mod generate_credential_report_input {
     
     /// A builder for [`GenerateCredentialReportInput`](crate::input::GenerateCredentialReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -6292,6 +6342,7 @@ impl GenerateCredentialReportInput {
 pub mod generate_organizations_access_report_input {
     
     /// A builder for [`GenerateOrganizationsAccessReportInput`](crate::input::GenerateOrganizationsAccessReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_path: std::option::Option<std::string::String>,
@@ -6413,6 +6464,7 @@ impl GenerateOrganizationsAccessReportInput {
 pub mod generate_service_last_accessed_details_input {
     
     /// A builder for [`GenerateServiceLastAccessedDetailsInput`](crate::input::GenerateServiceLastAccessedDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6532,6 +6584,7 @@ impl GenerateServiceLastAccessedDetailsInput {
 pub mod get_access_key_last_used_input {
     
     /// A builder for [`GetAccessKeyLastUsedInput`](crate::input::GetAccessKeyLastUsedInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -6641,6 +6694,7 @@ impl GetAccessKeyLastUsedInput {
 pub mod get_account_authorization_details_input {
     
     /// A builder for [`GetAccountAuthorizationDetailsInput`](crate::input::GetAccountAuthorizationDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
@@ -6782,6 +6836,7 @@ impl GetAccountAuthorizationDetailsInput {
 pub mod get_account_password_policy_input {
     
     /// A builder for [`GetAccountPasswordPolicyInput`](crate::input::GetAccountPasswordPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -6874,6 +6929,7 @@ impl GetAccountPasswordPolicyInput {
 pub mod get_account_summary_input {
     
     /// A builder for [`GetAccountSummaryInput`](crate::input::GetAccountSummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -6966,6 +7022,7 @@ impl GetAccountSummaryInput {
 pub mod get_context_keys_for_custom_policy_input {
     
     /// A builder for [`GetContextKeysForCustomPolicyInput`](crate::input::GetContextKeysForCustomPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_input_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7091,6 +7148,7 @@ impl GetContextKeysForCustomPolicyInput {
 pub mod get_context_keys_for_principal_policy_input {
     
     /// A builder for [`GetContextKeysForPrincipalPolicyInput`](crate::input::GetContextKeysForPrincipalPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_source_arn: std::option::Option<std::string::String>,
@@ -7230,6 +7288,7 @@ impl GetContextKeysForPrincipalPolicyInput {
 pub mod get_credential_report_input {
     
     /// A builder for [`GetCredentialReportInput`](crate::input::GetCredentialReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -7322,6 +7381,7 @@ impl GetCredentialReportInput {
 pub mod get_group_input {
     
     /// A builder for [`GetGroupInput`](crate::input::GetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -7457,6 +7517,7 @@ impl GetGroupInput {
 pub mod get_group_policy_input {
     
     /// A builder for [`GetGroupPolicyInput`](crate::input::GetGroupPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -7580,6 +7641,7 @@ impl GetGroupPolicyInput {
 pub mod get_instance_profile_input {
     
     /// A builder for [`GetInstanceProfileInput`](crate::input::GetInstanceProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
@@ -7689,6 +7751,7 @@ impl GetInstanceProfileInput {
 pub mod get_login_profile_input {
     
     /// A builder for [`GetLoginProfileInput`](crate::input::GetLoginProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -7798,6 +7861,7 @@ impl GetLoginProfileInput {
 pub mod get_open_id_connect_provider_input {
     
     /// A builder for [`GetOpenIdConnectProviderInput`](crate::input::GetOpenIdConnectProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -7907,6 +7971,7 @@ impl GetOpenIdConnectProviderInput {
 pub mod get_organizations_access_report_input {
     
     /// A builder for [`GetOrganizationsAccessReportInput`](crate::input::GetOrganizationsAccessReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -8052,6 +8117,7 @@ impl GetOrganizationsAccessReportInput {
 pub mod get_policy_input {
     
     /// A builder for [`GetPolicyInput`](crate::input::GetPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -8161,6 +8227,7 @@ impl GetPolicyInput {
 pub mod get_policy_version_input {
     
     /// A builder for [`GetPolicyVersionInput`](crate::input::GetPolicyVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -8284,6 +8351,7 @@ impl GetPolicyVersionInput {
 pub mod get_role_input {
     
     /// A builder for [`GetRoleInput`](crate::input::GetRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -8393,6 +8461,7 @@ impl GetRoleInput {
 pub mod get_role_policy_input {
     
     /// A builder for [`GetRolePolicyInput`](crate::input::GetRolePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -8516,6 +8585,7 @@ impl GetRolePolicyInput {
 pub mod get_saml_provider_input {
     
     /// A builder for [`GetSamlProviderInput`](crate::input::GetSamlProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_provider_arn: std::option::Option<std::string::String>,
@@ -8625,6 +8695,7 @@ impl GetSamlProviderInput {
 pub mod get_server_certificate_input {
     
     /// A builder for [`GetServerCertificateInput`](crate::input::GetServerCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_certificate_name: std::option::Option<std::string::String>,
@@ -8734,6 +8805,7 @@ impl GetServerCertificateInput {
 pub mod get_service_last_accessed_details_input {
     
     /// A builder for [`GetServiceLastAccessedDetailsInput`](crate::input::GetServiceLastAccessedDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -8867,6 +8939,7 @@ impl GetServiceLastAccessedDetailsInput {
 pub mod get_service_last_accessed_details_with_entities_input {
     
     /// A builder for [`GetServiceLastAccessedDetailsWithEntitiesInput`](crate::input::GetServiceLastAccessedDetailsWithEntitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -9014,6 +9087,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesInput {
 pub mod get_service_linked_role_deletion_status_input {
     
     /// A builder for [`GetServiceLinkedRoleDeletionStatusInput`](crate::input::GetServiceLinkedRoleDeletionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deletion_task_id: std::option::Option<std::string::String>,
@@ -9135,6 +9209,7 @@ impl GetServiceLinkedRoleDeletionStatusInput {
 pub mod get_ssh_public_key_input {
     
     /// A builder for [`GetSshPublicKeyInput`](crate::input::GetSshPublicKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -9270,6 +9345,7 @@ impl GetSshPublicKeyInput {
 pub mod get_user_input {
     
     /// A builder for [`GetUserInput`](crate::input::GetUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -9379,6 +9455,7 @@ impl GetUserInput {
 pub mod get_user_policy_input {
     
     /// A builder for [`GetUserPolicyInput`](crate::input::GetUserPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -9502,6 +9579,7 @@ impl GetUserPolicyInput {
 pub mod list_access_keys_input {
     
     /// A builder for [`ListAccessKeysInput`](crate::input::ListAccessKeysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -9637,6 +9715,7 @@ impl ListAccessKeysInput {
 pub mod list_account_aliases_input {
     
     /// A builder for [`ListAccountAliasesInput`](crate::input::ListAccountAliasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -9758,6 +9837,7 @@ impl ListAccountAliasesInput {
 pub mod list_attached_group_policies_input {
     
     /// A builder for [`ListAttachedGroupPoliciesInput`](crate::input::ListAttachedGroupPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -9907,6 +9987,7 @@ impl ListAttachedGroupPoliciesInput {
 pub mod list_attached_role_policies_input {
     
     /// A builder for [`ListAttachedRolePoliciesInput`](crate::input::ListAttachedRolePoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -10056,6 +10137,7 @@ impl ListAttachedRolePoliciesInput {
 pub mod list_attached_user_policies_input {
     
     /// A builder for [`ListAttachedUserPoliciesInput`](crate::input::ListAttachedUserPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -10205,6 +10287,7 @@ impl ListAttachedUserPoliciesInput {
 pub mod list_entities_for_policy_input {
     
     /// A builder for [`ListEntitiesForPolicyInput`](crate::input::ListEntitiesForPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -10384,6 +10467,7 @@ impl ListEntitiesForPolicyInput {
 pub mod list_group_policies_input {
     
     /// A builder for [`ListGroupPoliciesInput`](crate::input::ListGroupPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -10519,6 +10603,7 @@ impl ListGroupPoliciesInput {
 pub mod list_groups_input {
     
     /// A builder for [`ListGroupsInput`](crate::input::ListGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_prefix: std::option::Option<std::string::String>,
@@ -10654,6 +10739,7 @@ impl ListGroupsInput {
 pub mod list_groups_for_user_input {
     
     /// A builder for [`ListGroupsForUserInput`](crate::input::ListGroupsForUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -10789,6 +10875,7 @@ impl ListGroupsForUserInput {
 pub mod list_instance_profiles_input {
     
     /// A builder for [`ListInstanceProfilesInput`](crate::input::ListInstanceProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_prefix: std::option::Option<std::string::String>,
@@ -10924,6 +11011,7 @@ impl ListInstanceProfilesInput {
 pub mod list_instance_profiles_for_role_input {
     
     /// A builder for [`ListInstanceProfilesForRoleInput`](crate::input::ListInstanceProfilesForRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -11059,6 +11147,7 @@ impl ListInstanceProfilesForRoleInput {
 pub mod list_instance_profile_tags_input {
     
     /// A builder for [`ListInstanceProfileTagsInput`](crate::input::ListInstanceProfileTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
@@ -11194,6 +11283,7 @@ impl ListInstanceProfileTagsInput {
 pub mod list_mfa_devices_input {
     
     /// A builder for [`ListMfaDevicesInput`](crate::input::ListMfaDevicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -11329,6 +11419,7 @@ impl ListMfaDevicesInput {
 pub mod list_mfa_device_tags_input {
     
     /// A builder for [`ListMfaDeviceTagsInput`](crate::input::ListMfaDeviceTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) serial_number: std::option::Option<std::string::String>,
@@ -11464,6 +11555,7 @@ impl ListMfaDeviceTagsInput {
 pub mod list_open_id_connect_providers_input {
     
     /// A builder for [`ListOpenIdConnectProvidersInput`](crate::input::ListOpenIdConnectProvidersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -11556,6 +11648,7 @@ impl ListOpenIdConnectProvidersInput {
 pub mod list_open_id_connect_provider_tags_input {
     
     /// A builder for [`ListOpenIdConnectProviderTagsInput`](crate::input::ListOpenIdConnectProviderTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -11691,6 +11784,7 @@ impl ListOpenIdConnectProviderTagsInput {
 pub mod list_policies_input {
     
     /// A builder for [`ListPoliciesInput`](crate::input::ListPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::PolicyScopeType>,
@@ -11871,6 +11965,7 @@ impl ListPoliciesInput {
 pub mod list_policies_granting_service_access_input {
     
     /// A builder for [`ListPoliciesGrantingServiceAccessInput`](crate::input::ListPoliciesGrantingServiceAccessInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -12010,6 +12105,7 @@ impl ListPoliciesGrantingServiceAccessInput {
 pub mod list_policy_tags_input {
     
     /// A builder for [`ListPolicyTagsInput`](crate::input::ListPolicyTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -12145,6 +12241,7 @@ impl ListPolicyTagsInput {
 pub mod list_policy_versions_input {
     
     /// A builder for [`ListPolicyVersionsInput`](crate::input::ListPolicyVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -12280,6 +12377,7 @@ impl ListPolicyVersionsInput {
 pub mod list_role_policies_input {
     
     /// A builder for [`ListRolePoliciesInput`](crate::input::ListRolePoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -12415,6 +12513,7 @@ impl ListRolePoliciesInput {
 pub mod list_roles_input {
     
     /// A builder for [`ListRolesInput`](crate::input::ListRolesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_prefix: std::option::Option<std::string::String>,
@@ -12550,6 +12649,7 @@ impl ListRolesInput {
 pub mod list_role_tags_input {
     
     /// A builder for [`ListRoleTagsInput`](crate::input::ListRoleTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -12685,6 +12785,7 @@ impl ListRoleTagsInput {
 pub mod list_saml_providers_input {
     
     /// A builder for [`ListSamlProvidersInput`](crate::input::ListSamlProvidersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -12777,6 +12878,7 @@ impl ListSamlProvidersInput {
 pub mod list_saml_provider_tags_input {
     
     /// A builder for [`ListSamlProviderTagsInput`](crate::input::ListSamlProviderTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_provider_arn: std::option::Option<std::string::String>,
@@ -12912,6 +13014,7 @@ impl ListSamlProviderTagsInput {
 pub mod list_server_certificates_input {
     
     /// A builder for [`ListServerCertificatesInput`](crate::input::ListServerCertificatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_prefix: std::option::Option<std::string::String>,
@@ -13047,6 +13150,7 @@ impl ListServerCertificatesInput {
 pub mod list_server_certificate_tags_input {
     
     /// A builder for [`ListServerCertificateTagsInput`](crate::input::ListServerCertificateTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_certificate_name: std::option::Option<std::string::String>,
@@ -13182,6 +13286,7 @@ impl ListServerCertificateTagsInput {
 pub mod list_service_specific_credentials_input {
     
     /// A builder for [`ListServiceSpecificCredentialsInput`](crate::input::ListServiceSpecificCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -13303,6 +13408,7 @@ impl ListServiceSpecificCredentialsInput {
 pub mod list_signing_certificates_input {
     
     /// A builder for [`ListSigningCertificatesInput`](crate::input::ListSigningCertificatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -13438,6 +13544,7 @@ impl ListSigningCertificatesInput {
 pub mod list_ssh_public_keys_input {
     
     /// A builder for [`ListSshPublicKeysInput`](crate::input::ListSshPublicKeysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -13573,6 +13680,7 @@ impl ListSshPublicKeysInput {
 pub mod list_user_policies_input {
     
     /// A builder for [`ListUserPoliciesInput`](crate::input::ListUserPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -13708,6 +13816,7 @@ impl ListUserPoliciesInput {
 pub mod list_users_input {
     
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_prefix: std::option::Option<std::string::String>,
@@ -13843,6 +13952,7 @@ impl ListUsersInput {
 pub mod list_user_tags_input {
     
     /// A builder for [`ListUserTagsInput`](crate::input::ListUserTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -13978,6 +14088,7 @@ impl ListUserTagsInput {
 pub mod list_virtual_mfa_devices_input {
     
     /// A builder for [`ListVirtualMfaDevicesInput`](crate::input::ListVirtualMfaDevicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assignment_status: std::option::Option<crate::model::AssignmentStatusType>,
@@ -14111,6 +14222,7 @@ impl ListVirtualMfaDevicesInput {
 pub mod put_group_policy_input {
     
     /// A builder for [`PutGroupPolicyInput`](crate::input::PutGroupPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -14260,6 +14372,7 @@ impl PutGroupPolicyInput {
 pub mod put_role_permissions_boundary_input {
     
     /// A builder for [`PutRolePermissionsBoundaryInput`](crate::input::PutRolePermissionsBoundaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -14379,6 +14492,7 @@ impl PutRolePermissionsBoundaryInput {
 pub mod put_role_policy_input {
     
     /// A builder for [`PutRolePolicyInput`](crate::input::PutRolePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -14528,6 +14642,7 @@ impl PutRolePolicyInput {
 pub mod put_user_permissions_boundary_input {
     
     /// A builder for [`PutUserPermissionsBoundaryInput`](crate::input::PutUserPermissionsBoundaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -14647,6 +14762,7 @@ impl PutUserPermissionsBoundaryInput {
 pub mod put_user_policy_input {
     
     /// A builder for [`PutUserPolicyInput`](crate::input::PutUserPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -14796,6 +14912,7 @@ impl PutUserPolicyInput {
 pub mod remove_client_id_from_open_id_connect_provider_input {
     
     /// A builder for [`RemoveClientIdFromOpenIdConnectProviderInput`](crate::input::RemoveClientIdFromOpenIdConnectProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -14917,6 +15034,7 @@ impl RemoveClientIdFromOpenIdConnectProviderInput {
 pub mod remove_role_from_instance_profile_input {
     
     /// A builder for [`RemoveRoleFromInstanceProfileInput`](crate::input::RemoveRoleFromInstanceProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
@@ -15040,6 +15158,7 @@ impl RemoveRoleFromInstanceProfileInput {
 pub mod remove_user_from_group_input {
     
     /// A builder for [`RemoveUserFromGroupInput`](crate::input::RemoveUserFromGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -15163,6 +15282,7 @@ impl RemoveUserFromGroupInput {
 pub mod reset_service_specific_credential_input {
     
     /// A builder for [`ResetServiceSpecificCredentialInput`](crate::input::ResetServiceSpecificCredentialInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -15286,6 +15406,7 @@ impl ResetServiceSpecificCredentialInput {
 pub mod resync_mfa_device_input {
     
     /// A builder for [`ResyncMfaDeviceInput`](crate::input::ResyncMfaDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -15437,6 +15558,7 @@ impl ResyncMfaDeviceInput {
 pub mod set_default_policy_version_input {
     
     /// A builder for [`SetDefaultPolicyVersionInput`](crate::input::SetDefaultPolicyVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -15560,6 +15682,7 @@ impl SetDefaultPolicyVersionInput {
 pub mod set_security_token_service_preferences_input {
     
     /// A builder for [`SetSecurityTokenServicePreferencesInput`](crate::input::SetSecurityTokenServicePreferencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_endpoint_token_version: std::option::Option<crate::model::GlobalEndpointTokenVersion>,
@@ -15669,6 +15792,7 @@ impl SetSecurityTokenServicePreferencesInput {
 pub mod simulate_custom_policy_input {
     
     /// A builder for [`SimulateCustomPolicyInput`](crate::input::SimulateCustomPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_input_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15994,6 +16118,7 @@ impl SimulateCustomPolicyInput {
 pub mod simulate_principal_policy_input {
     
     /// A builder for [`SimulatePrincipalPolicyInput`](crate::input::SimulatePrincipalPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_source_arn: std::option::Option<std::string::String>,
@@ -16333,6 +16458,7 @@ impl SimulatePrincipalPolicyInput {
 pub mod tag_instance_profile_input {
     
     /// A builder for [`TagInstanceProfileInput`](crate::input::TagInstanceProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
@@ -16460,6 +16586,7 @@ impl TagInstanceProfileInput {
 pub mod tag_mfa_device_input {
     
     /// A builder for [`TagMfaDeviceInput`](crate::input::TagMfaDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) serial_number: std::option::Option<std::string::String>,
@@ -16587,6 +16714,7 @@ impl TagMfaDeviceInput {
 pub mod tag_open_id_connect_provider_input {
     
     /// A builder for [`TagOpenIdConnectProviderInput`](crate::input::TagOpenIdConnectProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -16714,6 +16842,7 @@ impl TagOpenIdConnectProviderInput {
 pub mod tag_policy_input {
     
     /// A builder for [`TagPolicyInput`](crate::input::TagPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -16841,6 +16970,7 @@ impl TagPolicyInput {
 pub mod tag_role_input {
     
     /// A builder for [`TagRoleInput`](crate::input::TagRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -16968,6 +17098,7 @@ impl TagRoleInput {
 pub mod tag_saml_provider_input {
     
     /// A builder for [`TagSamlProviderInput`](crate::input::TagSamlProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_provider_arn: std::option::Option<std::string::String>,
@@ -17095,6 +17226,7 @@ impl TagSamlProviderInput {
 pub mod tag_server_certificate_input {
     
     /// A builder for [`TagServerCertificateInput`](crate::input::TagServerCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_certificate_name: std::option::Option<std::string::String>,
@@ -17222,6 +17354,7 @@ impl TagServerCertificateInput {
 pub mod tag_user_input {
     
     /// A builder for [`TagUserInput`](crate::input::TagUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -17349,6 +17482,7 @@ impl TagUserInput {
 pub mod untag_instance_profile_input {
     
     /// A builder for [`UntagInstanceProfileInput`](crate::input::UntagInstanceProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
@@ -17476,6 +17610,7 @@ impl UntagInstanceProfileInput {
 pub mod untag_mfa_device_input {
     
     /// A builder for [`UntagMfaDeviceInput`](crate::input::UntagMfaDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) serial_number: std::option::Option<std::string::String>,
@@ -17603,6 +17738,7 @@ impl UntagMfaDeviceInput {
 pub mod untag_open_id_connect_provider_input {
     
     /// A builder for [`UntagOpenIdConnectProviderInput`](crate::input::UntagOpenIdConnectProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -17730,6 +17866,7 @@ impl UntagOpenIdConnectProviderInput {
 pub mod untag_policy_input {
     
     /// A builder for [`UntagPolicyInput`](crate::input::UntagPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -17857,6 +17994,7 @@ impl UntagPolicyInput {
 pub mod untag_role_input {
     
     /// A builder for [`UntagRoleInput`](crate::input::UntagRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -17984,6 +18122,7 @@ impl UntagRoleInput {
 pub mod untag_saml_provider_input {
     
     /// A builder for [`UntagSamlProviderInput`](crate::input::UntagSamlProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_provider_arn: std::option::Option<std::string::String>,
@@ -18111,6 +18250,7 @@ impl UntagSamlProviderInput {
 pub mod untag_server_certificate_input {
     
     /// A builder for [`UntagServerCertificateInput`](crate::input::UntagServerCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_certificate_name: std::option::Option<std::string::String>,
@@ -18238,6 +18378,7 @@ impl UntagServerCertificateInput {
 pub mod untag_user_input {
     
     /// A builder for [`UntagUserInput`](crate::input::UntagUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -18365,6 +18506,7 @@ impl UntagUserInput {
 pub mod update_access_key_input {
     
     /// A builder for [`UpdateAccessKeyInput`](crate::input::UpdateAccessKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -18500,6 +18642,7 @@ impl UpdateAccessKeyInput {
 pub mod update_account_password_policy_input {
     
     /// A builder for [`UpdateAccountPasswordPolicyInput`](crate::input::UpdateAccountPasswordPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) minimum_password_length: std::option::Option<i32>,
@@ -18732,6 +18875,7 @@ impl UpdateAccountPasswordPolicyInput {
 pub mod update_assume_role_policy_input {
     
     /// A builder for [`UpdateAssumeRolePolicyInput`](crate::input::UpdateAssumeRolePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -18867,6 +19011,7 @@ impl UpdateAssumeRolePolicyInput {
 pub mod update_group_input {
     
     /// A builder for [`UpdateGroupInput`](crate::input::UpdateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -19004,6 +19149,7 @@ impl UpdateGroupInput {
 pub mod update_login_profile_input {
     
     /// A builder for [`UpdateLoginProfileInput`](crate::input::UpdateLoginProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -19160,6 +19306,7 @@ impl UpdateLoginProfileInput {
 pub mod update_open_id_connect_provider_thumbprint_input {
     
     /// A builder for [`UpdateOpenIdConnectProviderThumbprintInput`](crate::input::UpdateOpenIdConnectProviderThumbprintInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -19287,6 +19434,7 @@ impl UpdateOpenIdConnectProviderThumbprintInput {
 pub mod update_role_input {
     
     /// A builder for [`UpdateRoleInput`](crate::input::UpdateRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -19420,6 +19568,7 @@ impl UpdateRoleInput {
 pub mod update_role_description_input {
     
     /// A builder for [`UpdateRoleDescriptionInput`](crate::input::UpdateRoleDescriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -19539,6 +19688,7 @@ impl UpdateRoleDescriptionInput {
 pub mod update_saml_provider_input {
     
     /// A builder for [`UpdateSamlProviderInput`](crate::input::UpdateSamlProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_metadata_document: std::option::Option<std::string::String>,
@@ -19660,6 +19810,7 @@ impl UpdateSamlProviderInput {
 pub mod update_server_certificate_input {
     
     /// A builder for [`UpdateServerCertificateInput`](crate::input::UpdateServerCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_certificate_name: std::option::Option<std::string::String>,
@@ -19797,6 +19948,7 @@ impl UpdateServerCertificateInput {
 pub mod update_service_specific_credential_input {
     
     /// A builder for [`UpdateServiceSpecificCredentialInput`](crate::input::UpdateServiceSpecificCredentialInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -19932,6 +20084,7 @@ impl UpdateServiceSpecificCredentialInput {
 pub mod update_signing_certificate_input {
     
     /// A builder for [`UpdateSigningCertificateInput`](crate::input::UpdateSigningCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -20067,6 +20220,7 @@ impl UpdateSigningCertificateInput {
 pub mod update_ssh_public_key_input {
     
     /// A builder for [`UpdateSshPublicKeyInput`](crate::input::UpdateSshPublicKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -20202,6 +20356,7 @@ impl UpdateSshPublicKeyInput {
 pub mod update_user_input {
     
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -20339,6 +20494,7 @@ impl UpdateUserInput {
 pub mod upload_server_certificate_input {
     
     /// A builder for [`UploadServerCertificateInput`](crate::input::UploadServerCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -20572,6 +20728,7 @@ impl UploadServerCertificateInput {
 pub mod upload_signing_certificate_input {
     
     /// A builder for [`UploadSigningCertificateInput`](crate::input::UploadSigningCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -20705,6 +20862,7 @@ impl UploadSigningCertificateInput {
 pub mod upload_ssh_public_key_input {
     
     /// A builder for [`UploadSshPublicKeyInput`](crate::input::UploadSshPublicKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,

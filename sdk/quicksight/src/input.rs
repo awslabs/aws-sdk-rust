@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_ingestion_input {
     
     /// A builder for [`CancelIngestionInput`](crate::input::CancelIngestionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -150,6 +151,7 @@ impl CancelIngestionInput {
 pub mod create_account_customization_input {
     
     /// A builder for [`CreateAccountCustomizationInput`](crate::input::CreateAccountCustomizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -317,6 +319,7 @@ impl CreateAccountCustomizationInput {
 pub mod create_account_subscription_input {
     
     /// A builder for [`CreateAccountSubscriptionInput`](crate::input::CreateAccountSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) edition: std::option::Option<crate::model::Edition>,
@@ -632,6 +635,7 @@ impl CreateAccountSubscriptionInput {
 pub mod create_analysis_input {
     
     /// A builder for [`CreateAnalysisInput`](crate::input::CreateAnalysisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -863,6 +867,7 @@ impl CreateAnalysisInput {
 pub mod create_dashboard_input {
     
     /// A builder for [`CreateDashboardInput`](crate::input::CreateDashboardInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -1130,6 +1135,7 @@ impl CreateDashboardInput {
 pub mod create_data_set_input {
     
     /// A builder for [`CreateDataSetInput`](crate::input::CreateDataSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -1441,6 +1447,7 @@ impl CreateDataSetInput {
 pub mod create_data_source_input {
     
     /// A builder for [`CreateDataSourceInput`](crate::input::CreateDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -1692,6 +1699,7 @@ impl CreateDataSourceInput {
 pub mod create_folder_input {
     
     /// A builder for [`CreateFolderInput`](crate::input::CreateFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -1899,6 +1907,7 @@ impl CreateFolderInput {
 pub mod create_folder_membership_input {
     
     /// A builder for [`CreateFolderMembershipInput`](crate::input::CreateFolderMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -2062,6 +2071,7 @@ impl CreateFolderMembershipInput {
 pub mod create_group_input {
     
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -2217,6 +2227,7 @@ impl CreateGroupInput {
 pub mod create_group_membership_input {
     
     /// A builder for [`CreateGroupMembershipInput`](crate::input::CreateGroupMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_name: std::option::Option<std::string::String>,
@@ -2380,6 +2391,7 @@ impl CreateGroupMembershipInput {
 pub mod create_iam_policy_assignment_input {
     
     /// A builder for [`CreateIamPolicyAssignmentInput`](crate::input::CreateIamPolicyAssignmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -2575,6 +2587,7 @@ impl CreateIamPolicyAssignmentInput {
 pub mod create_ingestion_input {
     
     /// A builder for [`CreateIngestionInput`](crate::input::CreateIngestionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -2736,6 +2749,7 @@ impl CreateIngestionInput {
 pub mod create_namespace_input {
     
     /// A builder for [`CreateNamespaceInput`](crate::input::CreateNamespaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -2891,6 +2905,7 @@ impl CreateNamespaceInput {
 pub mod create_template_input {
     
     /// A builder for [`CreateTemplateInput`](crate::input::CreateTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -3110,6 +3125,7 @@ impl CreateTemplateInput {
 pub mod create_template_alias_input {
     
     /// A builder for [`CreateTemplateAliasInput`](crate::input::CreateTemplateAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -3271,6 +3287,7 @@ impl CreateTemplateAliasInput {
 pub mod create_theme_input {
     
     /// A builder for [`CreateThemeInput`](crate::input::CreateThemeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -3486,6 +3503,7 @@ impl CreateThemeInput {
 pub mod create_theme_alias_input {
     
     /// A builder for [`CreateThemeAliasInput`](crate::input::CreateThemeAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -3647,6 +3665,7 @@ impl CreateThemeAliasInput {
 pub mod delete_account_customization_input {
     
     /// A builder for [`DeleteAccountCustomizationInput`](crate::input::DeleteAccountCustomizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -3778,6 +3797,7 @@ impl DeleteAccountCustomizationInput {
 pub mod delete_account_subscription_input {
     
     /// A builder for [`DeleteAccountSubscriptionInput`](crate::input::DeleteAccountSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -3887,6 +3907,7 @@ impl DeleteAccountSubscriptionInput {
 pub mod delete_analysis_input {
     
     /// A builder for [`DeleteAnalysisInput`](crate::input::DeleteAnalysisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -4052,6 +4073,7 @@ impl DeleteAnalysisInput {
 pub mod delete_dashboard_input {
     
     /// A builder for [`DeleteDashboardInput`](crate::input::DeleteDashboardInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -4201,6 +4223,7 @@ impl DeleteDashboardInput {
 pub mod delete_data_set_input {
     
     /// A builder for [`DeleteDataSetInput`](crate::input::DeleteDataSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -4328,6 +4351,7 @@ impl DeleteDataSetInput {
 pub mod delete_data_source_input {
     
     /// A builder for [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -4455,6 +4479,7 @@ impl DeleteDataSourceInput {
 pub mod delete_folder_input {
     
     /// A builder for [`DeleteFolderInput`](crate::input::DeleteFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -4582,6 +4607,7 @@ impl DeleteFolderInput {
 pub mod delete_folder_membership_input {
     
     /// A builder for [`DeleteFolderMembershipInput`](crate::input::DeleteFolderMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -4745,6 +4771,7 @@ impl DeleteFolderMembershipInput {
 pub mod delete_group_input {
     
     /// A builder for [`DeleteGroupInput`](crate::input::DeleteGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -4890,6 +4917,7 @@ impl DeleteGroupInput {
 pub mod delete_group_membership_input {
     
     /// A builder for [`DeleteGroupMembershipInput`](crate::input::DeleteGroupMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_name: std::option::Option<std::string::String>,
@@ -5053,6 +5081,7 @@ impl DeleteGroupMembershipInput {
 pub mod delete_iam_policy_assignment_input {
     
     /// A builder for [`DeleteIamPolicyAssignmentInput`](crate::input::DeleteIamPolicyAssignmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -5198,6 +5227,7 @@ impl DeleteIamPolicyAssignmentInput {
 pub mod delete_namespace_input {
     
     /// A builder for [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -5325,6 +5355,7 @@ impl DeleteNamespaceInput {
 pub mod delete_template_input {
     
     /// A builder for [`DeleteTemplateInput`](crate::input::DeleteTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -5474,6 +5505,7 @@ impl DeleteTemplateInput {
 pub mod delete_template_alias_input {
     
     /// A builder for [`DeleteTemplateAliasInput`](crate::input::DeleteTemplateAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -5619,6 +5651,7 @@ impl DeleteTemplateAliasInput {
 pub mod delete_theme_input {
     
     /// A builder for [`DeleteThemeInput`](crate::input::DeleteThemeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -5770,6 +5803,7 @@ impl DeleteThemeInput {
 pub mod delete_theme_alias_input {
     
     /// A builder for [`DeleteThemeAliasInput`](crate::input::DeleteThemeAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -5915,6 +5949,7 @@ impl DeleteThemeAliasInput {
 pub mod delete_user_input {
     
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -6060,6 +6095,7 @@ impl DeleteUserInput {
 pub mod delete_user_by_principal_id_input {
     
     /// A builder for [`DeleteUserByPrincipalIdInput`](crate::input::DeleteUserByPrincipalIdInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principal_id: std::option::Option<std::string::String>,
@@ -6205,6 +6241,7 @@ impl DeleteUserByPrincipalIdInput {
 pub mod describe_account_customization_input {
     
     /// A builder for [`DescribeAccountCustomizationInput`](crate::input::DescribeAccountCustomizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -6352,6 +6389,7 @@ impl DescribeAccountCustomizationInput {
 pub mod describe_account_settings_input {
     
     /// A builder for [`DescribeAccountSettingsInput`](crate::input::DescribeAccountSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -6461,6 +6499,7 @@ impl DescribeAccountSettingsInput {
 pub mod describe_account_subscription_input {
     
     /// A builder for [`DescribeAccountSubscriptionInput`](crate::input::DescribeAccountSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -6570,6 +6609,7 @@ impl DescribeAccountSubscriptionInput {
 pub mod describe_analysis_input {
     
     /// A builder for [`DescribeAnalysisInput`](crate::input::DescribeAnalysisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -6697,6 +6737,7 @@ impl DescribeAnalysisInput {
 pub mod describe_analysis_definition_input {
     
     /// A builder for [`DescribeAnalysisDefinitionInput`](crate::input::DescribeAnalysisDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -6824,6 +6865,7 @@ impl DescribeAnalysisDefinitionInput {
 pub mod describe_analysis_permissions_input {
     
     /// A builder for [`DescribeAnalysisPermissionsInput`](crate::input::DescribeAnalysisPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -6951,6 +6993,7 @@ impl DescribeAnalysisPermissionsInput {
 pub mod describe_dashboard_input {
     
     /// A builder for [`DescribeDashboardInput`](crate::input::DescribeDashboardInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -7117,6 +7160,7 @@ impl DescribeDashboardInput {
 pub mod describe_dashboard_definition_input {
     
     /// A builder for [`DescribeDashboardDefinitionInput`](crate::input::DescribeDashboardDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -7283,6 +7327,7 @@ impl DescribeDashboardDefinitionInput {
 pub mod describe_dashboard_permissions_input {
     
     /// A builder for [`DescribeDashboardPermissionsInput`](crate::input::DescribeDashboardPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -7410,6 +7455,7 @@ impl DescribeDashboardPermissionsInput {
 pub mod describe_data_set_input {
     
     /// A builder for [`DescribeDataSetInput`](crate::input::DescribeDataSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -7537,6 +7583,7 @@ impl DescribeDataSetInput {
 pub mod describe_data_set_permissions_input {
     
     /// A builder for [`DescribeDataSetPermissionsInput`](crate::input::DescribeDataSetPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -7664,6 +7711,7 @@ impl DescribeDataSetPermissionsInput {
 pub mod describe_data_source_input {
     
     /// A builder for [`DescribeDataSourceInput`](crate::input::DescribeDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -7791,6 +7839,7 @@ impl DescribeDataSourceInput {
 pub mod describe_data_source_permissions_input {
     
     /// A builder for [`DescribeDataSourcePermissionsInput`](crate::input::DescribeDataSourcePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -7918,6 +7967,7 @@ impl DescribeDataSourcePermissionsInput {
 pub mod describe_folder_input {
     
     /// A builder for [`DescribeFolderInput`](crate::input::DescribeFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -8045,6 +8095,7 @@ impl DescribeFolderInput {
 pub mod describe_folder_permissions_input {
     
     /// A builder for [`DescribeFolderPermissionsInput`](crate::input::DescribeFolderPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -8172,6 +8223,7 @@ impl DescribeFolderPermissionsInput {
 pub mod describe_folder_resolved_permissions_input {
     
     /// A builder for [`DescribeFolderResolvedPermissionsInput`](crate::input::DescribeFolderResolvedPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -8299,6 +8351,7 @@ impl DescribeFolderResolvedPermissionsInput {
 pub mod describe_group_input {
     
     /// A builder for [`DescribeGroupInput`](crate::input::DescribeGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -8444,6 +8497,7 @@ impl DescribeGroupInput {
 pub mod describe_group_membership_input {
     
     /// A builder for [`DescribeGroupMembershipInput`](crate::input::DescribeGroupMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_name: std::option::Option<std::string::String>,
@@ -8607,6 +8661,7 @@ impl DescribeGroupMembershipInput {
 pub mod describe_iam_policy_assignment_input {
     
     /// A builder for [`DescribeIamPolicyAssignmentInput`](crate::input::DescribeIamPolicyAssignmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -8752,6 +8807,7 @@ impl DescribeIamPolicyAssignmentInput {
 pub mod describe_ingestion_input {
     
     /// A builder for [`DescribeIngestionInput`](crate::input::DescribeIngestionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -8897,6 +8953,7 @@ impl DescribeIngestionInput {
 pub mod describe_ip_restriction_input {
     
     /// A builder for [`DescribeIpRestrictionInput`](crate::input::DescribeIpRestrictionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -9006,6 +9063,7 @@ impl DescribeIpRestrictionInput {
 pub mod describe_namespace_input {
     
     /// A builder for [`DescribeNamespaceInput`](crate::input::DescribeNamespaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -9133,6 +9191,7 @@ impl DescribeNamespaceInput {
 pub mod describe_template_input {
     
     /// A builder for [`DescribeTemplateInput`](crate::input::DescribeTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -9299,6 +9358,7 @@ impl DescribeTemplateInput {
 pub mod describe_template_alias_input {
     
     /// A builder for [`DescribeTemplateAliasInput`](crate::input::DescribeTemplateAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -9444,6 +9504,7 @@ impl DescribeTemplateAliasInput {
 pub mod describe_template_definition_input {
     
     /// A builder for [`DescribeTemplateDefinitionInput`](crate::input::DescribeTemplateDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -9610,6 +9671,7 @@ impl DescribeTemplateDefinitionInput {
 pub mod describe_template_permissions_input {
     
     /// A builder for [`DescribeTemplatePermissionsInput`](crate::input::DescribeTemplatePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -9737,6 +9799,7 @@ impl DescribeTemplatePermissionsInput {
 pub mod describe_theme_input {
     
     /// A builder for [`DescribeThemeInput`](crate::input::DescribeThemeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -9903,6 +9966,7 @@ impl DescribeThemeInput {
 pub mod describe_theme_alias_input {
     
     /// A builder for [`DescribeThemeAliasInput`](crate::input::DescribeThemeAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -10048,6 +10112,7 @@ impl DescribeThemeAliasInput {
 pub mod describe_theme_permissions_input {
     
     /// A builder for [`DescribeThemePermissionsInput`](crate::input::DescribeThemePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -10175,6 +10240,7 @@ impl DescribeThemePermissionsInput {
 pub mod describe_user_input {
     
     /// A builder for [`DescribeUserInput`](crate::input::DescribeUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -10320,6 +10386,7 @@ impl DescribeUserInput {
 pub mod generate_embed_url_for_anonymous_user_input {
     
     /// A builder for [`GenerateEmbedUrlForAnonymousUserInput`](crate::input::GenerateEmbedUrlForAnonymousUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -10527,6 +10594,7 @@ impl GenerateEmbedUrlForAnonymousUserInput {
 pub mod generate_embed_url_for_registered_user_input {
     
     /// A builder for [`GenerateEmbedUrlForRegisteredUserInput`](crate::input::GenerateEmbedUrlForRegisteredUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -10696,6 +10764,7 @@ impl GenerateEmbedUrlForRegisteredUserInput {
 pub mod get_dashboard_embed_url_input {
     
     /// A builder for [`GetDashboardEmbedUrlInput`](crate::input::GetDashboardEmbedUrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -10979,6 +11048,7 @@ impl GetDashboardEmbedUrlInput {
 pub mod get_session_embed_url_input {
     
     /// A builder for [`GetSessionEmbedUrlInput`](crate::input::GetSessionEmbedUrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -11172,6 +11242,7 @@ impl GetSessionEmbedUrlInput {
 pub mod list_analyses_input {
     
     /// A builder for [`ListAnalysesInput`](crate::input::ListAnalysesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -11320,6 +11391,7 @@ impl ListAnalysesInput {
 pub mod list_dashboards_input {
     
     /// A builder for [`ListDashboardsInput`](crate::input::ListDashboardsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -11468,6 +11540,7 @@ impl ListDashboardsInput {
 pub mod list_dashboard_versions_input {
     
     /// A builder for [`ListDashboardVersionsInput`](crate::input::ListDashboardVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -11634,6 +11707,7 @@ impl ListDashboardVersionsInput {
 pub mod list_data_sets_input {
     
     /// A builder for [`ListDataSetsInput`](crate::input::ListDataSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -11782,6 +11856,7 @@ impl ListDataSetsInput {
 pub mod list_data_sources_input {
     
     /// A builder for [`ListDataSourcesInput`](crate::input::ListDataSourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -11930,6 +12005,7 @@ impl ListDataSourcesInput {
 pub mod list_folder_members_input {
     
     /// A builder for [`ListFolderMembersInput`](crate::input::ListFolderMembersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -12096,6 +12172,7 @@ impl ListFolderMembersInput {
 pub mod list_folders_input {
     
     /// A builder for [`ListFoldersInput`](crate::input::ListFoldersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -12244,6 +12321,7 @@ impl ListFoldersInput {
 pub mod list_group_memberships_input {
     
     /// A builder for [`ListGroupMembershipsInput`](crate::input::ListGroupMembershipsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -12428,6 +12506,7 @@ impl ListGroupMembershipsInput {
 pub mod list_groups_input {
     
     /// A builder for [`ListGroupsInput`](crate::input::ListGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -12594,6 +12673,7 @@ impl ListGroupsInput {
 pub mod list_iam_policy_assignments_input {
     
     /// A builder for [`ListIamPolicyAssignmentsInput`](crate::input::ListIamPolicyAssignmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -12776,6 +12856,7 @@ impl ListIamPolicyAssignmentsInput {
 pub mod list_iam_policy_assignments_for_user_input {
     
     /// A builder for [`ListIamPolicyAssignmentsForUserInput`](crate::input::ListIamPolicyAssignmentsForUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -12960,6 +13041,7 @@ impl ListIamPolicyAssignmentsForUserInput {
 pub mod list_ingestions_input {
     
     /// A builder for [`ListIngestionsInput`](crate::input::ListIngestionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -13126,6 +13208,7 @@ impl ListIngestionsInput {
 pub mod list_namespaces_input {
     
     /// A builder for [`ListNamespacesInput`](crate::input::ListNamespacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -13274,6 +13357,7 @@ impl ListNamespacesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -13383,6 +13467,7 @@ impl ListTagsForResourceInput {
 pub mod list_template_aliases_input {
     
     /// A builder for [`ListTemplateAliasesInput`](crate::input::ListTemplateAliasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -13549,6 +13634,7 @@ impl ListTemplateAliasesInput {
 pub mod list_templates_input {
     
     /// A builder for [`ListTemplatesInput`](crate::input::ListTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -13697,6 +13783,7 @@ impl ListTemplatesInput {
 pub mod list_template_versions_input {
     
     /// A builder for [`ListTemplateVersionsInput`](crate::input::ListTemplateVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -13863,6 +13950,7 @@ impl ListTemplateVersionsInput {
 pub mod list_theme_aliases_input {
     
     /// A builder for [`ListThemeAliasesInput`](crate::input::ListThemeAliasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -14029,6 +14117,7 @@ impl ListThemeAliasesInput {
 pub mod list_themes_input {
     
     /// A builder for [`ListThemesInput`](crate::input::ListThemesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -14204,6 +14293,7 @@ impl ListThemesInput {
 pub mod list_theme_versions_input {
     
     /// A builder for [`ListThemeVersionsInput`](crate::input::ListThemeVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -14370,6 +14460,7 @@ impl ListThemeVersionsInput {
 pub mod list_user_groups_input {
     
     /// A builder for [`ListUserGroupsInput`](crate::input::ListUserGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -14554,6 +14645,7 @@ impl ListUserGroupsInput {
 pub mod list_users_input {
     
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -14720,6 +14812,7 @@ impl ListUsersInput {
 pub mod register_user_input {
     
     /// A builder for [`RegisterUserInput`](crate::input::RegisterUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_type: std::option::Option<crate::model::IdentityType>,
@@ -15021,6 +15114,7 @@ impl RegisterUserInput {
 pub mod restore_analysis_input {
     
     /// A builder for [`RestoreAnalysisInput`](crate::input::RestoreAnalysisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -15148,6 +15242,7 @@ impl RestoreAnalysisInput {
 pub mod search_analyses_input {
     
     /// A builder for [`SearchAnalysesInput`](crate::input::SearchAnalysesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -15303,6 +15398,7 @@ impl SearchAnalysesInput {
 pub mod search_dashboards_input {
     
     /// A builder for [`SearchDashboardsInput`](crate::input::SearchDashboardsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -15458,6 +15554,7 @@ impl SearchDashboardsInput {
 pub mod search_data_sets_input {
     
     /// A builder for [`SearchDataSetsInput`](crate::input::SearchDataSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -15613,6 +15710,7 @@ impl SearchDataSetsInput {
 pub mod search_data_sources_input {
     
     /// A builder for [`SearchDataSourcesInput`](crate::input::SearchDataSourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -15768,6 +15866,7 @@ impl SearchDataSourcesInput {
 pub mod search_folders_input {
     
     /// A builder for [`SearchFoldersInput`](crate::input::SearchFoldersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -15923,6 +16022,7 @@ impl SearchFoldersInput {
 pub mod search_groups_input {
     
     /// A builder for [`SearchGroupsInput`](crate::input::SearchGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -16111,6 +16211,7 @@ impl SearchGroupsInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -16242,6 +16343,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -16379,6 +16481,7 @@ impl UntagResourceInput {
 pub mod update_account_customization_input {
     
     /// A builder for [`UpdateAccountCustomizationInput`](crate::input::UpdateAccountCustomizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -16526,6 +16629,7 @@ impl UpdateAccountCustomizationInput {
 pub mod update_account_settings_input {
     
     /// A builder for [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -16676,6 +16780,7 @@ impl UpdateAccountSettingsInput {
 pub mod update_analysis_input {
     
     /// A builder for [`UpdateAnalysisInput`](crate::input::UpdateAnalysisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -16869,6 +16974,7 @@ impl UpdateAnalysisInput {
 pub mod update_analysis_permissions_input {
     
     /// A builder for [`UpdateAnalysisPermissionsInput`](crate::input::UpdateAnalysisPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -17036,6 +17142,7 @@ impl UpdateAnalysisPermissionsInput {
 pub mod update_dashboard_input {
     
     /// A builder for [`UpdateDashboardInput`](crate::input::UpdateDashboardInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -17265,6 +17372,7 @@ impl UpdateDashboardInput {
 pub mod update_dashboard_permissions_input {
     
     /// A builder for [`UpdateDashboardPermissionsInput`](crate::input::UpdateDashboardPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -17468,6 +17576,7 @@ impl UpdateDashboardPermissionsInput {
 pub mod update_dashboard_published_version_input {
     
     /// A builder for [`UpdateDashboardPublishedVersionInput`](crate::input::UpdateDashboardPublishedVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -17613,6 +17722,7 @@ impl UpdateDashboardPublishedVersionInput {
 pub mod update_data_set_input {
     
     /// A builder for [`UpdateDataSetInput`](crate::input::UpdateDataSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -17894,6 +18004,7 @@ impl UpdateDataSetInput {
 pub mod update_data_set_permissions_input {
     
     /// A builder for [`UpdateDataSetPermissionsInput`](crate::input::UpdateDataSetPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -18061,6 +18172,7 @@ impl UpdateDataSetPermissionsInput {
 pub mod update_data_source_input {
     
     /// A builder for [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -18265,6 +18377,7 @@ impl UpdateDataSourceInput {
 pub mod update_data_source_permissions_input {
     
     /// A builder for [`UpdateDataSourcePermissionsInput`](crate::input::UpdateDataSourcePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -18432,6 +18545,7 @@ impl UpdateDataSourcePermissionsInput {
 pub mod update_folder_input {
     
     /// A builder for [`UpdateFolderInput`](crate::input::UpdateFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -18575,6 +18689,7 @@ impl UpdateFolderInput {
 pub mod update_folder_permissions_input {
     
     /// A builder for [`UpdateFolderPermissionsInput`](crate::input::UpdateFolderPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -18742,6 +18857,7 @@ impl UpdateFolderPermissionsInput {
 pub mod update_group_input {
     
     /// A builder for [`UpdateGroupInput`](crate::input::UpdateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -18903,6 +19019,7 @@ impl UpdateGroupInput {
 pub mod update_iam_policy_assignment_input {
     
     /// A builder for [`UpdateIamPolicyAssignmentInput`](crate::input::UpdateIamPolicyAssignmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -19104,6 +19221,7 @@ impl UpdateIamPolicyAssignmentInput {
 pub mod update_ip_restriction_input {
     
     /// A builder for [`UpdateIpRestrictionInput`](crate::input::UpdateIpRestrictionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -19247,6 +19365,7 @@ impl UpdateIpRestrictionInput {
 pub mod update_public_sharing_settings_input {
     
     /// A builder for [`UpdatePublicSharingSettingsInput`](crate::input::UpdatePublicSharingSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -19373,6 +19492,7 @@ impl UpdatePublicSharingSettingsInput {
 pub mod update_template_input {
     
     /// A builder for [`UpdateTemplateInput`](crate::input::UpdateTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -19556,6 +19676,7 @@ impl UpdateTemplateInput {
 pub mod update_template_alias_input {
     
     /// A builder for [`UpdateTemplateAliasInput`](crate::input::UpdateTemplateAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -19717,6 +19838,7 @@ impl UpdateTemplateAliasInput {
 pub mod update_template_permissions_input {
     
     /// A builder for [`UpdateTemplatePermissionsInput`](crate::input::UpdateTemplatePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -19884,6 +20006,7 @@ impl UpdateTemplatePermissionsInput {
 pub mod update_theme_input {
     
     /// A builder for [`UpdateThemeInput`](crate::input::UpdateThemeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -20063,6 +20186,7 @@ impl UpdateThemeInput {
 pub mod update_theme_alias_input {
     
     /// A builder for [`UpdateThemeAliasInput`](crate::input::UpdateThemeAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -20224,6 +20348,7 @@ impl UpdateThemeAliasInput {
 pub mod update_theme_permissions_input {
     
     /// A builder for [`UpdateThemePermissionsInput`](crate::input::UpdateThemePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -20391,6 +20516,7 @@ impl UpdateThemePermissionsInput {
 pub mod update_user_input {
     
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,

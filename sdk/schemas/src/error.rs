@@ -197,6 +197,7 @@ impl std::error::Error for ServiceUnavailableException {}
 pub mod service_unavailable_exception {
     
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -278,6 +279,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
     
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -359,6 +361,7 @@ impl std::error::Error for InternalServerErrorException {}
 pub mod internal_server_error_exception {
     
     /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -440,6 +443,7 @@ impl std::error::Error for ForbiddenException {}
 pub mod forbidden_exception {
     
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -521,6 +525,7 @@ impl std::error::Error for BadRequestException {}
 pub mod bad_request_exception {
     
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -775,6 +780,7 @@ impl std::error::Error for UnauthorizedException {}
 pub mod unauthorized_exception {
     
     /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -2019,6 +2025,7 @@ impl std::error::Error for PreconditionFailedException {}
 pub mod precondition_failed_exception {
     
     /// A builder for [`PreconditionFailedException`](crate::error::PreconditionFailedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -2285,6 +2292,7 @@ impl std::error::Error for TooManyRequestsException {}
 pub mod too_many_requests_exception {
     
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -2366,6 +2374,7 @@ impl std::error::Error for GoneException {}
 pub mod gone_exception {
     
     /// A builder for [`GoneException`](crate::error::GoneException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -5823,6 +5832,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
     
     /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,

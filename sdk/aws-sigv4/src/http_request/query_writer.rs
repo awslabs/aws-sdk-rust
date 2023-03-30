@@ -142,7 +142,7 @@ mod test {
                     let mut query_writer = QueryWriter::new(&uri);
                     query_writer.insert("key", value);
 
-                    if let Err(_) = std::panic::catch_unwind(|| query_writer.build_uri()) {
+                    if std::panic::catch_unwind(|| query_writer.build_uri()).is_err() {
                         problematic_chars.push(char::from(byte));
                     };
                 }

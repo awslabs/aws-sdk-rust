@@ -52,6 +52,7 @@ impl UpdateSuiteDefinitionOutput {
 pub mod update_suite_definition_output {
     
     /// A builder for [`UpdateSuiteDefinitionOutput`](crate::output::UpdateSuiteDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -153,6 +154,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -182,6 +184,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -211,6 +214,7 @@ pub struct StopSuiteRunOutput  {
 pub mod stop_suite_run_output {
     
     /// A builder for [`StopSuiteRunOutput`](crate::output::StopSuiteRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -270,6 +274,7 @@ impl StartSuiteRunOutput {
 pub mod start_suite_run_output {
     
     /// A builder for [`StartSuiteRunOutput`](crate::output::StartSuiteRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_run_id: std::option::Option<std::string::String>,
@@ -356,6 +361,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -419,6 +425,7 @@ impl ListSuiteRunsOutput {
 pub mod list_suite_runs_output {
     
     /// A builder for [`ListSuiteRunsOutput`](crate::output::ListSuiteRunsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_runs_list: std::option::Option<std::vec::Vec<crate::model::SuiteRunInformation>>,
@@ -494,6 +501,7 @@ impl ListSuiteDefinitionsOutput {
 pub mod list_suite_definitions_output {
     
     /// A builder for [`ListSuiteDefinitionsOutput`](crate::output::ListSuiteDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_information_list: std::option::Option<std::vec::Vec<crate::model::SuiteDefinitionInformation>>,
@@ -562,6 +570,7 @@ impl GetSuiteRunReportOutput {
 pub mod get_suite_run_report_output {
     
     /// A builder for [`GetSuiteRunReportOutput`](crate::output::GetSuiteRunReportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_report_download_url: std::option::Option<std::string::String>,
@@ -682,6 +691,7 @@ impl GetSuiteRunOutput {
 pub mod get_suite_run_output {
     
     /// A builder for [`GetSuiteRunOutput`](crate::output::GetSuiteRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -907,6 +917,7 @@ impl GetSuiteDefinitionOutput {
 pub mod get_suite_definition_output {
     
     /// A builder for [`GetSuiteDefinitionOutput`](crate::output::GetSuiteDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -1047,6 +1058,7 @@ impl GetEndpointOutput {
 pub mod get_endpoint_output {
     
     /// A builder for [`GetEndpointOutput`](crate::output::GetEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -1088,6 +1100,7 @@ pub struct DeleteSuiteDefinitionOutput  {
 pub mod delete_suite_definition_output {
     
     /// A builder for [`DeleteSuiteDefinitionOutput`](crate::output::DeleteSuiteDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1147,6 +1160,7 @@ impl CreateSuiteDefinitionOutput {
 pub mod create_suite_definition_output {
     
     /// A builder for [`CreateSuiteDefinitionOutput`](crate::output::CreateSuiteDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,

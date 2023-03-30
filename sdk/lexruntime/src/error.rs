@@ -229,6 +229,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
     
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -289,6 +290,7 @@ impl std::error::Error for NotAcceptableException {}
 pub mod not_acceptable_exception {
     
     /// A builder for [`NotAcceptableException`](crate::error::NotAcceptableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -358,6 +360,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
     
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retry_after_seconds: std::option::Option<std::string::String>,
@@ -430,6 +433,7 @@ impl std::error::Error for InternalFailureException {}
 pub mod internal_failure_exception {
     
     /// A builder for [`InternalFailureException`](crate::error::InternalFailureException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -495,6 +499,7 @@ impl std::error::Error for DependencyFailedException {}
 pub mod dependency_failed_exception {
     
     /// A builder for [`DependencyFailedException`](crate::error::DependencyFailedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -555,6 +560,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
     
     /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -615,6 +621,7 @@ impl std::error::Error for BadRequestException {}
 pub mod bad_request_exception {
     
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -675,6 +682,7 @@ impl std::error::Error for BadGatewayException {}
 pub mod bad_gateway_exception {
     
     /// A builder for [`BadGatewayException`](crate::error::BadGatewayException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -937,6 +945,7 @@ impl std::error::Error for LoopDetectedException {}
 pub mod loop_detected_exception {
     
     /// A builder for [`LoopDetectedException`](crate::error::LoopDetectedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1235,6 +1244,7 @@ impl std::error::Error for UnsupportedMediaTypeException {}
 pub mod unsupported_media_type_exception {
     
     /// A builder for [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1295,6 +1305,7 @@ impl std::error::Error for RequestTimeoutException {}
 pub mod request_timeout_exception {
     
     /// A builder for [`RequestTimeoutException`](crate::error::RequestTimeoutException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

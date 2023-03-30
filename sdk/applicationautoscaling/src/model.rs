@@ -32,6 +32,7 @@ impl SuspendedState {
 pub mod suspended_state {
     
     /// A builder for [`SuspendedState`](crate::model::SuspendedState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dynamic_scaling_in_suspended: std::option::Option<bool>,
@@ -431,6 +432,7 @@ impl ScalableTargetAction {
 pub mod scalable_target_action {
     
     /// A builder for [`ScalableTargetAction`](crate::model::ScalableTargetAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_capacity: std::option::Option<i32>,
@@ -504,6 +506,7 @@ impl Alarm {
 pub mod alarm {
     
     /// A builder for [`Alarm`](crate::model::Alarm).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_name: std::option::Option<std::string::String>,
@@ -685,6 +688,7 @@ impl TargetTrackingScalingPolicyConfiguration {
 pub mod target_tracking_scaling_policy_configuration {
     
     /// A builder for [`TargetTrackingScalingPolicyConfiguration`](crate::model::TargetTrackingScalingPolicyConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_value: std::option::Option<f64>,
@@ -917,6 +921,7 @@ impl CustomizedMetricSpecification {
 pub mod customized_metric_specification {
     
     /// A builder for [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -1127,6 +1132,7 @@ impl MetricDimension {
 pub mod metric_dimension {
     
     /// A builder for [`MetricDimension`](crate::model::MetricDimension).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1233,6 +1239,7 @@ impl PredefinedMetricSpecification {
 pub mod predefined_metric_specification {
     
     /// A builder for [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_metric_type: std::option::Option<crate::model::MetricType>,
@@ -1582,6 +1589,7 @@ impl StepScalingPolicyConfiguration {
 pub mod step_scaling_policy_configuration {
     
     /// A builder for [`StepScalingPolicyConfiguration`](crate::model::StepScalingPolicyConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adjustment_type: std::option::Option<crate::model::AdjustmentType>,
@@ -1847,6 +1855,7 @@ impl StepAdjustment {
 pub mod step_adjustment {
     
     /// A builder for [`StepAdjustment`](crate::model::StepAdjustment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_interval_lower_bound: std::option::Option<f64>,
@@ -2262,6 +2271,7 @@ impl ScheduledAction {
 pub mod scheduled_action {
     
     /// A builder for [`ScheduledAction`](crate::model::ScheduledAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
@@ -2682,6 +2692,7 @@ impl ScalingPolicy {
 pub mod scaling_policy {
     
     /// A builder for [`ScalingPolicy`](crate::model::ScalingPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -3089,6 +3100,7 @@ impl ScalingActivity {
 pub mod scaling_activity {
     
     /// A builder for [`ScalingActivity`](crate::model::ScalingActivity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -3394,6 +3406,7 @@ impl NotScaledReason {
 pub mod not_scaled_reason {
     
     /// A builder for [`NotScaledReason`](crate::model::NotScaledReason).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -3727,6 +3740,7 @@ impl ScalableTarget {
 pub mod scalable_target {
     
     /// A builder for [`ScalableTarget`](crate::model::ScalableTarget).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_namespace: std::option::Option<crate::model::ServiceNamespace>,

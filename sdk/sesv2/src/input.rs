@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_get_metric_data_input {
     
     /// A builder for [`BatchGetMetricDataInput`](crate::input::BatchGetMetricDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queries: std::option::Option<std::vec::Vec<crate::model::BatchGetMetricDataQuery>>,
@@ -118,6 +119,7 @@ impl BatchGetMetricDataInput {
 pub mod create_configuration_set_input {
     
     /// A builder for [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -315,6 +317,7 @@ impl CreateConfigurationSetInput {
 pub mod create_configuration_set_event_destination_input {
     
     /// A builder for [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -452,6 +455,7 @@ impl CreateConfigurationSetEventDestinationInput {
 pub mod create_contact_input {
     
     /// A builder for [`CreateContactInput`](crate::input::CreateContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
@@ -620,6 +624,7 @@ impl CreateContactInput {
 pub mod create_contact_list_input {
     
     /// A builder for [`CreateContactListInput`](crate::input::CreateContactListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
@@ -775,6 +780,7 @@ impl CreateContactListInput {
 pub mod create_custom_verification_email_template_input {
     
     /// A builder for [`CreateCustomVerificationEmailTemplateInput`](crate::input::CreateCustomVerificationEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -942,6 +948,7 @@ impl CreateCustomVerificationEmailTemplateInput {
 pub mod create_dedicated_ip_pool_input {
     
     /// A builder for [`CreateDedicatedIpPoolInput`](crate::input::CreateDedicatedIpPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_name: std::option::Option<std::string::String>,
@@ -1079,6 +1086,7 @@ impl CreateDedicatedIpPoolInput {
 pub mod create_deliverability_test_report_input {
     
     /// A builder for [`CreateDeliverabilityTestReportInput`](crate::input::CreateDeliverabilityTestReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_name: std::option::Option<std::string::String>,
@@ -1228,6 +1236,7 @@ impl CreateDeliverabilityTestReportInput {
 pub mod create_email_identity_input {
     
     /// A builder for [`CreateEmailIdentityInput`](crate::input::CreateEmailIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -1379,6 +1388,7 @@ impl CreateEmailIdentityInput {
 pub mod create_email_identity_policy_input {
     
     /// A builder for [`CreateEmailIdentityPolicyInput`](crate::input::CreateEmailIdentityPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -1526,6 +1536,7 @@ impl CreateEmailIdentityPolicyInput {
 pub mod create_email_template_input {
     
     /// A builder for [`CreateEmailTemplateInput`](crate::input::CreateEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -1645,6 +1656,7 @@ impl CreateEmailTemplateInput {
 pub mod create_import_job_input {
     
     /// A builder for [`CreateImportJobInput`](crate::input::CreateImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_destination: std::option::Option<crate::model::ImportDestination>,
@@ -1764,6 +1776,7 @@ impl CreateImportJobInput {
 pub mod delete_configuration_set_input {
     
     /// A builder for [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -1873,6 +1886,7 @@ impl DeleteConfigurationSetInput {
 pub mod delete_configuration_set_event_destination_input {
     
     /// A builder for [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -2000,6 +2014,7 @@ impl DeleteConfigurationSetEventDestinationInput {
 pub mod delete_contact_input {
     
     /// A builder for [`DeleteContactInput`](crate::input::DeleteContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
@@ -2127,6 +2142,7 @@ impl DeleteContactInput {
 pub mod delete_contact_list_input {
     
     /// A builder for [`DeleteContactListInput`](crate::input::DeleteContactListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
@@ -2236,6 +2252,7 @@ impl DeleteContactListInput {
 pub mod delete_custom_verification_email_template_input {
     
     /// A builder for [`DeleteCustomVerificationEmailTemplateInput`](crate::input::DeleteCustomVerificationEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -2345,6 +2362,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
 pub mod delete_dedicated_ip_pool_input {
     
     /// A builder for [`DeleteDedicatedIpPoolInput`](crate::input::DeleteDedicatedIpPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_name: std::option::Option<std::string::String>,
@@ -2454,6 +2472,7 @@ impl DeleteDedicatedIpPoolInput {
 pub mod delete_email_identity_input {
     
     /// A builder for [`DeleteEmailIdentityInput`](crate::input::DeleteEmailIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -2563,6 +2582,7 @@ impl DeleteEmailIdentityInput {
 pub mod delete_email_identity_policy_input {
     
     /// A builder for [`DeleteEmailIdentityPolicyInput`](crate::input::DeleteEmailIdentityPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -2692,6 +2712,7 @@ impl DeleteEmailIdentityPolicyInput {
 pub mod delete_email_template_input {
     
     /// A builder for [`DeleteEmailTemplateInput`](crate::input::DeleteEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -2801,6 +2822,7 @@ impl DeleteEmailTemplateInput {
 pub mod delete_suppressed_destination_input {
     
     /// A builder for [`DeleteSuppressedDestinationInput`](crate::input::DeleteSuppressedDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -2910,6 +2932,7 @@ impl DeleteSuppressedDestinationInput {
 pub mod get_account_input {
     
     /// A builder for [`GetAccountInput`](crate::input::GetAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3001,6 +3024,7 @@ impl GetAccountInput {
 pub mod get_blacklist_reports_input {
     
     /// A builder for [`GetBlacklistReportsInput`](crate::input::GetBlacklistReportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blacklist_item_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3120,6 +3144,7 @@ impl GetBlacklistReportsInput {
 pub mod get_configuration_set_input {
     
     /// A builder for [`GetConfigurationSetInput`](crate::input::GetConfigurationSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -3229,6 +3254,7 @@ impl GetConfigurationSetInput {
 pub mod get_configuration_set_event_destinations_input {
     
     /// A builder for [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -3338,6 +3364,7 @@ impl GetConfigurationSetEventDestinationsInput {
 pub mod get_contact_input {
     
     /// A builder for [`GetContactInput`](crate::input::GetContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
@@ -3465,6 +3492,7 @@ impl GetContactInput {
 pub mod get_contact_list_input {
     
     /// A builder for [`GetContactListInput`](crate::input::GetContactListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
@@ -3574,6 +3602,7 @@ impl GetContactListInput {
 pub mod get_custom_verification_email_template_input {
     
     /// A builder for [`GetCustomVerificationEmailTemplateInput`](crate::input::GetCustomVerificationEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -3683,6 +3712,7 @@ impl GetCustomVerificationEmailTemplateInput {
 pub mod get_dedicated_ip_input {
     
     /// A builder for [`GetDedicatedIpInput`](crate::input::GetDedicatedIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip: std::option::Option<std::string::String>,
@@ -3792,6 +3822,7 @@ impl GetDedicatedIpInput {
 pub mod get_dedicated_ip_pool_input {
     
     /// A builder for [`GetDedicatedIpPoolInput`](crate::input::GetDedicatedIpPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_name: std::option::Option<std::string::String>,
@@ -3901,6 +3932,7 @@ impl GetDedicatedIpPoolInput {
 pub mod get_dedicated_ips_input {
     
     /// A builder for [`GetDedicatedIpsInput`](crate::input::GetDedicatedIpsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_name: std::option::Option<std::string::String>,
@@ -4048,6 +4080,7 @@ impl GetDedicatedIpsInput {
 pub mod get_deliverability_dashboard_options_input {
     
     /// A builder for [`GetDeliverabilityDashboardOptionsInput`](crate::input::GetDeliverabilityDashboardOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4139,6 +4172,7 @@ impl GetDeliverabilityDashboardOptionsInput {
 pub mod get_deliverability_test_report_input {
     
     /// A builder for [`GetDeliverabilityTestReportInput`](crate::input::GetDeliverabilityTestReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -4248,6 +4282,7 @@ impl GetDeliverabilityTestReportInput {
 pub mod get_domain_deliverability_campaign_input {
     
     /// A builder for [`GetDomainDeliverabilityCampaignInput`](crate::input::GetDomainDeliverabilityCampaignInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_id: std::option::Option<std::string::String>,
@@ -4357,6 +4392,7 @@ impl GetDomainDeliverabilityCampaignInput {
 pub mod get_domain_statistics_report_input {
     
     /// A builder for [`GetDomainStatisticsReportInput`](crate::input::GetDomainStatisticsReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -4501,6 +4537,7 @@ impl GetDomainStatisticsReportInput {
 pub mod get_email_identity_input {
     
     /// A builder for [`GetEmailIdentityInput`](crate::input::GetEmailIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -4610,6 +4647,7 @@ impl GetEmailIdentityInput {
 pub mod get_email_identity_policies_input {
     
     /// A builder for [`GetEmailIdentityPoliciesInput`](crate::input::GetEmailIdentityPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -4719,6 +4757,7 @@ impl GetEmailIdentityPoliciesInput {
 pub mod get_email_template_input {
     
     /// A builder for [`GetEmailTemplateInput`](crate::input::GetEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -4828,6 +4867,7 @@ impl GetEmailTemplateInput {
 pub mod get_import_job_input {
     
     /// A builder for [`GetImportJobInput`](crate::input::GetImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -4937,6 +4977,7 @@ impl GetImportJobInput {
 pub mod get_suppressed_destination_input {
     
     /// A builder for [`GetSuppressedDestinationInput`](crate::input::GetSuppressedDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -5046,6 +5087,7 @@ impl GetSuppressedDestinationInput {
 pub mod list_configuration_sets_input {
     
     /// A builder for [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5176,6 +5218,7 @@ impl ListConfigurationSetsInput {
 pub mod list_contact_lists_input {
     
     /// A builder for [`ListContactListsInput`](crate::input::ListContactListsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_size: std::option::Option<i32>,
@@ -5306,6 +5349,7 @@ impl ListContactListsInput {
 pub mod list_contacts_input {
     
     /// A builder for [`ListContactsInput`](crate::input::ListContactsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
@@ -5470,6 +5514,7 @@ impl ListContactsInput {
 pub mod list_custom_verification_email_templates_input {
     
     /// A builder for [`ListCustomVerificationEmailTemplatesInput`](crate::input::ListCustomVerificationEmailTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5602,6 +5647,7 @@ impl ListCustomVerificationEmailTemplatesInput {
 pub mod list_dedicated_ip_pools_input {
     
     /// A builder for [`ListDedicatedIpPoolsInput`](crate::input::ListDedicatedIpPoolsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5732,6 +5778,7 @@ impl ListDedicatedIpPoolsInput {
 pub mod list_deliverability_test_reports_input {
     
     /// A builder for [`ListDeliverabilityTestReportsInput`](crate::input::ListDeliverabilityTestReportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5864,6 +5911,7 @@ impl ListDeliverabilityTestReportsInput {
 pub mod list_domain_deliverability_campaigns_input {
     
     /// A builder for [`ListDomainDeliverabilityCampaignsInput`](crate::input::ListDomainDeliverabilityCampaignsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -6042,6 +6090,7 @@ impl ListDomainDeliverabilityCampaignsInput {
 pub mod list_email_identities_input {
     
     /// A builder for [`ListEmailIdentitiesInput`](crate::input::ListEmailIdentitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6174,6 +6223,7 @@ impl ListEmailIdentitiesInput {
 pub mod list_email_templates_input {
     
     /// A builder for [`ListEmailTemplatesInput`](crate::input::ListEmailTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6306,6 +6356,7 @@ impl ListEmailTemplatesInput {
 pub mod list_import_jobs_input {
     
     /// A builder for [`ListImportJobsInput`](crate::input::ListImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_destination_type: std::option::Option<crate::model::ImportDestinationType>,
@@ -6452,6 +6503,7 @@ impl ListImportJobsInput {
 pub mod list_recommendations_input {
     
     /// A builder for [`ListRecommendationsInput`](crate::input::ListRecommendationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<std::collections::HashMap<crate::model::ListRecommendationsFilterKey, std::string::String>>,
@@ -6591,6 +6643,7 @@ impl ListRecommendationsInput {
 pub mod list_suppressed_destinations_input {
     
     /// A builder for [`ListSuppressedDestinationsInput`](crate::input::ListSuppressedDestinationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reasons: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
@@ -6780,6 +6833,7 @@ impl ListSuppressedDestinationsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6894,6 +6948,7 @@ impl ListTagsForResourceInput {
 pub mod put_account_dedicated_ip_warmup_attributes_input {
     
     /// A builder for [`PutAccountDedicatedIpWarmupAttributesInput`](crate::input::PutAccountDedicatedIpWarmupAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_warmup_enabled: std::option::Option<bool>,
@@ -7002,6 +7057,7 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
 pub mod put_account_details_input {
     
     /// A builder for [`PutAccountDetailsInput`](crate::input::PutAccountDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) mail_type: std::option::Option<crate::model::MailType>,
@@ -7191,6 +7247,7 @@ impl PutAccountDetailsInput {
 pub mod put_account_sending_attributes_input {
     
     /// A builder for [`PutAccountSendingAttributesInput`](crate::input::PutAccountSendingAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sending_enabled: std::option::Option<bool>,
@@ -7303,6 +7360,7 @@ impl PutAccountSendingAttributesInput {
 pub mod put_account_suppression_attributes_input {
     
     /// A builder for [`PutAccountSuppressionAttributesInput`](crate::input::PutAccountSuppressionAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suppressed_reasons: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
@@ -7424,6 +7482,7 @@ impl PutAccountSuppressionAttributesInput {
 pub mod put_account_vdm_attributes_input {
     
     /// A builder for [`PutAccountVdmAttributesInput`](crate::input::PutAccountVdmAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vdm_attributes: std::option::Option<crate::model::VdmAttributes>,
@@ -7531,6 +7590,7 @@ impl PutAccountVdmAttributesInput {
 pub mod put_configuration_set_delivery_options_input {
     
     /// A builder for [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -7668,6 +7728,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
 pub mod put_configuration_set_reputation_options_input {
     
     /// A builder for [`PutConfigurationSetReputationOptionsInput`](crate::input::PutConfigurationSetReputationOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -7794,6 +7855,7 @@ impl PutConfigurationSetReputationOptionsInput {
 pub mod put_configuration_set_sending_options_input {
     
     /// A builder for [`PutConfigurationSetSendingOptionsInput`](crate::input::PutConfigurationSetSendingOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -7920,6 +7982,7 @@ impl PutConfigurationSetSendingOptionsInput {
 pub mod put_configuration_set_suppression_options_input {
     
     /// A builder for [`PutConfigurationSetSuppressionOptionsInput`](crate::input::PutConfigurationSetSuppressionOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -8059,6 +8122,7 @@ impl PutConfigurationSetSuppressionOptionsInput {
 pub mod put_configuration_set_tracking_options_input {
     
     /// A builder for [`PutConfigurationSetTrackingOptionsInput`](crate::input::PutConfigurationSetTrackingOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -8184,6 +8248,7 @@ impl PutConfigurationSetTrackingOptionsInput {
 pub mod put_configuration_set_vdm_options_input {
     
     /// A builder for [`PutConfigurationSetVdmOptionsInput`](crate::input::PutConfigurationSetVdmOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -8309,6 +8374,7 @@ impl PutConfigurationSetVdmOptionsInput {
 pub mod put_dedicated_ip_in_pool_input {
     
     /// A builder for [`PutDedicatedIpInPoolInput`](crate::input::PutDedicatedIpInPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip: std::option::Option<std::string::String>,
@@ -8434,6 +8500,7 @@ impl PutDedicatedIpInPoolInput {
 pub mod put_dedicated_ip_warmup_attributes_input {
     
     /// A builder for [`PutDedicatedIpWarmupAttributesInput`](crate::input::PutDedicatedIpWarmupAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip: std::option::Option<std::string::String>,
@@ -8559,6 +8626,7 @@ impl PutDedicatedIpWarmupAttributesInput {
 pub mod put_deliverability_dashboard_option_input {
     
     /// A builder for [`PutDeliverabilityDashboardOptionInput`](crate::input::PutDeliverabilityDashboardOptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_enabled: std::option::Option<bool>,
@@ -8685,6 +8753,7 @@ impl PutDeliverabilityDashboardOptionInput {
 pub mod put_email_identity_configuration_set_attributes_input {
     
     /// A builder for [`PutEmailIdentityConfigurationSetAttributesInput`](crate::input::PutEmailIdentityConfigurationSetAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -8810,6 +8879,7 @@ impl PutEmailIdentityConfigurationSetAttributesInput {
 pub mod put_email_identity_dkim_attributes_input {
     
     /// A builder for [`PutEmailIdentityDkimAttributesInput`](crate::input::PutEmailIdentityDkimAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -8938,6 +9008,7 @@ impl PutEmailIdentityDkimAttributesInput {
 pub mod put_email_identity_dkim_signing_attributes_input {
     
     /// A builder for [`PutEmailIdentityDkimSigningAttributesInput`](crate::input::PutEmailIdentityDkimSigningAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -9083,6 +9154,7 @@ impl PutEmailIdentityDkimSigningAttributesInput {
 pub mod put_email_identity_feedback_attributes_input {
     
     /// A builder for [`PutEmailIdentityFeedbackAttributesInput`](crate::input::PutEmailIdentityFeedbackAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -9213,6 +9285,7 @@ impl PutEmailIdentityFeedbackAttributesInput {
 pub mod put_email_identity_mail_from_attributes_input {
     
     /// A builder for [`PutEmailIdentityMailFromAttributesInput`](crate::input::PutEmailIdentityMailFromAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -9362,6 +9435,7 @@ impl PutEmailIdentityMailFromAttributesInput {
 pub mod put_suppressed_destination_input {
     
     /// A builder for [`PutSuppressedDestinationInput`](crate::input::PutSuppressedDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -9481,6 +9555,7 @@ impl PutSuppressedDestinationInput {
 pub mod send_bulk_email_input {
     
     /// A builder for [`SendBulkEmailInput`](crate::input::SendBulkEmailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_email_address: std::option::Option<std::string::String>,
@@ -9710,6 +9785,7 @@ impl SendBulkEmailInput {
 pub mod send_custom_verification_email_input {
     
     /// A builder for [`SendCustomVerificationEmailInput`](crate::input::SendCustomVerificationEmailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -9841,6 +9917,7 @@ impl SendCustomVerificationEmailInput {
 pub mod send_email_input {
     
     /// A builder for [`SendEmailInput`](crate::input::SendEmailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_email_address: std::option::Option<std::string::String>,
@@ -10078,6 +10155,7 @@ impl SendEmailInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10203,6 +10281,7 @@ impl TagResourceInput {
 pub mod test_render_email_template_input {
     
     /// A builder for [`TestRenderEmailTemplateInput`](crate::input::TestRenderEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -10328,6 +10407,7 @@ impl TestRenderEmailTemplateInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10467,6 +10547,7 @@ impl UntagResourceInput {
 pub mod update_configuration_set_event_destination_input {
     
     /// A builder for [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -10610,6 +10691,7 @@ impl UpdateConfigurationSetEventDestinationInput {
 pub mod update_contact_input {
     
     /// A builder for [`UpdateContactInput`](crate::input::UpdateContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
@@ -10784,6 +10866,7 @@ impl UpdateContactInput {
 pub mod update_contact_list_input {
     
     /// A builder for [`UpdateContactListInput`](crate::input::UpdateContactListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
@@ -10927,6 +11010,7 @@ impl UpdateContactListInput {
 pub mod update_custom_verification_email_template_input {
     
     /// A builder for [`UpdateCustomVerificationEmailTemplateInput`](crate::input::UpdateCustomVerificationEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -11100,6 +11184,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
 pub mod update_email_identity_policy_input {
     
     /// A builder for [`UpdateEmailIdentityPolicyInput`](crate::input::UpdateEmailIdentityPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_identity: std::option::Option<std::string::String>,
@@ -11247,6 +11332,7 @@ impl UpdateEmailIdentityPolicyInput {
 pub mod update_email_template_input {
     
     /// A builder for [`UpdateEmailTemplateInput`](crate::input::UpdateEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,

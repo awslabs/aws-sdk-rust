@@ -46,6 +46,7 @@ impl EventDestinationDefinition {
 pub mod event_destination_definition {
     
     /// A builder for [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
@@ -151,6 +152,7 @@ impl SnsDestination {
 pub mod sns_destination {
     
     /// A builder for [`SnsDestination`](crate::model::SnsDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -315,6 +317,7 @@ impl KinesisFirehoseDestination {
 pub mod kinesis_firehose_destination {
     
     /// A builder for [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_arn: std::option::Option<std::string::String>,
@@ -384,6 +387,7 @@ impl CloudWatchLogsDestination {
 pub mod cloud_watch_logs_destination {
     
     /// A builder for [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
@@ -460,6 +464,7 @@ impl VoiceMessageContent {
 pub mod voice_message_content {
     
     /// A builder for [`VoiceMessageContent`](crate::model::VoiceMessageContent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) call_instructions_message: std::option::Option<crate::model::CallInstructionsMessageType>,
@@ -548,6 +553,7 @@ impl SsmlMessageType {
 pub mod ssml_message_type {
     
     /// A builder for [`SsmlMessageType`](crate::model::SsmlMessageType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<std::string::String>,
@@ -636,6 +642,7 @@ impl PlainTextMessageType {
 pub mod plain_text_message_type {
     
     /// A builder for [`PlainTextMessageType`](crate::model::PlainTextMessageType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<std::string::String>,
@@ -710,6 +717,7 @@ impl CallInstructionsMessageType {
 pub mod call_instructions_message_type {
     
     /// A builder for [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -795,6 +803,7 @@ impl EventDestination {
 pub mod event_destination {
     
     /// A builder for [`EventDestination`](crate::model::EventDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,

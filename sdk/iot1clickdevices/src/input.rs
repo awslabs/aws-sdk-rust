@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod claim_devices_by_claim_code_input {
     
     /// A builder for [`ClaimDevicesByClaimCodeInput`](crate::input::ClaimDevicesByClaimCodeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) claim_code: std::option::Option<std::string::String>,
@@ -114,6 +115,7 @@ impl ClaimDevicesByClaimCodeInput {
 pub mod describe_device_input {
     
     /// A builder for [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -223,6 +225,7 @@ impl DescribeDeviceInput {
 pub mod finalize_device_claim_input {
     
     /// A builder for [`FinalizeDeviceClaimInput`](crate::input::FinalizeDeviceClaimInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -356,6 +359,7 @@ impl FinalizeDeviceClaimInput {
 pub mod get_device_methods_input {
     
     /// A builder for [`GetDeviceMethodsInput`](crate::input::GetDeviceMethodsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -465,6 +469,7 @@ impl GetDeviceMethodsInput {
 pub mod initiate_device_claim_input {
     
     /// A builder for [`InitiateDeviceClaimInput`](crate::input::InitiateDeviceClaimInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -574,6 +579,7 @@ impl InitiateDeviceClaimInput {
 pub mod invoke_device_method_input {
     
     /// A builder for [`InvokeDeviceMethodInput`](crate::input::InvokeDeviceMethodInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -711,6 +717,7 @@ impl InvokeDeviceMethodInput {
 pub mod list_device_events_input {
     
     /// A builder for [`ListDeviceEventsInput`](crate::input::ListDeviceEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -888,6 +895,7 @@ impl ListDeviceEventsInput {
 pub mod list_devices_input {
     
     /// A builder for [`ListDevicesInput`](crate::input::ListDevicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_type: std::option::Option<std::string::String>,
@@ -1034,6 +1042,7 @@ impl ListDevicesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1143,6 +1152,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1276,6 +1286,7 @@ impl TagResourceInput {
 pub mod unclaim_device_input {
     
     /// A builder for [`UnclaimDeviceInput`](crate::input::UnclaimDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -1385,6 +1396,7 @@ impl UnclaimDeviceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1522,6 +1534,7 @@ impl UntagResourceInput {
 pub mod update_device_state_input {
     
     /// A builder for [`UpdateDeviceStateInput`](crate::input::UpdateDeviceStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,

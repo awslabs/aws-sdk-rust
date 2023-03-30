@@ -28,7 +28,7 @@ if let Some(arn) = crate::endpoint_lib::arn::parse_arn(stream_arn, _diagnostic_c
                                 if (arn.service()) == ("kinesis") {
                                 #[allow(unused_variables)]
 if let Some(arn_type) = arn.resource_id()
-.get(0).cloned() { if !((arn_type) == ("")) {
+.first().cloned() { if !((arn_type) == ("")) {
                                 if (arn_type) == ("stream") {
                                 if (partition_result.name()) == (arn.partition()) {
                                 #[allow(unused_variables)]
@@ -168,7 +168,7 @@ if let Some(arn) = crate::endpoint_lib::arn::parse_arn(consumer_arn, _diagnostic
                                 if (arn.service()) == ("kinesis") {
                                 #[allow(unused_variables)]
 if let Some(arn_type) = arn.resource_id()
-.get(0).cloned() { if !((arn_type) == ("")) {
+.first().cloned() { if !((arn_type) == ("")) {
                                 if (arn_type) == ("stream") {
                                 if (partition_result.name()) == (arn.partition()) {
                                 #[allow(unused_variables)]

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_user_input {
     
     /// A builder for [`AssociateUserInput`](crate::input::AssociateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -148,6 +149,7 @@ impl AssociateUserInput {
 pub mod deregister_identity_provider_input {
     
     /// A builder for [`DeregisterIdentityProviderInput`](crate::input::DeregisterIdentityProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProvider>,
@@ -267,6 +269,7 @@ impl DeregisterIdentityProviderInput {
 pub mod disassociate_user_input {
     
     /// A builder for [`DisassociateUserInput`](crate::input::DisassociateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -410,6 +413,7 @@ impl DisassociateUserInput {
 pub mod list_identity_providers_input {
     
     /// A builder for [`ListIdentityProvidersInput`](crate::input::ListIdentityProvidersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -529,6 +533,7 @@ impl ListIdentityProvidersInput {
 pub mod list_instances_input {
     
     /// A builder for [`ListInstancesInput`](crate::input::ListInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -666,6 +671,7 @@ impl ListInstancesInput {
 pub mod list_product_subscriptions_input {
     
     /// A builder for [`ListProductSubscriptionsInput`](crate::input::ListProductSubscriptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product: std::option::Option<std::string::String>,
@@ -827,6 +833,7 @@ impl ListProductSubscriptionsInput {
 pub mod list_user_associations_input {
     
     /// A builder for [`ListUserAssociationsInput`](crate::input::ListUserAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -988,6 +995,7 @@ impl ListUserAssociationsInput {
 pub mod register_identity_provider_input {
     
     /// A builder for [`RegisterIdentityProviderInput`](crate::input::RegisterIdentityProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProvider>,
@@ -1119,6 +1127,7 @@ impl RegisterIdentityProviderInput {
 pub mod start_product_subscription_input {
     
     /// A builder for [`StartProductSubscriptionInput`](crate::input::StartProductSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -1262,6 +1271,7 @@ impl StartProductSubscriptionInput {
 pub mod stop_product_subscription_input {
     
     /// A builder for [`StopProductSubscriptionInput`](crate::input::StopProductSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -1405,6 +1415,7 @@ impl StopProductSubscriptionInput {
 pub mod update_identity_provider_settings_input {
     
     /// A builder for [`UpdateIdentityProviderSettingsInput`](crate::input::UpdateIdentityProviderSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProvider>,

@@ -212,6 +212,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
     
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -272,6 +273,7 @@ impl std::error::Error for ServiceException {}
 pub mod service_exception {
     
     /// A builder for [`ServiceException`](crate::error::ServiceException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -332,6 +334,7 @@ impl std::error::Error for InvalidArgsException {}
 pub mod invalid_args_exception {
     
     /// A builder for [`InvalidArgsException`](crate::error::InvalidArgsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -392,6 +395,7 @@ impl std::error::Error for Ec2InstanceUnavailableException {}
 pub mod ec2_instance_unavailable_exception {
     
     /// A builder for [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -452,6 +456,7 @@ impl std::error::Error for Ec2InstanceStateInvalidException {}
 pub mod ec2_instance_state_invalid_exception {
     
     /// A builder for [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -512,6 +517,7 @@ impl std::error::Error for Ec2InstanceNotFoundException {}
 pub mod ec2_instance_not_found_exception {
     
     /// A builder for [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -572,6 +578,7 @@ impl std::error::Error for AuthException {}
 pub mod auth_exception {
     
     /// A builder for [`AuthException`](crate::error::AuthException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -865,6 +872,7 @@ impl std::error::Error for SerialConsoleSessionUnavailableException {}
 pub mod serial_console_session_unavailable_exception {
     
     /// A builder for [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -925,6 +933,7 @@ impl std::error::Error for SerialConsoleSessionLimitExceededException {}
 pub mod serial_console_session_limit_exceeded_exception {
     
     /// A builder for [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -985,6 +994,7 @@ impl std::error::Error for SerialConsoleAccessDisabledException {}
 pub mod serial_console_access_disabled_exception {
     
     /// A builder for [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1045,6 +1055,7 @@ impl std::error::Error for Ec2InstanceTypeInvalidException {}
 pub mod ec2_instance_type_invalid_exception {
     
     /// A builder for [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

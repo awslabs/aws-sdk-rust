@@ -8,6 +8,7 @@ pub struct UpdateEventIntegrationOutput  {
 pub mod update_event_integration_output {
     
     /// A builder for [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UpdateDataIntegrationOutput  {
 pub mod update_data_integration_output {
     
     /// A builder for [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -95,6 +98,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -133,6 +137,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -196,6 +201,7 @@ impl ListEventIntegrationsOutput {
 pub mod list_event_integrations_output {
     
     /// A builder for [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integrations: std::option::Option<std::vec::Vec<crate::model::EventIntegration>>,
@@ -271,6 +277,7 @@ impl ListEventIntegrationAssociationsOutput {
 pub mod list_event_integration_associations_output {
     
     /// A builder for [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_associations: std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
@@ -346,6 +353,7 @@ impl ListDataIntegrationsOutput {
 pub mod list_data_integrations_output {
     
     /// A builder for [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_integrations: std::option::Option<std::vec::Vec<crate::model::DataIntegrationSummary>>,
@@ -421,6 +429,7 @@ impl ListDataIntegrationAssociationsOutput {
 pub mod list_data_integration_associations_output {
     
     /// A builder for [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_integration_associations: std::option::Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>,
@@ -524,6 +533,7 @@ impl GetEventIntegrationOutput {
 pub mod get_event_integration_output {
     
     /// A builder for [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -689,6 +699,7 @@ impl GetDataIntegrationOutput {
 pub mod get_data_integration_output {
     
     /// A builder for [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -820,6 +831,7 @@ pub struct DeleteEventIntegrationOutput  {
 pub mod delete_event_integration_output {
     
     /// A builder for [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -849,6 +861,7 @@ pub struct DeleteDataIntegrationOutput  {
 pub mod delete_data_integration_output {
     
     /// A builder for [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -887,6 +900,7 @@ impl CreateEventIntegrationOutput {
 pub mod create_event_integration_output {
     
     /// A builder for [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_arn: std::option::Option<std::string::String>,
@@ -993,6 +1007,7 @@ impl CreateDataIntegrationOutput {
 pub mod create_data_integration_output {
     
     /// A builder for [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

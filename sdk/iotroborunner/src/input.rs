@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_destination_input {
     
     /// A builder for [`CreateDestinationInput`](crate::input::CreateDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -163,6 +164,7 @@ impl CreateDestinationInput {
 pub mod create_site_input {
     
     /// A builder for [`CreateSiteInput`](crate::input::CreateSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -309,6 +311,7 @@ impl CreateSiteInput {
 pub mod create_worker_input {
     
     /// A builder for [`CreateWorkerInput`](crate::input::CreateWorkerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -503,6 +506,7 @@ impl CreateWorkerInput {
 pub mod create_worker_fleet_input {
     
     /// A builder for [`CreateWorkerFleetInput`](crate::input::CreateWorkerFleetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -649,6 +653,7 @@ impl CreateWorkerFleetInput {
 pub mod delete_destination_input {
     
     /// A builder for [`DeleteDestinationInput`](crate::input::DeleteDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -756,6 +761,7 @@ impl DeleteDestinationInput {
 pub mod delete_site_input {
     
     /// A builder for [`DeleteSiteInput`](crate::input::DeleteSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -863,6 +869,7 @@ impl DeleteSiteInput {
 pub mod delete_worker_input {
     
     /// A builder for [`DeleteWorkerInput`](crate::input::DeleteWorkerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -970,6 +977,7 @@ impl DeleteWorkerInput {
 pub mod delete_worker_fleet_input {
     
     /// A builder for [`DeleteWorkerFleetInput`](crate::input::DeleteWorkerFleetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1077,6 +1085,7 @@ impl DeleteWorkerFleetInput {
 pub mod get_destination_input {
     
     /// A builder for [`GetDestinationInput`](crate::input::GetDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1191,6 +1200,7 @@ impl GetDestinationInput {
 pub mod get_site_input {
     
     /// A builder for [`GetSiteInput`](crate::input::GetSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1305,6 +1315,7 @@ impl GetSiteInput {
 pub mod get_worker_input {
     
     /// A builder for [`GetWorkerInput`](crate::input::GetWorkerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1419,6 +1430,7 @@ impl GetWorkerInput {
 pub mod get_worker_fleet_input {
     
     /// A builder for [`GetWorkerFleetInput`](crate::input::GetWorkerFleetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1533,6 +1545,7 @@ impl GetWorkerFleetInput {
 pub mod list_destinations_input {
     
     /// A builder for [`ListDestinationsInput`](crate::input::ListDestinationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site: std::option::Option<std::string::String>,
@@ -1698,6 +1711,7 @@ impl ListDestinationsInput {
 pub mod list_sites_input {
     
     /// A builder for [`ListSitesInput`](crate::input::ListSitesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1828,6 +1842,7 @@ impl ListSitesInput {
 pub mod list_worker_fleets_input {
     
     /// A builder for [`ListWorkerFleetsInput`](crate::input::ListWorkerFleetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site: std::option::Option<std::string::String>,
@@ -1976,6 +1991,7 @@ impl ListWorkerFleetsInput {
 pub mod list_workers_input {
     
     /// A builder for [`ListWorkersInput`](crate::input::ListWorkersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site: std::option::Option<std::string::String>,
@@ -2141,6 +2157,7 @@ impl ListWorkersInput {
 pub mod update_destination_input {
     
     /// A builder for [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2284,6 +2301,7 @@ impl UpdateDestinationInput {
 pub mod update_site_input {
     
     /// A builder for [`UpdateSiteInput`](crate::input::UpdateSiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2427,6 +2445,7 @@ impl UpdateSiteInput {
 pub mod update_worker_input {
     
     /// A builder for [`UpdateWorkerInput`](crate::input::UpdateWorkerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2606,6 +2625,7 @@ impl UpdateWorkerInput {
 pub mod update_worker_fleet_input {
     
     /// A builder for [`UpdateWorkerFleetInput`](crate::input::UpdateWorkerFleetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

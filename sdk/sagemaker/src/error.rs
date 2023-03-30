@@ -140,6 +140,7 @@ impl std::error::Error for ResourceLimitExceeded {}
 pub mod resource_limit_exceeded {
     
     /// A builder for [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -313,6 +314,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
     
     /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -510,6 +512,7 @@ impl std::error::Error for ResourceNotFound {}
 pub mod resource_not_found {
     
     /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -570,6 +573,7 @@ impl std::error::Error for ResourceInUse {}
 pub mod resource_in_use {
     
     /// A builder for [`ResourceInUse`](crate::error::ResourceInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

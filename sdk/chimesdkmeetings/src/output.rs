@@ -17,6 +17,7 @@ impl UpdateAttendeeCapabilitiesOutput {
 pub mod update_attendee_capabilities_output {
     
     /// A builder for [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
@@ -58,6 +59,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -87,6 +89,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -116,6 +119,7 @@ pub struct StopMeetingTranscriptionOutput  {
 pub mod stop_meeting_transcription_output {
     
     /// A builder for [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -145,6 +149,7 @@ pub struct StartMeetingTranscriptionOutput  {
 pub mod start_meeting_transcription_output {
     
     /// A builder for [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -183,6 +188,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -246,6 +252,7 @@ impl ListAttendeesOutput {
 pub mod list_attendees_output {
     
     /// A builder for [`ListAttendeesOutput`](crate::output::ListAttendeesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
@@ -314,6 +321,7 @@ impl GetMeetingOutput {
 pub mod get_meeting_output {
     
     /// A builder for [`GetMeetingOutput`](crate::output::GetMeetingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
@@ -364,6 +372,7 @@ impl GetAttendeeOutput {
 pub mod get_attendee_output {
     
     /// A builder for [`GetAttendeeOutput`](crate::output::GetAttendeeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
@@ -405,6 +414,7 @@ pub struct DeleteMeetingOutput  {
 pub mod delete_meeting_output {
     
     /// A builder for [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -434,6 +444,7 @@ pub struct DeleteAttendeeOutput  {
 pub mod delete_attendee_output {
     
     /// A builder for [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -486,6 +497,7 @@ impl CreateMeetingWithAttendeesOutput {
 pub mod create_meeting_with_attendees_output {
     
     /// A builder for [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
@@ -572,6 +584,7 @@ impl CreateMeetingOutput {
 pub mod create_meeting_output {
     
     /// A builder for [`CreateMeetingOutput`](crate::output::CreateMeetingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
@@ -622,6 +635,7 @@ impl CreateAttendeeOutput {
 pub mod create_attendee_output {
     
     /// A builder for [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
@@ -663,6 +677,7 @@ pub struct BatchUpdateAttendeeCapabilitiesExceptOutput  {
 pub mod batch_update_attendee_capabilities_except_output {
     
     /// A builder for [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -708,6 +723,7 @@ impl BatchCreateAttendeeOutput {
 pub mod batch_create_attendee_output {
     
     /// A builder for [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,

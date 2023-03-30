@@ -39,6 +39,7 @@ impl LogPattern {
 pub mod log_pattern {
     
     /// A builder for [`LogPattern`](crate::model::LogPattern).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pattern_set_name: std::option::Option<std::string::String>,
@@ -345,6 +346,7 @@ impl ApplicationInfo {
 pub mod application_info {
     
     /// A builder for [`ApplicationInfo`](crate::model::ApplicationInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -582,6 +584,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -721,6 +724,7 @@ impl Problem {
 pub mod problem {
     
     /// A builder for [`Problem`](crate::model::Problem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1292,6 +1296,7 @@ impl ConfigurationEvent {
 pub mod configuration_event {
     
     /// A builder for [`ConfigurationEvent`](crate::model::ConfigurationEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitored_resource_arn: std::option::Option<std::string::String>,
@@ -1623,6 +1628,7 @@ impl ApplicationComponent {
 pub mod application_component {
     
     /// A builder for [`ApplicationComponent`](crate::model::ApplicationComponent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
@@ -1833,6 +1839,7 @@ impl RelatedObservations {
 pub mod related_observations {
     
     /// A builder for [`RelatedObservations`](crate::model::RelatedObservations).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observation_list: std::option::Option<std::vec::Vec<crate::model::Observation>>,
@@ -2197,6 +2204,7 @@ impl Observation {
 pub mod observation {
     
     /// A builder for [`Observation`](crate::model::Observation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

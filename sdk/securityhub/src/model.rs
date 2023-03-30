@@ -897,6 +897,7 @@ impl AwsSecurityFindingFilters {
 pub mod aws_security_finding_filters {
     
     /// A builder for [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_arn: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -2701,6 +2702,7 @@ impl BooleanFilter {
 pub mod boolean_filter {
     
     /// A builder for [`BooleanFilter`](crate::model::BooleanFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<bool>,
@@ -2799,6 +2801,7 @@ impl StringFilter {
 pub mod string_filter {
     
     /// A builder for [`StringFilter`](crate::model::StringFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3007,6 +3010,7 @@ impl NumberFilter {
 pub mod number_filter {
     
     /// A builder for [`NumberFilter`](crate::model::NumberFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gte: std::option::Option<f64>,
@@ -3084,6 +3088,7 @@ impl KeywordFilter {
 pub mod keyword_filter {
     
     /// A builder for [`KeywordFilter`](crate::model::KeywordFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3148,6 +3153,7 @@ impl DateFilter {
 pub mod date_filter {
     
     /// A builder for [`DateFilter`](crate::model::DateFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<std::string::String>,
@@ -3229,6 +3235,7 @@ impl DateRange {
 pub mod date_range {
     
     /// A builder for [`DateRange`](crate::model::DateRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i32>,
@@ -3393,6 +3400,7 @@ impl MapFilter {
 pub mod map_filter {
     
     /// A builder for [`MapFilter`](crate::model::MapFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -3559,6 +3567,7 @@ impl IpFilter {
 pub mod ip_filter {
     
     /// A builder for [`IpFilter`](crate::model::IpFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
@@ -3698,6 +3707,7 @@ impl NoteUpdate {
 pub mod note_update {
     
     /// A builder for [`NoteUpdate`](crate::model::NoteUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -3767,6 +3777,7 @@ impl AdminAccount {
 pub mod admin_account {
     
     /// A builder for [`AdminAccount`](crate::model::AdminAccount).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3977,6 +3988,7 @@ impl Member {
 pub mod member {
     
     /// A builder for [`Member`](crate::model::Member).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4144,6 +4156,7 @@ impl Invitation {
 pub mod invitation {
     
     /// A builder for [`Invitation`](crate::model::Invitation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4230,6 +4243,7 @@ impl FindingAggregator {
 pub mod finding_aggregator {
     
     /// A builder for [`FindingAggregator`](crate::model::FindingAggregator).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_aggregator_arn: std::option::Option<std::string::String>,
@@ -4287,6 +4301,7 @@ impl Result {
 pub mod result {
     
     /// A builder for [`Result`](crate::model::Result).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4370,6 +4385,7 @@ impl Insight {
 pub mod insight {
     
     /// A builder for [`Insight`](crate::model::Insight).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_arn: std::option::Option<std::string::String>,
@@ -4470,6 +4486,7 @@ impl InsightResults {
 pub mod insight_results {
     
     /// A builder for [`InsightResults`](crate::model::InsightResults).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_arn: std::option::Option<std::string::String>,
@@ -4557,6 +4574,7 @@ impl InsightResultValue {
 pub mod insight_result_value {
     
     /// A builder for [`InsightResultValue`](crate::model::InsightResultValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_by_attribute_value: std::option::Option<std::string::String>,
@@ -4936,6 +4954,7 @@ impl AwsSecurityFinding {
 pub mod aws_security_finding {
     
     /// A builder for [`AwsSecurityFinding`](crate::model::AwsSecurityFinding).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_version: std::option::Option<std::string::String>,
@@ -5597,6 +5616,7 @@ impl FindingProviderFields {
 pub mod finding_provider_fields {
     
     /// A builder for [`FindingProviderFields`](crate::model::FindingProviderFields).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) confidence: std::option::Option<i32>,
@@ -5722,6 +5742,7 @@ impl FindingProviderSeverity {
 pub mod finding_provider_severity {
     
     /// A builder for [`FindingProviderSeverity`](crate::model::FindingProviderSeverity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label: std::option::Option<crate::model::SeverityLabel>,
@@ -5888,6 +5909,7 @@ impl RelatedFinding {
 pub mod related_finding {
     
     /// A builder for [`RelatedFinding`](crate::model::RelatedFinding).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_arn: std::option::Option<std::string::String>,
@@ -5996,6 +6018,7 @@ impl Action {
 pub mod action {
     
     /// A builder for [`Action`](crate::model::Action).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_type: std::option::Option<std::string::String>,
@@ -6113,6 +6136,7 @@ impl PortProbeAction {
 pub mod port_probe_action {
     
     /// A builder for [`PortProbeAction`](crate::model::PortProbeAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_probe_details: std::option::Option<std::vec::Vec<crate::model::PortProbeDetail>>,
@@ -6196,6 +6220,7 @@ impl PortProbeDetail {
 pub mod port_probe_detail {
     
     /// A builder for [`PortProbeDetail`](crate::model::PortProbeDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) local_port_details: std::option::Option<crate::model::ActionLocalPortDetails>,
@@ -6298,6 +6323,7 @@ impl ActionRemoteIpDetails {
 pub mod action_remote_ip_details {
     
     /// A builder for [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address_v4: std::option::Option<std::string::String>,
@@ -6403,6 +6429,7 @@ impl GeoLocation {
 pub mod geo_location {
     
     /// A builder for [`GeoLocation`](crate::model::GeoLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lon: std::option::Option<f64>,
@@ -6467,6 +6494,7 @@ impl City {
 pub mod city {
     
     /// A builder for [`City`](crate::model::City).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) city_name: std::option::Option<std::string::String>,
@@ -6524,6 +6552,7 @@ impl Country {
 pub mod country {
     
     /// A builder for [`Country`](crate::model::Country).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) country_code: std::option::Option<std::string::String>,
@@ -6607,6 +6636,7 @@ impl IpOrganizationDetails {
 pub mod ip_organization_details {
     
     /// A builder for [`IpOrganizationDetails`](crate::model::IpOrganizationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asn: std::option::Option<i32>,
@@ -6694,6 +6724,7 @@ impl ActionLocalIpDetails {
 pub mod action_local_ip_details {
     
     /// A builder for [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address_v4: std::option::Option<std::string::String>,
@@ -6751,6 +6782,7 @@ impl ActionLocalPortDetails {
 pub mod action_local_port_details {
     
     /// A builder for [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
@@ -6828,6 +6860,7 @@ impl DnsRequestAction {
 pub mod dns_request_action {
     
     /// A builder for [`DnsRequestAction`](crate::model::DnsRequestAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -6952,6 +6985,7 @@ impl AwsApiCallAction {
 pub mod aws_api_call_action {
     
     /// A builder for [`AwsApiCallAction`](crate::model::AwsApiCallAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api: std::option::Option<std::string::String>,
@@ -7092,6 +7126,7 @@ impl AwsApiCallActionDomainDetails {
 pub mod aws_api_call_action_domain_details {
     
     /// A builder for [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -7177,6 +7212,7 @@ impl NetworkConnectionAction {
 pub mod network_connection_action {
     
     /// A builder for [`NetworkConnectionAction`](crate::model::NetworkConnectionAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_direction: std::option::Option<std::string::String>,
@@ -7295,6 +7331,7 @@ impl ActionRemotePortDetails {
 pub mod action_remote_port_details {
     
     /// A builder for [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
@@ -7432,6 +7469,7 @@ impl PatchSummary {
 pub mod patch_summary {
     
     /// A builder for [`PatchSummary`](crate::model::PatchSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7664,6 +7702,7 @@ impl Vulnerability {
 pub mod vulnerability {
     
     /// A builder for [`Vulnerability`](crate::model::Vulnerability).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7939,6 +7978,7 @@ impl VulnerabilityVendor {
 pub mod vulnerability_vendor {
     
     /// A builder for [`VulnerabilityVendor`](crate::model::VulnerabilityVendor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8069,6 +8109,7 @@ impl Cvss {
 pub mod cvss {
     
     /// A builder for [`Cvss`](crate::model::Cvss).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
@@ -8181,6 +8222,7 @@ impl Adjustment {
 pub mod adjustment {
     
     /// A builder for [`Adjustment`](crate::model::Adjustment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
@@ -8313,6 +8355,7 @@ impl SoftwarePackage {
 pub mod software_package {
     
     /// A builder for [`SoftwarePackage`](crate::model::SoftwarePackage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8499,6 +8542,7 @@ impl Note {
 pub mod note {
     
     /// A builder for [`Note`](crate::model::Note).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -8597,6 +8641,7 @@ impl Workflow {
 pub mod workflow {
     
     /// A builder for [`Workflow`](crate::model::Workflow).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::WorkflowStatus>,
@@ -8985,6 +9030,7 @@ impl Compliance {
 pub mod compliance {
     
     /// A builder for [`Compliance`](crate::model::Compliance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ComplianceStatus>,
@@ -9098,6 +9144,7 @@ impl StatusReason {
 pub mod status_reason {
     
     /// A builder for [`StatusReason`](crate::model::StatusReason).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason_code: std::option::Option<std::string::String>,
@@ -9303,6 +9350,7 @@ impl Resource {
 pub mod resource {
     
     /// A builder for [`Resource`](crate::model::Resource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -10030,6 +10078,7 @@ impl ResourceDetails {
 pub mod resource_details {
     
     /// A builder for [`ResourceDetails`](crate::model::ResourceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_auto_scaling_auto_scaling_group: std::option::Option<crate::model::AwsAutoScalingAutoScalingGroupDetails>,
@@ -11127,6 +11176,7 @@ impl AwsWafv2RuleGroupDetails {
 pub mod aws_wafv2_rule_group_details {
     
     /// A builder for [`AwsWafv2RuleGroupDetails`](crate::model::AwsWafv2RuleGroupDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<i64>,
@@ -11282,6 +11332,7 @@ impl AwsWafv2VisibilityConfigDetails {
 pub mod aws_wafv2_visibility_config_details {
     
     /// A builder for [`AwsWafv2VisibilityConfigDetails`](crate::model::AwsWafv2VisibilityConfigDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_metrics_enabled: std::option::Option<bool>,
@@ -11386,6 +11437,7 @@ impl AwsWafv2RulesDetails {
 pub mod aws_wafv2_rules_details {
     
     /// A builder for [`AwsWafv2RulesDetails`](crate::model::AwsWafv2RulesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::AwsWafv2RulesActionDetails>,
@@ -11506,6 +11558,7 @@ impl AwsWafv2RulesActionDetails {
 pub mod aws_wafv2_rules_action_details {
     
     /// A builder for [`AwsWafv2RulesActionDetails`](crate::model::AwsWafv2RulesActionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow: std::option::Option<crate::model::AwsWafv2ActionAllowDetails>,
@@ -11592,6 +11645,7 @@ impl AwsWafv2RulesActionCountDetails {
 pub mod aws_wafv2_rules_action_count_details {
     
     /// A builder for [`AwsWafv2RulesActionCountDetails`](crate::model::AwsWafv2RulesActionCountDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_request_handling: std::option::Option<crate::model::AwsWafv2CustomRequestHandlingDetails>,
@@ -11642,6 +11696,7 @@ impl AwsWafv2CustomRequestHandlingDetails {
 pub mod aws_wafv2_custom_request_handling_details {
     
     /// A builder for [`AwsWafv2CustomRequestHandlingDetails`](crate::model::AwsWafv2CustomRequestHandlingDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insert_headers: std::option::Option<std::vec::Vec<crate::model::AwsWafv2CustomHttpHeader>>,
@@ -11705,6 +11760,7 @@ impl AwsWafv2CustomHttpHeader {
 pub mod aws_wafv2_custom_http_header {
     
     /// A builder for [`AwsWafv2CustomHttpHeader`](crate::model::AwsWafv2CustomHttpHeader).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11767,6 +11823,7 @@ impl AwsWafv2RulesActionCaptchaDetails {
 pub mod aws_wafv2_rules_action_captcha_details {
     
     /// A builder for [`AwsWafv2RulesActionCaptchaDetails`](crate::model::AwsWafv2RulesActionCaptchaDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_request_handling: std::option::Option<crate::model::AwsWafv2CustomRequestHandlingDetails>,
@@ -11817,6 +11874,7 @@ impl AwsWafv2ActionBlockDetails {
 pub mod aws_wafv2_action_block_details {
     
     /// A builder for [`AwsWafv2ActionBlockDetails`](crate::model::AwsWafv2ActionBlockDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_response: std::option::Option<crate::model::AwsWafv2CustomResponseDetails>,
@@ -11881,6 +11939,7 @@ impl AwsWafv2CustomResponseDetails {
 pub mod aws_wafv2_custom_response_details {
     
     /// A builder for [`AwsWafv2CustomResponseDetails`](crate::model::AwsWafv2CustomResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_response_body_key: std::option::Option<std::string::String>,
@@ -11962,6 +12021,7 @@ impl AwsWafv2ActionAllowDetails {
 pub mod aws_wafv2_action_allow_details {
     
     /// A builder for [`AwsWafv2ActionAllowDetails`](crate::model::AwsWafv2ActionAllowDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_request_handling: std::option::Option<crate::model::AwsWafv2CustomRequestHandlingDetails>,
@@ -12075,6 +12135,7 @@ impl AwsWafv2WebAclDetails {
 pub mod aws_wafv2_web_acl_details {
     
     /// A builder for [`AwsWafv2WebAclDetails`](crate::model::AwsWafv2WebAclDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -12248,6 +12309,7 @@ impl AwsWafv2WebAclActionDetails {
 pub mod aws_wafv2_web_acl_action_details {
     
     /// A builder for [`AwsWafv2WebAclActionDetails`](crate::model::AwsWafv2WebAclActionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow: std::option::Option<crate::model::AwsWafv2ActionAllowDetails>,
@@ -12310,6 +12372,7 @@ impl AwsWafv2WebAclCaptchaConfigDetails {
 pub mod aws_wafv2_web_acl_captcha_config_details {
     
     /// A builder for [`AwsWafv2WebAclCaptchaConfigDetails`](crate::model::AwsWafv2WebAclCaptchaConfigDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) immunity_time_property: std::option::Option<crate::model::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails>,
@@ -12360,6 +12423,7 @@ impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
 pub mod aws_wafv2_web_acl_captcha_config_immunity_time_property_details {
     
     /// A builder for [`AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails`](crate::model::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) immunity_time: std::option::Option<i64>,
@@ -12544,6 +12608,7 @@ impl AwsSageMakerNotebookInstanceDetails {
 pub mod aws_sage_maker_notebook_instance_details {
     
     /// A builder for [`AwsSageMakerNotebookInstanceDetails`](crate::model::AwsSageMakerNotebookInstanceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12841,6 +12906,7 @@ impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
 pub mod aws_sage_maker_notebook_instance_metadata_service_configuration_details {
     
     /// A builder for [`AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails`](crate::model::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) minimum_instance_metadata_service_version: std::option::Option<std::string::String>,
@@ -12919,6 +12985,7 @@ impl AwsEc2LaunchTemplateDetails {
 pub mod aws_ec2_launch_template_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDetails`](crate::model::AwsEc2LaunchTemplateDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_name: std::option::Option<std::string::String>,
@@ -13222,6 +13289,7 @@ impl AwsEc2LaunchTemplateDataDetails {
 pub mod aws_ec2_launch_template_data_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataDetails`](crate::model::AwsEc2LaunchTemplateDataDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_device_mapping_set: std::option::Option<std::vec::Vec<crate::model::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>>,
@@ -13679,6 +13747,7 @@ impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
 pub mod aws_ec2_launch_template_data_private_dns_name_options_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_resource_name_dns_aaaa_record: std::option::Option<bool>,
@@ -13804,6 +13873,7 @@ impl AwsEc2LaunchTemplateDataPlacementDetails {
 pub mod aws_ec2_launch_template_data_placement_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataPlacementDetails`](crate::model::AwsEc2LaunchTemplateDataPlacementDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) affinity: std::option::Option<std::string::String>,
@@ -14065,6 +14135,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
 pub mod aws_ec2_launch_template_data_network_interface_set_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associate_carrier_ip_address: std::option::Option<bool>,
@@ -14377,6 +14448,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {
 pub mod aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary: std::option::Option<bool>,
@@ -14440,6 +14512,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
 pub mod aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv6_prefix: std::option::Option<std::string::String>,
@@ -14490,6 +14563,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails {
 pub mod aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv6_address: std::option::Option<std::string::String>,
@@ -14540,6 +14614,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails {
 pub mod aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv4_prefix: std::option::Option<std::string::String>,
@@ -14590,6 +14665,7 @@ impl AwsEc2LaunchTemplateDataMonitoringDetails {
 pub mod aws_ec2_launch_template_data_monitoring_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataMonitoringDetails`](crate::model::AwsEc2LaunchTemplateDataMonitoringDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -14669,6 +14745,7 @@ impl AwsEc2LaunchTemplateDataMetadataOptionsDetails {
 pub mod aws_ec2_launch_template_data_metadata_options_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataMetadataOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataMetadataOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_endpoint: std::option::Option<std::string::String>,
@@ -14768,6 +14845,7 @@ impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
 pub mod aws_ec2_launch_template_data_maintenance_options_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_recovery: std::option::Option<std::string::String>,
@@ -14818,6 +14896,7 @@ impl AwsEc2LaunchTemplateDataLicenseSetDetails {
 pub mod aws_ec2_launch_template_data_license_set_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataLicenseSetDetails`](crate::model::AwsEc2LaunchTemplateDataLicenseSetDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
@@ -15016,6 +15095,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
 pub mod aws_ec2_launch_template_data_instance_requirements_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_count: std::option::Option<crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails>,
@@ -15366,6 +15446,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
 pub mod aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max: std::option::Option<i32>,
@@ -15437,6 +15518,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
 pub mod aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max: std::option::Option<f64>,
@@ -15508,6 +15590,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
 pub mod aws_ec2_launch_template_data_instance_requirements_network_interface_count_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max: std::option::Option<i32>,
@@ -15579,6 +15662,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
 pub mod aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max: std::option::Option<i32>,
@@ -15650,6 +15734,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
 pub mod aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max: std::option::Option<f64>,
@@ -15721,6 +15806,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails
 pub mod aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max: std::option::Option<i32>,
@@ -15792,6 +15878,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetail
 pub mod aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max: std::option::Option<i32>,
@@ -15863,6 +15950,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
 pub mod aws_ec2_launch_template_data_instance_requirements_accelerator_count_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max: std::option::Option<i32>,
@@ -15934,6 +16022,7 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
 pub mod aws_ec2_launch_template_data_instance_market_options_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) market_type: std::option::Option<std::string::String>,
@@ -16024,6 +16113,7 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
 pub mod aws_ec2_launch_template_data_instance_market_options_spot_options_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_duration_minutes: std::option::Option<i32>,
@@ -16130,6 +16220,7 @@ impl AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
 pub mod aws_ec2_launch_template_data_iam_instance_profile_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataIamInstanceProfileDetails`](crate::model::AwsEc2LaunchTemplateDataIamInstanceProfileDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -16192,6 +16283,7 @@ impl AwsEc2LaunchTemplateDataHibernationOptionsDetails {
 pub mod aws_ec2_launch_template_data_hibernation_options_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataHibernationOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataHibernationOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured: std::option::Option<bool>,
@@ -16243,6 +16335,7 @@ impl AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
 pub mod aws_ec2_launch_template_data_enclave_options_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataEnclaveOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataEnclaveOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -16301,6 +16394,7 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
 pub mod aws_ec2_launch_template_data_elastic_inference_accelerator_set_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::model::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -16364,6 +16458,7 @@ impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
 pub mod aws_ec2_launch_template_data_elastic_gpu_specification_set_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::model::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -16414,6 +16509,7 @@ impl AwsEc2LaunchTemplateDataCreditSpecificationDetails {
 pub mod aws_ec2_launch_template_data_credit_specification_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataCreditSpecificationDetails`](crate::model::AwsEc2LaunchTemplateDataCreditSpecificationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cpu_credits: std::option::Option<std::string::String>,
@@ -16471,6 +16567,7 @@ impl AwsEc2LaunchTemplateDataCpuOptionsDetails {
 pub mod aws_ec2_launch_template_data_cpu_options_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataCpuOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataCpuOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_count: std::option::Option<i32>,
@@ -16542,6 +16639,7 @@ impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
 pub mod aws_ec2_launch_template_data_capacity_reservation_specification_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails`](crate::model::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_reservation_preference: std::option::Option<std::string::String>,
@@ -16611,6 +16709,7 @@ impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservation
 pub mod aws_ec2_launch_template_data_capacity_reservation_specification_capacity_reservation_target_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails`](crate::model::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_reservation_id: std::option::Option<std::string::String>,
@@ -16694,6 +16793,7 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {
 pub mod aws_ec2_launch_template_data_block_device_mapping_set_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails`](crate::model::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
@@ -16829,6 +16929,7 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
 pub mod aws_ec2_launch_template_data_block_device_mapping_set_ebs_details {
     
     /// A builder for [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails`](crate::model::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_on_termination: std::option::Option<bool>,
@@ -17116,6 +17217,7 @@ impl AwsBackupRecoveryPointDetails {
 pub mod aws_backup_recovery_point_details {
     
     /// A builder for [`AwsBackupRecoveryPointDetails`](crate::model::AwsBackupRecoveryPointDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_size_in_bytes: std::option::Option<i64>,
@@ -17413,6 +17515,7 @@ impl AwsBackupRecoveryPointLifecycleDetails {
 pub mod aws_backup_recovery_point_lifecycle_details {
     
     /// A builder for [`AwsBackupRecoveryPointLifecycleDetails`](crate::model::AwsBackupRecoveryPointLifecycleDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_after_days: std::option::Option<i64>,
@@ -17498,6 +17601,7 @@ impl AwsBackupRecoveryPointCreatedByDetails {
 pub mod aws_backup_recovery_point_created_by_details {
     
     /// A builder for [`AwsBackupRecoveryPointCreatedByDetails`](crate::model::AwsBackupRecoveryPointCreatedByDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_plan_arn: std::option::Option<std::string::String>,
@@ -17591,6 +17695,7 @@ impl AwsBackupRecoveryPointCalculatedLifecycleDetails {
 pub mod aws_backup_recovery_point_calculated_lifecycle_details {
     
     /// A builder for [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_at: std::option::Option<std::string::String>,
@@ -17674,6 +17779,7 @@ impl AwsBackupBackupPlanDetails {
 pub mod aws_backup_backup_plan_details {
     
     /// A builder for [`AwsBackupBackupPlanDetails`](crate::model::AwsBackupBackupPlanDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_plan: std::option::Option<crate::model::AwsBackupBackupPlanBackupPlanDetails>,
@@ -17774,6 +17880,7 @@ impl AwsBackupBackupPlanBackupPlanDetails {
 pub mod aws_backup_backup_plan_backup_plan_details {
     
     /// A builder for [`AwsBackupBackupPlanBackupPlanDetails`](crate::model::AwsBackupBackupPlanBackupPlanDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_plan_name: std::option::Option<std::string::String>,
@@ -17918,6 +18025,7 @@ impl AwsBackupBackupPlanRuleDetails {
 pub mod aws_backup_backup_plan_rule_details {
     
     /// A builder for [`AwsBackupBackupPlanRuleDetails`](crate::model::AwsBackupBackupPlanRuleDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_backup_vault: std::option::Option<std::string::String>,
@@ -18082,6 +18190,7 @@ impl AwsBackupBackupPlanLifecycleDetails {
 pub mod aws_backup_backup_plan_lifecycle_details {
     
     /// A builder for [`AwsBackupBackupPlanLifecycleDetails`](crate::model::AwsBackupBackupPlanLifecycleDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_after_days: std::option::Option<i64>,
@@ -18155,6 +18264,7 @@ impl AwsBackupBackupPlanRuleCopyActionsDetails {
 pub mod aws_backup_backup_plan_rule_copy_actions_details {
     
     /// A builder for [`AwsBackupBackupPlanRuleCopyActionsDetails`](crate::model::AwsBackupBackupPlanRuleCopyActionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_backup_vault_arn: std::option::Option<std::string::String>,
@@ -18236,6 +18346,7 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {
 pub mod aws_backup_backup_plan_advanced_backup_settings_details {
     
     /// A builder for [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -18342,6 +18453,7 @@ impl AwsBackupBackupVaultDetails {
 pub mod aws_backup_backup_vault_details {
     
     /// A builder for [`AwsBackupBackupVaultDetails`](crate::model::AwsBackupBackupVaultDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
@@ -18459,6 +18571,7 @@ impl AwsBackupBackupVaultNotificationsDetails {
 pub mod aws_backup_backup_vault_notifications_details {
     
     /// A builder for [`AwsBackupBackupVaultNotificationsDetails`](crate::model::AwsBackupBackupVaultNotificationsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_vault_events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18595,6 +18708,7 @@ impl AwsEcsTaskDetails {
 pub mod aws_ecs_task_details {
     
     /// A builder for [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -18774,6 +18888,7 @@ impl AwsEcsContainerDetails {
 pub mod aws_ecs_container_details {
     
     /// A builder for [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -18874,6 +18989,7 @@ impl AwsMountPoint {
 pub mod aws_mount_point {
     
     /// A builder for [`AwsMountPoint`](crate::model::AwsMountPoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_volume: std::option::Option<std::string::String>,
@@ -18943,6 +19059,7 @@ impl AwsEcsTaskVolumeDetails {
 pub mod aws_ecs_task_volume_details {
     
     /// A builder for [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -19005,6 +19122,7 @@ impl AwsEcsTaskVolumeHostDetails {
 pub mod aws_ecs_task_volume_host_details {
     
     /// A builder for [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_path: std::option::Option<std::string::String>,
@@ -19076,6 +19194,7 @@ impl AwsWafRuleGroupDetails {
 pub mod aws_waf_rule_group_details {
     
     /// A builder for [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -19189,6 +19308,7 @@ impl AwsWafRuleGroupRulesDetails {
 pub mod aws_waf_rule_group_rules_details {
     
     /// A builder for [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::AwsWafRuleGroupRulesActionDetails>,
@@ -19276,6 +19396,7 @@ impl AwsWafRuleGroupRulesActionDetails {
 pub mod aws_waf_rule_group_rules_action_details {
     
     /// A builder for [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -19347,6 +19468,7 @@ impl AwsWafRuleDetails {
 pub mod aws_waf_rule_details {
     
     /// A builder for [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -19453,6 +19575,7 @@ impl AwsWafRulePredicateListDetails {
 pub mod aws_waf_rule_predicate_list_details {
     
     /// A builder for [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_id: std::option::Option<std::string::String>,
@@ -19556,6 +19679,7 @@ impl AwsWafRegionalWebAclDetails {
 pub mod aws_waf_regional_web_acl_details {
     
     /// A builder for [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_action: std::option::Option<std::string::String>,
@@ -19688,6 +19812,7 @@ impl AwsWafRegionalWebAclRulesListDetails {
 pub mod aws_waf_regional_web_acl_rules_list_details {
     
     /// A builder for [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::AwsWafRegionalWebAclRulesListActionDetails>,
@@ -19787,6 +19912,7 @@ impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
 pub mod aws_waf_regional_web_acl_rules_list_override_action_details {
     
     /// A builder for [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -19837,6 +19963,7 @@ impl AwsWafRegionalWebAclRulesListActionDetails {
 pub mod aws_waf_regional_web_acl_rules_list_action_details {
     
     /// A builder for [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -19908,6 +20035,7 @@ impl AwsWafRegionalRuleDetails {
 pub mod aws_waf_regional_rule_details {
     
     /// A builder for [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -20014,6 +20142,7 @@ impl AwsWafRegionalRulePredicateListDetails {
 pub mod aws_waf_regional_rule_predicate_list_details {
     
     /// A builder for [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_id: std::option::Option<std::string::String>,
@@ -20110,6 +20239,7 @@ impl AwsWafRegionalRuleGroupDetails {
 pub mod aws_waf_regional_rule_group_details {
     
     /// A builder for [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -20223,6 +20353,7 @@ impl AwsWafRegionalRuleGroupRulesDetails {
 pub mod aws_waf_regional_rule_group_rules_details {
     
     /// A builder for [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::AwsWafRegionalRuleGroupRulesActionDetails>,
@@ -20310,6 +20441,7 @@ impl AwsWafRegionalRuleGroupRulesActionDetails {
 pub mod aws_waf_regional_rule_group_rules_action_details {
     
     /// A builder for [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -20388,6 +20520,7 @@ impl AwsEc2VpcPeeringConnectionDetails {
 pub mod aws_ec2_vpc_peering_connection_details {
     
     /// A builder for [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accepter_vpc_info: std::option::Option<crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
@@ -20493,6 +20626,7 @@ impl AwsEc2VpcPeeringConnectionStatusDetails {
 pub mod aws_ec2_vpc_peering_connection_status_details {
     
     /// A builder for [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -20597,6 +20731,7 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetails {
 pub mod aws_ec2_vpc_peering_connection_vpc_info_details {
     
     /// A builder for [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_block: std::option::Option<std::string::String>,
@@ -20745,6 +20880,7 @@ impl VpcInfoPeeringOptionsDetails {
 pub mod vpc_info_peering_options_details {
     
     /// A builder for [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_dns_resolution_from_remote_vpc: std::option::Option<bool>,
@@ -20822,6 +20958,7 @@ impl VpcInfoIpv6CidrBlockSetDetails {
 pub mod vpc_info_ipv6_cidr_block_set_details {
     
     /// A builder for [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv6_cidr_block: std::option::Option<std::string::String>,
@@ -20872,6 +21009,7 @@ impl VpcInfoCidrBlockSetDetails {
 pub mod vpc_info_cidr_block_set_details {
     
     /// A builder for [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_block: std::option::Option<std::string::String>,
@@ -21073,6 +21211,7 @@ impl AwsCloudWatchAlarmDetails {
 pub mod aws_cloud_watch_alarm_details {
     
     /// A builder for [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) actions_enabled: std::option::Option<bool>,
@@ -21415,6 +21554,7 @@ impl AwsCloudWatchAlarmDimensionsDetails {
 pub mod aws_cloud_watch_alarm_dimensions_details {
     
     /// A builder for [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -21575,6 +21715,7 @@ impl AwsCloudFormationStackDetails {
 pub mod aws_cloud_formation_stack_details {
     
     /// A builder for [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -21828,6 +21969,7 @@ impl AwsCloudFormationStackOutputsDetails {
 pub mod aws_cloud_formation_stack_outputs_details {
     
     /// A builder for [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -21902,6 +22044,7 @@ impl AwsCloudFormationStackDriftInformationDetails {
 pub mod aws_cloud_formation_stack_drift_information_details {
     
     /// A builder for [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_drift_status: std::option::Option<std::string::String>,
@@ -21987,6 +22130,7 @@ impl AwsEfsAccessPointDetails {
 pub mod aws_efs_access_point_details {
     
     /// A builder for [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_id: std::option::Option<std::string::String>,
@@ -22104,6 +22248,7 @@ impl AwsEfsAccessPointRootDirectoryDetails {
 pub mod aws_efs_access_point_root_directory_details {
     
     /// A builder for [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_info: std::option::Option<crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
@@ -22180,6 +22325,7 @@ impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {
 pub mod aws_efs_access_point_root_directory_creation_info_details {
     
     /// A builder for [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_gid: std::option::Option<std::string::String>,
@@ -22268,6 +22414,7 @@ impl AwsEfsAccessPointPosixUserDetails {
 pub mod aws_efs_access_point_posix_user_details {
     
     /// A builder for [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gid: std::option::Option<std::string::String>,
@@ -22425,6 +22572,7 @@ impl AwsEc2TransitGatewayDetails {
 pub mod aws_ec2_transit_gateway_details {
     
     /// A builder for [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -22642,6 +22790,7 @@ impl AwsKinesisStreamDetails {
 pub mod aws_kinesis_stream_details {
     
     /// A builder for [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -22749,6 +22898,7 @@ impl AwsKinesisStreamStreamEncryptionDetails {
 pub mod aws_kinesis_stream_stream_encryption_details {
     
     /// A builder for [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_type: std::option::Option<std::string::String>,
@@ -22853,6 +23003,7 @@ impl AwsRdsDbSecurityGroupDetails {
 pub mod aws_rds_db_security_group_details {
     
     /// A builder for [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_security_group_arn: std::option::Option<std::string::String>,
@@ -22994,6 +23145,7 @@ impl AwsRdsDbSecurityGroupIpRange {
 pub mod aws_rds_db_security_group_ip_range {
     
     /// A builder for [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_ip: std::option::Option<std::string::String>,
@@ -23077,6 +23229,7 @@ impl AwsRdsDbSecurityGroupEc2SecurityGroup {
 pub mod aws_rds_db_security_group_ec2_security_group {
     
     /// A builder for [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_security_group_id: std::option::Option<std::string::String>,
@@ -23206,6 +23359,7 @@ impl AwsNetworkFirewallRuleGroupDetails {
 pub mod aws_network_firewall_rule_group_details {
     
     /// A builder for [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<i32>,
@@ -23340,6 +23494,7 @@ impl RuleGroupDetails {
 pub mod rule_group_details {
     
     /// A builder for [`RuleGroupDetails`](crate::model::RuleGroupDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_variables: std::option::Option<crate::model::RuleGroupVariables>,
@@ -23427,6 +23582,7 @@ impl RuleGroupSource {
 pub mod rule_group_source {
     
     /// A builder for [`RuleGroupSource`](crate::model::RuleGroupSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules_source_list: std::option::Option<crate::model::RuleGroupSourceListDetails>,
@@ -23526,6 +23682,7 @@ impl RuleGroupSourceStatelessRulesAndCustomActionsDetails {
 pub mod rule_group_source_stateless_rules_and_custom_actions_details {
     
     /// A builder for [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_actions: std::option::Option<std::vec::Vec<crate::model::RuleGroupSourceCustomActionsDetails>>,
@@ -23607,6 +23764,7 @@ impl RuleGroupSourceStatelessRulesDetails {
 pub mod rule_group_source_stateless_rules_details {
     
     /// A builder for [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
@@ -23677,6 +23835,7 @@ impl RuleGroupSourceStatelessRuleDefinition {
 pub mod rule_group_source_stateless_rule_definition {
     
     /// A builder for [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) actions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -23780,6 +23939,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributes {
 pub mod rule_group_source_stateless_rule_match_attributes {
     
     /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_ports: std::option::Option<std::vec::Vec<crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>>,
@@ -23933,6 +24093,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
 pub mod rule_group_source_stateless_rule_match_attributes_tcp_flags {
     
     /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flags: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -24007,6 +24168,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSources {
 pub mod rule_group_source_stateless_rule_match_attributes_sources {
     
     /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_definition: std::option::Option<std::string::String>,
@@ -24064,6 +24226,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
 pub mod rule_group_source_stateless_rule_match_attributes_source_ports {
     
     /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_port: std::option::Option<i32>,
@@ -24128,6 +24291,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
 pub mod rule_group_source_stateless_rule_match_attributes_destinations {
     
     /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_definition: std::option::Option<std::string::String>,
@@ -24185,6 +24349,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
 pub mod rule_group_source_stateless_rule_match_attributes_destination_ports {
     
     /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_port: std::option::Option<i32>,
@@ -24256,6 +24421,7 @@ impl RuleGroupSourceCustomActionsDetails {
 pub mod rule_group_source_custom_actions_details {
     
     /// A builder for [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_definition: std::option::Option<crate::model::StatelessCustomActionDefinition>,
@@ -24318,6 +24484,7 @@ impl StatelessCustomActionDefinition {
 pub mod stateless_custom_action_definition {
     
     /// A builder for [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) publish_metric_action: std::option::Option<crate::model::StatelessCustomPublishMetricAction>,
@@ -24368,6 +24535,7 @@ impl StatelessCustomPublishMetricAction {
 pub mod stateless_custom_publish_metric_action {
     
     /// A builder for [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::StatelessCustomPublishMetricActionDimension>>,
@@ -24424,6 +24592,7 @@ impl StatelessCustomPublishMetricActionDimension {
 pub mod stateless_custom_publish_metric_action_dimension {
     
     /// A builder for [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -24488,6 +24657,7 @@ impl RuleGroupSourceStatefulRulesDetails {
 pub mod rule_group_source_stateful_rules_details {
     
     /// A builder for [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
@@ -24575,6 +24745,7 @@ impl RuleGroupSourceStatefulRulesOptionsDetails {
 pub mod rule_group_source_stateful_rules_options_details {
     
     /// A builder for [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyword: std::option::Option<std::string::String>,
@@ -24678,6 +24849,7 @@ impl RuleGroupSourceStatefulRulesHeaderDetails {
 pub mod rule_group_source_stateful_rules_header_details {
     
     /// A builder for [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<std::string::String>,
@@ -24802,6 +24974,7 @@ impl RuleGroupSourceListDetails {
 pub mod rule_group_source_list_details {
     
     /// A builder for [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) generated_rules_type: std::option::Option<std::string::String>,
@@ -24895,6 +25068,7 @@ impl RuleGroupVariables {
 pub mod rule_group_variables {
     
     /// A builder for [`RuleGroupVariables`](crate::model::RuleGroupVariables).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_sets: std::option::Option<crate::model::RuleGroupVariablesIpSetsDetails>,
@@ -24957,6 +25131,7 @@ impl RuleGroupVariablesPortSetsDetails {
 pub mod rule_group_variables_port_sets_details {
     
     /// A builder for [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -25013,6 +25188,7 @@ impl RuleGroupVariablesIpSetsDetails {
 pub mod rule_group_variables_ip_sets_details {
     
     /// A builder for [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -25132,6 +25308,7 @@ impl AwsNetworkFirewallFirewallDetails {
 pub mod aws_network_firewall_firewall_details {
     
     /// A builder for [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_protection: std::option::Option<bool>,
@@ -25299,6 +25476,7 @@ impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
 pub mod aws_network_firewall_firewall_subnet_mappings_details {
     
     /// A builder for [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
@@ -25377,6 +25555,7 @@ impl AwsNetworkFirewallFirewallPolicyDetails {
 pub mod aws_network_firewall_firewall_policy_details {
     
     /// A builder for [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy: std::option::Option<crate::model::FirewallPolicyDetails>,
@@ -25507,6 +25686,7 @@ impl FirewallPolicyDetails {
 pub mod firewall_policy_details {
     
     /// A builder for [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stateful_rule_group_references: std::option::Option<std::vec::Vec<crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails>>,
@@ -25646,6 +25826,7 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetails {
 pub mod firewall_policy_stateless_rule_group_references_details {
     
     /// A builder for [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
@@ -25716,6 +25897,7 @@ impl FirewallPolicyStatelessCustomActionsDetails {
 pub mod firewall_policy_stateless_custom_actions_details {
     
     /// A builder for [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_definition: std::option::Option<crate::model::StatelessCustomActionDefinition>,
@@ -25778,6 +25960,7 @@ impl FirewallPolicyStatefulRuleGroupReferencesDetails {
 pub mod firewall_policy_stateful_rule_group_references_details {
     
     /// A builder for [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -25900,6 +26083,7 @@ impl AwsEksClusterDetails {
 pub mod aws_eks_cluster_details {
     
     /// A builder for [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -26062,6 +26246,7 @@ impl AwsEksClusterLoggingDetails {
 pub mod aws_eks_cluster_logging_details {
     
     /// A builder for [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_logging: std::option::Option<std::vec::Vec<crate::model::AwsEksClusterLoggingClusterLoggingDetails>>,
@@ -26139,6 +26324,7 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
 pub mod aws_eks_cluster_logging_cluster_logging_details {
     
     /// A builder for [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -26229,6 +26415,7 @@ impl AwsEksClusterResourcesVpcConfigDetails {
 pub mod aws_eks_cluster_resources_vpc_config_details {
     
     /// A builder for [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -26338,6 +26525,7 @@ impl AwsEcrRepositoryDetails {
 pub mod aws_ecr_repository_details {
     
     /// A builder for [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -26455,6 +26643,7 @@ impl AwsEcrRepositoryLifecyclePolicyDetails {
 pub mod aws_ecr_repository_lifecycle_policy_details {
     
     /// A builder for [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_policy_text: std::option::Option<std::string::String>,
@@ -26517,6 +26706,7 @@ impl AwsEcrRepositoryImageScanningConfigurationDetails {
 pub mod aws_ecr_repository_image_scanning_configuration_details {
     
     /// A builder for [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scan_on_push: std::option::Option<bool>,
@@ -26603,6 +26793,7 @@ impl AwsWafRegionalRateBasedRuleDetails {
 pub mod aws_waf_regional_rate_based_rule_details {
     
     /// A builder for [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -26754,6 +26945,7 @@ impl AwsWafRegionalRateBasedRuleMatchPredicate {
 pub mod aws_waf_regional_rate_based_rule_match_predicate {
     
     /// A builder for [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_id: std::option::Option<std::string::String>,
@@ -26884,6 +27076,7 @@ impl AwsWafRateBasedRuleDetails {
 pub mod aws_waf_rate_based_rule_details {
     
     /// A builder for [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -27035,6 +27228,7 @@ impl AwsWafRateBasedRuleMatchPredicate {
 pub mod aws_waf_rate_based_rule_match_predicate {
     
     /// A builder for [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_id: std::option::Option<std::string::String>,
@@ -27146,6 +27340,7 @@ impl AwsXrayEncryptionConfigDetails {
 pub mod aws_xray_encryption_config_details {
     
     /// A builder for [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -27306,6 +27501,7 @@ impl AwsEc2VpcEndpointServiceDetails {
 pub mod aws_ec2_vpc_endpoint_service_details {
     
     /// A builder for [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acceptance_required: std::option::Option<bool>,
@@ -27522,6 +27718,7 @@ impl AwsEc2VpcEndpointServiceServiceTypeDetails {
 pub mod aws_ec2_vpc_endpoint_service_service_type_details {
     
     /// A builder for [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<std::string::String>,
@@ -27672,6 +27869,7 @@ impl AwsOpenSearchServiceDomainDetails {
 pub mod aws_open_search_service_domain_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -27912,6 +28110,7 @@ impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
 pub mod aws_open_search_service_domain_advanced_security_options_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -28002,6 +28201,7 @@ impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {
 pub mod aws_open_search_service_domain_master_user_options_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) master_user_arn: std::option::Option<std::string::String>,
@@ -28090,6 +28290,7 @@ impl AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
 pub mod aws_open_search_service_domain_log_publishing_options_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_slow_logs: std::option::Option<crate::model::AwsOpenSearchServiceDomainLogPublishingOption>,
@@ -28171,6 +28372,7 @@ impl AwsOpenSearchServiceDomainLogPublishingOption {
 pub mod aws_open_search_service_domain_log_publishing_option {
     
     /// A builder for [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
@@ -28241,6 +28443,7 @@ impl AwsOpenSearchServiceDomainVpcOptionsDetails {
 pub mod aws_open_search_service_domain_vpc_options_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -28343,6 +28546,7 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
 pub mod aws_open_search_service_domain_domain_endpoint_options_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_endpoint_certificate_arn: std::option::Option<std::string::String>,
@@ -28510,6 +28714,7 @@ impl AwsOpenSearchServiceDomainClusterConfigDetails {
 pub mod aws_open_search_service_domain_cluster_config_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_count: std::option::Option<i32>,
@@ -28678,6 +28883,7 @@ impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
 pub mod aws_open_search_service_domain_cluster_config_zone_awareness_config_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone_count: std::option::Option<i32>,
@@ -28792,6 +28998,7 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
 pub mod aws_open_search_service_domain_service_software_options_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automated_update_date: std::option::Option<std::string::String>,
@@ -28943,6 +29150,7 @@ impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
 pub mod aws_open_search_service_domain_node_to_node_encryption_options_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -29001,6 +29209,7 @@ impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
 pub mod aws_open_search_service_domain_encryption_at_rest_options_details {
     
     /// A builder for [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -29111,6 +29320,7 @@ impl AwsEcrContainerImageDetails {
 pub mod aws_ecr_container_image_details {
     
     /// A builder for [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -29321,6 +29531,7 @@ impl AwsEc2VpnConnectionDetails {
 pub mod aws_ec2_vpn_connection_details {
     
     /// A builder for [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpn_connection_id: std::option::Option<std::string::String>,
@@ -29522,6 +29733,7 @@ impl AwsEc2VpnConnectionRoutesDetails {
 pub mod aws_ec2_vpn_connection_routes_details {
     
     /// A builder for [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
@@ -29591,6 +29803,7 @@ impl AwsEc2VpnConnectionOptionsDetails {
 pub mod aws_ec2_vpn_connection_options_details {
     
     /// A builder for [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_routes_only: std::option::Option<bool>,
@@ -29765,6 +29978,7 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
 pub mod aws_ec2_vpn_connection_options_tunnel_options_details {
     
     /// A builder for [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dpd_timeout_seconds: std::option::Option<i32>,
@@ -30080,6 +30294,7 @@ impl AwsEc2VpnConnectionVgwTelemetryDetails {
 pub mod aws_ec2_vpn_connection_vgw_telemetry_details {
     
     /// A builder for [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accepted_route_count: std::option::Option<i32>,
@@ -30321,6 +30536,7 @@ impl AwsAutoScalingLaunchConfigurationDetails {
 pub mod aws_auto_scaling_launch_configuration_details {
     
     /// A builder for [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
@@ -30623,6 +30839,7 @@ impl AwsAutoScalingLaunchConfigurationMetadataOptions {
 pub mod aws_auto_scaling_launch_configuration_metadata_options {
     
     /// A builder for [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_endpoint: std::option::Option<std::string::String>,
@@ -30700,6 +30917,7 @@ impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
 pub mod aws_auto_scaling_launch_configuration_instance_monitoring_details {
     
     /// A builder for [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -30778,6 +30996,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
 pub mod aws_auto_scaling_launch_configuration_block_device_mappings_details {
     
     /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
@@ -30938,6 +31157,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
 pub mod aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details {
     
     /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_on_termination: std::option::Option<bool>,
@@ -31245,6 +31465,7 @@ impl AwsEcsServiceDetails {
 pub mod aws_ecs_service_details {
     
     /// A builder for [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_provider_strategy: std::option::Option<std::vec::Vec<crate::model::AwsEcsServiceCapacityProviderStrategyDetails>>,
@@ -31622,6 +31843,7 @@ impl AwsEcsServiceServiceRegistriesDetails {
 pub mod aws_ecs_service_service_registries_details {
     
     /// A builder for [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -31739,6 +31961,7 @@ impl AwsEcsServicePlacementStrategiesDetails {
 pub mod aws_ecs_service_placement_strategies_details {
     
     /// A builder for [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<std::string::String>,
@@ -31824,6 +32047,7 @@ impl AwsEcsServicePlacementConstraintsDetails {
 pub mod aws_ecs_service_placement_constraints_details {
     
     /// A builder for [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -31888,6 +32112,7 @@ impl AwsEcsServiceNetworkConfigurationDetails {
 pub mod aws_ecs_service_network_configuration_details {
     
     /// A builder for [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_vpc_configuration: std::option::Option<crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails>,
@@ -31958,6 +32183,7 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
 pub mod aws_ecs_service_network_configuration_aws_vpc_configuration_details {
     
     /// A builder for [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assign_public_ip: std::option::Option<std::string::String>,
@@ -32075,6 +32301,7 @@ impl AwsEcsServiceLoadBalancersDetails {
 pub mod aws_ecs_service_load_balancers_details {
     
     /// A builder for [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -32172,6 +32399,7 @@ impl AwsEcsServiceDeploymentControllerDetails {
 pub mod aws_ecs_service_deployment_controller_details {
     
     /// A builder for [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -32250,6 +32478,7 @@ impl AwsEcsServiceDeploymentConfigurationDetails {
 pub mod aws_ecs_service_deployment_configuration_details {
     
     /// A builder for [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_circuit_breaker: std::option::Option<crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails>,
@@ -32341,6 +32570,7 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
 pub mod aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details {
     
     /// A builder for [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable: std::option::Option<bool>,
@@ -32425,6 +32655,7 @@ impl AwsEcsServiceCapacityProviderStrategyDetails {
 pub mod aws_ecs_service_capacity_provider_strategy_details {
     
     /// A builder for [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base: std::option::Option<i32>,
@@ -32574,6 +32805,7 @@ impl AwsRdsEventSubscriptionDetails {
 pub mod aws_rds_event_subscription_details {
     
     /// A builder for [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cust_subscription_id: std::option::Option<std::string::String>,
@@ -32793,6 +33025,7 @@ impl ContainerDetails {
 pub mod container_details {
     
     /// A builder for [`ContainerDetails`](crate::model::ContainerDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_runtime: std::option::Option<std::string::String>,
@@ -32931,6 +33164,7 @@ impl VolumeMount {
 pub mod volume_mount {
     
     /// A builder for [`VolumeMount`](crate::model::VolumeMount).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -33122,6 +33356,7 @@ impl AwsEcsTaskDefinitionDetails {
 pub mod aws_ecs_task_definition_details {
     
     /// A builder for [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_definitions: std::option::Option<std::vec::Vec<crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
@@ -33417,6 +33652,7 @@ impl AwsEcsTaskDefinitionVolumesDetails {
 pub mod aws_ecs_task_definition_volumes_details {
     
     /// A builder for [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) docker_volume_configuration: std::option::Option<crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails>,
@@ -33503,6 +33739,7 @@ impl AwsEcsTaskDefinitionVolumesHostDetails {
 pub mod aws_ecs_task_definition_volumes_host_details {
     
     /// A builder for [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_path: std::option::Option<std::string::String>,
@@ -33581,6 +33818,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
 pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_details {
     
     /// A builder for [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_config: std::option::Option<crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails>,
@@ -33687,6 +33925,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
 pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details {
     
     /// A builder for [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_id: std::option::Option<std::string::String>,
@@ -33777,6 +34016,7 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
 pub mod aws_ecs_task_definition_volumes_docker_volume_configuration_details {
     
     /// A builder for [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) autoprovision: std::option::Option<bool>,
@@ -33902,6 +34142,7 @@ impl AwsEcsTaskDefinitionProxyConfigurationDetails {
 pub mod aws_ecs_task_definition_proxy_configuration_details {
     
     /// A builder for [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -33989,6 +34230,7 @@ impl AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
 pub mod aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details {
     
     /// A builder for [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -34058,6 +34300,7 @@ impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
 pub mod aws_ecs_task_definition_placement_constraints_details {
     
     /// A builder for [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -34127,6 +34370,7 @@ impl AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
 pub mod aws_ecs_task_definition_inference_accelerators_details {
     
     /// A builder for [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
@@ -34473,6 +34717,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
 pub mod aws_ecs_task_definition_container_definitions_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -35123,6 +35368,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
 pub mod aws_ecs_task_definition_container_definitions_volumes_from_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_only: std::option::Option<bool>,
@@ -35234,6 +35480,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
 pub mod aws_ecs_task_definition_container_definitions_ulimits_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hard_limit: std::option::Option<i32>,
@@ -35351,6 +35598,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
 pub mod aws_ecs_task_definition_container_definitions_system_controls_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -35420,6 +35668,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
 pub mod aws_ecs_task_definition_container_definitions_secrets_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -35493,6 +35742,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
 pub mod aws_ecs_task_definition_container_definitions_resource_requirements_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -35559,6 +35809,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
 pub mod aws_ecs_task_definition_container_definitions_repository_credentials_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials_parameter: std::option::Option<std::string::String>,
@@ -35623,6 +35874,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
 pub mod aws_ecs_task_definition_container_definitions_port_mappings_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_port: std::option::Option<i32>,
@@ -35713,6 +35965,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
 pub mod aws_ecs_task_definition_container_definitions_mount_points_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_path: std::option::Option<std::string::String>,
@@ -35838,6 +36091,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
 pub mod aws_ecs_task_definition_container_definitions_log_configuration_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_driver: std::option::Option<std::string::String>,
@@ -35969,6 +36223,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetail
 pub mod aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -36075,6 +36330,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capabilities: std::option::Option<crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails>,
@@ -36229,6 +36485,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_path: std::option::Option<std::string::String>,
@@ -36326,6 +36583,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_devices_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_path: std::option::Option<std::string::String>,
@@ -36417,6 +36675,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails 
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -36523,6 +36782,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
 pub mod aws_ecs_task_definition_container_definitions_health_check_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -36650,6 +36910,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
 pub mod aws_ecs_task_definition_container_definitions_firelens_configuration_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36737,6 +36998,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
 pub mod aws_ecs_task_definition_container_definitions_extra_hosts_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -36806,6 +37068,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
 pub mod aws_ecs_task_definition_container_definitions_environment_files_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -36875,6 +37138,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
 pub mod aws_ecs_task_definition_container_definitions_environment_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -36956,6 +37220,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
 pub mod aws_ecs_task_definition_container_definitions_depends_on_details {
     
     /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) condition: std::option::Option<std::string::String>,
@@ -37093,6 +37358,7 @@ impl AwsEcsClusterDetails {
 pub mod aws_ecs_cluster_details {
     
     /// A builder for [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -37286,6 +37552,7 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
 pub mod aws_ecs_cluster_default_capacity_provider_strategy_details {
     
     /// A builder for [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base: std::option::Option<i32>,
@@ -37362,6 +37629,7 @@ impl AwsEcsClusterConfigurationDetails {
 pub mod aws_ecs_cluster_configuration_details {
     
     /// A builder for [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execute_command_configuration: std::option::Option<crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>,
@@ -37426,6 +37694,7 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
 pub mod aws_ecs_cluster_configuration_execute_command_configuration_details {
     
     /// A builder for [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -37528,6 +37797,7 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
 pub mod aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details {
     
     /// A builder for [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_encryption_enabled: std::option::Option<bool>,
@@ -37635,6 +37905,7 @@ impl AwsEcsClusterClusterSettingsDetails {
 pub mod aws_ecs_cluster_cluster_settings_details {
     
     /// A builder for [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -38007,6 +38278,7 @@ impl AwsRdsDbClusterDetails {
 pub mod aws_rds_db_cluster_details {
     
     /// A builder for [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allocated_storage: std::option::Option<i32>,
@@ -38632,6 +38904,7 @@ impl AwsRdsDbClusterMember {
 pub mod aws_rds_db_cluster_member {
     
     /// A builder for [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_cluster_writer: std::option::Option<bool>,
@@ -38727,6 +39000,7 @@ impl AwsRdsDbClusterOptionGroupMembership {
 pub mod aws_rds_db_cluster_option_group_membership {
     
     /// A builder for [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_option_group_name: std::option::Option<std::string::String>,
@@ -38810,6 +39084,7 @@ impl AwsRdsDbDomainMembership {
 pub mod aws_rds_db_domain_membership {
     
     /// A builder for [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -38913,6 +39188,7 @@ impl AwsRdsDbClusterAssociatedRole {
 pub mod aws_rds_db_cluster_associated_role {
     
     /// A builder for [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -38992,6 +39268,7 @@ impl AwsRdsDbInstanceVpcSecurityGroup {
 pub mod aws_rds_db_instance_vpc_security_group {
     
     /// A builder for [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_security_group_id: std::option::Option<std::string::String>,
@@ -39177,6 +39454,7 @@ impl AwsRdsDbClusterSnapshotDetails {
 pub mod aws_rds_db_cluster_snapshot_details {
     
     /// A builder for [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -39670,6 +39948,7 @@ impl AwsRdsDbSnapshotDetails {
 pub mod aws_rds_db_snapshot_details {
     
     /// A builder for [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
@@ -40093,6 +40372,7 @@ impl AwsRdsDbProcessorFeature {
 pub mod aws_rds_db_processor_feature {
     
     /// A builder for [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -40176,6 +40456,7 @@ impl AwsWafWebAclDetails {
 pub mod aws_waf_web_acl_details {
     
     /// A builder for [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -40313,6 +40594,7 @@ impl AwsWafWebAclRule {
 pub mod aws_waf_web_acl_rule {
     
     /// A builder for [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::WafAction>,
@@ -40442,6 +40724,7 @@ impl WafOverrideAction {
 pub mod waf_override_action {
     
     /// A builder for [`WafOverrideAction`](crate::model::WafOverrideAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -40494,6 +40777,7 @@ impl WafExcludedRule {
 pub mod waf_excluded_rule {
     
     /// A builder for [`WafExcludedRule`](crate::model::WafExcludedRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
@@ -40556,6 +40840,7 @@ impl WafAction {
 pub mod waf_action {
     
     /// A builder for [`WafAction`](crate::model::WafAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -40639,6 +40924,7 @@ impl AwsSqsQueueDetails {
 pub mod aws_sqs_queue_details {
     
     /// A builder for [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_data_key_reuse_period_seconds: std::option::Option<i32>,
@@ -40796,6 +41082,7 @@ impl AwsSnsTopicDetails {
 pub mod aws_sns_topic_details {
     
     /// A builder for [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_master_key_id: std::option::Option<std::string::String>,
@@ -40979,6 +41266,7 @@ impl AwsSnsTopicSubscription {
 pub mod aws_sns_topic_subscription {
     
     /// A builder for [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -41483,6 +41771,7 @@ impl AwsRdsDbInstanceDetails {
 pub mod aws_rds_db_instance_details {
     
     /// A builder for [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associated_roles: std::option::Option<std::vec::Vec<crate::model::AwsRdsDbInstanceAssociatedRole>>,
@@ -42351,6 +42640,7 @@ impl AwsRdsDbInstanceEndpoint {
 pub mod aws_rds_db_instance_endpoint {
     
     /// A builder for [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
@@ -42447,6 +42737,7 @@ impl AwsRdsDbStatusInfo {
 pub mod aws_rds_db_status_info {
     
     /// A builder for [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_type: std::option::Option<std::string::String>,
@@ -42541,6 +42832,7 @@ impl AwsRdsDbOptionGroupMembership {
 pub mod aws_rds_db_option_group_membership {
     
     /// A builder for [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) option_group_name: std::option::Option<std::string::String>,
@@ -42701,6 +42993,7 @@ impl AwsRdsDbPendingModifiedValues {
 pub mod aws_rds_db_pending_modified_values {
     
     /// A builder for [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_class: std::option::Option<std::string::String>,
@@ -42937,6 +43230,7 @@ impl AwsRdsPendingCloudWatchLogsExports {
 pub mod aws_rds_pending_cloud_watch_logs_exports {
     
     /// A builder for [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_types_to_enable: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -43046,6 +43340,7 @@ impl AwsRdsDbSubnetGroup {
 pub mod aws_rds_db_subnet_group {
     
     /// A builder for [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group_name: std::option::Option<std::string::String>,
@@ -43176,6 +43471,7 @@ impl AwsRdsDbSubnetGroupSubnet {
 pub mod aws_rds_db_subnet_group_subnet {
     
     /// A builder for [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_identifier: std::option::Option<std::string::String>,
@@ -43250,6 +43546,7 @@ impl AwsRdsDbSubnetGroupSubnetAvailabilityZone {
 pub mod aws_rds_db_subnet_group_subnet_availability_zone {
     
     /// A builder for [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -43307,6 +43604,7 @@ impl AwsRdsDbParameterGroup {
 pub mod aws_rds_db_parameter_group {
     
     /// A builder for [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
@@ -43393,6 +43691,7 @@ impl AwsRdsDbInstanceAssociatedRole {
 pub mod aws_rds_db_instance_associated_role {
     
     /// A builder for [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -43495,6 +43794,7 @@ impl AwsLambdaLayerVersionDetails {
 pub mod aws_lambda_layer_version_details {
     
     /// A builder for [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<i64>,
@@ -43715,6 +44015,7 @@ impl AwsLambdaFunctionDetails {
 pub mod aws_lambda_function_details {
     
     /// A builder for [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::AwsLambdaFunctionCode>,
@@ -44023,6 +44324,7 @@ impl AwsLambdaFunctionVpcConfig {
 pub mod aws_lambda_function_vpc_config {
     
     /// A builder for [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44109,6 +44411,7 @@ impl AwsLambdaFunctionTracingConfig {
 pub mod aws_lambda_function_tracing_config {
     
     /// A builder for [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<std::string::String>,
@@ -44166,6 +44469,7 @@ impl AwsLambdaFunctionLayer {
 pub mod aws_lambda_function_layer {
     
     /// A builder for [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -44236,6 +44540,7 @@ impl AwsLambdaFunctionEnvironment {
 pub mod aws_lambda_function_environment {
     
     /// A builder for [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -44311,6 +44616,7 @@ impl AwsLambdaFunctionEnvironmentError {
 pub mod aws_lambda_function_environment_error {
     
     /// A builder for [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -44373,6 +44679,7 @@ impl AwsLambdaFunctionDeadLetterConfig {
 pub mod aws_lambda_function_dead_letter_config {
     
     /// A builder for [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -44444,6 +44751,7 @@ impl AwsLambdaFunctionCode {
 pub mod aws_lambda_function_code {
     
     /// A builder for [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -44601,6 +44909,7 @@ impl AwsKmsKeyDetails {
 pub mod aws_kms_key_details {
     
     /// A builder for [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -44824,6 +45133,7 @@ impl AwsIamRoleDetails {
 pub mod aws_iam_role_details {
     
     /// A builder for [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assume_role_policy_document: std::option::Option<std::string::String>,
@@ -45003,6 +45313,7 @@ impl AwsIamRolePolicy {
 pub mod aws_iam_role_policy {
     
     /// A builder for [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -45060,6 +45371,7 @@ impl AwsIamPermissionsBoundary {
 pub mod aws_iam_permissions_boundary {
     
     /// A builder for [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions_boundary_arn: std::option::Option<std::string::String>,
@@ -45159,6 +45471,7 @@ impl AwsIamInstanceProfile {
 pub mod aws_iam_instance_profile {
     
     /// A builder for [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -45314,6 +45627,7 @@ impl AwsIamInstanceProfileRole {
 pub mod aws_iam_instance_profile_role {
     
     /// A builder for [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -45433,6 +45747,7 @@ impl AwsIamAttachedManagedPolicy {
 pub mod aws_iam_attached_managed_policy {
     
     /// A builder for [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -45532,6 +45847,7 @@ impl AwsIamGroupDetails {
 pub mod aws_iam_group_details {
     
     /// A builder for [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_managed_policies: std::option::Option<std::vec::Vec<crate::model::AwsIamAttachedManagedPolicy>>,
@@ -45656,6 +45972,7 @@ impl AwsIamGroupPolicy {
 pub mod aws_iam_group_policy {
     
     /// A builder for [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -45824,6 +46141,7 @@ impl AwsElbLoadBalancerDetails {
 pub mod aws_elb_load_balancer_details {
     
     /// A builder for [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -46115,6 +46433,7 @@ impl AwsElbLoadBalancerSourceSecurityGroup {
 pub mod aws_elb_load_balancer_source_security_group {
     
     /// A builder for [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -46191,6 +46510,7 @@ impl AwsElbLoadBalancerPolicies {
 pub mod aws_elb_load_balancer_policies {
     
     /// A builder for [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_cookie_stickiness_policies: std::option::Option<std::vec::Vec<crate::model::AwsElbAppCookieStickinessPolicy>>,
@@ -46290,6 +46610,7 @@ impl AwsElbLbCookieStickinessPolicy {
 pub mod aws_elb_lb_cookie_stickiness_policy {
     
     /// A builder for [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cookie_expiration_period: std::option::Option<i64>,
@@ -46360,6 +46681,7 @@ impl AwsElbAppCookieStickinessPolicy {
 pub mod aws_elb_app_cookie_stickiness_policy {
     
     /// A builder for [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cookie_name: std::option::Option<std::string::String>,
@@ -46458,6 +46780,7 @@ impl AwsElbLoadBalancerAttributes {
 pub mod aws_elb_load_balancer_attributes {
     
     /// A builder for [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log: std::option::Option<crate::model::AwsElbLoadBalancerAccessLog>,
@@ -46577,6 +46900,7 @@ impl AwsElbLoadBalancerAdditionalAttribute {
 pub mod aws_elb_load_balancer_additional_attribute {
     
     /// A builder for [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -46639,6 +46963,7 @@ impl AwsElbLoadBalancerCrossZoneLoadBalancing {
 pub mod aws_elb_load_balancer_cross_zone_load_balancing {
     
     /// A builder for [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -46690,6 +47015,7 @@ impl AwsElbLoadBalancerConnectionSettings {
 pub mod aws_elb_load_balancer_connection_settings {
     
     /// A builder for [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) idle_timeout: std::option::Option<i32>,
@@ -46748,6 +47074,7 @@ impl AwsElbLoadBalancerConnectionDraining {
 pub mod aws_elb_load_balancer_connection_draining {
     
     /// A builder for [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -46837,6 +47164,7 @@ impl AwsElbLoadBalancerAccessLog {
 pub mod aws_elb_load_balancer_access_log {
     
     /// A builder for [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emit_interval: std::option::Option<i32>,
@@ -46936,6 +47264,7 @@ impl AwsElbLoadBalancerListenerDescription {
 pub mod aws_elb_load_balancer_listener_description {
     
     /// A builder for [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::AwsElbLoadBalancerListener>,
@@ -47040,6 +47369,7 @@ impl AwsElbLoadBalancerListener {
 pub mod aws_elb_load_balancer_listener {
     
     /// A builder for [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_port: std::option::Option<i32>,
@@ -47148,6 +47478,7 @@ impl AwsElbLoadBalancerInstance {
 pub mod aws_elb_load_balancer_instance {
     
     /// A builder for [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -47244,6 +47575,7 @@ impl AwsElbLoadBalancerHealthCheck {
 pub mod aws_elb_load_balancer_health_check {
     
     /// A builder for [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) healthy_threshold: std::option::Option<i32>,
@@ -47371,6 +47703,7 @@ impl AwsElbLoadBalancerBackendServerDescription {
 pub mod aws_elb_load_balancer_backend_server_description {
     
     /// A builder for [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_port: std::option::Option<i32>,
@@ -47787,6 +48120,7 @@ impl AwsRedshiftClusterDetails {
 pub mod aws_redshift_cluster_details {
     
     /// A builder for [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_version_upgrade: std::option::Option<bool>,
@@ -48487,6 +48821,7 @@ impl AwsRedshiftClusterLoggingStatus {
 pub mod aws_redshift_cluster_logging_status {
     
     /// A builder for [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -48609,6 +48944,7 @@ impl AwsRedshiftClusterVpcSecurityGroup {
 pub mod aws_redshift_cluster_vpc_security_group {
     
     /// A builder for [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -48718,6 +49054,7 @@ impl AwsRedshiftClusterRestoreStatus {
 pub mod aws_redshift_cluster_restore_status {
     
     /// A builder for [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) current_restore_rate_in_mega_bytes_per_second: std::option::Option<f64>,
@@ -48854,6 +49191,7 @@ impl AwsRedshiftClusterResizeInfo {
 pub mod aws_redshift_cluster_resize_info {
     
     /// A builder for [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_cancel_resize: std::option::Option<bool>,
@@ -48989,6 +49327,7 @@ impl AwsRedshiftClusterPendingModifiedValues {
 pub mod aws_redshift_cluster_pending_modified_values {
     
     /// A builder for [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automated_snapshot_retention_period: std::option::Option<i32>,
@@ -49172,6 +49511,7 @@ impl AwsRedshiftClusterIamRole {
 pub mod aws_redshift_cluster_iam_role {
     
     /// A builder for [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apply_status: std::option::Option<std::string::String>,
@@ -49254,6 +49594,7 @@ impl AwsRedshiftClusterHsmStatus {
 pub mod aws_redshift_cluster_hsm_status {
     
     /// A builder for [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_client_certificate_identifier: std::option::Option<std::string::String>,
@@ -49339,6 +49680,7 @@ impl AwsRedshiftClusterEndpoint {
 pub mod aws_redshift_cluster_endpoint {
     
     /// A builder for [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
@@ -49409,6 +49751,7 @@ impl AwsRedshiftClusterElasticIpStatus {
 pub mod aws_redshift_cluster_elastic_ip_status {
     
     /// A builder for [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ip: std::option::Option<std::string::String>,
@@ -49489,6 +49832,7 @@ impl AwsRedshiftClusterDeferredMaintenanceWindow {
 pub mod aws_redshift_cluster_deferred_maintenance_window {
     
     /// A builder for [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) defer_maintenance_end_time: std::option::Option<std::string::String>,
@@ -49592,6 +49936,7 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatus {
 pub mod aws_redshift_cluster_cluster_snapshot_copy_status {
     
     /// A builder for [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_region: std::option::Option<std::string::String>,
@@ -49691,6 +50036,7 @@ impl AwsRedshiftClusterClusterSecurityGroup {
 pub mod aws_redshift_cluster_cluster_security_group {
     
     /// A builder for [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_security_group_name: std::option::Option<std::string::String>,
@@ -49767,6 +50113,7 @@ impl AwsRedshiftClusterClusterParameterGroup {
 pub mod aws_redshift_cluster_cluster_parameter_group {
     
     /// A builder for [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_parameter_status_list: std::option::Option<std::vec::Vec<crate::model::AwsRedshiftClusterClusterParameterStatus>>,
@@ -49863,6 +50210,7 @@ impl AwsRedshiftClusterClusterParameterStatus {
 pub mod aws_redshift_cluster_cluster_parameter_status {
     
     /// A builder for [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_name: std::option::Option<std::string::String>,
@@ -49953,6 +50301,7 @@ impl AwsRedshiftClusterClusterNode {
 pub mod aws_redshift_cluster_cluster_node {
     
     /// A builder for [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_role: std::option::Option<std::string::String>,
@@ -50205,6 +50554,7 @@ impl AwsCertificateManagerCertificateDetails {
 pub mod aws_certificate_manager_certificate_details {
     
     /// A builder for [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
@@ -50600,6 +50950,7 @@ impl AwsCertificateManagerCertificateRenewalSummary {
 pub mod aws_certificate_manager_certificate_renewal_summary {
     
     /// A builder for [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_validation_options: std::option::Option<std::vec::Vec<crate::model::AwsCertificateManagerCertificateDomainValidationOption>>,
@@ -50737,6 +51088,7 @@ impl AwsCertificateManagerCertificateDomainValidationOption {
 pub mod aws_certificate_manager_certificate_domain_validation_option {
     
     /// A builder for [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -50867,6 +51219,7 @@ impl AwsCertificateManagerCertificateResourceRecord {
 pub mod aws_certificate_manager_certificate_resource_record {
     
     /// A builder for [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -50943,6 +51296,7 @@ impl AwsCertificateManagerCertificateOptions {
 pub mod aws_certificate_manager_certificate_options {
     
     /// A builder for [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_transparency_logging_preference: std::option::Option<std::string::String>,
@@ -50995,6 +51349,7 @@ impl AwsCertificateManagerCertificateKeyUsage {
 pub mod aws_certificate_manager_certificate_key_usage {
     
     /// A builder for [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -51054,6 +51409,7 @@ impl AwsCertificateManagerCertificateExtendedKeyUsage {
 pub mod aws_certificate_manager_certificate_extended_key_usage {
     
     /// A builder for [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -51118,6 +51474,7 @@ impl AwsSsmPatchComplianceDetails {
 pub mod aws_ssm_patch_compliance_details {
     
     /// A builder for [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) patch: std::option::Option<crate::model::AwsSsmPatch>,
@@ -51168,6 +51525,7 @@ impl AwsSsmPatch {
 pub mod aws_ssm_patch {
     
     /// A builder for [`AwsSsmPatch`](crate::model::AwsSsmPatch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_summary: std::option::Option<crate::model::AwsSsmComplianceSummary>,
@@ -51363,6 +51721,7 @@ impl AwsSsmComplianceSummary {
 pub mod aws_ssm_compliance_summary {
     
     /// A builder for [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -51753,6 +52112,7 @@ impl AwsCloudTrailTrailDetails {
 pub mod aws_cloud_trail_trail_details {
     
     /// A builder for [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
@@ -52042,6 +52402,7 @@ impl AwsApiGatewayRestApiDetails {
 pub mod aws_api_gateway_rest_api_details {
     
     /// A builder for [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -52207,6 +52568,7 @@ impl AwsApiGatewayEndpointConfiguration {
 pub mod aws_api_gateway_endpoint_configuration {
     
     /// A builder for [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -52388,6 +52750,7 @@ impl AwsApiGatewayStageDetails {
 pub mod aws_api_gateway_stage_details {
     
     /// A builder for [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
@@ -52673,6 +53036,7 @@ impl AwsApiGatewayCanarySettings {
 pub mod aws_api_gateway_canary_settings {
     
     /// A builder for [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percent_traffic: std::option::Option<f64>,
@@ -52776,6 +53140,7 @@ impl AwsApiGatewayAccessLogSettings {
 pub mod aws_api_gateway_access_log_settings {
     
     /// A builder for [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
@@ -52927,6 +53292,7 @@ impl AwsApiGatewayMethodSettings {
 pub mod aws_api_gateway_method_settings {
     
     /// A builder for [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metrics_enabled: std::option::Option<bool>,
@@ -53275,6 +53641,7 @@ impl AwsDynamoDbTableDetails {
 pub mod aws_dynamo_db_table_details {
     
     /// A builder for [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_definitions: std::option::Option<std::vec::Vec<crate::model::AwsDynamoDbTableAttributeDefinition>>,
@@ -53600,6 +53967,7 @@ impl AwsDynamoDbTableStreamSpecification {
 pub mod aws_dynamo_db_table_stream_specification {
     
     /// A builder for [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_enabled: std::option::Option<bool>,
@@ -53686,6 +54054,7 @@ impl AwsDynamoDbTableSseDescription {
 pub mod aws_dynamo_db_table_sse_description {
     
     /// A builder for [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inaccessible_encryption_date_time: std::option::Option<std::string::String>,
@@ -53797,6 +54166,7 @@ impl AwsDynamoDbTableRestoreSummary {
 pub mod aws_dynamo_db_table_restore_summary {
     
     /// A builder for [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_backup_arn: std::option::Option<std::string::String>,
@@ -53935,6 +54305,7 @@ impl AwsDynamoDbTableReplica {
 pub mod aws_dynamo_db_table_replica {
     
     /// A builder for [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_secondary_indexes: std::option::Option<std::vec::Vec<crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex>>,
@@ -54065,6 +54436,7 @@ impl AwsDynamoDbTableProvisionedThroughputOverride {
 pub mod aws_dynamo_db_table_provisioned_throughput_override {
     
     /// A builder for [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_capacity_units: std::option::Option<i32>,
@@ -54123,6 +54495,7 @@ impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
 pub mod aws_dynamo_db_table_replica_global_secondary_index {
     
     /// A builder for [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -54217,6 +54590,7 @@ impl AwsDynamoDbTableProvisionedThroughput {
 pub mod aws_dynamo_db_table_provisioned_throughput {
     
     /// A builder for [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_decrease_date_time: std::option::Option<std::string::String>,
@@ -54343,6 +54717,7 @@ impl AwsDynamoDbTableLocalSecondaryIndex {
 pub mod aws_dynamo_db_table_local_secondary_index {
     
     /// A builder for [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_arn: std::option::Option<std::string::String>,
@@ -54452,6 +54827,7 @@ impl AwsDynamoDbTableProjection {
 pub mod aws_dynamo_db_table_projection {
     
     /// A builder for [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) non_key_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -54537,6 +54913,7 @@ impl AwsDynamoDbTableKeySchema {
 pub mod aws_dynamo_db_table_key_schema {
     
     /// A builder for [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -54667,6 +55044,7 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
 pub mod aws_dynamo_db_table_global_secondary_index {
     
     /// A builder for [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backfilling: std::option::Option<bool>,
@@ -54843,6 +55221,7 @@ impl AwsDynamoDbTableBillingModeSummary {
 pub mod aws_dynamo_db_table_billing_mode_summary {
     
     /// A builder for [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_mode: std::option::Option<std::string::String>,
@@ -54914,6 +55293,7 @@ impl AwsDynamoDbTableAttributeDefinition {
 pub mod aws_dynamo_db_table_attribute_definition {
     
     /// A builder for [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -55055,6 +55435,7 @@ impl AwsApiGatewayV2ApiDetails {
 pub mod aws_api_gateway_v2_api_details {
     
     /// A builder for [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_endpoint: std::option::Option<std::string::String>,
@@ -55264,6 +55645,7 @@ impl AwsCorsConfiguration {
 pub mod aws_cors_configuration {
     
     /// A builder for [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_origins: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -55502,6 +55884,7 @@ impl AwsApiGatewayV2StageDetails {
 pub mod aws_api_gateway_v2_stage_details {
     
     /// A builder for [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
@@ -55756,6 +56139,7 @@ impl AwsApiGatewayV2RouteSettings {
 pub mod aws_api_gateway_v2_route_settings {
     
     /// A builder for [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detailed_metrics_enabled: std::option::Option<bool>,
@@ -55938,6 +56322,7 @@ impl AwsIamPolicyDetails {
 pub mod aws_iam_policy_details {
     
     /// A builder for [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_count: std::option::Option<i32>,
@@ -56137,6 +56522,7 @@ impl AwsIamPolicyVersion {
 pub mod aws_iam_policy_version {
     
     /// A builder for [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -56265,6 +56651,7 @@ impl AwsIamUserDetails {
 pub mod aws_iam_user_details {
     
     /// A builder for [`AwsIamUserDetails`](crate::model::AwsIamUserDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_managed_policies: std::option::Option<std::vec::Vec<crate::model::AwsIamAttachedManagedPolicy>>,
@@ -56419,6 +56806,7 @@ impl AwsIamUserPolicy {
 pub mod aws_iam_user_policy {
     
     /// A builder for [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -56531,6 +56919,7 @@ impl AwsIamAccessKeyDetails {
 pub mod aws_iam_access_key_details {
     
     /// A builder for [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -56690,6 +57079,7 @@ impl AwsIamAccessKeySessionContext {
 pub mod aws_iam_access_key_session_context {
     
     /// A builder for [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<crate::model::AwsIamAccessKeySessionContextAttributes>,
@@ -56780,6 +57170,7 @@ impl AwsIamAccessKeySessionContextSessionIssuer {
 pub mod aws_iam_access_key_session_context_session_issuer {
     
     /// A builder for [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -56887,6 +57278,7 @@ impl AwsIamAccessKeySessionContextAttributes {
 pub mod aws_iam_access_key_session_context_attributes {
     
     /// A builder for [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mfa_authenticated: std::option::Option<bool>,
@@ -57083,6 +57475,7 @@ impl AwsSecretsManagerSecretDetails {
 pub mod aws_secrets_manager_secret_details {
     
     /// A builder for [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rotation_rules: std::option::Option<crate::model::AwsSecretsManagerSecretRotationRules>,
@@ -57220,6 +57613,7 @@ impl AwsSecretsManagerSecretRotationRules {
 pub mod aws_secrets_manager_secret_rotation_rules {
     
     /// A builder for [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatically_after_days: std::option::Option<i32>,
@@ -57308,6 +57702,7 @@ impl AwsS3ObjectDetails {
 pub mod aws_s3_object_details {
     
     /// A builder for [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_modified: std::option::Option<std::string::String>,
@@ -57441,6 +57836,7 @@ impl AwsS3AccountPublicAccessBlockDetails {
 pub mod aws_s3_account_public_access_block_details {
     
     /// A builder for [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_public_acls: std::option::Option<bool>,
@@ -57610,6 +58006,7 @@ impl AwsS3BucketDetails {
 pub mod aws_s3_bucket_details {
     
     /// A builder for [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_id: std::option::Option<std::string::String>,
@@ -57801,6 +58198,7 @@ impl AwsS3BucketBucketVersioningConfiguration {
 pub mod aws_s3_bucket_bucket_versioning_configuration {
     
     /// A builder for [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_mfa_delete_enabled: std::option::Option<bool>,
@@ -57864,6 +58262,7 @@ impl AwsS3BucketNotificationConfiguration {
 pub mod aws_s3_bucket_notification_configuration {
     
     /// A builder for [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::AwsS3BucketNotificationConfigurationDetail>>,
@@ -57951,6 +58350,7 @@ impl AwsS3BucketNotificationConfigurationDetail {
 pub mod aws_s3_bucket_notification_configuration_detail {
     
     /// A builder for [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -58053,6 +58453,7 @@ impl AwsS3BucketNotificationConfigurationFilter {
 pub mod aws_s3_bucket_notification_configuration_filter {
     
     /// A builder for [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_key_filter: std::option::Option<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter>,
@@ -58103,6 +58504,7 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilter {
 pub mod aws_s3_bucket_notification_configuration_s3_key_filter {
     
     /// A builder for [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_rules: std::option::Option<std::vec::Vec<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule>>,
@@ -58166,6 +58568,7 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterRule {
 pub mod aws_s3_bucket_notification_configuration_s3_key_filter_rule {
     
     /// A builder for [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName>,
@@ -58331,6 +58734,7 @@ impl AwsS3BucketWebsiteConfiguration {
 pub mod aws_s3_bucket_website_configuration {
     
     /// A builder for [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_document: std::option::Option<std::string::String>,
@@ -58430,6 +58834,7 @@ impl AwsS3BucketWebsiteConfigurationRoutingRule {
 pub mod aws_s3_bucket_website_configuration_routing_rule {
     
     /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) condition: std::option::Option<crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>,
@@ -58524,6 +58929,7 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
 pub mod aws_s3_bucket_website_configuration_routing_rule_redirect {
     
     /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -58633,6 +59039,7 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
 pub mod aws_s3_bucket_website_configuration_routing_rule_condition {
     
     /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_error_code_returned_equals: std::option::Option<std::string::String>,
@@ -58702,6 +59109,7 @@ impl AwsS3BucketWebsiteConfigurationRedirectTo {
 pub mod aws_s3_bucket_website_configuration_redirect_to {
     
     /// A builder for [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -58771,6 +59179,7 @@ impl AwsS3BucketLoggingConfiguration {
 pub mod aws_s3_bucket_logging_configuration {
     
     /// A builder for [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_bucket_name: std::option::Option<std::string::String>,
@@ -58833,6 +59242,7 @@ impl AwsS3BucketBucketLifecycleConfigurationDetails {
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_details {
     
     /// A builder for [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails>>,
@@ -58963,6 +59373,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_details {
     
     /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) abort_incomplete_multipart_upload: std::option::Option<crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails>,
@@ -59182,6 +59593,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details {
     
     /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) date: std::option::Option<std::string::String>,
@@ -59280,6 +59692,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDet
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details {
     
     /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) days: std::option::Option<i32>,
@@ -59343,6 +59756,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details {
     
     /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predicate: std::option::Option<crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>,
@@ -59414,6 +59828,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details {
     
     /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operands: std::option::Option<std::vec::Vec<crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>,
@@ -59513,6 +59928,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details {
     
     /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -59589,6 +60005,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails 
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details {
     
     /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -59670,6 +60087,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetai
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details {
     
     /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -59732,6 +60150,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadD
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details {
     
     /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) days_after_initiation: std::option::Option<i32>,
@@ -59783,6 +60202,7 @@ impl AwsS3BucketServerSideEncryptionConfiguration {
 pub mod aws_s3_bucket_server_side_encryption_configuration {
     
     /// A builder for [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::AwsS3BucketServerSideEncryptionRule>>,
@@ -59839,6 +60259,7 @@ impl AwsS3BucketServerSideEncryptionRule {
 pub mod aws_s3_bucket_server_side_encryption_rule {
     
     /// A builder for [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apply_server_side_encryption_by_default: std::option::Option<crate::model::AwsS3BucketServerSideEncryptionByDefault>,
@@ -59896,6 +60317,7 @@ impl AwsS3BucketServerSideEncryptionByDefault {
 pub mod aws_s3_bucket_server_side_encryption_by_default {
     
     /// A builder for [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sse_algorithm: std::option::Option<std::string::String>,
@@ -60050,6 +60472,7 @@ impl AwsElasticsearchDomainDetails {
 pub mod aws_elasticsearch_domain_details {
     
     /// A builder for [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policies: std::option::Option<std::string::String>,
@@ -60279,6 +60702,7 @@ impl AwsElasticsearchDomainVpcOptions {
 pub mod aws_elasticsearch_domain_vpc_options {
     
     /// A builder for [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -60439,6 +60863,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
 pub mod aws_elasticsearch_domain_service_software_options {
     
     /// A builder for [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automated_update_date: std::option::Option<std::string::String>,
@@ -60577,6 +61002,7 @@ impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
 pub mod aws_elasticsearch_domain_node_to_node_encryption_options {
     
     /// A builder for [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -60642,6 +61068,7 @@ impl AwsElasticsearchDomainLogPublishingOptions {
 pub mod aws_elasticsearch_domain_log_publishing_options {
     
     /// A builder for [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_slow_logs: std::option::Option<crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
@@ -60723,6 +61150,7 @@ impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
 pub mod aws_elasticsearch_domain_log_publishing_options_log_config {
     
     /// A builder for [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
@@ -60793,6 +61221,7 @@ impl AwsElasticsearchDomainEncryptionAtRestOptions {
 pub mod aws_elasticsearch_domain_encryption_at_rest_options {
     
     /// A builder for [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -60902,6 +61331,7 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
 pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_details {
     
     /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dedicated_master_count: std::option::Option<i32>,
@@ -61032,6 +61462,7 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails 
 pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details {
     
     /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone_count: std::option::Option<i32>,
@@ -61100,6 +61531,7 @@ impl AwsElasticsearchDomainDomainEndpointOptions {
 pub mod aws_elasticsearch_domain_domain_endpoint_options {
     
     /// A builder for [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforce_https: std::option::Option<bool>,
@@ -61298,6 +61730,7 @@ impl AwsElasticBeanstalkEnvironmentDetails {
 pub mod aws_elastic_beanstalk_environment_details {
     
     /// A builder for [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -61574,6 +62007,7 @@ impl AwsElasticBeanstalkEnvironmentTier {
 pub mod aws_elastic_beanstalk_environment_tier {
     
     /// A builder for [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -61669,6 +62103,7 @@ impl AwsElasticBeanstalkEnvironmentOptionSetting {
 pub mod aws_elastic_beanstalk_environment_option_setting {
     
     /// A builder for [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -61762,6 +62197,7 @@ impl AwsElasticBeanstalkEnvironmentEnvironmentLink {
 pub mod aws_elastic_beanstalk_environment_environment_link {
     
     /// A builder for [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -61896,6 +62332,7 @@ impl AwsElbv2LoadBalancerDetails {
 pub mod aws_elbv2_load_balancer_details {
     
     /// A builder for [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
@@ -62093,6 +62530,7 @@ impl AwsElbv2LoadBalancerAttribute {
 pub mod aws_elbv2_load_balancer_attribute {
     
     /// A builder for [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -62166,6 +62604,7 @@ impl LoadBalancerState {
 pub mod load_balancer_state {
     
     /// A builder for [`LoadBalancerState`](crate::model::LoadBalancerState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -62239,6 +62678,7 @@ impl AvailabilityZone {
 pub mod availability_zone {
     
     /// A builder for [`AvailabilityZone`](crate::model::AvailabilityZone).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zone_name: std::option::Option<std::string::String>,
@@ -62336,6 +62776,7 @@ impl AwsEc2NetworkAclDetails {
 pub mod aws_ec2_network_acl_details {
     
     /// A builder for [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_default: std::option::Option<bool>,
@@ -62508,6 +62949,7 @@ impl AwsEc2NetworkAclEntry {
 pub mod aws_ec2_network_acl_entry {
     
     /// A builder for [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_block: std::option::Option<std::string::String>,
@@ -62651,6 +63093,7 @@ impl PortRangeFromTo {
 pub mod port_range_from_to {
     
     /// A builder for [`PortRangeFromTo`](crate::model::PortRangeFromTo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from: std::option::Option<i32>,
@@ -62722,6 +63165,7 @@ impl IcmpTypeCode {
 pub mod icmp_type_code {
     
     /// A builder for [`IcmpTypeCode`](crate::model::IcmpTypeCode).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<i32>,
@@ -62800,6 +63244,7 @@ impl AwsEc2NetworkAclAssociation {
 pub mod aws_ec2_network_acl_association {
     
     /// A builder for [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_acl_association_id: std::option::Option<std::string::String>,
@@ -62958,6 +63403,7 @@ impl AwsEc2SubnetDetails {
 pub mod aws_ec2_subnet_details {
     
     /// A builder for [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assign_ipv6_address_on_creation: std::option::Option<bool>,
@@ -63192,6 +63638,7 @@ impl Ipv6CidrBlockAssociation {
 pub mod ipv6_cidr_block_association {
     
     /// A builder for [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -63347,6 +63794,7 @@ impl AwsEc2EipDetails {
 pub mod aws_ec2_eip_details {
     
     /// A builder for [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -63528,6 +63976,7 @@ impl AwsEc2VpcDetails {
 pub mod aws_ec2_vpc_details {
     
     /// A builder for [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_block_association_set: std::option::Option<std::vec::Vec<crate::model::CidrBlockAssociation>>,
@@ -63640,6 +64089,7 @@ impl CidrBlockAssociation {
 pub mod cidr_block_association {
     
     /// A builder for [`CidrBlockAssociation`](crate::model::CidrBlockAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -63802,6 +64252,7 @@ impl AwsEc2VolumeDetails {
 pub mod aws_ec2_volume_details {
     
     /// A builder for [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_time: std::option::Option<std::string::String>,
@@ -64033,6 +64484,7 @@ impl AwsEc2VolumeAttachment {
 pub mod aws_ec2_volume_attachment {
     
     /// A builder for [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attach_time: std::option::Option<std::string::String>,
@@ -64169,6 +64621,7 @@ impl AwsEc2SecurityGroupDetails {
 pub mod aws_ec2_security_group_details {
     
     /// A builder for [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -64345,6 +64798,7 @@ impl AwsEc2SecurityGroupIpPermission {
 pub mod aws_ec2_security_group_ip_permission {
     
     /// A builder for [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_protocol: std::option::Option<std::string::String>,
@@ -64505,6 +64959,7 @@ impl AwsEc2SecurityGroupPrefixListId {
 pub mod aws_ec2_security_group_prefix_list_id {
     
     /// A builder for [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix_list_id: std::option::Option<std::string::String>,
@@ -64555,6 +65010,7 @@ impl AwsEc2SecurityGroupIpv6Range {
 pub mod aws_ec2_security_group_ipv6_range {
     
     /// A builder for [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_ipv6: std::option::Option<std::string::String>,
@@ -64605,6 +65061,7 @@ impl AwsEc2SecurityGroupIpRange {
 pub mod aws_ec2_security_group_ip_range {
     
     /// A builder for [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_ip: std::option::Option<std::string::String>,
@@ -64694,6 +65151,7 @@ impl AwsEc2SecurityGroupUserIdGroupPair {
 pub mod aws_ec2_security_group_user_id_group_pair {
     
     /// A builder for [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -64857,6 +65315,7 @@ impl AwsEc2NetworkInterfaceDetails {
 pub mod aws_ec2_network_interface_details {
     
     /// A builder for [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::AwsEc2NetworkInterfaceAttachment>,
@@ -65017,6 +65476,7 @@ impl AwsEc2NetworkInterfacePrivateIpAddressDetail {
 pub mod aws_ec2_network_interface_private_ip_address_detail {
     
     /// A builder for [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) private_ip_address: std::option::Option<std::string::String>,
@@ -65079,6 +65539,7 @@ impl AwsEc2NetworkInterfaceIpV6AddressDetail {
 pub mod aws_ec2_network_interface_ip_v6_address_detail {
     
     /// A builder for [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_v6_address: std::option::Option<std::string::String>,
@@ -65136,6 +65597,7 @@ impl AwsEc2NetworkInterfaceSecurityGroup {
 pub mod aws_ec2_network_interface_security_group {
     
     /// A builder for [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -65244,6 +65706,7 @@ impl AwsEc2NetworkInterfaceAttachment {
 pub mod aws_ec2_network_interface_attachment {
     
     /// A builder for [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attach_time: std::option::Option<std::string::String>,
@@ -65451,6 +65914,7 @@ impl AwsEc2InstanceDetails {
 pub mod aws_ec2_instance_details {
     
     /// A builder for [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -65681,6 +66145,7 @@ impl AwsEc2InstanceMetadataOptions {
 pub mod aws_ec2_instance_metadata_options {
     
     /// A builder for [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_endpoint: std::option::Option<std::string::String>,
@@ -65780,6 +66245,7 @@ impl AwsEc2InstanceNetworkInterfacesDetails {
 pub mod aws_ec2_instance_network_interfaces_details {
     
     /// A builder for [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
@@ -65909,6 +66375,7 @@ impl AwsCloudFrontDistributionDetails {
 pub mod aws_cloud_front_distribution_details {
     
     /// A builder for [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_behaviors: std::option::Option<crate::model::AwsCloudFrontDistributionCacheBehaviors>,
@@ -66135,6 +66602,7 @@ impl AwsCloudFrontDistributionViewerCertificate {
 pub mod aws_cloud_front_distribution_viewer_certificate {
     
     /// A builder for [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acm_certificate_arn: std::option::Option<std::string::String>,
@@ -66258,6 +66726,7 @@ impl AwsCloudFrontDistributionOriginGroups {
 pub mod aws_cloud_front_distribution_origin_groups {
     
     /// A builder for [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::AwsCloudFrontDistributionOriginGroup>>,
@@ -66314,6 +66783,7 @@ impl AwsCloudFrontDistributionOriginGroup {
 pub mod aws_cloud_front_distribution_origin_group {
     
     /// A builder for [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failover_criteria: std::option::Option<crate::model::AwsCloudFrontDistributionOriginGroupFailover>,
@@ -66364,6 +66834,7 @@ impl AwsCloudFrontDistributionOriginGroupFailover {
 pub mod aws_cloud_front_distribution_origin_group_failover {
     
     /// A builder for [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_codes: std::option::Option<crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>,
@@ -66421,6 +66892,7 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
 pub mod aws_cloud_front_distribution_origin_group_failover_status_codes {
     
     /// A builder for [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<i32>>,
@@ -66490,6 +66962,7 @@ impl AwsCloudFrontDistributionOrigins {
 pub mod aws_cloud_front_distribution_origins {
     
     /// A builder for [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::AwsCloudFrontDistributionOriginItem>>,
@@ -66574,6 +67047,7 @@ impl AwsCloudFrontDistributionOriginItem {
 pub mod aws_cloud_front_distribution_origin_item {
     
     /// A builder for [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -66707,6 +67181,7 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfig {
 pub mod aws_cloud_front_distribution_origin_custom_origin_config {
     
     /// A builder for [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_port: std::option::Option<i32>,
@@ -66828,6 +67303,7 @@ impl AwsCloudFrontDistributionOriginSslProtocols {
 pub mod aws_cloud_front_distribution_origin_ssl_protocols {
     
     /// A builder for [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -66897,6 +67373,7 @@ impl AwsCloudFrontDistributionOriginS3OriginConfig {
 pub mod aws_cloud_front_distribution_origin_s3_origin_config {
     
     /// A builder for [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origin_access_identity: std::option::Option<std::string::String>,
@@ -66968,6 +67445,7 @@ impl AwsCloudFrontDistributionLogging {
 pub mod aws_cloud_front_distribution_logging {
     
     /// A builder for [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -67066,6 +67544,7 @@ impl AwsCloudFrontDistributionDefaultCacheBehavior {
 pub mod aws_cloud_front_distribution_default_cache_behavior {
     
     /// A builder for [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) viewer_protocol_policy: std::option::Option<std::string::String>,
@@ -67126,6 +67605,7 @@ impl AwsCloudFrontDistributionCacheBehaviors {
 pub mod aws_cloud_front_distribution_cache_behaviors {
     
     /// A builder for [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::AwsCloudFrontDistributionCacheBehavior>>,
@@ -67192,6 +67672,7 @@ impl AwsCloudFrontDistributionCacheBehavior {
 pub mod aws_cloud_front_distribution_cache_behavior {
     
     /// A builder for [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) viewer_protocol_policy: std::option::Option<std::string::String>,
@@ -67310,6 +67791,7 @@ impl AwsCodeBuildProjectDetails {
 pub mod aws_code_build_project_details {
     
     /// A builder for [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_key: std::option::Option<std::string::String>,
@@ -67526,6 +68008,7 @@ impl AwsCodeBuildProjectArtifactsDetails {
 pub mod aws_code_build_project_artifacts_details {
     
     /// A builder for [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) artifact_identifier: std::option::Option<std::string::String>,
@@ -67688,6 +68171,7 @@ impl AwsCodeBuildProjectVpcConfig {
 pub mod aws_code_build_project_vpc_config {
     
     /// A builder for [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -67781,6 +68265,7 @@ impl AwsCodeBuildProjectLogsConfigDetails {
 pub mod aws_code_build_project_logs_config_details {
     
     /// A builder for [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs: std::option::Option<crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>,
@@ -67857,6 +68342,7 @@ impl AwsCodeBuildProjectLogsConfigS3LogsDetails {
 pub mod aws_code_build_project_logs_config_s3_logs_details {
     
     /// A builder for [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_disabled: std::option::Option<bool>,
@@ -67946,6 +68432,7 @@ impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
 pub mod aws_code_build_project_logs_config_cloud_watch_logs_details {
     
     /// A builder for [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -68083,6 +68570,7 @@ impl AwsCodeBuildProjectSource {
 pub mod aws_code_build_project_source {
     
     /// A builder for [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -68268,6 +68756,7 @@ impl AwsCodeBuildProjectEnvironment {
 pub mod aws_code_build_project_environment {
     
     /// A builder for [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -68418,6 +68907,7 @@ impl AwsCodeBuildProjectEnvironmentRegistryCredential {
 pub mod aws_code_build_project_environment_registry_credential {
     
     /// A builder for [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credential: std::option::Option<std::string::String>,
@@ -68500,6 +68990,7 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
 pub mod aws_code_build_project_environment_environment_variables_details {
     
     /// A builder for [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -68632,6 +69123,7 @@ impl AwsAutoScalingAutoScalingGroupDetails {
 pub mod aws_auto_scaling_auto_scaling_group_details {
     
     /// A builder for [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_name: std::option::Option<std::string::String>,
@@ -68808,6 +69300,7 @@ impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
 pub mod aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification {
     
     /// A builder for [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_id: std::option::Option<std::string::String>,
@@ -68882,6 +69375,7 @@ impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
 pub mod aws_auto_scaling_auto_scaling_group_availability_zones_list_details {
     
     /// A builder for [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -68939,6 +69433,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details {
     
     /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances_distribution: std::option::Option<crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails>,
@@ -69008,6 +69503,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details {
     
     /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_specification: std::option::Option<crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
@@ -69083,6 +69579,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesLi
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details {
     
     /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_type: std::option::Option<std::string::String>,
@@ -69159,6 +69656,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification {
     
     /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_id: std::option::Option<std::string::String>,
@@ -69278,6 +69776,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details {
     
     /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) on_demand_allocation_strategy: std::option::Option<std::string::String>,
@@ -69408,6 +69907,7 @@ impl DataClassificationDetails {
 pub mod data_classification_details {
     
     /// A builder for [`DataClassificationDetails`](crate::model::DataClassificationDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detailed_results_location: std::option::Option<std::string::String>,
@@ -69505,6 +70005,7 @@ impl ClassificationResult {
 pub mod classification_result {
     
     /// A builder for [`ClassificationResult`](crate::model::ClassificationResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mime_type: std::option::Option<std::string::String>,
@@ -69630,6 +70131,7 @@ impl CustomDataIdentifiersResult {
 pub mod custom_data_identifiers_result {
     
     /// A builder for [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detections: std::option::Option<std::vec::Vec<crate::model::CustomDataIdentifiersDetections>>,
@@ -69720,6 +70222,7 @@ impl CustomDataIdentifiersDetections {
 pub mod custom_data_identifiers_detections {
     
     /// A builder for [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i64>,
@@ -69835,6 +70338,7 @@ impl Occurrences {
 pub mod occurrences {
     
     /// A builder for [`Occurrences`](crate::model::Occurrences).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) line_ranges: std::option::Option<std::vec::Vec<crate::model::Range>>,
@@ -69984,6 +70488,7 @@ impl Cell {
 pub mod cell {
     
     /// A builder for [`Cell`](crate::model::Cell).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column: std::option::Option<i64>,
@@ -70079,6 +70584,7 @@ impl Record {
 pub mod record {
     
     /// A builder for [`Record`](crate::model::Record).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) json_path: std::option::Option<std::string::String>,
@@ -70156,6 +70662,7 @@ impl Page {
 pub mod page {
     
     /// A builder for [`Page`](crate::model::Page).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_number: std::option::Option<i64>,
@@ -70245,6 +70752,7 @@ impl Range {
 pub mod range {
     
     /// A builder for [`Range`](crate::model::Range).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<i64>,
@@ -70336,6 +70844,7 @@ impl SensitiveDataResult {
 pub mod sensitive_data_result {
     
     /// A builder for [`SensitiveDataResult`](crate::model::SensitiveDataResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<std::string::String>,
@@ -70431,6 +70940,7 @@ impl SensitiveDataDetections {
 pub mod sensitive_data_detections {
     
     /// A builder for [`SensitiveDataDetections`](crate::model::SensitiveDataDetections).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i64>,
@@ -70513,6 +71023,7 @@ impl ClassificationStatus {
 pub mod classification_status {
     
     /// A builder for [`ClassificationStatus`](crate::model::ClassificationStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -70699,6 +71210,7 @@ impl ThreatIntelIndicator {
 pub mod threat_intel_indicator {
     
     /// A builder for [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ThreatIntelIndicatorType>,
@@ -71061,6 +71573,7 @@ impl Threat {
 pub mod threat {
     
     /// A builder for [`Threat`](crate::model::Threat).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -71175,6 +71688,7 @@ impl FilePaths {
 pub mod file_paths {
     
     /// A builder for [`FilePaths`](crate::model::FilePaths).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -71300,6 +71814,7 @@ impl ProcessDetails {
 pub mod process_details {
     
     /// A builder for [`ProcessDetails`](crate::model::ProcessDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -71437,6 +71952,7 @@ impl NetworkPathComponent {
 pub mod network_path_component {
     
     /// A builder for [`NetworkPathComponent`](crate::model::NetworkPathComponent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_id: std::option::Option<std::string::String>,
@@ -71537,6 +72053,7 @@ impl NetworkHeader {
 pub mod network_header {
     
     /// A builder for [`NetworkHeader`](crate::model::NetworkHeader).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<std::string::String>,
@@ -71618,6 +72135,7 @@ impl NetworkPathComponentDetails {
 pub mod network_path_component_details {
     
     /// A builder for [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -71699,6 +72217,7 @@ impl PortRange {
 pub mod port_range {
     
     /// A builder for [`PortRange`](crate::model::PortRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin: std::option::Option<i32>,
@@ -71840,6 +72359,7 @@ impl Network {
 pub mod network {
     
     /// A builder for [`Network`](crate::model::Network).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direction: std::option::Option<crate::model::NetworkDirection>,
@@ -72127,6 +72647,7 @@ impl Malware {
 pub mod malware {
     
     /// A builder for [`Malware`](crate::model::Malware).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -72447,6 +72968,7 @@ impl Remediation {
 pub mod remediation {
     
     /// A builder for [`Remediation`](crate::model::Remediation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation: std::option::Option<crate::model::Recommendation>,
@@ -72504,6 +73026,7 @@ impl Recommendation {
 pub mod recommendation {
     
     /// A builder for [`Recommendation`](crate::model::Recommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -72637,6 +73160,7 @@ impl Severity {
 pub mod severity {
     
     /// A builder for [`Severity`](crate::model::Severity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product: std::option::Option<f64>,
@@ -72780,6 +73304,7 @@ impl SortCriterion {
 pub mod sort_criterion {
     
     /// A builder for [`SortCriterion`](crate::model::SortCriterion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<std::string::String>,
@@ -72968,6 +73493,7 @@ impl StandardsSubscription {
 pub mod standards_subscription {
     
     /// A builder for [`StandardsSubscription`](crate::model::StandardsSubscription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_subscription_arn: std::option::Option<std::string::String>,
@@ -73088,6 +73614,7 @@ impl StandardsStatusReason {
 pub mod standards_status_reason {
     
     /// A builder for [`StandardsStatusReason`](crate::model::StandardsStatusReason).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_reason_code: std::option::Option<crate::model::StatusReasonCode>,
@@ -73382,6 +73909,7 @@ impl StandardsControl {
 pub mod standards_control {
     
     /// A builder for [`StandardsControl`](crate::model::StandardsControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_control_arn: std::option::Option<std::string::String>,
@@ -73670,6 +74198,7 @@ impl Standard {
 pub mod standard {
     
     /// A builder for [`Standard`](crate::model::Standard).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_arn: std::option::Option<std::string::String>,
@@ -73778,6 +74307,7 @@ impl StandardsManagedBy {
 pub mod standards_managed_by {
     
     /// A builder for [`StandardsManagedBy`](crate::model::StandardsManagedBy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) company: std::option::Option<std::string::String>,
@@ -73908,6 +74438,7 @@ impl Product {
 pub mod product {
     
     /// A builder for [`Product`](crate::model::Product).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_arn: std::option::Option<std::string::String>,
@@ -74179,6 +74710,7 @@ impl ActionTarget {
 pub mod action_target {
     
     /// A builder for [`ActionTarget`](crate::model::ActionTarget).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_target_arn: std::option::Option<std::string::String>,
@@ -74260,6 +74792,7 @@ impl AccountDetails {
 pub mod account_details {
     
     /// A builder for [`AccountDetails`](crate::model::AccountDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -74368,6 +74901,7 @@ impl BatchUpdateFindingsUnprocessedFinding {
 pub mod batch_update_findings_unprocessed_finding {
     
     /// A builder for [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_identifier: std::option::Option<crate::model::AwsSecurityFindingIdentifier>,
@@ -74481,6 +75015,7 @@ impl AwsSecurityFindingIdentifier {
 pub mod aws_security_finding_identifier {
     
     /// A builder for [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -74565,6 +75100,7 @@ impl WorkflowUpdate {
 pub mod workflow_update {
     
     /// A builder for [`WorkflowUpdate`](crate::model::WorkflowUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::WorkflowStatus>,
@@ -74681,6 +75217,7 @@ impl SeverityUpdate {
 pub mod severity_update {
     
     /// A builder for [`SeverityUpdate`](crate::model::SeverityUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) normalized: std::option::Option<i32>,
@@ -74801,6 +75338,7 @@ impl ImportFindingsError {
 pub mod import_findings_error {
     
     /// A builder for [`ImportFindingsError`](crate::model::ImportFindingsError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -74882,6 +75420,7 @@ impl StandardsSubscriptionRequest {
 pub mod standards_subscription_request {
     
     /// A builder for [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_arn: std::option::Option<std::string::String>,

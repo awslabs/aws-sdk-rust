@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_zonal_shift_input {
     
     /// A builder for [`CancelZonalShiftInput`](crate::input::CancelZonalShiftInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zonal_shift_id: std::option::Option<std::string::String>,
@@ -114,6 +115,7 @@ impl CancelZonalShiftInput {
 pub mod get_managed_resource_input {
     
     /// A builder for [`GetManagedResourceInput`](crate::input::GetManagedResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
@@ -225,6 +227,7 @@ impl GetManagedResourceInput {
 pub mod list_managed_resources_input {
     
     /// A builder for [`ListManagedResourcesInput`](crate::input::ListManagedResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -355,6 +358,7 @@ impl ListManagedResourcesInput {
 pub mod list_zonal_shifts_input {
     
     /// A builder for [`ListZonalShiftsInput`](crate::input::ListZonalShiftsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -514,6 +518,7 @@ impl ListZonalShiftsInput {
 pub mod start_zonal_shift_input {
     
     /// A builder for [`StartZonalShiftInput`](crate::input::StartZonalShiftInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
@@ -673,6 +678,7 @@ impl StartZonalShiftInput {
 pub mod update_zonal_shift_input {
     
     /// A builder for [`UpdateZonalShiftInput`](crate::input::UpdateZonalShiftInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zonal_shift_id: std::option::Option<std::string::String>,

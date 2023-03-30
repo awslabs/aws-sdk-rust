@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_input {
     
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -147,6 +148,7 @@ impl AddTagsInput {
 pub mod create_batch_prediction_input {
     
     /// A builder for [`CreateBatchPredictionInput`](crate::input::CreateBatchPredictionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
@@ -309,6 +311,7 @@ impl CreateBatchPredictionInput {
 pub mod create_data_source_from_rds_input {
     
     /// A builder for [`CreateDataSourceFromRdsInput`](crate::input::CreateDataSourceFromRdsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -504,6 +507,7 @@ impl CreateDataSourceFromRdsInput {
 pub mod create_data_source_from_redshift_input {
     
     /// A builder for [`CreateDataSourceFromRedshiftInput`](crate::input::CreateDataSourceFromRedshiftInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -699,6 +703,7 @@ impl CreateDataSourceFromRedshiftInput {
 pub mod create_data_source_from_s3_input {
     
     /// A builder for [`CreateDataSourceFromS3Input`](crate::input::CreateDataSourceFromS3Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -860,6 +865,7 @@ impl CreateDataSourceFromS3Input {
 pub mod create_evaluation_input {
     
     /// A builder for [`CreateEvaluationInput`](crate::input::CreateEvaluationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
@@ -1010,6 +1016,7 @@ impl CreateEvaluationInput {
 pub mod create_ml_model_input {
     
     /// A builder for [`CreateMlModelInput`](crate::input::CreateMlModelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -1228,6 +1235,7 @@ impl CreateMlModelInput {
 pub mod create_realtime_endpoint_input {
     
     /// A builder for [`CreateRealtimeEndpointInput`](crate::input::CreateRealtimeEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -1340,6 +1348,7 @@ impl CreateRealtimeEndpointInput {
 pub mod delete_batch_prediction_input {
     
     /// A builder for [`DeleteBatchPredictionInput`](crate::input::DeleteBatchPredictionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
@@ -1452,6 +1461,7 @@ impl DeleteBatchPredictionInput {
 pub mod delete_data_source_input {
     
     /// A builder for [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -1564,6 +1574,7 @@ impl DeleteDataSourceInput {
 pub mod delete_evaluation_input {
     
     /// A builder for [`DeleteEvaluationInput`](crate::input::DeleteEvaluationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
@@ -1676,6 +1687,7 @@ impl DeleteEvaluationInput {
 pub mod delete_ml_model_input {
     
     /// A builder for [`DeleteMlModelInput`](crate::input::DeleteMlModelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -1788,6 +1800,7 @@ impl DeleteMlModelInput {
 pub mod delete_realtime_endpoint_input {
     
     /// A builder for [`DeleteRealtimeEndpointInput`](crate::input::DeleteRealtimeEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -1900,6 +1913,7 @@ impl DeleteRealtimeEndpointInput {
 pub mod delete_tags_input {
     
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2042,6 +2056,7 @@ impl DeleteTagsInput {
 pub mod describe_batch_predictions_input {
     
     /// A builder for [`DescribeBatchPredictionsInput`](crate::input::DescribeBatchPredictionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_variable: std::option::Option<crate::model::BatchPredictionFilterVariable>,
@@ -2314,6 +2329,7 @@ impl DescribeBatchPredictionsInput {
 pub mod describe_data_sources_input {
     
     /// A builder for [`DescribeDataSourcesInput`](crate::input::DescribeDataSourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_variable: std::option::Option<crate::model::DataSourceFilterVariable>,
@@ -2582,6 +2598,7 @@ impl DescribeDataSourcesInput {
 pub mod describe_evaluations_input {
     
     /// A builder for [`DescribeEvaluationsInput`](crate::input::DescribeEvaluationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_variable: std::option::Option<crate::model::EvaluationFilterVariable>,
@@ -2854,6 +2871,7 @@ impl DescribeEvaluationsInput {
 pub mod describe_ml_models_input {
     
     /// A builder for [`DescribeMlModelsInput`](crate::input::DescribeMlModelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_variable: std::option::Option<crate::model::MlModelFilterVariable>,
@@ -3130,6 +3148,7 @@ impl DescribeMlModelsInput {
 pub mod describe_tags_input {
     
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -3254,6 +3273,7 @@ impl DescribeTagsInput {
 pub mod get_batch_prediction_input {
     
     /// A builder for [`GetBatchPredictionInput`](crate::input::GetBatchPredictionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
@@ -3366,6 +3386,7 @@ impl GetBatchPredictionInput {
 pub mod get_data_source_input {
     
     /// A builder for [`GetDataSourceInput`](crate::input::GetDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -3495,6 +3516,7 @@ impl GetDataSourceInput {
 pub mod get_evaluation_input {
     
     /// A builder for [`GetEvaluationInput`](crate::input::GetEvaluationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
@@ -3607,6 +3629,7 @@ impl GetEvaluationInput {
 pub mod get_ml_model_input {
     
     /// A builder for [`GetMlModelInput`](crate::input::GetMlModelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -3736,6 +3759,7 @@ impl GetMlModelInput {
 pub mod predict_input {
     
     /// A builder for [`PredictInput`](crate::input::PredictInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -3878,6 +3902,7 @@ impl PredictInput {
 pub mod update_batch_prediction_input {
     
     /// A builder for [`UpdateBatchPredictionInput`](crate::input::UpdateBatchPredictionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
@@ -4002,6 +4027,7 @@ impl UpdateBatchPredictionInput {
 pub mod update_data_source_input {
     
     /// A builder for [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -4126,6 +4152,7 @@ impl UpdateDataSourceInput {
 pub mod update_evaluation_input {
     
     /// A builder for [`UpdateEvaluationInput`](crate::input::UpdateEvaluationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
@@ -4250,6 +4277,7 @@ impl UpdateEvaluationInput {
 pub mod update_ml_model_input {
     
     /// A builder for [`UpdateMlModelInput`](crate::input::UpdateMlModelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,

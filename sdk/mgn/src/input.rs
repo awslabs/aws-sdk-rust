@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod archive_application_input {
     
     /// A builder for [`ArchiveApplicationInput`](crate::input::ArchiveApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -112,6 +113,7 @@ impl ArchiveApplicationInput {
 pub mod archive_wave_input {
     
     /// A builder for [`ArchiveWaveInput`](crate::input::ArchiveWaveInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wave_id: std::option::Option<std::string::String>,
@@ -219,6 +221,7 @@ impl ArchiveWaveInput {
 pub mod associate_applications_input {
     
     /// A builder for [`AssociateApplicationsInput`](crate::input::AssociateApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wave_id: std::option::Option<std::string::String>,
@@ -344,6 +347,7 @@ impl AssociateApplicationsInput {
 pub mod associate_source_servers_input {
     
     /// A builder for [`AssociateSourceServersInput`](crate::input::AssociateSourceServersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -469,6 +473,7 @@ impl AssociateSourceServersInput {
 pub mod change_server_life_cycle_state_input {
     
     /// A builder for [`ChangeServerLifeCycleStateInput`](crate::input::ChangeServerLifeCycleStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -588,6 +593,7 @@ impl ChangeServerLifeCycleStateInput {
 pub mod create_application_input {
     
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -734,6 +740,7 @@ impl CreateApplicationInput {
 pub mod create_launch_configuration_template_input {
     
     /// A builder for [`CreateLaunchConfigurationTemplateInput`](crate::input::CreateLaunchConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
@@ -1024,6 +1031,7 @@ impl CreateLaunchConfigurationTemplateInput {
 pub mod create_replication_configuration_template_input {
     
     /// A builder for [`CreateReplicationConfigurationTemplateInput`](crate::input::CreateReplicationConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) staging_area_subnet_id: std::option::Option<std::string::String>,
@@ -1313,6 +1321,7 @@ impl CreateReplicationConfigurationTemplateInput {
 pub mod create_wave_input {
     
     /// A builder for [`CreateWaveInput`](crate::input::CreateWaveInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1459,6 +1468,7 @@ impl CreateWaveInput {
 pub mod delete_application_input {
     
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1566,6 +1576,7 @@ impl DeleteApplicationInput {
 pub mod delete_job_input {
     
     /// A builder for [`DeleteJobInput`](crate::input::DeleteJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1673,6 +1684,7 @@ impl DeleteJobInput {
 pub mod delete_launch_configuration_template_input {
     
     /// A builder for [`DeleteLaunchConfigurationTemplateInput`](crate::input::DeleteLaunchConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
@@ -1780,6 +1792,7 @@ impl DeleteLaunchConfigurationTemplateInput {
 pub mod delete_replication_configuration_template_input {
     
     /// A builder for [`DeleteReplicationConfigurationTemplateInput`](crate::input::DeleteReplicationConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_configuration_template_id: std::option::Option<std::string::String>,
@@ -1887,6 +1900,7 @@ impl DeleteReplicationConfigurationTemplateInput {
 pub mod delete_source_server_input {
     
     /// A builder for [`DeleteSourceServerInput`](crate::input::DeleteSourceServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -1994,6 +2008,7 @@ impl DeleteSourceServerInput {
 pub mod delete_vcenter_client_input {
     
     /// A builder for [`DeleteVcenterClientInput`](crate::input::DeleteVcenterClientInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
@@ -2101,6 +2116,7 @@ impl DeleteVcenterClientInput {
 pub mod delete_wave_input {
     
     /// A builder for [`DeleteWaveInput`](crate::input::DeleteWaveInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wave_id: std::option::Option<std::string::String>,
@@ -2208,6 +2224,7 @@ impl DeleteWaveInput {
 pub mod describe_job_log_items_input {
     
     /// A builder for [`DescribeJobLogItemsInput`](crate::input::DescribeJobLogItemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2340,6 +2357,7 @@ impl DescribeJobLogItemsInput {
 pub mod describe_jobs_input {
     
     /// A builder for [`DescribeJobsInput`](crate::input::DescribeJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::DescribeJobsRequestFilters>,
@@ -2472,6 +2490,7 @@ impl DescribeJobsInput {
 pub mod describe_launch_configuration_templates_input {
     
     /// A builder for [`DescribeLaunchConfigurationTemplatesInput`](crate::input::DescribeLaunchConfigurationTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_template_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2610,6 +2629,7 @@ impl DescribeLaunchConfigurationTemplatesInput {
 pub mod describe_replication_configuration_templates_input {
     
     /// A builder for [`DescribeReplicationConfigurationTemplatesInput`](crate::input::DescribeReplicationConfigurationTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_configuration_template_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2748,6 +2768,7 @@ impl DescribeReplicationConfigurationTemplatesInput {
 pub mod describe_source_servers_input {
     
     /// A builder for [`DescribeSourceServersInput`](crate::input::DescribeSourceServersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::DescribeSourceServersRequestFilters>,
@@ -2880,6 +2901,7 @@ impl DescribeSourceServersInput {
 pub mod describe_vcenter_clients_input {
     
     /// A builder for [`DescribeVcenterClientsInput`](crate::input::DescribeVcenterClientsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3009,6 +3031,7 @@ impl DescribeVcenterClientsInput {
 pub mod disassociate_applications_input {
     
     /// A builder for [`DisassociateApplicationsInput`](crate::input::DisassociateApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wave_id: std::option::Option<std::string::String>,
@@ -3134,6 +3157,7 @@ impl DisassociateApplicationsInput {
 pub mod disassociate_source_servers_input {
     
     /// A builder for [`DisassociateSourceServersInput`](crate::input::DisassociateSourceServersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3259,6 +3283,7 @@ impl DisassociateSourceServersInput {
 pub mod disconnect_from_service_input {
     
     /// A builder for [`DisconnectFromServiceInput`](crate::input::DisconnectFromServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -3366,6 +3391,7 @@ impl DisconnectFromServiceInput {
 pub mod finalize_cutover_input {
     
     /// A builder for [`FinalizeCutoverInput`](crate::input::FinalizeCutoverInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -3473,6 +3499,7 @@ impl FinalizeCutoverInput {
 pub mod get_launch_configuration_input {
     
     /// A builder for [`GetLaunchConfigurationInput`](crate::input::GetLaunchConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -3580,6 +3607,7 @@ impl GetLaunchConfigurationInput {
 pub mod get_replication_configuration_input {
     
     /// A builder for [`GetReplicationConfigurationInput`](crate::input::GetReplicationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -3687,6 +3715,7 @@ impl GetReplicationConfigurationInput {
 pub mod initialize_service_input {
     
     /// A builder for [`InitializeServiceInput`](crate::input::InitializeServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3778,6 +3807,7 @@ impl InitializeServiceInput {
 pub mod list_applications_input {
     
     /// A builder for [`ListApplicationsInput`](crate::input::ListApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::ListApplicationsRequestFilters>,
@@ -3910,6 +3940,7 @@ impl ListApplicationsInput {
 pub mod list_source_server_actions_input {
     
     /// A builder for [`ListSourceServerActionsInput`](crate::input::ListSourceServerActionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -4054,6 +4085,7 @@ impl ListSourceServerActionsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4163,6 +4195,7 @@ impl ListTagsForResourceInput {
 pub mod list_template_actions_input {
     
     /// A builder for [`ListTemplateActionsInput`](crate::input::ListTemplateActionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
@@ -4307,6 +4340,7 @@ impl ListTemplateActionsInput {
 pub mod list_waves_input {
     
     /// A builder for [`ListWavesInput`](crate::input::ListWavesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::ListWavesRequestFilters>,
@@ -4439,6 +4473,7 @@ impl ListWavesInput {
 pub mod mark_as_archived_input {
     
     /// A builder for [`MarkAsArchivedInput`](crate::input::MarkAsArchivedInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -4546,6 +4581,7 @@ impl MarkAsArchivedInput {
 pub mod put_source_server_action_input {
     
     /// A builder for [`PutSourceServerActionInput`](crate::input::PutSourceServerActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -4769,6 +4805,7 @@ impl PutSourceServerActionInput {
 pub mod put_template_action_input {
     
     /// A builder for [`PutTemplateActionInput`](crate::input::PutTemplateActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
@@ -5004,6 +5041,7 @@ impl PutTemplateActionInput {
 pub mod remove_source_server_action_input {
     
     /// A builder for [`RemoveSourceServerActionInput`](crate::input::RemoveSourceServerActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -5123,6 +5161,7 @@ impl RemoveSourceServerActionInput {
 pub mod remove_template_action_input {
     
     /// A builder for [`RemoveTemplateActionInput`](crate::input::RemoveTemplateActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
@@ -5242,6 +5281,7 @@ impl RemoveTemplateActionInput {
 pub mod retry_data_replication_input {
     
     /// A builder for [`RetryDataReplicationInput`](crate::input::RetryDataReplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -5349,6 +5389,7 @@ impl RetryDataReplicationInput {
 pub mod start_cutover_input {
     
     /// A builder for [`StartCutoverInput`](crate::input::StartCutoverInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5488,6 +5529,7 @@ impl StartCutoverInput {
 pub mod start_replication_input {
     
     /// A builder for [`StartReplicationInput`](crate::input::StartReplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -5595,6 +5637,7 @@ impl StartReplicationInput {
 pub mod start_test_input {
     
     /// A builder for [`StartTestInput`](crate::input::StartTestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5734,6 +5777,7 @@ impl StartTestInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5873,6 +5917,7 @@ impl TagResourceInput {
 pub mod terminate_target_instances_input {
     
     /// A builder for [`TerminateTargetInstancesInput`](crate::input::TerminateTargetInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6012,6 +6057,7 @@ impl TerminateTargetInstancesInput {
 pub mod unarchive_application_input {
     
     /// A builder for [`UnarchiveApplicationInput`](crate::input::UnarchiveApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -6119,6 +6165,7 @@ impl UnarchiveApplicationInput {
 pub mod unarchive_wave_input {
     
     /// A builder for [`UnarchiveWaveInput`](crate::input::UnarchiveWaveInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wave_id: std::option::Option<std::string::String>,
@@ -6226,6 +6273,7 @@ impl UnarchiveWaveInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6371,6 +6419,7 @@ impl UntagResourceInput {
 pub mod update_application_input {
     
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -6502,6 +6551,7 @@ impl UpdateApplicationInput {
 pub mod update_launch_configuration_input {
     
     /// A builder for [`UpdateLaunchConfigurationInput`](crate::input::UpdateLaunchConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -6729,6 +6779,7 @@ impl UpdateLaunchConfigurationInput {
 pub mod update_launch_configuration_template_input {
     
     /// A builder for [`UpdateLaunchConfigurationTemplateInput`](crate::input::UpdateLaunchConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
@@ -6993,6 +7044,7 @@ impl UpdateLaunchConfigurationTemplateInput {
 pub mod update_replication_configuration_input {
     
     /// A builder for [`UpdateReplicationConfigurationInput`](crate::input::UpdateReplicationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -7308,6 +7360,7 @@ impl UpdateReplicationConfigurationInput {
 pub mod update_replication_configuration_template_input {
     
     /// A builder for [`UpdateReplicationConfigurationTemplateInput`](crate::input::UpdateReplicationConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) replication_configuration_template_id: std::option::Option<std::string::String>,
@@ -7604,6 +7657,7 @@ impl UpdateReplicationConfigurationTemplateInput {
 pub mod update_source_server_replication_type_input {
     
     /// A builder for [`UpdateSourceServerReplicationTypeInput`](crate::input::UpdateSourceServerReplicationTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -7723,6 +7777,7 @@ impl UpdateSourceServerReplicationTypeInput {
 pub mod update_wave_input {
     
     /// A builder for [`UpdateWaveInput`](crate::input::UpdateWaveInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wave_id: std::option::Option<std::string::String>,

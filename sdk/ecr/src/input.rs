@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_check_layer_availability_input {
     
     /// A builder for [`BatchCheckLayerAvailabilityInput`](crate::input::BatchCheckLayerAvailabilityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -147,6 +148,7 @@ impl BatchCheckLayerAvailabilityInput {
 pub mod batch_delete_image_input {
     
     /// A builder for [`BatchDeleteImageInput`](crate::input::BatchDeleteImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -289,6 +291,7 @@ impl BatchDeleteImageInput {
 pub mod batch_get_image_input {
     
     /// A builder for [`BatchGetImageInput`](crate::input::BatchGetImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -451,6 +454,7 @@ impl BatchGetImageInput {
 pub mod batch_get_repository_scanning_configuration_input {
     
     /// A builder for [`BatchGetRepositoryScanningConfigurationInput`](crate::input::BatchGetRepositoryScanningConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -569,6 +573,7 @@ impl BatchGetRepositoryScanningConfigurationInput {
 pub mod complete_layer_upload_input {
     
     /// A builder for [`CompleteLayerUploadInput`](crate::input::CompleteLayerUploadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -723,6 +728,7 @@ impl CompleteLayerUploadInput {
 pub mod create_pull_through_cache_rule_input {
     
     /// A builder for [`CreatePullThroughCacheRuleInput`](crate::input::CreatePullThroughCacheRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecr_repository_prefix: std::option::Option<std::string::String>,
@@ -859,6 +865,7 @@ impl CreatePullThroughCacheRuleInput {
 pub mod create_repository_input {
     
     /// A builder for [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1037,6 +1044,7 @@ impl CreateRepositoryInput {
 pub mod delete_lifecycle_policy_input {
     
     /// A builder for [`DeleteLifecyclePolicyInput`](crate::input::DeleteLifecyclePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1161,6 +1169,7 @@ impl DeleteLifecyclePolicyInput {
 pub mod delete_pull_through_cache_rule_input {
     
     /// A builder for [`DeletePullThroughCacheRuleInput`](crate::input::DeletePullThroughCacheRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecr_repository_prefix: std::option::Option<std::string::String>,
@@ -1285,6 +1294,7 @@ impl DeletePullThroughCacheRuleInput {
 pub mod delete_registry_policy_input {
     
     /// A builder for [`DeleteRegistryPolicyInput`](crate::input::DeleteRegistryPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1382,6 +1392,7 @@ impl DeleteRegistryPolicyInput {
 pub mod delete_repository_input {
     
     /// A builder for [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1519,6 +1530,7 @@ impl DeleteRepositoryInput {
 pub mod delete_repository_policy_input {
     
     /// A builder for [`DeleteRepositoryPolicyInput`](crate::input::DeleteRepositoryPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1643,6 +1655,7 @@ impl DeleteRepositoryPolicyInput {
 pub mod describe_image_replication_status_input {
     
     /// A builder for [`DescribeImageReplicationStatusInput`](crate::input::DescribeImageReplicationStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -1779,6 +1792,7 @@ impl DescribeImageReplicationStatusInput {
 pub mod describe_images_input {
     
     /// A builder for [`DescribeImagesInput`](crate::input::DescribeImagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1957,6 +1971,7 @@ impl DescribeImagesInput {
 pub mod describe_image_scan_findings_input {
     
     /// A builder for [`DescribeImageScanFindingsInput`](crate::input::DescribeImageScanFindingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -2117,6 +2132,7 @@ impl DescribeImageScanFindingsInput {
 pub mod describe_pull_through_cache_rules_input {
     
     /// A builder for [`DescribePullThroughCacheRulesInput`](crate::input::DescribePullThroughCacheRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -2271,6 +2287,7 @@ impl DescribePullThroughCacheRulesInput {
 pub mod describe_registry_input {
     
     /// A builder for [`DescribeRegistryInput`](crate::input::DescribeRegistryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2368,6 +2385,7 @@ impl DescribeRegistryInput {
 pub mod describe_repositories_input {
     
     /// A builder for [`DescribeRepositoriesInput`](crate::input::DescribeRepositoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -2526,6 +2544,7 @@ impl DescribeRepositoriesInput {
 pub mod get_authorization_token_input {
     
     /// A builder for [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2646,6 +2665,7 @@ impl GetAuthorizationTokenInput {
 pub mod get_download_url_for_layer_input {
     
     /// A builder for [`GetDownloadUrlForLayerInput`](crate::input::GetDownloadUrlForLayerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -2782,6 +2802,7 @@ impl GetDownloadUrlForLayerInput {
 pub mod get_lifecycle_policy_input {
     
     /// A builder for [`GetLifecyclePolicyInput`](crate::input::GetLifecyclePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -2906,6 +2927,7 @@ impl GetLifecyclePolicyInput {
 pub mod get_lifecycle_policy_preview_input {
     
     /// A builder for [`GetLifecyclePolicyPreviewInput`](crate::input::GetLifecyclePolicyPreviewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -3084,6 +3106,7 @@ impl GetLifecyclePolicyPreviewInput {
 pub mod get_registry_policy_input {
     
     /// A builder for [`GetRegistryPolicyInput`](crate::input::GetRegistryPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3181,6 +3204,7 @@ impl GetRegistryPolicyInput {
 pub mod get_registry_scanning_configuration_input {
     
     /// A builder for [`GetRegistryScanningConfigurationInput`](crate::input::GetRegistryScanningConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3278,6 +3302,7 @@ impl GetRegistryScanningConfigurationInput {
 pub mod get_repository_policy_input {
     
     /// A builder for [`GetRepositoryPolicyInput`](crate::input::GetRepositoryPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -3402,6 +3427,7 @@ impl GetRepositoryPolicyInput {
 pub mod initiate_layer_upload_input {
     
     /// A builder for [`InitiateLayerUploadInput`](crate::input::InitiateLayerUploadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -3526,6 +3552,7 @@ impl InitiateLayerUploadInput {
 pub mod list_images_input {
     
     /// A builder for [`ListImagesInput`](crate::input::ListImagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -3690,6 +3717,7 @@ impl ListImagesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3802,6 +3830,7 @@ impl ListTagsForResourceInput {
 pub mod put_image_input {
     
     /// A builder for [`PutImageInput`](crate::input::PutImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -3974,6 +4003,7 @@ impl PutImageInput {
 pub mod put_image_scanning_configuration_input {
     
     /// A builder for [`PutImageScanningConfigurationInput`](crate::input::PutImageScanningConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -4110,6 +4140,7 @@ impl PutImageScanningConfigurationInput {
 pub mod put_image_tag_mutability_input {
     
     /// A builder for [`PutImageTagMutabilityInput`](crate::input::PutImageTagMutabilityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -4246,6 +4277,7 @@ impl PutImageTagMutabilityInput {
 pub mod put_lifecycle_policy_input {
     
     /// A builder for [`PutLifecyclePolicyInput`](crate::input::PutLifecyclePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -4382,6 +4414,7 @@ impl PutLifecyclePolicyInput {
 pub mod put_registry_policy_input {
     
     /// A builder for [`PutRegistryPolicyInput`](crate::input::PutRegistryPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_text: std::option::Option<std::string::String>,
@@ -4494,6 +4527,7 @@ impl PutRegistryPolicyInput {
 pub mod put_registry_scanning_configuration_input {
     
     /// A builder for [`PutRegistryScanningConfigurationInput`](crate::input::PutRegistryScanningConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scan_type: std::option::Option<crate::model::ScanType>,
@@ -4628,6 +4662,7 @@ impl PutRegistryScanningConfigurationInput {
 pub mod put_replication_configuration_input {
     
     /// A builder for [`PutReplicationConfigurationInput`](crate::input::PutReplicationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_configuration: std::option::Option<crate::model::ReplicationConfiguration>,
@@ -4740,6 +4775,7 @@ impl PutReplicationConfigurationInput {
 pub mod set_repository_policy_input {
     
     /// A builder for [`SetRepositoryPolicyInput`](crate::input::SetRepositoryPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -4889,6 +4925,7 @@ impl SetRepositoryPolicyInput {
 pub mod start_image_scan_input {
     
     /// A builder for [`StartImageScanInput`](crate::input::StartImageScanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -5025,6 +5062,7 @@ impl StartImageScanInput {
 pub mod start_lifecycle_policy_preview_input {
     
     /// A builder for [`StartLifecyclePolicyPreviewInput`](crate::input::StartLifecyclePolicyPreviewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -5161,6 +5199,7 @@ impl StartLifecyclePolicyPreviewInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5291,6 +5330,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5421,6 +5461,7 @@ impl UntagResourceInput {
 pub mod upload_layer_part_input {
     
     /// A builder for [`UploadLayerPartInput`](crate::input::UploadLayerPartInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,

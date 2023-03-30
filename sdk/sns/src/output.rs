@@ -9,6 +9,7 @@ pub struct VerifySmsSandboxPhoneNumberOutput  {
 pub mod verify_sms_sandbox_phone_number_output {
     
     /// A builder for [`VerifySmsSandboxPhoneNumberOutput`](crate::output::VerifySmsSandboxPhoneNumberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -38,6 +39,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -67,6 +69,7 @@ pub struct UnsubscribeOutput  {
 pub mod unsubscribe_output {
     
     /// A builder for [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -96,6 +99,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -134,6 +138,7 @@ impl SubscribeOutput {
 pub mod subscribe_output {
     
     /// A builder for [`SubscribeOutput`](crate::output::SubscribeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
@@ -175,6 +180,7 @@ pub struct SetTopicAttributesOutput  {
 pub mod set_topic_attributes_output {
     
     /// A builder for [`SetTopicAttributesOutput`](crate::output::SetTopicAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -204,6 +210,7 @@ pub struct SetSubscriptionAttributesOutput  {
 pub mod set_subscription_attributes_output {
     
     /// A builder for [`SetSubscriptionAttributesOutput`](crate::output::SetSubscriptionAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -233,6 +240,7 @@ pub struct SetSmsAttributesOutput  {
 pub mod set_sms_attributes_output {
     
     /// A builder for [`SetSmsAttributesOutput`](crate::output::SetSmsAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -262,6 +270,7 @@ pub struct SetPlatformApplicationAttributesOutput  {
 pub mod set_platform_application_attributes_output {
     
     /// A builder for [`SetPlatformApplicationAttributesOutput`](crate::output::SetPlatformApplicationAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -291,6 +300,7 @@ pub struct SetEndpointAttributesOutput  {
 pub mod set_endpoint_attributes_output {
     
     /// A builder for [`SetEndpointAttributesOutput`](crate::output::SetEndpointAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -320,6 +330,7 @@ pub struct RemovePermissionOutput  {
 pub mod remove_permission_output {
     
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -349,6 +360,7 @@ pub struct PutDataProtectionPolicyOutput  {
 pub mod put_data_protection_policy_output {
     
     /// A builder for [`PutDataProtectionPolicyOutput`](crate::output::PutDataProtectionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -394,6 +406,7 @@ impl PublishBatchOutput {
 pub mod publish_batch_output {
     
     /// A builder for [`PublishBatchOutput`](crate::output::PublishBatchOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful: std::option::Option<std::vec::Vec<crate::model::PublishBatchResultEntry>>,
@@ -479,6 +492,7 @@ impl PublishOutput {
 pub mod publish_output {
     
     /// A builder for [`PublishOutput`](crate::output::PublishOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -536,6 +550,7 @@ pub struct OptInPhoneNumberOutput  {
 pub mod opt_in_phone_number_output {
     
     /// A builder for [`OptInPhoneNumberOutput`](crate::output::OptInPhoneNumberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -581,6 +596,7 @@ impl ListTopicsOutput {
 pub mod list_topics_output {
     
     /// A builder for [`ListTopicsOutput`](crate::output::ListTopicsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topics: std::option::Option<std::vec::Vec<crate::model::Topic>>,
@@ -649,6 +665,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -712,6 +729,7 @@ impl ListSubscriptionsByTopicOutput {
 pub mod list_subscriptions_by_topic_output {
     
     /// A builder for [`ListSubscriptionsByTopicOutput`](crate::output::ListSubscriptionsByTopicOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
@@ -787,6 +805,7 @@ impl ListSubscriptionsOutput {
 pub mod list_subscriptions_output {
     
     /// A builder for [`ListSubscriptionsOutput`](crate::output::ListSubscriptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
@@ -862,6 +881,7 @@ impl ListSmsSandboxPhoneNumbersOutput {
 pub mod list_sms_sandbox_phone_numbers_output {
     
     /// A builder for [`ListSmsSandboxPhoneNumbersOutput`](crate::output::ListSmsSandboxPhoneNumbersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_numbers: std::option::Option<std::vec::Vec<crate::model::SmsSandboxPhoneNumber>>,
@@ -937,6 +957,7 @@ impl ListPlatformApplicationsOutput {
 pub mod list_platform_applications_output {
     
     /// A builder for [`ListPlatformApplicationsOutput`](crate::output::ListPlatformApplicationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_applications: std::option::Option<std::vec::Vec<crate::model::PlatformApplication>>,
@@ -1012,6 +1033,7 @@ impl ListPhoneNumbersOptedOutOutput {
 pub mod list_phone_numbers_opted_out_output {
     
     /// A builder for [`ListPhoneNumbersOptedOutOutput`](crate::output::ListPhoneNumbersOptedOutOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1087,6 +1109,7 @@ impl ListOriginationNumbersOutput {
 pub mod list_origination_numbers_output {
     
     /// A builder for [`ListOriginationNumbersOutput`](crate::output::ListOriginationNumbersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1162,6 +1185,7 @@ impl ListEndpointsByPlatformApplicationOutput {
 pub mod list_endpoints_by_platform_application_output {
     
     /// A builder for [`ListEndpointsByPlatformApplicationOutput`](crate::output::ListEndpointsByPlatformApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -1294,6 +1318,7 @@ impl GetTopicAttributesOutput {
 pub mod get_topic_attributes_output {
     
     /// A builder for [`GetTopicAttributesOutput`](crate::output::GetTopicAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1464,6 +1489,7 @@ impl GetSubscriptionAttributesOutput {
 pub mod get_subscription_attributes_output {
     
     /// A builder for [`GetSubscriptionAttributesOutput`](crate::output::GetSubscriptionAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1570,6 +1596,7 @@ impl GetSmsSandboxAccountStatusOutput {
 pub mod get_sms_sandbox_account_status_output {
     
     /// A builder for [`GetSmsSandboxAccountStatusOutput`](crate::output::GetSmsSandboxAccountStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_in_sandbox: std::option::Option<bool>,
@@ -1621,6 +1648,7 @@ impl GetSmsAttributesOutput {
 pub mod get_sms_attributes_output {
     
     /// A builder for [`GetSmsAttributesOutput`](crate::output::GetSmsAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1695,6 +1723,7 @@ impl GetPlatformApplicationAttributesOutput {
 pub mod get_platform_application_attributes_output {
     
     /// A builder for [`GetPlatformApplicationAttributesOutput`](crate::output::GetPlatformApplicationAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1783,6 +1812,7 @@ impl GetEndpointAttributesOutput {
 pub mod get_endpoint_attributes_output {
     
     /// A builder for [`GetEndpointAttributesOutput`](crate::output::GetEndpointAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1853,6 +1883,7 @@ impl GetDataProtectionPolicyOutput {
 pub mod get_data_protection_policy_output {
     
     /// A builder for [`GetDataProtectionPolicyOutput`](crate::output::GetDataProtectionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_protection_policy: std::option::Option<std::string::String>,
@@ -1894,6 +1925,7 @@ pub struct DeleteTopicOutput  {
 pub mod delete_topic_output {
     
     /// A builder for [`DeleteTopicOutput`](crate::output::DeleteTopicOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1923,6 +1955,7 @@ pub struct DeleteSmsSandboxPhoneNumberOutput  {
 pub mod delete_sms_sandbox_phone_number_output {
     
     /// A builder for [`DeleteSmsSandboxPhoneNumberOutput`](crate::output::DeleteSmsSandboxPhoneNumberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1952,6 +1985,7 @@ pub struct DeletePlatformApplicationOutput  {
 pub mod delete_platform_application_output {
     
     /// A builder for [`DeletePlatformApplicationOutput`](crate::output::DeletePlatformApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1981,6 +2015,7 @@ pub struct DeleteEndpointOutput  {
 pub mod delete_endpoint_output {
     
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2019,6 +2054,7 @@ impl CreateTopicOutput {
 pub mod create_topic_output {
     
     /// A builder for [`CreateTopicOutput`](crate::output::CreateTopicOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -2060,6 +2096,7 @@ pub struct CreateSmsSandboxPhoneNumberOutput  {
 pub mod create_sms_sandbox_phone_number_output {
     
     /// A builder for [`CreateSmsSandboxPhoneNumberOutput`](crate::output::CreateSmsSandboxPhoneNumberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2098,6 +2135,7 @@ impl CreatePlatformEndpointOutput {
 pub mod create_platform_endpoint_output {
     
     /// A builder for [`CreatePlatformEndpointOutput`](crate::output::CreatePlatformEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
@@ -2148,6 +2186,7 @@ impl CreatePlatformApplicationOutput {
 pub mod create_platform_application_output {
     
     /// A builder for [`CreatePlatformApplicationOutput`](crate::output::CreatePlatformApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_application_arn: std::option::Option<std::string::String>,
@@ -2198,6 +2237,7 @@ impl ConfirmSubscriptionOutput {
 pub mod confirm_subscription_output {
     
     /// A builder for [`ConfirmSubscriptionOutput`](crate::output::ConfirmSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
@@ -2256,6 +2296,7 @@ impl CheckIfPhoneNumberIsOptedOutOutput {
 pub mod check_if_phone_number_is_opted_out_output {
     
     /// A builder for [`CheckIfPhoneNumberIsOptedOutOutput`](crate::output::CheckIfPhoneNumberIsOptedOutOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_opted_out: std::option::Option<bool>,
@@ -2306,6 +2347,7 @@ pub struct AddPermissionOutput  {
 pub mod add_permission_output {
     
     /// A builder for [`AddPermissionOutput`](crate::output::AddPermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

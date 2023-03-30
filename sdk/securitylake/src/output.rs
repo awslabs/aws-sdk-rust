@@ -17,6 +17,7 @@ impl UpdateSubscriptionNotificationConfigurationOutput {
 pub mod update_subscription_notification_configuration_output {
     
     /// A builder for [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_arn: std::option::Option<std::string::String>,
@@ -67,6 +68,7 @@ impl UpdateSubscriberOutput {
 pub mod update_subscriber_output {
     
     /// A builder for [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriber: std::option::Option<crate::model::SubscriberResource>,
@@ -108,6 +110,7 @@ pub struct UpdateDatalakeExceptionsSubscriptionOutput  {
 pub mod update_datalake_exceptions_subscription_output {
     
     /// A builder for [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -137,6 +140,7 @@ pub struct UpdateDatalakeExceptionsExpiryOutput  {
 pub mod update_datalake_exceptions_expiry_output {
     
     /// A builder for [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -166,6 +170,7 @@ pub struct UpdateDatalakeOutput  {
 pub mod update_datalake_output {
     
     /// A builder for [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -211,6 +216,7 @@ impl ListSubscribersOutput {
 pub mod list_subscribers_output {
     
     /// A builder for [`ListSubscribersOutput`](crate::output::ListSubscribersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscribers: std::option::Option<std::vec::Vec<crate::model::SubscriberResource>>,
@@ -286,6 +292,7 @@ impl ListLogSourcesOutput {
 pub mod list_log_sources_output {
     
     /// A builder for [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_source_types_accounts_list: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>>>,
@@ -363,6 +370,7 @@ impl ListDatalakeExceptionsOutput {
 pub mod list_datalake_exceptions_output {
     
     /// A builder for [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) non_retryable_failures: std::option::Option<std::vec::Vec<crate::model::FailuresResponse>>,
@@ -433,6 +441,7 @@ impl GetSubscriberOutput {
 pub mod get_subscriber_output {
     
     /// A builder for [`GetSubscriberOutput`](crate::output::GetSubscriberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriber: std::option::Option<crate::model::SubscriberResource>,
@@ -492,6 +501,7 @@ impl GetDatalakeStatusOutput {
 pub mod get_datalake_status_output {
     
     /// A builder for [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_sources_list: std::option::Option<std::vec::Vec<crate::model::AccountSources>>,
@@ -562,6 +572,7 @@ impl GetDatalakeExceptionsSubscriptionOutput {
 pub mod get_datalake_exceptions_subscription_output {
     
     /// A builder for [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol_and_notification_endpoint: std::option::Option<crate::model::ProtocolAndNotificationEndpoint>,
@@ -612,6 +623,7 @@ impl GetDatalakeExceptionsExpiryOutput {
 pub mod get_datalake_exceptions_expiry_output {
     
     /// A builder for [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exception_message_expiry: std::option::Option<i64>,
@@ -662,6 +674,7 @@ impl GetDatalakeAutoEnableOutput {
 pub mod get_datalake_auto_enable_output {
     
     /// A builder for [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_enable_new_accounts: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>,
@@ -718,6 +731,7 @@ impl GetDatalakeOutput {
 pub mod get_datalake_output {
     
     /// A builder for [`GetDatalakeOutput`](crate::output::GetDatalakeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configurations: std::option::Option<std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>>,
@@ -765,6 +779,7 @@ pub struct DeleteSubscriptionNotificationConfigurationOutput  {
 pub mod delete_subscription_notification_configuration_output {
     
     /// A builder for [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -794,6 +809,7 @@ pub struct DeleteSubscriberOutput  {
 pub mod delete_subscriber_output {
     
     /// A builder for [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -832,6 +848,7 @@ impl DeleteDatalakeExceptionsSubscriptionOutput {
 pub mod delete_datalake_exceptions_subscription_output {
     
     /// A builder for [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -873,6 +890,7 @@ pub struct DeleteDatalakeDelegatedAdminOutput  {
 pub mod delete_datalake_delegated_admin_output {
     
     /// A builder for [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -902,6 +920,7 @@ pub struct DeleteDatalakeAutoEnableOutput  {
 pub mod delete_datalake_auto_enable_output {
     
     /// A builder for [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -931,6 +950,7 @@ pub struct DeleteDatalakeOutput  {
 pub mod delete_datalake_output {
     
     /// A builder for [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -969,6 +989,7 @@ impl DeleteCustomLogSourceOutput {
 pub mod delete_custom_log_source_output {
     
     /// A builder for [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_data_location: std::option::Option<std::string::String>,
@@ -1026,6 +1047,7 @@ impl DeleteAwsLogSourceOutput {
 pub mod delete_aws_log_source_output {
     
     /// A builder for [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) processing: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1100,6 +1122,7 @@ impl CreateSubscriptionNotificationConfigurationOutput {
 pub mod create_subscription_notification_configuration_output {
     
     /// A builder for [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_arn: std::option::Option<std::string::String>,
@@ -1171,6 +1194,7 @@ impl CreateSubscriberOutput {
 pub mod create_subscriber_output {
     
     /// A builder for [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_id: std::option::Option<std::string::String>,
@@ -1248,6 +1272,7 @@ pub struct CreateDatalakeExceptionsSubscriptionOutput  {
 pub mod create_datalake_exceptions_subscription_output {
     
     /// A builder for [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1277,6 +1302,7 @@ pub struct CreateDatalakeDelegatedAdminOutput  {
 pub mod create_datalake_delegated_admin_output {
     
     /// A builder for [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1306,6 +1332,7 @@ pub struct CreateDatalakeAutoEnableOutput  {
 pub mod create_datalake_auto_enable_output {
     
     /// A builder for [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1335,6 +1362,7 @@ pub struct CreateDatalakeOutput  {
 pub mod create_datalake_output {
     
     /// A builder for [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1401,6 +1429,7 @@ impl CreateCustomLogSourceOutput {
 pub mod create_custom_log_source_output {
     
     /// A builder for [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_data_location: std::option::Option<std::string::String>,
@@ -1506,6 +1535,7 @@ impl CreateAwsLogSourceOutput {
 pub mod create_aws_log_source_output {
     
     /// A builder for [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) processing: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_application_input {
     
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -207,6 +208,7 @@ impl CreateApplicationInput {
 pub mod create_component_input {
     
     /// A builder for [`CreateComponentInput`](crate::input::CreateComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -349,6 +351,7 @@ impl CreateComponentInput {
 pub mod create_log_pattern_input {
     
     /// A builder for [`CreateLogPatternInput`](crate::input::CreateLogPatternInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -510,6 +513,7 @@ impl CreateLogPatternInput {
 pub mod delete_application_input {
     
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -622,6 +626,7 @@ impl DeleteApplicationInput {
 pub mod delete_component_input {
     
     /// A builder for [`DeleteComponentInput`](crate::input::DeleteComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -746,6 +751,7 @@ impl DeleteComponentInput {
 pub mod delete_log_pattern_input {
     
     /// A builder for [`DeleteLogPatternInput`](crate::input::DeleteLogPatternInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -882,6 +888,7 @@ impl DeleteLogPatternInput {
 pub mod describe_application_input {
     
     /// A builder for [`DescribeApplicationInput`](crate::input::DescribeApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -994,6 +1001,7 @@ impl DescribeApplicationInput {
 pub mod describe_component_input {
     
     /// A builder for [`DescribeComponentInput`](crate::input::DescribeComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -1118,6 +1126,7 @@ impl DescribeComponentInput {
 pub mod describe_component_configuration_input {
     
     /// A builder for [`DescribeComponentConfigurationInput`](crate::input::DescribeComponentConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -1242,6 +1251,7 @@ impl DescribeComponentConfigurationInput {
 pub mod describe_component_configuration_recommendation_input {
     
     /// A builder for [`DescribeComponentConfigurationRecommendationInput`](crate::input::DescribeComponentConfigurationRecommendationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -1378,6 +1388,7 @@ impl DescribeComponentConfigurationRecommendationInput {
 pub mod describe_log_pattern_input {
     
     /// A builder for [`DescribeLogPatternInput`](crate::input::DescribeLogPatternInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -1514,6 +1525,7 @@ impl DescribeLogPatternInput {
 pub mod describe_observation_input {
     
     /// A builder for [`DescribeObservationInput`](crate::input::DescribeObservationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observation_id: std::option::Option<std::string::String>,
@@ -1626,6 +1638,7 @@ impl DescribeObservationInput {
 pub mod describe_problem_input {
     
     /// A builder for [`DescribeProblemInput`](crate::input::DescribeProblemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) problem_id: std::option::Option<std::string::String>,
@@ -1738,6 +1751,7 @@ impl DescribeProblemInput {
 pub mod describe_problem_observations_input {
     
     /// A builder for [`DescribeProblemObservationsInput`](crate::input::DescribeProblemObservationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) problem_id: std::option::Option<std::string::String>,
@@ -1850,6 +1864,7 @@ impl DescribeProblemObservationsInput {
 pub mod list_applications_input {
     
     /// A builder for [`ListApplicationsInput`](crate::input::ListApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1974,6 +1989,7 @@ impl ListApplicationsInput {
 pub mod list_components_input {
     
     /// A builder for [`ListComponentsInput`](crate::input::ListComponentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -2110,6 +2126,7 @@ impl ListComponentsInput {
 pub mod list_configuration_history_input {
     
     /// A builder for [`ListConfigurationHistoryInput`](crate::input::ListConfigurationHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -2282,6 +2299,7 @@ impl ListConfigurationHistoryInput {
 pub mod list_log_patterns_input {
     
     /// A builder for [`ListLogPatternsInput`](crate::input::ListLogPatternsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -2430,6 +2448,7 @@ impl ListLogPatternsInput {
 pub mod list_log_pattern_sets_input {
     
     /// A builder for [`ListLogPatternSetsInput`](crate::input::ListLogPatternSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -2566,6 +2585,7 @@ impl ListLogPatternSetsInput {
 pub mod list_problems_input {
     
     /// A builder for [`ListProblemsInput`](crate::input::ListProblemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -2738,6 +2758,7 @@ impl ListProblemsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2850,6 +2871,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2980,6 +3002,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3112,6 +3135,7 @@ impl UntagResourceInput {
 pub mod update_application_input {
     
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -3284,6 +3308,7 @@ impl UpdateApplicationInput {
 pub mod update_component_input {
     
     /// A builder for [`UpdateComponentInput`](crate::input::UpdateComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -3438,6 +3463,7 @@ impl UpdateComponentInput {
 pub mod update_component_configuration_input {
     
     /// A builder for [`UpdateComponentConfigurationInput`](crate::input::UpdateComponentConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -3610,6 +3636,7 @@ impl UpdateComponentConfigurationInput {
 pub mod update_log_pattern_input {
     
     /// A builder for [`UpdateLogPatternInput`](crate::input::UpdateLogPatternInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,

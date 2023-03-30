@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_connection_alias_input {
     
     /// A builder for [`AssociateConnectionAliasInput`](crate::input::AssociateConnectionAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_id: std::option::Option<std::string::String>,
@@ -129,6 +130,7 @@ impl AssociateConnectionAliasInput {
 pub mod associate_ip_groups_input {
     
     /// A builder for [`AssociateIpGroupsInput`](crate::input::AssociateIpGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -259,6 +261,7 @@ impl AssociateIpGroupsInput {
 pub mod authorize_ip_rules_input {
     
     /// A builder for [`AuthorizeIpRulesInput`](crate::input::AuthorizeIpRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -389,6 +392,7 @@ impl AuthorizeIpRulesInput {
 pub mod copy_workspace_image_input {
     
     /// A builder for [`CopyWorkspaceImageInput`](crate::input::CopyWorkspaceImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -555,6 +559,7 @@ impl CopyWorkspaceImageInput {
 pub mod create_connect_client_add_in_input {
     
     /// A builder for [`CreateConnectClientAddInInput`](crate::input::CreateConnectClientAddInInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -691,6 +696,7 @@ impl CreateConnectClientAddInInput {
 pub mod create_connection_alias_input {
     
     /// A builder for [`CreateConnectionAliasInput`](crate::input::CreateConnectionAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_string: std::option::Option<std::string::String>,
@@ -825,6 +831,7 @@ impl CreateConnectionAliasInput {
 pub mod create_ip_group_input {
     
     /// A builder for [`CreateIpGroupInput`](crate::input::CreateIpGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -985,6 +992,7 @@ impl CreateIpGroupInput {
 pub mod create_standby_workspaces_input {
     
     /// A builder for [`CreateStandbyWorkspacesInput`](crate::input::CreateStandbyWorkspacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_region: std::option::Option<std::string::String>,
@@ -1115,6 +1123,7 @@ impl CreateStandbyWorkspacesInput {
 pub mod create_tags_input {
     
     /// A builder for [`CreateTagsInput`](crate::input::CreateTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -1245,6 +1254,7 @@ impl CreateTagsInput {
 pub mod create_updated_workspace_image_input {
     
     /// A builder for [`CreateUpdatedWorkspaceImageInput`](crate::input::CreateUpdatedWorkspaceImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1403,6 +1413,7 @@ impl CreateUpdatedWorkspaceImageInput {
 pub mod create_workspace_bundle_input {
     
     /// A builder for [`CreateWorkspaceBundleInput`](crate::input::CreateWorkspaceBundleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_name: std::option::Option<std::string::String>,
@@ -1597,6 +1608,7 @@ impl CreateWorkspaceBundleInput {
 pub mod create_workspace_image_input {
     
     /// A builder for [`CreateWorkspaceImageInput`](crate::input::CreateWorkspaceImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1751,6 +1763,7 @@ impl CreateWorkspaceImageInput {
 pub mod create_workspaces_input {
     
     /// A builder for [`CreateWorkspacesInput`](crate::input::CreateWorkspacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceRequest>>,
@@ -1869,6 +1882,7 @@ impl CreateWorkspacesInput {
 pub mod delete_client_branding_input {
     
     /// A builder for [`DeleteClientBrandingInput`](crate::input::DeleteClientBrandingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -1999,6 +2013,7 @@ impl DeleteClientBrandingInput {
 pub mod delete_connect_client_add_in_input {
     
     /// A builder for [`DeleteConnectClientAddInInput`](crate::input::DeleteConnectClientAddInInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_in_id: std::option::Option<std::string::String>,
@@ -2123,6 +2138,7 @@ impl DeleteConnectClientAddInInput {
 pub mod delete_connection_alias_input {
     
     /// A builder for [`DeleteConnectionAliasInput`](crate::input::DeleteConnectionAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_id: std::option::Option<std::string::String>,
@@ -2235,6 +2251,7 @@ impl DeleteConnectionAliasInput {
 pub mod delete_ip_group_input {
     
     /// A builder for [`DeleteIpGroupInput`](crate::input::DeleteIpGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -2347,6 +2364,7 @@ impl DeleteIpGroupInput {
 pub mod delete_tags_input {
     
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -2477,6 +2495,7 @@ impl DeleteTagsInput {
 pub mod delete_workspace_bundle_input {
     
     /// A builder for [`DeleteWorkspaceBundleInput`](crate::input::DeleteWorkspaceBundleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_id: std::option::Option<std::string::String>,
@@ -2589,6 +2608,7 @@ impl DeleteWorkspaceBundleInput {
 pub mod delete_workspace_image_input {
     
     /// A builder for [`DeleteWorkspaceImageInput`](crate::input::DeleteWorkspaceImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<std::string::String>,
@@ -2701,6 +2721,7 @@ impl DeleteWorkspaceImageInput {
 pub mod deregister_workspace_directory_input {
     
     /// A builder for [`DeregisterWorkspaceDirectoryInput`](crate::input::DeregisterWorkspaceDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -2813,6 +2834,7 @@ impl DeregisterWorkspaceDirectoryInput {
 pub mod describe_account_input {
     
     /// A builder for [`DescribeAccountInput`](crate::input::DescribeAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2910,6 +2932,7 @@ impl DescribeAccountInput {
 pub mod describe_account_modifications_input {
     
     /// A builder for [`DescribeAccountModificationsInput`](crate::input::DescribeAccountModificationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3022,6 +3045,7 @@ impl DescribeAccountModificationsInput {
 pub mod describe_client_branding_input {
     
     /// A builder for [`DescribeClientBrandingInput`](crate::input::DescribeClientBrandingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -3134,6 +3158,7 @@ impl DescribeClientBrandingInput {
 pub mod describe_client_properties_input {
     
     /// A builder for [`DescribeClientPropertiesInput`](crate::input::DescribeClientPropertiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3252,6 +3277,7 @@ impl DescribeClientPropertiesInput {
 pub mod describe_connect_client_add_ins_input {
     
     /// A builder for [`DescribeConnectClientAddInsInput`](crate::input::DescribeConnectClientAddInsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -3388,6 +3414,7 @@ impl DescribeConnectClientAddInsInput {
 pub mod describe_connection_aliases_input {
     
     /// A builder for [`DescribeConnectionAliasesInput`](crate::input::DescribeConnectionAliasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3542,6 +3569,7 @@ impl DescribeConnectionAliasesInput {
 pub mod describe_connection_alias_permissions_input {
     
     /// A builder for [`DescribeConnectionAliasPermissionsInput`](crate::input::DescribeConnectionAliasPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_id: std::option::Option<std::string::String>,
@@ -3678,6 +3706,7 @@ impl DescribeConnectionAliasPermissionsInput {
 pub mod describe_ip_groups_input {
     
     /// A builder for [`DescribeIpGroupsInput`](crate::input::DescribeIpGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3820,6 +3849,7 @@ impl DescribeIpGroupsInput {
 pub mod describe_tags_input {
     
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -3932,6 +3962,7 @@ impl DescribeTagsInput {
 pub mod describe_workspace_bundles_input {
     
     /// A builder for [`DescribeWorkspaceBundlesInput`](crate::input::DescribeWorkspaceBundlesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4076,6 +4107,7 @@ impl DescribeWorkspaceBundlesInput {
 pub mod describe_workspace_directories_input {
     
     /// A builder for [`DescribeWorkspaceDirectoriesInput`](crate::input::DescribeWorkspaceDirectoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4218,6 +4250,7 @@ impl DescribeWorkspaceDirectoriesInput {
 pub mod describe_workspace_image_permissions_input {
     
     /// A builder for [`DescribeWorkspaceImagePermissionsInput`](crate::input::DescribeWorkspaceImagePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<std::string::String>,
@@ -4354,6 +4387,7 @@ impl DescribeWorkspaceImagePermissionsInput {
 pub mod describe_workspace_images_input {
     
     /// A builder for [`DescribeWorkspaceImagesInput`](crate::input::DescribeWorkspaceImagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4508,6 +4542,7 @@ impl DescribeWorkspaceImagesInput {
 pub mod describe_workspaces_input {
     
     /// A builder for [`DescribeWorkspacesInput`](crate::input::DescribeWorkspacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4688,6 +4723,7 @@ impl DescribeWorkspacesInput {
 pub mod describe_workspaces_connection_status_input {
     
     /// A builder for [`DescribeWorkspacesConnectionStatusInput`](crate::input::DescribeWorkspacesConnectionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4818,6 +4854,7 @@ impl DescribeWorkspacesConnectionStatusInput {
 pub mod describe_workspace_snapshots_input {
     
     /// A builder for [`DescribeWorkspaceSnapshotsInput`](crate::input::DescribeWorkspaceSnapshotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -4930,6 +4967,7 @@ impl DescribeWorkspaceSnapshotsInput {
 pub mod disassociate_connection_alias_input {
     
     /// A builder for [`DisassociateConnectionAliasInput`](crate::input::DisassociateConnectionAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_id: std::option::Option<std::string::String>,
@@ -5042,6 +5080,7 @@ impl DisassociateConnectionAliasInput {
 pub mod disassociate_ip_groups_input {
     
     /// A builder for [`DisassociateIpGroupsInput`](crate::input::DisassociateIpGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -5172,6 +5211,7 @@ impl DisassociateIpGroupsInput {
 pub mod import_client_branding_input {
     
     /// A builder for [`ImportClientBrandingInput`](crate::input::ImportClientBrandingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -5356,6 +5396,7 @@ impl ImportClientBrandingInput {
 pub mod import_workspace_image_input {
     
     /// A builder for [`ImportWorkspaceImageInput`](crate::input::ImportWorkspaceImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_image_id: std::option::Option<std::string::String>,
@@ -5550,6 +5591,7 @@ impl ImportWorkspaceImageInput {
 pub mod list_available_management_cidr_ranges_input {
     
     /// A builder for [`ListAvailableManagementCidrRangesInput`](crate::input::ListAvailableManagementCidrRangesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) management_cidr_range_constraint: std::option::Option<std::string::String>,
@@ -5686,6 +5728,7 @@ impl ListAvailableManagementCidrRangesInput {
 pub mod migrate_workspace_input {
     
     /// A builder for [`MigrateWorkspaceInput`](crate::input::MigrateWorkspaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_workspace_id: std::option::Option<std::string::String>,
@@ -5810,6 +5853,7 @@ impl MigrateWorkspaceInput {
 pub mod modify_account_input {
     
     /// A builder for [`ModifyAccountInput`](crate::input::ModifyAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dedicated_tenancy_support: std::option::Option<crate::model::DedicatedTenancySupportEnum>,
@@ -5934,6 +5978,7 @@ impl ModifyAccountInput {
 pub mod modify_certificate_based_auth_properties_input {
     
     /// A builder for [`ModifyCertificateBasedAuthPropertiesInput`](crate::input::ModifyCertificateBasedAuthPropertiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -6076,6 +6121,7 @@ impl ModifyCertificateBasedAuthPropertiesInput {
 pub mod modify_client_properties_input {
     
     /// A builder for [`ModifyClientPropertiesInput`](crate::input::ModifyClientPropertiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -6200,6 +6246,7 @@ impl ModifyClientPropertiesInput {
 pub mod modify_saml_properties_input {
     
     /// A builder for [`ModifySamlPropertiesInput`](crate::input::ModifySamlPropertiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -6352,6 +6399,7 @@ impl ModifySamlPropertiesInput {
 pub mod modify_selfservice_permissions_input {
     
     /// A builder for [`ModifySelfservicePermissionsInput`](crate::input::ModifySelfservicePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -6476,6 +6524,7 @@ impl ModifySelfservicePermissionsInput {
 pub mod modify_workspace_access_properties_input {
     
     /// A builder for [`ModifyWorkspaceAccessPropertiesInput`](crate::input::ModifyWorkspaceAccessPropertiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -6600,6 +6649,7 @@ impl ModifyWorkspaceAccessPropertiesInput {
 pub mod modify_workspace_creation_properties_input {
     
     /// A builder for [`ModifyWorkspaceCreationPropertiesInput`](crate::input::ModifyWorkspaceCreationPropertiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -6724,6 +6774,7 @@ impl ModifyWorkspaceCreationPropertiesInput {
 pub mod modify_workspace_properties_input {
     
     /// A builder for [`ModifyWorkspacePropertiesInput`](crate::input::ModifyWorkspacePropertiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -6848,6 +6899,7 @@ impl ModifyWorkspacePropertiesInput {
 pub mod modify_workspace_state_input {
     
     /// A builder for [`ModifyWorkspaceStateInput`](crate::input::ModifyWorkspaceStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -6972,6 +7024,7 @@ impl ModifyWorkspaceStateInput {
 pub mod reboot_workspaces_input {
     
     /// A builder for [`RebootWorkspacesInput`](crate::input::RebootWorkspacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reboot_workspace_requests: std::option::Option<std::vec::Vec<crate::model::RebootRequest>>,
@@ -7090,6 +7143,7 @@ impl RebootWorkspacesInput {
 pub mod rebuild_workspaces_input {
     
     /// A builder for [`RebuildWorkspacesInput`](crate::input::RebuildWorkspacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rebuild_workspace_requests: std::option::Option<std::vec::Vec<crate::model::RebuildRequest>>,
@@ -7208,6 +7262,7 @@ impl RebuildWorkspacesInput {
 pub mod register_workspace_directory_input {
     
     /// A builder for [`RegisterWorkspaceDirectoryInput`](crate::input::RegisterWorkspaceDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -7392,6 +7447,7 @@ impl RegisterWorkspaceDirectoryInput {
 pub mod restore_workspace_input {
     
     /// A builder for [`RestoreWorkspaceInput`](crate::input::RestoreWorkspaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -7504,6 +7560,7 @@ impl RestoreWorkspaceInput {
 pub mod revoke_ip_rules_input {
     
     /// A builder for [`RevokeIpRulesInput`](crate::input::RevokeIpRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -7634,6 +7691,7 @@ impl RevokeIpRulesInput {
 pub mod start_workspaces_input {
     
     /// A builder for [`StartWorkspacesInput`](crate::input::StartWorkspacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_workspace_requests: std::option::Option<std::vec::Vec<crate::model::StartRequest>>,
@@ -7752,6 +7810,7 @@ impl StartWorkspacesInput {
 pub mod stop_workspaces_input {
     
     /// A builder for [`StopWorkspacesInput`](crate::input::StopWorkspacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stop_workspace_requests: std::option::Option<std::vec::Vec<crate::model::StopRequest>>,
@@ -7870,6 +7929,7 @@ impl StopWorkspacesInput {
 pub mod terminate_workspaces_input {
     
     /// A builder for [`TerminateWorkspacesInput`](crate::input::TerminateWorkspacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminate_workspace_requests: std::option::Option<std::vec::Vec<crate::model::TerminateRequest>>,
@@ -7988,6 +8048,7 @@ impl TerminateWorkspacesInput {
 pub mod update_connect_client_add_in_input {
     
     /// A builder for [`UpdateConnectClientAddInInput`](crate::input::UpdateConnectClientAddInInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_in_id: std::option::Option<std::string::String>,
@@ -8136,6 +8197,7 @@ impl UpdateConnectClientAddInInput {
 pub mod update_connection_alias_permission_input {
     
     /// A builder for [`UpdateConnectionAliasPermissionInput`](crate::input::UpdateConnectionAliasPermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_id: std::option::Option<std::string::String>,
@@ -8260,6 +8322,7 @@ impl UpdateConnectionAliasPermissionInput {
 pub mod update_rules_of_ip_group_input {
     
     /// A builder for [`UpdateRulesOfIpGroupInput`](crate::input::UpdateRulesOfIpGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -8390,6 +8453,7 @@ impl UpdateRulesOfIpGroupInput {
 pub mod update_workspace_bundle_input {
     
     /// A builder for [`UpdateWorkspaceBundleInput`](crate::input::UpdateWorkspaceBundleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_id: std::option::Option<std::string::String>,
@@ -8514,6 +8578,7 @@ impl UpdateWorkspaceBundleInput {
 pub mod update_workspace_image_permission_input {
     
     /// A builder for [`UpdateWorkspaceImagePermissionInput`](crate::input::UpdateWorkspaceImagePermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<std::string::String>,

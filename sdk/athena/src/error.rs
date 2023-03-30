@@ -161,6 +161,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
     
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) athena_error_code: std::option::Option<std::string::String>,
@@ -233,6 +234,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
     
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -439,6 +441,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -657,6 +660,7 @@ impl std::error::Error for TooManyRequestsException {}
 pub mod too_many_requests_exception {
     
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1950,6 +1954,7 @@ impl std::error::Error for SessionAlreadyExistsException {}
 pub mod session_already_exists_exception {
     
     /// A builder for [`SessionAlreadyExistsException`](crate::error::SessionAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2683,6 +2688,7 @@ impl std::error::Error for MetadataException {}
 pub mod metadata_exception {
     
     /// A builder for [`MetadataException`](crate::error::MetadataException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod allocate_static_ip_input {
     
     /// A builder for [`AllocateStaticIpInput`](crate::input::AllocateStaticIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_ip_name: std::option::Option<std::string::String>,
@@ -117,6 +118,7 @@ impl AllocateStaticIpInput {
 pub mod attach_certificate_to_distribution_input {
     
     /// A builder for [`AttachCertificateToDistributionInput`](crate::input::AttachCertificateToDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_name: std::option::Option<std::string::String>,
@@ -251,6 +253,7 @@ impl AttachCertificateToDistributionInput {
 pub mod attach_disk_input {
     
     /// A builder for [`AttachDiskInput`](crate::input::AttachDiskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_name: std::option::Option<std::string::String>,
@@ -387,6 +390,7 @@ impl AttachDiskInput {
 pub mod attach_instances_to_load_balancer_input {
     
     /// A builder for [`AttachInstancesToLoadBalancerInput`](crate::input::AttachInstancesToLoadBalancerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -521,6 +525,7 @@ impl AttachInstancesToLoadBalancerInput {
 pub mod attach_load_balancer_tls_certificate_input {
     
     /// A builder for [`AttachLoadBalancerTlsCertificateInput`](crate::input::AttachLoadBalancerTlsCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -645,6 +650,7 @@ impl AttachLoadBalancerTlsCertificateInput {
 pub mod attach_static_ip_input {
     
     /// A builder for [`AttachStaticIpInput`](crate::input::AttachStaticIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_ip_name: std::option::Option<std::string::String>,
@@ -769,6 +775,7 @@ impl AttachStaticIpInput {
 pub mod close_instance_public_ports_input {
     
     /// A builder for [`CloseInstancePublicPortsInput`](crate::input::CloseInstancePublicPortsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_info: std::option::Option<crate::model::PortInfo>,
@@ -893,6 +900,7 @@ impl CloseInstancePublicPortsInput {
 pub mod copy_snapshot_input {
     
     /// A builder for [`CopySnapshotInput`](crate::input::CopySnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_snapshot_name: std::option::Option<std::string::String>,
@@ -1103,6 +1111,7 @@ impl CopySnapshotInput {
 pub mod create_bucket_input {
     
     /// A builder for [`CreateBucketInput`](crate::input::CreateBucketInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -1269,6 +1278,7 @@ impl CreateBucketInput {
 pub mod create_bucket_access_key_input {
     
     /// A builder for [`CreateBucketAccessKeyInput`](crate::input::CreateBucketAccessKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -1381,6 +1391,7 @@ impl CreateBucketAccessKeyInput {
 pub mod create_certificate_input {
     
     /// A builder for [`CreateCertificateInput`](crate::input::CreateCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_name: std::option::Option<std::string::String>,
@@ -1547,6 +1558,7 @@ impl CreateCertificateInput {
 pub mod create_cloud_formation_stack_input {
     
     /// A builder for [`CreateCloudFormationStackInput`](crate::input::CreateCloudFormationStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::InstanceEntry>>,
@@ -1665,6 +1677,7 @@ impl CreateCloudFormationStackInput {
 pub mod create_contact_method_input {
     
     /// A builder for [`CreateContactMethodInput`](crate::input::CreateContactMethodInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::ContactProtocol>,
@@ -1813,6 +1826,7 @@ impl CreateContactMethodInput {
 pub mod create_container_service_input {
     
     /// A builder for [`CreateContainerServiceInput`](crate::input::CreateContainerServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -2067,6 +2081,7 @@ impl CreateContainerServiceInput {
 pub mod create_container_service_deployment_input {
     
     /// A builder for [`CreateContainerServiceDeploymentInput`](crate::input::CreateContainerServiceDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -2209,6 +2224,7 @@ impl CreateContainerServiceDeploymentInput {
 pub mod create_container_service_registry_login_input {
     
     /// A builder for [`CreateContainerServiceRegistryLoginInput`](crate::input::CreateContainerServiceRegistryLoginInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2306,6 +2322,7 @@ impl CreateContainerServiceRegistryLoginInput {
 pub mod create_disk_input {
     
     /// A builder for [`CreateDiskInput`](crate::input::CreateDiskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_name: std::option::Option<std::string::String>,
@@ -2482,6 +2499,7 @@ impl CreateDiskInput {
 pub mod create_disk_from_snapshot_input {
     
     /// A builder for [`CreateDiskFromSnapshotInput`](crate::input::CreateDiskFromSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_name: std::option::Option<std::string::String>,
@@ -2746,6 +2764,7 @@ impl CreateDiskFromSnapshotInput {
 pub mod create_disk_snapshot_input {
     
     /// A builder for [`CreateDiskSnapshotInput`](crate::input::CreateDiskSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_name: std::option::Option<std::string::String>,
@@ -2910,6 +2929,7 @@ impl CreateDiskSnapshotInput {
 pub mod create_distribution_input {
     
     /// A builder for [`CreateDistributionInput`](crate::input::CreateDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_name: std::option::Option<std::string::String>,
@@ -3130,6 +3150,7 @@ impl CreateDistributionInput {
 pub mod create_domain_input {
     
     /// A builder for [`CreateDomainInput`](crate::input::CreateDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3262,6 +3283,7 @@ impl CreateDomainInput {
 pub mod create_domain_entry_input {
     
     /// A builder for [`CreateDomainEntryInput`](crate::input::CreateDomainEntryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3386,6 +3408,7 @@ impl CreateDomainEntryInput {
 pub mod create_instances_input {
     
     /// A builder for [`CreateInstancesInput`](crate::input::CreateInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3644,6 +3667,7 @@ impl CreateInstancesInput {
 pub mod create_instances_from_snapshot_input {
     
     /// A builder for [`CreateInstancesFromSnapshotInput`](crate::input::CreateInstancesFromSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3974,6 +3998,7 @@ impl CreateInstancesFromSnapshotInput {
 pub mod create_instance_snapshot_input {
     
     /// A builder for [`CreateInstanceSnapshotInput`](crate::input::CreateInstanceSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_snapshot_name: std::option::Option<std::string::String>,
@@ -4118,6 +4143,7 @@ impl CreateInstanceSnapshotInput {
 pub mod create_key_pair_input {
     
     /// A builder for [`CreateKeyPairInput`](crate::input::CreateKeyPairInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_pair_name: std::option::Option<std::string::String>,
@@ -4250,6 +4276,7 @@ impl CreateKeyPairInput {
 pub mod create_load_balancer_input {
     
     /// A builder for [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -4487,6 +4514,7 @@ impl CreateLoadBalancerInput {
 pub mod create_load_balancer_tls_certificate_input {
     
     /// A builder for [`CreateLoadBalancerTlsCertificateInput`](crate::input::CreateLoadBalancerTlsCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -4663,6 +4691,7 @@ impl CreateLoadBalancerTlsCertificateInput {
 pub mod create_relational_database_input {
     
     /// A builder for [`CreateRelationalDatabaseInput`](crate::input::CreateRelationalDatabaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -5042,6 +5071,7 @@ impl CreateRelationalDatabaseInput {
 pub mod create_relational_database_from_snapshot_input {
     
     /// A builder for [`CreateRelationalDatabaseFromSnapshotInput`](crate::input::CreateRelationalDatabaseFromSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -5292,6 +5322,7 @@ impl CreateRelationalDatabaseFromSnapshotInput {
 pub mod create_relational_database_snapshot_input {
     
     /// A builder for [`CreateRelationalDatabaseSnapshotInput`](crate::input::CreateRelationalDatabaseSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -5446,6 +5477,7 @@ impl CreateRelationalDatabaseSnapshotInput {
 pub mod delete_alarm_input {
     
     /// A builder for [`DeleteAlarmInput`](crate::input::DeleteAlarmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_name: std::option::Option<std::string::String>,
@@ -5558,6 +5590,7 @@ impl DeleteAlarmInput {
 pub mod delete_auto_snapshot_input {
     
     /// A builder for [`DeleteAutoSnapshotInput`](crate::input::DeleteAutoSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -5682,6 +5715,7 @@ impl DeleteAutoSnapshotInput {
 pub mod delete_bucket_input {
     
     /// A builder for [`DeleteBucketInput`](crate::input::DeleteBucketInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -5826,6 +5860,7 @@ impl DeleteBucketInput {
 pub mod delete_bucket_access_key_input {
     
     /// A builder for [`DeleteBucketAccessKeyInput`](crate::input::DeleteBucketAccessKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -5952,6 +5987,7 @@ impl DeleteBucketAccessKeyInput {
 pub mod delete_certificate_input {
     
     /// A builder for [`DeleteCertificateInput`](crate::input::DeleteCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_name: std::option::Option<std::string::String>,
@@ -6066,6 +6102,7 @@ impl DeleteCertificateInput {
 pub mod delete_contact_method_input {
     
     /// A builder for [`DeleteContactMethodInput`](crate::input::DeleteContactMethodInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::ContactProtocol>,
@@ -6182,6 +6219,7 @@ impl DeleteContactMethodInput {
 pub mod delete_container_image_input {
     
     /// A builder for [`DeleteContainerImageInput`](crate::input::DeleteContainerImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -6312,6 +6350,7 @@ impl DeleteContainerImageInput {
 pub mod delete_container_service_input {
     
     /// A builder for [`DeleteContainerServiceInput`](crate::input::DeleteContainerServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -6424,6 +6463,7 @@ impl DeleteContainerServiceInput {
 pub mod delete_disk_input {
     
     /// A builder for [`DeleteDiskInput`](crate::input::DeleteDiskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_name: std::option::Option<std::string::String>,
@@ -6548,6 +6588,7 @@ impl DeleteDiskInput {
 pub mod delete_disk_snapshot_input {
     
     /// A builder for [`DeleteDiskSnapshotInput`](crate::input::DeleteDiskSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_snapshot_name: std::option::Option<std::string::String>,
@@ -6660,6 +6701,7 @@ impl DeleteDiskSnapshotInput {
 pub mod delete_distribution_input {
     
     /// A builder for [`DeleteDistributionInput`](crate::input::DeleteDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_name: std::option::Option<std::string::String>,
@@ -6774,6 +6816,7 @@ impl DeleteDistributionInput {
 pub mod delete_domain_input {
     
     /// A builder for [`DeleteDomainInput`](crate::input::DeleteDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -6886,6 +6929,7 @@ impl DeleteDomainInput {
 pub mod delete_domain_entry_input {
     
     /// A builder for [`DeleteDomainEntryInput`](crate::input::DeleteDomainEntryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -7010,6 +7054,7 @@ impl DeleteDomainEntryInput {
 pub mod delete_instance_input {
     
     /// A builder for [`DeleteInstanceInput`](crate::input::DeleteInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -7134,6 +7179,7 @@ impl DeleteInstanceInput {
 pub mod delete_instance_snapshot_input {
     
     /// A builder for [`DeleteInstanceSnapshotInput`](crate::input::DeleteInstanceSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_snapshot_name: std::option::Option<std::string::String>,
@@ -7246,6 +7292,7 @@ impl DeleteInstanceSnapshotInput {
 pub mod delete_key_pair_input {
     
     /// A builder for [`DeleteKeyPairInput`](crate::input::DeleteKeyPairInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_pair_name: std::option::Option<std::string::String>,
@@ -7374,6 +7421,7 @@ impl DeleteKeyPairInput {
 pub mod delete_known_host_keys_input {
     
     /// A builder for [`DeleteKnownHostKeysInput`](crate::input::DeleteKnownHostKeysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -7486,6 +7534,7 @@ impl DeleteKnownHostKeysInput {
 pub mod delete_load_balancer_input {
     
     /// A builder for [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -7598,6 +7647,7 @@ impl DeleteLoadBalancerInput {
 pub mod delete_load_balancer_tls_certificate_input {
     
     /// A builder for [`DeleteLoadBalancerTlsCertificateInput`](crate::input::DeleteLoadBalancerTlsCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -7736,6 +7786,7 @@ impl DeleteLoadBalancerTlsCertificateInput {
 pub mod delete_relational_database_input {
     
     /// A builder for [`DeleteRelationalDatabaseInput`](crate::input::DeleteRelationalDatabaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -7890,6 +7941,7 @@ impl DeleteRelationalDatabaseInput {
 pub mod delete_relational_database_snapshot_input {
     
     /// A builder for [`DeleteRelationalDatabaseSnapshotInput`](crate::input::DeleteRelationalDatabaseSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_snapshot_name: std::option::Option<std::string::String>,
@@ -8002,6 +8054,7 @@ impl DeleteRelationalDatabaseSnapshotInput {
 pub mod detach_certificate_from_distribution_input {
     
     /// A builder for [`DetachCertificateFromDistributionInput`](crate::input::DetachCertificateFromDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_name: std::option::Option<std::string::String>,
@@ -8116,6 +8169,7 @@ impl DetachCertificateFromDistributionInput {
 pub mod detach_disk_input {
     
     /// A builder for [`DetachDiskInput`](crate::input::DetachDiskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_name: std::option::Option<std::string::String>,
@@ -8228,6 +8282,7 @@ impl DetachDiskInput {
 pub mod detach_instances_from_load_balancer_input {
     
     /// A builder for [`DetachInstancesFromLoadBalancerInput`](crate::input::DetachInstancesFromLoadBalancerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -8358,6 +8413,7 @@ impl DetachInstancesFromLoadBalancerInput {
 pub mod detach_static_ip_input {
     
     /// A builder for [`DetachStaticIpInput`](crate::input::DetachStaticIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_ip_name: std::option::Option<std::string::String>,
@@ -8470,6 +8526,7 @@ impl DetachStaticIpInput {
 pub mod disable_add_on_input {
     
     /// A builder for [`DisableAddOnInput`](crate::input::DisableAddOnInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_on_type: std::option::Option<crate::model::AddOnType>,
@@ -8594,6 +8651,7 @@ impl DisableAddOnInput {
 pub mod download_default_key_pair_input {
     
     /// A builder for [`DownloadDefaultKeyPairInput`](crate::input::DownloadDefaultKeyPairInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -8691,6 +8749,7 @@ impl DownloadDefaultKeyPairInput {
 pub mod enable_add_on_input {
     
     /// A builder for [`EnableAddOnInput`](crate::input::EnableAddOnInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -8815,6 +8874,7 @@ impl EnableAddOnInput {
 pub mod export_snapshot_input {
     
     /// A builder for [`ExportSnapshotInput`](crate::input::ExportSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_snapshot_name: std::option::Option<std::string::String>,
@@ -8927,6 +8987,7 @@ impl ExportSnapshotInput {
 pub mod get_active_names_input {
     
     /// A builder for [`GetActiveNamesInput`](crate::input::GetActiveNamesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -9041,6 +9102,7 @@ impl GetActiveNamesInput {
 pub mod get_alarms_input {
     
     /// A builder for [`GetAlarmsInput`](crate::input::GetAlarmsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_name: std::option::Option<std::string::String>,
@@ -9183,6 +9245,7 @@ impl GetAlarmsInput {
 pub mod get_auto_snapshots_input {
     
     /// A builder for [`GetAutoSnapshotsInput`](crate::input::GetAutoSnapshotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -9295,6 +9358,7 @@ impl GetAutoSnapshotsInput {
 pub mod get_blueprints_input {
     
     /// A builder for [`GetBlueprintsInput`](crate::input::GetBlueprintsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) include_inactive: std::option::Option<bool>,
@@ -9421,6 +9485,7 @@ impl GetBlueprintsInput {
 pub mod get_bucket_access_keys_input {
     
     /// A builder for [`GetBucketAccessKeysInput`](crate::input::GetBucketAccessKeysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -9533,6 +9598,7 @@ impl GetBucketAccessKeysInput {
 pub mod get_bucket_bundles_input {
     
     /// A builder for [`GetBucketBundlesInput`](crate::input::GetBucketBundlesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) include_inactive: std::option::Option<bool>,
@@ -9645,6 +9711,7 @@ impl GetBucketBundlesInput {
 pub mod get_bucket_metric_data_input {
     
     /// A builder for [`GetBucketMetricDataInput`](crate::input::GetBucketMetricDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -9872,6 +9939,7 @@ impl GetBucketMetricDataInput {
 pub mod get_buckets_input {
     
     /// A builder for [`GetBucketsInput`](crate::input::GetBucketsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -10012,6 +10080,7 @@ impl GetBucketsInput {
 pub mod get_bundles_input {
     
     /// A builder for [`GetBundlesInput`](crate::input::GetBundlesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) include_inactive: std::option::Option<bool>,
@@ -10138,6 +10207,7 @@ impl GetBundlesInput {
 pub mod get_certificates_input {
     
     /// A builder for [`GetCertificatesInput`](crate::input::GetCertificatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_statuses: std::option::Option<std::vec::Vec<crate::model::CertificateStatus>>,
@@ -10289,6 +10359,7 @@ impl GetCertificatesInput {
 pub mod get_cloud_formation_stack_records_input {
     
     /// A builder for [`GetCloudFormationStackRecordsInput`](crate::input::GetCloudFormationStackRecordsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -10403,6 +10474,7 @@ impl GetCloudFormationStackRecordsInput {
 pub mod get_contact_methods_input {
     
     /// A builder for [`GetContactMethodsInput`](crate::input::GetContactMethodsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocols: std::option::Option<std::vec::Vec<crate::model::ContactProtocol>>,
@@ -10523,6 +10595,7 @@ impl GetContactMethodsInput {
 pub mod get_container_api_metadata_input {
     
     /// A builder for [`GetContainerApiMetadataInput`](crate::input::GetContainerApiMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -10620,6 +10693,7 @@ impl GetContainerApiMetadataInput {
 pub mod get_container_images_input {
     
     /// A builder for [`GetContainerImagesInput`](crate::input::GetContainerImagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -10732,6 +10806,7 @@ impl GetContainerImagesInput {
 pub mod get_container_log_input {
     
     /// A builder for [`GetContainerLogInput`](crate::input::GetContainerLogInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -10971,6 +11046,7 @@ impl GetContainerLogInput {
 pub mod get_container_service_deployments_input {
     
     /// A builder for [`GetContainerServiceDeploymentsInput`](crate::input::GetContainerServiceDeploymentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -11083,6 +11159,7 @@ impl GetContainerServiceDeploymentsInput {
 pub mod get_container_service_metric_data_input {
     
     /// A builder for [`GetContainerServiceMetricDataInput`](crate::input::GetContainerServiceMetricDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -11311,6 +11388,7 @@ impl GetContainerServiceMetricDataInput {
 pub mod get_container_service_powers_input {
     
     /// A builder for [`GetContainerServicePowersInput`](crate::input::GetContainerServicePowersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -11408,6 +11486,7 @@ impl GetContainerServicePowersInput {
 pub mod get_container_services_input {
     
     /// A builder for [`GetContainerServicesInput`](crate::input::GetContainerServicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -11532,6 +11611,7 @@ impl GetContainerServicesInput {
 pub mod get_disk_input {
     
     /// A builder for [`GetDiskInput`](crate::input::GetDiskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_name: std::option::Option<std::string::String>,
@@ -11644,6 +11724,7 @@ impl GetDiskInput {
 pub mod get_disks_input {
     
     /// A builder for [`GetDisksInput`](crate::input::GetDisksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -11758,6 +11839,7 @@ impl GetDisksInput {
 pub mod get_disk_snapshot_input {
     
     /// A builder for [`GetDiskSnapshotInput`](crate::input::GetDiskSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_snapshot_name: std::option::Option<std::string::String>,
@@ -11870,6 +11952,7 @@ impl GetDiskSnapshotInput {
 pub mod get_disk_snapshots_input {
     
     /// A builder for [`GetDiskSnapshotsInput`](crate::input::GetDiskSnapshotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -11984,6 +12067,7 @@ impl GetDiskSnapshotsInput {
 pub mod get_distribution_bundles_input {
     
     /// A builder for [`GetDistributionBundlesInput`](crate::input::GetDistributionBundlesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -12081,6 +12165,7 @@ impl GetDistributionBundlesInput {
 pub mod get_distribution_latest_cache_reset_input {
     
     /// A builder for [`GetDistributionLatestCacheResetInput`](crate::input::GetDistributionLatestCacheResetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_name: std::option::Option<std::string::String>,
@@ -12197,6 +12282,7 @@ impl GetDistributionLatestCacheResetInput {
 pub mod get_distribution_metric_data_input {
     
     /// A builder for [`GetDistributionMetricDataInput`](crate::input::GetDistributionMetricDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_name: std::option::Option<std::string::String>,
@@ -12450,6 +12536,7 @@ impl GetDistributionMetricDataInput {
 pub mod get_distributions_input {
     
     /// A builder for [`GetDistributionsInput`](crate::input::GetDistributionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_name: std::option::Option<std::string::String>,
@@ -12578,6 +12665,7 @@ impl GetDistributionsInput {
 pub mod get_domain_input {
     
     /// A builder for [`GetDomainInput`](crate::input::GetDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -12690,6 +12778,7 @@ impl GetDomainInput {
 pub mod get_domains_input {
     
     /// A builder for [`GetDomainsInput`](crate::input::GetDomainsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -12804,6 +12893,7 @@ impl GetDomainsInput {
 pub mod get_export_snapshot_records_input {
     
     /// A builder for [`GetExportSnapshotRecordsInput`](crate::input::GetExportSnapshotRecordsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -12918,6 +13008,7 @@ impl GetExportSnapshotRecordsInput {
 pub mod get_instance_input {
     
     /// A builder for [`GetInstanceInput`](crate::input::GetInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -13030,6 +13121,7 @@ impl GetInstanceInput {
 pub mod get_instance_access_details_input {
     
     /// A builder for [`GetInstanceAccessDetailsInput`](crate::input::GetInstanceAccessDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -13154,6 +13246,7 @@ impl GetInstanceAccessDetailsInput {
 pub mod get_instance_metric_data_input {
     
     /// A builder for [`GetInstanceMetricDataInput`](crate::input::GetInstanceMetricDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -13387,6 +13480,7 @@ impl GetInstanceMetricDataInput {
 pub mod get_instance_port_states_input {
     
     /// A builder for [`GetInstancePortStatesInput`](crate::input::GetInstancePortStatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -13499,6 +13593,7 @@ impl GetInstancePortStatesInput {
 pub mod get_instances_input {
     
     /// A builder for [`GetInstancesInput`](crate::input::GetInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -13613,6 +13708,7 @@ impl GetInstancesInput {
 pub mod get_instance_snapshot_input {
     
     /// A builder for [`GetInstanceSnapshotInput`](crate::input::GetInstanceSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_snapshot_name: std::option::Option<std::string::String>,
@@ -13725,6 +13821,7 @@ impl GetInstanceSnapshotInput {
 pub mod get_instance_snapshots_input {
     
     /// A builder for [`GetInstanceSnapshotsInput`](crate::input::GetInstanceSnapshotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -13839,6 +13936,7 @@ impl GetInstanceSnapshotsInput {
 pub mod get_instance_state_input {
     
     /// A builder for [`GetInstanceStateInput`](crate::input::GetInstanceStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -13951,6 +14049,7 @@ impl GetInstanceStateInput {
 pub mod get_key_pair_input {
     
     /// A builder for [`GetKeyPairInput`](crate::input::GetKeyPairInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_pair_name: std::option::Option<std::string::String>,
@@ -14063,6 +14162,7 @@ impl GetKeyPairInput {
 pub mod get_key_pairs_input {
     
     /// A builder for [`GetKeyPairsInput`](crate::input::GetKeyPairsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -14189,6 +14289,7 @@ impl GetKeyPairsInput {
 pub mod get_load_balancer_input {
     
     /// A builder for [`GetLoadBalancerInput`](crate::input::GetLoadBalancerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -14301,6 +14402,7 @@ impl GetLoadBalancerInput {
 pub mod get_load_balancer_metric_data_input {
     
     /// A builder for [`GetLoadBalancerMetricDataInput`](crate::input::GetLoadBalancerMetricDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -14538,6 +14640,7 @@ impl GetLoadBalancerMetricDataInput {
 pub mod get_load_balancers_input {
     
     /// A builder for [`GetLoadBalancersInput`](crate::input::GetLoadBalancersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -14652,6 +14755,7 @@ impl GetLoadBalancersInput {
 pub mod get_load_balancer_tls_certificates_input {
     
     /// A builder for [`GetLoadBalancerTlsCertificatesInput`](crate::input::GetLoadBalancerTlsCertificatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -14764,6 +14868,7 @@ impl GetLoadBalancerTlsCertificatesInput {
 pub mod get_load_balancer_tls_policies_input {
     
     /// A builder for [`GetLoadBalancerTlsPoliciesInput`](crate::input::GetLoadBalancerTlsPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -14878,6 +14983,7 @@ impl GetLoadBalancerTlsPoliciesInput {
 pub mod get_operation_input {
     
     /// A builder for [`GetOperationInput`](crate::input::GetOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -14990,6 +15096,7 @@ impl GetOperationInput {
 pub mod get_operations_input {
     
     /// A builder for [`GetOperationsInput`](crate::input::GetOperationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -15104,6 +15211,7 @@ impl GetOperationsInput {
 pub mod get_operations_for_resource_input {
     
     /// A builder for [`GetOperationsForResourceInput`](crate::input::GetOperationsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -15230,6 +15338,7 @@ impl GetOperationsForResourceInput {
 pub mod get_regions_input {
     
     /// A builder for [`GetRegionsInput`](crate::input::GetRegionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) include_availability_zones: std::option::Option<bool>,
@@ -15354,6 +15463,7 @@ impl GetRegionsInput {
 pub mod get_relational_database_input {
     
     /// A builder for [`GetRelationalDatabaseInput`](crate::input::GetRelationalDatabaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -15466,6 +15576,7 @@ impl GetRelationalDatabaseInput {
 pub mod get_relational_database_blueprints_input {
     
     /// A builder for [`GetRelationalDatabaseBlueprintsInput`](crate::input::GetRelationalDatabaseBlueprintsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -15580,6 +15691,7 @@ impl GetRelationalDatabaseBlueprintsInput {
 pub mod get_relational_database_bundles_input {
     
     /// A builder for [`GetRelationalDatabaseBundlesInput`](crate::input::GetRelationalDatabaseBundlesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -15706,6 +15818,7 @@ impl GetRelationalDatabaseBundlesInput {
 pub mod get_relational_database_events_input {
     
     /// A builder for [`GetRelationalDatabaseEventsInput`](crate::input::GetRelationalDatabaseEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -15848,6 +15961,7 @@ impl GetRelationalDatabaseEventsInput {
 pub mod get_relational_database_log_events_input {
     
     /// A builder for [`GetRelationalDatabaseLogEventsInput`](crate::input::GetRelationalDatabaseLogEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -16048,6 +16162,7 @@ impl GetRelationalDatabaseLogEventsInput {
 pub mod get_relational_database_log_streams_input {
     
     /// A builder for [`GetRelationalDatabaseLogStreamsInput`](crate::input::GetRelationalDatabaseLogStreamsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -16160,6 +16275,7 @@ impl GetRelationalDatabaseLogStreamsInput {
 pub mod get_relational_database_master_user_password_input {
     
     /// A builder for [`GetRelationalDatabaseMasterUserPasswordInput`](crate::input::GetRelationalDatabaseMasterUserPasswordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -16288,6 +16404,7 @@ impl GetRelationalDatabaseMasterUserPasswordInput {
 pub mod get_relational_database_metric_data_input {
     
     /// A builder for [`GetRelationalDatabaseMetricDataInput`](crate::input::GetRelationalDatabaseMetricDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -16535,6 +16652,7 @@ impl GetRelationalDatabaseMetricDataInput {
 pub mod get_relational_database_parameters_input {
     
     /// A builder for [`GetRelationalDatabaseParametersInput`](crate::input::GetRelationalDatabaseParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -16661,6 +16779,7 @@ impl GetRelationalDatabaseParametersInput {
 pub mod get_relational_databases_input {
     
     /// A builder for [`GetRelationalDatabasesInput`](crate::input::GetRelationalDatabasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -16775,6 +16894,7 @@ impl GetRelationalDatabasesInput {
 pub mod get_relational_database_snapshot_input {
     
     /// A builder for [`GetRelationalDatabaseSnapshotInput`](crate::input::GetRelationalDatabaseSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_snapshot_name: std::option::Option<std::string::String>,
@@ -16887,6 +17007,7 @@ impl GetRelationalDatabaseSnapshotInput {
 pub mod get_relational_database_snapshots_input {
     
     /// A builder for [`GetRelationalDatabaseSnapshotsInput`](crate::input::GetRelationalDatabaseSnapshotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -17001,6 +17122,7 @@ impl GetRelationalDatabaseSnapshotsInput {
 pub mod get_static_ip_input {
     
     /// A builder for [`GetStaticIpInput`](crate::input::GetStaticIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_ip_name: std::option::Option<std::string::String>,
@@ -17113,6 +17235,7 @@ impl GetStaticIpInput {
 pub mod get_static_ips_input {
     
     /// A builder for [`GetStaticIpsInput`](crate::input::GetStaticIpsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -17227,6 +17350,7 @@ impl GetStaticIpsInput {
 pub mod import_key_pair_input {
     
     /// A builder for [`ImportKeyPairInput`](crate::input::ImportKeyPairInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_pair_name: std::option::Option<std::string::String>,
@@ -17351,6 +17475,7 @@ impl ImportKeyPairInput {
 pub mod is_vpc_peered_input {
     
     /// A builder for [`IsVpcPeeredInput`](crate::input::IsVpcPeeredInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -17448,6 +17573,7 @@ impl IsVpcPeeredInput {
 pub mod open_instance_public_ports_input {
     
     /// A builder for [`OpenInstancePublicPortsInput`](crate::input::OpenInstancePublicPortsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_info: std::option::Option<crate::model::PortInfo>,
@@ -17572,6 +17698,7 @@ impl OpenInstancePublicPortsInput {
 pub mod peer_vpc_input {
     
     /// A builder for [`PeerVpcInput`](crate::input::PeerVpcInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -17669,6 +17796,7 @@ impl PeerVpcInput {
 pub mod put_alarm_input {
     
     /// A builder for [`PutAlarmInput`](crate::input::PutAlarmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_name: std::option::Option<std::string::String>,
@@ -17985,6 +18113,7 @@ impl PutAlarmInput {
 pub mod put_instance_public_ports_input {
     
     /// A builder for [`PutInstancePublicPortsInput`](crate::input::PutInstancePublicPortsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_infos: std::option::Option<std::vec::Vec<crate::model::PortInfo>>,
@@ -18115,6 +18244,7 @@ impl PutInstancePublicPortsInput {
 pub mod reboot_instance_input {
     
     /// A builder for [`RebootInstanceInput`](crate::input::RebootInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -18227,6 +18357,7 @@ impl RebootInstanceInput {
 pub mod reboot_relational_database_input {
     
     /// A builder for [`RebootRelationalDatabaseInput`](crate::input::RebootRelationalDatabaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -18339,6 +18470,7 @@ impl RebootRelationalDatabaseInput {
 pub mod register_container_image_input {
     
     /// A builder for [`RegisterContainerImageInput`](crate::input::RegisterContainerImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -18497,6 +18629,7 @@ impl RegisterContainerImageInput {
 pub mod release_static_ip_input {
     
     /// A builder for [`ReleaseStaticIpInput`](crate::input::ReleaseStaticIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_ip_name: std::option::Option<std::string::String>,
@@ -18609,6 +18742,7 @@ impl ReleaseStaticIpInput {
 pub mod reset_distribution_cache_input {
     
     /// A builder for [`ResetDistributionCacheInput`](crate::input::ResetDistributionCacheInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_name: std::option::Option<std::string::String>,
@@ -18723,6 +18857,7 @@ impl ResetDistributionCacheInput {
 pub mod send_contact_method_verification_input {
     
     /// A builder for [`SendContactMethodVerificationInput`](crate::input::SendContactMethodVerificationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::ContactMethodVerificationProtocol>,
@@ -18835,6 +18970,7 @@ impl SendContactMethodVerificationInput {
 pub mod set_ip_address_type_input {
     
     /// A builder for [`SetIpAddressTypeInput`](crate::input::SetIpAddressTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -18979,6 +19115,7 @@ impl SetIpAddressTypeInput {
 pub mod set_resource_access_for_bucket_input {
     
     /// A builder for [`SetResourceAccessForBucketInput`](crate::input::SetResourceAccessForBucketInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -19125,6 +19262,7 @@ impl SetResourceAccessForBucketInput {
 pub mod start_instance_input {
     
     /// A builder for [`StartInstanceInput`](crate::input::StartInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -19237,6 +19375,7 @@ impl StartInstanceInput {
 pub mod start_relational_database_input {
     
     /// A builder for [`StartRelationalDatabaseInput`](crate::input::StartRelationalDatabaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -19349,6 +19488,7 @@ impl StartRelationalDatabaseInput {
 pub mod stop_instance_input {
     
     /// A builder for [`StopInstanceInput`](crate::input::StopInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -19477,6 +19617,7 @@ impl StopInstanceInput {
 pub mod stop_relational_database_input {
     
     /// A builder for [`StopRelationalDatabaseInput`](crate::input::StopRelationalDatabaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -19601,6 +19742,7 @@ impl StopRelationalDatabaseInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -19743,6 +19885,7 @@ impl TagResourceInput {
 pub mod test_alarm_input {
     
     /// A builder for [`TestAlarmInput`](crate::input::TestAlarmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_name: std::option::Option<std::string::String>,
@@ -19879,6 +20022,7 @@ impl TestAlarmInput {
 pub mod unpeer_vpc_input {
     
     /// A builder for [`UnpeerVpcInput`](crate::input::UnpeerVpcInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -19976,6 +20120,7 @@ impl UnpeerVpcInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -20118,6 +20263,7 @@ impl UntagResourceInput {
 pub mod update_bucket_input {
     
     /// A builder for [`UpdateBucketInput`](crate::input::UpdateBucketInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -20296,6 +20442,7 @@ impl UpdateBucketInput {
 pub mod update_bucket_bundle_input {
     
     /// A builder for [`UpdateBucketBundleInput`](crate::input::UpdateBucketBundleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -20422,6 +20569,7 @@ impl UpdateBucketBundleInput {
 pub mod update_container_service_input {
     
     /// A builder for [`UpdateContainerServiceInput`](crate::input::UpdateContainerServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -20618,6 +20766,7 @@ impl UpdateContainerServiceInput {
 pub mod update_distribution_input {
     
     /// A builder for [`UpdateDistributionInput`](crate::input::UpdateDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_name: std::option::Option<std::string::String>,
@@ -20804,6 +20953,7 @@ impl UpdateDistributionInput {
 pub mod update_distribution_bundle_input {
     
     /// A builder for [`UpdateDistributionBundleInput`](crate::input::UpdateDistributionBundleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_name: std::option::Option<std::string::String>,
@@ -20932,6 +21082,7 @@ impl UpdateDistributionBundleInput {
 pub mod update_domain_entry_input {
     
     /// A builder for [`UpdateDomainEntryInput`](crate::input::UpdateDomainEntryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -21056,6 +21207,7 @@ impl UpdateDomainEntryInput {
 pub mod update_instance_metadata_options_input {
     
     /// A builder for [`UpdateInstanceMetadataOptionsInput`](crate::input::UpdateInstanceMetadataOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
@@ -21226,6 +21378,7 @@ impl UpdateInstanceMetadataOptionsInput {
 pub mod update_load_balancer_attribute_input {
     
     /// A builder for [`UpdateLoadBalancerAttributeInput`](crate::input::UpdateLoadBalancerAttributeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
@@ -21378,6 +21531,7 @@ impl UpdateLoadBalancerAttributeInput {
 pub mod update_relational_database_input {
     
     /// A builder for [`UpdateRelationalDatabaseInput`](crate::input::UpdateRelationalDatabaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,
@@ -21664,6 +21818,7 @@ impl UpdateRelationalDatabaseInput {
 pub mod update_relational_database_parameters_input {
     
     /// A builder for [`UpdateRelationalDatabaseParametersInput`](crate::input::UpdateRelationalDatabaseParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_name: std::option::Option<std::string::String>,

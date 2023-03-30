@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_instance_fleet_input {
     
     /// A builder for [`AddInstanceFleetInput`](crate::input::AddInstanceFleetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -129,6 +130,7 @@ impl AddInstanceFleetInput {
 pub mod add_instance_groups_input {
     
     /// A builder for [`AddInstanceGroupsInput`](crate::input::AddInstanceGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroupConfig>>,
@@ -259,6 +261,7 @@ impl AddInstanceGroupsInput {
 pub mod add_job_flow_steps_input {
     
     /// A builder for [`AddJobFlowStepsInput`](crate::input::AddJobFlowStepsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_flow_id: std::option::Option<std::string::String>,
@@ -403,6 +406,7 @@ impl AddJobFlowStepsInput {
 pub mod add_tags_input {
     
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -533,6 +537,7 @@ impl AddTagsInput {
 pub mod cancel_steps_input {
     
     /// A builder for [`CancelStepsInput`](crate::input::CancelStepsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -675,6 +680,7 @@ impl CancelStepsInput {
 pub mod create_security_configuration_input {
     
     /// A builder for [`CreateSecurityConfigurationInput`](crate::input::CreateSecurityConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -799,6 +805,7 @@ impl CreateSecurityConfigurationInput {
 pub mod create_studio_input {
     
     /// A builder for [`CreateStudioInput`](crate::input::CreateStudioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1067,6 +1074,7 @@ impl CreateStudioInput {
 pub mod create_studio_session_mapping_input {
     
     /// A builder for [`CreateStudioSessionMappingInput`](crate::input::CreateStudioSessionMappingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) studio_id: std::option::Option<std::string::String>,
@@ -1227,6 +1235,7 @@ impl CreateStudioSessionMappingInput {
 pub mod delete_security_configuration_input {
     
     /// A builder for [`DeleteSecurityConfigurationInput`](crate::input::DeleteSecurityConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1339,6 +1348,7 @@ impl DeleteSecurityConfigurationInput {
 pub mod delete_studio_input {
     
     /// A builder for [`DeleteStudioInput`](crate::input::DeleteStudioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) studio_id: std::option::Option<std::string::String>,
@@ -1451,6 +1461,7 @@ impl DeleteStudioInput {
 pub mod delete_studio_session_mapping_input {
     
     /// A builder for [`DeleteStudioSessionMappingInput`](crate::input::DeleteStudioSessionMappingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) studio_id: std::option::Option<std::string::String>,
@@ -1599,6 +1610,7 @@ impl DeleteStudioSessionMappingInput {
 pub mod describe_cluster_input {
     
     /// A builder for [`DescribeClusterInput`](crate::input::DescribeClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -1711,6 +1723,7 @@ impl DescribeClusterInput {
 pub mod describe_job_flows_input {
     
     /// A builder for [`DescribeJobFlowsInput`](crate::input::DescribeJobFlowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -1871,6 +1884,7 @@ impl DescribeJobFlowsInput {
 pub mod describe_notebook_execution_input {
     
     /// A builder for [`DescribeNotebookExecutionInput`](crate::input::DescribeNotebookExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notebook_execution_id: std::option::Option<std::string::String>,
@@ -1983,6 +1997,7 @@ impl DescribeNotebookExecutionInput {
 pub mod describe_release_label_input {
     
     /// A builder for [`DescribeReleaseLabelInput`](crate::input::DescribeReleaseLabelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) release_label: std::option::Option<std::string::String>,
@@ -2119,6 +2134,7 @@ impl DescribeReleaseLabelInput {
 pub mod describe_security_configuration_input {
     
     /// A builder for [`DescribeSecurityConfigurationInput`](crate::input::DescribeSecurityConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2231,6 +2247,7 @@ impl DescribeSecurityConfigurationInput {
 pub mod describe_step_input {
     
     /// A builder for [`DescribeStepInput`](crate::input::DescribeStepInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -2355,6 +2372,7 @@ impl DescribeStepInput {
 pub mod describe_studio_input {
     
     /// A builder for [`DescribeStudioInput`](crate::input::DescribeStudioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) studio_id: std::option::Option<std::string::String>,
@@ -2467,6 +2485,7 @@ impl DescribeStudioInput {
 pub mod get_auto_termination_policy_input {
     
     /// A builder for [`GetAutoTerminationPolicyInput`](crate::input::GetAutoTerminationPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -2579,6 +2598,7 @@ impl GetAutoTerminationPolicyInput {
 pub mod get_block_public_access_configuration_input {
     
     /// A builder for [`GetBlockPublicAccessConfigurationInput`](crate::input::GetBlockPublicAccessConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2676,6 +2696,7 @@ impl GetBlockPublicAccessConfigurationInput {
 pub mod get_cluster_session_credentials_input {
     
     /// A builder for [`GetClusterSessionCredentialsInput`](crate::input::GetClusterSessionCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -2800,6 +2821,7 @@ impl GetClusterSessionCredentialsInput {
 pub mod get_managed_scaling_policy_input {
     
     /// A builder for [`GetManagedScalingPolicyInput`](crate::input::GetManagedScalingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -2912,6 +2934,7 @@ impl GetManagedScalingPolicyInput {
 pub mod get_studio_session_mapping_input {
     
     /// A builder for [`GetStudioSessionMappingInput`](crate::input::GetStudioSessionMappingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) studio_id: std::option::Option<std::string::String>,
@@ -3060,6 +3083,7 @@ impl GetStudioSessionMappingInput {
 pub mod list_bootstrap_actions_input {
     
     /// A builder for [`ListBootstrapActionsInput`](crate::input::ListBootstrapActionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -3184,6 +3208,7 @@ impl ListBootstrapActionsInput {
 pub mod list_clusters_input {
     
     /// A builder for [`ListClustersInput`](crate::input::ListClustersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -3338,6 +3363,7 @@ impl ListClustersInput {
 pub mod list_instance_fleets_input {
     
     /// A builder for [`ListInstanceFleetsInput`](crate::input::ListInstanceFleetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -3462,6 +3488,7 @@ impl ListInstanceFleetsInput {
 pub mod list_instance_groups_input {
     
     /// A builder for [`ListInstanceGroupsInput`](crate::input::ListInstanceGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -3586,6 +3613,7 @@ impl ListInstanceGroupsInput {
 pub mod list_instances_input {
     
     /// A builder for [`ListInstancesInput`](crate::input::ListInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -3782,6 +3810,7 @@ impl ListInstancesInput {
 pub mod list_notebook_executions_input {
     
     /// A builder for [`ListNotebookExecutionsInput`](crate::input::ListNotebookExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) editor_id: std::option::Option<std::string::String>,
@@ -3966,6 +3995,7 @@ impl ListNotebookExecutionsInput {
 pub mod list_release_labels_input {
     
     /// A builder for [`ListReleaseLabelsInput`](crate::input::ListReleaseLabelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::ReleaseLabelFilter>,
@@ -4102,6 +4132,7 @@ impl ListReleaseLabelsInput {
 pub mod list_security_configurations_input {
     
     /// A builder for [`ListSecurityConfigurationsInput`](crate::input::ListSecurityConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -4214,6 +4245,7 @@ impl ListSecurityConfigurationsInput {
 pub mod list_steps_input {
     
     /// A builder for [`ListStepsInput`](crate::input::ListStepsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -4374,6 +4406,7 @@ impl ListStepsInput {
 pub mod list_studios_input {
     
     /// A builder for [`ListStudiosInput`](crate::input::ListStudiosInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -4486,6 +4519,7 @@ impl ListStudiosInput {
 pub mod list_studio_session_mappings_input {
     
     /// A builder for [`ListStudioSessionMappingsInput`](crate::input::ListStudioSessionMappingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) studio_id: std::option::Option<std::string::String>,
@@ -4622,6 +4656,7 @@ impl ListStudioSessionMappingsInput {
 pub mod modify_cluster_input {
     
     /// A builder for [`ModifyClusterInput`](crate::input::ModifyClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -4746,6 +4781,7 @@ impl ModifyClusterInput {
 pub mod modify_instance_fleet_input {
     
     /// A builder for [`ModifyInstanceFleetInput`](crate::input::ModifyInstanceFleetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -4870,6 +4906,7 @@ impl ModifyInstanceFleetInput {
 pub mod modify_instance_groups_input {
     
     /// A builder for [`ModifyInstanceGroupsInput`](crate::input::ModifyInstanceGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -5000,6 +5037,7 @@ impl ModifyInstanceGroupsInput {
 pub mod put_auto_scaling_policy_input {
     
     /// A builder for [`PutAutoScalingPolicyInput`](crate::input::PutAutoScalingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -5136,6 +5174,7 @@ impl PutAutoScalingPolicyInput {
 pub mod put_auto_termination_policy_input {
     
     /// A builder for [`PutAutoTerminationPolicyInput`](crate::input::PutAutoTerminationPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -5260,6 +5299,7 @@ impl PutAutoTerminationPolicyInput {
 pub mod put_block_public_access_configuration_input {
     
     /// A builder for [`PutBlockPublicAccessConfigurationInput`](crate::input::PutBlockPublicAccessConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_public_access_configuration: std::option::Option<crate::model::BlockPublicAccessConfiguration>,
@@ -5376,6 +5416,7 @@ impl PutBlockPublicAccessConfigurationInput {
 pub mod put_managed_scaling_policy_input {
     
     /// A builder for [`PutManagedScalingPolicyInput`](crate::input::PutManagedScalingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -5500,6 +5541,7 @@ impl PutManagedScalingPolicyInput {
 pub mod remove_auto_scaling_policy_input {
     
     /// A builder for [`RemoveAutoScalingPolicyInput`](crate::input::RemoveAutoScalingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -5624,6 +5666,7 @@ impl RemoveAutoScalingPolicyInput {
 pub mod remove_auto_termination_policy_input {
     
     /// A builder for [`RemoveAutoTerminationPolicyInput`](crate::input::RemoveAutoTerminationPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -5736,6 +5779,7 @@ impl RemoveAutoTerminationPolicyInput {
 pub mod remove_managed_scaling_policy_input {
     
     /// A builder for [`RemoveManagedScalingPolicyInput`](crate::input::RemoveManagedScalingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -5848,6 +5892,7 @@ impl RemoveManagedScalingPolicyInput {
 pub mod remove_tags_input {
     
     /// A builder for [`RemoveTagsInput`](crate::input::RemoveTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -5978,6 +6023,7 @@ impl RemoveTagsInput {
 pub mod run_job_flow_input {
     
     /// A builder for [`RunJobFlowInput`](crate::input::RunJobFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6525,6 +6571,7 @@ impl RunJobFlowInput {
 pub mod set_termination_protection_input {
     
     /// A builder for [`SetTerminationProtectionInput`](crate::input::SetTerminationProtectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6656,6 +6703,7 @@ impl SetTerminationProtectionInput {
 pub mod set_visible_to_all_users_input {
     
     /// A builder for [`SetVisibleToAllUsersInput`](crate::input::SetVisibleToAllUsersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6787,6 +6835,7 @@ impl SetVisibleToAllUsersInput {
 pub mod start_notebook_execution_input {
     
     /// A builder for [`StartNotebookExecutionInput`](crate::input::StartNotebookExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) editor_id: std::option::Option<std::string::String>,
@@ -6989,6 +7038,7 @@ impl StartNotebookExecutionInput {
 pub mod stop_notebook_execution_input {
     
     /// A builder for [`StopNotebookExecutionInput`](crate::input::StopNotebookExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notebook_execution_id: std::option::Option<std::string::String>,
@@ -7101,6 +7151,7 @@ impl StopNotebookExecutionInput {
 pub mod terminate_job_flows_input {
     
     /// A builder for [`TerminateJobFlowsInput`](crate::input::TerminateJobFlowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7219,6 +7270,7 @@ impl TerminateJobFlowsInput {
 pub mod update_studio_input {
     
     /// A builder for [`UpdateStudioInput`](crate::input::UpdateStudioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) studio_id: std::option::Option<std::string::String>,
@@ -7385,6 +7437,7 @@ impl UpdateStudioInput {
 pub mod update_studio_session_mapping_input {
     
     /// A builder for [`UpdateStudioSessionMappingInput`](crate::input::UpdateStudioSessionMappingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) studio_id: std::option::Option<std::string::String>,

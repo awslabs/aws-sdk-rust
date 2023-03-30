@@ -32,6 +32,7 @@ impl JobExecutionState {
 pub mod job_execution_state {
     
     /// A builder for [`JobExecutionState`](crate::model::JobExecutionState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::JobExecutionStatus>,
@@ -295,6 +296,7 @@ impl JobExecution {
 pub mod job_execution {
     
     /// A builder for [`JobExecution`](crate::model::JobExecution).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -509,6 +511,7 @@ impl JobExecutionSummary {
 pub mod job_execution_summary {
     
     /// A builder for [`JobExecutionSummary`](crate::model::JobExecutionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,

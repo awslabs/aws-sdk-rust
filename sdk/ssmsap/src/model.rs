@@ -41,6 +41,7 @@ impl  std::fmt::Debug for ApplicationCredential  {
 pub mod application_credential {
     
     /// A builder for [`ApplicationCredential`](crate::model::ApplicationCredential).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) database_name: std::option::Option<std::string::String>,
@@ -250,6 +251,7 @@ impl Application {
 pub mod application {
     
     /// A builder for [`Application`](crate::model::Application).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -726,6 +728,7 @@ impl Operation {
 pub mod operation {
     
     /// A builder for [`Operation`](crate::model::Operation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1003,6 +1006,7 @@ impl Filter {
 pub mod filter {
     
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1199,6 +1203,7 @@ impl DatabaseSummary {
 pub mod database_summary {
     
     /// A builder for [`DatabaseSummary`](crate::model::DatabaseSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1418,6 +1423,7 @@ impl ComponentSummary {
 pub mod component_summary {
     
     /// A builder for [`ComponentSummary`](crate::model::ComponentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1608,6 +1614,7 @@ impl ApplicationSummary {
 pub mod application_summary {
     
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1770,6 +1777,7 @@ impl Database {
 pub mod database {
     
     /// A builder for [`Database`](crate::model::Database).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2092,6 +2100,7 @@ impl Component {
 pub mod component {
     
     /// A builder for [`Component`](crate::model::Component).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_id: std::option::Option<std::string::String>,
@@ -2259,6 +2268,7 @@ impl Host {
 pub mod host {
     
     /// A builder for [`Host`](crate::model::Host).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_name: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_member_input {
     
     /// A builder for [`AssociateMemberInput`](crate::input::AssociateMemberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -112,6 +113,7 @@ impl AssociateMemberInput {
 pub mod batch_get_account_status_input {
     
     /// A builder for [`BatchGetAccountStatusInput`](crate::input::BatchGetAccountStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -225,6 +227,7 @@ impl BatchGetAccountStatusInput {
 pub mod batch_get_free_trial_info_input {
     
     /// A builder for [`BatchGetFreeTrialInfoInput`](crate::input::BatchGetFreeTrialInfoInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -338,6 +341,7 @@ impl BatchGetFreeTrialInfoInput {
 pub mod cancel_findings_report_input {
     
     /// A builder for [`CancelFindingsReportInput`](crate::input::CancelFindingsReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -445,6 +449,7 @@ impl CancelFindingsReportInput {
 pub mod create_filter_input {
     
     /// A builder for [`CreateFilterInput`](crate::input::CreateFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::FilterAction>,
@@ -618,6 +623,7 @@ impl CreateFilterInput {
 pub mod create_findings_report_input {
     
     /// A builder for [`CreateFindingsReportInput`](crate::input::CreateFindingsReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
@@ -749,6 +755,7 @@ impl CreateFindingsReportInput {
 pub mod delete_filter_input {
     
     /// A builder for [`DeleteFilterInput`](crate::input::DeleteFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -856,6 +863,7 @@ impl DeleteFilterInput {
 pub mod describe_organization_configuration_input {
     
     /// A builder for [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -947,6 +955,7 @@ impl DescribeOrganizationConfigurationInput {
 pub mod disable_input {
     
     /// A builder for [`DisableInput`](crate::input::DisableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1078,6 +1087,7 @@ impl DisableInput {
 pub mod disable_delegated_admin_account_input {
     
     /// A builder for [`DisableDelegatedAdminAccountInput`](crate::input::DisableDelegatedAdminAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegated_admin_account_id: std::option::Option<std::string::String>,
@@ -1185,6 +1195,7 @@ impl DisableDelegatedAdminAccountInput {
 pub mod disassociate_member_input {
     
     /// A builder for [`DisassociateMemberInput`](crate::input::DisassociateMemberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1292,6 +1303,7 @@ impl DisassociateMemberInput {
 pub mod enable_input {
     
     /// A builder for [`EnableInput`](crate::input::EnableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1438,6 +1450,7 @@ impl EnableInput {
 pub mod enable_delegated_admin_account_input {
     
     /// A builder for [`EnableDelegatedAdminAccountInput`](crate::input::EnableDelegatedAdminAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegated_admin_account_id: std::option::Option<std::string::String>,
@@ -1560,6 +1573,7 @@ impl EnableDelegatedAdminAccountInput {
 pub mod get_configuration_input {
     
     /// A builder for [`GetConfigurationInput`](crate::input::GetConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1651,6 +1665,7 @@ impl GetConfigurationInput {
 pub mod get_delegated_admin_account_input {
     
     /// A builder for [`GetDelegatedAdminAccountInput`](crate::input::GetDelegatedAdminAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1742,6 +1757,7 @@ impl GetDelegatedAdminAccountInput {
 pub mod get_findings_report_status_input {
     
     /// A builder for [`GetFindingsReportStatusInput`](crate::input::GetFindingsReportStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -1849,6 +1865,7 @@ impl GetFindingsReportStatusInput {
 pub mod get_member_input {
     
     /// A builder for [`GetMemberInput`](crate::input::GetMemberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1956,6 +1973,7 @@ impl GetMemberInput {
 pub mod list_account_permissions_input {
     
     /// A builder for [`ListAccountPermissionsInput`](crate::input::ListAccountPermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
@@ -2087,6 +2105,7 @@ impl ListAccountPermissionsInput {
 pub mod list_coverage_input {
     
     /// A builder for [`ListCoverageInput`](crate::input::ListCoverageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2218,6 +2237,7 @@ impl ListCoverageInput {
 pub mod list_coverage_statistics_input {
     
     /// A builder for [`ListCoverageStatisticsInput`](crate::input::ListCoverageStatisticsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_criteria: std::option::Option<crate::model::CoverageFilterCriteria>,
@@ -2349,6 +2369,7 @@ impl ListCoverageStatisticsInput {
 pub mod list_delegated_admin_accounts_input {
     
     /// A builder for [`ListDelegatedAdminAccountsInput`](crate::input::ListDelegatedAdminAccountsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2468,6 +2489,7 @@ impl ListDelegatedAdminAccountsInput {
 pub mod list_filters_input {
     
     /// A builder for [`ListFiltersInput`](crate::input::ListFiltersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2617,6 +2639,7 @@ impl ListFiltersInput {
 pub mod list_finding_aggregations_input {
     
     /// A builder for [`ListFindingAggregationsInput`](crate::input::ListFindingAggregationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggregation_type: std::option::Option<crate::model::AggregationType>,
@@ -2778,6 +2801,7 @@ impl ListFindingAggregationsInput {
 pub mod list_findings_input {
     
     /// A builder for [`ListFindingsInput`](crate::input::ListFindingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2921,6 +2945,7 @@ impl ListFindingsInput {
 pub mod list_members_input {
     
     /// A builder for [`ListMembersInput`](crate::input::ListMembersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) only_associated: std::option::Option<bool>,
@@ -3052,6 +3077,7 @@ impl ListMembersInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3161,6 +3187,7 @@ impl ListTagsForResourceInput {
 pub mod list_usage_totals_input {
     
     /// A builder for [`ListUsageTotalsInput`](crate::input::ListUsageTotalsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3298,6 +3325,7 @@ impl ListUsageTotalsInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3429,6 +3457,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3566,6 +3595,7 @@ impl UntagResourceInput {
 pub mod update_configuration_input {
     
     /// A builder for [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecr_configuration: std::option::Option<crate::model::EcrConfiguration>,
@@ -3673,6 +3703,7 @@ impl UpdateConfigurationInput {
 pub mod update_filter_input {
     
     /// A builder for [`UpdateFilterInput`](crate::input::UpdateFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::FilterAction>,
@@ -3840,6 +3871,7 @@ impl UpdateFilterInput {
 pub mod update_organization_configuration_input {
     
     /// A builder for [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_enable: std::option::Option<crate::model::AutoEnable>,

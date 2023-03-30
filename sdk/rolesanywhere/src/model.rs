@@ -60,6 +60,7 @@ impl TrustAnchorDetail {
 pub mod trust_anchor_detail {
     
     /// A builder for [`TrustAnchorDetail`](crate::model::TrustAnchorDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
@@ -189,6 +190,7 @@ impl Source {
 pub mod source {
     
     /// A builder for [`Source`](crate::model::Source).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<crate::model::TrustAnchorType>,
@@ -396,6 +398,7 @@ impl  std::fmt::Debug for Tag  {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -508,6 +511,7 @@ impl SubjectSummary {
 pub mod subject_summary {
     
     /// A builder for [`SubjectSummary`](crate::model::SubjectSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject_arn: std::option::Option<std::string::String>,
@@ -686,6 +690,7 @@ impl SubjectDetail {
 pub mod subject_detail {
     
     /// A builder for [`SubjectDetail`](crate::model::SubjectDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject_arn: std::option::Option<std::string::String>,
@@ -858,6 +863,7 @@ impl InstanceProperty {
 pub mod instance_property {
     
     /// A builder for [`InstanceProperty`](crate::model::InstanceProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) seen_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -973,6 +979,7 @@ impl CredentialSummary {
 pub mod credential_summary {
     
     /// A builder for [`CredentialSummary`](crate::model::CredentialSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) seen_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1160,6 +1167,7 @@ impl ProfileDetail {
 pub mod profile_detail {
     
     /// A builder for [`ProfileDetail`](crate::model::ProfileDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
@@ -1403,6 +1411,7 @@ impl CrlDetail {
 pub mod crl_detail {
     
     /// A builder for [`CrlDetail`](crate::model::CrlDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,

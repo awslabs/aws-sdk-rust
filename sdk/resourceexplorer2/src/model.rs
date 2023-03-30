@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
     
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -136,6 +137,7 @@ impl  std::fmt::Debug for View  {
 pub mod view {
     
     /// A builder for [`View`](crate::model::View).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,
@@ -273,6 +275,7 @@ impl  std::fmt::Debug for SearchFilter  {
 pub mod search_filter {
     
     /// A builder for [`SearchFilter`](crate::model::SearchFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) filter_string: std::option::Option<std::string::String>,
@@ -338,6 +341,7 @@ impl IncludedProperty {
 pub mod included_property {
     
     /// A builder for [`IncludedProperty`](crate::model::IncludedProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -419,6 +423,7 @@ impl Index {
 pub mod index {
     
     /// A builder for [`Index`](crate::model::Index).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
@@ -696,6 +701,7 @@ impl ResourceCount {
 pub mod resource_count {
     
     /// A builder for [`ResourceCount`](crate::model::ResourceCount).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_resources: std::option::Option<i64>,
@@ -808,6 +814,7 @@ impl Resource {
 pub mod resource {
     
     /// A builder for [`Resource`](crate::model::Resource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -950,6 +957,7 @@ impl ResourceProperty {
 pub mod resource_property {
     
     /// A builder for [`ResourceProperty`](crate::model::ResourceProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1031,6 +1039,7 @@ impl SupportedResourceType {
 pub mod supported_resource_type {
     
     /// A builder for [`SupportedResourceType`](crate::model::SupportedResourceType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<std::string::String>,
@@ -1100,6 +1109,7 @@ impl BatchGetViewError {
 pub mod batch_get_view_error {
     
     /// A builder for [`BatchGetViewError`](crate::model::BatchGetViewError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,

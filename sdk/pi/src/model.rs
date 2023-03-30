@@ -32,6 +32,7 @@ impl ResponseResourceMetric {
 pub mod response_resource_metric {
     
     /// A builder for [`ResponseResourceMetric`](crate::model::ResponseResourceMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
@@ -195,6 +196,7 @@ impl MetricDimensionGroups {
 pub mod metric_dimension_groups {
     
     /// A builder for [`MetricDimensionGroups`](crate::model::MetricDimensionGroups).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
@@ -270,6 +272,7 @@ impl DimensionGroupDetail {
 pub mod dimension_group_detail {
     
     /// A builder for [`DimensionGroupDetail`](crate::model::DimensionGroupDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<std::string::String>,
@@ -338,6 +341,7 @@ impl DimensionDetail {
 pub mod dimension_detail {
     
     /// A builder for [`DimensionDetail`](crate::model::DimensionDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -395,6 +399,7 @@ impl MetricKeyDataPoints {
 pub mod metric_key_data_points {
     
     /// A builder for [`MetricKeyDataPoints`](crate::model::MetricKeyDataPoints).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::ResponseResourceMetricKey>,
@@ -470,6 +475,7 @@ impl DataPoint {
 pub mod data_point {
     
     /// A builder for [`DataPoint`](crate::model::DataPoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -553,6 +559,7 @@ impl ResponseResourceMetricKey {
 pub mod response_resource_metric_key {
     
     /// A builder for [`ResponseResourceMetricKey`](crate::model::ResponseResourceMetricKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
@@ -671,6 +678,7 @@ impl MetricQuery {
 pub mod metric_query {
     
     /// A builder for [`MetricQuery`](crate::model::MetricQuery).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
@@ -931,6 +939,7 @@ impl DimensionGroup {
 pub mod dimension_group {
     
     /// A builder for [`DimensionGroup`](crate::model::DimensionGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<std::string::String>,
@@ -1163,6 +1172,7 @@ impl FeatureMetadata {
 pub mod feature_metadata {
     
     /// A builder for [`FeatureMetadata`](crate::model::FeatureMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::FeatureStatus>,
@@ -1371,6 +1381,7 @@ impl DimensionKeyDetail {
 pub mod dimension_key_detail {
     
     /// A builder for [`DimensionKeyDetail`](crate::model::DimensionKeyDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1579,6 +1590,7 @@ impl DimensionKeyDescription {
 pub mod dimension_key_description {
     
     /// A builder for [`DimensionKeyDescription`](crate::model::DimensionKeyDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1683,6 +1695,7 @@ impl ResponsePartitionKey {
 pub mod response_partition_key {
     
     /// A builder for [`ResponsePartitionKey`](crate::model::ResponsePartitionKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,

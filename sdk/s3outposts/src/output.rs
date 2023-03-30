@@ -24,6 +24,7 @@ impl ListSharedEndpointsOutput {
 pub mod list_shared_endpoints_output {
     
     /// A builder for [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -99,6 +100,7 @@ impl ListEndpointsOutput {
 pub mod list_endpoints_output {
     
     /// A builder for [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -158,6 +160,7 @@ pub struct DeleteEndpointOutput  {
 pub mod delete_endpoint_output {
     
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -196,6 +199,7 @@ impl CreateEndpointOutput {
 pub mod create_endpoint_output {
     
     /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_image_creation_input {
     
     /// A builder for [`CancelImageCreationInput`](crate::input::CancelImageCreationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
@@ -127,6 +128,7 @@ impl CancelImageCreationInput {
 pub mod create_component_input {
     
     /// A builder for [`CreateComponentInput`](crate::input::CreateComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -401,6 +403,7 @@ impl CreateComponentInput {
 pub mod create_container_recipe_input {
     
     /// A builder for [`CreateContainerRecipeInput`](crate::input::CreateContainerRecipeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_type: std::option::Option<crate::model::ContainerType>,
@@ -733,6 +736,7 @@ impl CreateContainerRecipeInput {
 pub mod create_distribution_configuration_input {
     
     /// A builder for [`CreateDistributionConfigurationInput`](crate::input::CreateDistributionConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -903,6 +907,7 @@ impl CreateDistributionConfigurationInput {
 pub mod create_image_input {
     
     /// A builder for [`CreateImageInput`](crate::input::CreateImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_recipe_arn: std::option::Option<std::string::String>,
@@ -1103,6 +1108,7 @@ impl CreateImageInput {
 pub mod create_image_pipeline_input {
     
     /// A builder for [`CreateImagePipelineInput`](crate::input::CreateImagePipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1351,6 +1357,7 @@ impl CreateImagePipelineInput {
 pub mod create_image_recipe_input {
     
     /// A builder for [`CreateImageRecipeInput`](crate::input::CreateImageRecipeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1617,6 +1624,7 @@ impl CreateImageRecipeInput {
 pub mod create_infrastructure_configuration_input {
     
     /// A builder for [`CreateInfrastructureConfigurationInput`](crate::input::CreateInfrastructureConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1911,6 +1919,7 @@ impl CreateInfrastructureConfigurationInput {
 pub mod delete_component_input {
     
     /// A builder for [`DeleteComponentInput`](crate::input::DeleteComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_build_version_arn: std::option::Option<std::string::String>,
@@ -2025,6 +2034,7 @@ impl DeleteComponentInput {
 pub mod delete_container_recipe_input {
     
     /// A builder for [`DeleteContainerRecipeInput`](crate::input::DeleteContainerRecipeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
@@ -2139,6 +2149,7 @@ impl DeleteContainerRecipeInput {
 pub mod delete_distribution_configuration_input {
     
     /// A builder for [`DeleteDistributionConfigurationInput`](crate::input::DeleteDistributionConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
@@ -2253,6 +2264,7 @@ impl DeleteDistributionConfigurationInput {
 pub mod delete_image_input {
     
     /// A builder for [`DeleteImageInput`](crate::input::DeleteImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
@@ -2367,6 +2379,7 @@ impl DeleteImageInput {
 pub mod delete_image_pipeline_input {
     
     /// A builder for [`DeleteImagePipelineInput`](crate::input::DeleteImagePipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_pipeline_arn: std::option::Option<std::string::String>,
@@ -2481,6 +2494,7 @@ impl DeleteImagePipelineInput {
 pub mod delete_image_recipe_input {
     
     /// A builder for [`DeleteImageRecipeInput`](crate::input::DeleteImageRecipeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_recipe_arn: std::option::Option<std::string::String>,
@@ -2595,6 +2609,7 @@ impl DeleteImageRecipeInput {
 pub mod delete_infrastructure_configuration_input {
     
     /// A builder for [`DeleteInfrastructureConfigurationInput`](crate::input::DeleteInfrastructureConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
@@ -2709,6 +2724,7 @@ impl DeleteInfrastructureConfigurationInput {
 pub mod get_component_input {
     
     /// A builder for [`GetComponentInput`](crate::input::GetComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_build_version_arn: std::option::Option<std::string::String>,
@@ -2823,6 +2839,7 @@ impl GetComponentInput {
 pub mod get_component_policy_input {
     
     /// A builder for [`GetComponentPolicyInput`](crate::input::GetComponentPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_arn: std::option::Option<std::string::String>,
@@ -2937,6 +2954,7 @@ impl GetComponentPolicyInput {
 pub mod get_container_recipe_input {
     
     /// A builder for [`GetContainerRecipeInput`](crate::input::GetContainerRecipeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
@@ -3051,6 +3069,7 @@ impl GetContainerRecipeInput {
 pub mod get_container_recipe_policy_input {
     
     /// A builder for [`GetContainerRecipePolicyInput`](crate::input::GetContainerRecipePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
@@ -3165,6 +3184,7 @@ impl GetContainerRecipePolicyInput {
 pub mod get_distribution_configuration_input {
     
     /// A builder for [`GetDistributionConfigurationInput`](crate::input::GetDistributionConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
@@ -3279,6 +3299,7 @@ impl GetDistributionConfigurationInput {
 pub mod get_image_input {
     
     /// A builder for [`GetImageInput`](crate::input::GetImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
@@ -3393,6 +3414,7 @@ impl GetImageInput {
 pub mod get_image_pipeline_input {
     
     /// A builder for [`GetImagePipelineInput`](crate::input::GetImagePipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_pipeline_arn: std::option::Option<std::string::String>,
@@ -3507,6 +3529,7 @@ impl GetImagePipelineInput {
 pub mod get_image_policy_input {
     
     /// A builder for [`GetImagePolicyInput`](crate::input::GetImagePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_arn: std::option::Option<std::string::String>,
@@ -3621,6 +3644,7 @@ impl GetImagePolicyInput {
 pub mod get_image_recipe_input {
     
     /// A builder for [`GetImageRecipeInput`](crate::input::GetImageRecipeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_recipe_arn: std::option::Option<std::string::String>,
@@ -3735,6 +3759,7 @@ impl GetImageRecipeInput {
 pub mod get_image_recipe_policy_input {
     
     /// A builder for [`GetImageRecipePolicyInput`](crate::input::GetImageRecipePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_recipe_arn: std::option::Option<std::string::String>,
@@ -3849,6 +3874,7 @@ impl GetImageRecipePolicyInput {
 pub mod get_infrastructure_configuration_input {
     
     /// A builder for [`GetInfrastructureConfigurationInput`](crate::input::GetInfrastructureConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
@@ -3963,6 +3989,7 @@ impl GetInfrastructureConfigurationInput {
 pub mod import_component_input {
     
     /// A builder for [`ImportComponentInput`](crate::input::ImportComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4239,6 +4266,7 @@ impl ImportComponentInput {
 pub mod import_vm_image_input {
     
     /// A builder for [`ImportVmImageInput`](crate::input::ImportVmImageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4469,6 +4497,7 @@ impl ImportVmImageInput {
 pub mod list_component_build_versions_input {
     
     /// A builder for [`ListComponentBuildVersionsInput`](crate::input::ListComponentBuildVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_version_arn: std::option::Option<std::string::String>,
@@ -4600,6 +4629,7 @@ impl ListComponentBuildVersionsInput {
 pub mod list_components_input {
     
     /// A builder for [`ListComponentsInput`](crate::input::ListComponentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner: std::option::Option<crate::model::Ownership>,
@@ -4778,6 +4808,7 @@ impl ListComponentsInput {
 pub mod list_container_recipes_input {
     
     /// A builder for [`ListContainerRecipesInput`](crate::input::ListContainerRecipesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner: std::option::Option<crate::model::Ownership>,
@@ -4939,6 +4970,7 @@ impl ListContainerRecipesInput {
 pub mod list_distribution_configurations_input {
     
     /// A builder for [`ListDistributionConfigurationsInput`](crate::input::ListDistributionConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5076,6 +5108,7 @@ impl ListDistributionConfigurationsInput {
 pub mod list_image_build_versions_input {
     
     /// A builder for [`ListImageBuildVersionsInput`](crate::input::ListImageBuildVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_version_arn: std::option::Option<std::string::String>,
@@ -5239,6 +5272,7 @@ impl ListImageBuildVersionsInput {
 pub mod list_image_packages_input {
     
     /// A builder for [`ListImagePackagesInput`](crate::input::ListImagePackagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
@@ -5370,6 +5404,7 @@ impl ListImagePackagesInput {
 pub mod list_image_pipeline_images_input {
     
     /// A builder for [`ListImagePipelineImagesInput`](crate::input::ListImagePipelineImagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_pipeline_arn: std::option::Option<std::string::String>,
@@ -5527,6 +5562,7 @@ impl ListImagePipelineImagesInput {
 pub mod list_image_pipelines_input {
     
     /// A builder for [`ListImagePipelinesInput`](crate::input::ListImagePipelinesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5680,6 +5716,7 @@ impl ListImagePipelinesInput {
 pub mod list_image_recipes_input {
     
     /// A builder for [`ListImageRecipesInput`](crate::input::ListImageRecipesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner: std::option::Option<crate::model::Ownership>,
@@ -5839,6 +5876,7 @@ impl ListImageRecipesInput {
 pub mod list_images_input {
     
     /// A builder for [`ListImagesInput`](crate::input::ListImagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner: std::option::Option<crate::model::Ownership>,
@@ -6027,6 +6065,7 @@ impl ListImagesInput {
 pub mod list_infrastructure_configurations_input {
     
     /// A builder for [`ListInfrastructureConfigurationsInput`](crate::input::ListInfrastructureConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6164,6 +6203,7 @@ impl ListInfrastructureConfigurationsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6273,6 +6313,7 @@ impl ListTagsForResourceInput {
 pub mod put_component_policy_input {
     
     /// A builder for [`PutComponentPolicyInput`](crate::input::PutComponentPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_arn: std::option::Option<std::string::String>,
@@ -6392,6 +6433,7 @@ impl PutComponentPolicyInput {
 pub mod put_container_recipe_policy_input {
     
     /// A builder for [`PutContainerRecipePolicyInput`](crate::input::PutContainerRecipePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
@@ -6511,6 +6553,7 @@ impl PutContainerRecipePolicyInput {
 pub mod put_image_policy_input {
     
     /// A builder for [`PutImagePolicyInput`](crate::input::PutImagePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_arn: std::option::Option<std::string::String>,
@@ -6630,6 +6673,7 @@ impl PutImagePolicyInput {
 pub mod put_image_recipe_policy_input {
     
     /// A builder for [`PutImageRecipePolicyInput`](crate::input::PutImageRecipePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_recipe_arn: std::option::Option<std::string::String>,
@@ -6749,6 +6793,7 @@ impl PutImageRecipePolicyInput {
 pub mod start_image_pipeline_execution_input {
     
     /// A builder for [`StartImagePipelineExecutionInput`](crate::input::StartImagePipelineExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_pipeline_arn: std::option::Option<std::string::String>,
@@ -6871,6 +6916,7 @@ impl StartImagePipelineExecutionInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -7002,6 +7048,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -7139,6 +7186,7 @@ impl UntagResourceInput {
 pub mod update_distribution_configuration_input {
     
     /// A builder for [`UpdateDistributionConfigurationInput`](crate::input::UpdateDistributionConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
@@ -7291,6 +7339,7 @@ impl UpdateDistributionConfigurationInput {
 pub mod update_image_pipeline_input {
     
     /// A builder for [`UpdateImagePipelineInput`](crate::input::UpdateImagePipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_pipeline_arn: std::option::Option<std::string::String>,
@@ -7521,6 +7570,7 @@ impl UpdateImagePipelineInput {
 pub mod update_infrastructure_configuration_input {
     
     /// A builder for [`UpdateInfrastructureConfigurationInput`](crate::input::UpdateInfrastructureConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,

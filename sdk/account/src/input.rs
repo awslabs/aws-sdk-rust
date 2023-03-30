@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod delete_alternate_contact_input {
     
     /// A builder for [`DeleteAlternateContactInput`](crate::input::DeleteAlternateContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alternate_contact_type: std::option::Option<crate::model::AlternateContactType>,
@@ -134,6 +135,7 @@ impl DeleteAlternateContactInput {
 pub mod get_alternate_contact_input {
     
     /// A builder for [`GetAlternateContactInput`](crate::input::GetAlternateContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alternate_contact_type: std::option::Option<crate::model::AlternateContactType>,
@@ -263,6 +265,7 @@ impl GetAlternateContactInput {
 pub mod get_contact_information_input {
     
     /// A builder for [`GetContactInformationInput`](crate::input::GetContactInformationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -376,6 +379,7 @@ impl GetContactInformationInput {
 pub mod put_alternate_contact_input {
     
     /// A builder for [`PutAlternateContactInput`](crate::input::PutAlternateContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -565,6 +569,7 @@ impl PutAlternateContactInput {
 pub mod put_contact_information_input {
     
     /// A builder for [`PutContactInformationInput`](crate::input::PutContactInformationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_information: std::option::Option<crate::model::ContactInformation>,

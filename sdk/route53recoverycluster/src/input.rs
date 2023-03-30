@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod get_routing_control_state_input {
     
     /// A builder for [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
@@ -117,6 +118,7 @@ impl GetRoutingControlStateInput {
 pub mod list_routing_controls_input {
     
     /// A builder for [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -253,6 +255,7 @@ impl ListRoutingControlsInput {
 pub mod update_routing_control_state_input {
     
     /// A builder for [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
@@ -397,6 +400,7 @@ impl UpdateRoutingControlStateInput {
 pub mod update_routing_control_states_input {
     
     /// A builder for [`UpdateRoutingControlStatesInput`](crate::input::UpdateRoutingControlStatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_routing_control_state_entries: std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,

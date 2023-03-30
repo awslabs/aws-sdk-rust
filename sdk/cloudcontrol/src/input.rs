@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_resource_request_input {
     
     /// A builder for [`CancelResourceRequestInput`](crate::input::CancelResourceRequestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_token: std::option::Option<std::string::String>,
@@ -117,6 +118,7 @@ impl CancelResourceRequestInput {
 pub mod create_resource_input {
     
     /// A builder for [`CreateResourceInput`](crate::input::CreateResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -319,6 +321,7 @@ impl CreateResourceInput {
 pub mod delete_resource_input {
     
     /// A builder for [`DeleteResourceInput`](crate::input::DeleteResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -498,6 +501,7 @@ impl DeleteResourceInput {
 pub mod get_resource_input {
     
     /// A builder for [`GetResourceInput`](crate::input::GetResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -656,6 +660,7 @@ impl GetResourceInput {
 pub mod get_resource_request_status_input {
     
     /// A builder for [`GetResourceRequestStatusInput`](crate::input::GetResourceRequestStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_token: std::option::Option<std::string::String>,
@@ -770,6 +775,7 @@ impl GetResourceRequestStatusInput {
 pub mod list_resource_requests_input {
     
     /// A builder for [`ListResourceRequestsInput`](crate::input::ListResourceRequestsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -908,6 +914,7 @@ impl ListResourceRequestsInput {
 pub mod list_resources_input {
     
     /// A builder for [`ListResourcesInput`](crate::input::ListResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -1096,6 +1103,7 @@ impl ListResourcesInput {
 pub mod update_resource_input {
     
     /// A builder for [`UpdateResourceInput`](crate::input::UpdateResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,

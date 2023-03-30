@@ -24,6 +24,7 @@ impl ListWorkspacesOutput {
 pub mod list_workspaces_output {
     
     /// A builder for [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
@@ -92,6 +93,7 @@ impl CreateWorkspaceOutput {
 pub mod create_workspace_output {
     
     /// A builder for [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
@@ -142,6 +144,7 @@ impl DeleteWorkspaceOutput {
 pub mod delete_workspace_output {
     
     /// A builder for [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
@@ -192,6 +195,7 @@ impl UpdateWorkspaceOutput {
 pub mod update_workspace_output {
     
     /// A builder for [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
@@ -242,6 +246,7 @@ impl DescribeWorkspaceOutput {
 pub mod describe_workspace_output {
     
     /// A builder for [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
@@ -292,6 +297,7 @@ impl UpdatePermissionsOutput {
 pub mod update_permissions_output {
     
     /// A builder for [`UpdatePermissionsOutput`](crate::output::UpdatePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::UpdateError>>,
@@ -355,6 +361,7 @@ impl ListPermissionsOutput {
 pub mod list_permissions_output {
     
     /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -423,6 +430,7 @@ impl DisassociateLicenseOutput {
 pub mod disassociate_license_output {
     
     /// A builder for [`DisassociateLicenseOutput`](crate::output::DisassociateLicenseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
@@ -473,6 +481,7 @@ impl AssociateLicenseOutput {
 pub mod associate_license_output {
     
     /// A builder for [`AssociateLicenseOutput`](crate::output::AssociateLicenseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
@@ -514,6 +523,7 @@ pub struct UpdateWorkspaceConfigurationOutput  {
 pub mod update_workspace_configuration_output {
     
     /// A builder for [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -552,6 +562,7 @@ impl DescribeWorkspaceConfigurationOutput {
 pub mod describe_workspace_configuration_output {
     
     /// A builder for [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<std::string::String>,
@@ -602,6 +613,7 @@ impl UpdateWorkspaceAuthenticationOutput {
 pub mod update_workspace_authentication_output {
     
     /// A builder for [`UpdateWorkspaceAuthenticationOutput`](crate::output::UpdateWorkspaceAuthenticationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication: std::option::Option<crate::model::AuthenticationDescription>,
@@ -652,6 +664,7 @@ impl DescribeWorkspaceAuthenticationOutput {
 pub mod describe_workspace_authentication_output {
     
     /// A builder for [`DescribeWorkspaceAuthenticationOutput`](crate::output::DescribeWorkspaceAuthenticationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication: std::option::Option<crate::model::AuthenticationDescription>,
@@ -709,6 +722,7 @@ impl DeleteWorkspaceApiKeyOutput {
 pub mod delete_workspace_api_key_output {
     
     /// A builder for [`DeleteWorkspaceApiKeyOutput`](crate::output::DeleteWorkspaceApiKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_name: std::option::Option<std::string::String>,
@@ -794,6 +808,7 @@ impl  std::fmt::Debug for CreateWorkspaceApiKeyOutput  {
 pub mod create_workspace_api_key_output {
     
     /// A builder for [`CreateWorkspaceApiKeyOutput`](crate::output::CreateWorkspaceApiKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_name: std::option::Option<std::string::String>,
@@ -868,6 +883,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -897,6 +913,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -935,6 +952,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,

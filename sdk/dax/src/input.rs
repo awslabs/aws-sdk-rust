@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_cluster_input {
     
     /// A builder for [`CreateClusterInput`](crate::input::CreateClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -350,6 +351,7 @@ impl CreateClusterInput {
 pub mod create_parameter_group_input {
     
     /// A builder for [`CreateParameterGroupInput`](crate::input::CreateParameterGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
@@ -474,6 +476,7 @@ impl CreateParameterGroupInput {
 pub mod create_subnet_group_input {
     
     /// A builder for [`CreateSubnetGroupInput`](crate::input::CreateSubnetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,
@@ -616,6 +619,7 @@ impl CreateSubnetGroupInput {
 pub mod decrease_replication_factor_input {
     
     /// A builder for [`DecreaseReplicationFactorInput`](crate::input::DecreaseReplicationFactorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -777,6 +781,7 @@ impl DecreaseReplicationFactorInput {
 pub mod delete_cluster_input {
     
     /// A builder for [`DeleteClusterInput`](crate::input::DeleteClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -889,6 +894,7 @@ impl DeleteClusterInput {
 pub mod delete_parameter_group_input {
     
     /// A builder for [`DeleteParameterGroupInput`](crate::input::DeleteParameterGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
@@ -1001,6 +1007,7 @@ impl DeleteParameterGroupInput {
 pub mod delete_subnet_group_input {
     
     /// A builder for [`DeleteSubnetGroupInput`](crate::input::DeleteSubnetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,
@@ -1113,6 +1120,7 @@ impl DeleteSubnetGroupInput {
 pub mod describe_clusters_input {
     
     /// A builder for [`DescribeClustersInput`](crate::input::DescribeClustersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1257,6 +1265,7 @@ impl DescribeClustersInput {
 pub mod describe_default_parameters_input {
     
     /// A builder for [`DescribeDefaultParametersInput`](crate::input::DescribeDefaultParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1383,6 +1392,7 @@ impl DescribeDefaultParametersInput {
 pub mod describe_events_input {
     
     /// A builder for [`DescribeEventsInput`](crate::input::DescribeEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_name: std::option::Option<std::string::String>,
@@ -1569,6 +1579,7 @@ impl DescribeEventsInput {
 pub mod describe_parameter_groups_input {
     
     /// A builder for [`DescribeParameterGroupsInput`](crate::input::DescribeParameterGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1713,6 +1724,7 @@ impl DescribeParameterGroupsInput {
 pub mod describe_parameters_input {
     
     /// A builder for [`DescribeParametersInput`](crate::input::DescribeParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
@@ -1863,6 +1875,7 @@ impl DescribeParametersInput {
 pub mod describe_subnet_groups_input {
     
     /// A builder for [`DescribeSubnetGroupsInput`](crate::input::DescribeSubnetGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2007,6 +2020,7 @@ impl DescribeSubnetGroupsInput {
 pub mod increase_replication_factor_input {
     
     /// A builder for [`IncreaseReplicationFactorInput`](crate::input::IncreaseReplicationFactorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -2150,6 +2164,7 @@ impl IncreaseReplicationFactorInput {
 pub mod list_tags_input {
     
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -2274,6 +2289,7 @@ impl ListTagsInput {
 pub mod reboot_node_input {
     
     /// A builder for [`RebootNodeInput`](crate::input::RebootNodeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -2398,6 +2414,7 @@ impl RebootNodeInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -2528,6 +2545,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -2658,6 +2676,7 @@ impl UntagResourceInput {
 pub mod update_cluster_input {
     
     /// A builder for [`UpdateClusterInput`](crate::input::UpdateClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -2848,6 +2867,7 @@ impl UpdateClusterInput {
 pub mod update_parameter_group_input {
     
     /// A builder for [`UpdateParameterGroupInput`](crate::input::UpdateParameterGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
@@ -2982,6 +3002,7 @@ impl UpdateParameterGroupInput {
 pub mod update_subnet_group_input {
     
     /// A builder for [`UpdateSubnetGroupInput`](crate::input::UpdateSubnetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,

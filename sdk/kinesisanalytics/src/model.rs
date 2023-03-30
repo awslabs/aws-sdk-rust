@@ -46,6 +46,7 @@ impl ApplicationUpdate {
 pub mod application_update {
     
     /// A builder for [`ApplicationUpdate`](crate::model::ApplicationUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_updates: std::option::Option<std::vec::Vec<crate::model::InputUpdate>>,
@@ -182,6 +183,7 @@ impl CloudWatchLoggingOptionUpdate {
 pub mod cloud_watch_logging_option_update {
     
     /// A builder for [`CloudWatchLoggingOptionUpdate`](crate::model::CloudWatchLoggingOptionUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logging_option_id: std::option::Option<std::string::String>,
@@ -277,6 +279,7 @@ impl ReferenceDataSourceUpdate {
 pub mod reference_data_source_update {
     
     /// A builder for [`ReferenceDataSourceUpdate`](crate::model::ReferenceDataSourceUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_id: std::option::Option<std::string::String>,
@@ -377,6 +380,7 @@ impl SourceSchema {
 pub mod source_schema {
     
     /// A builder for [`SourceSchema`](crate::model::SourceSchema).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_format: std::option::Option<crate::model::RecordFormat>,
@@ -472,6 +476,7 @@ impl RecordColumn {
 pub mod record_column {
     
     /// A builder for [`RecordColumn`](crate::model::RecordColumn).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -553,6 +558,7 @@ impl RecordFormat {
 pub mod record_format {
     
     /// A builder for [`RecordFormat`](crate::model::RecordFormat).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_format_type: std::option::Option<crate::model::RecordFormatType>,
@@ -622,6 +628,7 @@ impl MappingParameters {
 pub mod mapping_parameters {
     
     /// A builder for [`MappingParameters`](crate::model::MappingParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) json_mapping_parameters: std::option::Option<crate::model::JsonMappingParameters>,
@@ -693,6 +700,7 @@ impl CsvMappingParameters {
 pub mod csv_mapping_parameters {
     
     /// A builder for [`CsvMappingParameters`](crate::model::CsvMappingParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_row_delimiter: std::option::Option<std::string::String>,
@@ -755,6 +763,7 @@ impl JsonMappingParameters {
 pub mod json_mapping_parameters {
     
     /// A builder for [`JsonMappingParameters`](crate::model::JsonMappingParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_row_path: std::option::Option<std::string::String>,
@@ -901,6 +910,7 @@ impl S3ReferenceDataSourceUpdate {
 pub mod s3_reference_data_source_update {
     
     /// A builder for [`S3ReferenceDataSourceUpdate`](crate::model::S3ReferenceDataSourceUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn_update: std::option::Option<std::string::String>,
@@ -1010,6 +1020,7 @@ impl OutputUpdate {
 pub mod output_update {
     
     /// A builder for [`OutputUpdate`](crate::model::OutputUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_id: std::option::Option<std::string::String>,
@@ -1120,6 +1131,7 @@ impl DestinationSchema {
 pub mod destination_schema {
     
     /// A builder for [`DestinationSchema`](crate::model::DestinationSchema).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_format_type: std::option::Option<crate::model::RecordFormatType>,
@@ -1181,6 +1193,7 @@ impl LambdaOutputUpdate {
 pub mod lambda_output_update {
     
     /// A builder for [`LambdaOutputUpdate`](crate::model::LambdaOutputUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
@@ -1254,6 +1267,7 @@ impl KinesisFirehoseOutputUpdate {
 pub mod kinesis_firehose_output_update {
     
     /// A builder for [`KinesisFirehoseOutputUpdate`](crate::model::KinesisFirehoseOutputUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
@@ -1323,6 +1337,7 @@ impl KinesisStreamsOutputUpdate {
 pub mod kinesis_streams_output_update {
     
     /// A builder for [`KinesisStreamsOutputUpdate`](crate::model::KinesisStreamsOutputUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
@@ -1427,6 +1442,7 @@ impl InputUpdate {
 pub mod input_update {
     
     /// A builder for [`InputUpdate`](crate::model::InputUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_id: std::option::Option<std::string::String>,
@@ -1549,6 +1565,7 @@ impl InputParallelismUpdate {
 pub mod input_parallelism_update {
     
     /// A builder for [`InputParallelismUpdate`](crate::model::InputParallelismUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count_update: std::option::Option<i32>,
@@ -1613,6 +1630,7 @@ impl InputSchemaUpdate {
 pub mod input_schema_update {
     
     /// A builder for [`InputSchemaUpdate`](crate::model::InputSchemaUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_format_update: std::option::Option<crate::model::RecordFormat>,
@@ -1700,6 +1718,7 @@ impl KinesisFirehoseInputUpdate {
 pub mod kinesis_firehose_input_update {
     
     /// A builder for [`KinesisFirehoseInputUpdate`](crate::model::KinesisFirehoseInputUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
@@ -1769,6 +1788,7 @@ impl KinesisStreamsInputUpdate {
 pub mod kinesis_streams_input_update {
     
     /// A builder for [`KinesisStreamsInputUpdate`](crate::model::KinesisStreamsInputUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
@@ -1831,6 +1851,7 @@ impl InputProcessingConfigurationUpdate {
 pub mod input_processing_configuration_update {
     
     /// A builder for [`InputProcessingConfigurationUpdate`](crate::model::InputProcessingConfigurationUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_lambda_processor_update: std::option::Option<crate::model::InputLambdaProcessorUpdate>,
@@ -1892,6 +1913,7 @@ impl InputLambdaProcessorUpdate {
 pub mod input_lambda_processor_update {
     
     /// A builder for [`InputLambdaProcessorUpdate`](crate::model::InputLambdaProcessorUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
@@ -1965,6 +1987,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2034,6 +2057,7 @@ impl InputConfiguration {
 pub mod input_configuration {
     
     /// A builder for [`InputConfiguration`](crate::model::InputConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2106,6 +2130,7 @@ impl InputStartingPositionConfiguration {
 pub mod input_starting_position_configuration {
     
     /// A builder for [`InputStartingPositionConfiguration`](crate::model::InputStartingPositionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_starting_position: std::option::Option<crate::model::InputStartingPosition>,
@@ -2270,6 +2295,7 @@ impl ApplicationSummary {
 pub mod application_summary {
     
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -2446,6 +2472,7 @@ impl InputProcessingConfiguration {
 pub mod input_processing_configuration {
     
     /// A builder for [`InputProcessingConfiguration`](crate::model::InputProcessingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_lambda_processor: std::option::Option<crate::model::InputLambdaProcessor>,
@@ -2507,6 +2534,7 @@ impl InputLambdaProcessor {
 pub mod input_lambda_processor {
     
     /// A builder for [`InputLambdaProcessor`](crate::model::InputLambdaProcessor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2587,6 +2615,7 @@ impl S3Configuration {
 pub mod s3_configuration {
     
     /// A builder for [`S3Configuration`](crate::model::S3Configuration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -2741,6 +2770,7 @@ impl ApplicationDetail {
 pub mod application_detail {
     
     /// A builder for [`ApplicationDetail`](crate::model::ApplicationDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -2961,6 +2991,7 @@ impl CloudWatchLoggingOptionDescription {
 pub mod cloud_watch_logging_option_description {
     
     /// A builder for [`CloudWatchLoggingOptionDescription`](crate::model::CloudWatchLoggingOptionDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logging_option_id: std::option::Option<std::string::String>,
@@ -3056,6 +3087,7 @@ impl ReferenceDataSourceDescription {
 pub mod reference_data_source_description {
     
     /// A builder for [`ReferenceDataSourceDescription`](crate::model::ReferenceDataSourceDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_id: std::option::Option<std::string::String>,
@@ -3156,6 +3188,7 @@ impl S3ReferenceDataSourceDescription {
 pub mod s3_reference_data_source_description {
     
     /// A builder for [`S3ReferenceDataSourceDescription`](crate::model::S3ReferenceDataSourceDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -3265,6 +3298,7 @@ impl OutputDescription {
 pub mod output_description {
     
     /// A builder for [`OutputDescription`](crate::model::OutputDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_id: std::option::Option<std::string::String>,
@@ -3382,6 +3416,7 @@ impl LambdaOutputDescription {
 pub mod lambda_output_description {
     
     /// A builder for [`LambdaOutputDescription`](crate::model::LambdaOutputDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3451,6 +3486,7 @@ impl KinesisFirehoseOutputDescription {
 pub mod kinesis_firehose_output_description {
     
     /// A builder for [`KinesisFirehoseOutputDescription`](crate::model::KinesisFirehoseOutputDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3520,6 +3556,7 @@ impl KinesisStreamsOutputDescription {
 pub mod kinesis_streams_output_description {
     
     /// A builder for [`KinesisStreamsOutputDescription`](crate::model::KinesisStreamsOutputDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3638,6 +3675,7 @@ impl InputDescription {
 pub mod input_description {
     
     /// A builder for [`InputDescription`](crate::model::InputDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_id: std::option::Option<std::string::String>,
@@ -3790,6 +3828,7 @@ impl InputParallelism {
 pub mod input_parallelism {
     
     /// A builder for [`InputParallelism`](crate::model::InputParallelism).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -3847,6 +3886,7 @@ impl KinesisFirehoseInputDescription {
 pub mod kinesis_firehose_input_description {
     
     /// A builder for [`KinesisFirehoseInputDescription`](crate::model::KinesisFirehoseInputDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3916,6 +3956,7 @@ impl KinesisStreamsInputDescription {
 pub mod kinesis_streams_input_description {
     
     /// A builder for [`KinesisStreamsInputDescription`](crate::model::KinesisStreamsInputDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3978,6 +4019,7 @@ impl InputProcessingConfigurationDescription {
 pub mod input_processing_configuration_description {
     
     /// A builder for [`InputProcessingConfigurationDescription`](crate::model::InputProcessingConfigurationDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_lambda_processor_description: std::option::Option<crate::model::InputLambdaProcessorDescription>,
@@ -4035,6 +4077,7 @@ impl InputLambdaProcessorDescription {
 pub mod input_lambda_processor_description {
     
     /// A builder for [`InputLambdaProcessorDescription`](crate::model::InputLambdaProcessorDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4104,6 +4147,7 @@ impl CloudWatchLoggingOption {
 pub mod cloud_watch_logging_option {
     
     /// A builder for [`CloudWatchLoggingOption`](crate::model::CloudWatchLoggingOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_arn: std::option::Option<std::string::String>,
@@ -4196,6 +4240,7 @@ impl Output {
 pub mod output {
     
     /// A builder for [`Output`](crate::model::Output).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4305,6 +4350,7 @@ impl LambdaOutput {
 pub mod lambda_output {
     
     /// A builder for [`LambdaOutput`](crate::model::LambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4378,6 +4424,7 @@ impl KinesisFirehoseOutput {
 pub mod kinesis_firehose_output {
     
     /// A builder for [`KinesisFirehoseOutput`](crate::model::KinesisFirehoseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4447,6 +4494,7 @@ impl KinesisStreamsOutput {
 pub mod kinesis_streams_output {
     
     /// A builder for [`KinesisStreamsOutput`](crate::model::KinesisStreamsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4554,6 +4602,7 @@ impl Input {
 pub mod input {
     
     /// A builder for [`Input`](crate::model::Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name_prefix: std::option::Option<std::string::String>,
@@ -4681,6 +4730,7 @@ impl KinesisFirehoseInput {
 pub mod kinesis_firehose_input {
     
     /// A builder for [`KinesisFirehoseInput`](crate::model::KinesisFirehoseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4750,6 +4800,7 @@ impl KinesisStreamsInput {
 pub mod kinesis_streams_input {
     
     /// A builder for [`KinesisStreamsInput`](crate::model::KinesisStreamsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4826,6 +4877,7 @@ impl ReferenceDataSource {
 pub mod reference_data_source {
     
     /// A builder for [`ReferenceDataSource`](crate::model::ReferenceDataSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -4915,6 +4967,7 @@ impl S3ReferenceDataSource {
 pub mod s3_reference_data_source {
     
     /// A builder for [`S3ReferenceDataSource`](crate::model::S3ReferenceDataSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn: std::option::Option<std::string::String>,

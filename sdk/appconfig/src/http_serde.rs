@@ -8,7 +8,7 @@ pub fn add_headers_create_extension(
         let formatted_2 = encoder.encode();
                         if !formatted_2.is_empty() {
                             let header_value = formatted_2;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("latest_version_number", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -29,7 +29,7 @@ pub fn add_headers_create_hosted_configuration_version(
         let formatted_4 = inner_3.as_str();
                         if !formatted_4.is_empty() {
                             let header_value = formatted_4;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("description", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -43,7 +43,7 @@ pub fn add_headers_create_hosted_configuration_version(
         let formatted_6 = inner_5.as_str();
                         if !formatted_6.is_empty() {
                             let header_value = formatted_6;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("content_type", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -58,7 +58,7 @@ pub fn add_headers_create_hosted_configuration_version(
         let formatted_8 = encoder.encode();
                         if !formatted_8.is_empty() {
                             let header_value = formatted_8;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("latest_version_number", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,

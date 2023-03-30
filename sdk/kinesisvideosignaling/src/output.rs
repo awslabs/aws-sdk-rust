@@ -17,6 +17,7 @@ impl SendAlexaOfferToMasterOutput {
 pub mod send_alexa_offer_to_master_output {
     
     /// A builder for [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) answer: std::option::Option<std::string::String>,
@@ -67,6 +68,7 @@ impl GetIceServerConfigOutput {
 pub mod get_ice_server_config_output {
     
     /// A builder for [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ice_server_list: std::option::Option<std::vec::Vec<crate::model::IceServer>>,

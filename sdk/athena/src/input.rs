@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_get_named_query_input {
     
     /// A builder for [`BatchGetNamedQueryInput`](crate::input::BatchGetNamedQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) named_query_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -123,6 +124,7 @@ impl BatchGetNamedQueryInput {
 pub mod batch_get_prepared_statement_input {
     
     /// A builder for [`BatchGetPreparedStatementInput`](crate::input::BatchGetPreparedStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prepared_statement_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -253,6 +255,7 @@ impl BatchGetPreparedStatementInput {
 pub mod batch_get_query_execution_input {
     
     /// A builder for [`BatchGetQueryExecutionInput`](crate::input::BatchGetQueryExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_execution_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -371,6 +374,7 @@ impl BatchGetQueryExecutionInput {
 pub mod create_data_catalog_input {
     
     /// A builder for [`CreateDataCatalogInput`](crate::input::CreateDataCatalogInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -571,6 +575,7 @@ impl CreateDataCatalogInput {
 pub mod create_named_query_input {
     
     /// A builder for [`CreateNamedQueryInput`](crate::input::CreateNamedQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -750,6 +755,7 @@ impl CreateNamedQueryInput {
 pub mod create_notebook_input {
     
     /// A builder for [`CreateNotebookInput`](crate::input::CreateNotebookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) work_group: std::option::Option<std::string::String>,
@@ -890,6 +896,7 @@ impl CreateNotebookInput {
 pub mod create_prepared_statement_input {
     
     /// A builder for [`CreatePreparedStatementInput`](crate::input::CreatePreparedStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement_name: std::option::Option<std::string::String>,
@@ -1038,6 +1045,7 @@ impl CreatePreparedStatementInput {
 pub mod create_presigned_notebook_url_input {
     
     /// A builder for [`CreatePresignedNotebookUrlInput`](crate::input::CreatePresignedNotebookUrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -1150,6 +1158,7 @@ impl CreatePresignedNotebookUrlInput {
 pub mod create_work_group_input {
     
     /// A builder for [`CreateWorkGroupInput`](crate::input::CreateWorkGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1304,6 +1313,7 @@ impl CreateWorkGroupInput {
 pub mod delete_data_catalog_input {
     
     /// A builder for [`DeleteDataCatalogInput`](crate::input::DeleteDataCatalogInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1416,6 +1426,7 @@ impl DeleteDataCatalogInput {
 pub mod delete_named_query_input {
     
     /// A builder for [`DeleteNamedQueryInput`](crate::input::DeleteNamedQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) named_query_id: std::option::Option<std::string::String>,
@@ -1531,6 +1542,7 @@ impl DeleteNamedQueryInput {
 pub mod delete_notebook_input {
     
     /// A builder for [`DeleteNotebookInput`](crate::input::DeleteNotebookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notebook_id: std::option::Option<std::string::String>,
@@ -1643,6 +1655,7 @@ impl DeleteNotebookInput {
 pub mod delete_prepared_statement_input {
     
     /// A builder for [`DeletePreparedStatementInput`](crate::input::DeletePreparedStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement_name: std::option::Option<std::string::String>,
@@ -1767,6 +1780,7 @@ impl DeletePreparedStatementInput {
 pub mod delete_work_group_input {
     
     /// A builder for [`DeleteWorkGroupInput`](crate::input::DeleteWorkGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) work_group: std::option::Option<std::string::String>,
@@ -1891,6 +1905,7 @@ impl DeleteWorkGroupInput {
 pub mod export_notebook_input {
     
     /// A builder for [`ExportNotebookInput`](crate::input::ExportNotebookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notebook_id: std::option::Option<std::string::String>,
@@ -2003,6 +2018,7 @@ impl ExportNotebookInput {
 pub mod get_calculation_execution_input {
     
     /// A builder for [`GetCalculationExecutionInput`](crate::input::GetCalculationExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
@@ -2115,6 +2131,7 @@ impl GetCalculationExecutionInput {
 pub mod get_calculation_execution_code_input {
     
     /// A builder for [`GetCalculationExecutionCodeInput`](crate::input::GetCalculationExecutionCodeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
@@ -2227,6 +2244,7 @@ impl GetCalculationExecutionCodeInput {
 pub mod get_calculation_execution_status_input {
     
     /// A builder for [`GetCalculationExecutionStatusInput`](crate::input::GetCalculationExecutionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
@@ -2339,6 +2357,7 @@ impl GetCalculationExecutionStatusInput {
 pub mod get_database_input {
     
     /// A builder for [`GetDatabaseInput`](crate::input::GetDatabaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_name: std::option::Option<std::string::String>,
@@ -2463,6 +2482,7 @@ impl GetDatabaseInput {
 pub mod get_data_catalog_input {
     
     /// A builder for [`GetDataCatalogInput`](crate::input::GetDataCatalogInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2575,6 +2595,7 @@ impl GetDataCatalogInput {
 pub mod get_named_query_input {
     
     /// A builder for [`GetNamedQueryInput`](crate::input::GetNamedQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) named_query_id: std::option::Option<std::string::String>,
@@ -2687,6 +2708,7 @@ impl GetNamedQueryInput {
 pub mod get_notebook_metadata_input {
     
     /// A builder for [`GetNotebookMetadataInput`](crate::input::GetNotebookMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notebook_id: std::option::Option<std::string::String>,
@@ -2799,6 +2821,7 @@ impl GetNotebookMetadataInput {
 pub mod get_prepared_statement_input {
     
     /// A builder for [`GetPreparedStatementInput`](crate::input::GetPreparedStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement_name: std::option::Option<std::string::String>,
@@ -2923,6 +2946,7 @@ impl GetPreparedStatementInput {
 pub mod get_query_execution_input {
     
     /// A builder for [`GetQueryExecutionInput`](crate::input::GetQueryExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_execution_id: std::option::Option<std::string::String>,
@@ -3035,6 +3059,7 @@ impl GetQueryExecutionInput {
 pub mod get_query_results_input {
     
     /// A builder for [`GetQueryResultsInput`](crate::input::GetQueryResultsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_execution_id: std::option::Option<std::string::String>,
@@ -3171,6 +3196,7 @@ impl GetQueryResultsInput {
 pub mod get_query_runtime_statistics_input {
     
     /// A builder for [`GetQueryRuntimeStatisticsInput`](crate::input::GetQueryRuntimeStatisticsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_execution_id: std::option::Option<std::string::String>,
@@ -3283,6 +3309,7 @@ impl GetQueryRuntimeStatisticsInput {
 pub mod get_session_input {
     
     /// A builder for [`GetSessionInput`](crate::input::GetSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -3395,6 +3422,7 @@ impl GetSessionInput {
 pub mod get_session_status_input {
     
     /// A builder for [`GetSessionStatusInput`](crate::input::GetSessionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -3507,6 +3535,7 @@ impl GetSessionStatusInput {
 pub mod get_table_metadata_input {
     
     /// A builder for [`GetTableMetadataInput`](crate::input::GetTableMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_name: std::option::Option<std::string::String>,
@@ -3643,6 +3672,7 @@ impl GetTableMetadataInput {
 pub mod get_work_group_input {
     
     /// A builder for [`GetWorkGroupInput`](crate::input::GetWorkGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) work_group: std::option::Option<std::string::String>,
@@ -3755,6 +3785,7 @@ impl GetWorkGroupInput {
 pub mod import_notebook_input {
     
     /// A builder for [`ImportNotebookInput`](crate::input::ImportNotebookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) work_group: std::option::Option<std::string::String>,
@@ -3919,6 +3950,7 @@ impl ImportNotebookInput {
 pub mod list_application_dpu_sizes_input {
     
     /// A builder for [`ListApplicationDpuSizesInput`](crate::input::ListApplicationDpuSizesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4043,6 +4075,7 @@ impl ListApplicationDpuSizesInput {
 pub mod list_calculation_executions_input {
     
     /// A builder for [`ListCalculationExecutionsInput`](crate::input::ListCalculationExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -4207,6 +4240,7 @@ impl ListCalculationExecutionsInput {
 pub mod list_databases_input {
     
     /// A builder for [`ListDatabasesInput`](crate::input::ListDatabasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_name: std::option::Option<std::string::String>,
@@ -4343,6 +4377,7 @@ impl ListDatabasesInput {
 pub mod list_data_catalogs_input {
     
     /// A builder for [`ListDataCatalogsInput`](crate::input::ListDataCatalogsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4467,6 +4502,7 @@ impl ListDataCatalogsInput {
 pub mod list_engine_versions_input {
     
     /// A builder for [`ListEngineVersionsInput`](crate::input::ListEngineVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4591,6 +4627,7 @@ impl ListEngineVersionsInput {
 pub mod list_executors_input {
     
     /// A builder for [`ListExecutorsInput`](crate::input::ListExecutorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -4751,6 +4788,7 @@ impl ListExecutorsInput {
 pub mod list_named_queries_input {
     
     /// A builder for [`ListNamedQueriesInput`](crate::input::ListNamedQueriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4887,6 +4925,7 @@ impl ListNamedQueriesInput {
 pub mod list_notebook_metadata_input {
     
     /// A builder for [`ListNotebookMetadataInput`](crate::input::ListNotebookMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::FilterDefinition>,
@@ -5035,6 +5074,7 @@ impl ListNotebookMetadataInput {
 pub mod list_notebook_sessions_input {
     
     /// A builder for [`ListNotebookSessionsInput`](crate::input::ListNotebookSessionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notebook_id: std::option::Option<std::string::String>,
@@ -5171,6 +5211,7 @@ impl ListNotebookSessionsInput {
 pub mod list_prepared_statements_input {
     
     /// A builder for [`ListPreparedStatementsInput`](crate::input::ListPreparedStatementsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) work_group: std::option::Option<std::string::String>,
@@ -5307,6 +5348,7 @@ impl ListPreparedStatementsInput {
 pub mod list_query_executions_input {
     
     /// A builder for [`ListQueryExecutionsInput`](crate::input::ListQueryExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5443,6 +5485,7 @@ impl ListQueryExecutionsInput {
 pub mod list_sessions_input {
     
     /// A builder for [`ListSessionsInput`](crate::input::ListSessionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) work_group: std::option::Option<std::string::String>,
@@ -5607,6 +5650,7 @@ impl ListSessionsInput {
 pub mod list_table_metadata_input {
     
     /// A builder for [`ListTableMetadataInput`](crate::input::ListTableMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_name: std::option::Option<std::string::String>,
@@ -5767,6 +5811,7 @@ impl ListTableMetadataInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5903,6 +5948,7 @@ impl ListTagsForResourceInput {
 pub mod list_work_groups_input {
     
     /// A builder for [`ListWorkGroupsInput`](crate::input::ListWorkGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6027,6 +6073,7 @@ impl ListWorkGroupsInput {
 pub mod start_calculation_execution_input {
     
     /// A builder for [`StartCalculationExecutionInput`](crate::input::StartCalculationExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -6193,6 +6240,7 @@ impl StartCalculationExecutionInput {
 pub mod start_query_execution_input {
     
     /// A builder for [`StartQueryExecutionInput`](crate::input::StartQueryExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -6390,6 +6438,7 @@ impl StartQueryExecutionInput {
 pub mod start_session_input {
     
     /// A builder for [`StartSessionInput`](crate::input::StartSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6566,6 +6615,7 @@ impl StartSessionInput {
 pub mod stop_calculation_execution_input {
     
     /// A builder for [`StopCalculationExecutionInput`](crate::input::StopCalculationExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
@@ -6678,6 +6728,7 @@ impl StopCalculationExecutionInput {
 pub mod stop_query_execution_input {
     
     /// A builder for [`StopQueryExecutionInput`](crate::input::StopQueryExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_execution_id: std::option::Option<std::string::String>,
@@ -6793,6 +6844,7 @@ impl StopQueryExecutionInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6923,6 +6975,7 @@ impl TagResourceInput {
 pub mod terminate_session_input {
     
     /// A builder for [`TerminateSessionInput`](crate::input::TerminateSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -7035,6 +7088,7 @@ impl TerminateSessionInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -7165,6 +7219,7 @@ impl UntagResourceInput {
 pub mod update_data_catalog_input {
     
     /// A builder for [`UpdateDataCatalogInput`](crate::input::UpdateDataCatalogInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7335,6 +7390,7 @@ impl UpdateDataCatalogInput {
 pub mod update_named_query_input {
     
     /// A builder for [`UpdateNamedQueryInput`](crate::input::UpdateNamedQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) named_query_id: std::option::Option<std::string::String>,
@@ -7483,6 +7539,7 @@ impl UpdateNamedQueryInput {
 pub mod update_notebook_input {
     
     /// A builder for [`UpdateNotebookInput`](crate::input::UpdateNotebookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notebook_id: std::option::Option<std::string::String>,
@@ -7647,6 +7704,7 @@ impl UpdateNotebookInput {
 pub mod update_notebook_metadata_input {
     
     /// A builder for [`UpdateNotebookMetadataInput`](crate::input::UpdateNotebookMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notebook_id: std::option::Option<std::string::String>,
@@ -7787,6 +7845,7 @@ impl UpdateNotebookMetadataInput {
 pub mod update_prepared_statement_input {
     
     /// A builder for [`UpdatePreparedStatementInput`](crate::input::UpdatePreparedStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement_name: std::option::Option<std::string::String>,
@@ -7935,6 +7994,7 @@ impl UpdatePreparedStatementInput {
 pub mod update_work_group_input {
     
     /// A builder for [`UpdateWorkGroupInput`](crate::input::UpdateWorkGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) work_group: std::option::Option<std::string::String>,

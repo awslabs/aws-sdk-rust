@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod join_storage_session_input {
     
     /// A builder for [`JoinStorageSessionInput`](crate::input::JoinStorageSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,

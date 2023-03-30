@@ -8,6 +8,7 @@ pub struct UpdateSkillGroupOutput  {
 pub mod update_skill_group_output {
     
     /// A builder for [`UpdateSkillGroupOutput`](crate::output::UpdateSkillGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UpdateRoomOutput  {
 pub mod update_room_output {
     
     /// A builder for [`UpdateRoomOutput`](crate::output::UpdateRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct UpdateProfileOutput  {
 pub mod update_profile_output {
     
     /// A builder for [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -95,6 +98,7 @@ pub struct UpdateNetworkProfileOutput  {
 pub mod update_network_profile_output {
     
     /// A builder for [`UpdateNetworkProfileOutput`](crate::output::UpdateNetworkProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -124,6 +128,7 @@ pub struct UpdateGatewayGroupOutput  {
 pub mod update_gateway_group_output {
     
     /// A builder for [`UpdateGatewayGroupOutput`](crate::output::UpdateGatewayGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -153,6 +158,7 @@ pub struct UpdateGatewayOutput  {
 pub mod update_gateway_output {
     
     /// A builder for [`UpdateGatewayOutput`](crate::output::UpdateGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -182,6 +188,7 @@ pub struct UpdateDeviceOutput  {
 pub mod update_device_output {
     
     /// A builder for [`UpdateDeviceOutput`](crate::output::UpdateDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -211,6 +218,7 @@ pub struct UpdateContactOutput  {
 pub mod update_contact_output {
     
     /// A builder for [`UpdateContactOutput`](crate::output::UpdateContactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -240,6 +248,7 @@ pub struct UpdateConferenceProviderOutput  {
 pub mod update_conference_provider_output {
     
     /// A builder for [`UpdateConferenceProviderOutput`](crate::output::UpdateConferenceProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -269,6 +278,7 @@ pub struct UpdateBusinessReportScheduleOutput  {
 pub mod update_business_report_schedule_output {
     
     /// A builder for [`UpdateBusinessReportScheduleOutput`](crate::output::UpdateBusinessReportScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -298,6 +308,7 @@ pub struct UpdateAddressBookOutput  {
 pub mod update_address_book_output {
     
     /// A builder for [`UpdateAddressBookOutput`](crate::output::UpdateAddressBookOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -327,6 +338,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -356,6 +368,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -385,6 +398,7 @@ pub struct StartSmartHomeApplianceDiscoveryOutput  {
 pub mod start_smart_home_appliance_discovery_output {
     
     /// A builder for [`StartSmartHomeApplianceDiscoveryOutput`](crate::output::StartSmartHomeApplianceDiscoveryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -414,6 +428,7 @@ pub struct StartDeviceSyncOutput  {
 pub mod start_device_sync_output {
     
     /// A builder for [`StartDeviceSyncOutput`](crate::output::StartDeviceSyncOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -443,6 +458,7 @@ pub struct SendInvitationOutput  {
 pub mod send_invitation_output {
     
     /// A builder for [`SendInvitationOutput`](crate::output::SendInvitationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -481,6 +497,7 @@ impl SendAnnouncementOutput {
 pub mod send_announcement_output {
     
     /// A builder for [`SendAnnouncementOutput`](crate::output::SendAnnouncementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) announcement_arn: std::option::Option<std::string::String>,
@@ -545,6 +562,7 @@ impl SearchUsersOutput {
 pub mod search_users_output {
     
     /// A builder for [`SearchUsersOutput`](crate::output::SearchUsersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserData>>,
@@ -639,6 +657,7 @@ impl SearchSkillGroupsOutput {
 pub mod search_skill_groups_output {
     
     /// A builder for [`SearchSkillGroupsOutput`](crate::output::SearchSkillGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_groups: std::option::Option<std::vec::Vec<crate::model::SkillGroupData>>,
@@ -733,6 +752,7 @@ impl SearchRoomsOutput {
 pub mod search_rooms_output {
     
     /// A builder for [`SearchRoomsOutput`](crate::output::SearchRoomsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rooms: std::option::Option<std::vec::Vec<crate::model::RoomData>>,
@@ -827,6 +847,7 @@ impl SearchProfilesOutput {
 pub mod search_profiles_output {
     
     /// A builder for [`SearchProfilesOutput`](crate::output::SearchProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiles: std::option::Option<std::vec::Vec<crate::model::ProfileData>>,
@@ -921,6 +942,7 @@ impl SearchNetworkProfilesOutput {
 pub mod search_network_profiles_output {
     
     /// A builder for [`SearchNetworkProfilesOutput`](crate::output::SearchNetworkProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_profiles: std::option::Option<std::vec::Vec<crate::model::NetworkProfileData>>,
@@ -1015,6 +1037,7 @@ impl SearchDevicesOutput {
 pub mod search_devices_output {
     
     /// A builder for [`SearchDevicesOutput`](crate::output::SearchDevicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceData>>,
@@ -1109,6 +1132,7 @@ impl SearchContactsOutput {
 pub mod search_contacts_output {
     
     /// A builder for [`SearchContactsOutput`](crate::output::SearchContactsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contacts: std::option::Option<std::vec::Vec<crate::model::ContactData>>,
@@ -1203,6 +1227,7 @@ impl SearchAddressBooksOutput {
 pub mod search_address_books_output {
     
     /// A builder for [`SearchAddressBooksOutput`](crate::output::SearchAddressBooksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_books: std::option::Option<std::vec::Vec<crate::model::AddressBookData>>,
@@ -1274,6 +1299,7 @@ pub struct RevokeInvitationOutput  {
 pub mod revoke_invitation_output {
     
     /// A builder for [`RevokeInvitationOutput`](crate::output::RevokeInvitationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1326,6 +1352,7 @@ impl ResolveRoomOutput {
 pub mod resolve_room_output {
     
     /// A builder for [`ResolveRoomOutput`](crate::output::ResolveRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_arn: std::option::Option<std::string::String>,
@@ -1397,6 +1424,7 @@ pub struct RejectSkillOutput  {
 pub mod reject_skill_output {
     
     /// A builder for [`RejectSkillOutput`](crate::output::RejectSkillOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1435,6 +1463,7 @@ impl RegisterAvsDeviceOutput {
 pub mod register_avs_device_output {
     
     /// A builder for [`RegisterAvsDeviceOutput`](crate::output::RegisterAvsDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_arn: std::option::Option<std::string::String>,
@@ -1476,6 +1505,7 @@ pub struct PutSkillAuthorizationOutput  {
 pub mod put_skill_authorization_output {
     
     /// A builder for [`PutSkillAuthorizationOutput`](crate::output::PutSkillAuthorizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1505,6 +1535,7 @@ pub struct PutRoomSkillParameterOutput  {
 pub mod put_room_skill_parameter_output {
     
     /// A builder for [`PutRoomSkillParameterOutput`](crate::output::PutRoomSkillParameterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1534,6 +1565,7 @@ pub struct PutInvitationConfigurationOutput  {
 pub mod put_invitation_configuration_output {
     
     /// A builder for [`PutInvitationConfigurationOutput`](crate::output::PutInvitationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1563,6 +1595,7 @@ pub struct PutConferencePreferenceOutput  {
 pub mod put_conference_preference_output {
     
     /// A builder for [`PutConferencePreferenceOutput`](crate::output::PutConferencePreferenceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1608,6 +1641,7 @@ impl ListTagsOutput {
 pub mod list_tags_output {
     
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1683,6 +1717,7 @@ impl ListSmartHomeAppliancesOutput {
 pub mod list_smart_home_appliances_output {
     
     /// A builder for [`ListSmartHomeAppliancesOutput`](crate::output::ListSmartHomeAppliancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) smart_home_appliances: std::option::Option<std::vec::Vec<crate::model::SmartHomeAppliance>>,
@@ -1758,6 +1793,7 @@ impl ListSkillsStoreSkillsByCategoryOutput {
 pub mod list_skills_store_skills_by_category_output {
     
     /// A builder for [`ListSkillsStoreSkillsByCategoryOutput`](crate::output::ListSkillsStoreSkillsByCategoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skills_store_skills: std::option::Option<std::vec::Vec<crate::model::SkillsStoreSkill>>,
@@ -1833,6 +1869,7 @@ impl ListSkillsStoreCategoriesOutput {
 pub mod list_skills_store_categories_output {
     
     /// A builder for [`ListSkillsStoreCategoriesOutput`](crate::output::ListSkillsStoreCategoriesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_list: std::option::Option<std::vec::Vec<crate::model::Category>>,
@@ -1908,6 +1945,7 @@ impl ListSkillsOutput {
 pub mod list_skills_output {
     
     /// A builder for [`ListSkillsOutput`](crate::output::ListSkillsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_summaries: std::option::Option<std::vec::Vec<crate::model::SkillSummary>>,
@@ -1983,6 +2021,7 @@ impl ListGatewaysOutput {
 pub mod list_gateways_output {
     
     /// A builder for [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateways: std::option::Option<std::vec::Vec<crate::model::GatewaySummary>>,
@@ -2058,6 +2097,7 @@ impl ListGatewayGroupsOutput {
 pub mod list_gateway_groups_output {
     
     /// A builder for [`ListGatewayGroupsOutput`](crate::output::ListGatewayGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_groups: std::option::Option<std::vec::Vec<crate::model::GatewayGroupSummary>>,
@@ -2133,6 +2173,7 @@ impl ListDeviceEventsOutput {
 pub mod list_device_events_output {
     
     /// A builder for [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_events: std::option::Option<std::vec::Vec<crate::model::DeviceEvent>>,
@@ -2208,6 +2249,7 @@ impl ListConferenceProvidersOutput {
 pub mod list_conference_providers_output {
     
     /// A builder for [`ListConferenceProvidersOutput`](crate::output::ListConferenceProvidersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conference_providers: std::option::Option<std::vec::Vec<crate::model::ConferenceProvider>>,
@@ -2283,6 +2325,7 @@ impl ListBusinessReportSchedulesOutput {
 pub mod list_business_report_schedules_output {
     
     /// A builder for [`ListBusinessReportSchedulesOutput`](crate::output::ListBusinessReportSchedulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) business_report_schedules: std::option::Option<std::vec::Vec<crate::model::BusinessReportSchedule>>,
@@ -2351,6 +2394,7 @@ impl GetSkillGroupOutput {
 pub mod get_skill_group_output {
     
     /// A builder for [`GetSkillGroupOutput`](crate::output::GetSkillGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_group: std::option::Option<crate::model::SkillGroup>,
@@ -2401,6 +2445,7 @@ impl GetRoomSkillParameterOutput {
 pub mod get_room_skill_parameter_output {
     
     /// A builder for [`GetRoomSkillParameterOutput`](crate::output::GetRoomSkillParameterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_skill_parameter: std::option::Option<crate::model::RoomSkillParameter>,
@@ -2451,6 +2496,7 @@ impl GetRoomOutput {
 pub mod get_room_output {
     
     /// A builder for [`GetRoomOutput`](crate::output::GetRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room: std::option::Option<crate::model::Room>,
@@ -2501,6 +2547,7 @@ impl GetProfileOutput {
 pub mod get_profile_output {
     
     /// A builder for [`GetProfileOutput`](crate::output::GetProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile: std::option::Option<crate::model::Profile>,
@@ -2551,6 +2598,7 @@ impl GetNetworkProfileOutput {
 pub mod get_network_profile_output {
     
     /// A builder for [`GetNetworkProfileOutput`](crate::output::GetNetworkProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_profile: std::option::Option<crate::model::NetworkProfile>,
@@ -2615,6 +2663,7 @@ impl GetInvitationConfigurationOutput {
 pub mod get_invitation_configuration_output {
     
     /// A builder for [`GetInvitationConfigurationOutput`](crate::output::GetInvitationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_name: std::option::Option<std::string::String>,
@@ -2695,6 +2744,7 @@ impl GetGatewayGroupOutput {
 pub mod get_gateway_group_output {
     
     /// A builder for [`GetGatewayGroupOutput`](crate::output::GetGatewayGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_group: std::option::Option<crate::model::GatewayGroup>,
@@ -2745,6 +2795,7 @@ impl GetGatewayOutput {
 pub mod get_gateway_output {
     
     /// A builder for [`GetGatewayOutput`](crate::output::GetGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway: std::option::Option<crate::model::Gateway>,
@@ -2795,6 +2846,7 @@ impl GetDeviceOutput {
 pub mod get_device_output {
     
     /// A builder for [`GetDeviceOutput`](crate::output::GetDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device: std::option::Option<crate::model::Device>,
@@ -2845,6 +2897,7 @@ impl GetContactOutput {
 pub mod get_contact_output {
     
     /// A builder for [`GetContactOutput`](crate::output::GetContactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact: std::option::Option<crate::model::Contact>,
@@ -2895,6 +2948,7 @@ impl GetConferenceProviderOutput {
 pub mod get_conference_provider_output {
     
     /// A builder for [`GetConferenceProviderOutput`](crate::output::GetConferenceProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conference_provider: std::option::Option<crate::model::ConferenceProvider>,
@@ -2945,6 +2999,7 @@ impl GetConferencePreferenceOutput {
 pub mod get_conference_preference_output {
     
     /// A builder for [`GetConferencePreferenceOutput`](crate::output::GetConferencePreferenceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preference: std::option::Option<crate::model::ConferencePreference>,
@@ -2995,6 +3050,7 @@ impl GetAddressBookOutput {
 pub mod get_address_book_output {
     
     /// A builder for [`GetAddressBookOutput`](crate::output::GetAddressBookOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_book: std::option::Option<crate::model::AddressBook>,
@@ -3036,6 +3092,7 @@ pub struct ForgetSmartHomeAppliancesOutput  {
 pub mod forget_smart_home_appliances_output {
     
     /// A builder for [`ForgetSmartHomeAppliancesOutput`](crate::output::ForgetSmartHomeAppliancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3065,6 +3122,7 @@ pub struct DisassociateSkillGroupFromRoomOutput  {
 pub mod disassociate_skill_group_from_room_output {
     
     /// A builder for [`DisassociateSkillGroupFromRoomOutput`](crate::output::DisassociateSkillGroupFromRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3094,6 +3152,7 @@ pub struct DisassociateSkillFromUsersOutput  {
 pub mod disassociate_skill_from_users_output {
     
     /// A builder for [`DisassociateSkillFromUsersOutput`](crate::output::DisassociateSkillFromUsersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3123,6 +3182,7 @@ pub struct DisassociateSkillFromSkillGroupOutput  {
 pub mod disassociate_skill_from_skill_group_output {
     
     /// A builder for [`DisassociateSkillFromSkillGroupOutput`](crate::output::DisassociateSkillFromSkillGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3152,6 +3212,7 @@ pub struct DisassociateDeviceFromRoomOutput  {
 pub mod disassociate_device_from_room_output {
     
     /// A builder for [`DisassociateDeviceFromRoomOutput`](crate::output::DisassociateDeviceFromRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3181,6 +3242,7 @@ pub struct DisassociateContactFromAddressBookOutput  {
 pub mod disassociate_contact_from_address_book_output {
     
     /// A builder for [`DisassociateContactFromAddressBookOutput`](crate::output::DisassociateContactFromAddressBookOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3210,6 +3272,7 @@ pub struct DeleteUserOutput  {
 pub mod delete_user_output {
     
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3239,6 +3302,7 @@ pub struct DeleteSkillGroupOutput  {
 pub mod delete_skill_group_output {
     
     /// A builder for [`DeleteSkillGroupOutput`](crate::output::DeleteSkillGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3268,6 +3332,7 @@ pub struct DeleteSkillAuthorizationOutput  {
 pub mod delete_skill_authorization_output {
     
     /// A builder for [`DeleteSkillAuthorizationOutput`](crate::output::DeleteSkillAuthorizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3297,6 +3362,7 @@ pub struct DeleteRoomSkillParameterOutput  {
 pub mod delete_room_skill_parameter_output {
     
     /// A builder for [`DeleteRoomSkillParameterOutput`](crate::output::DeleteRoomSkillParameterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3326,6 +3392,7 @@ pub struct DeleteRoomOutput  {
 pub mod delete_room_output {
     
     /// A builder for [`DeleteRoomOutput`](crate::output::DeleteRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3355,6 +3422,7 @@ pub struct DeleteProfileOutput  {
 pub mod delete_profile_output {
     
     /// A builder for [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3384,6 +3452,7 @@ pub struct DeleteNetworkProfileOutput  {
 pub mod delete_network_profile_output {
     
     /// A builder for [`DeleteNetworkProfileOutput`](crate::output::DeleteNetworkProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3413,6 +3482,7 @@ pub struct DeleteGatewayGroupOutput  {
 pub mod delete_gateway_group_output {
     
     /// A builder for [`DeleteGatewayGroupOutput`](crate::output::DeleteGatewayGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3442,6 +3512,7 @@ pub struct DeleteDeviceUsageDataOutput  {
 pub mod delete_device_usage_data_output {
     
     /// A builder for [`DeleteDeviceUsageDataOutput`](crate::output::DeleteDeviceUsageDataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3471,6 +3542,7 @@ pub struct DeleteDeviceOutput  {
 pub mod delete_device_output {
     
     /// A builder for [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3500,6 +3572,7 @@ pub struct DeleteContactOutput  {
 pub mod delete_contact_output {
     
     /// A builder for [`DeleteContactOutput`](crate::output::DeleteContactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3529,6 +3602,7 @@ pub struct DeleteConferenceProviderOutput  {
 pub mod delete_conference_provider_output {
     
     /// A builder for [`DeleteConferenceProviderOutput`](crate::output::DeleteConferenceProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3558,6 +3632,7 @@ pub struct DeleteBusinessReportScheduleOutput  {
 pub mod delete_business_report_schedule_output {
     
     /// A builder for [`DeleteBusinessReportScheduleOutput`](crate::output::DeleteBusinessReportScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3587,6 +3662,7 @@ pub struct DeleteAddressBookOutput  {
 pub mod delete_address_book_output {
     
     /// A builder for [`DeleteAddressBookOutput`](crate::output::DeleteAddressBookOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3625,6 +3701,7 @@ impl CreateUserOutput {
 pub mod create_user_output {
     
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -3675,6 +3752,7 @@ impl CreateSkillGroupOutput {
 pub mod create_skill_group_output {
     
     /// A builder for [`CreateSkillGroupOutput`](crate::output::CreateSkillGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_group_arn: std::option::Option<std::string::String>,
@@ -3725,6 +3803,7 @@ impl CreateRoomOutput {
 pub mod create_room_output {
     
     /// A builder for [`CreateRoomOutput`](crate::output::CreateRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_arn: std::option::Option<std::string::String>,
@@ -3775,6 +3854,7 @@ impl CreateProfileOutput {
 pub mod create_profile_output {
     
     /// A builder for [`CreateProfileOutput`](crate::output::CreateProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_arn: std::option::Option<std::string::String>,
@@ -3825,6 +3905,7 @@ impl CreateNetworkProfileOutput {
 pub mod create_network_profile_output {
     
     /// A builder for [`CreateNetworkProfileOutput`](crate::output::CreateNetworkProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_profile_arn: std::option::Option<std::string::String>,
@@ -3875,6 +3956,7 @@ impl CreateGatewayGroupOutput {
 pub mod create_gateway_group_output {
     
     /// A builder for [`CreateGatewayGroupOutput`](crate::output::CreateGatewayGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_group_arn: std::option::Option<std::string::String>,
@@ -3925,6 +4007,7 @@ impl CreateContactOutput {
 pub mod create_contact_output {
     
     /// A builder for [`CreateContactOutput`](crate::output::CreateContactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -3975,6 +4058,7 @@ impl CreateConferenceProviderOutput {
 pub mod create_conference_provider_output {
     
     /// A builder for [`CreateConferenceProviderOutput`](crate::output::CreateConferenceProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conference_provider_arn: std::option::Option<std::string::String>,
@@ -4025,6 +4109,7 @@ impl CreateBusinessReportScheduleOutput {
 pub mod create_business_report_schedule_output {
     
     /// A builder for [`CreateBusinessReportScheduleOutput`](crate::output::CreateBusinessReportScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_arn: std::option::Option<std::string::String>,
@@ -4075,6 +4160,7 @@ impl CreateAddressBookOutput {
 pub mod create_address_book_output {
     
     /// A builder for [`CreateAddressBookOutput`](crate::output::CreateAddressBookOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_book_arn: std::option::Option<std::string::String>,
@@ -4116,6 +4202,7 @@ pub struct AssociateSkillWithUsersOutput  {
 pub mod associate_skill_with_users_output {
     
     /// A builder for [`AssociateSkillWithUsersOutput`](crate::output::AssociateSkillWithUsersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4145,6 +4232,7 @@ pub struct AssociateSkillWithSkillGroupOutput  {
 pub mod associate_skill_with_skill_group_output {
     
     /// A builder for [`AssociateSkillWithSkillGroupOutput`](crate::output::AssociateSkillWithSkillGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4174,6 +4262,7 @@ pub struct AssociateSkillGroupWithRoomOutput  {
 pub mod associate_skill_group_with_room_output {
     
     /// A builder for [`AssociateSkillGroupWithRoomOutput`](crate::output::AssociateSkillGroupWithRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4203,6 +4292,7 @@ pub struct AssociateDeviceWithRoomOutput  {
 pub mod associate_device_with_room_output {
     
     /// A builder for [`AssociateDeviceWithRoomOutput`](crate::output::AssociateDeviceWithRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4232,6 +4322,7 @@ pub struct AssociateDeviceWithNetworkProfileOutput  {
 pub mod associate_device_with_network_profile_output {
     
     /// A builder for [`AssociateDeviceWithNetworkProfileOutput`](crate::output::AssociateDeviceWithNetworkProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4261,6 +4352,7 @@ pub struct AssociateContactWithAddressBookOutput  {
 pub mod associate_contact_with_address_book_output {
     
     /// A builder for [`AssociateContactWithAddressBookOutput`](crate::output::AssociateContactWithAddressBookOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4290,6 +4382,7 @@ pub struct ApproveSkillOutput  {
 pub mod approve_skill_output {
     
     /// A builder for [`ApproveSkillOutput`](crate::output::ApproveSkillOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

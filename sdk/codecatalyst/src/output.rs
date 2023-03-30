@@ -24,6 +24,7 @@ impl ListSpacesOutput {
 pub mod list_spaces_output {
     
     /// A builder for [`ListSpacesOutput`](crate::output::ListSpacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -113,6 +114,7 @@ impl GetSpaceOutput {
 pub mod get_space_output {
     
     /// A builder for [`GetSpaceOutput`](crate::output::GetSpaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -206,6 +208,7 @@ impl GetSubscriptionOutput {
 pub mod get_subscription_output {
     
     /// A builder for [`GetSubscriptionOutput`](crate::output::GetSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_type: std::option::Option<std::string::String>,
@@ -275,6 +278,7 @@ impl ListProjectsOutput {
 pub mod list_projects_output {
     
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -364,6 +368,7 @@ impl CreateProjectOutput {
 pub mod create_project_output {
     
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -471,6 +476,7 @@ impl GetProjectOutput {
 pub mod get_project_output {
     
     /// A builder for [`GetProjectOutput`](crate::output::GetProjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -557,6 +563,7 @@ impl GetSourceRepositoryCloneUrlsOutput {
 pub mod get_source_repository_clone_urls_output {
     
     /// A builder for [`GetSourceRepositoryCloneUrlsOutput`](crate::output::GetSourceRepositoryCloneUrlsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) https: std::option::Option<std::string::String>,
@@ -614,6 +621,7 @@ impl ListSourceRepositoriesOutput {
 pub mod list_source_repositories_output {
     
     /// A builder for [`ListSourceRepositoriesOutput`](crate::output::ListSourceRepositoriesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListSourceRepositoriesItem>>,
@@ -689,6 +697,7 @@ impl ListSourceRepositoryBranchesOutput {
 pub mod list_source_repository_branches_output {
     
     /// A builder for [`ListSourceRepositoryBranchesOutput`](crate::output::ListSourceRepositoryBranchesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -778,6 +787,7 @@ impl CreateSourceRepositoryBranchOutput {
 pub mod create_source_repository_branch_output {
     
     /// A builder for [`CreateSourceRepositoryBranchOutput`](crate::output::CreateSourceRepositoryBranchOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#ref: std::option::Option<std::string::String>,
@@ -885,6 +895,7 @@ impl StopDevEnvironmentOutput {
 pub mod stop_dev_environment_output {
     
     /// A builder for [`StopDevEnvironmentOutput`](crate::output::StopDevEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -1010,6 +1021,7 @@ impl  std::fmt::Debug for StartDevEnvironmentSessionOutput  {
 pub mod start_dev_environment_session_output {
     
     /// A builder for [`StartDevEnvironmentSessionOutput`](crate::output::StartDevEnvironmentSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_details: std::option::Option<crate::model::DevEnvironmentAccessDetails>,
@@ -1140,6 +1152,7 @@ impl StartDevEnvironmentOutput {
 pub mod start_dev_environment_output {
     
     /// A builder for [`StartDevEnvironmentOutput`](crate::output::StartDevEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -1233,6 +1246,7 @@ impl ListDevEnvironmentsOutput {
 pub mod list_dev_environments_output {
     
     /// A builder for [`ListDevEnvironmentsOutput`](crate::output::ListDevEnvironmentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DevEnvironmentSummary>>,
@@ -1315,6 +1329,7 @@ impl CreateDevEnvironmentOutput {
 pub mod create_dev_environment_output {
     
     /// A builder for [`CreateDevEnvironmentOutput`](crate::output::CreateDevEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -1403,6 +1418,7 @@ impl DeleteDevEnvironmentOutput {
 pub mod delete_dev_environment_output {
     
     /// A builder for [`DeleteDevEnvironmentOutput`](crate::output::DeleteDevEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -1526,6 +1542,7 @@ impl UpdateDevEnvironmentOutput {
 pub mod update_dev_environment_output {
     
     /// A builder for [`UpdateDevEnvironmentOutput`](crate::output::UpdateDevEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1751,6 +1768,7 @@ impl GetDevEnvironmentOutput {
 pub mod get_dev_environment_output {
     
     /// A builder for [`GetDevEnvironmentOutput`](crate::output::GetDevEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -1965,6 +1983,7 @@ impl ListEventLogsOutput {
 pub mod list_event_logs_output {
     
     /// A builder for [`ListEventLogsOutput`](crate::output::ListEventLogsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2040,6 +2059,7 @@ impl ListAccessTokensOutput {
 pub mod list_access_tokens_output {
     
     /// A builder for [`ListAccessTokensOutput`](crate::output::ListAccessTokensOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::AccessTokenSummary>>,
@@ -2131,6 +2151,7 @@ impl  std::fmt::Debug for CreateAccessTokenOutput  {
 pub mod create_access_token_output {
     
     /// A builder for [`CreateAccessTokenOutput`](crate::output::CreateAccessTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) secret: std::option::Option<std::string::String>,
@@ -2205,6 +2226,7 @@ pub struct DeleteAccessTokenOutput  {
 pub mod delete_access_token_output {
     
     /// A builder for [`DeleteAccessTokenOutput`](crate::output::DeleteAccessTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2243,6 +2265,7 @@ impl VerifySessionOutput {
 pub mod verify_session_output {
     
     /// A builder for [`VerifySessionOutput`](crate::output::VerifySessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -2321,6 +2344,7 @@ impl GetUserDetailsOutput {
 pub mod get_user_details_output {
     
     /// A builder for [`GetUserDetailsOutput`](crate::output::GetUserDetailsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,

@@ -88,6 +88,7 @@ impl SavingsPlanOffering {
 pub mod savings_plan_offering {
     
     /// A builder for [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
@@ -278,6 +279,7 @@ impl SavingsPlanOfferingProperty {
 pub mod savings_plan_offering_property {
     
     /// A builder for [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanOfferingPropertyKey>,
@@ -777,6 +779,7 @@ impl SavingsPlanOfferingFilterElement {
 pub mod savings_plan_offering_filter_element {
     
     /// A builder for [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanOfferingFilterAttribute>,
@@ -976,6 +979,7 @@ impl SavingsPlanOfferingRate {
 pub mod savings_plan_offering_rate {
     
     /// A builder for [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_offering: std::option::Option<crate::model::ParentSavingsPlanOffering>,
@@ -1123,6 +1127,7 @@ impl SavingsPlanOfferingRateProperty {
 pub mod savings_plan_offering_rate_property {
     
     /// A builder for [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1404,6 +1409,7 @@ impl ParentSavingsPlanOffering {
 pub mod parent_savings_plan_offering {
     
     /// A builder for [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
@@ -1522,6 +1528,7 @@ impl SavingsPlanOfferingRateFilterElement {
 pub mod savings_plan_offering_rate_filter_element {
     
     /// A builder for [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanRateFilterAttribute>,
@@ -1811,6 +1818,7 @@ impl SavingsPlan {
 pub mod savings_plan {
     
     /// A builder for [`SavingsPlan`](crate::model::SavingsPlan).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
@@ -2187,6 +2195,7 @@ impl SavingsPlanFilter {
 pub mod savings_plan_filter {
     
     /// A builder for [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlansFilterName>,
@@ -2421,6 +2430,7 @@ impl SavingsPlanRate {
 pub mod savings_plan_rate {
     
     /// A builder for [`SavingsPlanRate`](crate::model::SavingsPlanRate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rate: std::option::Option<std::string::String>,
@@ -2568,6 +2578,7 @@ impl SavingsPlanRateProperty {
 pub mod savings_plan_rate_property {
     
     /// A builder for [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanRatePropertyKey>,
@@ -2734,6 +2745,7 @@ impl SavingsPlanRateFilter {
 pub mod savings_plan_rate_filter {
     
     /// A builder for [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanRateFilterName>,

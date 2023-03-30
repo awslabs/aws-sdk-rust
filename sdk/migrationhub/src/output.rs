@@ -8,6 +8,7 @@ pub struct PutResourceAttributesOutput  {
 pub mod put_resource_attributes_output {
     
     /// A builder for [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct NotifyMigrationTaskStateOutput  {
 pub mod notify_migration_task_state_output {
     
     /// A builder for [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct NotifyApplicationStateOutput  {
 pub mod notify_application_state_output {
     
     /// A builder for [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -111,6 +114,7 @@ impl ListProgressUpdateStreamsOutput {
 pub mod list_progress_update_streams_output {
     
     /// A builder for [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream_summary_list: std::option::Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>,
@@ -186,6 +190,7 @@ impl ListMigrationTasksOutput {
 pub mod list_migration_tasks_output {
     
     /// A builder for [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -261,6 +266,7 @@ impl ListDiscoveredResourcesOutput {
 pub mod list_discovered_resources_output {
     
     /// A builder for [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -336,6 +342,7 @@ impl ListCreatedArtifactsOutput {
 pub mod list_created_artifacts_output {
     
     /// A builder for [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -411,6 +418,7 @@ impl ListApplicationStatesOutput {
 pub mod list_application_states_output {
     
     /// A builder for [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_state_list: std::option::Option<std::vec::Vec<crate::model::ApplicationState>>,
@@ -470,6 +478,7 @@ pub struct ImportMigrationTaskOutput  {
 pub mod import_migration_task_output {
     
     /// A builder for [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -499,6 +508,7 @@ pub struct DisassociateDiscoveredResourceOutput  {
 pub mod disassociate_discovered_resource_output {
     
     /// A builder for [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -528,6 +538,7 @@ pub struct DisassociateCreatedArtifactOutput  {
 pub mod disassociate_created_artifact_output {
     
     /// A builder for [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -566,6 +577,7 @@ impl DescribeMigrationTaskOutput {
 pub mod describe_migration_task_output {
     
     /// A builder for [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) migration_task: std::option::Option<crate::model::MigrationTask>,
@@ -623,6 +635,7 @@ impl DescribeApplicationStateOutput {
 pub mod describe_application_state_output {
     
     /// A builder for [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_status: std::option::Option<crate::model::ApplicationStatus>,
@@ -676,6 +689,7 @@ pub struct DeleteProgressUpdateStreamOutput  {
 pub mod delete_progress_update_stream_output {
     
     /// A builder for [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -705,6 +719,7 @@ pub struct CreateProgressUpdateStreamOutput  {
 pub mod create_progress_update_stream_output {
     
     /// A builder for [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -734,6 +749,7 @@ pub struct AssociateDiscoveredResourceOutput  {
 pub mod associate_discovered_resource_output {
     
     /// A builder for [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -763,6 +779,7 @@ pub struct AssociateCreatedArtifactOutput  {
 pub mod associate_created_artifact_output {
     
     /// A builder for [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

@@ -188,6 +188,7 @@ impl std::error::Error for ServerInternalErrorException {}
 pub mod server_internal_error_exception {
     
     /// A builder for [`ServerInternalErrorException`](crate::error::ServerInternalErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -248,6 +249,7 @@ impl std::error::Error for InvalidParameterValueException {}
 pub mod invalid_parameter_value_exception {
     
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -308,6 +310,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
     
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -368,6 +371,7 @@ impl std::error::Error for HomeRegionNotSetException {}
 pub mod home_region_not_set_exception {
     
     /// A builder for [`HomeRegionNotSetException`](crate::error::HomeRegionNotSetException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -428,6 +432,7 @@ impl std::error::Error for AuthorizationErrorException {}
 pub mod authorization_error_exception {
     
     /// A builder for [`AuthorizationErrorException`](crate::error::AuthorizationErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -846,6 +851,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -906,6 +912,7 @@ impl std::error::Error for ResourceInUseException {}
 pub mod resource_in_use_exception {
     
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -966,6 +973,7 @@ impl std::error::Error for OperationNotPermittedException {}
 pub mod operation_not_permitted_exception {
     
     /// A builder for [`OperationNotPermittedException`](crate::error::OperationNotPermittedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1730,6 +1738,7 @@ impl std::error::Error for ConflictErrorException {}
 pub mod conflict_error_exception {
     
     /// A builder for [`ConflictErrorException`](crate::error::ConflictErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

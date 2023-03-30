@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_chat_token_input {
     
     /// A builder for [`CreateChatTokenInput`](crate::input::CreateChatTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_identifier: std::option::Option<std::string::String>,
@@ -173,6 +174,7 @@ impl CreateChatTokenInput {
 pub mod create_logging_configuration_input {
     
     /// A builder for [`CreateLoggingConfigurationInput`](crate::input::CreateLoggingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -310,6 +312,7 @@ impl CreateLoggingConfigurationInput {
 pub mod create_room_input {
     
     /// A builder for [`CreateRoomInput`](crate::input::CreateRoomInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -491,6 +494,7 @@ impl CreateRoomInput {
 pub mod delete_logging_configuration_input {
     
     /// A builder for [`DeleteLoggingConfigurationInput`](crate::input::DeleteLoggingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -598,6 +602,7 @@ impl DeleteLoggingConfigurationInput {
 pub mod delete_message_input {
     
     /// A builder for [`DeleteMessageInput`](crate::input::DeleteMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_identifier: std::option::Option<std::string::String>,
@@ -729,6 +734,7 @@ impl DeleteMessageInput {
 pub mod delete_room_input {
     
     /// A builder for [`DeleteRoomInput`](crate::input::DeleteRoomInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -836,6 +842,7 @@ impl DeleteRoomInput {
 pub mod disconnect_user_input {
     
     /// A builder for [`DisconnectUserInput`](crate::input::DisconnectUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_identifier: std::option::Option<std::string::String>,
@@ -967,6 +974,7 @@ impl DisconnectUserInput {
 pub mod get_logging_configuration_input {
     
     /// A builder for [`GetLoggingConfigurationInput`](crate::input::GetLoggingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -1074,6 +1082,7 @@ impl GetLoggingConfigurationInput {
 pub mod get_room_input {
     
     /// A builder for [`GetRoomInput`](crate::input::GetRoomInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -1181,6 +1190,7 @@ impl GetRoomInput {
 pub mod list_logging_configurations_input {
     
     /// A builder for [`ListLoggingConfigurationsInput`](crate::input::ListLoggingConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1301,6 +1311,7 @@ impl ListLoggingConfigurationsInput {
 pub mod list_rooms_input {
     
     /// A builder for [`ListRoomsInput`](crate::input::ListRoomsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1457,6 +1468,7 @@ impl ListRoomsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1566,6 +1578,7 @@ impl ListTagsForResourceInput {
 pub mod send_event_input {
     
     /// A builder for [`SendEventInput`](crate::input::SendEventInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_identifier: std::option::Option<std::string::String>,
@@ -1703,6 +1716,7 @@ impl SendEventInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1834,6 +1848,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1971,6 +1986,7 @@ impl UntagResourceInput {
 pub mod update_logging_configuration_input {
     
     /// A builder for [`UpdateLoggingConfigurationInput`](crate::input::UpdateLoggingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -2102,6 +2118,7 @@ impl UpdateLoggingConfigurationInput {
 pub mod update_room_input {
     
     /// A builder for [`UpdateRoomInput`](crate::input::UpdateRoomInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,

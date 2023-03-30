@@ -173,6 +173,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
     
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -255,6 +256,7 @@ impl std::error::Error for CloudHsmServiceException {}
 pub mod cloud_hsm_service_exception {
     
     /// A builder for [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -337,6 +339,7 @@ impl std::error::Error for CloudHsmInternalException {}
 pub mod cloud_hsm_internal_exception {
     
     /// A builder for [`CloudHsmInternalException`](crate::error::CloudHsmInternalException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

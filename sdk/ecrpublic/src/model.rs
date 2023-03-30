@@ -25,6 +25,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -137,6 +138,7 @@ impl RepositoryCatalogData {
 pub mod repository_catalog_data {
     
     /// A builder for [`RepositoryCatalogData`](crate::model::RepositoryCatalogData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -346,6 +348,7 @@ impl RepositoryCatalogDataInput {
 pub mod repository_catalog_data_input {
     
     /// A builder for [`RepositoryCatalogDataInput`](crate::model::RepositoryCatalogDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -504,6 +507,7 @@ impl RegistryCatalogData {
 pub mod registry_catalog_data {
     
     /// A builder for [`RegistryCatalogData`](crate::model::RegistryCatalogData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -586,6 +590,7 @@ impl Image {
 pub mod image {
     
     /// A builder for [`Image`](crate::model::Image).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -691,6 +696,7 @@ impl ImageIdentifier {
 pub mod image_identifier {
     
     /// A builder for [`ImageIdentifier`](crate::model::ImageIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_digest: std::option::Option<std::string::String>,
@@ -760,6 +766,7 @@ impl AuthorizationData {
 pub mod authorization_data {
     
     /// A builder for [`AuthorizationData`](crate::model::AuthorizationData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_token: std::option::Option<std::string::String>,
@@ -850,6 +857,7 @@ impl Repository {
 pub mod repository {
     
     /// A builder for [`Repository`](crate::model::Repository).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_arn: std::option::Option<std::string::String>,
@@ -976,6 +984,7 @@ impl Registry {
 pub mod registry {
     
     /// A builder for [`Registry`](crate::model::Registry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1105,6 +1114,7 @@ impl RegistryAlias {
 pub mod registry_alias {
     
     /// A builder for [`RegistryAlias`](crate::model::RegistryAlias).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1298,6 +1308,7 @@ impl ImageTagDetail {
 pub mod image_tag_detail {
     
     /// A builder for [`ImageTagDetail`](crate::model::ImageTagDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_tag: std::option::Option<std::string::String>,
@@ -1406,6 +1417,7 @@ impl ReferencedImageDetail {
 pub mod referenced_image_detail {
     
     /// A builder for [`ReferencedImageDetail`](crate::model::ReferencedImageDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_digest: std::option::Option<std::string::String>,
@@ -1565,6 +1577,7 @@ impl ImageDetail {
 pub mod image_detail {
     
     /// A builder for [`ImageDetail`](crate::model::ImageDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1725,6 +1738,7 @@ impl ImageFailure {
 pub mod image_failure {
     
     /// A builder for [`ImageFailure`](crate::model::ImageFailure).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<crate::model::ImageIdentifier>,
@@ -1920,6 +1934,7 @@ impl LayerFailure {
 pub mod layer_failure {
     
     /// A builder for [`LayerFailure`](crate::model::LayerFailure).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_digest: std::option::Option<std::string::String>,
@@ -2097,6 +2112,7 @@ impl Layer {
 pub mod layer {
     
     /// A builder for [`Layer`](crate::model::Layer).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_digest: std::option::Option<std::string::String>,

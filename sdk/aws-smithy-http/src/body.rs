@@ -277,6 +277,7 @@ mod test {
         assert_eq!(SdkBody::from("").size_hint().exact(), Some(0));
     }
 
+    #[allow(clippy::bool_assert_comparison)]
     #[test]
     fn valid_eos() {
         assert_eq!(SdkBody::from("hello").is_end_stream(), false);

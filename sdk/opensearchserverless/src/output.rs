@@ -24,6 +24,7 @@ impl ListVpcEndpointsOutput {
 pub mod list_vpc_endpoints_output {
     
     /// A builder for [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_summaries: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
@@ -92,6 +93,7 @@ impl CreateVpcEndpointOutput {
 pub mod create_vpc_endpoint_output {
     
     /// A builder for [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_vpc_endpoint_detail: std::option::Option<crate::model::CreateVpcEndpointDetail>,
@@ -142,6 +144,7 @@ impl DeleteVpcEndpointOutput {
 pub mod delete_vpc_endpoint_output {
     
     /// A builder for [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_vpc_endpoint_detail: std::option::Option<crate::model::DeleteVpcEndpointDetail>,
@@ -199,6 +202,7 @@ impl ListSecurityPoliciesOutput {
 pub mod list_security_policies_output {
     
     /// A builder for [`ListSecurityPoliciesOutput`](crate::output::ListSecurityPoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_policy_summaries: std::option::Option<std::vec::Vec<crate::model::SecurityPolicySummary>>,
@@ -258,6 +262,7 @@ pub struct DeleteSecurityPolicyOutput  {
 pub mod delete_security_policy_output {
     
     /// A builder for [`DeleteSecurityPolicyOutput`](crate::output::DeleteSecurityPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -296,6 +301,7 @@ impl UpdateSecurityPolicyOutput {
 pub mod update_security_policy_output {
     
     /// A builder for [`UpdateSecurityPolicyOutput`](crate::output::UpdateSecurityPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_policy_detail: std::option::Option<crate::model::SecurityPolicyDetail>,
@@ -346,6 +352,7 @@ impl GetSecurityPolicyOutput {
 pub mod get_security_policy_output {
     
     /// A builder for [`GetSecurityPolicyOutput`](crate::output::GetSecurityPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_policy_detail: std::option::Option<crate::model::SecurityPolicyDetail>,
@@ -403,6 +410,7 @@ impl ListSecurityConfigsOutput {
 pub mod list_security_configs_output {
     
     /// A builder for [`ListSecurityConfigsOutput`](crate::output::ListSecurityConfigsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_config_summaries: std::option::Option<std::vec::Vec<crate::model::SecurityConfigSummary>>,
@@ -471,6 +479,7 @@ impl CreateSecurityConfigOutput {
 pub mod create_security_config_output {
     
     /// A builder for [`CreateSecurityConfigOutput`](crate::output::CreateSecurityConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_config_detail: std::option::Option<crate::model::SecurityConfigDetail>,
@@ -512,6 +521,7 @@ pub struct DeleteSecurityConfigOutput  {
 pub mod delete_security_config_output {
     
     /// A builder for [`DeleteSecurityConfigOutput`](crate::output::DeleteSecurityConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -550,6 +560,7 @@ impl UpdateSecurityConfigOutput {
 pub mod update_security_config_output {
     
     /// A builder for [`UpdateSecurityConfigOutput`](crate::output::UpdateSecurityConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_config_detail: std::option::Option<crate::model::SecurityConfigDetail>,
@@ -600,6 +611,7 @@ impl GetSecurityConfigOutput {
 pub mod get_security_config_output {
     
     /// A builder for [`GetSecurityConfigOutput`](crate::output::GetSecurityConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_config_detail: std::option::Option<crate::model::SecurityConfigDetail>,
@@ -657,6 +669,7 @@ impl ListCollectionsOutput {
 pub mod list_collections_output {
     
     /// A builder for [`ListCollectionsOutput`](crate::output::ListCollectionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_summaries: std::option::Option<std::vec::Vec<crate::model::CollectionSummary>>,
@@ -725,6 +738,7 @@ impl CreateCollectionOutput {
 pub mod create_collection_output {
     
     /// A builder for [`CreateCollectionOutput`](crate::output::CreateCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_collection_detail: std::option::Option<crate::model::CreateCollectionDetail>,
@@ -775,6 +789,7 @@ impl DeleteCollectionOutput {
 pub mod delete_collection_output {
     
     /// A builder for [`DeleteCollectionOutput`](crate::output::DeleteCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_collection_detail: std::option::Option<crate::model::DeleteCollectionDetail>,
@@ -825,6 +840,7 @@ impl UpdateCollectionOutput {
 pub mod update_collection_output {
     
     /// A builder for [`UpdateCollectionOutput`](crate::output::UpdateCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_collection_detail: std::option::Option<crate::model::UpdateCollectionDetail>,
@@ -882,6 +898,7 @@ impl ListAccessPoliciesOutput {
 pub mod list_access_policies_output {
     
     /// A builder for [`ListAccessPoliciesOutput`](crate::output::ListAccessPoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policy_summaries: std::option::Option<std::vec::Vec<crate::model::AccessPolicySummary>>,
@@ -950,6 +967,7 @@ impl CreateAccessPolicyOutput {
 pub mod create_access_policy_output {
     
     /// A builder for [`CreateAccessPolicyOutput`](crate::output::CreateAccessPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policy_detail: std::option::Option<crate::model::AccessPolicyDetail>,
@@ -991,6 +1009,7 @@ pub struct DeleteAccessPolicyOutput  {
 pub mod delete_access_policy_output {
     
     /// A builder for [`DeleteAccessPolicyOutput`](crate::output::DeleteAccessPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1029,6 +1048,7 @@ impl UpdateAccessPolicyOutput {
 pub mod update_access_policy_output {
     
     /// A builder for [`UpdateAccessPolicyOutput`](crate::output::UpdateAccessPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policy_detail: std::option::Option<crate::model::AccessPolicyDetail>,
@@ -1079,6 +1099,7 @@ impl GetAccessPolicyOutput {
 pub mod get_access_policy_output {
     
     /// A builder for [`GetAccessPolicyOutput`](crate::output::GetAccessPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policy_detail: std::option::Option<crate::model::AccessPolicyDetail>,
@@ -1129,6 +1150,7 @@ impl UpdateVpcEndpointOutput {
 pub mod update_vpc_endpoint_output {
     
     /// A builder for [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_vpc_endpoint_detail: std::option::Option<crate::model::UpdateVpcEndpointDetail>,
@@ -1179,6 +1201,7 @@ impl UpdateAccountSettingsOutput {
 pub mod update_account_settings_output {
     
     /// A builder for [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_settings_detail: std::option::Option<crate::model::AccountSettingsDetail>,
@@ -1220,6 +1243,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1249,6 +1273,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1287,6 +1312,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1364,6 +1390,7 @@ impl GetPoliciesStatsOutput {
 pub mod get_policies_stats_output {
     
     /// A builder for [`GetPoliciesStatsOutput`](crate::output::GetPoliciesStatsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policy_stats: std::option::Option<crate::model::AccessPolicyStats>,
@@ -1450,6 +1477,7 @@ impl GetAccountSettingsOutput {
 pub mod get_account_settings_output {
     
     /// A builder for [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_settings_detail: std::option::Option<crate::model::AccountSettingsDetail>,
@@ -1500,6 +1528,7 @@ impl CreateSecurityPolicyOutput {
 pub mod create_security_policy_output {
     
     /// A builder for [`CreateSecurityPolicyOutput`](crate::output::CreateSecurityPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_policy_detail: std::option::Option<crate::model::SecurityPolicyDetail>,
@@ -1557,6 +1586,7 @@ impl BatchGetVpcEndpointOutput {
 pub mod batch_get_vpc_endpoint_output {
     
     /// A builder for [`BatchGetVpcEndpointOutput`](crate::output::BatchGetVpcEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_details: std::option::Option<std::vec::Vec<crate::model::VpcEndpointDetail>>,
@@ -1638,6 +1668,7 @@ impl BatchGetCollectionOutput {
 pub mod batch_get_collection_output {
     
     /// A builder for [`BatchGetCollectionOutput`](crate::output::BatchGetCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_details: std::option::Option<std::vec::Vec<crate::model::CollectionDetail>>,

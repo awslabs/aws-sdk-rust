@@ -149,6 +149,7 @@ impl std::error::Error for InvalidResourceException {}
 pub mod invalid_resource_exception {
     
     /// A builder for [`InvalidResourceException`](crate::error::InvalidResourceException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -346,6 +347,7 @@ impl std::error::Error for InvalidJobStateException {}
 pub mod invalid_job_state_exception {
     
     /// A builder for [`InvalidJobStateException`](crate::error::InvalidJobStateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -579,6 +581,7 @@ impl std::error::Error for KmsRequestFailedException {}
 pub mod kms_request_failed_exception {
     
     /// A builder for [`KmsRequestFailedException`](crate::error::KmsRequestFailedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -639,6 +642,7 @@ impl std::error::Error for InvalidInputCombinationException {}
 pub mod invalid_input_combination_exception {
     
     /// A builder for [`InvalidInputCombinationException`](crate::error::InvalidInputCombinationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -699,6 +703,7 @@ impl std::error::Error for Ec2RequestFailedException {}
 pub mod ec2_request_failed_exception {
     
     /// A builder for [`Ec2RequestFailedException`](crate::error::Ec2RequestFailedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -759,6 +764,7 @@ impl std::error::Error for ClusterLimitExceededException {}
 pub mod cluster_limit_exceeded_exception {
     
     /// A builder for [`ClusterLimitExceededException`](crate::error::ClusterLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1105,6 +1111,7 @@ impl std::error::Error for InvalidNextTokenException {}
 pub mod invalid_next_token_exception {
     
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2263,6 +2270,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
     
     /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conflict_resource: std::option::Option<std::string::String>,
@@ -2960,6 +2968,7 @@ impl std::error::Error for ReturnShippingLabelAlreadyExistsException {}
 pub mod return_shipping_label_already_exists_exception {
     
     /// A builder for [`ReturnShippingLabelAlreadyExistsException`](crate::error::ReturnShippingLabelAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3568,6 +3577,7 @@ impl std::error::Error for UnsupportedAddressException {}
 pub mod unsupported_address_exception {
     
     /// A builder for [`UnsupportedAddressException`](crate::error::UnsupportedAddressException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3628,6 +3638,7 @@ impl std::error::Error for InvalidAddressException {}
 pub mod invalid_address_exception {
     
     /// A builder for [`InvalidAddressException`](crate::error::InvalidAddressException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

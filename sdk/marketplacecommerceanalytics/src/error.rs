@@ -140,6 +140,7 @@ impl std::error::Error for MarketplaceCommerceAnalyticsException {}
 pub mod marketplace_commerce_analytics_exception {
     
     /// A builder for [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

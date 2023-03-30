@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
     
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -200,6 +201,7 @@ impl ConnectivityInfo {
 pub mod connectivity_info {
     
     /// A builder for [`ConnectivityInfo`](crate::model::ConnectivityInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -332,6 +334,7 @@ impl ResolvedComponentVersion {
 pub mod resolved_component_version {
     
     /// A builder for [`ResolvedComponentVersion`](crate::model::ResolvedComponentVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -555,6 +558,7 @@ impl ComponentCandidate {
 pub mod component_candidate {
     
     /// A builder for [`ComponentCandidate`](crate::model::ComponentCandidate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
@@ -646,6 +650,7 @@ impl ComponentPlatform {
 pub mod component_platform {
     
     /// A builder for [`ComponentPlatform`](crate::model::ComponentPlatform).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -780,6 +785,7 @@ impl InstalledComponent {
 pub mod installed_component {
     
     /// A builder for [`InstalledComponent`](crate::model::InstalledComponent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
@@ -1205,6 +1211,7 @@ impl EffectiveDeployment {
 pub mod effective_deployment {
     
     /// A builder for [`EffectiveDeployment`](crate::model::EffectiveDeployment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
@@ -1384,6 +1391,7 @@ impl EffectiveDeploymentStatusDetails {
 pub mod effective_deployment_status_details {
     
     /// A builder for [`EffectiveDeploymentStatusDetails`](crate::model::EffectiveDeploymentStatusDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_stack: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1614,6 +1622,7 @@ impl Deployment {
 pub mod deployment {
     
     /// A builder for [`Deployment`](crate::model::Deployment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -1950,6 +1959,7 @@ impl CoreDevice {
 pub mod core_device {
     
     /// A builder for [`CoreDevice`](crate::model::CoreDevice).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_device_thing_name: std::option::Option<std::string::String>,
@@ -2128,6 +2138,7 @@ impl ComponentVersionListItem {
 pub mod component_version_list_item {
     
     /// A builder for [`ComponentVersionListItem`](crate::model::ComponentVersionListItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
@@ -2216,6 +2227,7 @@ impl Component {
 pub mod component {
     
     /// A builder for [`Component`](crate::model::Component).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2325,6 +2337,7 @@ impl ComponentLatestVersion {
 pub mod component_latest_version {
     
     /// A builder for [`ComponentLatestVersion`](crate::model::ComponentLatestVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2530,6 +2543,7 @@ impl AssociatedClientDevice {
 pub mod associated_client_device {
     
     /// A builder for [`AssociatedClientDevice`](crate::model::AssociatedClientDevice).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -2606,6 +2620,7 @@ impl DeploymentIoTJobConfiguration {
 pub mod deployment_io_t_job_configuration {
     
     /// A builder for [`DeploymentIoTJobConfiguration`](crate::model::DeploymentIoTJobConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_executions_rollout_config: std::option::Option<crate::model::IoTJobExecutionsRolloutConfig>,
@@ -2682,6 +2697,7 @@ impl IoTJobTimeoutConfig {
 pub mod io_t_job_timeout_config {
     
     /// A builder for [`IoTJobTimeoutConfig`](crate::model::IoTJobTimeoutConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) in_progress_timeout_in_minutes: std::option::Option<i64>,
@@ -2734,6 +2750,7 @@ impl IoTJobAbortConfig {
 pub mod io_t_job_abort_config {
     
     /// A builder for [`IoTJobAbortConfig`](crate::model::IoTJobAbortConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) criteria_list: std::option::Option<std::vec::Vec<crate::model::IoTJobAbortCriteria>>,
@@ -2818,6 +2835,7 @@ impl IoTJobAbortCriteria {
 pub mod io_t_job_abort_criteria {
     
     /// A builder for [`IoTJobAbortCriteria`](crate::model::IoTJobAbortCriteria).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failure_type: std::option::Option<crate::model::IoTJobExecutionFailureType>,
@@ -3084,6 +3102,7 @@ impl IoTJobExecutionsRolloutConfig {
 pub mod io_t_job_executions_rollout_config {
     
     /// A builder for [`IoTJobExecutionsRolloutConfig`](crate::model::IoTJobExecutionsRolloutConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exponential_rate: std::option::Option<crate::model::IoTJobExponentialRolloutRate>,
@@ -3162,6 +3181,7 @@ impl IoTJobExponentialRolloutRate {
 pub mod io_t_job_exponential_rollout_rate {
     
     /// A builder for [`IoTJobExponentialRolloutRate`](crate::model::IoTJobExponentialRolloutRate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_rate_per_minute: std::option::Option<i32>,
@@ -3247,6 +3267,7 @@ impl IoTJobRateIncreaseCriteria {
 pub mod io_t_job_rate_increase_criteria {
     
     /// A builder for [`IoTJobRateIncreaseCriteria`](crate::model::IoTJobRateIncreaseCriteria).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_of_notified_things: std::option::Option<i32>,
@@ -3325,6 +3346,7 @@ impl DeploymentPolicies {
 pub mod deployment_policies {
     
     /// A builder for [`DeploymentPolicies`](crate::model::DeploymentPolicies).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failure_handling_policy: std::option::Option<crate::model::DeploymentFailureHandlingPolicy>,
@@ -3403,6 +3425,7 @@ impl DeploymentConfigurationValidationPolicy {
 pub mod deployment_configuration_validation_policy {
     
     /// A builder for [`DeploymentConfigurationValidationPolicy`](crate::model::DeploymentConfigurationValidationPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_in_seconds: std::option::Option<i32>,
@@ -3475,6 +3498,7 @@ impl DeploymentComponentUpdatePolicy {
 pub mod deployment_component_update_policy {
     
     /// A builder for [`DeploymentComponentUpdatePolicy`](crate::model::DeploymentComponentUpdatePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_in_seconds: std::option::Option<i32>,
@@ -3727,6 +3751,7 @@ impl ComponentDeploymentSpecification {
 pub mod component_deployment_specification {
     
     /// A builder for [`ComponentDeploymentSpecification`](crate::model::ComponentDeploymentSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_version: std::option::Option<std::string::String>,
@@ -3821,6 +3846,7 @@ impl ComponentRunWith {
 pub mod component_run_with {
     
     /// A builder for [`ComponentRunWith`](crate::model::ComponentRunWith).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) posix_user: std::option::Option<std::string::String>,
@@ -3908,6 +3934,7 @@ impl SystemResourceLimits {
 pub mod system_resource_limits {
     
     /// A builder for [`SystemResourceLimits`](crate::model::SystemResourceLimits).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) memory: std::option::Option<i64>,
@@ -3979,6 +4006,7 @@ impl ComponentConfigurationUpdate {
 pub mod component_configuration_update {
     
     /// A builder for [`ComponentConfigurationUpdate`](crate::model::ComponentConfigurationUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) merge: std::option::Option<std::string::String>,
@@ -4167,6 +4195,7 @@ impl CloudComponentStatus {
 pub mod cloud_component_status {
     
     /// A builder for [`CloudComponentStatus`](crate::model::CloudComponentStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_state: std::option::Option<crate::model::CloudComponentState>,
@@ -4417,6 +4446,7 @@ impl LambdaFunctionRecipeSource {
 pub mod lambda_function_recipe_source {
     
     /// A builder for [`LambdaFunctionRecipeSource`](crate::model::LambdaFunctionRecipeSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_arn: std::option::Option<std::string::String>,
@@ -4625,6 +4655,7 @@ impl LambdaExecutionParameters {
 pub mod lambda_execution_parameters {
     
     /// A builder for [`LambdaExecutionParameters`](crate::model::LambdaExecutionParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_sources: std::option::Option<std::vec::Vec<crate::model::LambdaEventSource>>,
@@ -4834,6 +4865,7 @@ impl LambdaLinuxProcessParams {
 pub mod lambda_linux_process_params {
     
     /// A builder for [`LambdaLinuxProcessParams`](crate::model::LambdaLinuxProcessParams).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) isolation_mode: std::option::Option<crate::model::LambdaIsolationMode>,
@@ -4923,6 +4955,7 @@ impl LambdaContainerParams {
 pub mod lambda_container_params {
     
     /// A builder for [`LambdaContainerParams`](crate::model::LambdaContainerParams).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) memory_size_in_kb: std::option::Option<i32>,
@@ -5043,6 +5076,7 @@ impl LambdaDeviceMount {
 pub mod lambda_device_mount {
     
     /// A builder for [`LambdaDeviceMount`](crate::model::LambdaDeviceMount).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -5228,6 +5262,7 @@ impl LambdaVolumeMount {
 pub mod lambda_volume_mount {
     
     /// A builder for [`LambdaVolumeMount`](crate::model::LambdaVolumeMount).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_path: std::option::Option<std::string::String>,
@@ -5497,6 +5532,7 @@ impl LambdaEventSource {
 pub mod lambda_event_source {
     
     /// A builder for [`LambdaEventSource`](crate::model::LambdaEventSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
@@ -5668,6 +5704,7 @@ impl ComponentDependencyRequirement {
 pub mod component_dependency_requirement {
     
     /// A builder for [`ComponentDependencyRequirement`](crate::model::ComponentDependencyRequirement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_requirement: std::option::Option<std::string::String>,
@@ -5838,6 +5875,7 @@ impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
 pub mod disassociate_client_device_from_core_device_error_entry {
     
     /// A builder for [`DisassociateClientDeviceFromCoreDeviceErrorEntry`](crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -5912,6 +5950,7 @@ impl DisassociateClientDeviceFromCoreDeviceEntry {
 pub mod disassociate_client_device_from_core_device_entry {
     
     /// A builder for [`DisassociateClientDeviceFromCoreDeviceEntry`](crate::model::DisassociateClientDeviceFromCoreDeviceEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -5976,6 +6015,7 @@ impl AssociateClientDeviceWithCoreDeviceErrorEntry {
 pub mod associate_client_device_with_core_device_error_entry {
     
     /// A builder for [`AssociateClientDeviceWithCoreDeviceErrorEntry`](crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -6050,6 +6090,7 @@ impl AssociateClientDeviceWithCoreDeviceEntry {
 pub mod associate_client_device_with_core_device_entry {
     
     /// A builder for [`AssociateClientDeviceWithCoreDeviceEntry`](crate::model::AssociateClientDeviceWithCoreDeviceEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,

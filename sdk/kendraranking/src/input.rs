@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_rescore_execution_plan_input {
     
     /// A builder for [`CreateRescoreExecutionPlanInput`](crate::input::CreateRescoreExecutionPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -173,6 +174,7 @@ impl CreateRescoreExecutionPlanInput {
 pub mod delete_rescore_execution_plan_input {
     
     /// A builder for [`DeleteRescoreExecutionPlanInput`](crate::input::DeleteRescoreExecutionPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -284,6 +286,7 @@ impl DeleteRescoreExecutionPlanInput {
 pub mod describe_rescore_execution_plan_input {
     
     /// A builder for [`DescribeRescoreExecutionPlanInput`](crate::input::DescribeRescoreExecutionPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -395,6 +398,7 @@ impl DescribeRescoreExecutionPlanInput {
 pub mod list_rescore_execution_plans_input {
     
     /// A builder for [`ListRescoreExecutionPlansInput`](crate::input::ListRescoreExecutionPlansInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -533,6 +537,7 @@ impl ListRescoreExecutionPlansInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -644,6 +649,7 @@ impl ListTagsForResourceInput {
 pub mod rescore_input {
     
     /// A builder for [`RescoreInput`](crate::input::RescoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rescore_execution_plan_id: std::option::Option<std::string::String>,
@@ -785,6 +791,7 @@ impl RescoreInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -914,6 +921,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1043,6 +1051,7 @@ impl UntagResourceInput {
 pub mod update_rescore_execution_plan_input {
     
     /// A builder for [`UpdateRescoreExecutionPlanInput`](crate::input::UpdateRescoreExecutionPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

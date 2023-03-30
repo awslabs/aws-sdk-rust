@@ -46,6 +46,7 @@ impl IdentityProviderSummary {
 pub mod identity_provider_summary {
     
     /// A builder for [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProvider>,
@@ -151,6 +152,7 @@ impl Settings {
 pub mod settings {
     
     /// A builder for [`Settings`](crate::model::Settings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -252,6 +254,7 @@ impl ActiveDirectoryIdentityProvider {
 pub mod active_directory_identity_provider {
     
     /// A builder for [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -316,6 +319,7 @@ impl UpdateSettings {
 pub mod update_settings {
     
     /// A builder for [`UpdateSettings`](crate::model::UpdateSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -451,6 +455,7 @@ impl ProductUserSummary {
 pub mod product_user_summary {
     
     /// A builder for [`ProductUserSummary`](crate::model::ProductUserSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -634,6 +639,7 @@ impl InstanceUserSummary {
 pub mod instance_user_summary {
     
     /// A builder for [`InstanceUserSummary`](crate::model::InstanceUserSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -782,6 +788,7 @@ impl Filter {
 pub mod filter {
     
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute: std::option::Option<std::string::String>,
@@ -884,6 +891,7 @@ impl InstanceSummary {
 pub mod instance_summary {
     
     /// A builder for [`InstanceSummary`](crate::model::InstanceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,

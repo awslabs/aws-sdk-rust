@@ -25,6 +25,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -94,6 +95,7 @@ impl DestinationConfig {
 pub mod destination_config {
     
     /// A builder for [`DestinationConfig`](crate::model::DestinationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -249,6 +251,7 @@ impl TimeoutConfig {
 pub mod timeout_config {
     
     /// A builder for [`TimeoutConfig`](crate::model::TimeoutConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_lifetime_timeout_minutes: std::option::Option<i32>,
@@ -334,6 +337,7 @@ impl TunnelSummary {
 pub mod tunnel_summary {
     
     /// A builder for [`TunnelSummary`](crate::model::TunnelSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
@@ -596,6 +600,7 @@ impl Tunnel {
 pub mod tunnel {
     
     /// A builder for [`Tunnel`](crate::model::Tunnel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
@@ -779,6 +784,7 @@ impl ConnectionState {
 pub mod connection_state {
     
     /// A builder for [`ConnectionState`](crate::model::ConnectionState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,

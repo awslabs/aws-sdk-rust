@@ -8,6 +8,7 @@ pub struct UpdateResourceOutput  {
 pub mod update_resource_output {
     
     /// A builder for [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UpdatePrimaryEmailAddressOutput  {
 pub mod update_primary_email_address_output {
     
     /// A builder for [`UpdatePrimaryEmailAddressOutput`](crate::output::UpdatePrimaryEmailAddressOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct UpdateMobileDeviceAccessRuleOutput  {
 pub mod update_mobile_device_access_rule_output {
     
     /// A builder for [`UpdateMobileDeviceAccessRuleOutput`](crate::output::UpdateMobileDeviceAccessRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -95,6 +98,7 @@ pub struct UpdateMailboxQuotaOutput  {
 pub mod update_mailbox_quota_output {
     
     /// A builder for [`UpdateMailboxQuotaOutput`](crate::output::UpdateMailboxQuotaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -124,6 +128,7 @@ pub struct UpdateImpersonationRoleOutput  {
 pub mod update_impersonation_role_output {
     
     /// A builder for [`UpdateImpersonationRoleOutput`](crate::output::UpdateImpersonationRoleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -153,6 +158,7 @@ pub struct UpdateDefaultMailDomainOutput  {
 pub mod update_default_mail_domain_output {
     
     /// A builder for [`UpdateDefaultMailDomainOutput`](crate::output::UpdateDefaultMailDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -182,6 +188,7 @@ pub struct UpdateAvailabilityConfigurationOutput  {
 pub mod update_availability_configuration_output {
     
     /// A builder for [`UpdateAvailabilityConfigurationOutput`](crate::output::UpdateAvailabilityConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -211,6 +218,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -256,6 +264,7 @@ impl TestAvailabilityConfigurationOutput {
 pub mod test_availability_configuration_output {
     
     /// A builder for [`TestAvailabilityConfigurationOutput`](crate::output::TestAvailabilityConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) test_passed: std::option::Option<bool>,
@@ -310,6 +319,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -348,6 +358,7 @@ impl StartMailboxExportJobOutput {
 pub mod start_mailbox_export_job_output {
     
     /// A builder for [`StartMailboxExportJobOutput`](crate::output::StartMailboxExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -389,6 +400,7 @@ pub struct ResetPasswordOutput  {
 pub mod reset_password_output {
     
     /// A builder for [`ResetPasswordOutput`](crate::output::ResetPasswordOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -418,6 +430,7 @@ pub struct RegisterToWorkMailOutput  {
 pub mod register_to_work_mail_output {
     
     /// A builder for [`RegisterToWorkMailOutput`](crate::output::RegisterToWorkMailOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -447,6 +460,7 @@ pub struct RegisterMailDomainOutput  {
 pub mod register_mail_domain_output {
     
     /// A builder for [`RegisterMailDomainOutput`](crate::output::RegisterMailDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -476,6 +490,7 @@ pub struct PutRetentionPolicyOutput  {
 pub mod put_retention_policy_output {
     
     /// A builder for [`PutRetentionPolicyOutput`](crate::output::PutRetentionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -505,6 +520,7 @@ pub struct PutMobileDeviceAccessOverrideOutput  {
 pub mod put_mobile_device_access_override_output {
     
     /// A builder for [`PutMobileDeviceAccessOverrideOutput`](crate::output::PutMobileDeviceAccessOverrideOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -534,6 +550,7 @@ pub struct PutMailboxPermissionsOutput  {
 pub mod put_mailbox_permissions_output {
     
     /// A builder for [`PutMailboxPermissionsOutput`](crate::output::PutMailboxPermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -563,6 +580,7 @@ pub struct PutInboundDmarcSettingsOutput  {
 pub mod put_inbound_dmarc_settings_output {
     
     /// A builder for [`PutInboundDmarcSettingsOutput`](crate::output::PutInboundDmarcSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -592,6 +610,7 @@ pub struct PutEmailMonitoringConfigurationOutput  {
 pub mod put_email_monitoring_configuration_output {
     
     /// A builder for [`PutEmailMonitoringConfigurationOutput`](crate::output::PutEmailMonitoringConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -621,6 +640,7 @@ pub struct PutAccessControlRuleOutput  {
 pub mod put_access_control_rule_output {
     
     /// A builder for [`PutAccessControlRuleOutput`](crate::output::PutAccessControlRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -666,6 +686,7 @@ impl ListUsersOutput {
 pub mod list_users_output {
     
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -734,6 +755,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -797,6 +819,7 @@ impl ListResourcesOutput {
 pub mod list_resources_output {
     
     /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -872,6 +895,7 @@ impl ListResourceDelegatesOutput {
 pub mod list_resource_delegates_output {
     
     /// A builder for [`ListResourceDelegatesOutput`](crate::output::ListResourceDelegatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegates: std::option::Option<std::vec::Vec<crate::model::Delegate>>,
@@ -947,6 +971,7 @@ impl ListOrganizationsOutput {
 pub mod list_organizations_output {
     
     /// A builder for [`ListOrganizationsOutput`](crate::output::ListOrganizationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_summaries: std::option::Option<std::vec::Vec<crate::model::OrganizationSummary>>,
@@ -1015,6 +1040,7 @@ impl ListMobileDeviceAccessRulesOutput {
 pub mod list_mobile_device_access_rules_output {
     
     /// A builder for [`ListMobileDeviceAccessRulesOutput`](crate::output::ListMobileDeviceAccessRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessRule>>,
@@ -1078,6 +1104,7 @@ impl ListMobileDeviceAccessOverridesOutput {
 pub mod list_mobile_device_access_overrides_output {
     
     /// A builder for [`ListMobileDeviceAccessOverridesOutput`](crate::output::ListMobileDeviceAccessOverridesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) overrides: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessOverride>>,
@@ -1153,6 +1180,7 @@ impl ListMailDomainsOutput {
 pub mod list_mail_domains_output {
     
     /// A builder for [`ListMailDomainsOutput`](crate::output::ListMailDomainsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mail_domains: std::option::Option<std::vec::Vec<crate::model::MailDomainSummary>>,
@@ -1228,6 +1256,7 @@ impl ListMailboxPermissionsOutput {
 pub mod list_mailbox_permissions_output {
     
     /// A builder for [`ListMailboxPermissionsOutput`](crate::output::ListMailboxPermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -1303,6 +1332,7 @@ impl ListMailboxExportJobsOutput {
 pub mod list_mailbox_export_jobs_output {
     
     /// A builder for [`ListMailboxExportJobsOutput`](crate::output::ListMailboxExportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::MailboxExportJob>>,
@@ -1378,6 +1408,7 @@ impl ListImpersonationRolesOutput {
 pub mod list_impersonation_roles_output {
     
     /// A builder for [`ListImpersonationRolesOutput`](crate::output::ListImpersonationRolesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) roles: std::option::Option<std::vec::Vec<crate::model::ImpersonationRole>>,
@@ -1453,6 +1484,7 @@ impl ListGroupsOutput {
 pub mod list_groups_output {
     
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -1528,6 +1560,7 @@ impl ListGroupMembersOutput {
 pub mod list_group_members_output {
     
     /// A builder for [`ListGroupMembersOutput`](crate::output::ListGroupMembersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) members: std::option::Option<std::vec::Vec<crate::model::Member>>,
@@ -1603,6 +1636,7 @@ impl ListAvailabilityConfigurationsOutput {
 pub mod list_availability_configurations_output {
     
     /// A builder for [`ListAvailabilityConfigurationsOutput`](crate::output::ListAvailabilityConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_configurations: std::option::Option<std::vec::Vec<crate::model::AvailabilityConfiguration>>,
@@ -1678,6 +1712,7 @@ impl ListAliasesOutput {
 pub mod list_aliases_output {
     
     /// A builder for [`ListAliasesOutput`](crate::output::ListAliasesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aliases: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1746,6 +1781,7 @@ impl ListAccessControlRulesOutput {
 pub mod list_access_control_rules_output {
     
     /// A builder for [`ListAccessControlRulesOutput`](crate::output::ListAccessControlRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::AccessControlRule>>,
@@ -1837,6 +1873,7 @@ impl GetMobileDeviceAccessOverrideOutput {
 pub mod get_mobile_device_access_override_output {
     
     /// A builder for [`GetMobileDeviceAccessOverrideOutput`](crate::output::GetMobileDeviceAccessOverrideOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -1954,6 +1991,7 @@ impl GetMobileDeviceAccessEffectOutput {
 pub mod get_mobile_device_access_effect_output {
     
     /// A builder for [`GetMobileDeviceAccessEffectOutput`](crate::output::GetMobileDeviceAccessEffectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
@@ -2050,6 +2088,7 @@ impl GetMailDomainOutput {
 pub mod get_mail_domain_output {
     
     /// A builder for [`GetMailDomainOutput`](crate::output::GetMailDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
@@ -2163,6 +2202,7 @@ impl GetMailboxDetailsOutput {
 pub mod get_mailbox_details_output {
     
     /// A builder for [`GetMailboxDetailsOutput`](crate::output::GetMailboxDetailsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mailbox_quota: std::option::Option<i32>,
@@ -2240,6 +2280,7 @@ impl GetImpersonationRoleEffectOutput {
 pub mod get_impersonation_role_effect_output {
     
     /// A builder for [`GetImpersonationRoleEffectOutput`](crate::output::GetImpersonationRoleEffectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ImpersonationRoleType>,
@@ -2362,6 +2403,7 @@ impl GetImpersonationRoleOutput {
 pub mod get_impersonation_role_output {
     
     /// A builder for [`GetImpersonationRoleOutput`](crate::output::GetImpersonationRoleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
@@ -2511,6 +2553,7 @@ impl GetDefaultRetentionPolicyOutput {
 pub mod get_default_retention_policy_output {
     
     /// A builder for [`GetDefaultRetentionPolicyOutput`](crate::output::GetDefaultRetentionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2610,6 +2653,7 @@ impl GetAccessControlEffectOutput {
 pub mod get_access_control_effect_output {
     
     /// A builder for [`GetAccessControlEffectOutput`](crate::output::GetAccessControlEffectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) effect: std::option::Option<crate::model::AccessControlRuleEffect>,
@@ -2669,6 +2713,7 @@ pub struct DisassociateMemberFromGroupOutput  {
 pub mod disassociate_member_from_group_output {
     
     /// A builder for [`DisassociateMemberFromGroupOutput`](crate::output::DisassociateMemberFromGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2698,6 +2743,7 @@ pub struct DisassociateDelegateFromResourceOutput  {
 pub mod disassociate_delegate_from_resource_output {
     
     /// A builder for [`DisassociateDelegateFromResourceOutput`](crate::output::DisassociateDelegateFromResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2785,6 +2831,7 @@ impl DescribeUserOutput {
 pub mod describe_user_output {
     
     /// A builder for [`DescribeUserOutput`](crate::output::DescribeUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -2968,6 +3015,7 @@ impl DescribeResourceOutput {
 pub mod describe_resource_output {
     
     /// A builder for [`DescribeResourceOutput`](crate::output::DescribeResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -3158,6 +3206,7 @@ impl DescribeOrganizationOutput {
 pub mod describe_organization_output {
     
     /// A builder for [`DescribeOrganizationOutput`](crate::output::DescribeOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -3381,6 +3430,7 @@ impl DescribeMailboxExportJobOutput {
 pub mod describe_mailbox_export_job_output {
     
     /// A builder for [`DescribeMailboxExportJobOutput`](crate::output::DescribeMailboxExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -3564,6 +3614,7 @@ impl DescribeInboundDmarcSettingsOutput {
 pub mod describe_inbound_dmarc_settings_output {
     
     /// A builder for [`DescribeInboundDmarcSettingsOutput`](crate::output::DescribeInboundDmarcSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforced: std::option::Option<bool>,
@@ -3650,6 +3701,7 @@ impl DescribeGroupOutput {
 pub mod describe_group_output {
     
     /// A builder for [`DescribeGroupOutput`](crate::output::DescribeGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -3767,6 +3819,7 @@ impl DescribeEmailMonitoringConfigurationOutput {
 pub mod describe_email_monitoring_configuration_output {
     
     /// A builder for [`DescribeEmailMonitoringConfigurationOutput`](crate::output::DescribeEmailMonitoringConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -3820,6 +3873,7 @@ pub struct DeregisterMailDomainOutput  {
 pub mod deregister_mail_domain_output {
     
     /// A builder for [`DeregisterMailDomainOutput`](crate::output::DeregisterMailDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3849,6 +3903,7 @@ pub struct DeregisterFromWorkMailOutput  {
 pub mod deregister_from_work_mail_output {
     
     /// A builder for [`DeregisterFromWorkMailOutput`](crate::output::DeregisterFromWorkMailOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3878,6 +3933,7 @@ pub struct DeleteUserOutput  {
 pub mod delete_user_output {
     
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3907,6 +3963,7 @@ pub struct DeleteRetentionPolicyOutput  {
 pub mod delete_retention_policy_output {
     
     /// A builder for [`DeleteRetentionPolicyOutput`](crate::output::DeleteRetentionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3936,6 +3993,7 @@ pub struct DeleteResourceOutput  {
 pub mod delete_resource_output {
     
     /// A builder for [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3981,6 +4039,7 @@ impl DeleteOrganizationOutput {
 pub mod delete_organization_output {
     
     /// A builder for [`DeleteOrganizationOutput`](crate::output::DeleteOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -4034,6 +4093,7 @@ pub struct DeleteMobileDeviceAccessRuleOutput  {
 pub mod delete_mobile_device_access_rule_output {
     
     /// A builder for [`DeleteMobileDeviceAccessRuleOutput`](crate::output::DeleteMobileDeviceAccessRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4063,6 +4123,7 @@ pub struct DeleteMobileDeviceAccessOverrideOutput  {
 pub mod delete_mobile_device_access_override_output {
     
     /// A builder for [`DeleteMobileDeviceAccessOverrideOutput`](crate::output::DeleteMobileDeviceAccessOverrideOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4092,6 +4153,7 @@ pub struct DeleteMailboxPermissionsOutput  {
 pub mod delete_mailbox_permissions_output {
     
     /// A builder for [`DeleteMailboxPermissionsOutput`](crate::output::DeleteMailboxPermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4121,6 +4183,7 @@ pub struct DeleteImpersonationRoleOutput  {
 pub mod delete_impersonation_role_output {
     
     /// A builder for [`DeleteImpersonationRoleOutput`](crate::output::DeleteImpersonationRoleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4150,6 +4213,7 @@ pub struct DeleteGroupOutput  {
 pub mod delete_group_output {
     
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4179,6 +4243,7 @@ pub struct DeleteEmailMonitoringConfigurationOutput  {
 pub mod delete_email_monitoring_configuration_output {
     
     /// A builder for [`DeleteEmailMonitoringConfigurationOutput`](crate::output::DeleteEmailMonitoringConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4208,6 +4273,7 @@ pub struct DeleteAvailabilityConfigurationOutput  {
 pub mod delete_availability_configuration_output {
     
     /// A builder for [`DeleteAvailabilityConfigurationOutput`](crate::output::DeleteAvailabilityConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4237,6 +4303,7 @@ pub struct DeleteAliasOutput  {
 pub mod delete_alias_output {
     
     /// A builder for [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4266,6 +4333,7 @@ pub struct DeleteAccessControlRuleOutput  {
 pub mod delete_access_control_rule_output {
     
     /// A builder for [`DeleteAccessControlRuleOutput`](crate::output::DeleteAccessControlRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4304,6 +4372,7 @@ impl CreateUserOutput {
 pub mod create_user_output {
     
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -4354,6 +4423,7 @@ impl CreateResourceOutput {
 pub mod create_resource_output {
     
     /// A builder for [`CreateResourceOutput`](crate::output::CreateResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -4404,6 +4474,7 @@ impl CreateOrganizationOutput {
 pub mod create_organization_output {
     
     /// A builder for [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -4454,6 +4525,7 @@ impl CreateMobileDeviceAccessRuleOutput {
 pub mod create_mobile_device_access_rule_output {
     
     /// A builder for [`CreateMobileDeviceAccessRuleOutput`](crate::output::CreateMobileDeviceAccessRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mobile_device_access_rule_id: std::option::Option<std::string::String>,
@@ -4504,6 +4576,7 @@ impl CreateImpersonationRoleOutput {
 pub mod create_impersonation_role_output {
     
     /// A builder for [`CreateImpersonationRoleOutput`](crate::output::CreateImpersonationRoleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
@@ -4554,6 +4627,7 @@ impl CreateGroupOutput {
 pub mod create_group_output {
     
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -4595,6 +4669,7 @@ pub struct CreateAvailabilityConfigurationOutput  {
 pub mod create_availability_configuration_output {
     
     /// A builder for [`CreateAvailabilityConfigurationOutput`](crate::output::CreateAvailabilityConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4624,6 +4699,7 @@ pub struct CreateAliasOutput  {
 pub mod create_alias_output {
     
     /// A builder for [`CreateAliasOutput`](crate::output::CreateAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4653,6 +4729,7 @@ pub struct CancelMailboxExportJobOutput  {
 pub mod cancel_mailbox_export_job_output {
     
     /// A builder for [`CancelMailboxExportJobOutput`](crate::output::CancelMailboxExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4698,6 +4775,7 @@ impl AssumeImpersonationRoleOutput {
 pub mod assume_impersonation_role_output {
     
     /// A builder for [`AssumeImpersonationRoleOutput`](crate::output::AssumeImpersonationRoleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token: std::option::Option<std::string::String>,
@@ -4751,6 +4829,7 @@ pub struct AssociateMemberToGroupOutput  {
 pub mod associate_member_to_group_output {
     
     /// A builder for [`AssociateMemberToGroupOutput`](crate::output::AssociateMemberToGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4780,6 +4859,7 @@ pub struct AssociateDelegateToResourceOutput  {
 pub mod associate_delegate_to_resource_output {
     
     /// A builder for [`AssociateDelegateToResourceOutput`](crate::output::AssociateDelegateToResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

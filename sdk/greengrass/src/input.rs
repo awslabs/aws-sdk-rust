@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_role_to_group_input {
     
     /// A builder for [`AssociateRoleToGroupInput`](crate::input::AssociateRoleToGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -130,6 +131,7 @@ impl AssociateRoleToGroupInput {
 pub mod associate_service_role_to_account_input {
     
     /// A builder for [`AssociateServiceRoleToAccountInput`](crate::input::AssociateServiceRoleToAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -237,6 +239,7 @@ impl AssociateServiceRoleToAccountInput {
 pub mod create_connector_definition_input {
     
     /// A builder for [`CreateConnectorDefinitionInput`](crate::input::CreateConnectorDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -387,6 +390,7 @@ impl CreateConnectorDefinitionInput {
 pub mod create_connector_definition_version_input {
     
     /// A builder for [`CreateConnectorDefinitionVersionInput`](crate::input::CreateConnectorDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -531,6 +535,7 @@ impl CreateConnectorDefinitionVersionInput {
 pub mod create_core_definition_input {
     
     /// A builder for [`CreateCoreDefinitionInput`](crate::input::CreateCoreDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -681,6 +686,7 @@ impl CreateCoreDefinitionInput {
 pub mod create_core_definition_version_input {
     
     /// A builder for [`CreateCoreDefinitionVersionInput`](crate::input::CreateCoreDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -825,6 +831,7 @@ impl CreateCoreDefinitionVersionInput {
 pub mod create_deployment_input {
     
     /// A builder for [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -987,6 +994,7 @@ impl CreateDeploymentInput {
 pub mod create_device_definition_input {
     
     /// A builder for [`CreateDeviceDefinitionInput`](crate::input::CreateDeviceDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -1137,6 +1145,7 @@ impl CreateDeviceDefinitionInput {
 pub mod create_device_definition_version_input {
     
     /// A builder for [`CreateDeviceDefinitionVersionInput`](crate::input::CreateDeviceDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -1281,6 +1290,7 @@ impl CreateDeviceDefinitionVersionInput {
 pub mod create_function_definition_input {
     
     /// A builder for [`CreateFunctionDefinitionInput`](crate::input::CreateFunctionDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -1431,6 +1441,7 @@ impl CreateFunctionDefinitionInput {
 pub mod create_function_definition_version_input {
     
     /// A builder for [`CreateFunctionDefinitionVersionInput`](crate::input::CreateFunctionDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -1587,6 +1598,7 @@ impl CreateFunctionDefinitionVersionInput {
 pub mod create_group_input {
     
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -1737,6 +1749,7 @@ impl CreateGroupInput {
 pub mod create_group_certificate_authority_input {
     
     /// A builder for [`CreateGroupCertificateAuthorityInput`](crate::input::CreateGroupCertificateAuthorityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -1859,6 +1872,7 @@ impl CreateGroupCertificateAuthorityInput {
 pub mod create_group_version_input {
     
     /// A builder for [`CreateGroupVersionInput`](crate::input::CreateGroupVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -2069,6 +2083,7 @@ impl CreateGroupVersionInput {
 pub mod create_logger_definition_input {
     
     /// A builder for [`CreateLoggerDefinitionInput`](crate::input::CreateLoggerDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -2219,6 +2234,7 @@ impl CreateLoggerDefinitionInput {
 pub mod create_logger_definition_version_input {
     
     /// A builder for [`CreateLoggerDefinitionVersionInput`](crate::input::CreateLoggerDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -2363,6 +2379,7 @@ impl CreateLoggerDefinitionVersionInput {
 pub mod create_resource_definition_input {
     
     /// A builder for [`CreateResourceDefinitionInput`](crate::input::CreateResourceDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -2513,6 +2530,7 @@ impl CreateResourceDefinitionInput {
 pub mod create_resource_definition_version_input {
     
     /// A builder for [`CreateResourceDefinitionVersionInput`](crate::input::CreateResourceDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -2657,6 +2675,7 @@ impl CreateResourceDefinitionVersionInput {
 pub mod create_software_update_job_input {
     
     /// A builder for [`CreateSoftwareUpdateJobInput`](crate::input::CreateSoftwareUpdateJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -2843,6 +2862,7 @@ impl CreateSoftwareUpdateJobInput {
 pub mod create_subscription_definition_input {
     
     /// A builder for [`CreateSubscriptionDefinitionInput`](crate::input::CreateSubscriptionDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -2993,6 +3013,7 @@ impl CreateSubscriptionDefinitionInput {
 pub mod create_subscription_definition_version_input {
     
     /// A builder for [`CreateSubscriptionDefinitionVersionInput`](crate::input::CreateSubscriptionDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -3137,6 +3158,7 @@ impl CreateSubscriptionDefinitionVersionInput {
 pub mod delete_connector_definition_input {
     
     /// A builder for [`DeleteConnectorDefinitionInput`](crate::input::DeleteConnectorDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_definition_id: std::option::Option<std::string::String>,
@@ -3246,6 +3268,7 @@ impl DeleteConnectorDefinitionInput {
 pub mod delete_core_definition_input {
     
     /// A builder for [`DeleteCoreDefinitionInput`](crate::input::DeleteCoreDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_definition_id: std::option::Option<std::string::String>,
@@ -3355,6 +3378,7 @@ impl DeleteCoreDefinitionInput {
 pub mod delete_device_definition_input {
     
     /// A builder for [`DeleteDeviceDefinitionInput`](crate::input::DeleteDeviceDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_definition_id: std::option::Option<std::string::String>,
@@ -3464,6 +3488,7 @@ impl DeleteDeviceDefinitionInput {
 pub mod delete_function_definition_input {
     
     /// A builder for [`DeleteFunctionDefinitionInput`](crate::input::DeleteFunctionDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_definition_id: std::option::Option<std::string::String>,
@@ -3573,6 +3598,7 @@ impl DeleteFunctionDefinitionInput {
 pub mod delete_group_input {
     
     /// A builder for [`DeleteGroupInput`](crate::input::DeleteGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -3682,6 +3708,7 @@ impl DeleteGroupInput {
 pub mod delete_logger_definition_input {
     
     /// A builder for [`DeleteLoggerDefinitionInput`](crate::input::DeleteLoggerDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logger_definition_id: std::option::Option<std::string::String>,
@@ -3791,6 +3818,7 @@ impl DeleteLoggerDefinitionInput {
 pub mod delete_resource_definition_input {
     
     /// A builder for [`DeleteResourceDefinitionInput`](crate::input::DeleteResourceDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_definition_id: std::option::Option<std::string::String>,
@@ -3900,6 +3928,7 @@ impl DeleteResourceDefinitionInput {
 pub mod delete_subscription_definition_input {
     
     /// A builder for [`DeleteSubscriptionDefinitionInput`](crate::input::DeleteSubscriptionDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_definition_id: std::option::Option<std::string::String>,
@@ -4009,6 +4038,7 @@ impl DeleteSubscriptionDefinitionInput {
 pub mod disassociate_role_from_group_input {
     
     /// A builder for [`DisassociateRoleFromGroupInput`](crate::input::DisassociateRoleFromGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -4118,6 +4148,7 @@ impl DisassociateRoleFromGroupInput {
 pub mod disassociate_service_role_from_account_input {
     
     /// A builder for [`DisassociateServiceRoleFromAccountInput`](crate::input::DisassociateServiceRoleFromAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -4209,6 +4240,7 @@ impl DisassociateServiceRoleFromAccountInput {
 pub mod get_associated_role_input {
     
     /// A builder for [`GetAssociatedRoleInput`](crate::input::GetAssociatedRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -4318,6 +4350,7 @@ impl GetAssociatedRoleInput {
 pub mod get_bulk_deployment_status_input {
     
     /// A builder for [`GetBulkDeploymentStatusInput`](crate::input::GetBulkDeploymentStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bulk_deployment_id: std::option::Option<std::string::String>,
@@ -4427,6 +4460,7 @@ impl GetBulkDeploymentStatusInput {
 pub mod get_connectivity_info_input {
     
     /// A builder for [`GetConnectivityInfoInput`](crate::input::GetConnectivityInfoInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -4536,6 +4570,7 @@ impl GetConnectivityInfoInput {
 pub mod get_connector_definition_input {
     
     /// A builder for [`GetConnectorDefinitionInput`](crate::input::GetConnectorDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_definition_id: std::option::Option<std::string::String>,
@@ -4645,6 +4680,7 @@ impl GetConnectorDefinitionInput {
 pub mod get_connector_definition_version_input {
     
     /// A builder for [`GetConnectorDefinitionVersionInput`](crate::input::GetConnectorDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_definition_id: std::option::Option<std::string::String>,
@@ -4794,6 +4830,7 @@ impl GetConnectorDefinitionVersionInput {
 pub mod get_core_definition_input {
     
     /// A builder for [`GetCoreDefinitionInput`](crate::input::GetCoreDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_definition_id: std::option::Option<std::string::String>,
@@ -4903,6 +4940,7 @@ impl GetCoreDefinitionInput {
 pub mod get_core_definition_version_input {
     
     /// A builder for [`GetCoreDefinitionVersionInput`](crate::input::GetCoreDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_definition_id: std::option::Option<std::string::String>,
@@ -5030,6 +5068,7 @@ impl GetCoreDefinitionVersionInput {
 pub mod get_deployment_status_input {
     
     /// A builder for [`GetDeploymentStatusInput`](crate::input::GetDeploymentStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
@@ -5157,6 +5196,7 @@ impl GetDeploymentStatusInput {
 pub mod get_device_definition_input {
     
     /// A builder for [`GetDeviceDefinitionInput`](crate::input::GetDeviceDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_definition_id: std::option::Option<std::string::String>,
@@ -5266,6 +5306,7 @@ impl GetDeviceDefinitionInput {
 pub mod get_device_definition_version_input {
     
     /// A builder for [`GetDeviceDefinitionVersionInput`](crate::input::GetDeviceDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_definition_id: std::option::Option<std::string::String>,
@@ -5415,6 +5456,7 @@ impl GetDeviceDefinitionVersionInput {
 pub mod get_function_definition_input {
     
     /// A builder for [`GetFunctionDefinitionInput`](crate::input::GetFunctionDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_definition_id: std::option::Option<std::string::String>,
@@ -5524,6 +5566,7 @@ impl GetFunctionDefinitionInput {
 pub mod get_function_definition_version_input {
     
     /// A builder for [`GetFunctionDefinitionVersionInput`](crate::input::GetFunctionDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_definition_id: std::option::Option<std::string::String>,
@@ -5673,6 +5716,7 @@ impl GetFunctionDefinitionVersionInput {
 pub mod get_group_input {
     
     /// A builder for [`GetGroupInput`](crate::input::GetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -5782,6 +5826,7 @@ impl GetGroupInput {
 pub mod get_group_certificate_authority_input {
     
     /// A builder for [`GetGroupCertificateAuthorityInput`](crate::input::GetGroupCertificateAuthorityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_id: std::option::Option<std::string::String>,
@@ -5909,6 +5954,7 @@ impl GetGroupCertificateAuthorityInput {
 pub mod get_group_certificate_configuration_input {
     
     /// A builder for [`GetGroupCertificateConfigurationInput`](crate::input::GetGroupCertificateConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -6018,6 +6064,7 @@ impl GetGroupCertificateConfigurationInput {
 pub mod get_group_version_input {
     
     /// A builder for [`GetGroupVersionInput`](crate::input::GetGroupVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -6145,6 +6192,7 @@ impl GetGroupVersionInput {
 pub mod get_logger_definition_input {
     
     /// A builder for [`GetLoggerDefinitionInput`](crate::input::GetLoggerDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logger_definition_id: std::option::Option<std::string::String>,
@@ -6254,6 +6302,7 @@ impl GetLoggerDefinitionInput {
 pub mod get_logger_definition_version_input {
     
     /// A builder for [`GetLoggerDefinitionVersionInput`](crate::input::GetLoggerDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logger_definition_id: std::option::Option<std::string::String>,
@@ -6403,6 +6452,7 @@ impl GetLoggerDefinitionVersionInput {
 pub mod get_resource_definition_input {
     
     /// A builder for [`GetResourceDefinitionInput`](crate::input::GetResourceDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_definition_id: std::option::Option<std::string::String>,
@@ -6512,6 +6562,7 @@ impl GetResourceDefinitionInput {
 pub mod get_resource_definition_version_input {
     
     /// A builder for [`GetResourceDefinitionVersionInput`](crate::input::GetResourceDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_definition_id: std::option::Option<std::string::String>,
@@ -6639,6 +6690,7 @@ impl GetResourceDefinitionVersionInput {
 pub mod get_service_role_for_account_input {
     
     /// A builder for [`GetServiceRoleForAccountInput`](crate::input::GetServiceRoleForAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -6730,6 +6782,7 @@ impl GetServiceRoleForAccountInput {
 pub mod get_subscription_definition_input {
     
     /// A builder for [`GetSubscriptionDefinitionInput`](crate::input::GetSubscriptionDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_definition_id: std::option::Option<std::string::String>,
@@ -6839,6 +6892,7 @@ impl GetSubscriptionDefinitionInput {
 pub mod get_subscription_definition_version_input {
     
     /// A builder for [`GetSubscriptionDefinitionVersionInput`](crate::input::GetSubscriptionDefinitionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6988,6 +7042,7 @@ impl GetSubscriptionDefinitionVersionInput {
 pub mod get_thing_runtime_configuration_input {
     
     /// A builder for [`GetThingRuntimeConfigurationInput`](crate::input::GetThingRuntimeConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -7097,6 +7152,7 @@ impl GetThingRuntimeConfigurationInput {
 pub mod list_bulk_deployment_detailed_reports_input {
     
     /// A builder for [`ListBulkDeploymentDetailedReportsInput`](crate::input::ListBulkDeploymentDetailedReportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bulk_deployment_id: std::option::Option<std::string::String>,
@@ -7245,6 +7301,7 @@ impl ListBulkDeploymentDetailedReportsInput {
 pub mod list_bulk_deployments_input {
     
     /// A builder for [`ListBulkDeploymentsInput`](crate::input::ListBulkDeploymentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -7375,6 +7432,7 @@ impl ListBulkDeploymentsInput {
 pub mod list_connector_definitions_input {
     
     /// A builder for [`ListConnectorDefinitionsInput`](crate::input::ListConnectorDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -7505,6 +7563,7 @@ impl ListConnectorDefinitionsInput {
 pub mod list_connector_definition_versions_input {
     
     /// A builder for [`ListConnectorDefinitionVersionsInput`](crate::input::ListConnectorDefinitionVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_definition_id: std::option::Option<std::string::String>,
@@ -7653,6 +7712,7 @@ impl ListConnectorDefinitionVersionsInput {
 pub mod list_core_definitions_input {
     
     /// A builder for [`ListCoreDefinitionsInput`](crate::input::ListCoreDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -7783,6 +7843,7 @@ impl ListCoreDefinitionsInput {
 pub mod list_core_definition_versions_input {
     
     /// A builder for [`ListCoreDefinitionVersionsInput`](crate::input::ListCoreDefinitionVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_definition_id: std::option::Option<std::string::String>,
@@ -7931,6 +7992,7 @@ impl ListCoreDefinitionVersionsInput {
 pub mod list_deployments_input {
     
     /// A builder for [`ListDeploymentsInput`](crate::input::ListDeploymentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -8079,6 +8141,7 @@ impl ListDeploymentsInput {
 pub mod list_device_definitions_input {
     
     /// A builder for [`ListDeviceDefinitionsInput`](crate::input::ListDeviceDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -8209,6 +8272,7 @@ impl ListDeviceDefinitionsInput {
 pub mod list_device_definition_versions_input {
     
     /// A builder for [`ListDeviceDefinitionVersionsInput`](crate::input::ListDeviceDefinitionVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_definition_id: std::option::Option<std::string::String>,
@@ -8357,6 +8421,7 @@ impl ListDeviceDefinitionVersionsInput {
 pub mod list_function_definitions_input {
     
     /// A builder for [`ListFunctionDefinitionsInput`](crate::input::ListFunctionDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -8487,6 +8552,7 @@ impl ListFunctionDefinitionsInput {
 pub mod list_function_definition_versions_input {
     
     /// A builder for [`ListFunctionDefinitionVersionsInput`](crate::input::ListFunctionDefinitionVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_definition_id: std::option::Option<std::string::String>,
@@ -8635,6 +8701,7 @@ impl ListFunctionDefinitionVersionsInput {
 pub mod list_group_certificate_authorities_input {
     
     /// A builder for [`ListGroupCertificateAuthoritiesInput`](crate::input::ListGroupCertificateAuthoritiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -8744,6 +8811,7 @@ impl ListGroupCertificateAuthoritiesInput {
 pub mod list_groups_input {
     
     /// A builder for [`ListGroupsInput`](crate::input::ListGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -8874,6 +8942,7 @@ impl ListGroupsInput {
 pub mod list_group_versions_input {
     
     /// A builder for [`ListGroupVersionsInput`](crate::input::ListGroupVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -9022,6 +9091,7 @@ impl ListGroupVersionsInput {
 pub mod list_logger_definitions_input {
     
     /// A builder for [`ListLoggerDefinitionsInput`](crate::input::ListLoggerDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -9152,6 +9222,7 @@ impl ListLoggerDefinitionsInput {
 pub mod list_logger_definition_versions_input {
     
     /// A builder for [`ListLoggerDefinitionVersionsInput`](crate::input::ListLoggerDefinitionVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logger_definition_id: std::option::Option<std::string::String>,
@@ -9300,6 +9371,7 @@ impl ListLoggerDefinitionVersionsInput {
 pub mod list_resource_definitions_input {
     
     /// A builder for [`ListResourceDefinitionsInput`](crate::input::ListResourceDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -9430,6 +9502,7 @@ impl ListResourceDefinitionsInput {
 pub mod list_resource_definition_versions_input {
     
     /// A builder for [`ListResourceDefinitionVersionsInput`](crate::input::ListResourceDefinitionVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -9578,6 +9651,7 @@ impl ListResourceDefinitionVersionsInput {
 pub mod list_subscription_definitions_input {
     
     /// A builder for [`ListSubscriptionDefinitionsInput`](crate::input::ListSubscriptionDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -9708,6 +9782,7 @@ impl ListSubscriptionDefinitionsInput {
 pub mod list_subscription_definition_versions_input {
     
     /// A builder for [`ListSubscriptionDefinitionVersionsInput`](crate::input::ListSubscriptionDefinitionVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<std::string::String>,
@@ -9856,6 +9931,7 @@ impl ListSubscriptionDefinitionVersionsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -9965,6 +10041,7 @@ impl ListTagsForResourceInput {
 pub mod reset_deployments_input {
     
     /// A builder for [`ResetDeploymentsInput`](crate::input::ResetDeploymentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -10104,6 +10181,7 @@ impl ResetDeploymentsInput {
 pub mod start_bulk_deployment_input {
     
     /// A builder for [`StartBulkDeploymentInput`](crate::input::StartBulkDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amzn_client_token: std::option::Option<std::string::String>,
@@ -10254,6 +10332,7 @@ impl StartBulkDeploymentInput {
 pub mod stop_bulk_deployment_input {
     
     /// A builder for [`StopBulkDeploymentInput`](crate::input::StopBulkDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bulk_deployment_id: std::option::Option<std::string::String>,
@@ -10363,6 +10442,7 @@ impl StopBulkDeploymentInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10494,6 +10574,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10631,6 +10712,7 @@ impl UntagResourceInput {
 pub mod update_connectivity_info_input {
     
     /// A builder for [`UpdateConnectivityInfoInput`](crate::input::UpdateConnectivityInfoInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connectivity_info: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
@@ -10762,6 +10844,7 @@ impl UpdateConnectivityInfoInput {
 pub mod update_connector_definition_input {
     
     /// A builder for [`UpdateConnectorDefinitionInput`](crate::input::UpdateConnectorDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_definition_id: std::option::Option<std::string::String>,
@@ -10887,6 +10970,7 @@ impl UpdateConnectorDefinitionInput {
 pub mod update_core_definition_input {
     
     /// A builder for [`UpdateCoreDefinitionInput`](crate::input::UpdateCoreDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_definition_id: std::option::Option<std::string::String>,
@@ -11012,6 +11096,7 @@ impl UpdateCoreDefinitionInput {
 pub mod update_device_definition_input {
     
     /// A builder for [`UpdateDeviceDefinitionInput`](crate::input::UpdateDeviceDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_definition_id: std::option::Option<std::string::String>,
@@ -11137,6 +11222,7 @@ impl UpdateDeviceDefinitionInput {
 pub mod update_function_definition_input {
     
     /// A builder for [`UpdateFunctionDefinitionInput`](crate::input::UpdateFunctionDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_definition_id: std::option::Option<std::string::String>,
@@ -11262,6 +11348,7 @@ impl UpdateFunctionDefinitionInput {
 pub mod update_group_input {
     
     /// A builder for [`UpdateGroupInput`](crate::input::UpdateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -11387,6 +11474,7 @@ impl UpdateGroupInput {
 pub mod update_group_certificate_configuration_input {
     
     /// A builder for [`UpdateGroupCertificateConfigurationInput`](crate::input::UpdateGroupCertificateConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_expiry_in_milliseconds: std::option::Option<std::string::String>,
@@ -11512,6 +11600,7 @@ impl UpdateGroupCertificateConfigurationInput {
 pub mod update_logger_definition_input {
     
     /// A builder for [`UpdateLoggerDefinitionInput`](crate::input::UpdateLoggerDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logger_definition_id: std::option::Option<std::string::String>,
@@ -11637,6 +11726,7 @@ impl UpdateLoggerDefinitionInput {
 pub mod update_resource_definition_input {
     
     /// A builder for [`UpdateResourceDefinitionInput`](crate::input::UpdateResourceDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11762,6 +11852,7 @@ impl UpdateResourceDefinitionInput {
 pub mod update_subscription_definition_input {
     
     /// A builder for [`UpdateSubscriptionDefinitionInput`](crate::input::UpdateSubscriptionDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11887,6 +11978,7 @@ impl UpdateSubscriptionDefinitionInput {
 pub mod update_thing_runtime_configuration_input {
     
     /// A builder for [`UpdateThingRuntimeConfigurationInput`](crate::input::UpdateThingRuntimeConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) telemetry_configuration: std::option::Option<crate::model::TelemetryConfigurationUpdate>,

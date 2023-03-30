@@ -8,6 +8,7 @@ pub struct UpdateApplicationOutput  {
 pub mod update_application_output {
     
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -95,6 +98,7 @@ pub struct StopApplicationOutput  {
 pub mod stop_application_output {
     
     /// A builder for [`StopApplicationOutput`](crate::output::StopApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -124,6 +128,7 @@ pub struct StartApplicationOutput  {
 pub mod start_application_output {
     
     /// A builder for [`StartApplicationOutput`](crate::output::StartApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -162,6 +167,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -225,6 +231,7 @@ impl ListApplicationsOutput {
 pub mod list_applications_output {
     
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -314,6 +321,7 @@ impl DiscoverInputSchemaOutput {
 pub mod discover_input_schema_output {
     
     /// A builder for [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_schema: std::option::Option<crate::model::SourceSchema>,
@@ -418,6 +426,7 @@ impl DescribeApplicationOutput {
 pub mod describe_application_output {
     
     /// A builder for [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_detail: std::option::Option<crate::model::ApplicationDetail>,
@@ -459,6 +468,7 @@ pub struct DeleteApplicationReferenceDataSourceOutput  {
 pub mod delete_application_reference_data_source_output {
     
     /// A builder for [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -488,6 +498,7 @@ pub struct DeleteApplicationOutputOutput  {
 pub mod delete_application_output_output {
     
     /// A builder for [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -517,6 +528,7 @@ pub struct DeleteApplicationInputProcessingConfigurationOutput  {
 pub mod delete_application_input_processing_configuration_output {
     
     /// A builder for [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -546,6 +558,7 @@ pub struct DeleteApplicationCloudWatchLoggingOptionOutput  {
 pub mod delete_application_cloud_watch_logging_option_output {
     
     /// A builder for [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -575,6 +588,7 @@ pub struct DeleteApplicationOutput  {
 pub mod delete_application_output {
     
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -613,6 +627,7 @@ impl CreateApplicationOutput {
 pub mod create_application_output {
     
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_summary: std::option::Option<crate::model::ApplicationSummary>,
@@ -654,6 +669,7 @@ pub struct AddApplicationReferenceDataSourceOutput  {
 pub mod add_application_reference_data_source_output {
     
     /// A builder for [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -683,6 +699,7 @@ pub struct AddApplicationOutputOutput  {
 pub mod add_application_output_output {
     
     /// A builder for [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -712,6 +729,7 @@ pub struct AddApplicationInputProcessingConfigurationOutput  {
 pub mod add_application_input_processing_configuration_output {
     
     /// A builder for [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -741,6 +759,7 @@ pub struct AddApplicationInputOutput  {
 pub mod add_application_input_output {
     
     /// A builder for [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -770,6 +789,7 @@ pub struct AddApplicationCloudWatchLoggingOptionOutput  {
 pub mod add_application_cloud_watch_logging_option_output {
     
     /// A builder for [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

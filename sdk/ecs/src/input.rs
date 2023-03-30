@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_capacity_provider_input {
     
     /// A builder for [`CreateCapacityProviderInput`](crate::input::CreateCapacityProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -167,6 +168,7 @@ impl CreateCapacityProviderInput {
 pub mod create_cluster_input {
     
     /// A builder for [`CreateClusterInput`](crate::input::CreateClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -405,6 +407,7 @@ impl CreateClusterInput {
 pub mod create_service_input {
     
     /// A builder for [`CreateServiceInput`](crate::input::CreateServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -901,6 +904,7 @@ impl CreateServiceInput {
 pub mod create_task_set_input {
     
     /// A builder for [`CreateTaskSetInput`](crate::input::CreateTaskSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<std::string::String>,
@@ -1213,6 +1217,7 @@ impl CreateTaskSetInput {
 pub mod delete_account_setting_input {
     
     /// A builder for [`DeleteAccountSettingInput`](crate::input::DeleteAccountSettingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SettingName>,
@@ -1337,6 +1342,7 @@ impl DeleteAccountSettingInput {
 pub mod delete_attributes_input {
     
     /// A builder for [`DeleteAttributesInput`](crate::input::DeleteAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -1467,6 +1473,7 @@ impl DeleteAttributesInput {
 pub mod delete_capacity_provider_input {
     
     /// A builder for [`DeleteCapacityProviderInput`](crate::input::DeleteCapacityProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_provider: std::option::Option<std::string::String>,
@@ -1579,6 +1586,7 @@ impl DeleteCapacityProviderInput {
 pub mod delete_cluster_input {
     
     /// A builder for [`DeleteClusterInput`](crate::input::DeleteClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -1691,6 +1699,7 @@ impl DeleteClusterInput {
 pub mod delete_service_input {
     
     /// A builder for [`DeleteServiceInput`](crate::input::DeleteServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -1827,6 +1836,7 @@ impl DeleteServiceInput {
 pub mod delete_task_set_input {
     
     /// A builder for [`DeleteTaskSetInput`](crate::input::DeleteTaskSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -1975,6 +1985,7 @@ impl DeleteTaskSetInput {
 pub mod deregister_container_instance_input {
     
     /// A builder for [`DeregisterContainerInstanceInput`](crate::input::DeregisterContainerInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -2113,6 +2124,7 @@ impl DeregisterContainerInstanceInput {
 pub mod deregister_task_definition_input {
     
     /// A builder for [`DeregisterTaskDefinitionInput`](crate::input::DeregisterTaskDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_definition: std::option::Option<std::string::String>,
@@ -2225,6 +2237,7 @@ impl DeregisterTaskDefinitionInput {
 pub mod describe_capacity_providers_input {
     
     /// A builder for [`DescribeCapacityProvidersInput`](crate::input::DescribeCapacityProvidersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2389,6 +2402,7 @@ impl DescribeCapacityProvidersInput {
 pub mod describe_clusters_input {
     
     /// A builder for [`DescribeClustersInput`](crate::input::DescribeClustersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) clusters: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2535,6 +2549,7 @@ impl DescribeClustersInput {
 pub mod describe_container_instances_input {
     
     /// A builder for [`DescribeContainerInstancesInput`](crate::input::DescribeContainerInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -2683,6 +2698,7 @@ impl DescribeContainerInstancesInput {
 pub mod describe_services_input {
     
     /// A builder for [`DescribeServicesInput`](crate::input::DescribeServicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -2831,6 +2847,7 @@ impl DescribeServicesInput {
 pub mod describe_task_definition_input {
     
     /// A builder for [`DescribeTaskDefinitionInput`](crate::input::DescribeTaskDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_definition: std::option::Option<std::string::String>,
@@ -2961,6 +2978,7 @@ impl DescribeTaskDefinitionInput {
 pub mod describe_tasks_input {
     
     /// A builder for [`DescribeTasksInput`](crate::input::DescribeTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -3109,6 +3127,7 @@ impl DescribeTasksInput {
 pub mod describe_task_sets_input {
     
     /// A builder for [`DescribeTaskSetsInput`](crate::input::DescribeTaskSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -3269,6 +3288,7 @@ impl DescribeTaskSetsInput {
 pub mod discover_poll_endpoint_input {
     
     /// A builder for [`DiscoverPollEndpointInput`](crate::input::DiscoverPollEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_instance: std::option::Option<std::string::String>,
@@ -3393,6 +3413,7 @@ impl DiscoverPollEndpointInput {
 pub mod execute_command_input {
     
     /// A builder for [`ExecuteCommandInput`](crate::input::ExecuteCommandInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -3554,6 +3575,7 @@ impl ExecuteCommandInput {
 pub mod get_task_protection_input {
     
     /// A builder for [`GetTaskProtectionInput`](crate::input::GetTaskProtectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -3684,6 +3706,7 @@ impl GetTaskProtectionInput {
 pub mod list_account_settings_input {
     
     /// A builder for [`ListAccountSettingsInput`](crate::input::ListAccountSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SettingName>,
@@ -3866,6 +3889,7 @@ impl ListAccountSettingsInput {
 pub mod list_attributes_input {
     
     /// A builder for [`ListAttributesInput`](crate::input::ListAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -4042,6 +4066,7 @@ impl ListAttributesInput {
 pub mod list_clusters_input {
     
     /// A builder for [`ListClustersInput`](crate::input::ListClustersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4170,6 +4195,7 @@ impl ListClustersInput {
 pub mod list_container_instances_input {
     
     /// A builder for [`ListContainerInstancesInput`](crate::input::ListContainerInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -4334,6 +4360,7 @@ impl ListContainerInstancesInput {
 pub mod list_services_input {
     
     /// A builder for [`ListServicesInput`](crate::input::ListServicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -4498,6 +4525,7 @@ impl ListServicesInput {
 pub mod list_services_by_namespace_input {
     
     /// A builder for [`ListServicesByNamespaceInput`](crate::input::ListServicesByNamespaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -4636,6 +4664,7 @@ impl ListServicesByNamespaceInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4748,6 +4777,7 @@ impl ListTagsForResourceInput {
 pub mod list_task_definition_families_input {
     
     /// A builder for [`ListTaskDefinitionFamiliesInput`](crate::input::ListTaskDefinitionFamiliesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) family_prefix: std::option::Option<std::string::String>,
@@ -4900,6 +4930,7 @@ impl ListTaskDefinitionFamiliesInput {
 pub mod list_task_definitions_input {
     
     /// A builder for [`ListTaskDefinitionsInput`](crate::input::ListTaskDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) family_prefix: std::option::Option<std::string::String>,
@@ -5064,6 +5095,7 @@ impl ListTaskDefinitionsInput {
 pub mod list_tasks_input {
     
     /// A builder for [`ListTasksInput`](crate::input::ListTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -5282,6 +5314,7 @@ impl ListTasksInput {
 pub mod put_account_setting_input {
     
     /// A builder for [`PutAccountSettingInput`](crate::input::PutAccountSettingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SettingName>,
@@ -5422,6 +5455,7 @@ impl PutAccountSettingInput {
 pub mod put_account_setting_default_input {
     
     /// A builder for [`PutAccountSettingDefaultInput`](crate::input::PutAccountSettingDefaultInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SettingName>,
@@ -5548,6 +5582,7 @@ impl PutAccountSettingDefaultInput {
 pub mod put_attributes_input {
     
     /// A builder for [`PutAttributesInput`](crate::input::PutAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -5678,6 +5713,7 @@ impl PutAttributesInput {
 pub mod put_cluster_capacity_providers_input {
     
     /// A builder for [`PutClusterCapacityProvidersInput`](crate::input::PutClusterCapacityProvidersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -5838,6 +5874,7 @@ impl PutClusterCapacityProvidersInput {
 pub mod register_container_instance_input {
     
     /// A builder for [`RegisterContainerInstanceInput`](crate::input::RegisterContainerInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -6090,6 +6127,7 @@ impl RegisterContainerInstanceInput {
 pub mod register_task_definition_input {
     
     /// A builder for [`RegisterTaskDefinitionInput`](crate::input::RegisterTaskDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) family: std::option::Option<std::string::String>,
@@ -6558,6 +6596,7 @@ impl RegisterTaskDefinitionInput {
 pub mod run_task_input {
     
     /// A builder for [`RunTaskInput`](crate::input::RunTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_provider_strategy: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -6948,6 +6987,7 @@ impl RunTaskInput {
 pub mod start_task_input {
     
     /// A builder for [`StartTaskInput`](crate::input::StartTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -7232,6 +7272,7 @@ impl StartTaskInput {
 pub mod stop_task_input {
     
     /// A builder for [`StopTaskInput`](crate::input::StopTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -7368,6 +7409,7 @@ impl StopTaskInput {
 pub mod submit_attachment_state_changes_input {
     
     /// A builder for [`SubmitAttachmentStateChangesInput`](crate::input::SubmitAttachmentStateChangesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -7498,6 +7540,7 @@ impl SubmitAttachmentStateChangesInput {
 pub mod submit_container_state_change_input {
     
     /// A builder for [`SubmitContainerStateChangeInput`](crate::input::SubmitContainerStateChangeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -7700,6 +7743,7 @@ impl SubmitContainerStateChangeInput {
 pub mod submit_task_state_change_input {
     
     /// A builder for [`SubmitTaskStateChangeInput`](crate::input::SubmitTaskStateChangeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -7938,6 +7982,7 @@ impl SubmitTaskStateChangeInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -8088,6 +8133,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -8218,6 +8264,7 @@ impl UntagResourceInput {
 pub mod update_capacity_provider_input {
     
     /// A builder for [`UpdateCapacityProviderInput`](crate::input::UpdateCapacityProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8342,6 +8389,7 @@ impl UpdateCapacityProviderInput {
 pub mod update_cluster_input {
     
     /// A builder for [`UpdateClusterInput`](crate::input::UpdateClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -8498,6 +8546,7 @@ impl UpdateClusterInput {
 pub mod update_cluster_settings_input {
     
     /// A builder for [`UpdateClusterSettingsInput`](crate::input::UpdateClusterSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -8632,6 +8681,7 @@ impl UpdateClusterSettingsInput {
 pub mod update_container_agent_input {
     
     /// A builder for [`UpdateContainerAgentInput`](crate::input::UpdateContainerAgentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -8756,6 +8806,7 @@ impl UpdateContainerAgentInput {
 pub mod update_container_instances_state_input {
     
     /// A builder for [`UpdateContainerInstancesStateInput`](crate::input::UpdateContainerInstancesStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -8898,6 +8949,7 @@ impl UpdateContainerInstancesStateInput {
 pub mod update_service_input {
     
     /// A builder for [`UpdateServiceInput`](crate::input::UpdateServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -9283,6 +9335,7 @@ impl UpdateServiceInput {
 pub mod update_service_primary_task_set_input {
     
     /// A builder for [`UpdateServicePrimaryTaskSetInput`](crate::input::UpdateServicePrimaryTaskSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -9419,6 +9472,7 @@ impl UpdateServicePrimaryTaskSetInput {
 pub mod update_task_protection_input {
     
     /// A builder for [`UpdateTaskProtectionInput`](crate::input::UpdateTaskProtectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,
@@ -9576,6 +9630,7 @@ impl UpdateTaskProtectionInput {
 pub mod update_task_set_input {
     
     /// A builder for [`UpdateTaskSetInput`](crate::input::UpdateTaskSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<std::string::String>,

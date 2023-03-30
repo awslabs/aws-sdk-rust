@@ -24,6 +24,7 @@ impl ListUsersOutput {
 pub mod list_users_output {
     
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -99,6 +100,7 @@ impl CreateUserOutput {
 pub mod create_user_output {
     
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -152,6 +154,7 @@ pub struct DeleteUserOutput  {
 pub mod delete_user_output {
     
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -181,6 +184,7 @@ pub struct UpdateUserOutput  {
 pub mod update_user_output {
     
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -346,6 +350,7 @@ impl  std::fmt::Debug for DescribeUserOutput  {
 pub mod describe_user_output {
     
     /// A builder for [`DescribeUserOutput`](crate::output::DescribeUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -629,6 +634,7 @@ impl ListGroupsOutput {
 pub mod list_groups_output {
     
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -704,6 +710,7 @@ impl CreateGroupOutput {
 pub mod create_group_output {
     
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -757,6 +764,7 @@ pub struct DeleteGroupOutput  {
 pub mod delete_group_output {
     
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -786,6 +794,7 @@ pub struct UpdateGroupOutput  {
 pub mod update_group_output {
     
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -863,6 +872,7 @@ impl  std::fmt::Debug for DescribeGroupOutput  {
 pub mod describe_group_output {
     
     /// A builder for [`DescribeGroupOutput`](crate::output::DescribeGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -985,6 +995,7 @@ impl ListGroupMembershipsOutput {
 pub mod list_group_memberships_output {
     
     /// A builder for [`ListGroupMembershipsOutput`](crate::output::ListGroupMembershipsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_memberships: std::option::Option<std::vec::Vec<crate::model::GroupMembership>>,
@@ -1060,6 +1071,7 @@ impl CreateGroupMembershipOutput {
 pub mod create_group_membership_output {
     
     /// A builder for [`CreateGroupMembershipOutput`](crate::output::CreateGroupMembershipOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership_id: std::option::Option<std::string::String>,
@@ -1113,6 +1125,7 @@ pub struct DeleteGroupMembershipOutput  {
 pub mod delete_group_membership_output {
     
     /// A builder for [`DeleteGroupMembershipOutput`](crate::output::DeleteGroupMembershipOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1172,6 +1185,7 @@ impl DescribeGroupMembershipOutput {
 pub mod describe_group_membership_output {
     
     /// A builder for [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
@@ -1265,6 +1279,7 @@ impl ListGroupMembershipsForMemberOutput {
 pub mod list_group_memberships_for_member_output {
     
     /// A builder for [`ListGroupMembershipsForMemberOutput`](crate::output::ListGroupMembershipsForMemberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_memberships: std::option::Option<std::vec::Vec<crate::model::GroupMembership>>,
@@ -1333,6 +1348,7 @@ impl IsMemberInGroupsOutput {
 pub mod is_member_in_groups_output {
     
     /// A builder for [`IsMemberInGroupsOutput`](crate::output::IsMemberInGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::GroupMembershipExistenceResult>>,
@@ -1396,6 +1412,7 @@ impl GetUserIdOutput {
 pub mod get_user_id_output {
     
     /// A builder for [`GetUserIdOutput`](crate::output::GetUserIdOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -1465,6 +1482,7 @@ impl GetGroupMembershipIdOutput {
 pub mod get_group_membership_id_output {
     
     /// A builder for [`GetGroupMembershipIdOutput`](crate::output::GetGroupMembershipIdOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership_id: std::option::Option<std::string::String>,
@@ -1534,6 +1552,7 @@ impl GetGroupIdOutput {
 pub mod get_group_id_output {
     
     /// A builder for [`GetGroupIdOutput`](crate::output::GetGroupIdOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,

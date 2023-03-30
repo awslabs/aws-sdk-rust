@@ -8,6 +8,7 @@ pub struct PutUsersOutput  {
 pub mod put_users_output {
     
     /// A builder for [`PutUsersOutput`](crate::output::PutUsersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct PutItemsOutput  {
 pub mod put_items_output {
     
     /// A builder for [`PutItemsOutput`](crate::output::PutItemsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct PutEventsOutput  {
 pub mod put_events_output {
     
     /// A builder for [`PutEventsOutput`](crate::output::PutEventsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

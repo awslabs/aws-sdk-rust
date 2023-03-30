@@ -152,6 +152,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
     
     /// A builder for [`ValidationException`](crate::error::ValidationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -212,6 +213,7 @@ impl std::error::Error for UserProfileNotFoundException {}
 pub mod user_profile_not_found_exception {
     
     /// A builder for [`UserProfileNotFoundException`](crate::error::UserProfileNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -457,6 +459,7 @@ impl std::error::Error for TeamMemberNotFoundException {}
 pub mod team_member_not_found_exception {
     
     /// A builder for [`TeamMemberNotFoundException`](crate::error::TeamMemberNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -517,6 +520,7 @@ impl std::error::Error for ProjectNotFoundException {}
 pub mod project_not_found_exception {
     
     /// A builder for [`ProjectNotFoundException`](crate::error::ProjectNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -577,6 +581,7 @@ impl std::error::Error for ProjectConfigurationException {}
 pub mod project_configuration_exception {
     
     /// A builder for [`ProjectConfigurationException`](crate::error::ProjectConfigurationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -637,6 +642,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
     
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -697,6 +703,7 @@ impl std::error::Error for InvalidServiceRoleException {}
 pub mod invalid_service_role_exception {
     
     /// A builder for [`InvalidServiceRoleException`](crate::error::InvalidServiceRoleException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -757,6 +764,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
     
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1365,6 +1373,7 @@ impl std::error::Error for InvalidNextTokenException {}
 pub mod invalid_next_token_exception {
     
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2771,6 +2780,7 @@ impl std::error::Error for UserProfileAlreadyExistsException {}
 pub mod user_profile_already_exists_exception {
     
     /// A builder for [`UserProfileAlreadyExistsException`](crate::error::UserProfileAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3016,6 +3026,7 @@ impl std::error::Error for ProjectCreationFailedException {}
 pub mod project_creation_failed_exception {
     
     /// A builder for [`ProjectCreationFailedException`](crate::error::ProjectCreationFailedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3076,6 +3087,7 @@ impl std::error::Error for ProjectAlreadyExistsException {}
 pub mod project_already_exists_exception {
     
     /// A builder for [`ProjectAlreadyExistsException`](crate::error::ProjectAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3321,6 +3333,7 @@ impl std::error::Error for TeamMemberAlreadyAssociatedException {}
 pub mod team_member_already_associated_exception {
     
     /// A builder for [`TeamMemberAlreadyAssociatedException`](crate::error::TeamMemberAlreadyAssociatedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

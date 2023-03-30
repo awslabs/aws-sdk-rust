@@ -17,6 +17,7 @@ impl UpdateS3ResourcesOutput {
 pub mod update_s3_resources_output {
     
     /// A builder for [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
@@ -80,6 +81,7 @@ impl ListS3ResourcesOutput {
 pub mod list_s3_resources_output {
     
     /// A builder for [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_resources: std::option::Option<std::vec::Vec<crate::model::S3ResourceClassification>>,
@@ -155,6 +157,7 @@ impl ListMemberAccountsOutput {
 pub mod list_member_accounts_output {
     
     /// A builder for [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_accounts: std::option::Option<std::vec::Vec<crate::model::MemberAccount>>,
@@ -223,6 +226,7 @@ impl DisassociateS3ResourcesOutput {
 pub mod disassociate_s3_resources_output {
     
     /// A builder for [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
@@ -270,6 +274,7 @@ pub struct DisassociateMemberAccountOutput  {
 pub mod disassociate_member_account_output {
     
     /// A builder for [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -308,6 +313,7 @@ impl AssociateS3ResourcesOutput {
 pub mod associate_s3_resources_output {
     
     /// A builder for [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
@@ -355,6 +361,7 @@ pub struct AssociateMemberAccountOutput  {
 pub mod associate_member_account_output {
     
     /// A builder for [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

@@ -17,6 +17,7 @@ impl UpdateChannelOutput {
 pub mod update_channel_output {
     
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<crate::model::Channel>,
@@ -58,6 +59,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -87,6 +89,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -116,6 +119,7 @@ pub struct StopStreamOutput  {
 pub mod stop_stream_output {
     
     /// A builder for [`StopStreamOutput`](crate::output::StopStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -145,6 +149,7 @@ pub struct PutMetadataOutput  {
 pub mod put_metadata_output {
     
     /// A builder for [`PutMetadataOutput`](crate::output::PutMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -183,6 +188,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -246,6 +252,7 @@ impl ListStreamSessionsOutput {
 pub mod list_stream_sessions_output {
     
     /// A builder for [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_sessions: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
@@ -321,6 +328,7 @@ impl ListStreamsOutput {
 pub mod list_streams_output {
     
     /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streams: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
@@ -396,6 +404,7 @@ impl ListStreamKeysOutput {
 pub mod list_stream_keys_output {
     
     /// A builder for [`ListStreamKeysOutput`](crate::output::ListStreamKeysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_keys: std::option::Option<std::vec::Vec<crate::model::StreamKeySummary>>,
@@ -471,6 +480,7 @@ impl ListRecordingConfigurationsOutput {
 pub mod list_recording_configurations_output {
     
     /// A builder for [`ListRecordingConfigurationsOutput`](crate::output::ListRecordingConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recording_configurations: std::option::Option<std::vec::Vec<crate::model::RecordingConfigurationSummary>>,
@@ -546,6 +556,7 @@ impl ListPlaybackKeyPairsOutput {
 pub mod list_playback_key_pairs_output {
     
     /// A builder for [`ListPlaybackKeyPairsOutput`](crate::output::ListPlaybackKeyPairsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_pairs: std::option::Option<std::vec::Vec<crate::model::PlaybackKeyPairSummary>>,
@@ -621,6 +632,7 @@ impl ListChannelsOutput {
 pub mod list_channels_output {
     
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
@@ -689,6 +701,7 @@ impl ImportPlaybackKeyPairOutput {
 pub mod import_playback_key_pair_output {
     
     /// A builder for [`ImportPlaybackKeyPairOutput`](crate::output::ImportPlaybackKeyPairOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_pair: std::option::Option<crate::model::PlaybackKeyPair>,
@@ -739,6 +752,7 @@ impl GetStreamSessionOutput {
 pub mod get_stream_session_output {
     
     /// A builder for [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_session: std::option::Option<crate::model::StreamSession>,
@@ -789,6 +803,7 @@ impl GetStreamKeyOutput {
 pub mod get_stream_key_output {
     
     /// A builder for [`GetStreamKeyOutput`](crate::output::GetStreamKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_key: std::option::Option<crate::model::StreamKey>,
@@ -839,6 +854,7 @@ impl GetStreamOutput {
 pub mod get_stream_output {
     
     /// A builder for [`GetStreamOutput`](crate::output::GetStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream: std::option::Option<crate::model::Stream>,
@@ -889,6 +905,7 @@ impl GetRecordingConfigurationOutput {
 pub mod get_recording_configuration_output {
     
     /// A builder for [`GetRecordingConfigurationOutput`](crate::output::GetRecordingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
@@ -939,6 +956,7 @@ impl GetPlaybackKeyPairOutput {
 pub mod get_playback_key_pair_output {
     
     /// A builder for [`GetPlaybackKeyPairOutput`](crate::output::GetPlaybackKeyPairOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_pair: std::option::Option<crate::model::PlaybackKeyPair>,
@@ -989,6 +1007,7 @@ impl GetChannelOutput {
 pub mod get_channel_output {
     
     /// A builder for [`GetChannelOutput`](crate::output::GetChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<crate::model::Channel>,
@@ -1030,6 +1049,7 @@ pub struct DeleteStreamKeyOutput  {
 pub mod delete_stream_key_output {
     
     /// A builder for [`DeleteStreamKeyOutput`](crate::output::DeleteStreamKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1059,6 +1079,7 @@ pub struct DeleteRecordingConfigurationOutput  {
 pub mod delete_recording_configuration_output {
     
     /// A builder for [`DeleteRecordingConfigurationOutput`](crate::output::DeleteRecordingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1088,6 +1109,7 @@ pub struct DeletePlaybackKeyPairOutput  {
 pub mod delete_playback_key_pair_output {
     
     /// A builder for [`DeletePlaybackKeyPairOutput`](crate::output::DeletePlaybackKeyPairOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1117,6 +1139,7 @@ pub struct DeleteChannelOutput  {
 pub mod delete_channel_output {
     
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1155,6 +1178,7 @@ impl CreateStreamKeyOutput {
 pub mod create_stream_key_output {
     
     /// A builder for [`CreateStreamKeyOutput`](crate::output::CreateStreamKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_key: std::option::Option<crate::model::StreamKey>,
@@ -1205,6 +1229,7 @@ impl CreateRecordingConfigurationOutput {
 pub mod create_recording_configuration_output {
     
     /// A builder for [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
@@ -1262,6 +1287,7 @@ impl CreateChannelOutput {
 pub mod create_channel_output {
     
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<crate::model::Channel>,
@@ -1331,6 +1357,7 @@ impl BatchGetStreamKeyOutput {
 pub mod batch_get_stream_key_output {
     
     /// A builder for [`BatchGetStreamKeyOutput`](crate::output::BatchGetStreamKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_keys: std::option::Option<std::vec::Vec<crate::model::StreamKey>>,
@@ -1412,6 +1439,7 @@ impl BatchGetChannelOutput {
 pub mod batch_get_channel_output {
     
     /// A builder for [`BatchGetChannelOutput`](crate::output::BatchGetChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,

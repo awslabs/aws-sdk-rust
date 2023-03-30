@@ -282,6 +282,7 @@ impl PagerDutyConfiguration {
 pub mod pager_duty_configuration {
     
     /// A builder for [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -356,6 +357,7 @@ impl PagerDutyIncidentConfiguration {
 pub mod pager_duty_incident_configuration {
     
     /// A builder for [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<std::string::String>,
@@ -474,6 +476,7 @@ impl SsmAutomation {
 pub mod ssm_automation {
     
     /// A builder for [`SsmAutomation`](crate::model::SsmAutomation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -827,6 +830,7 @@ pub struct EmptyChatChannel  {
 pub mod empty_chat_channel {
     
     /// A builder for [`EmptyChatChannel`](crate::model::EmptyChatChannel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -941,6 +945,7 @@ impl DeleteRegionAction {
 pub mod delete_region_action {
     
     /// A builder for [`DeleteRegionAction`](crate::model::DeleteRegionAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -998,6 +1003,7 @@ impl AddRegionAction {
 pub mod add_region_action {
     
     /// A builder for [`AddRegionAction`](crate::model::AddRegionAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -1110,6 +1116,7 @@ impl ItemIdentifier {
 pub mod item_identifier {
     
     /// A builder for [`ItemIdentifier`](crate::model::ItemIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<crate::model::ItemValue>,
@@ -1368,6 +1375,7 @@ impl PagerDutyIncidentDetail {
 pub mod pager_duty_incident_detail {
     
     /// A builder for [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1460,6 +1468,7 @@ impl RelatedItem {
 pub mod related_item {
     
     /// A builder for [`RelatedItem`](crate::model::RelatedItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<crate::model::ItemIdentifier>,
@@ -1641,6 +1650,7 @@ impl TriggerDetails {
 pub mod trigger_details {
     
     /// A builder for [`TriggerDetails`](crate::model::TriggerDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -1762,6 +1772,7 @@ impl EventSummary {
 pub mod event_summary {
     
     /// A builder for [`EventSummary`](crate::model::EventSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
@@ -2044,6 +2055,7 @@ impl Filter {
 pub mod filter {
     
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2217,6 +2229,7 @@ impl ResponsePlanSummary {
 pub mod response_plan_summary {
     
     /// A builder for [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2333,6 +2346,7 @@ impl IncidentRecordSummary {
 pub mod incident_record_summary {
     
     /// A builder for [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2476,6 +2490,7 @@ impl IncidentRecordSource {
 pub mod incident_record_source {
     
     /// A builder for [`IncidentRecordSource`](crate::model::IncidentRecordSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_by: std::option::Option<std::string::String>,
@@ -2604,6 +2619,7 @@ impl TimelineEvent {
 pub mod timeline_event {
     
     /// A builder for [`TimelineEvent`](crate::model::TimelineEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
@@ -2767,6 +2783,7 @@ impl IncidentTemplate {
 pub mod incident_template {
     
     /// A builder for [`IncidentTemplate`](crate::model::IncidentTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
@@ -2903,6 +2920,7 @@ impl ResourcePolicy {
 pub mod resource_policy {
     
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_document: std::option::Option<std::string::String>,
@@ -3026,6 +3044,7 @@ impl ReplicationSet {
 pub mod replication_set {
     
     /// A builder for [`ReplicationSet`](crate::model::ReplicationSet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3284,6 +3303,7 @@ impl RegionInfo {
 pub mod region_info {
     
     /// A builder for [`RegionInfo`](crate::model::RegionInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sse_kms_key_id: std::option::Option<std::string::String>,
@@ -3553,6 +3573,7 @@ impl IncidentRecord {
 pub mod incident_record {
     
     /// A builder for [`IncidentRecord`](crate::model::IncidentRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3804,6 +3825,7 @@ impl RegionMapInputValue {
 pub mod region_map_input_value {
     
     /// A builder for [`RegionMapInputValue`](crate::model::RegionMapInputValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sse_kms_key_id: std::option::Option<std::string::String>,

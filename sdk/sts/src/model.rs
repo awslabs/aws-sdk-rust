@@ -39,6 +39,7 @@ impl Credentials {
 pub mod credentials {
     
     /// A builder for [`Credentials`](crate::model::Credentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -132,6 +133,7 @@ impl FederatedUser {
 pub mod federated_user {
     
     /// A builder for [`FederatedUser`](crate::model::FederatedUser).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) federated_user_id: std::option::Option<std::string::String>,
@@ -205,6 +207,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -271,6 +274,7 @@ impl PolicyDescriptorType {
 pub mod policy_descriptor_type {
     
     /// A builder for [`PolicyDescriptorType`](crate::model::PolicyDescriptorType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -328,6 +332,7 @@ impl AssumedRoleUser {
 pub mod assumed_role_user {
     
     /// A builder for [`AssumedRoleUser`](crate::model::AssumedRoleUser).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assumed_role_id: std::option::Option<std::string::String>,

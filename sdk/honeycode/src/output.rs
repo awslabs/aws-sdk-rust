@@ -8,6 +8,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -82,6 +84,7 @@ impl StartTableDataImportJobOutput {
 pub mod start_table_data_import_job_output {
     
     /// A builder for [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -165,6 +168,7 @@ impl QueryTableRowsOutput {
 pub mod query_table_rows_output {
     
     /// A builder for [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -264,6 +268,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -334,6 +339,7 @@ impl ListTablesOutput {
 pub mod list_tables_output {
     
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tables: std::option::Option<std::vec::Vec<crate::model::Table>>,
@@ -443,6 +449,7 @@ impl ListTableRowsOutput {
 pub mod list_table_rows_output {
     
     /// A builder for [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -574,6 +581,7 @@ impl ListTableColumnsOutput {
 pub mod list_table_columns_output {
     
     /// A builder for [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_columns: std::option::Option<std::vec::Vec<crate::model::TableColumn>>,
@@ -655,6 +663,7 @@ impl InvokeScreenAutomationOutput {
 pub mod invoke_screen_automation_output {
     
     /// A builder for [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
@@ -720,6 +729,7 @@ impl GetScreenDataOutput {
 pub mod get_screen_data_output {
     
     /// A builder for [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ResultSet>>,
@@ -822,6 +832,7 @@ impl DescribeTableDataImportJobOutput {
 pub mod describe_table_data_import_job_output {
     
     /// A builder for [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::TableDataImportJobStatus>,
@@ -922,6 +933,7 @@ impl BatchUpsertTableRowsOutput {
 pub mod batch_upsert_table_rows_output {
     
     /// A builder for [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rows: std::option::Option<std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>>,
@@ -1016,6 +1028,7 @@ impl BatchUpdateTableRowsOutput {
 pub mod batch_update_table_rows_output {
     
     /// A builder for [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
@@ -1092,6 +1105,7 @@ impl BatchDeleteTableRowsOutput {
 pub mod batch_delete_table_rows_output {
     
     /// A builder for [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
@@ -1175,6 +1189,7 @@ impl BatchCreateTableRowsOutput {
 pub mod batch_create_table_rows_output {
     
     /// A builder for [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,

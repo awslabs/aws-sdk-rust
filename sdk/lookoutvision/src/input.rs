@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_dataset_input {
     
     /// A builder for [`CreateDatasetInput`](crate::input::CreateDatasetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -166,6 +167,7 @@ impl CreateDatasetInput {
 pub mod create_model_input {
     
     /// A builder for [`CreateModelInput`](crate::input::CreateModelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -353,6 +355,7 @@ impl CreateModelInput {
 pub mod create_project_input {
     
     /// A builder for [`CreateProjectInput`](crate::input::CreateProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -480,6 +483,7 @@ impl CreateProjectInput {
 pub mod delete_dataset_input {
     
     /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -627,6 +631,7 @@ impl DeleteDatasetInput {
 pub mod delete_model_input {
     
     /// A builder for [`DeleteModelInput`](crate::input::DeleteModelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -774,6 +779,7 @@ impl DeleteModelInput {
 pub mod delete_project_input {
     
     /// A builder for [`DeleteProjectInput`](crate::input::DeleteProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -903,6 +909,7 @@ impl DeleteProjectInput {
 pub mod describe_dataset_input {
     
     /// A builder for [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1030,6 +1037,7 @@ impl DescribeDatasetInput {
 pub mod describe_model_input {
     
     /// A builder for [`DescribeModelInput`](crate::input::DescribeModelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1157,6 +1165,7 @@ impl DescribeModelInput {
 pub mod describe_model_packaging_job_input {
     
     /// A builder for [`DescribeModelPackagingJobInput`](crate::input::DescribeModelPackagingJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1284,6 +1293,7 @@ impl DescribeModelPackagingJobInput {
 pub mod describe_project_input {
     
     /// A builder for [`DescribeProjectInput`](crate::input::DescribeProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1393,6 +1403,7 @@ impl DescribeProjectInput {
 pub mod detect_anomalies_input {
     
     /// A builder for [`DetectAnomaliesInput`](crate::input::DetectAnomaliesInput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1551,6 +1562,7 @@ impl DetectAnomaliesInput {
 pub mod list_dataset_entries_input {
     
     /// A builder for [`ListDatasetEntriesInput`](crate::input::ListDatasetEntriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1802,6 +1814,7 @@ impl ListDatasetEntriesInput {
 pub mod list_model_packaging_jobs_input {
     
     /// A builder for [`ListModelPackagingJobsInput`](crate::input::ListModelPackagingJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1950,6 +1963,7 @@ impl ListModelPackagingJobsInput {
 pub mod list_models_input {
     
     /// A builder for [`ListModelsInput`](crate::input::ListModelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -2098,6 +2112,7 @@ impl ListModelsInput {
 pub mod list_projects_input {
     
     /// A builder for [`ListProjectsInput`](crate::input::ListProjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2228,6 +2243,7 @@ impl ListProjectsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2337,6 +2353,7 @@ impl ListTagsForResourceInput {
 pub mod start_model_input {
     
     /// A builder for [`StartModelInput`](crate::input::StartModelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -2512,6 +2529,7 @@ impl StartModelInput {
 pub mod start_model_packaging_job_input {
     
     /// A builder for [`StartModelPackagingJobInput`](crate::input::StartModelPackagingJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -2693,6 +2711,7 @@ impl StartModelPackagingJobInput {
 pub mod stop_model_input {
     
     /// A builder for [`StopModelInput`](crate::input::StopModelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -2840,6 +2859,7 @@ impl StopModelInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2971,6 +2991,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3108,6 +3129,7 @@ impl UntagResourceInput {
 pub mod update_dataset_entries_input {
     
     /// A builder for [`UpdateDatasetEntriesInput`](crate::input::UpdateDatasetEntriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,

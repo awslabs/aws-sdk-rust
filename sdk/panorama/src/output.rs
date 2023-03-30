@@ -17,6 +17,7 @@ impl UpdateDeviceMetadataOutput {
 pub mod update_device_metadata_output {
     
     /// A builder for [`UpdateDeviceMetadataOutput`](crate::output::UpdateDeviceMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -58,6 +59,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -87,6 +89,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -125,6 +128,7 @@ impl SignalApplicationInstanceNodeInstancesOutput {
 pub mod signal_application_instance_node_instances_output {
     
     /// A builder for [`SignalApplicationInstanceNodeInstancesOutput`](crate::output::SignalApplicationInstanceNodeInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
@@ -166,6 +170,7 @@ pub struct RemoveApplicationInstanceOutput  {
 pub mod remove_application_instance_output {
     
     /// A builder for [`RemoveApplicationInstanceOutput`](crate::output::RemoveApplicationInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -195,6 +200,7 @@ pub struct RegisterPackageVersionOutput  {
 pub mod register_package_version_output {
     
     /// A builder for [`RegisterPackageVersionOutput`](crate::output::RegisterPackageVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -261,6 +267,7 @@ impl ProvisionDeviceOutput {
 pub mod provision_device_output {
     
     /// A builder for [`ProvisionDeviceOutput`](crate::output::ProvisionDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -359,6 +366,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -422,6 +430,7 @@ impl ListPackagesOutput {
 pub mod list_packages_output {
     
     /// A builder for [`ListPackagesOutput`](crate::output::ListPackagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) packages: std::option::Option<std::vec::Vec<crate::model::PackageListItem>>,
@@ -497,6 +506,7 @@ impl ListPackageImportJobsOutput {
 pub mod list_package_import_jobs_output {
     
     /// A builder for [`ListPackageImportJobsOutput`](crate::output::ListPackageImportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_import_jobs: std::option::Option<std::vec::Vec<crate::model::PackageImportJob>>,
@@ -572,6 +582,7 @@ impl ListNodesOutput {
 pub mod list_nodes_output {
     
     /// A builder for [`ListNodesOutput`](crate::output::ListNodesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nodes: std::option::Option<std::vec::Vec<crate::model::Node>>,
@@ -647,6 +658,7 @@ impl ListNodeFromTemplateJobsOutput {
 pub mod list_node_from_template_jobs_output {
     
     /// A builder for [`ListNodeFromTemplateJobsOutput`](crate::output::ListNodeFromTemplateJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_from_template_jobs: std::option::Option<std::vec::Vec<crate::model::NodeFromTemplateJob>>,
@@ -722,6 +734,7 @@ impl ListDevicesJobsOutput {
 pub mod list_devices_jobs_output {
     
     /// A builder for [`ListDevicesJobsOutput`](crate::output::ListDevicesJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_jobs: std::option::Option<std::vec::Vec<crate::model::DeviceJob>>,
@@ -797,6 +810,7 @@ impl ListDevicesOutput {
 pub mod list_devices_output {
     
     /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
@@ -872,6 +886,7 @@ impl ListApplicationInstancesOutput {
 pub mod list_application_instances_output {
     
     /// A builder for [`ListApplicationInstancesOutput`](crate::output::ListApplicationInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_instances: std::option::Option<std::vec::Vec<crate::model::ApplicationInstance>>,
@@ -947,6 +962,7 @@ impl ListApplicationInstanceNodeInstancesOutput {
 pub mod list_application_instance_node_instances_output {
     
     /// A builder for [`ListApplicationInstanceNodeInstancesOutput`](crate::output::ListApplicationInstanceNodeInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_instances: std::option::Option<std::vec::Vec<crate::model::NodeInstance>>,
@@ -1022,6 +1038,7 @@ impl ListApplicationInstanceDependenciesOutput {
 pub mod list_application_instance_dependencies_output {
     
     /// A builder for [`ListApplicationInstanceDependenciesOutput`](crate::output::ListApplicationInstanceDependenciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_objects: std::option::Option<std::vec::Vec<crate::model::PackageObject>>,
@@ -1153,6 +1170,7 @@ impl DescribePackageVersionOutput {
 pub mod describe_package_version_output {
     
     /// A builder for [`DescribePackageVersionOutput`](crate::output::DescribePackageVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -1382,6 +1400,7 @@ impl DescribePackageImportJobOutput {
 pub mod describe_package_import_job_output {
     
     /// A builder for [`DescribePackageImportJobOutput`](crate::output::DescribePackageImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1607,6 +1626,7 @@ impl DescribePackageOutput {
 pub mod describe_package_output {
     
     /// A builder for [`DescribePackageOutput`](crate::output::DescribePackageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -1836,6 +1856,7 @@ impl DescribeNodeFromTemplateJobOutput {
 pub mod describe_node_from_template_job_output {
     
     /// A builder for [`DescribeNodeFromTemplateJobOutput`](crate::output::DescribeNodeFromTemplateJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2121,6 +2142,7 @@ impl DescribeNodeOutput {
 pub mod describe_node_output {
     
     /// A builder for [`DescribeNodeOutput`](crate::output::DescribeNodeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_id: std::option::Option<std::string::String>,
@@ -2383,6 +2405,7 @@ impl DescribeDeviceJobOutput {
 pub mod describe_device_job_output {
     
     /// A builder for [`DescribeDeviceJobOutput`](crate::output::DescribeDeviceJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2662,6 +2685,7 @@ impl DescribeDeviceOutput {
 pub mod describe_device_output {
     
     /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -3001,6 +3025,7 @@ impl DescribeApplicationInstanceDetailsOutput {
 pub mod describe_application_instance_details_output {
     
     /// A builder for [`DescribeApplicationInstanceDetailsOutput`](crate::output::DescribeApplicationInstanceDetailsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3233,6 +3258,7 @@ impl DescribeApplicationInstanceOutput {
 pub mod describe_application_instance_output {
     
     /// A builder for [`DescribeApplicationInstanceOutput`](crate::output::DescribeApplicationInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3454,6 +3480,7 @@ pub struct DeregisterPackageVersionOutput  {
 pub mod deregister_package_version_output {
     
     /// A builder for [`DeregisterPackageVersionOutput`](crate::output::DeregisterPackageVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3483,6 +3510,7 @@ pub struct DeletePackageOutput  {
 pub mod delete_package_output {
     
     /// A builder for [`DeletePackageOutput`](crate::output::DeletePackageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3521,6 +3549,7 @@ impl DeleteDeviceOutput {
 pub mod delete_device_output {
     
     /// A builder for [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -3571,6 +3600,7 @@ impl CreatePackageImportJobOutput {
 pub mod create_package_import_job_output {
     
     /// A builder for [`CreatePackageImportJobOutput`](crate::output::CreatePackageImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3635,6 +3665,7 @@ impl CreatePackageOutput {
 pub mod create_package_output {
     
     /// A builder for [`CreatePackageOutput`](crate::output::CreatePackageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -3709,6 +3740,7 @@ impl CreateNodeFromTemplateJobOutput {
 pub mod create_node_from_template_job_output {
     
     /// A builder for [`CreateNodeFromTemplateJobOutput`](crate::output::CreateNodeFromTemplateJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3759,6 +3791,7 @@ impl CreateJobForDevicesOutput {
 pub mod create_job_for_devices_output {
     
     /// A builder for [`CreateJobForDevicesOutput`](crate::output::CreateJobForDevicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
@@ -3815,6 +3848,7 @@ impl CreateApplicationInstanceOutput {
 pub mod create_application_instance_output {
     
     /// A builder for [`CreateApplicationInstanceOutput`](crate::output::CreateApplicationInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,

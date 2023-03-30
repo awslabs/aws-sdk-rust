@@ -25,6 +25,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -126,6 +127,7 @@ impl ResourceSet {
 pub mod resource_set {
     
     /// A builder for [`ResourceSet`](crate::model::ResourceSet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -288,6 +290,7 @@ impl ProtocolsListData {
 pub mod protocols_list_data {
     
     /// A builder for [`ProtocolsListData`](crate::model::ProtocolsListData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_id: std::option::Option<std::string::String>,
@@ -547,6 +550,7 @@ impl Policy {
 pub mod policy {
     
     /// A builder for [`Policy`](crate::model::Policy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -909,6 +913,7 @@ impl ResourceTag {
 pub mod resource_tag {
     
     /// A builder for [`ResourceTag`](crate::model::ResourceTag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1025,6 +1030,7 @@ impl SecurityServicePolicyData {
 pub mod security_service_policy_data {
     
     /// A builder for [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityServiceType>,
@@ -1146,6 +1152,7 @@ impl PolicyOption {
 pub mod policy_option {
     
     /// A builder for [`PolicyOption`](crate::model::PolicyOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_firewall_policy: std::option::Option<crate::model::NetworkFirewallPolicy>,
@@ -1208,6 +1215,7 @@ impl ThirdPartyFirewallPolicy {
 pub mod third_party_firewall_policy {
     
     /// A builder for [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_deployment_model: std::option::Option<crate::model::FirewallDeploymentModel>,
@@ -1340,6 +1348,7 @@ impl NetworkFirewallPolicy {
 pub mod network_firewall_policy {
     
     /// A builder for [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_deployment_model: std::option::Option<crate::model::FirewallDeploymentModel>,
@@ -1554,6 +1563,7 @@ impl AppsListData {
 pub mod apps_list_data {
     
     /// A builder for [`AppsListData`](crate::model::AppsListData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_id: std::option::Option<std::string::String>,
@@ -1702,6 +1712,7 @@ impl App {
 pub mod app {
     
     /// A builder for [`App`](crate::model::App).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_name: std::option::Option<std::string::String>,
@@ -1783,6 +1794,7 @@ impl ThirdPartyFirewallFirewallPolicy {
 pub mod third_party_firewall_firewall_policy {
     
     /// A builder for [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_id: std::option::Option<std::string::String>,
@@ -1948,6 +1960,7 @@ impl ResourceSetSummary {
 pub mod resource_set_summary {
     
     /// A builder for [`ResourceSetSummary`](crate::model::ResourceSetSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2041,6 +2054,7 @@ impl Resource {
 pub mod resource {
     
     /// A builder for [`Resource`](crate::model::Resource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
@@ -2124,6 +2138,7 @@ impl ProtocolsListDataSummary {
 pub mod protocols_list_data_summary {
     
     /// A builder for [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_arn: std::option::Option<std::string::String>,
@@ -2262,6 +2277,7 @@ impl PolicySummary {
 pub mod policy_summary {
     
     /// A builder for [`PolicySummary`](crate::model::PolicySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -2411,6 +2427,7 @@ impl DiscoveredResource {
 pub mod discovered_resource {
     
     /// A builder for [`DiscoveredResource`](crate::model::DiscoveredResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
@@ -2539,6 +2556,7 @@ impl PolicyComplianceStatus {
 pub mod policy_compliance_status {
     
     /// A builder for [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_owner: std::option::Option<std::string::String>,
@@ -2779,6 +2797,7 @@ impl EvaluationResult {
 pub mod evaluation_result {
     
     /// A builder for [`EvaluationResult`](crate::model::EvaluationResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_status: std::option::Option<crate::model::PolicyComplianceStatusType>,
@@ -2958,6 +2977,7 @@ impl AppsListDataSummary {
 pub mod apps_list_data_summary {
     
     /// A builder for [`AppsListDataSummary`](crate::model::AppsListDataSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_arn: std::option::Option<std::string::String>,
@@ -3092,6 +3112,7 @@ impl ViolationDetail {
 pub mod violation_detail {
     
     /// A builder for [`ViolationDetail`](crate::model::ViolationDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -3380,6 +3401,7 @@ impl ResourceViolation {
 pub mod resource_violation {
     
     /// A builder for [`ResourceViolation`](crate::model::ResourceViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_vpc_security_group_violation: std::option::Option<crate::model::AwsVpcSecurityGroupViolation>,
@@ -3715,6 +3737,7 @@ impl FirewallSubnetMissingVpcEndpointViolation {
 pub mod firewall_subnet_missing_vpc_endpoint_violation {
     
     /// A builder for [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
@@ -3829,6 +3852,7 @@ impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
 pub mod third_party_firewall_missing_expected_route_table_violation {
     
     /// A builder for [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -3948,6 +3972,7 @@ impl ThirdPartyFirewallMissingSubnetViolation {
 pub mod third_party_firewall_missing_subnet_violation {
     
     /// A builder for [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -4055,6 +4080,7 @@ impl ThirdPartyFirewallMissingFirewallViolation {
 pub mod third_party_firewall_missing_firewall_violation {
     
     /// A builder for [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -4218,6 +4244,7 @@ impl RouteHasOutOfScopeEndpointViolation {
 pub mod route_has_out_of_scope_endpoint_violation {
     
     /// A builder for [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
@@ -4439,6 +4466,7 @@ impl Route {
 pub mod route {
     
     /// A builder for [`Route`](crate::model::Route).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_type: std::option::Option<crate::model::DestinationType>,
@@ -4762,6 +4790,7 @@ impl FirewallSubnetIsOutOfScopeViolation {
 pub mod firewall_subnet_is_out_of_scope_violation {
     
     /// A builder for [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
@@ -4867,6 +4896,7 @@ impl PossibleRemediationActions {
 pub mod possible_remediation_actions {
     
     /// A builder for [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4949,6 +4979,7 @@ impl PossibleRemediationAction {
 pub mod possible_remediation_action {
     
     /// A builder for [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5037,6 +5068,7 @@ impl RemediationActionWithOrder {
 pub mod remediation_action_with_order {
     
     /// A builder for [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) remediation_action: std::option::Option<crate::model::RemediationAction>,
@@ -5156,6 +5188,7 @@ impl RemediationAction {
 pub mod remediation_action {
     
     /// A builder for [`RemediationAction`](crate::model::RemediationAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5309,6 +5342,7 @@ impl FmsPolicyUpdateFirewallCreationConfigAction {
 pub mod fms_policy_update_firewall_creation_config_action {
     
     /// A builder for [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5378,6 +5412,7 @@ impl Ec2CreateRouteTableAction {
 pub mod ec2_create_route_table_action {
     
     /// A builder for [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5447,6 +5482,7 @@ impl ActionTarget {
 pub mod action_target {
     
     /// A builder for [`ActionTarget`](crate::model::ActionTarget).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -5530,6 +5566,7 @@ impl Ec2AssociateRouteTableAction {
 pub mod ec2_associate_route_table_action {
     
     /// A builder for [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5630,6 +5667,7 @@ impl Ec2ReplaceRouteTableAssociationAction {
 pub mod ec2_replace_route_table_association_action {
     
     /// A builder for [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5718,6 +5756,7 @@ impl Ec2CopyRouteTableAction {
 pub mod ec2_copy_route_table_action {
     
     /// A builder for [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5820,6 +5859,7 @@ impl Ec2DeleteRouteAction {
 pub mod ec2_delete_route_action {
     
     /// A builder for [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5953,6 +5993,7 @@ impl Ec2ReplaceRouteAction {
 pub mod ec2_replace_route_action {
     
     /// A builder for [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6105,6 +6146,7 @@ impl Ec2CreateRouteAction {
 pub mod ec2_create_route_action {
     
     /// A builder for [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6241,6 +6283,7 @@ impl DnsRuleGroupLimitExceededViolation {
 pub mod dns_rule_group_limit_exceeded_violation {
     
     /// A builder for [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -6323,6 +6366,7 @@ impl DnsDuplicateRuleGroupViolation {
 pub mod dns_duplicate_rule_group_violation {
     
     /// A builder for [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -6413,6 +6457,7 @@ impl DnsRuleGroupPriorityConflictViolation {
 pub mod dns_rule_group_priority_conflict_violation {
     
     /// A builder for [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -6532,6 +6577,7 @@ impl NetworkFirewallMissingExpectedRoutesViolation {
 pub mod network_firewall_missing_expected_routes_violation {
     
     /// A builder for [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -6647,6 +6693,7 @@ impl ExpectedRoute {
 pub mod expected_route {
     
     /// A builder for [`ExpectedRoute`](crate::model::ExpectedRoute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_v4_cidr: std::option::Option<std::string::String>,
@@ -6790,6 +6837,7 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolation {
 pub mod network_firewall_unexpected_gateway_routes_violation {
     
     /// A builder for [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
@@ -6910,6 +6958,7 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolation {
 pub mod network_firewall_unexpected_firewall_routes_violation {
     
     /// A builder for [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
@@ -7035,6 +7084,7 @@ impl NetworkFirewallBlackHoleRouteDetectedViolation {
 pub mod network_firewall_black_hole_route_detected_violation {
     
     /// A builder for [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -7232,6 +7282,7 @@ impl NetworkFirewallInvalidRouteConfigurationViolation {
 pub mod network_firewall_invalid_route_configuration_violation {
     
     /// A builder for [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) affected_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7591,6 +7642,7 @@ impl NetworkFirewallInternetTrafficNotInspectedViolation {
 pub mod network_firewall_internet_traffic_not_inspected_violation {
     
     /// A builder for [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
@@ -7854,6 +7906,7 @@ impl NetworkFirewallPolicyModifiedViolation {
 pub mod network_firewall_policy_modified_violation {
     
     /// A builder for [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -7984,6 +8037,7 @@ impl NetworkFirewallPolicyDescription {
 pub mod network_firewall_policy_description {
     
     /// A builder for [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stateless_rule_groups: std::option::Option<std::vec::Vec<crate::model::StatelessRuleGroup>>,
@@ -8156,6 +8210,7 @@ impl StatefulEngineOptions {
 pub mod stateful_engine_options {
     
     /// A builder for [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_order: std::option::Option<crate::model::RuleOrder>,
@@ -8313,6 +8368,7 @@ impl StatefulRuleGroup {
 pub mod stateful_rule_group {
     
     /// A builder for [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
@@ -8403,6 +8459,7 @@ impl NetworkFirewallStatefulRuleGroupOverride {
 pub mod network_firewall_stateful_rule_group_override {
     
     /// A builder for [`NetworkFirewallStatefulRuleGroupOverride`](crate::model::NetworkFirewallStatefulRuleGroupOverride).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::NetworkFirewallOverrideAction>,
@@ -8544,6 +8601,7 @@ impl StatelessRuleGroup {
 pub mod stateless_rule_group {
     
     /// A builder for [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
@@ -8647,6 +8705,7 @@ impl NetworkFirewallMissingExpectedRtViolation {
 pub mod network_firewall_missing_expected_rt_violation {
     
     /// A builder for [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -8766,6 +8825,7 @@ impl NetworkFirewallMissingSubnetViolation {
 pub mod network_firewall_missing_subnet_violation {
     
     /// A builder for [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -8873,6 +8933,7 @@ impl NetworkFirewallMissingFirewallViolation {
 pub mod network_firewall_missing_firewall_violation {
     
     /// A builder for [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -8966,6 +9027,7 @@ impl AwsEc2InstanceViolation {
 pub mod aws_ec2_instance_violation {
     
     /// A builder for [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -9041,6 +9103,7 @@ impl AwsEc2NetworkInterfaceViolation {
 pub mod aws_ec2_network_interface_violation {
     
     /// A builder for [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -9130,6 +9193,7 @@ impl AwsVpcSecurityGroupViolation {
 pub mod aws_vpc_security_group_violation {
     
     /// A builder for [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -9249,6 +9313,7 @@ impl SecurityGroupRemediationAction {
 pub mod security_group_remediation_action {
     
     /// A builder for [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) remediation_action_type: std::option::Option<crate::model::RemediationActionType>,
@@ -9371,6 +9436,7 @@ impl SecurityGroupRuleDescription {
 pub mod security_group_rule_description {
     
     /// A builder for [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv4_range: std::option::Option<std::string::String>,
@@ -9570,6 +9636,7 @@ impl PartialMatch {
 pub mod partial_match {
     
     /// A builder for [`PartialMatch`](crate::model::PartialMatch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference: std::option::Option<std::string::String>,
@@ -9864,6 +9931,7 @@ impl PolicyComplianceDetail {
 pub mod policy_compliance_detail {
     
     /// A builder for [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_owner: std::option::Option<std::string::String>,
@@ -10020,6 +10088,7 @@ impl ComplianceViolator {
 pub mod compliance_violator {
     
     /// A builder for [`ComplianceViolator`](crate::model::ComplianceViolator).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -10428,6 +10497,7 @@ impl FailedItem {
 pub mod failed_item {
     
     /// A builder for [`FailedItem`](crate::model::FailedItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,

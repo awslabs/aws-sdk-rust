@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_node_input {
     
     /// A builder for [`AssociateNodeInput`](crate::input::AssociateNodeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name: std::option::Option<std::string::String>,
@@ -165,6 +166,7 @@ impl AssociateNodeInput {
 pub mod create_backup_input {
     
     /// A builder for [`CreateBackupInput`](crate::input::CreateBackupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name: std::option::Option<std::string::String>,
@@ -321,6 +323,7 @@ impl CreateBackupInput {
 pub mod create_server_input {
     
     /// A builder for [`CreateServerInput`](crate::input::CreateServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
@@ -798,6 +801,7 @@ impl CreateServerInput {
 pub mod delete_backup_input {
     
     /// A builder for [`DeleteBackupInput`](crate::input::DeleteBackupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -910,6 +914,7 @@ impl DeleteBackupInput {
 pub mod delete_server_input {
     
     /// A builder for [`DeleteServerInput`](crate::input::DeleteServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name: std::option::Option<std::string::String>,
@@ -1022,6 +1027,7 @@ impl DeleteServerInput {
 pub mod describe_account_attributes_input {
     
     /// A builder for [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1119,6 +1125,7 @@ impl DescribeAccountAttributesInput {
 pub mod describe_backups_input {
     
     /// A builder for [`DescribeBackupsInput`](crate::input::DescribeBackupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -1267,6 +1274,7 @@ impl DescribeBackupsInput {
 pub mod describe_events_input {
     
     /// A builder for [`DescribeEventsInput`](crate::input::DescribeEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name: std::option::Option<std::string::String>,
@@ -1403,6 +1411,7 @@ impl DescribeEventsInput {
 pub mod describe_node_association_status_input {
     
     /// A builder for [`DescribeNodeAssociationStatusInput`](crate::input::DescribeNodeAssociationStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_association_status_token: std::option::Option<std::string::String>,
@@ -1527,6 +1536,7 @@ impl DescribeNodeAssociationStatusInput {
 pub mod describe_servers_input {
     
     /// A builder for [`DescribeServersInput`](crate::input::DescribeServersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name: std::option::Option<std::string::String>,
@@ -1663,6 +1673,7 @@ impl DescribeServersInput {
 pub mod disassociate_node_input {
     
     /// A builder for [`DisassociateNodeInput`](crate::input::DisassociateNodeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name: std::option::Option<std::string::String>,
@@ -1813,6 +1824,7 @@ impl DisassociateNodeInput {
 pub mod export_server_engine_attribute_input {
     
     /// A builder for [`ExportServerEngineAttributeInput`](crate::input::ExportServerEngineAttributeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_attribute_name: std::option::Option<std::string::String>,
@@ -1967,6 +1979,7 @@ impl ExportServerEngineAttributeInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2103,6 +2116,7 @@ impl ListTagsForResourceInput {
 pub mod restore_server_input {
     
     /// A builder for [`RestoreServerInput`](crate::input::RestoreServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -2251,6 +2265,7 @@ impl RestoreServerInput {
 pub mod start_maintenance_input {
     
     /// A builder for [`StartMaintenanceInput`](crate::input::StartMaintenanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name: std::option::Option<std::string::String>,
@@ -2389,6 +2404,7 @@ impl StartMaintenanceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2533,6 +2549,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2663,6 +2680,7 @@ impl UntagResourceInput {
 pub mod update_server_input {
     
     /// A builder for [`UpdateServerInput`](crate::input::UpdateServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disable_automated_backup: std::option::Option<bool>,
@@ -2827,6 +2845,7 @@ impl UpdateServerInput {
 pub mod update_server_engine_attributes_input {
     
     /// A builder for [`UpdateServerEngineAttributesInput`](crate::input::UpdateServerEngineAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name: std::option::Option<std::string::String>,

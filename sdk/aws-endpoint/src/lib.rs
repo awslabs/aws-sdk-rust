@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![allow(clippy::derive_partial_eq_without_eq)]
+
 use std::collections::HashMap;
 use std::error::Error;
 use std::fmt;
@@ -270,7 +272,7 @@ mod test {
         let mut req = operation::Request::new(req);
         {
             let mut props = req.properties_mut();
-            props.insert(region.clone());
+            props.insert(region);
             props.insert(SigningService::from_static("qldb"));
             props.insert(endpoint);
         };

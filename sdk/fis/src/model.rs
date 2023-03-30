@@ -81,6 +81,7 @@ impl ExperimentTemplate {
 pub mod experiment_template {
     
     /// A builder for [`ExperimentTemplate`](crate::model::ExperimentTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -277,6 +278,7 @@ impl ExperimentTemplateLogConfiguration {
 pub mod experiment_template_log_configuration {
     
     /// A builder for [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration>,
@@ -358,6 +360,7 @@ impl ExperimentTemplateS3LogConfiguration {
 pub mod experiment_template_s3_log_configuration {
     
     /// A builder for [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -420,6 +423,7 @@ impl ExperimentTemplateCloudWatchLogsLogConfiguration {
 pub mod experiment_template_cloud_watch_logs_log_configuration {
     
     /// A builder for [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_arn: std::option::Option<std::string::String>,
@@ -477,6 +481,7 @@ impl ExperimentTemplateStopCondition {
 pub mod experiment_template_stop_condition {
     
     /// A builder for [`ExperimentTemplateStopCondition`](crate::model::ExperimentTemplateStopCondition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -567,6 +572,7 @@ impl ExperimentTemplateAction {
 pub mod experiment_template_action {
     
     /// A builder for [`ExperimentTemplateAction`](crate::model::ExperimentTemplateAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
@@ -718,6 +724,7 @@ impl ExperimentTemplateTarget {
 pub mod experiment_template_target {
     
     /// A builder for [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -859,6 +866,7 @@ impl ExperimentTemplateTargetFilter {
 pub mod experiment_template_target_filter {
     
     /// A builder for [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -941,6 +949,7 @@ impl UpdateExperimentTemplateLogConfigurationInput {
 pub mod update_experiment_template_log_configuration_input {
     
     /// A builder for [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
@@ -1022,6 +1031,7 @@ impl ExperimentTemplateS3LogConfigurationInput {
 pub mod experiment_template_s3_log_configuration_input {
     
     /// A builder for [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -1084,6 +1094,7 @@ impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
 pub mod experiment_template_cloud_watch_logs_log_configuration_input {
     
     /// A builder for [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_arn: std::option::Option<std::string::String>,
@@ -1162,6 +1173,7 @@ impl UpdateExperimentTemplateActionInputItem {
 pub mod update_experiment_template_action_input_item {
     
     /// A builder for [`UpdateExperimentTemplateActionInputItem`](crate::model::UpdateExperimentTemplateActionInputItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
@@ -1313,6 +1325,7 @@ impl UpdateExperimentTemplateTargetInput {
 pub mod update_experiment_template_target_input {
     
     /// A builder for [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -1455,6 +1468,7 @@ impl ExperimentTemplateTargetInputFilter {
 pub mod experiment_template_target_input_filter {
     
     /// A builder for [`ExperimentTemplateTargetInputFilter`](crate::model::ExperimentTemplateTargetInputFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -1530,6 +1544,7 @@ impl UpdateExperimentTemplateStopConditionInput {
 pub mod update_experiment_template_stop_condition_input {
     
     /// A builder for [`UpdateExperimentTemplateStopConditionInput`](crate::model::UpdateExperimentTemplateStopConditionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -1669,6 +1684,7 @@ impl Experiment {
 pub mod experiment {
     
     /// A builder for [`Experiment`](crate::model::Experiment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1889,6 +1905,7 @@ impl ExperimentLogConfiguration {
 pub mod experiment_log_configuration {
     
     /// A builder for [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
@@ -1970,6 +1987,7 @@ impl ExperimentS3LogConfiguration {
 pub mod experiment_s3_log_configuration {
     
     /// A builder for [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -2032,6 +2050,7 @@ impl ExperimentCloudWatchLogsLogConfiguration {
 pub mod experiment_cloud_watch_logs_log_configuration {
     
     /// A builder for [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_arn: std::option::Option<std::string::String>,
@@ -2089,6 +2108,7 @@ impl ExperimentStopCondition {
 pub mod experiment_stop_condition {
     
     /// A builder for [`ExperimentStopCondition`](crate::model::ExperimentStopCondition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -2200,6 +2220,7 @@ impl ExperimentAction {
 pub mod experiment_action {
     
     /// A builder for [`ExperimentAction`](crate::model::ExperimentAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
@@ -2359,6 +2380,7 @@ impl ExperimentActionState {
 pub mod experiment_action_state {
     
     /// A builder for [`ExperimentActionState`](crate::model::ExperimentActionState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ExperimentActionStatus>,
@@ -2568,6 +2590,7 @@ impl ExperimentTarget {
 pub mod experiment_target {
     
     /// A builder for [`ExperimentTarget`](crate::model::ExperimentTarget).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -2709,6 +2732,7 @@ impl ExperimentTargetFilter {
 pub mod experiment_target_filter {
     
     /// A builder for [`ExperimentTargetFilter`](crate::model::ExperimentTargetFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -2784,6 +2808,7 @@ impl ExperimentState {
 pub mod experiment_state {
     
     /// A builder for [`ExperimentState`](crate::model::ExperimentState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ExperimentStatus>,
@@ -2960,6 +2985,7 @@ impl TargetResourceTypeSummary {
 pub mod target_resource_type_summary {
     
     /// A builder for [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -3050,6 +3076,7 @@ impl ExperimentTemplateSummary {
 pub mod experiment_template_summary {
     
     /// A builder for [`ExperimentTemplateSummary`](crate::model::ExperimentTemplateSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3182,6 +3209,7 @@ impl ExperimentSummary {
 pub mod experiment_summary {
     
     /// A builder for [`ExperimentSummary`](crate::model::ExperimentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3307,6 +3335,7 @@ impl ActionSummary {
 pub mod action_summary {
     
     /// A builder for [`ActionSummary`](crate::model::ActionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3405,6 +3434,7 @@ impl ActionTarget {
 pub mod action_target {
     
     /// A builder for [`ActionTarget`](crate::model::ActionTarget).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -3469,6 +3499,7 @@ impl TargetResourceType {
 pub mod target_resource_type {
     
     /// A builder for [`TargetResourceType`](crate::model::TargetResourceType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -3556,6 +3587,7 @@ impl TargetResourceTypeParameter {
 pub mod target_resource_type_parameter {
     
     /// A builder for [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3646,6 +3678,7 @@ impl Action {
 pub mod action {
     
     /// A builder for [`Action`](crate::model::Action).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3769,6 +3802,7 @@ impl ActionParameter {
 pub mod action_parameter {
     
     /// A builder for [`ActionParameter`](crate::model::ActionParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3845,6 +3879,7 @@ impl CreateExperimentTemplateLogConfigurationInput {
 pub mod create_experiment_template_log_configuration_input {
     
     /// A builder for [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
@@ -3948,6 +3983,7 @@ impl CreateExperimentTemplateActionInput {
 pub mod create_experiment_template_action_input {
     
     /// A builder for [`CreateExperimentTemplateActionInput`](crate::model::CreateExperimentTemplateActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
@@ -4110,6 +4146,7 @@ impl CreateExperimentTemplateTargetInput {
 pub mod create_experiment_template_target_input {
     
     /// A builder for [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -4261,6 +4298,7 @@ impl CreateExperimentTemplateStopConditionInput {
 pub mod create_experiment_template_stop_condition_input {
     
     /// A builder for [`CreateExperimentTemplateStopConditionInput`](crate::model::CreateExperimentTemplateStopConditionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,

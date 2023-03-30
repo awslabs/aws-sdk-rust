@@ -17,6 +17,7 @@ impl StartLendingAnalysisOutput {
 pub mod start_lending_analysis_output {
     
     /// A builder for [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -67,6 +68,7 @@ impl StartExpenseAnalysisOutput {
 pub mod start_expense_analysis_output {
     
     /// A builder for [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -117,6 +119,7 @@ impl StartDocumentTextDetectionOutput {
 pub mod start_document_text_detection_output {
     
     /// A builder for [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -167,6 +170,7 @@ impl StartDocumentAnalysisOutput {
 pub mod start_document_analysis_output {
     
     /// A builder for [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -252,6 +256,7 @@ impl GetLendingAnalysisSummaryOutput {
 pub mod get_lending_analysis_summary_output {
     
     /// A builder for [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -410,6 +415,7 @@ impl GetLendingAnalysisOutput {
 pub mod get_lending_analysis_output {
     
     /// A builder for [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -586,6 +592,7 @@ impl GetExpenseAnalysisOutput {
 pub mod get_expense_analysis_output {
     
     /// A builder for [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -762,6 +769,7 @@ impl GetDocumentTextDetectionOutput {
 pub mod get_document_text_detection_output {
     
     /// A builder for [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -938,6 +946,7 @@ impl GetDocumentAnalysisOutput {
 pub mod get_document_analysis_output {
     
     /// A builder for [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -1086,6 +1095,7 @@ impl DetectDocumentTextOutput {
 pub mod detect_document_text_output {
     
     /// A builder for [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -1180,6 +1190,7 @@ impl AnalyzeIdOutput {
 pub mod analyze_id_output {
     
     /// A builder for [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_documents: std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
@@ -1267,6 +1278,7 @@ impl AnalyzeExpenseOutput {
 pub mod analyze_expense_output {
     
     /// A builder for [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -1356,6 +1368,7 @@ impl AnalyzeDocumentOutput {
 pub mod analyze_document_output {
     
     /// A builder for [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,

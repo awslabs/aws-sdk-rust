@@ -150,6 +150,7 @@ impl  std::fmt::Debug for Studio  {
 pub mod studio {
     
     /// A builder for [`Studio`](crate::model::Studio).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) admin_role_arn: std::option::Option<std::string::String>,
@@ -415,6 +416,7 @@ impl StudioEncryptionConfiguration {
 pub mod studio_encryption_configuration {
     
     /// A builder for [`StudioEncryptionConfiguration`](crate::model::StudioEncryptionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_arn: std::option::Option<std::string::String>,
@@ -845,6 +847,7 @@ impl NewStudioMember {
 pub mod new_studio_member {
     
     /// A builder for [`NewStudioMember`](crate::model::NewStudioMember).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) persona: std::option::Option<crate::model::StudioPersona>,
@@ -1007,6 +1010,7 @@ impl StudioMembership {
 pub mod studio_membership {
     
     /// A builder for [`StudioMembership`](crate::model::StudioMembership).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
@@ -1254,6 +1258,7 @@ impl  std::fmt::Debug for StudioComponent  {
 pub mod studio_component {
     
     /// A builder for [`StudioComponent`](crate::model::StudioComponent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2039,6 +2044,7 @@ impl ScriptParameterKeyValue {
 pub mod script_parameter_key_value {
     
     /// A builder for [`ScriptParameterKeyValue`](crate::model::ScriptParameterKeyValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2132,6 +2138,7 @@ impl  std::fmt::Debug for StudioComponentInitializationScript  {
 pub mod studio_component_initialization_script {
     
     /// A builder for [`StudioComponentInitializationScript`](crate::model::StudioComponentInitializationScript).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) launch_profile_protocol_version: std::option::Option<std::string::String>,
@@ -2496,6 +2503,7 @@ impl  std::fmt::Debug for SharedFileSystemConfiguration  {
 pub mod shared_file_system_configuration {
     
     /// A builder for [`SharedFileSystemConfiguration`](crate::model::SharedFileSystemConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -2612,6 +2620,7 @@ impl  std::fmt::Debug for LicenseServiceConfiguration  {
 pub mod license_service_configuration {
     
     /// A builder for [`LicenseServiceConfiguration`](crate::model::LicenseServiceConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -2684,6 +2693,7 @@ impl  std::fmt::Debug for ComputeFarmConfiguration  {
 pub mod compute_farm_configuration {
     
     /// A builder for [`ComputeFarmConfiguration`](crate::model::ComputeFarmConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) active_directory_user: std::option::Option<std::string::String>,
@@ -2777,6 +2787,7 @@ impl  std::fmt::Debug for ActiveDirectoryConfiguration  {
 pub mod active_directory_configuration {
     
     /// A builder for [`ActiveDirectoryConfiguration`](crate::model::ActiveDirectoryConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) computer_attributes: std::option::Option<std::vec::Vec<crate::model::ActiveDirectoryComputerAttribute>>,
@@ -2873,6 +2884,7 @@ impl ActiveDirectoryComputerAttribute {
 pub mod active_directory_computer_attribute {
     
     /// A builder for [`ActiveDirectoryComputerAttribute`](crate::model::ActiveDirectoryComputerAttribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3129,6 +3141,7 @@ impl StreamingSession {
 pub mod streaming_session {
     
     /// A builder for [`StreamingSession`](crate::model::StreamingSession).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3607,6 +3620,7 @@ impl VolumeConfiguration {
 pub mod volume_configuration {
     
     /// A builder for [`VolumeConfiguration`](crate::model::VolumeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size: std::option::Option<i32>,
@@ -4269,6 +4283,7 @@ impl  std::fmt::Debug for StreamingSessionStream  {
 pub mod streaming_session_stream {
     
     /// A builder for [`StreamingSessionStream`](crate::model::StreamingSessionStream).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -4821,6 +4836,7 @@ impl StreamingSessionBackup {
 pub mod streaming_session_backup {
     
     /// A builder for [`StreamingSessionBackup`](crate::model::StreamingSessionBackup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5091,6 +5107,7 @@ impl  std::fmt::Debug for StreamingImage  {
 pub mod streaming_image {
     
     /// A builder for [`StreamingImage`](crate::model::StreamingImage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5542,6 +5559,7 @@ impl StreamingImageEncryptionConfiguration {
 pub mod streaming_image_encryption_configuration {
     
     /// A builder for [`StreamingImageEncryptionConfiguration`](crate::model::StreamingImageEncryptionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_arn: std::option::Option<std::string::String>,
@@ -5711,6 +5729,7 @@ impl LaunchProfileMembership {
 pub mod launch_profile_membership {
     
     /// A builder for [`LaunchProfileMembership`](crate::model::LaunchProfileMembership).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
@@ -5881,6 +5900,7 @@ impl NewLaunchProfileMember {
 pub mod new_launch_profile_member {
     
     /// A builder for [`NewLaunchProfileMember`](crate::model::NewLaunchProfileMember).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) persona: std::option::Option<crate::model::LaunchProfilePersona>,
@@ -6015,6 +6035,7 @@ impl  std::fmt::Debug for LaunchProfileInitialization  {
 pub mod launch_profile_initialization {
     
     /// A builder for [`LaunchProfileInitialization`](crate::model::LaunchProfileInitialization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) active_directory: std::option::Option<crate::model::LaunchProfileInitializationActiveDirectory>,
@@ -6233,6 +6254,7 @@ impl  std::fmt::Debug for LaunchProfileInitializationScript  {
 pub mod launch_profile_initialization_script {
     
     /// A builder for [`LaunchProfileInitializationScript`](crate::model::LaunchProfileInitializationScript).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) script: std::option::Option<std::string::String>,
@@ -6397,6 +6419,7 @@ impl  std::fmt::Debug for LaunchProfileInitializationActiveDirectory  {
 pub mod launch_profile_initialization_active_directory {
     
     /// A builder for [`LaunchProfileInitializationActiveDirectory`](crate::model::LaunchProfileInitializationActiveDirectory).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) computer_attributes: std::option::Option<std::vec::Vec<crate::model::ActiveDirectoryComputerAttribute>>,
@@ -6615,6 +6638,7 @@ impl  std::fmt::Debug for StudioComponentSummary  {
 pub mod studio_component_summary {
     
     /// A builder for [`StudioComponentSummary`](crate::model::StudioComponentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -6912,6 +6936,7 @@ impl  std::fmt::Debug for LaunchProfile  {
 pub mod launch_profile {
     
     /// A builder for [`LaunchProfile`](crate::model::LaunchProfile).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7228,6 +7253,7 @@ impl ValidationResult {
 pub mod validation_result {
     
     /// A builder for [`ValidationResult`](crate::model::ValidationResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::LaunchProfileValidationType>,
@@ -7701,6 +7727,7 @@ impl StreamConfiguration {
 pub mod stream_configuration {
     
     /// A builder for [`StreamConfiguration`](crate::model::StreamConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) clipboard_mode: std::option::Option<crate::model::StreamingClipboardMode>,
@@ -7899,6 +7926,7 @@ impl StreamConfigurationSessionBackup {
 pub mod stream_configuration_session_backup {
     
     /// A builder for [`StreamConfigurationSessionBackup`](crate::model::StreamConfigurationSessionBackup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::SessionBackupMode>,
@@ -7971,6 +7999,7 @@ impl StreamConfigurationSessionStorage {
 pub mod stream_configuration_session_storage {
     
     /// A builder for [`StreamConfigurationSessionStorage`](crate::model::StreamConfigurationSessionStorage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) root: std::option::Option<crate::model::StreamingSessionStorageRoot>,
@@ -8131,6 +8160,7 @@ impl  std::fmt::Debug for StreamingSessionStorageRoot  {
 pub mod streaming_session_storage_root {
     
     /// A builder for [`StreamingSessionStorageRoot`](crate::model::StreamingSessionStorageRoot).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) linux: std::option::Option<std::string::String>,
@@ -8623,6 +8653,7 @@ impl StreamConfigurationCreate {
 pub mod stream_configuration_create {
     
     /// A builder for [`StreamConfigurationCreate`](crate::model::StreamConfigurationCreate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) clipboard_mode: std::option::Option<crate::model::StreamingClipboardMode>,
@@ -8840,6 +8871,7 @@ impl Eula {
 pub mod eula {
     
     /// A builder for [`Eula`](crate::model::Eula).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
@@ -8966,6 +8998,7 @@ impl EulaAcceptance {
 pub mod eula_acceptance {
     
     /// A builder for [`EulaAcceptance`](crate::model::EulaAcceptance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accepted_at: std::option::Option<aws_smithy_types::DateTime>,

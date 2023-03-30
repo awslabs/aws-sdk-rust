@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_schedule_input {
     
     /// A builder for [`CreateScheduleInput`](crate::input::CreateScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -271,6 +272,7 @@ impl CreateScheduleInput {
 pub mod create_schedule_group_input {
     
     /// A builder for [`CreateScheduleGroupInput`](crate::input::CreateScheduleGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -417,6 +419,7 @@ impl CreateScheduleGroupInput {
 pub mod delete_schedule_input {
     
     /// A builder for [`DeleteScheduleInput`](crate::input::DeleteScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -568,6 +571,7 @@ impl DeleteScheduleInput {
 pub mod delete_schedule_group_input {
     
     /// A builder for [`DeleteScheduleGroupInput`](crate::input::DeleteScheduleGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -702,6 +706,7 @@ impl DeleteScheduleGroupInput {
 pub mod get_schedule_input {
     
     /// A builder for [`GetScheduleInput`](crate::input::GetScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -833,6 +838,7 @@ impl GetScheduleInput {
 pub mod get_schedule_group_input {
     
     /// A builder for [`GetScheduleGroupInput`](crate::input::GetScheduleGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -942,6 +948,7 @@ impl GetScheduleGroupInput {
 pub mod list_schedule_groups_input {
     
     /// A builder for [`ListScheduleGroupsInput`](crate::input::ListScheduleGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name_prefix: std::option::Option<std::string::String>,
@@ -1089,6 +1096,7 @@ impl ListScheduleGroupsInput {
 pub mod list_schedules_input {
     
     /// A builder for [`ListSchedulesInput`](crate::input::ListSchedulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -1270,6 +1278,7 @@ impl ListSchedulesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1379,6 +1388,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1510,6 +1520,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1647,6 +1658,7 @@ impl UntagResourceInput {
 pub mod update_schedule_input {
     
     /// A builder for [`UpdateScheduleInput`](crate::input::UpdateScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

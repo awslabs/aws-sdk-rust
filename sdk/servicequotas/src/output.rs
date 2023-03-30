@@ -8,6 +8,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -75,6 +77,7 @@ impl RequestServiceQuotaIncreaseOutput {
 pub mod request_service_quota_increase_output {
     
     /// A builder for [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
@@ -125,6 +128,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
 pub mod put_service_quota_increase_request_into_template_output {
     
     /// A builder for [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_quota_increase_request_in_template: std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
@@ -175,6 +179,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -238,6 +243,7 @@ impl ListServicesOutput {
 pub mod list_services_output {
     
     /// A builder for [`ListServicesOutput`](crate::output::ListServicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -313,6 +319,7 @@ impl ListServiceQuotasOutput {
 pub mod list_service_quotas_output {
     
     /// A builder for [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -388,6 +395,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
 pub mod list_service_quota_increase_requests_in_template_output {
     
     /// A builder for [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_quota_increase_request_in_template_list: std::option::Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>,
@@ -463,6 +471,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
 pub mod list_requested_service_quota_change_history_by_quota_output {
     
     /// A builder for [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -538,6 +547,7 @@ impl ListRequestedServiceQuotaChangeHistoryOutput {
 pub mod list_requested_service_quota_change_history_output {
     
     /// A builder for [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -613,6 +623,7 @@ impl ListAwsDefaultServiceQuotasOutput {
 pub mod list_aws_default_service_quotas_output {
     
     /// A builder for [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -681,6 +692,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
 pub mod get_service_quota_increase_request_from_template_output {
     
     /// A builder for [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_quota_increase_request_in_template: std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
@@ -731,6 +743,7 @@ impl GetServiceQuotaOutput {
 pub mod get_service_quota_output {
     
     /// A builder for [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quota: std::option::Option<crate::model::ServiceQuota>,
@@ -781,6 +794,7 @@ impl GetRequestedServiceQuotaChangeOutput {
 pub mod get_requested_service_quota_change_output {
     
     /// A builder for [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
@@ -831,6 +845,7 @@ impl GetAwsDefaultServiceQuotaOutput {
 pub mod get_aws_default_service_quota_output {
     
     /// A builder for [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quota: std::option::Option<crate::model::ServiceQuota>,
@@ -881,6 +896,7 @@ impl GetAssociationForServiceQuotaTemplateOutput {
 pub mod get_association_for_service_quota_template_output {
     
     /// A builder for [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_quota_template_association_status: std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
@@ -922,6 +938,7 @@ pub struct DisassociateServiceQuotaTemplateOutput  {
 pub mod disassociate_service_quota_template_output {
     
     /// A builder for [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -951,6 +968,7 @@ pub struct DeleteServiceQuotaIncreaseRequestFromTemplateOutput  {
 pub mod delete_service_quota_increase_request_from_template_output {
     
     /// A builder for [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -980,6 +998,7 @@ pub struct AssociateServiceQuotaTemplateOutput  {
 pub mod associate_service_quota_template_output {
     
     /// A builder for [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

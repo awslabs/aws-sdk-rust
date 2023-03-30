@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_draft_app_version_resource_mappings_input {
     
     /// A builder for [`AddDraftAppVersionResourceMappingsInput`](crate::input::AddDraftAppVersionResourceMappingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -130,6 +131,7 @@ impl AddDraftAppVersionResourceMappingsInput {
 pub mod create_app_input {
     
     /// A builder for [`CreateAppInput`](crate::input::CreateAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -318,6 +320,7 @@ impl CreateAppInput {
 pub mod create_recommendation_template_input {
     
     /// A builder for [`CreateRecommendationTemplateInput`](crate::input::CreateRecommendationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -612,6 +615,7 @@ impl CreateRecommendationTemplateInput {
 pub mod create_resiliency_policy_input {
     
     /// A builder for [`CreateResiliencyPolicyInput`](crate::input::CreateResiliencyPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -819,6 +823,7 @@ impl CreateResiliencyPolicyInput {
 pub mod delete_app_input {
     
     /// A builder for [`DeleteAppInput`](crate::input::DeleteAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -953,6 +958,7 @@ impl DeleteAppInput {
 pub mod delete_app_assessment_input {
     
     /// A builder for [`DeleteAppAssessmentInput`](crate::input::DeleteAppAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_arn: std::option::Option<std::string::String>,
@@ -1075,6 +1081,7 @@ impl DeleteAppAssessmentInput {
 pub mod delete_recommendation_template_input {
     
     /// A builder for [`DeleteRecommendationTemplateInput`](crate::input::DeleteRecommendationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_template_arn: std::option::Option<std::string::String>,
@@ -1197,6 +1204,7 @@ impl DeleteRecommendationTemplateInput {
 pub mod delete_resiliency_policy_input {
     
     /// A builder for [`DeleteResiliencyPolicyInput`](crate::input::DeleteResiliencyPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -1319,6 +1327,7 @@ impl DeleteResiliencyPolicyInput {
 pub mod describe_app_input {
     
     /// A builder for [`DescribeAppInput`](crate::input::DescribeAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -1426,6 +1435,7 @@ impl DescribeAppInput {
 pub mod describe_app_assessment_input {
     
     /// A builder for [`DescribeAppAssessmentInput`](crate::input::DescribeAppAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_arn: std::option::Option<std::string::String>,
@@ -1533,6 +1543,7 @@ impl DescribeAppAssessmentInput {
 pub mod describe_app_version_resources_resolution_status_input {
     
     /// A builder for [`DescribeAppVersionResourcesResolutionStatusInput`](crate::input::DescribeAppVersionResourcesResolutionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -1664,6 +1675,7 @@ impl DescribeAppVersionResourcesResolutionStatusInput {
 pub mod describe_app_version_template_input {
     
     /// A builder for [`DescribeAppVersionTemplateInput`](crate::input::DescribeAppVersionTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -1783,6 +1795,7 @@ impl DescribeAppVersionTemplateInput {
 pub mod describe_draft_app_version_resources_import_status_input {
     
     /// A builder for [`DescribeDraftAppVersionResourcesImportStatusInput`](crate::input::DescribeDraftAppVersionResourcesImportStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -1890,6 +1903,7 @@ impl DescribeDraftAppVersionResourcesImportStatusInput {
 pub mod describe_resiliency_policy_input {
     
     /// A builder for [`DescribeResiliencyPolicyInput`](crate::input::DescribeResiliencyPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -1997,6 +2011,7 @@ impl DescribeResiliencyPolicyInput {
 pub mod import_resources_to_draft_app_version_input {
     
     /// A builder for [`ImportResourcesToDraftAppVersionInput`](crate::input::ImportResourcesToDraftAppVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -2140,6 +2155,7 @@ impl ImportResourcesToDraftAppVersionInput {
 pub mod list_alarm_recommendations_input {
     
     /// A builder for [`ListAlarmRecommendationsInput`](crate::input::ListAlarmRecommendationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_arn: std::option::Option<std::string::String>,
@@ -2271,6 +2287,7 @@ impl ListAlarmRecommendationsInput {
 pub mod list_app_assessments_input {
     
     /// A builder for [`ListAppAssessmentsInput`](crate::input::ListAppAssessmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -2511,6 +2528,7 @@ impl ListAppAssessmentsInput {
 pub mod list_app_component_compliances_input {
     
     /// A builder for [`ListAppComponentCompliancesInput`](crate::input::ListAppComponentCompliancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2642,6 +2660,7 @@ impl ListAppComponentCompliancesInput {
 pub mod list_app_component_recommendations_input {
     
     /// A builder for [`ListAppComponentRecommendationsInput`](crate::input::ListAppComponentRecommendationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_arn: std::option::Option<std::string::String>,
@@ -2773,6 +2792,7 @@ impl ListAppComponentRecommendationsInput {
 pub mod list_apps_input {
     
     /// A builder for [`ListAppsInput`](crate::input::ListAppsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2937,6 +2957,7 @@ impl ListAppsInput {
 pub mod list_app_version_resource_mappings_input {
     
     /// A builder for [`ListAppVersionResourceMappingsInput`](crate::input::ListAppVersionResourceMappingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -3080,6 +3101,7 @@ impl ListAppVersionResourceMappingsInput {
 pub mod list_app_version_resources_input {
     
     /// A builder for [`ListAppVersionResourcesInput`](crate::input::ListAppVersionResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -3235,6 +3257,7 @@ impl ListAppVersionResourcesInput {
 pub mod list_app_versions_input {
     
     /// A builder for [`ListAppVersionsInput`](crate::input::ListAppVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -3366,6 +3389,7 @@ impl ListAppVersionsInput {
 pub mod list_recommendation_templates_input {
     
     /// A builder for [`ListRecommendationTemplatesInput`](crate::input::ListRecommendationTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_arn: std::option::Option<std::string::String>,
@@ -3590,6 +3614,7 @@ impl ListRecommendationTemplatesInput {
 pub mod list_resiliency_policies_input {
     
     /// A builder for [`ListResiliencyPoliciesInput`](crate::input::ListResiliencyPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -3737,6 +3762,7 @@ impl ListResiliencyPoliciesInput {
 pub mod list_sop_recommendations_input {
     
     /// A builder for [`ListSopRecommendationsInput`](crate::input::ListSopRecommendationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3868,6 +3894,7 @@ impl ListSopRecommendationsInput {
 pub mod list_suggested_resiliency_policies_input {
     
     /// A builder for [`ListSuggestedResiliencyPoliciesInput`](crate::input::ListSuggestedResiliencyPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3998,6 +4025,7 @@ impl ListSuggestedResiliencyPoliciesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4107,6 +4135,7 @@ impl ListTagsForResourceInput {
 pub mod list_test_recommendations_input {
     
     /// A builder for [`ListTestRecommendationsInput`](crate::input::ListTestRecommendationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4238,6 +4267,7 @@ impl ListTestRecommendationsInput {
 pub mod list_unsupported_app_version_resources_input {
     
     /// A builder for [`ListUnsupportedAppVersionResourcesInput`](crate::input::ListUnsupportedAppVersionResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -4393,6 +4423,7 @@ impl ListUnsupportedAppVersionResourcesInput {
 pub mod publish_app_version_input {
     
     /// A builder for [`PublishAppVersionInput`](crate::input::PublishAppVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -4500,6 +4531,7 @@ impl PublishAppVersionInput {
 pub mod put_draft_app_version_template_input {
     
     /// A builder for [`PutDraftAppVersionTemplateInput`](crate::input::PutDraftAppVersionTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -4619,6 +4651,7 @@ impl PutDraftAppVersionTemplateInput {
 pub mod remove_draft_app_version_resource_mappings_input {
     
     /// A builder for [`RemoveDraftAppVersionResourceMappingsInput`](crate::input::RemoveDraftAppVersionResourceMappingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -4816,6 +4849,7 @@ impl RemoveDraftAppVersionResourceMappingsInput {
 pub mod resolve_app_version_resources_input {
     
     /// A builder for [`ResolveAppVersionResourcesInput`](crate::input::ResolveAppVersionResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -4935,6 +4969,7 @@ impl ResolveAppVersionResourcesInput {
 pub mod start_app_assessment_input {
     
     /// A builder for [`StartAppAssessmentInput`](crate::input::StartAppAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -5110,6 +5145,7 @@ impl StartAppAssessmentInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5249,6 +5285,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5394,6 +5431,7 @@ impl UntagResourceInput {
 pub mod update_app_input {
     
     /// A builder for [`UpdateAppInput`](crate::input::UpdateAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -5549,6 +5587,7 @@ impl UpdateAppInput {
 pub mod update_resiliency_policy_input {
     
     /// A builder for [`UpdateResiliencyPolicyInput`](crate::input::UpdateResiliencyPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,

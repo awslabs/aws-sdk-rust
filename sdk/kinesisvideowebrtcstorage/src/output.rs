@@ -8,6 +8,7 @@ pub struct JoinStorageSessionOutput  {
 pub mod join_storage_session_output {
     
     /// A builder for [`JoinStorageSessionOutput`](crate::output::JoinStorageSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

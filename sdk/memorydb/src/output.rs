@@ -17,6 +17,7 @@ impl UpdateUserOutput {
 pub mod update_user_output {
     
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
@@ -67,6 +68,7 @@ impl UpdateSubnetGroupOutput {
 pub mod update_subnet_group_output {
     
     /// A builder for [`UpdateSubnetGroupOutput`](crate::output::UpdateSubnetGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group: std::option::Option<crate::model::SubnetGroup>,
@@ -117,6 +119,7 @@ impl UpdateParameterGroupOutput {
 pub mod update_parameter_group_output {
     
     /// A builder for [`UpdateParameterGroupOutput`](crate::output::UpdateParameterGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group: std::option::Option<crate::model::ParameterGroup>,
@@ -167,6 +170,7 @@ impl UpdateClusterOutput {
 pub mod update_cluster_output {
     
     /// A builder for [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
@@ -217,6 +221,7 @@ impl UpdateAclOutput {
 pub mod update_acl_output {
     
     /// A builder for [`UpdateAclOutput`](crate::output::UpdateAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::Acl>,
@@ -267,6 +272,7 @@ impl UntagResourceOutput {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -323,6 +329,7 @@ impl TagResourceOutput {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -379,6 +386,7 @@ impl ResetParameterGroupOutput {
 pub mod reset_parameter_group_output {
     
     /// A builder for [`ResetParameterGroupOutput`](crate::output::ResetParameterGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group: std::option::Option<crate::model::ParameterGroup>,
@@ -429,6 +437,7 @@ impl PurchaseReservedNodesOfferingOutput {
 pub mod purchase_reserved_nodes_offering_output {
     
     /// A builder for [`PurchaseReservedNodesOfferingOutput`](crate::output::PurchaseReservedNodesOfferingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_node: std::option::Option<crate::model::ReservedNode>,
@@ -479,6 +488,7 @@ impl ListTagsOutput {
 pub mod list_tags_output {
     
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -542,6 +552,7 @@ impl ListAllowedNodeTypeUpdatesOutput {
 pub mod list_allowed_node_type_updates_output {
     
     /// A builder for [`ListAllowedNodeTypeUpdatesOutput`](crate::output::ListAllowedNodeTypeUpdatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scale_up_node_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -616,6 +627,7 @@ impl FailoverShardOutput {
 pub mod failover_shard_output {
     
     /// A builder for [`FailoverShardOutput`](crate::output::FailoverShardOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
@@ -673,6 +685,7 @@ impl DescribeUsersOutput {
 pub mod describe_users_output {
     
     /// A builder for [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -748,6 +761,7 @@ impl DescribeSubnetGroupsOutput {
 pub mod describe_subnet_groups_output {
     
     /// A builder for [`DescribeSubnetGroupsOutput`](crate::output::DescribeSubnetGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -823,6 +837,7 @@ impl DescribeSnapshotsOutput {
 pub mod describe_snapshots_output {
     
     /// A builder for [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -898,6 +913,7 @@ impl DescribeServiceUpdatesOutput {
 pub mod describe_service_updates_output {
     
     /// A builder for [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -973,6 +989,7 @@ impl DescribeReservedNodesOfferingsOutput {
 pub mod describe_reserved_nodes_offerings_output {
     
     /// A builder for [`DescribeReservedNodesOfferingsOutput`](crate::output::DescribeReservedNodesOfferingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1048,6 +1065,7 @@ impl DescribeReservedNodesOutput {
 pub mod describe_reserved_nodes_output {
     
     /// A builder for [`DescribeReservedNodesOutput`](crate::output::DescribeReservedNodesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1123,6 +1141,7 @@ impl DescribeParametersOutput {
 pub mod describe_parameters_output {
     
     /// A builder for [`DescribeParametersOutput`](crate::output::DescribeParametersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1198,6 +1217,7 @@ impl DescribeParameterGroupsOutput {
 pub mod describe_parameter_groups_output {
     
     /// A builder for [`DescribeParameterGroupsOutput`](crate::output::DescribeParameterGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1273,6 +1293,7 @@ impl DescribeEventsOutput {
 pub mod describe_events_output {
     
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1348,6 +1369,7 @@ impl DescribeEngineVersionsOutput {
 pub mod describe_engine_versions_output {
     
     /// A builder for [`DescribeEngineVersionsOutput`](crate::output::DescribeEngineVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1423,6 +1445,7 @@ impl DescribeClustersOutput {
 pub mod describe_clusters_output {
     
     /// A builder for [`DescribeClustersOutput`](crate::output::DescribeClustersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1498,6 +1521,7 @@ impl DescribeAcLsOutput {
 pub mod describe_ac_ls_output {
     
     /// A builder for [`DescribeAcLsOutput`](crate::output::DescribeAcLsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ac_ls: std::option::Option<std::vec::Vec<crate::model::Acl>>,
@@ -1566,6 +1590,7 @@ impl DeleteUserOutput {
 pub mod delete_user_output {
     
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
@@ -1616,6 +1641,7 @@ impl DeleteSubnetGroupOutput {
 pub mod delete_subnet_group_output {
     
     /// A builder for [`DeleteSubnetGroupOutput`](crate::output::DeleteSubnetGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group: std::option::Option<crate::model::SubnetGroup>,
@@ -1666,6 +1692,7 @@ impl DeleteSnapshotOutput {
 pub mod delete_snapshot_output {
     
     /// A builder for [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
@@ -1716,6 +1743,7 @@ impl DeleteParameterGroupOutput {
 pub mod delete_parameter_group_output {
     
     /// A builder for [`DeleteParameterGroupOutput`](crate::output::DeleteParameterGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group: std::option::Option<crate::model::ParameterGroup>,
@@ -1766,6 +1794,7 @@ impl DeleteClusterOutput {
 pub mod delete_cluster_output {
     
     /// A builder for [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
@@ -1816,6 +1845,7 @@ impl DeleteAclOutput {
 pub mod delete_acl_output {
     
     /// A builder for [`DeleteAclOutput`](crate::output::DeleteAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::Acl>,
@@ -1866,6 +1896,7 @@ impl CreateUserOutput {
 pub mod create_user_output {
     
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
@@ -1916,6 +1947,7 @@ impl CreateSubnetGroupOutput {
 pub mod create_subnet_group_output {
     
     /// A builder for [`CreateSubnetGroupOutput`](crate::output::CreateSubnetGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group: std::option::Option<crate::model::SubnetGroup>,
@@ -1966,6 +1998,7 @@ impl CreateSnapshotOutput {
 pub mod create_snapshot_output {
     
     /// A builder for [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
@@ -2016,6 +2049,7 @@ impl CreateParameterGroupOutput {
 pub mod create_parameter_group_output {
     
     /// A builder for [`CreateParameterGroupOutput`](crate::output::CreateParameterGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group: std::option::Option<crate::model::ParameterGroup>,
@@ -2066,6 +2100,7 @@ impl CreateClusterOutput {
 pub mod create_cluster_output {
     
     /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
@@ -2116,6 +2151,7 @@ impl CreateAclOutput {
 pub mod create_acl_output {
     
     /// A builder for [`CreateAclOutput`](crate::output::CreateAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::Acl>,
@@ -2166,6 +2202,7 @@ impl CopySnapshotOutput {
 pub mod copy_snapshot_output {
     
     /// A builder for [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
@@ -2223,6 +2260,7 @@ impl BatchUpdateClusterOutput {
 pub mod batch_update_cluster_output {
     
     /// A builder for [`BatchUpdateClusterOutput`](crate::output::BatchUpdateClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) processed_clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,

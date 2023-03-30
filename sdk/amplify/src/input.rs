@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_app_input {
     
     /// A builder for [`CreateAppInput`](crate::input::CreateAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -389,6 +390,7 @@ impl CreateAppInput {
 pub mod create_backend_environment_input {
     
     /// A builder for [`CreateBackendEnvironmentInput`](crate::input::CreateBackendEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -538,6 +540,7 @@ impl CreateBackendEnvironmentInput {
 pub mod create_branch_input {
     
     /// A builder for [`CreateBranchInput`](crate::input::CreateBranchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -893,6 +896,7 @@ impl CreateBranchInput {
 pub mod create_deployment_input {
     
     /// A builder for [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1042,6 +1046,7 @@ impl CreateDeploymentInput {
 pub mod create_domain_association_input {
     
     /// A builder for [`CreateDomainAssociationInput`](crate::input::CreateDomainAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1227,6 +1232,7 @@ impl CreateDomainAssociationInput {
 pub mod create_webhook_input {
     
     /// A builder for [`CreateWebhookInput`](crate::input::CreateWebhookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1364,6 +1370,7 @@ impl CreateWebhookInput {
 pub mod delete_app_input {
     
     /// A builder for [`DeleteAppInput`](crate::input::DeleteAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1473,6 +1480,7 @@ impl DeleteAppInput {
 pub mod delete_backend_environment_input {
     
     /// A builder for [`DeleteBackendEnvironmentInput`](crate::input::DeleteBackendEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1600,6 +1608,7 @@ impl DeleteBackendEnvironmentInput {
 pub mod delete_branch_input {
     
     /// A builder for [`DeleteBranchInput`](crate::input::DeleteBranchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1727,6 +1736,7 @@ impl DeleteBranchInput {
 pub mod delete_domain_association_input {
     
     /// A builder for [`DeleteDomainAssociationInput`](crate::input::DeleteDomainAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1854,6 +1864,7 @@ impl DeleteDomainAssociationInput {
 pub mod delete_job_input {
     
     /// A builder for [`DeleteJobInput`](crate::input::DeleteJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1999,6 +2010,7 @@ impl DeleteJobInput {
 pub mod delete_webhook_input {
     
     /// A builder for [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook_id: std::option::Option<std::string::String>,
@@ -2108,6 +2120,7 @@ impl DeleteWebhookInput {
 pub mod generate_access_logs_input {
     
     /// A builder for [`GenerateAccessLogsInput`](crate::input::GenerateAccessLogsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2257,6 +2270,7 @@ impl GenerateAccessLogsInput {
 pub mod get_app_input {
     
     /// A builder for [`GetAppInput`](crate::input::GetAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2366,6 +2380,7 @@ impl GetAppInput {
 pub mod get_artifact_url_input {
     
     /// A builder for [`GetArtifactUrlInput`](crate::input::GetArtifactUrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) artifact_id: std::option::Option<std::string::String>,
@@ -2475,6 +2490,7 @@ impl GetArtifactUrlInput {
 pub mod get_backend_environment_input {
     
     /// A builder for [`GetBackendEnvironmentInput`](crate::input::GetBackendEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2602,6 +2618,7 @@ impl GetBackendEnvironmentInput {
 pub mod get_branch_input {
     
     /// A builder for [`GetBranchInput`](crate::input::GetBranchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2729,6 +2746,7 @@ impl GetBranchInput {
 pub mod get_domain_association_input {
     
     /// A builder for [`GetDomainAssociationInput`](crate::input::GetDomainAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2856,6 +2874,7 @@ impl GetDomainAssociationInput {
 pub mod get_job_input {
     
     /// A builder for [`GetJobInput`](crate::input::GetJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3001,6 +3020,7 @@ impl GetJobInput {
 pub mod get_webhook_input {
     
     /// A builder for [`GetWebhookInput`](crate::input::GetWebhookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook_id: std::option::Option<std::string::String>,
@@ -3110,6 +3130,7 @@ impl GetWebhookInput {
 pub mod list_apps_input {
     
     /// A builder for [`ListAppsInput`](crate::input::ListAppsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3239,6 +3260,7 @@ impl ListAppsInput {
 pub mod list_artifacts_input {
     
     /// A builder for [`ListArtifactsInput`](crate::input::ListArtifactsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3422,6 +3444,7 @@ impl ListArtifactsInput {
 pub mod list_backend_environments_input {
     
     /// A builder for [`ListBackendEnvironmentsInput`](crate::input::ListBackendEnvironmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3586,6 +3609,7 @@ impl ListBackendEnvironmentsInput {
 pub mod list_branches_input {
     
     /// A builder for [`ListBranchesInput`](crate::input::ListBranchesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3733,6 +3757,7 @@ impl ListBranchesInput {
 pub mod list_domain_associations_input {
     
     /// A builder for [`ListDomainAssociationsInput`](crate::input::ListDomainAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3880,6 +3905,7 @@ impl ListDomainAssociationsInput {
 pub mod list_jobs_input {
     
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4045,6 +4071,7 @@ impl ListJobsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4154,6 +4181,7 @@ impl ListTagsForResourceInput {
 pub mod list_webhooks_input {
     
     /// A builder for [`ListWebhooksInput`](crate::input::ListWebhooksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4301,6 +4329,7 @@ impl ListWebhooksInput {
 pub mod start_deployment_input {
     
     /// A builder for [`StartDeploymentInput`](crate::input::StartDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4456,6 +4485,7 @@ impl StartDeploymentInput {
 pub mod start_job_input {
     
     /// A builder for [`StartJobInput`](crate::input::StartJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4659,6 +4689,7 @@ impl StartJobInput {
 pub mod stop_job_input {
     
     /// A builder for [`StopJobInput`](crate::input::StopJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4804,6 +4835,7 @@ impl StopJobInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4935,6 +4967,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5072,6 +5105,7 @@ impl UntagResourceInput {
 pub mod update_app_input {
     
     /// A builder for [`UpdateAppInput`](crate::input::UpdateAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -5458,6 +5492,7 @@ impl UpdateAppInput {
 pub mod update_branch_input {
     
     /// A builder for [`UpdateBranchInput`](crate::input::UpdateBranchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -5800,6 +5835,7 @@ impl UpdateBranchInput {
 pub mod update_domain_association_input {
     
     /// A builder for [`UpdateDomainAssociationInput`](crate::input::UpdateDomainAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -5991,6 +6027,7 @@ impl UpdateDomainAssociationInput {
 pub mod update_webhook_input {
     
     /// A builder for [`UpdateWebhookInput`](crate::input::UpdateWebhookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook_id: std::option::Option<std::string::String>,

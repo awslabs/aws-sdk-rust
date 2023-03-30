@@ -152,6 +152,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
     
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -212,6 +213,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
     
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -546,6 +548,7 @@ impl std::error::Error for ServiceQuotaExceededException {}
 pub mod service_quota_exceeded_exception {
     
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -606,6 +609,7 @@ impl std::error::Error for ResourceConflictException {}
 pub mod resource_conflict_exception {
     
     /// A builder for [`ResourceConflictException`](crate::error::ResourceConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -803,6 +807,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2995,6 +3000,7 @@ impl std::error::Error for UnauthorizedException {}
 pub mod unauthorized_exception {
     
     /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_delete_builds_input {
     
     /// A builder for [`BatchDeleteBuildsInput`](crate::input::BatchDeleteBuildsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -123,6 +124,7 @@ impl BatchDeleteBuildsInput {
 pub mod batch_get_build_batches_input {
     
     /// A builder for [`BatchGetBuildBatchesInput`](crate::input::BatchGetBuildBatchesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -241,6 +243,7 @@ impl BatchGetBuildBatchesInput {
 pub mod batch_get_builds_input {
     
     /// A builder for [`BatchGetBuildsInput`](crate::input::BatchGetBuildsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -359,6 +362,7 @@ impl BatchGetBuildsInput {
 pub mod batch_get_projects_input {
     
     /// A builder for [`BatchGetProjectsInput`](crate::input::BatchGetProjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -477,6 +481,7 @@ impl BatchGetProjectsInput {
 pub mod batch_get_report_groups_input {
     
     /// A builder for [`BatchGetReportGroupsInput`](crate::input::BatchGetReportGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -595,6 +600,7 @@ impl BatchGetReportGroupsInput {
 pub mod batch_get_reports_input {
     
     /// A builder for [`BatchGetReportsInput`](crate::input::BatchGetReportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -713,6 +719,7 @@ impl BatchGetReportsInput {
 pub mod create_project_input {
     
     /// A builder for [`CreateProjectInput`](crate::input::CreateProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1123,6 +1130,7 @@ impl CreateProjectInput {
 pub mod create_report_group_input {
     
     /// A builder for [`CreateReportGroupInput`](crate::input::CreateReportGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1279,6 +1287,7 @@ impl CreateReportGroupInput {
 pub mod create_webhook_input {
     
     /// A builder for [`CreateWebhookInput`](crate::input::CreateWebhookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -1439,6 +1448,7 @@ impl CreateWebhookInput {
 pub mod delete_build_batch_input {
     
     /// A builder for [`DeleteBuildBatchInput`](crate::input::DeleteBuildBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1551,6 +1561,7 @@ impl DeleteBuildBatchInput {
 pub mod delete_project_input {
     
     /// A builder for [`DeleteProjectInput`](crate::input::DeleteProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1663,6 +1674,7 @@ impl DeleteProjectInput {
 pub mod delete_report_input {
     
     /// A builder for [`DeleteReportInput`](crate::input::DeleteReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1775,6 +1787,7 @@ impl DeleteReportInput {
 pub mod delete_report_group_input {
     
     /// A builder for [`DeleteReportGroupInput`](crate::input::DeleteReportGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1902,6 +1915,7 @@ impl DeleteReportGroupInput {
 pub mod delete_resource_policy_input {
     
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2014,6 +2028,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_source_credentials_input {
     
     /// A builder for [`DeleteSourceCredentialsInput`](crate::input::DeleteSourceCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2126,6 +2141,7 @@ impl DeleteSourceCredentialsInput {
 pub mod delete_webhook_input {
     
     /// A builder for [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -2238,6 +2254,7 @@ impl DeleteWebhookInput {
 pub mod describe_code_coverages_input {
     
     /// A builder for [`DescribeCodeCoveragesInput`](crate::input::DescribeCodeCoveragesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_arn: std::option::Option<std::string::String>,
@@ -2450,6 +2467,7 @@ impl DescribeCodeCoveragesInput {
 pub mod describe_test_cases_input {
     
     /// A builder for [`DescribeTestCasesInput`](crate::input::DescribeTestCasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_arn: std::option::Option<std::string::String>,
@@ -2598,6 +2616,7 @@ impl DescribeTestCasesInput {
 pub mod get_report_group_trend_input {
     
     /// A builder for [`GetReportGroupTrendInput`](crate::input::GetReportGroupTrendInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_group_arn: std::option::Option<std::string::String>,
@@ -2880,6 +2899,7 @@ impl GetReportGroupTrendInput {
 pub mod get_resource_policy_input {
     
     /// A builder for [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2992,6 +3012,7 @@ impl GetResourcePolicyInput {
 pub mod import_source_credentials_input {
     
     /// A builder for [`ImportSourceCredentialsInput`](crate::input::ImportSourceCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -3163,6 +3184,7 @@ impl ImportSourceCredentialsInput {
 pub mod invalidate_project_cache_input {
     
     /// A builder for [`InvalidateProjectCacheInput`](crate::input::InvalidateProjectCacheInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -3275,6 +3297,7 @@ impl InvalidateProjectCacheInput {
 pub mod list_build_batches_input {
     
     /// A builder for [`ListBuildBatchesInput`](crate::input::ListBuildBatchesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::BuildBatchFilter>,
@@ -3431,6 +3454,7 @@ impl ListBuildBatchesInput {
 pub mod list_build_batches_for_project_input {
     
     /// A builder for [`ListBuildBatchesForProjectInput`](crate::input::ListBuildBatchesForProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -3599,6 +3623,7 @@ impl ListBuildBatchesForProjectInput {
 pub mod list_builds_input {
     
     /// A builder for [`ListBuildsInput`](crate::input::ListBuildsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
@@ -3731,6 +3756,7 @@ impl ListBuildsInput {
 pub mod list_builds_for_project_input {
     
     /// A builder for [`ListBuildsForProjectInput`](crate::input::ListBuildsForProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -3879,6 +3905,7 @@ impl ListBuildsForProjectInput {
 pub mod list_curated_environment_images_input {
     
     /// A builder for [`ListCuratedEnvironmentImagesInput`](crate::input::ListCuratedEnvironmentImagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3976,6 +4003,7 @@ impl ListCuratedEnvironmentImagesInput {
 pub mod list_projects_input {
     
     /// A builder for [`ListProjectsInput`](crate::input::ListProjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sort_by: std::option::Option<crate::model::ProjectSortByType>,
@@ -4134,6 +4162,7 @@ impl ListProjectsInput {
 pub mod list_report_groups_input {
     
     /// A builder for [`ListReportGroupsInput`](crate::input::ListReportGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
@@ -4292,6 +4321,7 @@ impl ListReportGroupsInput {
 pub mod list_reports_input {
     
     /// A builder for [`ListReportsInput`](crate::input::ListReportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
@@ -4448,6 +4478,7 @@ impl ListReportsInput {
 pub mod list_reports_for_report_group_input {
     
     /// A builder for [`ListReportsForReportGroupInput`](crate::input::ListReportsForReportGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_group_arn: std::option::Option<std::string::String>,
@@ -4608,6 +4639,7 @@ impl ListReportsForReportGroupInput {
 pub mod list_shared_projects_input {
     
     /// A builder for [`ListSharedProjectsInput`](crate::input::ListSharedProjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sort_by: std::option::Option<crate::model::SharedResourceSortByType>,
@@ -4772,6 +4804,7 @@ impl ListSharedProjectsInput {
 pub mod list_shared_report_groups_input {
     
     /// A builder for [`ListSharedReportGroupsInput`](crate::input::ListSharedReportGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
@@ -4936,6 +4969,7 @@ impl ListSharedReportGroupsInput {
 pub mod list_source_credentials_input {
     
     /// A builder for [`ListSourceCredentialsInput`](crate::input::ListSourceCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5033,6 +5067,7 @@ impl ListSourceCredentialsInput {
 pub mod put_resource_policy_input {
     
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -5157,6 +5192,7 @@ impl PutResourcePolicyInput {
 pub mod retry_build_input {
     
     /// A builder for [`RetryBuildInput`](crate::input::RetryBuildInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5281,6 +5317,7 @@ impl RetryBuildInput {
 pub mod retry_build_batch_input {
     
     /// A builder for [`RetryBuildBatchInput`](crate::input::RetryBuildBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5417,6 +5454,7 @@ impl RetryBuildBatchInput {
 pub mod start_build_input {
     
     /// A builder for [`StartBuildInput`](crate::input::StartBuildInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -6015,6 +6053,7 @@ impl StartBuildInput {
 pub mod start_build_batch_input {
     
     /// A builder for [`StartBuildBatchInput`](crate::input::StartBuildBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -6611,6 +6650,7 @@ impl StartBuildBatchInput {
 pub mod stop_build_input {
     
     /// A builder for [`StopBuildInput`](crate::input::StopBuildInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6723,6 +6763,7 @@ impl StopBuildInput {
 pub mod stop_build_batch_input {
     
     /// A builder for [`StopBuildBatchInput`](crate::input::StopBuildBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6835,6 +6876,7 @@ impl StopBuildBatchInput {
 pub mod update_project_input {
     
     /// A builder for [`UpdateProjectInput`](crate::input::UpdateProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7251,6 +7293,7 @@ impl UpdateProjectInput {
 pub mod update_project_visibility_input {
     
     /// A builder for [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
@@ -7415,6 +7458,7 @@ impl UpdateProjectVisibilityInput {
 pub mod update_report_group_input {
     
     /// A builder for [`UpdateReportGroupInput`](crate::input::UpdateReportGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7567,6 +7611,7 @@ impl UpdateReportGroupInput {
 pub mod update_webhook_input {
     
     /// A builder for [`UpdateWebhookInput`](crate::input::UpdateWebhookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,

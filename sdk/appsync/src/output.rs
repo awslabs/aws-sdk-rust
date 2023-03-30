@@ -17,6 +17,7 @@ impl UpdateTypeOutput {
 pub mod update_type_output {
     
     /// A builder for [`UpdateTypeOutput`](crate::output::UpdateTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
@@ -67,6 +68,7 @@ impl UpdateResolverOutput {
 pub mod update_resolver_output {
     
     /// A builder for [`UpdateResolverOutput`](crate::output::UpdateResolverOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver: std::option::Option<crate::model::Resolver>,
@@ -117,6 +119,7 @@ impl UpdateGraphqlApiOutput {
 pub mod update_graphql_api_output {
     
     /// A builder for [`UpdateGraphqlApiOutput`](crate::output::UpdateGraphqlApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) graphql_api: std::option::Option<crate::model::GraphqlApi>,
@@ -167,6 +170,7 @@ impl UpdateFunctionOutput {
 pub mod update_function_output {
     
     /// A builder for [`UpdateFunctionOutput`](crate::output::UpdateFunctionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
@@ -217,6 +221,7 @@ impl UpdateDomainNameOutput {
 pub mod update_domain_name_output {
     
     /// A builder for [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
@@ -267,6 +272,7 @@ impl UpdateDataSourceOutput {
 pub mod update_data_source_output {
     
     /// A builder for [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source: std::option::Option<crate::model::DataSource>,
@@ -317,6 +323,7 @@ impl UpdateApiKeyOutput {
 pub mod update_api_key_output {
     
     /// A builder for [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<crate::model::ApiKey>,
@@ -367,6 +374,7 @@ impl UpdateApiCacheOutput {
 pub mod update_api_cache_output {
     
     /// A builder for [`UpdateApiCacheOutput`](crate::output::UpdateApiCacheOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_cache: std::option::Option<crate::model::ApiCache>,
@@ -408,6 +416,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -437,6 +446,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -475,6 +485,7 @@ impl StartSchemaCreationOutput {
 pub mod start_schema_creation_output {
     
     /// A builder for [`StartSchemaCreationOutput`](crate::output::StartSchemaCreationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SchemaStatus>,
@@ -532,6 +543,7 @@ impl ListTypesOutput {
 pub mod list_types_output {
     
     /// A builder for [`ListTypesOutput`](crate::output::ListTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) types: std::option::Option<std::vec::Vec<crate::model::Type>>,
@@ -600,6 +612,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -663,6 +676,7 @@ impl ListResolversByFunctionOutput {
 pub mod list_resolvers_by_function_output {
     
     /// A builder for [`ListResolversByFunctionOutput`](crate::output::ListResolversByFunctionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolvers: std::option::Option<std::vec::Vec<crate::model::Resolver>>,
@@ -738,6 +752,7 @@ impl ListResolversOutput {
 pub mod list_resolvers_output {
     
     /// A builder for [`ListResolversOutput`](crate::output::ListResolversOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolvers: std::option::Option<std::vec::Vec<crate::model::Resolver>>,
@@ -813,6 +828,7 @@ impl ListGraphqlApisOutput {
 pub mod list_graphql_apis_output {
     
     /// A builder for [`ListGraphqlApisOutput`](crate::output::ListGraphqlApisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) graphql_apis: std::option::Option<std::vec::Vec<crate::model::GraphqlApi>>,
@@ -888,6 +904,7 @@ impl ListFunctionsOutput {
 pub mod list_functions_output {
     
     /// A builder for [`ListFunctionsOutput`](crate::output::ListFunctionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) functions: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
@@ -963,6 +980,7 @@ impl ListDomainNamesOutput {
 pub mod list_domain_names_output {
     
     /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name_configs: std::option::Option<std::vec::Vec<crate::model::DomainNameConfig>>,
@@ -1038,6 +1056,7 @@ impl ListDataSourcesOutput {
 pub mod list_data_sources_output {
     
     /// A builder for [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
@@ -1113,6 +1132,7 @@ impl ListApiKeysOutput {
 pub mod list_api_keys_output {
     
     /// A builder for [`ListApiKeysOutput`](crate::output::ListApiKeysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_keys: std::option::Option<std::vec::Vec<crate::model::ApiKey>>,
@@ -1181,6 +1201,7 @@ impl GetTypeOutput {
 pub mod get_type_output {
     
     /// A builder for [`GetTypeOutput`](crate::output::GetTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
@@ -1238,6 +1259,7 @@ impl GetSchemaCreationStatusOutput {
 pub mod get_schema_creation_status_output {
     
     /// A builder for [`GetSchemaCreationStatusOutput`](crate::output::GetSchemaCreationStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SchemaStatus>,
@@ -1300,6 +1322,7 @@ impl GetResolverOutput {
 pub mod get_resolver_output {
     
     /// A builder for [`GetResolverOutput`](crate::output::GetResolverOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver: std::option::Option<crate::model::Resolver>,
@@ -1352,6 +1375,7 @@ impl GetIntrospectionSchemaOutput {
 pub mod get_introspection_schema_output {
     
     /// A builder for [`GetIntrospectionSchemaOutput`](crate::output::GetIntrospectionSchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema: std::option::Option<aws_smithy_types::Blob>,
@@ -1404,6 +1428,7 @@ impl GetGraphqlApiOutput {
 pub mod get_graphql_api_output {
     
     /// A builder for [`GetGraphqlApiOutput`](crate::output::GetGraphqlApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) graphql_api: std::option::Option<crate::model::GraphqlApi>,
@@ -1454,6 +1479,7 @@ impl GetFunctionOutput {
 pub mod get_function_output {
     
     /// A builder for [`GetFunctionOutput`](crate::output::GetFunctionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
@@ -1504,6 +1530,7 @@ impl GetDomainNameOutput {
 pub mod get_domain_name_output {
     
     /// A builder for [`GetDomainNameOutput`](crate::output::GetDomainNameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
@@ -1554,6 +1581,7 @@ impl GetDataSourceOutput {
 pub mod get_data_source_output {
     
     /// A builder for [`GetDataSourceOutput`](crate::output::GetDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source: std::option::Option<crate::model::DataSource>,
@@ -1604,6 +1632,7 @@ impl GetApiCacheOutput {
 pub mod get_api_cache_output {
     
     /// A builder for [`GetApiCacheOutput`](crate::output::GetApiCacheOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_cache: std::option::Option<crate::model::ApiCache>,
@@ -1654,6 +1683,7 @@ impl GetApiAssociationOutput {
 pub mod get_api_association_output {
     
     /// A builder for [`GetApiAssociationOutput`](crate::output::GetApiAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_association: std::option::Option<crate::model::ApiAssociation>,
@@ -1695,6 +1725,7 @@ pub struct FlushApiCacheOutput  {
 pub mod flush_api_cache_output {
     
     /// A builder for [`FlushApiCacheOutput`](crate::output::FlushApiCacheOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1747,6 +1778,7 @@ impl EvaluateMappingTemplateOutput {
 pub mod evaluate_mapping_template_output {
     
     /// A builder for [`EvaluateMappingTemplateOutput`](crate::output::EvaluateMappingTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_result: std::option::Option<std::string::String>,
@@ -1841,6 +1873,7 @@ impl EvaluateCodeOutput {
 pub mod evaluate_code_output {
     
     /// A builder for [`EvaluateCodeOutput`](crate::output::EvaluateCodeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_result: std::option::Option<std::string::String>,
@@ -1912,6 +1945,7 @@ pub struct DisassociateApiOutput  {
 pub mod disassociate_api_output {
     
     /// A builder for [`DisassociateApiOutput`](crate::output::DisassociateApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1941,6 +1975,7 @@ pub struct DeleteTypeOutput  {
 pub mod delete_type_output {
     
     /// A builder for [`DeleteTypeOutput`](crate::output::DeleteTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1970,6 +2005,7 @@ pub struct DeleteResolverOutput  {
 pub mod delete_resolver_output {
     
     /// A builder for [`DeleteResolverOutput`](crate::output::DeleteResolverOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1999,6 +2035,7 @@ pub struct DeleteGraphqlApiOutput  {
 pub mod delete_graphql_api_output {
     
     /// A builder for [`DeleteGraphqlApiOutput`](crate::output::DeleteGraphqlApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2028,6 +2065,7 @@ pub struct DeleteFunctionOutput  {
 pub mod delete_function_output {
     
     /// A builder for [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2057,6 +2095,7 @@ pub struct DeleteDomainNameOutput  {
 pub mod delete_domain_name_output {
     
     /// A builder for [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2086,6 +2125,7 @@ pub struct DeleteDataSourceOutput  {
 pub mod delete_data_source_output {
     
     /// A builder for [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2115,6 +2155,7 @@ pub struct DeleteApiKeyOutput  {
 pub mod delete_api_key_output {
     
     /// A builder for [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2144,6 +2185,7 @@ pub struct DeleteApiCacheOutput  {
 pub mod delete_api_cache_output {
     
     /// A builder for [`DeleteApiCacheOutput`](crate::output::DeleteApiCacheOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2182,6 +2224,7 @@ impl CreateTypeOutput {
 pub mod create_type_output {
     
     /// A builder for [`CreateTypeOutput`](crate::output::CreateTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
@@ -2232,6 +2275,7 @@ impl CreateResolverOutput {
 pub mod create_resolver_output {
     
     /// A builder for [`CreateResolverOutput`](crate::output::CreateResolverOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver: std::option::Option<crate::model::Resolver>,
@@ -2282,6 +2326,7 @@ impl CreateGraphqlApiOutput {
 pub mod create_graphql_api_output {
     
     /// A builder for [`CreateGraphqlApiOutput`](crate::output::CreateGraphqlApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) graphql_api: std::option::Option<crate::model::GraphqlApi>,
@@ -2332,6 +2377,7 @@ impl CreateFunctionOutput {
 pub mod create_function_output {
     
     /// A builder for [`CreateFunctionOutput`](crate::output::CreateFunctionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
@@ -2382,6 +2428,7 @@ impl CreateDomainNameOutput {
 pub mod create_domain_name_output {
     
     /// A builder for [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
@@ -2432,6 +2479,7 @@ impl CreateDataSourceOutput {
 pub mod create_data_source_output {
     
     /// A builder for [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source: std::option::Option<crate::model::DataSource>,
@@ -2482,6 +2530,7 @@ impl CreateApiKeyOutput {
 pub mod create_api_key_output {
     
     /// A builder for [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<crate::model::ApiKey>,
@@ -2532,6 +2581,7 @@ impl CreateApiCacheOutput {
 pub mod create_api_cache_output {
     
     /// A builder for [`CreateApiCacheOutput`](crate::output::CreateApiCacheOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_cache: std::option::Option<crate::model::ApiCache>,
@@ -2582,6 +2632,7 @@ impl AssociateApiOutput {
 pub mod associate_api_output {
     
     /// A builder for [`AssociateApiOutput`](crate::output::AssociateApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_association: std::option::Option<crate::model::ApiAssociation>,

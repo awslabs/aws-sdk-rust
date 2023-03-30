@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod delete_scaling_policy_input {
     
     /// A builder for [`DeleteScalingPolicyInput`](crate::input::DeleteScalingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -233,6 +234,7 @@ impl DeleteScalingPolicyInput {
 pub mod delete_scheduled_action_input {
     
     /// A builder for [`DeleteScheduledActionInput`](crate::input::DeleteScheduledActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_namespace: std::option::Option<crate::model::ServiceNamespace>,
@@ -461,6 +463,7 @@ impl DeleteScheduledActionInput {
 pub mod deregister_scalable_target_input {
     
     /// A builder for [`DeregisterScalableTargetInput`](crate::input::DeregisterScalableTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_namespace: std::option::Option<crate::model::ServiceNamespace>,
@@ -677,6 +680,7 @@ impl DeregisterScalableTargetInput {
 pub mod describe_scalable_targets_input {
     
     /// A builder for [`DescribeScalableTargetsInput`](crate::input::DescribeScalableTargetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_namespace: std::option::Option<crate::model::ServiceNamespace>,
@@ -925,6 +929,7 @@ impl DescribeScalableTargetsInput {
 pub mod describe_scaling_activities_input {
     
     /// A builder for [`DescribeScalingActivitiesInput`](crate::input::DescribeScalingActivitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_namespace: std::option::Option<crate::model::ServiceNamespace>,
@@ -1179,6 +1184,7 @@ impl DescribeScalingActivitiesInput {
 pub mod describe_scaling_policies_input {
     
     /// A builder for [`DescribeScalingPoliciesInput`](crate::input::DescribeScalingPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1439,6 +1445,7 @@ impl DescribeScalingPoliciesInput {
 pub mod describe_scheduled_actions_input {
     
     /// A builder for [`DescribeScheduledActionsInput`](crate::input::DescribeScheduledActionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_action_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1699,6 +1706,7 @@ impl DescribeScheduledActionsInput {
 pub mod put_scaling_policy_input {
     
     /// A builder for [`PutScalingPolicyInput`](crate::input::PutScalingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -1977,6 +1985,7 @@ impl PutScalingPolicyInput {
 pub mod put_scheduled_action_input {
     
     /// A builder for [`PutScheduledActionInput`](crate::input::PutScheduledActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_namespace: std::option::Option<crate::model::ServiceNamespace>,
@@ -2287,6 +2296,7 @@ impl PutScheduledActionInput {
 pub mod register_scalable_target_input {
     
     /// A builder for [`RegisterScalableTargetInput`](crate::input::RegisterScalableTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_namespace: std::option::Option<crate::model::ServiceNamespace>,

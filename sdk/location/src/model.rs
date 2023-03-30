@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
     
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -146,6 +147,7 @@ impl  std::fmt::Debug for ListDevicePositionsResponseEntry  {
 pub mod list_device_positions_response_entry {
     
     /// A builder for [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -267,6 +269,7 @@ impl PositionalAccuracy {
 pub mod positional_accuracy {
     
     /// A builder for [`PositionalAccuracy`](crate::model::PositionalAccuracy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) horizontal: std::option::Option<f64>,
@@ -364,6 +367,7 @@ impl  std::fmt::Debug for DevicePosition  {
 pub mod device_position {
     
     /// A builder for [`DevicePosition`](crate::model::DevicePosition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -512,6 +516,7 @@ impl BatchUpdateDevicePositionError {
 pub mod batch_update_device_position_error {
     
     /// A builder for [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -593,6 +598,7 @@ impl BatchItemError {
 pub mod batch_item_error {
     
     /// A builder for [`BatchItemError`](crate::model::BatchItemError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::BatchItemErrorCode>,
@@ -716,6 +722,7 @@ impl  std::fmt::Debug for DevicePositionUpdate  {
 pub mod device_position_update {
     
     /// A builder for [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -846,6 +853,7 @@ impl BatchGetDevicePositionError {
 pub mod batch_get_device_position_error {
     
     /// A builder for [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -915,6 +923,7 @@ impl BatchDeleteDevicePositionHistoryError {
 pub mod batch_delete_device_position_history_error {
     
     /// A builder for [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -1016,6 +1025,7 @@ impl ListTrackersResponseEntry {
 pub mod list_trackers_response_entry {
     
     /// A builder for [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -1203,6 +1213,7 @@ impl CalculateRouteMatrixSummary {
 pub mod calculate_route_matrix_summary {
     
     /// A builder for [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source: std::option::Option<std::string::String>,
@@ -1335,6 +1346,7 @@ impl RouteMatrixEntry {
 pub mod route_matrix_entry {
     
     /// A builder for [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distance: std::option::Option<f64>,
@@ -1435,6 +1447,7 @@ impl RouteMatrixEntryError {
 pub mod route_matrix_entry_error {
     
     /// A builder for [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::RouteMatrixErrorCode>,
@@ -1546,6 +1559,7 @@ impl CalculateRouteTruckModeOptions {
 pub mod calculate_route_truck_mode_options {
     
     /// A builder for [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avoid_ferries: std::option::Option<bool>,
@@ -1655,6 +1669,7 @@ impl TruckWeight {
 pub mod truck_weight {
     
     /// A builder for [`TruckWeight`](crate::model::TruckWeight).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total: std::option::Option<f64>,
@@ -1798,6 +1813,7 @@ impl TruckDimensions {
 pub mod truck_dimensions {
     
     /// A builder for [`TruckDimensions`](crate::model::TruckDimensions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) length: std::option::Option<f64>,
@@ -1951,6 +1967,7 @@ impl CalculateRouteCarModeOptions {
 pub mod calculate_route_car_mode_options {
     
     /// A builder for [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avoid_ferries: std::option::Option<bool>,
@@ -2116,6 +2133,7 @@ impl  std::fmt::Debug for CalculateRouteSummary  {
 pub mod calculate_route_summary {
     
     /// A builder for [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) route_b_box: std::option::Option<std::vec::Vec<f64>>,
@@ -2338,6 +2356,7 @@ impl  std::fmt::Debug for Leg  {
 pub mod leg {
     
     /// A builder for [`Leg`](crate::model::Leg).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
@@ -2533,6 +2552,7 @@ impl  std::fmt::Debug for Step  {
 pub mod step {
     
     /// A builder for [`Step`](crate::model::Step).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
@@ -2664,6 +2684,7 @@ impl LegGeometry {
 pub mod leg_geometry {
     
     /// A builder for [`LegGeometry`](crate::model::LegGeometry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
@@ -2789,6 +2810,7 @@ impl ListRouteCalculatorsResponseEntry {
 pub mod list_route_calculators_response_entry {
     
     /// A builder for [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -2956,6 +2978,7 @@ impl SearchForTextResult {
 pub mod search_for_text_result {
     
     /// A builder for [`SearchForTextResult`](crate::model::SearchForTextResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
@@ -3154,6 +3177,7 @@ impl Place {
 pub mod place {
     
     /// A builder for [`Place`](crate::model::Place).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label: std::option::Option<std::string::String>,
@@ -3377,6 +3401,7 @@ impl TimeZone {
 pub mod time_zone {
     
     /// A builder for [`TimeZone`](crate::model::TimeZone).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3454,6 +3479,7 @@ impl  std::fmt::Debug for PlaceGeometry  {
 pub mod place_geometry {
     
     /// A builder for [`PlaceGeometry`](crate::model::PlaceGeometry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) point: std::option::Option<std::vec::Vec<f64>>,
@@ -3608,6 +3634,7 @@ impl  std::fmt::Debug for SearchPlaceIndexForTextSummary  {
 pub mod search_place_index_for_text_summary {
     
     /// A builder for [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -3812,6 +3839,7 @@ impl SearchForSuggestionsResult {
 pub mod search_for_suggestions_result {
     
     /// A builder for [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -3949,6 +3977,7 @@ impl  std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary  {
 pub mod search_place_index_for_suggestions_summary {
     
     /// A builder for [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -4140,6 +4169,7 @@ impl SearchForPositionResult {
 pub mod search_for_position_result {
     
     /// A builder for [`SearchForPositionResult`](crate::model::SearchForPositionResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
@@ -4267,6 +4297,7 @@ impl  std::fmt::Debug for SearchPlaceIndexForPositionSummary  {
 pub mod search_place_index_for_position_summary {
     
     /// A builder for [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
@@ -4433,6 +4464,7 @@ impl ListPlaceIndexesResponseEntry {
 pub mod list_place_indexes_response_entry {
     
     /// A builder for [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -4576,6 +4608,7 @@ impl DataSourceConfiguration {
 pub mod data_source_configuration {
     
     /// A builder for [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intended_use: std::option::Option<crate::model::IntendedUse>,
@@ -4695,6 +4728,7 @@ impl ListMapsResponseEntry {
 pub mod list_maps_response_entry {
     
     /// A builder for [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -4875,6 +4909,7 @@ impl MapConfiguration {
 pub mod map_configuration {
     
     /// A builder for [`MapConfiguration`](crate::model::MapConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) style: std::option::Option<std::string::String>,
@@ -5019,6 +5054,7 @@ impl  std::fmt::Debug for GeofenceGeometry  {
 pub mod geofence_geometry {
     
     /// A builder for [`GeofenceGeometry`](crate::model::GeofenceGeometry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
@@ -5118,6 +5154,7 @@ impl  std::fmt::Debug for Circle  {
 pub mod circle {
     
     /// A builder for [`Circle`](crate::model::Circle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) center: std::option::Option<std::vec::Vec<f64>>,
@@ -5236,6 +5273,7 @@ impl ListGeofenceResponseEntry {
 pub mod list_geofence_response_entry {
     
     /// A builder for [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -5355,6 +5393,7 @@ impl BatchPutGeofenceError {
 pub mod batch_put_geofence_error {
     
     /// A builder for [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -5431,6 +5470,7 @@ impl BatchPutGeofenceSuccess {
 pub mod batch_put_geofence_success {
     
     /// A builder for [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -5516,6 +5556,7 @@ impl BatchPutGeofenceRequestEntry {
 pub mod batch_put_geofence_request_entry {
     
     /// A builder for [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -5596,6 +5637,7 @@ impl BatchEvaluateGeofencesError {
 pub mod batch_evaluate_geofences_error {
     
     /// A builder for [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -5677,6 +5719,7 @@ impl BatchDeleteGeofenceError {
 pub mod batch_delete_geofence_error {
     
     /// A builder for [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -5778,6 +5821,7 @@ impl ListGeofenceCollectionsResponseEntry {
 pub mod list_geofence_collections_response_entry {
     
     /// A builder for [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,

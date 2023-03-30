@@ -137,6 +137,7 @@ impl  std::fmt::Debug for User  {
 pub mod user {
     
     /// A builder for [`User`](crate::model::User).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -383,6 +384,7 @@ impl UserStorageMetadata {
 pub mod user_storage_metadata {
     
     /// A builder for [`UserStorageMetadata`](crate::model::UserStorageMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_utilized_in_bytes: std::option::Option<i64>,
@@ -452,6 +454,7 @@ impl StorageRuleType {
 pub mod storage_rule_type {
     
     /// A builder for [`StorageRuleType`](crate::model::StorageRuleType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_allocated_in_bytes: std::option::Option<i64>,
@@ -1270,6 +1273,7 @@ impl  std::fmt::Debug for UploadMetadata  {
 pub mod upload_metadata {
     
     /// A builder for [`UploadMetadata`](crate::model::UploadMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) upload_url: std::option::Option<std::string::String>,
@@ -1395,6 +1399,7 @@ impl DocumentMetadata {
 pub mod document_metadata {
     
     /// A builder for [`DocumentMetadata`](crate::model::DocumentMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1619,6 +1624,7 @@ impl DocumentVersionMetadata {
 pub mod document_version_metadata {
     
     /// A builder for [`DocumentVersionMetadata`](crate::model::DocumentVersionMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2146,6 +2152,7 @@ impl FolderMetadata {
 pub mod folder_metadata {
     
     /// A builder for [`FolderMetadata`](crate::model::FolderMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2399,6 +2406,7 @@ impl ResourcePath {
 pub mod resource_path {
     
     /// A builder for [`ResourcePath`](crate::model::ResourcePath).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) components: std::option::Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
@@ -2462,6 +2470,7 @@ impl ResourcePathComponent {
 pub mod resource_path_component {
     
     /// A builder for [`ResourcePathComponent`](crate::model::ResourcePathComponent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2799,6 +2808,7 @@ impl Principal {
 pub mod principal {
     
     /// A builder for [`Principal`](crate::model::Principal).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2886,6 +2896,7 @@ impl PermissionInfo {
 pub mod permission_info {
     
     /// A builder for [`PermissionInfo`](crate::model::PermissionInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role: std::option::Option<crate::model::RoleType>,
@@ -3136,6 +3147,7 @@ impl Subscription {
 pub mod subscription {
     
     /// A builder for [`Subscription`](crate::model::Subscription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_id: std::option::Option<std::string::String>,
@@ -3299,6 +3311,7 @@ impl GroupMetadata {
 pub mod group_metadata {
     
     /// A builder for [`GroupMetadata`](crate::model::GroupMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3601,6 +3614,7 @@ impl  std::fmt::Debug for Comment  {
 pub mod comment {
     
     /// A builder for [`Comment`](crate::model::Comment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
@@ -3987,6 +4001,7 @@ impl Activity {
 pub mod activity {
     
     /// A builder for [`Activity`](crate::model::Activity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ActivityType>,
@@ -4162,6 +4177,7 @@ impl CommentMetadata {
 pub mod comment_metadata {
     
     /// A builder for [`CommentMetadata`](crate::model::CommentMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
@@ -4302,6 +4318,7 @@ impl ResourceMetadata {
 pub mod resource_metadata {
     
     /// A builder for [`ResourceMetadata`](crate::model::ResourceMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ResourceType>,
@@ -4463,6 +4480,7 @@ impl  std::fmt::Debug for UserMetadata  {
 pub mod user_metadata {
     
     /// A builder for [`UserMetadata`](crate::model::UserMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4661,6 +4679,7 @@ impl Participants {
 pub mod participants {
     
     /// A builder for [`Participants`](crate::model::Participants).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserMetadata>>,
@@ -5096,6 +5115,7 @@ impl  std::fmt::Debug for ShareResult  {
 pub mod share_result {
     
     /// A builder for [`ShareResult`](crate::model::ShareResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) principal_id: std::option::Option<std::string::String>,
@@ -5315,6 +5335,7 @@ impl  std::fmt::Debug for NotificationOptions  {
 pub mod notification_options {
     
     /// A builder for [`NotificationOptions`](crate::model::NotificationOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) send_email: std::option::Option<bool>,
@@ -5400,6 +5421,7 @@ impl SharePrincipal {
 pub mod share_principal {
     
     /// A builder for [`SharePrincipal`](crate::model::SharePrincipal).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
     
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -214,6 +215,7 @@ impl WorkspaceSummary {
 pub mod workspace_summary {
     
     /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -330,6 +332,7 @@ impl WorkspaceStatus {
 pub mod workspace_status {
     
     /// A builder for [`WorkspaceStatus`](crate::model::WorkspaceStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<crate::model::WorkspaceStatusCode>,
@@ -519,6 +522,7 @@ impl WorkspaceDescription {
 pub mod workspace_description {
     
     /// A builder for [`WorkspaceDescription`](crate::model::WorkspaceDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -682,6 +686,7 @@ impl RuleGroupsNamespaceSummary {
 pub mod rule_groups_namespace_summary {
     
     /// A builder for [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -805,6 +810,7 @@ impl RuleGroupsNamespaceStatus {
 pub mod rule_groups_namespace_status {
     
     /// A builder for [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<crate::model::RuleGroupsNamespaceStatusCode>,
@@ -1011,6 +1017,7 @@ impl RuleGroupsNamespaceDescription {
 pub mod rule_groups_namespace_description {
     
     /// A builder for [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1146,6 +1153,7 @@ impl LoggingConfigurationStatus {
 pub mod logging_configuration_status {
     
     /// A builder for [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<crate::model::LoggingConfigurationStatusCode>,
@@ -1338,6 +1346,7 @@ impl LoggingConfigurationMetadata {
 pub mod logging_configuration_metadata {
     
     /// A builder for [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::LoggingConfigurationStatus>,
@@ -1443,6 +1452,7 @@ impl AlertManagerDefinitionStatus {
 pub mod alert_manager_definition_status {
     
     /// A builder for [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<crate::model::AlertManagerDefinitionStatusCode>,
@@ -1628,6 +1638,7 @@ impl AlertManagerDefinitionDescription {
 pub mod alert_manager_definition_description {
     
     /// A builder for [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,

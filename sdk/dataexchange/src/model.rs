@@ -197,6 +197,7 @@ impl Event {
 pub mod event {
     
     /// A builder for [`Event`](crate::model::Event).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_published: std::option::Option<crate::model::RevisionPublished>,
@@ -247,6 +248,7 @@ impl RevisionPublished {
 pub mod revision_published {
     
     /// A builder for [`RevisionPublished`](crate::model::RevisionPublished).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -297,6 +299,7 @@ impl Action {
 pub mod action {
     
     /// A builder for [`Action`](crate::model::Action).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_revision_to_s3: std::option::Option<crate::model::AutoExportRevisionToS3RequestDetails>,
@@ -354,6 +357,7 @@ impl AutoExportRevisionToS3RequestDetails {
 pub mod auto_export_revision_to_s3_request_details {
     
     /// A builder for [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
@@ -423,6 +427,7 @@ impl AutoExportRevisionDestinationEntry {
 pub mod auto_export_revision_destination_entry {
     
     /// A builder for [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -492,6 +497,7 @@ impl ExportServerSideEncryption {
 pub mod export_server_side_encryption {
     
     /// A builder for [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -636,6 +642,7 @@ impl OriginDetails {
 pub mod origin_details {
     
     /// A builder for [`OriginDetails`](crate::model::OriginDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_id: std::option::Option<std::string::String>,
@@ -893,6 +900,7 @@ impl AssetDetails {
 pub mod asset_details {
     
     /// A builder for [`AssetDetails`](crate::model::AssetDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_snapshot_asset: std::option::Option<crate::model::S3SnapshotAsset>,
@@ -1012,6 +1020,7 @@ impl LakeFormationDataPermissionAsset {
 pub mod lake_formation_data_permission_asset {
     
     /// A builder for [`LakeFormationDataPermissionAsset`](crate::model::LakeFormationDataPermissionAsset).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lake_formation_data_permission_details: std::option::Option<crate::model::LakeFormationDataPermissionDetails>,
@@ -1263,6 +1272,7 @@ impl LakeFormationDataPermissionDetails {
 pub mod lake_formation_data_permission_details {
     
     /// A builder for [`LakeFormationDataPermissionDetails`](crate::model::LakeFormationDataPermissionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lf_tag_policy: std::option::Option<crate::model::LfTagPolicyDetails>,
@@ -1327,6 +1337,7 @@ impl LfTagPolicyDetails {
 pub mod lf_tag_policy_details {
     
     /// A builder for [`LfTagPolicyDetails`](crate::model::LfTagPolicyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -1408,6 +1419,7 @@ impl LfResourceDetails {
 pub mod lf_resource_details {
     
     /// A builder for [`LfResourceDetails`](crate::model::LfResourceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database: std::option::Option<crate::model::DatabaseLfTagPolicy>,
@@ -1470,6 +1482,7 @@ impl TableLfTagPolicy {
 pub mod table_lf_tag_policy {
     
     /// A builder for [`TableLfTagPolicy`](crate::model::TableLfTagPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
@@ -1533,6 +1546,7 @@ impl LfTag {
 pub mod lf_tag {
     
     /// A builder for [`LfTag`](crate::model::LfTag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -1601,6 +1615,7 @@ impl DatabaseLfTagPolicy {
 pub mod database_lf_tag_policy {
     
     /// A builder for [`DatabaseLfTagPolicy`](crate::model::DatabaseLfTagPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
@@ -1767,6 +1782,7 @@ impl S3DataAccessAsset {
 pub mod s3_data_access_asset {
     
     /// A builder for [`S3DataAccessAsset`](crate::model::S3DataAccessAsset).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -1933,6 +1949,7 @@ impl ApiGatewayApiAsset {
 pub mod api_gateway_api_asset {
     
     /// A builder for [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_description: std::option::Option<std::string::String>,
@@ -2156,6 +2173,7 @@ impl RedshiftDataShareAsset {
 pub mod redshift_data_share_asset {
     
     /// A builder for [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2206,6 +2224,7 @@ impl S3SnapshotAsset {
 pub mod s3_snapshot_asset {
     
     /// A builder for [`S3SnapshotAsset`](crate::model::S3SnapshotAsset).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size: std::option::Option<f64>,
@@ -2320,6 +2339,7 @@ impl AssetEntry {
 pub mod asset_entry {
     
     /// A builder for [`AssetEntry`](crate::model::AssetEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2527,6 +2547,7 @@ impl JobEntry {
 pub mod job_entry {
     
     /// A builder for [`JobEntry`](crate::model::JobEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2928,6 +2949,7 @@ impl JobError {
 pub mod job_error {
     
     /// A builder for [`JobError`](crate::model::JobError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::Code>,
@@ -3242,6 +3264,7 @@ impl Details {
 pub mod details {
     
     /// A builder for [`Details`](crate::model::Details).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_asset_from_signed_url_job_error_details: std::option::Option<crate::model::ImportAssetFromSignedUrlJobErrorDetails>,
@@ -3317,6 +3340,7 @@ impl AssetSourceEntry {
 pub mod asset_source_entry {
     
     /// A builder for [`AssetSourceEntry`](crate::model::AssetSourceEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -3379,6 +3403,7 @@ impl ImportAssetFromSignedUrlJobErrorDetails {
 pub mod import_asset_from_signed_url_job_error_details {
     
     /// A builder for [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_name: std::option::Option<std::string::String>,
@@ -3592,6 +3617,7 @@ impl ResponseDetails {
 pub mod response_details {
     
     /// A builder for [`ResponseDetails`](crate::model::ResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_asset_to_signed_url: std::option::Option<crate::model::ExportAssetToSignedUrlResponseDetails>,
@@ -3773,6 +3799,7 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
 pub mod import_assets_from_lake_formation_tag_policy_response_details {
     
     /// A builder for [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -3890,6 +3917,7 @@ impl TableLfTagPolicyAndPermissions {
 pub mod table_lf_tag_policy_and_permissions {
     
     /// A builder for [`TableLfTagPolicyAndPermissions`](crate::model::TableLfTagPolicyAndPermissions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
@@ -4053,6 +4081,7 @@ impl DatabaseLfTagPolicyAndPermissions {
 pub mod database_lf_tag_policy_and_permissions {
     
     /// A builder for [`DatabaseLfTagPolicyAndPermissions`](crate::model::DatabaseLfTagPolicyAndPermissions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
@@ -4218,6 +4247,7 @@ impl CreateS3DataAccessFromS3BucketResponseDetails {
 pub mod create_s3_data_access_from_s3_bucket_response_details {
     
     /// A builder for [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::model::CreateS3DataAccessFromS3BucketResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_source: std::option::Option<crate::model::S3DataAccessAssetSourceEntry>,
@@ -4306,6 +4336,7 @@ impl S3DataAccessAssetSourceEntry {
 pub mod s3_data_access_asset_source_entry {
     
     /// A builder for [`S3DataAccessAssetSourceEntry`](crate::model::S3DataAccessAssetSourceEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -4462,6 +4493,7 @@ impl ImportAssetFromApiGatewayApiResponseDetails {
 pub mod import_asset_from_api_gateway_api_response_details {
     
     /// A builder for [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_description: std::option::Option<std::string::String>,
@@ -4646,6 +4678,7 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetails {
 pub mod import_assets_from_redshift_data_shares_response_details {
     
     /// A builder for [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_sources: std::option::Option<std::vec::Vec<crate::model::RedshiftDataShareAssetSourceEntry>>,
@@ -4726,6 +4759,7 @@ impl RedshiftDataShareAssetSourceEntry {
 pub mod redshift_data_share_asset_source_entry {
     
     /// A builder for [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_share_arn: std::option::Option<std::string::String>,
@@ -4790,6 +4824,7 @@ impl ImportAssetsFromS3ResponseDetails {
 pub mod import_assets_from_s3_response_details {
     
     /// A builder for [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_sources: std::option::Option<std::vec::Vec<crate::model::AssetSourceEntry>>,
@@ -4905,6 +4940,7 @@ impl ImportAssetFromSignedUrlResponseDetails {
 pub mod import_asset_from_signed_url_response_details {
     
     /// A builder for [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_name: std::option::Option<std::string::String>,
@@ -5036,6 +5072,7 @@ impl ExportRevisionsToS3ResponseDetails {
 pub mod export_revisions_to_s3_response_details {
     
     /// A builder for [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -5142,6 +5179,7 @@ impl RevisionDestinationEntry {
 pub mod revision_destination_entry {
     
     /// A builder for [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -5237,6 +5275,7 @@ impl ExportAssetsToS3ResponseDetails {
 pub mod export_assets_to_s3_response_details {
     
     /// A builder for [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_destinations: std::option::Option<std::vec::Vec<crate::model::AssetDestinationEntry>>,
@@ -5343,6 +5382,7 @@ impl AssetDestinationEntry {
 pub mod asset_destination_entry {
     
     /// A builder for [`AssetDestinationEntry`](crate::model::AssetDestinationEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -5445,6 +5485,7 @@ impl ExportAssetToSignedUrlResponseDetails {
 pub mod export_asset_to_signed_url_response_details {
     
     /// A builder for [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -5578,6 +5619,7 @@ impl EventActionEntry {
 pub mod event_action_entry {
     
     /// A builder for [`EventActionEntry`](crate::model::EventActionEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
@@ -5751,6 +5793,7 @@ impl DataSetEntry {
 pub mod data_set_entry {
     
     /// A builder for [`DataSetEntry`](crate::model::DataSetEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5979,6 +6022,7 @@ impl RevisionEntry {
 pub mod revision_entry {
     
     /// A builder for [`RevisionEntry`](crate::model::RevisionEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6207,6 +6251,7 @@ impl RequestDetails {
 pub mod request_details {
     
     /// A builder for [`RequestDetails`](crate::model::RequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_asset_to_signed_url: std::option::Option<crate::model::ExportAssetToSignedUrlRequestDetails>,
@@ -6388,6 +6433,7 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetails {
 pub mod import_assets_from_lake_formation_tag_policy_request_details {
     
     /// A builder for [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -6512,6 +6558,7 @@ impl CreateS3DataAccessFromS3BucketRequestDetails {
 pub mod create_s3_data_access_from_s3_bucket_request_details {
     
     /// A builder for [`CreateS3DataAccessFromS3BucketRequestDetails`](crate::model::CreateS3DataAccessFromS3BucketRequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_source: std::option::Option<crate::model::S3DataAccessAssetSourceEntry>,
@@ -6642,6 +6689,7 @@ impl ImportAssetFromApiGatewayApiRequestDetails {
 pub mod import_asset_from_api_gateway_api_request_details {
     
     /// A builder for [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_description: std::option::Option<std::string::String>,
@@ -6802,6 +6850,7 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetails {
 pub mod import_assets_from_redshift_data_shares_request_details {
     
     /// A builder for [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_sources: std::option::Option<std::vec::Vec<crate::model::RedshiftDataShareAssetSourceEntry>>,
@@ -6896,6 +6945,7 @@ impl ImportAssetsFromS3RequestDetails {
 pub mod import_assets_from_s3_request_details {
     
     /// A builder for [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_sources: std::option::Option<std::vec::Vec<crate::model::AssetSourceEntry>>,
@@ -6997,6 +7047,7 @@ impl ImportAssetFromSignedUrlRequestDetails {
 pub mod import_asset_from_signed_url_request_details {
     
     /// A builder for [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_name: std::option::Option<std::string::String>,
@@ -7097,6 +7148,7 @@ impl ExportRevisionsToS3RequestDetails {
 pub mod export_revisions_to_s3_request_details {
     
     /// A builder for [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -7198,6 +7250,7 @@ impl ExportAssetsToS3RequestDetails {
 pub mod export_assets_to_s3_request_details {
     
     /// A builder for [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_destinations: std::option::Option<std::vec::Vec<crate::model::AssetDestinationEntry>>,
@@ -7304,6 +7357,7 @@ impl ExportAssetToSignedUrlRequestDetails {
 pub mod export_asset_to_signed_url_request_details {
     
     /// A builder for [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,

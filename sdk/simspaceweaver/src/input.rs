@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod delete_app_input {
     
     /// A builder for [`DeleteAppInput`](crate::input::DeleteAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation: std::option::Option<std::string::String>,
@@ -155,6 +156,7 @@ impl DeleteAppInput {
 pub mod delete_simulation_input {
     
     /// A builder for [`DeleteSimulationInput`](crate::input::DeleteSimulationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation: std::option::Option<std::string::String>,
@@ -269,6 +271,7 @@ impl DeleteSimulationInput {
 pub mod describe_app_input {
     
     /// A builder for [`DescribeAppInput`](crate::input::DescribeAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation: std::option::Option<std::string::String>,
@@ -419,6 +422,7 @@ impl DescribeAppInput {
 pub mod describe_simulation_input {
     
     /// A builder for [`DescribeSimulationInput`](crate::input::DescribeSimulationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation: std::option::Option<std::string::String>,
@@ -533,6 +537,7 @@ impl DescribeSimulationInput {
 pub mod list_apps_input {
     
     /// A builder for [`ListAppsInput`](crate::input::ListAppsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation: std::option::Option<std::string::String>,
@@ -698,6 +703,7 @@ impl ListAppsInput {
 pub mod list_simulations_input {
     
     /// A builder for [`ListSimulationsInput`](crate::input::ListSimulationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -828,6 +834,7 @@ impl ListSimulationsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -937,6 +944,7 @@ impl ListTagsForResourceInput {
 pub mod start_app_input {
     
     /// A builder for [`StartAppInput`](crate::input::StartAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1119,6 +1127,7 @@ impl StartAppInput {
 pub mod start_clock_input {
     
     /// A builder for [`StartClockInput`](crate::input::StartClockInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation: std::option::Option<std::string::String>,
@@ -1226,6 +1235,7 @@ impl StartClockInput {
 pub mod start_simulation_input {
     
     /// A builder for [`StartSimulationInput`](crate::input::StartSimulationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1427,6 +1437,7 @@ impl StartSimulationInput {
 pub mod stop_app_input {
     
     /// A builder for [`StopAppInput`](crate::input::StopAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation: std::option::Option<std::string::String>,
@@ -1558,6 +1569,7 @@ impl StopAppInput {
 pub mod stop_clock_input {
     
     /// A builder for [`StopClockInput`](crate::input::StopClockInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation: std::option::Option<std::string::String>,
@@ -1665,6 +1677,7 @@ impl StopClockInput {
 pub mod stop_simulation_input {
     
     /// A builder for [`StopSimulationInput`](crate::input::StopSimulationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation: std::option::Option<std::string::String>,
@@ -1772,6 +1785,7 @@ impl StopSimulationInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1903,6 +1917,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

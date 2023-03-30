@@ -17,6 +17,7 @@ impl UpdateProtectedQueryOutput {
 pub mod update_protected_query_output {
     
     /// A builder for [`UpdateProtectedQueryOutput`](crate::output::UpdateProtectedQueryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protected_query: std::option::Option<crate::model::ProtectedQuery>,
@@ -67,6 +68,7 @@ impl StartProtectedQueryOutput {
 pub mod start_protected_query_output {
     
     /// A builder for [`StartProtectedQueryOutput`](crate::output::StartProtectedQueryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protected_query: std::option::Option<crate::model::ProtectedQuery>,
@@ -124,6 +126,7 @@ impl ListProtectedQueriesOutput {
 pub mod list_protected_queries_output {
     
     /// A builder for [`ListProtectedQueriesOutput`](crate::output::ListProtectedQueriesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -192,6 +195,7 @@ impl GetProtectedQueryOutput {
 pub mod get_protected_query_output {
     
     /// A builder for [`GetProtectedQueryOutput`](crate::output::GetProtectedQueryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protected_query: std::option::Option<crate::model::ProtectedQuery>,
@@ -249,6 +253,7 @@ impl ListMembershipsOutput {
 pub mod list_memberships_output {
     
     /// A builder for [`ListMembershipsOutput`](crate::output::ListMembershipsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -317,6 +322,7 @@ impl CreateMembershipOutput {
 pub mod create_membership_output {
     
     /// A builder for [`CreateMembershipOutput`](crate::output::CreateMembershipOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership: std::option::Option<crate::model::Membership>,
@@ -358,6 +364,7 @@ pub struct DeleteMembershipOutput  {
 pub mod delete_membership_output {
     
     /// A builder for [`DeleteMembershipOutput`](crate::output::DeleteMembershipOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -396,6 +403,7 @@ impl UpdateMembershipOutput {
 pub mod update_membership_output {
     
     /// A builder for [`UpdateMembershipOutput`](crate::output::UpdateMembershipOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership: std::option::Option<crate::model::Membership>,
@@ -446,6 +454,7 @@ impl GetMembershipOutput {
 pub mod get_membership_output {
     
     /// A builder for [`GetMembershipOutput`](crate::output::GetMembershipOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership: std::option::Option<crate::model::Membership>,
@@ -496,6 +505,7 @@ impl UpdateConfiguredTableAnalysisRuleOutput {
 pub mod update_configured_table_analysis_rule_output {
     
     /// A builder for [`UpdateConfiguredTableAnalysisRuleOutput`](crate::output::UpdateConfiguredTableAnalysisRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_rule: std::option::Option<crate::model::ConfiguredTableAnalysisRule>,
@@ -546,6 +556,7 @@ impl GetConfiguredTableAnalysisRuleOutput {
 pub mod get_configured_table_analysis_rule_output {
     
     /// A builder for [`GetConfiguredTableAnalysisRuleOutput`](crate::output::GetConfiguredTableAnalysisRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_rule: std::option::Option<crate::model::ConfiguredTableAnalysisRule>,
@@ -587,6 +598,7 @@ pub struct DeleteConfiguredTableAnalysisRuleOutput  {
 pub mod delete_configured_table_analysis_rule_output {
     
     /// A builder for [`DeleteConfiguredTableAnalysisRuleOutput`](crate::output::DeleteConfiguredTableAnalysisRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -625,6 +637,7 @@ impl CreateConfiguredTableAnalysisRuleOutput {
 pub mod create_configured_table_analysis_rule_output {
     
     /// A builder for [`CreateConfiguredTableAnalysisRuleOutput`](crate::output::CreateConfiguredTableAnalysisRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_rule: std::option::Option<crate::model::ConfiguredTableAnalysisRule>,
@@ -682,6 +695,7 @@ impl ListConfiguredTablesOutput {
 pub mod list_configured_tables_output {
     
     /// A builder for [`ListConfiguredTablesOutput`](crate::output::ListConfiguredTablesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_summaries: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableSummary>>,
@@ -750,6 +764,7 @@ impl CreateConfiguredTableOutput {
 pub mod create_configured_table_output {
     
     /// A builder for [`CreateConfiguredTableOutput`](crate::output::CreateConfiguredTableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table: std::option::Option<crate::model::ConfiguredTable>,
@@ -791,6 +806,7 @@ pub struct DeleteConfiguredTableOutput  {
 pub mod delete_configured_table_output {
     
     /// A builder for [`DeleteConfiguredTableOutput`](crate::output::DeleteConfiguredTableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -829,6 +845,7 @@ impl UpdateConfiguredTableOutput {
 pub mod update_configured_table_output {
     
     /// A builder for [`UpdateConfiguredTableOutput`](crate::output::UpdateConfiguredTableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table: std::option::Option<crate::model::ConfiguredTable>,
@@ -879,6 +896,7 @@ impl GetConfiguredTableOutput {
 pub mod get_configured_table_output {
     
     /// A builder for [`GetConfiguredTableOutput`](crate::output::GetConfiguredTableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table: std::option::Option<crate::model::ConfiguredTable>,
@@ -936,6 +954,7 @@ impl ListConfiguredTableAssociationsOutput {
 pub mod list_configured_table_associations_output {
     
     /// A builder for [`ListConfiguredTableAssociationsOutput`](crate::output::ListConfiguredTableAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_association_summaries: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAssociationSummary>>,
@@ -1004,6 +1023,7 @@ impl CreateConfiguredTableAssociationOutput {
 pub mod create_configured_table_association_output {
     
     /// A builder for [`CreateConfiguredTableAssociationOutput`](crate::output::CreateConfiguredTableAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_association: std::option::Option<crate::model::ConfiguredTableAssociation>,
@@ -1045,6 +1065,7 @@ pub struct DeleteConfiguredTableAssociationOutput  {
 pub mod delete_configured_table_association_output {
     
     /// A builder for [`DeleteConfiguredTableAssociationOutput`](crate::output::DeleteConfiguredTableAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1083,6 +1104,7 @@ impl UpdateConfiguredTableAssociationOutput {
 pub mod update_configured_table_association_output {
     
     /// A builder for [`UpdateConfiguredTableAssociationOutput`](crate::output::UpdateConfiguredTableAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_association: std::option::Option<crate::model::ConfiguredTableAssociation>,
@@ -1133,6 +1155,7 @@ impl GetConfiguredTableAssociationOutput {
 pub mod get_configured_table_association_output {
     
     /// A builder for [`GetConfiguredTableAssociationOutput`](crate::output::GetConfiguredTableAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_association: std::option::Option<crate::model::ConfiguredTableAssociation>,
@@ -1190,6 +1213,7 @@ impl ListSchemasOutput {
 pub mod list_schemas_output {
     
     /// A builder for [`ListSchemasOutput`](crate::output::ListSchemasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_summaries: std::option::Option<std::vec::Vec<crate::model::SchemaSummary>>,
@@ -1265,6 +1289,7 @@ impl ListMembersOutput {
 pub mod list_members_output {
     
     /// A builder for [`ListMembersOutput`](crate::output::ListMembersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1333,6 +1358,7 @@ impl GetSchemaAnalysisRuleOutput {
 pub mod get_schema_analysis_rule_output {
     
     /// A builder for [`GetSchemaAnalysisRuleOutput`](crate::output::GetSchemaAnalysisRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_rule: std::option::Option<crate::model::AnalysisRule>,
@@ -1383,6 +1409,7 @@ impl GetSchemaOutput {
 pub mod get_schema_output {
     
     /// A builder for [`GetSchemaOutput`](crate::output::GetSchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema: std::option::Option<crate::model::Schema>,
@@ -1424,6 +1451,7 @@ pub struct DeleteMemberOutput  {
 pub mod delete_member_output {
     
     /// A builder for [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1469,6 +1497,7 @@ impl BatchGetSchemaOutput {
 pub mod batch_get_schema_output {
     
     /// A builder for [`BatchGetSchemaOutput`](crate::output::BatchGetSchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schemas: std::option::Option<std::vec::Vec<crate::model::Schema>>,
@@ -1550,6 +1579,7 @@ impl ListCollaborationsOutput {
 pub mod list_collaborations_output {
     
     /// A builder for [`ListCollaborationsOutput`](crate::output::ListCollaborationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1618,6 +1648,7 @@ impl CreateCollaborationOutput {
 pub mod create_collaboration_output {
     
     /// A builder for [`CreateCollaborationOutput`](crate::output::CreateCollaborationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration: std::option::Option<crate::model::Collaboration>,
@@ -1659,6 +1690,7 @@ pub struct DeleteCollaborationOutput  {
 pub mod delete_collaboration_output {
     
     /// A builder for [`DeleteCollaborationOutput`](crate::output::DeleteCollaborationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1697,6 +1729,7 @@ impl UpdateCollaborationOutput {
 pub mod update_collaboration_output {
     
     /// A builder for [`UpdateCollaborationOutput`](crate::output::UpdateCollaborationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration: std::option::Option<crate::model::Collaboration>,
@@ -1747,6 +1780,7 @@ impl GetCollaborationOutput {
 pub mod get_collaboration_output {
     
     /// A builder for [`GetCollaborationOutput`](crate::output::GetCollaborationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration: std::option::Option<crate::model::Collaboration>,

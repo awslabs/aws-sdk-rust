@@ -199,6 +199,7 @@ impl Server {
 pub mod server {
     
     /// A builder for [`Server`](crate::model::Server).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
@@ -797,6 +798,7 @@ impl  std::fmt::Debug for EngineAttribute  {
 pub mod engine_attribute {
     
     /// A builder for [`EngineAttribute`](crate::model::EngineAttribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -874,6 +876,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1065,6 +1068,7 @@ impl ServerEvent {
 pub mod server_event {
     
     /// A builder for [`ServerEvent`](crate::model::ServerEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1316,6 +1320,7 @@ impl Backup {
 pub mod backup {
     
     /// A builder for [`Backup`](crate::model::Backup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_arn: std::option::Option<std::string::String>,
@@ -1854,6 +1859,7 @@ impl AccountAttribute {
 pub mod account_attribute {
     
     /// A builder for [`AccountAttribute`](crate::model::AccountAttribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

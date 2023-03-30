@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_to_certificate_input {
     
     /// A builder for [`AddTagsToCertificateInput`](crate::input::AddTagsToCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -139,6 +140,7 @@ impl AddTagsToCertificateInput {
 pub mod delete_certificate_input {
     
     /// A builder for [`DeleteCertificateInput`](crate::input::DeleteCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -255,6 +257,7 @@ impl DeleteCertificateInput {
 pub mod describe_certificate_input {
     
     /// A builder for [`DescribeCertificateInput`](crate::input::DescribeCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -371,6 +374,7 @@ impl DescribeCertificateInput {
 pub mod export_certificate_input {
     
     /// A builder for [`ExportCertificateInput`](crate::input::ExportCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -513,6 +517,7 @@ impl ExportCertificateInput {
 pub mod get_account_configuration_input {
     
     /// A builder for [`GetAccountConfigurationInput`](crate::input::GetAccountConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -610,6 +615,7 @@ impl GetAccountConfigurationInput {
 pub mod get_certificate_input {
     
     /// A builder for [`GetCertificateInput`](crate::input::GetCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -726,6 +732,7 @@ impl GetCertificateInput {
 pub mod import_certificate_input {
     
     /// A builder for [`ImportCertificateInput`](crate::input::ImportCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -905,6 +912,7 @@ impl ImportCertificateInput {
 pub mod list_certificates_input {
     
     /// A builder for [`ListCertificatesInput`](crate::input::ListCertificatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_statuses: std::option::Option<std::vec::Vec<crate::model::CertificateStatus>>,
@@ -1083,6 +1091,7 @@ impl ListCertificatesInput {
 pub mod list_tags_for_certificate_input {
     
     /// A builder for [`ListTagsForCertificateInput`](crate::input::ListTagsForCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -1199,6 +1208,7 @@ impl ListTagsForCertificateInput {
 pub mod put_account_configuration_input {
     
     /// A builder for [`PutAccountConfigurationInput`](crate::input::PutAccountConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
@@ -1323,6 +1333,7 @@ impl PutAccountConfigurationInput {
 pub mod remove_tags_from_certificate_input {
     
     /// A builder for [`RemoveTagsFromCertificateInput`](crate::input::RemoveTagsFromCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -1457,6 +1468,7 @@ impl RemoveTagsFromCertificateInput {
 pub mod renew_certificate_input {
     
     /// A builder for [`RenewCertificateInput`](crate::input::RenewCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -1573,6 +1585,7 @@ impl RenewCertificateInput {
 pub mod request_certificate_input {
     
     /// A builder for [`RequestCertificateInput`](crate::input::RequestCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1817,6 +1830,7 @@ impl RequestCertificateInput {
 pub mod resend_validation_email_input {
     
     /// A builder for [`ResendValidationEmailInput`](crate::input::ResendValidationEmailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -1969,6 +1983,7 @@ impl ResendValidationEmailInput {
 pub mod update_certificate_options_input {
     
     /// A builder for [`UpdateCertificateOptionsInput`](crate::input::UpdateCertificateOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,

@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
     
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -359,6 +360,7 @@ impl Pipe {
 pub mod pipe {
     
     /// A builder for [`Pipe`](crate::model::Pipe).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -612,6 +614,7 @@ impl  std::fmt::Debug for PipeTargetParameters  {
 pub mod pipe_target_parameters {
     
     /// A builder for [`PipeTargetParameters`](crate::model::PipeTargetParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) input_template: std::option::Option<std::string::String>,
@@ -819,6 +822,7 @@ impl PipeTargetCloudWatchLogsParameters {
 pub mod pipe_target_cloud_watch_logs_parameters {
     
     /// A builder for [`PipeTargetCloudWatchLogsParameters`](crate::model::PipeTargetCloudWatchLogsParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
@@ -924,6 +928,7 @@ impl  std::fmt::Debug for PipeTargetEventBridgeEventBusParameters  {
 pub mod pipe_target_event_bridge_event_bus_parameters {
     
     /// A builder for [`PipeTargetEventBridgeEventBusParameters`](crate::model::PipeTargetEventBridgeEventBusParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -1043,6 +1048,7 @@ impl PipeTargetSageMakerPipelineParameters {
 pub mod pipe_target_sage_maker_pipeline_parameters {
     
     /// A builder for [`PipeTargetSageMakerPipelineParameters`](crate::model::PipeTargetSageMakerPipelineParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_parameter_list: std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
@@ -1114,6 +1120,7 @@ impl  std::fmt::Debug for SageMakerPipelineParameter  {
 pub mod sage_maker_pipeline_parameter {
     
     /// A builder for [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1231,6 +1238,7 @@ impl  std::fmt::Debug for PipeTargetRedshiftDataParameters  {
 pub mod pipe_target_redshift_data_parameters {
     
     /// A builder for [`PipeTargetRedshiftDataParameters`](crate::model::PipeTargetRedshiftDataParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) secret_manager_arn: std::option::Option<std::string::String>,
@@ -1374,6 +1382,7 @@ impl PipeTargetHttpParameters {
 pub mod pipe_target_http_parameters {
     
     /// A builder for [`PipeTargetHttpParameters`](crate::model::PipeTargetHttpParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1483,6 +1492,7 @@ impl  std::fmt::Debug for PipeTargetSqsQueueParameters  {
 pub mod pipe_target_sqs_queue_parameters {
     
     /// A builder for [`PipeTargetSqsQueueParameters`](crate::model::PipeTargetSqsQueueParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) message_group_id: std::option::Option<std::string::String>,
@@ -1597,6 +1607,7 @@ impl PipeTargetBatchJobParameters {
 pub mod pipe_target_batch_job_parameters {
     
     /// A builder for [`PipeTargetBatchJobParameters`](crate::model::PipeTargetBatchJobParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_definition: std::option::Option<std::string::String>,
@@ -1738,6 +1749,7 @@ impl BatchJobDependency {
 pub mod batch_job_dependency {
     
     /// A builder for [`BatchJobDependency`](crate::model::BatchJobDependency).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1911,6 +1923,7 @@ impl BatchContainerOverrides {
 pub mod batch_container_overrides {
     
     /// A builder for [`BatchContainerOverrides`](crate::model::BatchContainerOverrides).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2344,6 +2357,7 @@ impl BatchResourceRequirement {
 pub mod batch_resource_requirement {
     
     /// A builder for [`BatchResourceRequirement`](crate::model::BatchResourceRequirement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::BatchResourceRequirementType>,
@@ -2816,6 +2830,7 @@ impl BatchEnvironmentVariable {
 pub mod batch_environment_variable {
     
     /// A builder for [`BatchEnvironmentVariable`](crate::model::BatchEnvironmentVariable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2878,6 +2893,7 @@ impl BatchRetryStrategy {
 pub mod batch_retry_strategy {
     
     /// A builder for [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attempts: std::option::Option<i32>,
@@ -2929,6 +2945,7 @@ impl BatchArrayProperties {
 pub mod batch_array_properties {
     
     /// A builder for [`BatchArrayProperties`](crate::model::BatchArrayProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size: std::option::Option<i32>,
@@ -3105,6 +3122,7 @@ impl  std::fmt::Debug for PipeTargetEcsTaskParameters  {
 pub mod pipe_target_ecs_task_parameters {
     
     /// A builder for [`PipeTargetEcsTaskParameters`](crate::model::PipeTargetEcsTaskParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) task_definition_arn: std::option::Option<std::string::String>,
@@ -3391,6 +3409,7 @@ impl  std::fmt::Debug for Tag  {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -3515,6 +3534,7 @@ impl EcsTaskOverride {
 pub mod ecs_task_override {
     
     /// A builder for [`EcsTaskOverride`](crate::model::EcsTaskOverride).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_overrides: std::option::Option<std::vec::Vec<crate::model::EcsContainerOverride>>,
@@ -3668,6 +3688,7 @@ impl EcsInferenceAcceleratorOverride {
 pub mod ecs_inference_accelerator_override {
     
     /// A builder for [`EcsInferenceAcceleratorOverride`](crate::model::EcsInferenceAcceleratorOverride).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
@@ -3732,6 +3753,7 @@ impl EcsEphemeralStorage {
 pub mod ecs_ephemeral_storage {
     
     /// A builder for [`EcsEphemeralStorage`](crate::model::EcsEphemeralStorage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_gi_b: std::option::Option<i32>,
@@ -3832,6 +3854,7 @@ impl EcsContainerOverride {
 pub mod ecs_container_override {
     
     /// A builder for [`EcsContainerOverride`](crate::model::EcsContainerOverride).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4001,6 +4024,7 @@ impl EcsResourceRequirement {
 pub mod ecs_resource_requirement {
     
     /// A builder for [`EcsResourceRequirement`](crate::model::EcsResourceRequirement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EcsResourceRequirementType>,
@@ -4162,6 +4186,7 @@ impl EcsEnvironmentFile {
 pub mod ecs_environment_file {
     
     /// A builder for [`EcsEnvironmentFile`](crate::model::EcsEnvironmentFile).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EcsEnvironmentFileType>,
@@ -4308,6 +4333,7 @@ impl EcsEnvironmentVariable {
 pub mod ecs_environment_variable {
     
     /// A builder for [`EcsEnvironmentVariable`](crate::model::EcsEnvironmentVariable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4462,6 +4488,7 @@ impl  std::fmt::Debug for PlacementStrategy  {
 pub mod placement_strategy {
     
     /// A builder for [`PlacementStrategy`](crate::model::PlacementStrategy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::PlacementStrategyType>,
@@ -4634,6 +4661,7 @@ impl  std::fmt::Debug for PlacementConstraint  {
 pub mod placement_constraint {
     
     /// A builder for [`PlacementConstraint`](crate::model::PlacementConstraint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::PlacementConstraintType>,
@@ -4809,6 +4837,7 @@ impl  std::fmt::Debug for CapacityProviderStrategyItem  {
 pub mod capacity_provider_strategy_item {
     
     /// A builder for [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) capacity_provider: std::option::Option<std::string::String>,
@@ -4894,6 +4923,7 @@ impl NetworkConfiguration {
 pub mod network_configuration {
     
     /// A builder for [`NetworkConfiguration`](crate::model::NetworkConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) awsvpc_configuration: std::option::Option<crate::model::AwsVpcConfiguration>,
@@ -4958,6 +4988,7 @@ impl AwsVpcConfiguration {
 pub mod aws_vpc_configuration {
     
     /// A builder for [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5220,6 +5251,7 @@ impl  std::fmt::Debug for PipeTargetKinesisStreamParameters  {
 pub mod pipe_target_kinesis_stream_parameters {
     
     /// A builder for [`PipeTargetKinesisStreamParameters`](crate::model::PipeTargetKinesisStreamParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) partition_key: std::option::Option<std::string::String>,
@@ -5277,6 +5309,7 @@ impl PipeTargetStateMachineParameters {
 pub mod pipe_target_state_machine_parameters {
     
     /// A builder for [`PipeTargetStateMachineParameters`](crate::model::PipeTargetStateMachineParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invocation_type: std::option::Option<crate::model::PipeTargetInvocationType>,
@@ -5419,6 +5452,7 @@ impl PipeTargetLambdaFunctionParameters {
 pub mod pipe_target_lambda_function_parameters {
     
     /// A builder for [`PipeTargetLambdaFunctionParameters`](crate::model::PipeTargetLambdaFunctionParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invocation_type: std::option::Option<crate::model::PipeTargetInvocationType>,
@@ -5496,6 +5530,7 @@ impl  std::fmt::Debug for PipeEnrichmentParameters  {
 pub mod pipe_enrichment_parameters {
     
     /// A builder for [`PipeEnrichmentParameters`](crate::model::PipeEnrichmentParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) input_template: std::option::Option<std::string::String>,
@@ -5582,6 +5617,7 @@ impl PipeEnrichmentHttpParameters {
 pub mod pipe_enrichment_http_parameters {
     
     /// A builder for [`PipeEnrichmentHttpParameters`](crate::model::PipeEnrichmentHttpParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5723,6 +5759,7 @@ impl PipeSourceParameters {
 pub mod pipe_source_parameters {
     
     /// A builder for [`PipeSourceParameters`](crate::model::PipeSourceParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
@@ -5928,6 +5965,7 @@ impl  std::fmt::Debug for PipeSourceSelfManagedKafkaParameters  {
 pub mod pipe_source_self_managed_kafka_parameters {
     
     /// A builder for [`PipeSourceSelfManagedKafkaParameters`](crate::model::PipeSourceSelfManagedKafkaParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) topic_name: std::option::Option<std::string::String>,
@@ -6102,6 +6140,7 @@ impl SelfManagedKafkaAccessConfigurationVpc {
 pub mod self_managed_kafka_access_configuration_vpc {
     
     /// A builder for [`SelfManagedKafkaAccessConfigurationVpc`](crate::model::SelfManagedKafkaAccessConfigurationVpc).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6370,6 +6409,7 @@ impl  std::fmt::Debug for PipeSourceManagedStreamingKafkaParameters  {
 pub mod pipe_source_managed_streaming_kafka_parameters {
     
     /// A builder for [`PipeSourceManagedStreamingKafkaParameters`](crate::model::PipeSourceManagedStreamingKafkaParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) topic_name: std::option::Option<std::string::String>,
@@ -6656,6 +6696,7 @@ impl  std::fmt::Debug for PipeSourceRabbitMqBrokerParameters  {
 pub mod pipe_source_rabbit_mq_broker_parameters {
     
     /// A builder for [`PipeSourceRabbitMqBrokerParameters`](crate::model::PipeSourceRabbitMqBrokerParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::MqBrokerAccessCredentials>,
@@ -6829,6 +6870,7 @@ impl  std::fmt::Debug for PipeSourceActiveMqBrokerParameters  {
 pub mod pipe_source_active_mq_broker_parameters {
     
     /// A builder for [`PipeSourceActiveMqBrokerParameters`](crate::model::PipeSourceActiveMqBrokerParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::MqBrokerAccessCredentials>,
@@ -6932,6 +6974,7 @@ impl PipeSourceSqsQueueParameters {
 pub mod pipe_source_sqs_queue_parameters {
     
     /// A builder for [`PipeSourceSqsQueueParameters`](crate::model::PipeSourceSqsQueueParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
@@ -7043,6 +7086,7 @@ impl PipeSourceDynamoDbStreamParameters {
 pub mod pipe_source_dynamo_db_stream_parameters {
     
     /// A builder for [`PipeSourceDynamoDbStreamParameters`](crate::model::PipeSourceDynamoDbStreamParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
@@ -7336,6 +7380,7 @@ impl DeadLetterConfig {
 pub mod dead_letter_config {
     
     /// A builder for [`DeadLetterConfig`](crate::model::DeadLetterConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7442,6 +7487,7 @@ impl PipeSourceKinesisStreamParameters {
 pub mod pipe_source_kinesis_stream_parameters {
     
     /// A builder for [`PipeSourceKinesisStreamParameters`](crate::model::PipeSourceKinesisStreamParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
@@ -7675,6 +7721,7 @@ impl FilterCriteria {
 pub mod filter_criteria {
     
     /// A builder for [`FilterCriteria`](crate::model::FilterCriteria).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7738,6 +7785,7 @@ impl  std::fmt::Debug for Filter  {
 pub mod filter {
     
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) pattern: std::option::Option<std::string::String>,
@@ -7931,6 +7979,7 @@ impl UpdatePipeSourceParameters {
 pub mod update_pipe_source_parameters {
     
     /// A builder for [`UpdatePipeSourceParameters`](crate::model::UpdatePipeSourceParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
@@ -8093,6 +8142,7 @@ impl UpdatePipeSourceSelfManagedKafkaParameters {
 pub mod update_pipe_source_self_managed_kafka_parameters {
     
     /// A builder for [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::model::UpdatePipeSourceSelfManagedKafkaParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
@@ -8205,6 +8255,7 @@ impl UpdatePipeSourceManagedStreamingKafkaParameters {
 pub mod update_pipe_source_managed_streaming_kafka_parameters {
     
     /// A builder for [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::model::UpdatePipeSourceManagedStreamingKafkaParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
@@ -8293,6 +8344,7 @@ impl UpdatePipeSourceRabbitMqBrokerParameters {
 pub mod update_pipe_source_rabbit_mq_broker_parameters {
     
     /// A builder for [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::model::UpdatePipeSourceRabbitMqBrokerParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::MqBrokerAccessCredentials>,
@@ -8381,6 +8433,7 @@ impl UpdatePipeSourceActiveMqBrokerParameters {
 pub mod update_pipe_source_active_mq_broker_parameters {
     
     /// A builder for [`UpdatePipeSourceActiveMqBrokerParameters`](crate::model::UpdatePipeSourceActiveMqBrokerParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::MqBrokerAccessCredentials>,
@@ -8462,6 +8515,7 @@ impl UpdatePipeSourceSqsQueueParameters {
 pub mod update_pipe_source_sqs_queue_parameters {
     
     /// A builder for [`UpdatePipeSourceSqsQueueParameters`](crate::model::UpdatePipeSourceSqsQueueParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
@@ -8566,6 +8620,7 @@ impl UpdatePipeSourceDynamoDbStreamParameters {
 pub mod update_pipe_source_dynamo_db_stream_parameters {
     
     /// A builder for [`UpdatePipeSourceDynamoDbStreamParameters`](crate::model::UpdatePipeSourceDynamoDbStreamParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
@@ -8730,6 +8785,7 @@ impl UpdatePipeSourceKinesisStreamParameters {
 pub mod update_pipe_source_kinesis_stream_parameters {
     
     /// A builder for [`UpdatePipeSourceKinesisStreamParameters`](crate::model::UpdatePipeSourceKinesisStreamParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,

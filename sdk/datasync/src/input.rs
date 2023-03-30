@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_task_execution_input {
     
     /// A builder for [`CancelTaskExecutionInput`](crate::input::CancelTaskExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
@@ -117,6 +118,7 @@ impl CancelTaskExecutionInput {
 pub mod create_agent_input {
     
     /// A builder for [`CreateAgentInput`](crate::input::CreateAgentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activation_key: std::option::Option<std::string::String>,
@@ -317,6 +319,7 @@ impl CreateAgentInput {
 pub mod create_location_efs_input {
     
     /// A builder for [`CreateLocationEfsInput`](crate::input::CreateLocationEfsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -513,6 +516,7 @@ impl CreateLocationEfsInput {
 pub mod create_location_fsx_lustre_input {
     
     /// A builder for [`CreateLocationFsxLustreInput`](crate::input::CreateLocationFsxLustreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
@@ -673,6 +677,7 @@ impl CreateLocationFsxLustreInput {
 pub mod create_location_fsx_ontap_input {
     
     /// A builder for [`CreateLocationFsxOntapInput`](crate::input::CreateLocationFsxOntapInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::FsxProtocol>,
@@ -861,6 +866,7 @@ impl CreateLocationFsxOntapInput {
 pub mod create_location_fsx_open_zfs_input {
     
     /// A builder for [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
@@ -1033,6 +1039,7 @@ impl CreateLocationFsxOpenZfsInput {
 pub mod create_location_fsx_windows_input {
     
     /// A builder for [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -1256,6 +1263,7 @@ impl CreateLocationFsxWindowsInput {
 pub mod create_location_hdfs_input {
     
     /// A builder for [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -1546,6 +1554,7 @@ impl CreateLocationHdfsInput {
 pub mod create_location_nfs_input {
     
     /// A builder for [`CreateLocationNfsInput`](crate::input::CreateLocationNfsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -1728,6 +1737,7 @@ impl CreateLocationNfsInput {
 pub mod create_location_object_storage_input {
     
     /// A builder for [`CreateLocationObjectStorageInput`](crate::input::CreateLocationObjectStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) server_hostname: std::option::Option<std::string::String>,
@@ -1978,6 +1988,7 @@ impl CreateLocationObjectStorageInput {
 pub mod create_location_s3_input {
     
     /// A builder for [`CreateLocationS3Input`](crate::input::CreateLocationS3Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -2166,6 +2177,7 @@ impl CreateLocationS3Input {
 pub mod create_location_smb_input {
     
     /// A builder for [`CreateLocationSmbInput`](crate::input::CreateLocationSmbInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -2400,6 +2412,7 @@ impl CreateLocationSmbInput {
 pub mod create_task_input {
     
     /// A builder for [`CreateTaskInput`](crate::input::CreateTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_location_arn: std::option::Option<std::string::String>,
@@ -2630,6 +2643,7 @@ impl CreateTaskInput {
 pub mod delete_agent_input {
     
     /// A builder for [`DeleteAgentInput`](crate::input::DeleteAgentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
@@ -2742,6 +2756,7 @@ impl DeleteAgentInput {
 pub mod delete_location_input {
     
     /// A builder for [`DeleteLocationInput`](crate::input::DeleteLocationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -2854,6 +2869,7 @@ impl DeleteLocationInput {
 pub mod delete_task_input {
     
     /// A builder for [`DeleteTaskInput`](crate::input::DeleteTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
@@ -2966,6 +2982,7 @@ impl DeleteTaskInput {
 pub mod describe_agent_input {
     
     /// A builder for [`DescribeAgentInput`](crate::input::DescribeAgentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
@@ -3078,6 +3095,7 @@ impl DescribeAgentInput {
 pub mod describe_location_efs_input {
     
     /// A builder for [`DescribeLocationEfsInput`](crate::input::DescribeLocationEfsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3190,6 +3208,7 @@ impl DescribeLocationEfsInput {
 pub mod describe_location_fsx_lustre_input {
     
     /// A builder for [`DescribeLocationFsxLustreInput`](crate::input::DescribeLocationFsxLustreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3302,6 +3321,7 @@ impl DescribeLocationFsxLustreInput {
 pub mod describe_location_fsx_ontap_input {
     
     /// A builder for [`DescribeLocationFsxOntapInput`](crate::input::DescribeLocationFsxOntapInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3414,6 +3434,7 @@ impl DescribeLocationFsxOntapInput {
 pub mod describe_location_fsx_open_zfs_input {
     
     /// A builder for [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3526,6 +3547,7 @@ impl DescribeLocationFsxOpenZfsInput {
 pub mod describe_location_fsx_windows_input {
     
     /// A builder for [`DescribeLocationFsxWindowsInput`](crate::input::DescribeLocationFsxWindowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3638,6 +3660,7 @@ impl DescribeLocationFsxWindowsInput {
 pub mod describe_location_hdfs_input {
     
     /// A builder for [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3750,6 +3773,7 @@ impl DescribeLocationHdfsInput {
 pub mod describe_location_nfs_input {
     
     /// A builder for [`DescribeLocationNfsInput`](crate::input::DescribeLocationNfsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3862,6 +3886,7 @@ impl DescribeLocationNfsInput {
 pub mod describe_location_object_storage_input {
     
     /// A builder for [`DescribeLocationObjectStorageInput`](crate::input::DescribeLocationObjectStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3974,6 +3999,7 @@ impl DescribeLocationObjectStorageInput {
 pub mod describe_location_s3_input {
     
     /// A builder for [`DescribeLocationS3Input`](crate::input::DescribeLocationS3Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -4086,6 +4112,7 @@ impl DescribeLocationS3Input {
 pub mod describe_location_smb_input {
     
     /// A builder for [`DescribeLocationSmbInput`](crate::input::DescribeLocationSmbInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -4198,6 +4225,7 @@ impl DescribeLocationSmbInput {
 pub mod describe_task_input {
     
     /// A builder for [`DescribeTaskInput`](crate::input::DescribeTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
@@ -4310,6 +4338,7 @@ impl DescribeTaskInput {
 pub mod describe_task_execution_input {
     
     /// A builder for [`DescribeTaskExecutionInput`](crate::input::DescribeTaskExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
@@ -4422,6 +4451,7 @@ impl DescribeTaskExecutionInput {
 pub mod list_agents_input {
     
     /// A builder for [`ListAgentsInput`](crate::input::ListAgentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4546,6 +4576,7 @@ impl ListAgentsInput {
 pub mod list_locations_input {
     
     /// A builder for [`ListLocationsInput`](crate::input::ListLocationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4688,6 +4719,7 @@ impl ListLocationsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4824,6 +4856,7 @@ impl ListTagsForResourceInput {
 pub mod list_task_executions_input {
     
     /// A builder for [`ListTaskExecutionsInput`](crate::input::ListTaskExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
@@ -4960,6 +4993,7 @@ impl ListTaskExecutionsInput {
 pub mod list_tasks_input {
     
     /// A builder for [`ListTasksInput`](crate::input::ListTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -5102,6 +5136,7 @@ impl ListTasksInput {
 pub mod start_task_execution_input {
     
     /// A builder for [`StartTaskExecutionInput`](crate::input::StartTaskExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
@@ -5284,6 +5319,7 @@ impl StartTaskExecutionInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5414,6 +5450,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5544,6 +5581,7 @@ impl UntagResourceInput {
 pub mod update_agent_input {
     
     /// A builder for [`UpdateAgentInput`](crate::input::UpdateAgentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
@@ -5668,6 +5706,7 @@ impl UpdateAgentInput {
 pub mod update_location_hdfs_input {
     
     /// A builder for [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -5936,6 +5975,7 @@ impl UpdateLocationHdfsInput {
 pub mod update_location_nfs_input {
     
     /// A builder for [`UpdateLocationNfsInput`](crate::input::UpdateLocationNfsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -6092,6 +6132,7 @@ impl UpdateLocationNfsInput {
 pub mod update_location_object_storage_input {
     
     /// A builder for [`UpdateLocationObjectStorageInput`](crate::input::UpdateLocationObjectStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -6312,6 +6353,7 @@ impl UpdateLocationObjectStorageInput {
 pub mod update_location_smb_input {
     
     /// A builder for [`UpdateLocationSmbInput`](crate::input::UpdateLocationSmbInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -6531,6 +6573,7 @@ impl UpdateLocationSmbInput {
 pub mod update_task_input {
     
     /// A builder for [`UpdateTaskInput`](crate::input::UpdateTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
@@ -6729,6 +6772,7 @@ impl UpdateTaskInput {
 pub mod update_task_execution_input {
     
     /// A builder for [`UpdateTaskExecutionInput`](crate::input::UpdateTaskExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,

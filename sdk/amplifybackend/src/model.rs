@@ -25,6 +25,7 @@ impl UpdateBackendStorageResourceConfig {
 pub mod update_backend_storage_resource_config {
     
     /// A builder for [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions: std::option::Option<crate::model::BackendStoragePermissions>,
@@ -171,6 +172,7 @@ impl BackendStoragePermissions {
 pub mod backend_storage_permissions {
     
     /// A builder for [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authenticated: std::option::Option<std::vec::Vec<crate::model::AuthenticatedElement>>,
@@ -440,6 +442,7 @@ impl LoginAuthConfigReqObj {
 pub mod login_auth_config_req_obj {
     
     /// A builder for [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_cognito_identity_pool_id: std::option::Option<std::string::String>,
@@ -547,6 +550,7 @@ impl UpdateBackendAuthResourceConfig {
 pub mod update_backend_auth_resource_config {
     
     /// A builder for [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auth_resources: std::option::Option<crate::model::AuthResources>,
@@ -661,6 +665,7 @@ impl UpdateBackendAuthUserPoolConfig {
 pub mod update_backend_auth_user_pool_config {
     
     /// A builder for [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forgot_password: std::option::Option<crate::model::UpdateBackendAuthForgotPasswordConfig>,
@@ -773,6 +778,7 @@ impl UpdateBackendAuthVerificationMessageConfig {
 pub mod update_backend_auth_verification_message_config {
     
     /// A builder for [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_method: std::option::Option<crate::model::DeliveryMethod>,
@@ -847,6 +853,7 @@ impl SmsSettings {
 pub mod sms_settings {
     
     /// A builder for [`SmsSettings`](crate::model::SmsSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_message: std::option::Option<std::string::String>,
@@ -904,6 +911,7 @@ impl EmailSettings {
 pub mod email_settings {
     
     /// A builder for [`EmailSettings`](crate::model::EmailSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_message: std::option::Option<std::string::String>,
@@ -1055,6 +1063,7 @@ impl UpdateBackendAuthPasswordPolicyConfig {
 pub mod update_backend_auth_password_policy_config {
     
     /// A builder for [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_constraints: std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
@@ -1251,6 +1260,7 @@ impl UpdateBackendAuthOAuthConfig {
 pub mod update_backend_auth_o_auth_config {
     
     /// A builder for [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_prefix: std::option::Option<std::string::String>,
@@ -1400,6 +1410,7 @@ impl SocialProviderSettings {
 pub mod social_provider_settings {
     
     /// A builder for [`SocialProviderSettings`](crate::model::SocialProviderSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) facebook: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
@@ -1507,6 +1518,7 @@ impl BackendAuthAppleProviderConfig {
 pub mod backend_auth_apple_provider_config {
     
     /// A builder for [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -1600,6 +1612,7 @@ impl BackendAuthSocialProviderConfig {
 pub mod backend_auth_social_provider_config {
     
     /// A builder for [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -1848,6 +1861,7 @@ impl UpdateBackendAuthMfaConfig {
 pub mod update_backend_auth_mfa_config {
     
     /// A builder for [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mfa_mode: std::option::Option<crate::model::MfaMode>,
@@ -1917,6 +1931,7 @@ impl Settings {
 pub mod settings {
     
     /// A builder for [`Settings`](crate::model::Settings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mfa_types: std::option::Option<std::vec::Vec<crate::model::MfaTypesElement>>,
@@ -2168,6 +2183,7 @@ impl UpdateBackendAuthForgotPasswordConfig {
 pub mod update_backend_auth_forgot_password_config {
     
     /// A builder for [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_method: std::option::Option<crate::model::DeliveryMethod>,
@@ -2319,6 +2335,7 @@ impl UpdateBackendAuthIdentityPoolConfig {
 pub mod update_backend_auth_identity_pool_config {
     
     /// A builder for [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unauthenticated_login: std::option::Option<bool>,
@@ -2487,6 +2504,7 @@ impl BackendApiResourceConfig {
 pub mod backend_api_resource_config {
     
     /// A builder for [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_auth_types: std::option::Option<std::vec::Vec<crate::model::BackendApiAuthType>>,
@@ -2610,6 +2628,7 @@ impl BackendApiAuthType {
 pub mod backend_api_auth_type {
     
     /// A builder for [`BackendApiAuthType`](crate::model::BackendApiAuthType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::Mode>,
@@ -2721,6 +2740,7 @@ impl BackendApiAppSyncAuthSettings {
 pub mod backend_api_app_sync_auth_settings {
     
     /// A builder for [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cognito_user_pool_id: std::option::Option<std::string::String>,
@@ -2948,6 +2968,7 @@ impl BackendApiConflictResolution {
 pub mod backend_api_conflict_resolution {
     
     /// A builder for [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolution_strategy: std::option::Option<crate::model::ResolutionStrategy>,
@@ -3097,6 +3118,7 @@ impl S3BucketInfo {
 pub mod s3_bucket_info {
     
     /// A builder for [`S3BucketInfo`](crate::model::S3BucketInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -3208,6 +3230,7 @@ impl BackendJobRespObj {
 pub mod backend_job_resp_obj {
     
     /// A builder for [`BackendJobRespObj`](crate::model::BackendJobRespObj).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3363,6 +3386,7 @@ impl GetBackendStorageResourceConfig {
 pub mod get_backend_storage_resource_config {
     
     /// A builder for [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -3471,6 +3495,7 @@ impl CreateBackendAuthResourceConfig {
 pub mod create_backend_auth_resource_config {
     
     /// A builder for [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auth_resources: std::option::Option<crate::model::AuthResources>,
@@ -3606,6 +3631,7 @@ impl CreateBackendAuthUserPoolConfig {
 pub mod create_backend_auth_user_pool_config {
     
     /// A builder for [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forgot_password: std::option::Option<crate::model::CreateBackendAuthForgotPasswordConfig>,
@@ -3760,6 +3786,7 @@ impl CreateBackendAuthVerificationMessageConfig {
 pub mod create_backend_auth_verification_message_config {
     
     /// A builder for [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_method: std::option::Option<crate::model::DeliveryMethod>,
@@ -4090,6 +4117,7 @@ impl CreateBackendAuthPasswordPolicyConfig {
 pub mod create_backend_auth_password_policy_config {
     
     /// A builder for [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_constraints: std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
@@ -4194,6 +4222,7 @@ impl CreateBackendAuthOAuthConfig {
 pub mod create_backend_auth_o_auth_config {
     
     /// A builder for [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_prefix: std::option::Option<std::string::String>,
@@ -4329,6 +4358,7 @@ impl CreateBackendAuthMfaConfig {
 pub mod create_backend_auth_mfa_config {
     
     /// A builder for [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mfa_mode: std::option::Option<crate::model::MfaMode>,
@@ -4405,6 +4435,7 @@ impl CreateBackendAuthForgotPasswordConfig {
 pub mod create_backend_auth_forgot_password_config {
     
     /// A builder for [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_method: std::option::Option<crate::model::DeliveryMethod>,
@@ -4486,6 +4517,7 @@ impl CreateBackendAuthIdentityPoolConfig {
 pub mod create_backend_auth_identity_pool_config {
     
     /// A builder for [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_name: std::option::Option<std::string::String>,
@@ -4645,6 +4677,7 @@ impl CreateBackendStorageResourceConfig {
 pub mod create_backend_storage_resource_config {
     
     /// A builder for [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -4710,6 +4743,7 @@ pub struct ResourceConfig  {
 pub mod resource_config {
     
     /// A builder for [`ResourceConfig`](crate::model::ResourceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

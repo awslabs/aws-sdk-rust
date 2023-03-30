@@ -7,7 +7,7 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_2 = inner_1.as_str();
                         if !formatted_2.is_empty() {
                             let header_value = formatted_2;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("archive_size", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -21,7 +21,7 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_4 = inner_3.as_str();
                         if !formatted_4.is_empty() {
                             let header_value = formatted_4;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("checksum", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -42,7 +42,7 @@ pub fn add_headers_get_job_output(
         let formatted_6 = inner_5.as_str();
                         if !formatted_6.is_empty() {
                             let header_value = formatted_6;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("range", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -63,7 +63,7 @@ pub fn add_headers_initiate_multipart_upload(
         let formatted_8 = inner_7.as_str();
                         if !formatted_8.is_empty() {
                             let header_value = formatted_8;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("archive_description", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -77,7 +77,7 @@ pub fn add_headers_initiate_multipart_upload(
         let formatted_10 = inner_9.as_str();
                         if !formatted_10.is_empty() {
                             let header_value = formatted_10;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("part_size", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -98,7 +98,7 @@ pub fn add_headers_upload_archive(
         let formatted_12 = inner_11.as_str();
                         if !formatted_12.is_empty() {
                             let header_value = formatted_12;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("archive_description", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -112,7 +112,7 @@ pub fn add_headers_upload_archive(
         let formatted_14 = inner_13.as_str();
                         if !formatted_14.is_empty() {
                             let header_value = formatted_14;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("checksum", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -133,7 +133,7 @@ pub fn add_headers_upload_multipart_part(
         let formatted_16 = inner_15.as_str();
                         if !formatted_16.is_empty() {
                             let header_value = formatted_16;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("checksum", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -147,7 +147,7 @@ pub fn add_headers_upload_multipart_part(
         let formatted_18 = inner_17.as_str();
                         if !formatted_18.is_empty() {
                             let header_value = formatted_18;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("range", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,

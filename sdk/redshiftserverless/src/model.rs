@@ -109,6 +109,7 @@ impl Workgroup {
 pub mod workgroup {
     
     /// A builder for [`Workgroup`](crate::model::Workgroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workgroup_id: std::option::Option<std::string::String>,
@@ -347,6 +348,7 @@ impl Endpoint {
 pub mod endpoint {
     
     /// A builder for [`Endpoint`](crate::model::Endpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
@@ -441,6 +443,7 @@ impl VpcEndpoint {
 pub mod vpc_endpoint {
     
     /// A builder for [`VpcEndpoint`](crate::model::VpcEndpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
@@ -542,6 +545,7 @@ impl NetworkInterface {
 pub mod network_interface {
     
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
@@ -727,6 +731,7 @@ impl ConfigParameter {
 pub mod config_parameter {
     
     /// A builder for [`ConfigParameter`](crate::model::ConfigParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_key: std::option::Option<std::string::String>,
@@ -796,6 +801,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -900,6 +906,7 @@ impl UsageLimit {
 pub mod usage_limit {
     
     /// A builder for [`UsageLimit`](crate::model::UsageLimit).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_limit_id: std::option::Option<std::string::String>,
@@ -1411,6 +1418,7 @@ impl Snapshot {
 pub mod snapshot {
     
     /// A builder for [`Snapshot`](crate::model::Snapshot).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
@@ -1901,6 +1909,7 @@ impl TableRestoreStatus {
 pub mod table_restore_status {
     
     /// A builder for [`TableRestoreStatus`](crate::model::TableRestoreStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_restore_request_id: std::option::Option<std::string::String>,
@@ -2206,6 +2215,7 @@ impl  std::fmt::Debug for Namespace  {
 pub mod namespace {
     
     /// A builder for [`Namespace`](crate::model::Namespace).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) namespace_arn: std::option::Option<std::string::String>,
@@ -2614,6 +2624,7 @@ impl RecoveryPoint {
 pub mod recovery_point {
     
     /// A builder for [`RecoveryPoint`](crate::model::RecoveryPoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_point_id: std::option::Option<std::string::String>,
@@ -2787,6 +2798,7 @@ impl EndpointAccess {
 pub mod endpoint_access {
     
     /// A builder for [`EndpointAccess`](crate::model::EndpointAccess).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
@@ -2964,6 +2976,7 @@ impl VpcSecurityGroupMembership {
 pub mod vpc_security_group_membership {
     
     /// A builder for [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_security_group_id: std::option::Option<std::string::String>,
@@ -3033,6 +3046,7 @@ impl ResourcePolicy {
 pub mod resource_policy {
     
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

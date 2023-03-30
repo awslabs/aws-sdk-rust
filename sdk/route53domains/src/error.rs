@@ -140,6 +140,7 @@ impl std::error::Error for InvalidInput {}
 pub mod invalid_input {
     
     /// A builder for [`InvalidInput`](crate::error::InvalidInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -337,6 +338,7 @@ impl std::error::Error for UnsupportedTld {}
 pub mod unsupported_tld {
     
     /// A builder for [`UnsupportedTld`](crate::error::UnsupportedTld).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -397,6 +399,7 @@ impl std::error::Error for OperationLimitExceeded {}
 pub mod operation_limit_exceeded {
     
     /// A builder for [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -618,6 +621,7 @@ impl std::error::Error for TldRulesViolation {}
 pub mod tld_rules_violation {
     
     /// A builder for [`TldRulesViolation`](crate::error::TldRulesViolation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -678,6 +682,7 @@ impl std::error::Error for DuplicateRequest {}
 pub mod duplicate_request {
     
     /// A builder for [`DuplicateRequest`](crate::error::DuplicateRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1382,6 +1387,7 @@ impl std::error::Error for DomainLimitExceeded {}
 pub mod domain_limit_exceeded {
     
     /// A builder for [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5004,6 +5010,7 @@ impl std::error::Error for DnssecLimitExceeded {}
 pub mod dnssec_limit_exceeded {
     
     /// A builder for [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

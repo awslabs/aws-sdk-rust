@@ -8,6 +8,7 @@ pub struct UpdateIdentityProviderConfigurationOutput  {
 pub mod update_identity_provider_configuration_output {
     
     /// A builder for [`UpdateIdentityProviderConfigurationOutput`](crate::output::UpdateIdentityProviderConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UpdateFleetMetadataOutput  {
 pub mod update_fleet_metadata_output {
     
     /// A builder for [`UpdateFleetMetadataOutput`](crate::output::UpdateFleetMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct UpdateDomainMetadataOutput  {
 pub mod update_domain_metadata_output {
     
     /// A builder for [`UpdateDomainMetadataOutput`](crate::output::UpdateDomainMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -95,6 +98,7 @@ pub struct UpdateDevicePolicyConfigurationOutput  {
 pub mod update_device_policy_configuration_output {
     
     /// A builder for [`UpdateDevicePolicyConfigurationOutput`](crate::output::UpdateDevicePolicyConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -124,6 +128,7 @@ pub struct UpdateCompanyNetworkConfigurationOutput  {
 pub mod update_company_network_configuration_output {
     
     /// A builder for [`UpdateCompanyNetworkConfigurationOutput`](crate::output::UpdateCompanyNetworkConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -153,6 +158,7 @@ pub struct UpdateAuditStreamConfigurationOutput  {
 pub mod update_audit_stream_configuration_output {
     
     /// A builder for [`UpdateAuditStreamConfigurationOutput`](crate::output::UpdateAuditStreamConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -182,6 +188,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -211,6 +218,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -240,6 +248,7 @@ pub struct SignOutUserOutput  {
 pub mod sign_out_user_output {
     
     /// A builder for [`SignOutUserOutput`](crate::output::SignOutUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -269,6 +278,7 @@ pub struct RevokeDomainAccessOutput  {
 pub mod revoke_domain_access_output {
     
     /// A builder for [`RevokeDomainAccessOutput`](crate::output::RevokeDomainAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -298,6 +308,7 @@ pub struct RestoreDomainAccessOutput  {
 pub mod restore_domain_access_output {
     
     /// A builder for [`RestoreDomainAccessOutput`](crate::output::RestoreDomainAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -343,6 +354,7 @@ impl ListWebsiteCertificateAuthoritiesOutput {
 pub mod list_website_certificate_authorities_output {
     
     /// A builder for [`ListWebsiteCertificateAuthoritiesOutput`](crate::output::ListWebsiteCertificateAuthoritiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) website_certificate_authorities: std::option::Option<std::vec::Vec<crate::model::WebsiteCaSummary>>,
@@ -418,6 +430,7 @@ impl ListWebsiteAuthorizationProvidersOutput {
 pub mod list_website_authorization_providers_output {
     
     /// A builder for [`ListWebsiteAuthorizationProvidersOutput`](crate::output::ListWebsiteAuthorizationProvidersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) website_authorization_providers: std::option::Option<std::vec::Vec<crate::model::WebsiteAuthorizationProviderSummary>>,
@@ -486,6 +499,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -549,6 +563,7 @@ impl ListFleetsOutput {
 pub mod list_fleets_output {
     
     /// A builder for [`ListFleetsOutput`](crate::output::ListFleetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_summary_list: std::option::Option<std::vec::Vec<crate::model::FleetSummary>>,
@@ -624,6 +639,7 @@ impl ListDomainsOutput {
 pub mod list_domains_output {
     
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
@@ -699,6 +715,7 @@ impl ListDevicesOutput {
 pub mod list_devices_output {
     
     /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>,
@@ -758,6 +775,7 @@ pub struct DisassociateWebsiteCertificateAuthorityOutput  {
 pub mod disassociate_website_certificate_authority_output {
     
     /// A builder for [`DisassociateWebsiteCertificateAuthorityOutput`](crate::output::DisassociateWebsiteCertificateAuthorityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -787,6 +805,7 @@ pub struct DisassociateWebsiteAuthorizationProviderOutput  {
 pub mod disassociate_website_authorization_provider_output {
     
     /// A builder for [`DisassociateWebsiteAuthorizationProviderOutput`](crate::output::DisassociateWebsiteAuthorizationProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -816,6 +835,7 @@ pub struct DisassociateDomainOutput  {
 pub mod disassociate_domain_output {
     
     /// A builder for [`DisassociateDomainOutput`](crate::output::DisassociateDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -868,6 +888,7 @@ impl DescribeWebsiteCertificateAuthorityOutput {
 pub mod describe_website_certificate_authority_output {
     
     /// A builder for [`DescribeWebsiteCertificateAuthorityOutput`](crate::output::DescribeWebsiteCertificateAuthorityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -956,6 +977,7 @@ impl DescribeIdentityProviderConfigurationOutput {
 pub mod describe_identity_provider_configuration_output {
     
     /// A builder for [`DescribeIdentityProviderConfigurationOutput`](crate::output::DescribeIdentityProviderConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
@@ -1079,6 +1101,7 @@ impl DescribeFleetMetadataOutput {
 pub mod describe_fleet_metadata_output {
     
     /// A builder for [`DescribeFleetMetadataOutput`](crate::output::DescribeFleetMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1247,6 +1270,7 @@ impl DescribeDomainOutput {
 pub mod describe_domain_output {
     
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1345,6 +1369,7 @@ impl DescribeDevicePolicyConfigurationOutput {
 pub mod describe_device_policy_configuration_output {
     
     /// A builder for [`DescribeDevicePolicyConfigurationOutput`](crate::output::DescribeDevicePolicyConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_ca_certificate: std::option::Option<std::string::String>,
@@ -1451,6 +1476,7 @@ impl DescribeDeviceOutput {
 pub mod describe_device_output {
     
     /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::DeviceStatus>,
@@ -1611,6 +1637,7 @@ impl DescribeCompanyNetworkConfigurationOutput {
 pub mod describe_company_network_configuration_output {
     
     /// A builder for [`DescribeCompanyNetworkConfigurationOutput`](crate::output::DescribeCompanyNetworkConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -1697,6 +1724,7 @@ impl DescribeAuditStreamConfigurationOutput {
 pub mod describe_audit_stream_configuration_output {
     
     /// A builder for [`DescribeAuditStreamConfigurationOutput`](crate::output::DescribeAuditStreamConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audit_stream_arn: std::option::Option<std::string::String>,
@@ -1738,6 +1766,7 @@ pub struct DeleteFleetOutput  {
 pub mod delete_fleet_output {
     
     /// A builder for [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1776,6 +1805,7 @@ impl CreateFleetOutput {
 pub mod create_fleet_output {
     
     /// A builder for [`CreateFleetOutput`](crate::output::CreateFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -1826,6 +1856,7 @@ impl AssociateWebsiteCertificateAuthorityOutput {
 pub mod associate_website_certificate_authority_output {
     
     /// A builder for [`AssociateWebsiteCertificateAuthorityOutput`](crate::output::AssociateWebsiteCertificateAuthorityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) website_ca_id: std::option::Option<std::string::String>,
@@ -1876,6 +1907,7 @@ impl AssociateWebsiteAuthorizationProviderOutput {
 pub mod associate_website_authorization_provider_output {
     
     /// A builder for [`AssociateWebsiteAuthorizationProviderOutput`](crate::output::AssociateWebsiteAuthorizationProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_provider_id: std::option::Option<std::string::String>,
@@ -1917,6 +1949,7 @@ pub struct AssociateDomainOutput  {
 pub mod associate_domain_output {
     
     /// A builder for [`AssociateDomainOutput`](crate::output::AssociateDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

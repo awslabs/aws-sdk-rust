@@ -25,6 +25,7 @@ impl ConfigurationOverrides {
 pub mod configuration_overrides {
     
     /// A builder for [`ConfigurationOverrides`](crate::model::ConfigurationOverrides).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_configuration: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -107,6 +108,7 @@ impl MonitoringConfiguration {
 pub mod monitoring_configuration {
     
     /// A builder for [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) persistent_app_ui: std::option::Option<crate::model::PersistentAppUi>,
@@ -181,6 +183,7 @@ impl S3MonitoringConfiguration {
 pub mod s3_monitoring_configuration {
     
     /// A builder for [`S3MonitoringConfiguration`](crate::model::S3MonitoringConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_uri: std::option::Option<std::string::String>,
@@ -238,6 +241,7 @@ impl CloudWatchMonitoringConfiguration {
 pub mod cloud_watch_monitoring_configuration {
     
     /// A builder for [`CloudWatchMonitoringConfiguration`](crate::model::CloudWatchMonitoringConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -405,6 +409,7 @@ impl  std::fmt::Debug for Configuration  {
 pub mod configuration {
     
     /// A builder for [`Configuration`](crate::model::Configuration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) classification: std::option::Option<std::string::String>,
@@ -507,6 +512,7 @@ impl JobDriver {
 pub mod job_driver {
     
     /// A builder for [`JobDriver`](crate::model::JobDriver).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) spark_submit_job_driver: std::option::Option<crate::model::SparkSubmitJobDriver>,
@@ -584,6 +590,7 @@ impl  std::fmt::Debug for SparkSqlJobDriver  {
 pub mod spark_sql_job_driver {
     
     /// A builder for [`SparkSqlJobDriver`](crate::model::SparkSqlJobDriver).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) entry_point: std::option::Option<std::string::String>,
@@ -677,6 +684,7 @@ impl  std::fmt::Debug for SparkSubmitJobDriver  {
 pub mod spark_submit_job_driver {
     
     /// A builder for [`SparkSubmitJobDriver`](crate::model::SparkSubmitJobDriver).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) entry_point: std::option::Option<std::string::String>,
@@ -808,6 +816,7 @@ impl VirtualCluster {
 pub mod virtual_cluster {
     
     /// A builder for [`VirtualCluster`](crate::model::VirtualCluster).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -950,6 +959,7 @@ impl ContainerProvider {
 pub mod container_provider {
     
     /// A builder for [`ContainerProvider`](crate::model::ContainerProvider).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ContainerProviderType>,
@@ -1057,6 +1067,7 @@ impl EksInfo {
 pub mod eks_info {
     
     /// A builder for [`EksInfo`](crate::model::EksInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -1397,6 +1408,7 @@ impl Endpoint {
 pub mod endpoint {
     
     /// A builder for [`Endpoint`](crate::model::Endpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1764,6 +1776,7 @@ impl Certificate {
 pub mod certificate {
     
     /// A builder for [`Certificate`](crate::model::Certificate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -1979,6 +1992,7 @@ impl JobTemplate {
 pub mod job_template {
     
     /// A builder for [`JobTemplate`](crate::model::JobTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2166,6 +2180,7 @@ impl JobTemplateData {
 pub mod job_template_data {
     
     /// A builder for [`JobTemplateData`](crate::model::JobTemplateData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
@@ -2295,6 +2310,7 @@ impl TemplateParameterConfiguration {
 pub mod template_parameter_configuration {
     
     /// A builder for [`TemplateParameterConfiguration`](crate::model::TemplateParameterConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::TemplateParameterDataType>,
@@ -2446,6 +2462,7 @@ impl ParametricConfigurationOverrides {
 pub mod parametric_configuration_overrides {
     
     /// A builder for [`ParametricConfigurationOverrides`](crate::model::ParametricConfigurationOverrides).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_configuration: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -2528,6 +2545,7 @@ impl ParametricMonitoringConfiguration {
 pub mod parametric_monitoring_configuration {
     
     /// A builder for [`ParametricMonitoringConfiguration`](crate::model::ParametricMonitoringConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) persistent_app_ui: std::option::Option<std::string::String>,
@@ -2602,6 +2620,7 @@ impl ParametricS3MonitoringConfiguration {
 pub mod parametric_s3_monitoring_configuration {
     
     /// A builder for [`ParametricS3MonitoringConfiguration`](crate::model::ParametricS3MonitoringConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_uri: std::option::Option<std::string::String>,
@@ -2659,6 +2678,7 @@ impl ParametricCloudWatchMonitoringConfiguration {
 pub mod parametric_cloud_watch_monitoring_configuration {
     
     /// A builder for [`ParametricCloudWatchMonitoringConfiguration`](crate::model::ParametricCloudWatchMonitoringConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -2826,6 +2846,7 @@ impl JobRun {
 pub mod job_run {
     
     /// A builder for [`JobRun`](crate::model::JobRun).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

@@ -296,6 +296,7 @@ impl std::error::Error for TrustedSignerDoesNotExist {}
 pub mod trusted_signer_does_not_exist {
     
     /// A builder for [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -356,6 +357,7 @@ impl std::error::Error for TooManyTrustedSigners {}
 pub mod too_many_trusted_signers {
     
     /// A builder for [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -416,6 +418,7 @@ impl std::error::Error for TooManyStreamingDistributionCnamEs {}
 pub mod too_many_streaming_distribution_cnam_es {
     
     /// A builder for [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -476,6 +479,7 @@ impl std::error::Error for PreconditionFailed {}
 pub mod precondition_failed {
     
     /// A builder for [`PreconditionFailed`](crate::error::PreconditionFailed).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -536,6 +540,7 @@ impl std::error::Error for NoSuchStreamingDistribution {}
 pub mod no_such_streaming_distribution {
     
     /// A builder for [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -596,6 +601,7 @@ impl std::error::Error for MissingBody {}
 pub mod missing_body {
     
     /// A builder for [`MissingBody`](crate::error::MissingBody).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -656,6 +662,7 @@ impl std::error::Error for InvalidOriginAccessIdentity {}
 pub mod invalid_origin_access_identity {
     
     /// A builder for [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -716,6 +723,7 @@ impl std::error::Error for InvalidOriginAccessControl {}
 pub mod invalid_origin_access_control {
     
     /// A builder for [`InvalidOriginAccessControl`](crate::error::InvalidOriginAccessControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -776,6 +784,7 @@ impl std::error::Error for InvalidIfMatchVersion {}
 pub mod invalid_if_match_version {
     
     /// A builder for [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -836,6 +845,7 @@ impl std::error::Error for InvalidArgument {}
 pub mod invalid_argument {
     
     /// A builder for [`InvalidArgument`](crate::error::InvalidArgument).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -896,6 +906,7 @@ impl std::error::Error for InconsistentQuantities {}
 pub mod inconsistent_quantities {
     
     /// A builder for [`InconsistentQuantities`](crate::error::InconsistentQuantities).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -956,6 +967,7 @@ impl std::error::Error for IllegalUpdate {}
 pub mod illegal_update {
     
     /// A builder for [`IllegalUpdate`](crate::error::IllegalUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1016,6 +1028,7 @@ impl std::error::Error for CnameAlreadyExists {}
 pub mod cname_already_exists {
     
     /// A builder for [`CnameAlreadyExists`](crate::error::CnameAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1076,6 +1089,7 @@ impl std::error::Error for AccessDenied {}
 pub mod access_denied {
     
     /// A builder for [`AccessDenied`](crate::error::AccessDenied).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1373,6 +1387,7 @@ impl std::error::Error for TooManyRemoveHeadersInResponseHeadersPolicy {}
 pub mod too_many_remove_headers_in_response_headers_policy {
     
     /// A builder for [`TooManyRemoveHeadersInResponseHeadersPolicy`](crate::error::TooManyRemoveHeadersInResponseHeadersPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1434,6 +1449,7 @@ impl std::error::Error for TooManyCustomHeadersInResponseHeadersPolicy {}
 pub mod too_many_custom_headers_in_response_headers_policy {
     
     /// A builder for [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1495,6 +1511,7 @@ impl std::error::Error for TooLongCspInResponseHeadersPolicy {}
 pub mod too_long_csp_in_response_headers_policy {
     
     /// A builder for [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1555,6 +1572,7 @@ impl std::error::Error for ResponseHeadersPolicyAlreadyExists {}
 pub mod response_headers_policy_already_exists {
     
     /// A builder for [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1615,6 +1633,7 @@ impl std::error::Error for NoSuchResponseHeadersPolicy {}
 pub mod no_such_response_headers_policy {
     
     /// A builder for [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1812,6 +1831,7 @@ impl std::error::Error for NoSuchRealtimeLogConfig {}
 pub mod no_such_realtime_log_config {
     
     /// A builder for [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2057,6 +2077,7 @@ impl std::error::Error for NoSuchPublicKey {}
 pub mod no_such_public_key {
     
     /// A builder for [`NoSuchPublicKey`](crate::error::NoSuchPublicKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2117,6 +2138,7 @@ impl std::error::Error for CannotChangeImmutablePublicKeyFields {}
 pub mod cannot_change_immutable_public_key_fields {
     
     /// A builder for [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2410,6 +2432,7 @@ impl std::error::Error for TooManyQueryStringsInOriginRequestPolicy {}
 pub mod too_many_query_strings_in_origin_request_policy {
     
     /// A builder for [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2470,6 +2493,7 @@ impl std::error::Error for TooManyHeadersInOriginRequestPolicy {}
 pub mod too_many_headers_in_origin_request_policy {
     
     /// A builder for [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2530,6 +2554,7 @@ impl std::error::Error for TooManyCookiesInOriginRequestPolicy {}
 pub mod too_many_cookies_in_origin_request_policy {
     
     /// A builder for [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2590,6 +2615,7 @@ impl std::error::Error for OriginRequestPolicyAlreadyExists {}
 pub mod origin_request_policy_already_exists {
     
     /// A builder for [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2650,6 +2676,7 @@ impl std::error::Error for NoSuchOriginRequestPolicy {}
 pub mod no_such_origin_request_policy {
     
     /// A builder for [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2895,6 +2922,7 @@ impl std::error::Error for OriginAccessControlAlreadyExists {}
 pub mod origin_access_control_already_exists {
     
     /// A builder for [`OriginAccessControlAlreadyExists`](crate::error::OriginAccessControlAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2955,6 +2983,7 @@ impl std::error::Error for NoSuchOriginAccessControl {}
 pub mod no_such_origin_access_control {
     
     /// A builder for [`NoSuchOriginAccessControl`](crate::error::NoSuchOriginAccessControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3188,6 +3217,7 @@ impl std::error::Error for TooManyPublicKeysInKeyGroup {}
 pub mod too_many_public_keys_in_key_group {
     
     /// A builder for [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3248,6 +3278,7 @@ impl std::error::Error for NoSuchResource {}
 pub mod no_such_resource {
     
     /// A builder for [`NoSuchResource`](crate::error::NoSuchResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3308,6 +3339,7 @@ impl std::error::Error for KeyGroupAlreadyExists {}
 pub mod key_group_already_exists {
     
     /// A builder for [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3541,6 +3573,7 @@ impl std::error::Error for UnsupportedOperation {}
 pub mod unsupported_operation {
     
     /// A builder for [`UnsupportedOperation`](crate::error::UnsupportedOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3601,6 +3634,7 @@ impl std::error::Error for NoSuchFunctionExists {}
 pub mod no_such_function_exists {
     
     /// A builder for [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3661,6 +3695,7 @@ impl std::error::Error for FunctionSizeLimitExceeded {}
 pub mod function_size_limit_exceeded {
     
     /// A builder for [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3966,6 +4001,7 @@ impl std::error::Error for TooManyFieldLevelEncryptionFieldPatterns {}
 pub mod too_many_field_level_encryption_field_patterns {
     
     /// A builder for [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4026,6 +4062,7 @@ impl std::error::Error for TooManyFieldLevelEncryptionEncryptionEntities {}
 pub mod too_many_field_level_encryption_encryption_entities {
     
     /// A builder for [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4086,6 +4123,7 @@ impl std::error::Error for NoSuchFieldLevelEncryptionProfile {}
 pub mod no_such_field_level_encryption_profile {
     
     /// A builder for [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4146,6 +4184,7 @@ impl std::error::Error for FieldLevelEncryptionProfileSizeExceeded {}
 pub mod field_level_encryption_profile_size_exceeded {
     
     /// A builder for [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4206,6 +4245,7 @@ impl std::error::Error for FieldLevelEncryptionProfileAlreadyExists {}
 pub mod field_level_encryption_profile_already_exists {
     
     /// A builder for [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4499,6 +4539,7 @@ impl std::error::Error for TooManyFieldLevelEncryptionQueryArgProfiles {}
 pub mod too_many_field_level_encryption_query_arg_profiles {
     
     /// A builder for [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4559,6 +4600,7 @@ impl std::error::Error for TooManyFieldLevelEncryptionContentTypeProfiles {}
 pub mod too_many_field_level_encryption_content_type_profiles {
     
     /// A builder for [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4619,6 +4661,7 @@ impl std::error::Error for QueryArgProfileEmpty {}
 pub mod query_arg_profile_empty {
     
     /// A builder for [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4679,6 +4722,7 @@ impl std::error::Error for NoSuchFieldLevelEncryptionConfig {}
 pub mod no_such_field_level_encryption_config {
     
     /// A builder for [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5561,6 +5605,7 @@ impl std::error::Error for TrustedKeyGroupDoesNotExist {}
 pub mod trusted_key_group_does_not_exist {
     
     /// A builder for [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5621,6 +5666,7 @@ impl std::error::Error for TooManyQueryStringParameters {}
 pub mod too_many_query_string_parameters {
     
     /// A builder for [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5681,6 +5727,7 @@ impl std::error::Error for TooManyOrigins {}
 pub mod too_many_origins {
     
     /// A builder for [`TooManyOrigins`](crate::error::TooManyOrigins).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5741,6 +5788,7 @@ impl std::error::Error for TooManyOriginGroupsPerDistribution {}
 pub mod too_many_origin_groups_per_distribution {
     
     /// A builder for [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5801,6 +5849,7 @@ impl std::error::Error for TooManyOriginCustomHeaders {}
 pub mod too_many_origin_custom_headers {
     
     /// A builder for [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5861,6 +5910,7 @@ impl std::error::Error for TooManyLambdaFunctionAssociations {}
 pub mod too_many_lambda_function_associations {
     
     /// A builder for [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5921,6 +5971,7 @@ impl std::error::Error for TooManyKeyGroupsAssociatedToDistribution {}
 pub mod too_many_key_groups_associated_to_distribution {
     
     /// A builder for [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5981,6 +6032,7 @@ impl std::error::Error for TooManyHeadersInForwardedValues {}
 pub mod too_many_headers_in_forwarded_values {
     
     /// A builder for [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6041,6 +6093,7 @@ impl std::error::Error for TooManyFunctionAssociations {}
 pub mod too_many_function_associations {
     
     /// A builder for [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6101,6 +6154,7 @@ impl std::error::Error for TooManyDistributionsWithSingleFunctionArn {}
 pub mod too_many_distributions_with_single_function_arn {
     
     /// A builder for [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6161,6 +6215,7 @@ impl std::error::Error for TooManyDistributionsWithLambdaAssociations {}
 pub mod too_many_distributions_with_lambda_associations {
     
     /// A builder for [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6221,6 +6276,7 @@ impl std::error::Error for TooManyDistributionsWithFunctionAssociations {}
 pub mod too_many_distributions_with_function_associations {
     
     /// A builder for [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6282,6 +6338,7 @@ impl std::error::Error for TooManyDistributionsAssociatedToResponseHeadersPolicy
 pub mod too_many_distributions_associated_to_response_headers_policy {
     
     /// A builder for [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6342,6 +6399,7 @@ impl std::error::Error for TooManyDistributionsAssociatedToOriginRequestPolicy {
 pub mod too_many_distributions_associated_to_origin_request_policy {
     
     /// A builder for [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6402,6 +6460,7 @@ impl std::error::Error for TooManyDistributionsAssociatedToKeyGroup {}
 pub mod too_many_distributions_associated_to_key_group {
     
     /// A builder for [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6462,6 +6521,7 @@ impl std::error::Error for TooManyDistributionsAssociatedToFieldLevelEncryptionC
 pub mod too_many_distributions_associated_to_field_level_encryption_config {
     
     /// A builder for [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6522,6 +6582,7 @@ impl std::error::Error for TooManyDistributionsAssociatedToCachePolicy {}
 pub mod too_many_distributions_associated_to_cache_policy {
     
     /// A builder for [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6582,6 +6643,7 @@ impl std::error::Error for TooManyDistributionCnamEs {}
 pub mod too_many_distribution_cnam_es {
     
     /// A builder for [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6642,6 +6704,7 @@ impl std::error::Error for TooManyCookieNamesInWhiteList {}
 pub mod too_many_cookie_names_in_white_list {
     
     /// A builder for [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6702,6 +6765,7 @@ impl std::error::Error for TooManyCertificates {}
 pub mod too_many_certificates {
     
     /// A builder for [`TooManyCertificates`](crate::error::TooManyCertificates).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6762,6 +6826,7 @@ impl std::error::Error for TooManyCacheBehaviors {}
 pub mod too_many_cache_behaviors {
     
     /// A builder for [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6822,6 +6887,7 @@ impl std::error::Error for RealtimeLogConfigOwnerMismatch {}
 pub mod realtime_log_config_owner_mismatch {
     
     /// A builder for [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6882,6 +6948,7 @@ impl std::error::Error for NoSuchOrigin {}
 pub mod no_such_origin {
     
     /// A builder for [`NoSuchOrigin`](crate::error::NoSuchOrigin).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6942,6 +7009,7 @@ impl std::error::Error for NoSuchDistribution {}
 pub mod no_such_distribution {
     
     /// A builder for [`NoSuchDistribution`](crate::error::NoSuchDistribution).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7002,6 +7070,7 @@ impl std::error::Error for NoSuchCachePolicy {}
 pub mod no_such_cache_policy {
     
     /// A builder for [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7062,6 +7131,7 @@ impl std::error::Error for InvalidWebAclId {}
 pub mod invalid_web_acl_id {
     
     /// A builder for [`InvalidWebAclId`](crate::error::InvalidWebAclId).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7122,6 +7192,7 @@ impl std::error::Error for InvalidViewerCertificate {}
 pub mod invalid_viewer_certificate {
     
     /// A builder for [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7182,6 +7253,7 @@ impl std::error::Error for InvalidTtlOrder {}
 pub mod invalid_ttl_order {
     
     /// A builder for [`InvalidTtlOrder`](crate::error::InvalidTtlOrder).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7242,6 +7314,7 @@ impl std::error::Error for InvalidResponseCode {}
 pub mod invalid_response_code {
     
     /// A builder for [`InvalidResponseCode`](crate::error::InvalidResponseCode).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7302,6 +7375,7 @@ impl std::error::Error for InvalidRequiredProtocol {}
 pub mod invalid_required_protocol {
     
     /// A builder for [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7362,6 +7436,7 @@ impl std::error::Error for InvalidRelativePath {}
 pub mod invalid_relative_path {
     
     /// A builder for [`InvalidRelativePath`](crate::error::InvalidRelativePath).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7422,6 +7497,7 @@ impl std::error::Error for InvalidQueryStringParameters {}
 pub mod invalid_query_string_parameters {
     
     /// A builder for [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7482,6 +7558,7 @@ impl std::error::Error for InvalidOriginReadTimeout {}
 pub mod invalid_origin_read_timeout {
     
     /// A builder for [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7542,6 +7619,7 @@ impl std::error::Error for InvalidOriginKeepaliveTimeout {}
 pub mod invalid_origin_keepalive_timeout {
     
     /// A builder for [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7602,6 +7680,7 @@ impl std::error::Error for InvalidMinimumProtocolVersion {}
 pub mod invalid_minimum_protocol_version {
     
     /// A builder for [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7662,6 +7741,7 @@ impl std::error::Error for InvalidLocationCode {}
 pub mod invalid_location_code {
     
     /// A builder for [`InvalidLocationCode`](crate::error::InvalidLocationCode).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7722,6 +7802,7 @@ impl std::error::Error for InvalidLambdaFunctionAssociation {}
 pub mod invalid_lambda_function_association {
     
     /// A builder for [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7782,6 +7863,7 @@ impl std::error::Error for InvalidHeadersForS3Origin {}
 pub mod invalid_headers_for_s3_origin {
     
     /// A builder for [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7842,6 +7924,7 @@ impl std::error::Error for InvalidGeoRestrictionParameter {}
 pub mod invalid_geo_restriction_parameter {
     
     /// A builder for [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7902,6 +7985,7 @@ impl std::error::Error for InvalidFunctionAssociation {}
 pub mod invalid_function_association {
     
     /// A builder for [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7962,6 +8046,7 @@ impl std::error::Error for InvalidForwardCookies {}
 pub mod invalid_forward_cookies {
     
     /// A builder for [`InvalidForwardCookies`](crate::error::InvalidForwardCookies).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8022,6 +8107,7 @@ impl std::error::Error for InvalidErrorCode {}
 pub mod invalid_error_code {
     
     /// A builder for [`InvalidErrorCode`](crate::error::InvalidErrorCode).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8082,6 +8168,7 @@ impl std::error::Error for InvalidDefaultRootObject {}
 pub mod invalid_default_root_object {
     
     /// A builder for [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8142,6 +8229,7 @@ impl std::error::Error for IllegalFieldLevelEncryptionConfigAssociationWithCache
 pub mod illegal_field_level_encryption_config_association_with_cache_behavior {
     
     /// A builder for [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9084,6 +9172,7 @@ impl std::error::Error for StagingDistributionInUse {}
 pub mod staging_distribution_in_use {
     
     /// A builder for [`StagingDistributionInUse`](crate::error::StagingDistributionInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9144,6 +9233,7 @@ impl std::error::Error for NoSuchContinuousDeploymentPolicy {}
 pub mod no_such_continuous_deployment_policy {
     
     /// A builder for [`NoSuchContinuousDeploymentPolicy`](crate::error::NoSuchContinuousDeploymentPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9204,6 +9294,7 @@ impl std::error::Error for InvalidDomainNameForOriginAccessControl {}
 pub mod invalid_domain_name_for_origin_access_control {
     
     /// A builder for [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9264,6 +9355,7 @@ impl std::error::Error for IllegalOriginAccessConfiguration {}
 pub mod illegal_origin_access_configuration {
     
     /// A builder for [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9324,6 +9416,7 @@ impl std::error::Error for ContinuousDeploymentPolicyInUse {}
 pub mod continuous_deployment_policy_in_use {
     
     /// A builder for [`ContinuousDeploymentPolicyInUse`](crate::error::ContinuousDeploymentPolicyInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9766,6 +9859,7 @@ impl std::error::Error for NoSuchCloudFrontOriginAccessIdentity {}
 pub mod no_such_cloud_front_origin_access_identity {
     
     /// A builder for [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10059,6 +10153,7 @@ impl std::error::Error for TooManyQueryStringsInCachePolicy {}
 pub mod too_many_query_strings_in_cache_policy {
     
     /// A builder for [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10119,6 +10214,7 @@ impl std::error::Error for TooManyHeadersInCachePolicy {}
 pub mod too_many_headers_in_cache_policy {
     
     /// A builder for [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10179,6 +10275,7 @@ impl std::error::Error for TooManyCookiesInCachePolicy {}
 pub mod too_many_cookies_in_cache_policy {
     
     /// A builder for [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10239,6 +10336,7 @@ impl std::error::Error for CachePolicyAlreadyExists {}
 pub mod cache_policy_already_exists {
     
     /// A builder for [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10448,6 +10546,7 @@ impl std::error::Error for InvalidTagging {}
 pub mod invalid_tagging {
     
     /// A builder for [`InvalidTagging`](crate::error::InvalidTagging).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10669,6 +10768,7 @@ impl std::error::Error for TestFunctionFailed {}
 pub mod test_function_failed {
     
     /// A builder for [`TestFunctionFailed`](crate::error::TestFunctionFailed).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15474,6 +15574,7 @@ impl std::error::Error for NoSuchMonitoringSubscription {}
 pub mod no_such_monitoring_subscription {
     
     /// A builder for [`NoSuchMonitoringSubscription`](crate::error::NoSuchMonitoringSubscription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15897,6 +15998,7 @@ impl std::error::Error for NoSuchInvalidation {}
 pub mod no_such_invalidation {
     
     /// A builder for [`NoSuchInvalidation`](crate::error::NoSuchInvalidation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17868,6 +17970,7 @@ impl std::error::Error for StreamingDistributionNotDisabled {}
 pub mod streaming_distribution_not_disabled {
     
     /// A builder for [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18101,6 +18204,7 @@ impl std::error::Error for ResponseHeadersPolicyInUse {}
 pub mod response_headers_policy_in_use {
     
     /// A builder for [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18161,6 +18265,7 @@ impl std::error::Error for IllegalDelete {}
 pub mod illegal_delete {
     
     /// A builder for [`IllegalDelete`](crate::error::IllegalDelete).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18370,6 +18475,7 @@ impl std::error::Error for RealtimeLogConfigInUse {}
 pub mod realtime_log_config_in_use {
     
     /// A builder for [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18591,6 +18697,7 @@ impl std::error::Error for PublicKeyInUse {}
 pub mod public_key_in_use {
     
     /// A builder for [`PublicKeyInUse`](crate::error::PublicKeyInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18824,6 +18931,7 @@ impl std::error::Error for OriginRequestPolicyInUse {}
 pub mod origin_request_policy_in_use {
     
     /// A builder for [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19045,6 +19153,7 @@ impl std::error::Error for OriginAccessControlInUse {}
 pub mod origin_access_control_in_use {
     
     /// A builder for [`OriginAccessControlInUse`](crate::error::OriginAccessControlInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19403,6 +19512,7 @@ impl std::error::Error for ResourceInUse {}
 pub mod resource_in_use {
     
     /// A builder for [`ResourceInUse`](crate::error::ResourceInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19624,6 +19734,7 @@ impl std::error::Error for FunctionInUse {}
 pub mod function_in_use {
     
     /// A builder for [`FunctionInUse`](crate::error::FunctionInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19845,6 +19956,7 @@ impl std::error::Error for FieldLevelEncryptionProfileInUse {}
 pub mod field_level_encryption_profile_in_use {
     
     /// A builder for [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20066,6 +20178,7 @@ impl std::error::Error for FieldLevelEncryptionConfigInUse {}
 pub mod field_level_encryption_config_in_use {
     
     /// A builder for [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20287,6 +20400,7 @@ impl std::error::Error for DistributionNotDisabled {}
 pub mod distribution_not_disabled {
     
     /// A builder for [`DistributionNotDisabled`](crate::error::DistributionNotDisabled).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20681,6 +20795,7 @@ impl std::error::Error for CloudFrontOriginAccessIdentityInUse {}
 pub mod cloud_front_origin_access_identity_in_use {
     
     /// A builder for [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20914,6 +21029,7 @@ impl std::error::Error for CachePolicyInUse {}
 pub mod cache_policy_in_use {
     
     /// A builder for [`CachePolicyInUse`](crate::error::CachePolicyInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21243,6 +21359,7 @@ impl std::error::Error for TooManyStreamingDistributions {}
 pub mod too_many_streaming_distributions {
     
     /// A builder for [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21303,6 +21420,7 @@ impl std::error::Error for StreamingDistributionAlreadyExists {}
 pub mod streaming_distribution_already_exists {
     
     /// A builder for [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21363,6 +21481,7 @@ impl std::error::Error for InvalidOrigin {}
 pub mod invalid_origin {
     
     /// A builder for [`InvalidOrigin`](crate::error::InvalidOrigin).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21882,6 +22001,7 @@ impl std::error::Error for TooManyResponseHeadersPolicies {}
 pub mod too_many_response_headers_policies {
     
     /// A builder for [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22091,6 +22211,7 @@ impl std::error::Error for TooManyRealtimeLogConfigs {}
 pub mod too_many_realtime_log_configs {
     
     /// A builder for [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22151,6 +22272,7 @@ impl std::error::Error for RealtimeLogConfigAlreadyExists {}
 pub mod realtime_log_config_already_exists {
     
     /// A builder for [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22348,6 +22470,7 @@ impl std::error::Error for TooManyPublicKeys {}
 pub mod too_many_public_keys {
     
     /// A builder for [`TooManyPublicKeys`](crate::error::TooManyPublicKeys).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22408,6 +22531,7 @@ impl std::error::Error for PublicKeyAlreadyExists {}
 pub mod public_key_already_exists {
     
     /// A builder for [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22665,6 +22789,7 @@ impl std::error::Error for TooManyOriginRequestPolicies {}
 pub mod too_many_origin_request_policies {
     
     /// A builder for [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22864,6 +22989,7 @@ impl std::error::Error for TooManyOriginAccessControls {}
 pub mod too_many_origin_access_controls {
     
     /// A builder for [`TooManyOriginAccessControls`](crate::error::TooManyOriginAccessControls).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23073,6 +23199,7 @@ impl std::error::Error for MonitoringSubscriptionAlreadyExists {}
 pub mod monitoring_subscription_already_exists {
     
     /// A builder for [`MonitoringSubscriptionAlreadyExists`](crate::error::MonitoringSubscriptionAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23282,6 +23409,7 @@ impl std::error::Error for TooManyKeyGroups {}
 pub mod too_many_key_groups {
     
     /// A builder for [`TooManyKeyGroups`](crate::error::TooManyKeyGroups).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23527,6 +23655,7 @@ impl std::error::Error for TooManyInvalidationsInProgress {}
 pub mod too_many_invalidations_in_progress {
     
     /// A builder for [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23587,6 +23716,7 @@ impl std::error::Error for BatchTooLarge {}
 pub mod batch_too_large {
     
     /// A builder for [`BatchTooLarge`](crate::error::BatchTooLarge).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23808,6 +23938,7 @@ impl std::error::Error for TooManyFunctions {}
 pub mod too_many_functions {
     
     /// A builder for [`TooManyFunctions`](crate::error::TooManyFunctions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23868,6 +23999,7 @@ impl std::error::Error for FunctionAlreadyExists {}
 pub mod function_already_exists {
     
     /// A builder for [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24125,6 +24257,7 @@ impl std::error::Error for TooManyFieldLevelEncryptionProfiles {}
 pub mod too_many_field_level_encryption_profiles {
     
     /// A builder for [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24382,6 +24515,7 @@ impl std::error::Error for TooManyFieldLevelEncryptionConfigs {}
 pub mod too_many_field_level_encryption_configs {
     
     /// A builder for [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24442,6 +24576,7 @@ impl std::error::Error for FieldLevelEncryptionConfigAlreadyExists {}
 pub mod field_level_encryption_config_already_exists {
     
     /// A builder for [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25372,6 +25507,7 @@ impl std::error::Error for TooManyDistributions {}
 pub mod too_many_distributions {
     
     /// A builder for [`TooManyDistributions`](crate::error::TooManyDistributions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25432,6 +25568,7 @@ impl std::error::Error for InvalidProtocolSettings {}
 pub mod invalid_protocol_settings {
     
     /// A builder for [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25492,6 +25629,7 @@ impl std::error::Error for DistributionAlreadyExists {}
 pub mod distribution_already_exists {
     
     /// A builder for [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -26436,6 +26574,7 @@ impl std::error::Error for TooManyDistributionsAssociatedToOriginAccessControl {
 pub mod too_many_distributions_associated_to_origin_access_control {
     
     /// A builder for [`TooManyDistributionsAssociatedToOriginAccessControl`](crate::error::TooManyDistributionsAssociatedToOriginAccessControl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -26669,6 +26808,7 @@ impl std::error::Error for TooManyContinuousDeploymentPolicies {}
 pub mod too_many_continuous_deployment_policies {
     
     /// A builder for [`TooManyContinuousDeploymentPolicies`](crate::error::TooManyContinuousDeploymentPolicies).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -26729,6 +26869,7 @@ impl std::error::Error for ContinuousDeploymentPolicyAlreadyExists {}
 pub mod continuous_deployment_policy_already_exists {
     
     /// A builder for [`ContinuousDeploymentPolicyAlreadyExists`](crate::error::ContinuousDeploymentPolicyAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -26950,6 +27091,7 @@ impl std::error::Error for TooManyCloudFrontOriginAccessIdentities {}
 pub mod too_many_cloud_front_origin_access_identities {
     
     /// A builder for [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -27010,6 +27152,7 @@ impl std::error::Error for CloudFrontOriginAccessIdentityAlreadyExists {}
 pub mod cloud_front_origin_access_identity_already_exists {
     
     /// A builder for [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -27267,6 +27410,7 @@ impl std::error::Error for TooManyCachePolicies {}
 pub mod too_many_cache_policies {
     
     /// A builder for [`TooManyCachePolicies`](crate::error::TooManyCachePolicies).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

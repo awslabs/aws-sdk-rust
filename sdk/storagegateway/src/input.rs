@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod activate_gateway_input {
     
     /// A builder for [`ActivateGatewayInput`](crate::input::ActivateGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activation_key: std::option::Option<std::string::String>,
@@ -221,6 +222,7 @@ impl ActivateGatewayInput {
 pub mod add_cache_input {
     
     /// A builder for [`AddCacheInput`](crate::input::AddCacheInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -351,6 +353,7 @@ impl AddCacheInput {
 pub mod add_tags_to_resource_input {
     
     /// A builder for [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -485,6 +488,7 @@ impl AddTagsToResourceInput {
 pub mod add_upload_buffer_input {
     
     /// A builder for [`AddUploadBufferInput`](crate::input::AddUploadBufferInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -615,6 +619,7 @@ impl AddUploadBufferInput {
 pub mod add_working_storage_input {
     
     /// A builder for [`AddWorkingStorageInput`](crate::input::AddWorkingStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -745,6 +750,7 @@ impl AddWorkingStorageInput {
 pub mod assign_tape_pool_input {
     
     /// A builder for [`AssignTapePoolInput`](crate::input::AssignTapePoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -884,6 +890,7 @@ impl AssignTapePoolInput {
 pub mod associate_file_system_input {
     
     /// A builder for [`AssociateFileSystemInput`](crate::input::AssociateFileSystemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -1117,6 +1124,7 @@ impl AssociateFileSystemInput {
 pub mod attach_volume_input {
     
     /// A builder for [`AttachVolumeInput`](crate::input::AttachVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -1281,6 +1289,7 @@ impl AttachVolumeInput {
 pub mod cancel_archival_input {
     
     /// A builder for [`CancelArchivalInput`](crate::input::CancelArchivalInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -1405,6 +1414,7 @@ impl CancelArchivalInput {
 pub mod cancel_retrieval_input {
     
     /// A builder for [`CancelRetrievalInput`](crate::input::CancelRetrievalInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -1529,6 +1539,7 @@ impl CancelRetrievalInput {
 pub mod create_cachedi_scsi_volume_input {
     
     /// A builder for [`CreateCachediScsiVolumeInput`](crate::input::CreateCachediScsiVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -1766,6 +1777,7 @@ impl CreateCachediScsiVolumeInput {
 pub mod create_nfs_file_share_input {
     
     /// A builder for [`CreateNfsFileShareInput`](crate::input::CreateNfsFileShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -2202,6 +2214,7 @@ impl CreateNfsFileShareInput {
 pub mod create_smb_file_share_input {
     
     /// A builder for [`CreateSmbFileShareInput`](crate::input::CreateSmbFileShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -2714,6 +2727,7 @@ impl CreateSmbFileShareInput {
 pub mod create_snapshot_input {
     
     /// A builder for [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -2860,6 +2874,7 @@ impl CreateSnapshotInput {
 pub mod create_snapshot_from_volume_recovery_point_input {
     
     /// A builder for [`CreateSnapshotFromVolumeRecoveryPointInput`](crate::input::CreateSnapshotFromVolumeRecoveryPointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -3006,6 +3021,7 @@ impl CreateSnapshotFromVolumeRecoveryPointInput {
 pub mod create_storedi_scsi_volume_input {
     
     /// A builder for [`CreateStorediScsiVolumeInput`](crate::input::CreateStorediScsiVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -3233,6 +3249,7 @@ impl CreateStorediScsiVolumeInput {
 pub mod create_tape_pool_input {
     
     /// A builder for [`CreateTapePoolInput`](crate::input::CreateTapePoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_name: std::option::Option<std::string::String>,
@@ -3403,6 +3420,7 @@ impl CreateTapePoolInput {
 pub mod create_tapes_input {
     
     /// A builder for [`CreateTapesInput`](crate::input::CreateTapesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -3648,6 +3666,7 @@ impl CreateTapesInput {
 pub mod create_tape_with_barcode_input {
     
     /// A builder for [`CreateTapeWithBarcodeInput`](crate::input::CreateTapeWithBarcodeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -3865,6 +3884,7 @@ impl CreateTapeWithBarcodeInput {
 pub mod delete_automatic_tape_creation_policy_input {
     
     /// A builder for [`DeleteAutomaticTapeCreationPolicyInput`](crate::input::DeleteAutomaticTapeCreationPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -3977,6 +3997,7 @@ impl DeleteAutomaticTapeCreationPolicyInput {
 pub mod delete_bandwidth_rate_limit_input {
     
     /// A builder for [`DeleteBandwidthRateLimitInput`](crate::input::DeleteBandwidthRateLimitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -4103,6 +4124,7 @@ impl DeleteBandwidthRateLimitInput {
 pub mod delete_chap_credentials_input {
     
     /// A builder for [`DeleteChapCredentialsInput`](crate::input::DeleteChapCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -4227,6 +4249,7 @@ impl DeleteChapCredentialsInput {
 pub mod delete_file_share_input {
     
     /// A builder for [`DeleteFileShareInput`](crate::input::DeleteFileShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
@@ -4354,6 +4377,7 @@ impl DeleteFileShareInput {
 pub mod delete_gateway_input {
     
     /// A builder for [`DeleteGatewayInput`](crate::input::DeleteGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -4466,6 +4490,7 @@ impl DeleteGatewayInput {
 pub mod delete_snapshot_schedule_input {
     
     /// A builder for [`DeleteSnapshotScheduleInput`](crate::input::DeleteSnapshotScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -4578,6 +4603,7 @@ impl DeleteSnapshotScheduleInput {
 pub mod delete_tape_input {
     
     /// A builder for [`DeleteTapeInput`](crate::input::DeleteTapeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -4715,6 +4741,7 @@ impl DeleteTapeInput {
 pub mod delete_tape_archive_input {
     
     /// A builder for [`DeleteTapeArchiveInput`](crate::input::DeleteTapeArchiveInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -4840,6 +4867,7 @@ impl DeleteTapeArchiveInput {
 pub mod delete_tape_pool_input {
     
     /// A builder for [`DeleteTapePoolInput`](crate::input::DeleteTapePoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_arn: std::option::Option<std::string::String>,
@@ -4952,6 +4980,7 @@ impl DeleteTapePoolInput {
 pub mod delete_volume_input {
     
     /// A builder for [`DeleteVolumeInput`](crate::input::DeleteVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -5064,6 +5093,7 @@ impl DeleteVolumeInput {
 pub mod describe_availability_monitor_test_input {
     
     /// A builder for [`DescribeAvailabilityMonitorTestInput`](crate::input::DescribeAvailabilityMonitorTestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -5176,6 +5206,7 @@ impl DescribeAvailabilityMonitorTestInput {
 pub mod describe_bandwidth_rate_limit_input {
     
     /// A builder for [`DescribeBandwidthRateLimitInput`](crate::input::DescribeBandwidthRateLimitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -5288,6 +5319,7 @@ impl DescribeBandwidthRateLimitInput {
 pub mod describe_bandwidth_rate_limit_schedule_input {
     
     /// A builder for [`DescribeBandwidthRateLimitScheduleInput`](crate::input::DescribeBandwidthRateLimitScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -5400,6 +5432,7 @@ impl DescribeBandwidthRateLimitScheduleInput {
 pub mod describe_cache_input {
     
     /// A builder for [`DescribeCacheInput`](crate::input::DescribeCacheInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -5512,6 +5545,7 @@ impl DescribeCacheInput {
 pub mod describe_cachedi_scsi_volumes_input {
     
     /// A builder for [`DescribeCachediScsiVolumesInput`](crate::input::DescribeCachediScsiVolumesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5630,6 +5664,7 @@ impl DescribeCachediScsiVolumesInput {
 pub mod describe_chap_credentials_input {
     
     /// A builder for [`DescribeChapCredentialsInput`](crate::input::DescribeChapCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -5742,6 +5777,7 @@ impl DescribeChapCredentialsInput {
 pub mod describe_file_system_associations_input {
     
     /// A builder for [`DescribeFileSystemAssociationsInput`](crate::input::DescribeFileSystemAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5860,6 +5896,7 @@ impl DescribeFileSystemAssociationsInput {
 pub mod describe_gateway_information_input {
     
     /// A builder for [`DescribeGatewayInformationInput`](crate::input::DescribeGatewayInformationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -5972,6 +6009,7 @@ impl DescribeGatewayInformationInput {
 pub mod describe_maintenance_start_time_input {
     
     /// A builder for [`DescribeMaintenanceStartTimeInput`](crate::input::DescribeMaintenanceStartTimeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -6084,6 +6122,7 @@ impl DescribeMaintenanceStartTimeInput {
 pub mod describe_nfs_file_shares_input {
     
     /// A builder for [`DescribeNfsFileSharesInput`](crate::input::DescribeNfsFileSharesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6202,6 +6241,7 @@ impl DescribeNfsFileSharesInput {
 pub mod describe_smb_file_shares_input {
     
     /// A builder for [`DescribeSmbFileSharesInput`](crate::input::DescribeSmbFileSharesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6320,6 +6360,7 @@ impl DescribeSmbFileSharesInput {
 pub mod describe_smb_settings_input {
     
     /// A builder for [`DescribeSmbSettingsInput`](crate::input::DescribeSmbSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -6432,6 +6473,7 @@ impl DescribeSmbSettingsInput {
 pub mod describe_snapshot_schedule_input {
     
     /// A builder for [`DescribeSnapshotScheduleInput`](crate::input::DescribeSnapshotScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -6544,6 +6586,7 @@ impl DescribeSnapshotScheduleInput {
 pub mod describe_storedi_scsi_volumes_input {
     
     /// A builder for [`DescribeStorediScsiVolumesInput`](crate::input::DescribeStorediScsiVolumesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6662,6 +6705,7 @@ impl DescribeStorediScsiVolumesInput {
 pub mod describe_tape_archives_input {
     
     /// A builder for [`DescribeTapeArchivesInput`](crate::input::DescribeTapeArchivesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6804,6 +6848,7 @@ impl DescribeTapeArchivesInput {
 pub mod describe_tape_recovery_points_input {
     
     /// A builder for [`DescribeTapeRecoveryPointsInput`](crate::input::DescribeTapeRecoveryPointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -6940,6 +6985,7 @@ impl DescribeTapeRecoveryPointsInput {
 pub mod describe_tapes_input {
     
     /// A builder for [`DescribeTapesInput`](crate::input::DescribeTapesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -7100,6 +7146,7 @@ impl DescribeTapesInput {
 pub mod describe_upload_buffer_input {
     
     /// A builder for [`DescribeUploadBufferInput`](crate::input::DescribeUploadBufferInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -7212,6 +7259,7 @@ impl DescribeUploadBufferInput {
 pub mod describe_vtl_devices_input {
     
     /// A builder for [`DescribeVtlDevicesInput`](crate::input::DescribeVtlDevicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -7370,6 +7418,7 @@ impl DescribeVtlDevicesInput {
 pub mod describe_working_storage_input {
     
     /// A builder for [`DescribeWorkingStorageInput`](crate::input::DescribeWorkingStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -7482,6 +7531,7 @@ impl DescribeWorkingStorageInput {
 pub mod detach_volume_input {
     
     /// A builder for [`DetachVolumeInput`](crate::input::DetachVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -7608,6 +7658,7 @@ impl DetachVolumeInput {
 pub mod disable_gateway_input {
     
     /// A builder for [`DisableGatewayInput`](crate::input::DisableGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -7720,6 +7771,7 @@ impl DisableGatewayInput {
 pub mod disassociate_file_system_input {
     
     /// A builder for [`DisassociateFileSystemInput`](crate::input::DisassociateFileSystemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
@@ -7845,6 +7897,7 @@ impl DisassociateFileSystemInput {
 pub mod join_domain_input {
     
     /// A builder for [`JoinDomainInput`](crate::input::JoinDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -8048,6 +8101,7 @@ impl JoinDomainInput {
 pub mod list_automatic_tape_creation_policies_input {
     
     /// A builder for [`ListAutomaticTapeCreationPoliciesInput`](crate::input::ListAutomaticTapeCreationPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -8160,6 +8214,7 @@ impl ListAutomaticTapeCreationPoliciesInput {
 pub mod list_file_shares_input {
     
     /// A builder for [`ListFileSharesInput`](crate::input::ListFileSharesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -8296,6 +8351,7 @@ impl ListFileSharesInput {
 pub mod list_file_system_associations_input {
     
     /// A builder for [`ListFileSystemAssociationsInput`](crate::input::ListFileSystemAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -8432,6 +8488,7 @@ impl ListFileSystemAssociationsInput {
 pub mod list_gateways_input {
     
     /// A builder for [`ListGatewaysInput`](crate::input::ListGatewaysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -8556,6 +8613,7 @@ impl ListGatewaysInput {
 pub mod list_local_disks_input {
     
     /// A builder for [`ListLocalDisksInput`](crate::input::ListLocalDisksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -8668,6 +8726,7 @@ impl ListLocalDisksInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -8804,6 +8863,7 @@ impl ListTagsForResourceInput {
 pub mod list_tape_pools_input {
     
     /// A builder for [`ListTapePoolsInput`](crate::input::ListTapePoolsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8946,6 +9006,7 @@ impl ListTapePoolsInput {
 pub mod list_tapes_input {
     
     /// A builder for [`ListTapesInput`](crate::input::ListTapesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9088,6 +9149,7 @@ impl ListTapesInput {
 pub mod list_volume_initiators_input {
     
     /// A builder for [`ListVolumeInitiatorsInput`](crate::input::ListVolumeInitiatorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -9200,6 +9262,7 @@ impl ListVolumeInitiatorsInput {
 pub mod list_volume_recovery_points_input {
     
     /// A builder for [`ListVolumeRecoveryPointsInput`](crate::input::ListVolumeRecoveryPointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -9312,6 +9375,7 @@ impl ListVolumeRecoveryPointsInput {
 pub mod list_volumes_input {
     
     /// A builder for [`ListVolumesInput`](crate::input::ListVolumesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -9448,6 +9512,7 @@ impl ListVolumesInput {
 pub mod notify_when_uploaded_input {
     
     /// A builder for [`NotifyWhenUploadedInput`](crate::input::NotifyWhenUploadedInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
@@ -9560,6 +9625,7 @@ impl NotifyWhenUploadedInput {
 pub mod refresh_cache_input {
     
     /// A builder for [`RefreshCacheInput`](crate::input::RefreshCacheInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
@@ -9704,6 +9770,7 @@ impl RefreshCacheInput {
 pub mod remove_tags_from_resource_input {
     
     /// A builder for [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -9834,6 +9901,7 @@ impl RemoveTagsFromResourceInput {
 pub mod reset_cache_input {
     
     /// A builder for [`ResetCacheInput`](crate::input::ResetCacheInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -9946,6 +10014,7 @@ impl ResetCacheInput {
 pub mod retrieve_tape_archive_input {
     
     /// A builder for [`RetrieveTapeArchiveInput`](crate::input::RetrieveTapeArchiveInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -10072,6 +10141,7 @@ impl RetrieveTapeArchiveInput {
 pub mod retrieve_tape_recovery_point_input {
     
     /// A builder for [`RetrieveTapeRecoveryPointInput`](crate::input::RetrieveTapeRecoveryPointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -10196,6 +10266,7 @@ impl RetrieveTapeRecoveryPointInput {
 pub mod set_local_console_password_input {
     
     /// A builder for [`SetLocalConsolePasswordInput`](crate::input::SetLocalConsolePasswordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -10328,6 +10399,7 @@ impl SetLocalConsolePasswordInput {
 pub mod set_smb_guest_password_input {
     
     /// A builder for [`SetSmbGuestPasswordInput`](crate::input::SetSmbGuestPasswordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -10460,6 +10532,7 @@ impl SetSmbGuestPasswordInput {
 pub mod shutdown_gateway_input {
     
     /// A builder for [`ShutdownGatewayInput`](crate::input::ShutdownGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -10572,6 +10645,7 @@ impl ShutdownGatewayInput {
 pub mod start_availability_monitor_test_input {
     
     /// A builder for [`StartAvailabilityMonitorTestInput`](crate::input::StartAvailabilityMonitorTestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -10684,6 +10758,7 @@ impl StartAvailabilityMonitorTestInput {
 pub mod start_gateway_input {
     
     /// A builder for [`StartGatewayInput`](crate::input::StartGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -10796,6 +10871,7 @@ impl StartGatewayInput {
 pub mod update_automatic_tape_creation_policy_input {
     
     /// A builder for [`UpdateAutomaticTapeCreationPolicyInput`](crate::input::UpdateAutomaticTapeCreationPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_tape_creation_rules: std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>,
@@ -10926,6 +11002,7 @@ impl UpdateAutomaticTapeCreationPolicyInput {
 pub mod update_bandwidth_rate_limit_input {
     
     /// A builder for [`UpdateBandwidthRateLimitInput`](crate::input::UpdateBandwidthRateLimitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -11062,6 +11139,7 @@ impl UpdateBandwidthRateLimitInput {
 pub mod update_bandwidth_rate_limit_schedule_input {
     
     /// A builder for [`UpdateBandwidthRateLimitScheduleInput`](crate::input::UpdateBandwidthRateLimitScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -11192,6 +11270,7 @@ impl UpdateBandwidthRateLimitScheduleInput {
 pub mod update_chap_credentials_input {
     
     /// A builder for [`UpdateChapCredentialsInput`](crate::input::UpdateChapCredentialsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -11360,6 +11439,7 @@ impl UpdateChapCredentialsInput {
 pub mod update_file_system_association_input {
     
     /// A builder for [`UpdateFileSystemAssociationInput`](crate::input::UpdateFileSystemAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
@@ -11531,6 +11611,7 @@ impl UpdateFileSystemAssociationInput {
 pub mod update_gateway_information_input {
     
     /// A builder for [`UpdateGatewayInformationInput`](crate::input::UpdateGatewayInformationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -11693,6 +11774,7 @@ impl UpdateGatewayInformationInput {
 pub mod update_gateway_software_now_input {
     
     /// A builder for [`UpdateGatewaySoftwareNowInput`](crate::input::UpdateGatewaySoftwareNowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -11805,6 +11887,7 @@ impl UpdateGatewaySoftwareNowInput {
 pub mod update_maintenance_start_time_input {
     
     /// A builder for [`UpdateMaintenanceStartTimeInput`](crate::input::UpdateMaintenanceStartTimeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -11965,6 +12048,7 @@ impl UpdateMaintenanceStartTimeInput {
 pub mod update_nfs_file_share_input {
     
     /// A builder for [`UpdateNfsFileShareInput`](crate::input::UpdateNfsFileShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
@@ -12293,6 +12377,7 @@ impl UpdateNfsFileShareInput {
 pub mod update_smb_file_share_input {
     
     /// A builder for [`UpdateSmbFileShareInput`](crate::input::UpdateSmbFileShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
@@ -12679,6 +12764,7 @@ impl UpdateSmbFileShareInput {
 pub mod update_smb_file_share_visibility_input {
     
     /// A builder for [`UpdateSmbFileShareVisibilityInput`](crate::input::UpdateSmbFileShareVisibilityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -12803,6 +12889,7 @@ impl UpdateSmbFileShareVisibilityInput {
 pub mod update_smb_local_groups_input {
     
     /// A builder for [`UpdateSmbLocalGroupsInput`](crate::input::UpdateSmbLocalGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -12927,6 +13014,7 @@ impl UpdateSmbLocalGroupsInput {
 pub mod update_smb_security_strategy_input {
     
     /// A builder for [`UpdateSmbSecurityStrategyInput`](crate::input::UpdateSmbSecurityStrategyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -13057,6 +13145,7 @@ impl UpdateSmbSecurityStrategyInput {
 pub mod update_snapshot_schedule_input {
     
     /// A builder for [`UpdateSnapshotScheduleInput`](crate::input::UpdateSnapshotScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -13227,6 +13316,7 @@ impl UpdateSnapshotScheduleInput {
 pub mod update_vtl_device_type_input {
     
     /// A builder for [`UpdateVtlDeviceTypeInput`](crate::input::UpdateVtlDeviceTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vtl_device_arn: std::option::Option<std::string::String>,

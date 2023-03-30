@@ -8,6 +8,7 @@ pub struct UpdateRoutingControlStatesOutput  {
 pub mod update_routing_control_states_output {
     
     /// A builder for [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UpdateRoutingControlStateOutput  {
 pub mod update_routing_control_state_output {
     
     /// A builder for [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -82,6 +84,7 @@ impl ListRoutingControlsOutput {
 pub mod list_routing_controls_output {
     
     /// A builder for [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_controls: std::option::Option<std::vec::Vec<crate::model::RoutingControl>>,
@@ -164,6 +167,7 @@ impl GetRoutingControlStateOutput {
 pub mod get_routing_control_state_output {
     
     /// A builder for [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,

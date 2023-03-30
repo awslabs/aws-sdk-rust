@@ -204,6 +204,7 @@ impl Pipeline {
 pub mod pipeline {
     
     /// A builder for [`Pipeline`](crate::model::Pipeline).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -522,6 +523,7 @@ impl PipelineOutputConfig {
 pub mod pipeline_output_config {
     
     /// A builder for [`PipelineOutputConfig`](crate::model::PipelineOutputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -660,6 +662,7 @@ impl Permission {
 pub mod permission {
     
     /// A builder for [`Permission`](crate::model::Permission).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grantee_type: std::option::Option<std::string::String>,
@@ -789,6 +792,7 @@ impl Notifications {
 pub mod notifications {
     
     /// A builder for [`Notifications`](crate::model::Notifications).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progressing: std::option::Option<std::string::String>,
@@ -887,6 +891,7 @@ impl Warning {
 pub mod warning {
     
     /// A builder for [`Warning`](crate::model::Warning).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1009,6 +1014,7 @@ impl Preset {
 pub mod preset {
     
     /// A builder for [`Preset`](crate::model::Preset).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1238,6 +1244,7 @@ impl Thumbnails {
 pub mod thumbnails {
     
     /// A builder for [`Thumbnails`](crate::model::Thumbnails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
@@ -1804,6 +1811,7 @@ impl VideoParameters {
 pub mod video_parameters {
     
     /// A builder for [`VideoParameters`](crate::model::VideoParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) codec: std::option::Option<std::string::String>,
@@ -2489,6 +2497,7 @@ impl PresetWatermark {
 pub mod preset_watermark {
     
     /// A builder for [`PresetWatermark`](crate::model::PresetWatermark).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2882,6 +2891,7 @@ impl AudioParameters {
 pub mod audio_parameters {
     
     /// A builder for [`AudioParameters`](crate::model::AudioParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) codec: std::option::Option<std::string::String>,
@@ -3157,6 +3167,7 @@ impl AudioCodecOptions {
 pub mod audio_codec_options {
     
     /// A builder for [`AudioCodecOptions`](crate::model::AudioCodecOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile: std::option::Option<std::string::String>,
@@ -3384,6 +3395,7 @@ impl Job {
 pub mod job {
     
     /// A builder for [`Job`](crate::model::Job).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3634,6 +3646,7 @@ impl Timing {
 pub mod timing {
     
     /// A builder for [`Timing`](crate::model::Timing).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) submit_time_millis: std::option::Option<i64>,
@@ -3768,6 +3781,7 @@ impl Playlist {
 pub mod playlist {
     
     /// A builder for [`Playlist`](crate::model::Playlist).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3957,6 +3971,7 @@ impl PlayReadyDrm {
 pub mod play_ready_drm {
     
     /// A builder for [`PlayReadyDrm`](crate::model::PlayReadyDrm).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
@@ -4118,6 +4133,7 @@ impl HlsContentProtection {
 pub mod hls_content_protection {
     
     /// A builder for [`HlsContentProtection`](crate::model::HlsContentProtection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) method: std::option::Option<std::string::String>,
@@ -4451,6 +4467,7 @@ impl JobOutput {
 pub mod job_output {
     
     /// A builder for [`JobOutput`](crate::model::JobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4878,6 +4895,7 @@ impl Encryption {
 pub mod encryption {
     
     /// A builder for [`Encryption`](crate::model::Encryption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<std::string::String>,
@@ -5028,6 +5046,7 @@ impl Captions {
 pub mod captions {
     
     /// A builder for [`Captions`](crate::model::Captions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) merge_policy: std::option::Option<std::string::String>,
@@ -5188,6 +5207,7 @@ impl CaptionFormat {
 pub mod caption_format {
     
     /// A builder for [`CaptionFormat`](crate::model::CaptionFormat).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
@@ -5346,6 +5366,7 @@ impl CaptionSource {
 pub mod caption_source {
     
     /// A builder for [`CaptionSource`](crate::model::CaptionSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -5457,6 +5478,7 @@ impl Clip {
 pub mod clip {
     
     /// A builder for [`Clip`](crate::model::Clip).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_span: std::option::Option<crate::model::TimeSpan>,
@@ -5516,6 +5538,7 @@ impl TimeSpan {
 pub mod time_span {
     
     /// A builder for [`TimeSpan`](crate::model::TimeSpan).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<std::string::String>,
@@ -5599,6 +5622,7 @@ impl JobAlbumArt {
 pub mod job_album_art {
     
     /// A builder for [`JobAlbumArt`](crate::model::JobAlbumArt).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) merge_policy: std::option::Option<std::string::String>,
@@ -5741,6 +5765,7 @@ impl Artwork {
 pub mod artwork {
     
     /// A builder for [`Artwork`](crate::model::Artwork).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_key: std::option::Option<std::string::String>,
@@ -5897,6 +5922,7 @@ impl JobWatermark {
 pub mod job_watermark {
     
     /// A builder for [`JobWatermark`](crate::model::JobWatermark).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preset_watermark_id: std::option::Option<std::string::String>,
@@ -6070,6 +6096,7 @@ impl JobInput {
 pub mod job_input {
     
     /// A builder for [`JobInput`](crate::model::JobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -6290,6 +6317,7 @@ impl DetectedProperties {
 pub mod detected_properties {
     
     /// A builder for [`DetectedProperties`](crate::model::DetectedProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) width: std::option::Option<i32>,
@@ -6407,6 +6435,7 @@ impl InputCaptions {
 pub mod input_captions {
     
     /// A builder for [`InputCaptions`](crate::model::InputCaptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) merge_policy: std::option::Option<std::string::String>,
@@ -6533,6 +6562,7 @@ impl CreateJobPlaylist {
 pub mod create_job_playlist {
     
     /// A builder for [`CreateJobPlaylist`](crate::model::CreateJobPlaylist).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6775,6 +6805,7 @@ impl CreateJobOutput {
 pub mod create_job_output {
     
     /// A builder for [`CreateJobOutput`](crate::model::CreateJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,

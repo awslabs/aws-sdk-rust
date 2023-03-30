@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod accept_input_device_transfer_input {
     
     /// A builder for [`AcceptInputDeviceTransferInput`](crate::input::AcceptInputDeviceTransferInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_device_id: std::option::Option<std::string::String>,
@@ -114,6 +115,7 @@ impl AcceptInputDeviceTransferInput {
 pub mod batch_delete_input {
     
     /// A builder for [`BatchDeleteInput`](crate::input::BatchDeleteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -281,6 +283,7 @@ impl BatchDeleteInput {
 pub mod batch_start_input {
     
     /// A builder for [`BatchStartInput`](crate::input::BatchStartInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -412,6 +415,7 @@ impl BatchStartInput {
 pub mod batch_stop_input {
     
     /// A builder for [`BatchStopInput`](crate::input::BatchStopInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -543,6 +547,7 @@ impl BatchStopInput {
 pub mod batch_update_schedule_input {
     
     /// A builder for [`BatchUpdateScheduleInput`](crate::input::BatchUpdateScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -680,6 +685,7 @@ impl BatchUpdateScheduleInput {
 pub mod cancel_input_device_transfer_input {
     
     /// A builder for [`CancelInputDeviceTransferInput`](crate::input::CancelInputDeviceTransferInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_device_id: std::option::Option<std::string::String>,
@@ -789,6 +795,7 @@ impl CancelInputDeviceTransferInput {
 pub mod claim_device_input {
     
     /// A builder for [`ClaimDeviceInput`](crate::input::ClaimDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -896,6 +903,7 @@ impl ClaimDeviceInput {
 pub mod create_channel_input {
     
     /// A builder for [`CreateChannelInput`](crate::input::CreateChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
@@ -1182,6 +1190,7 @@ impl CreateChannelInput {
 pub mod create_input_input {
     
     /// A builder for [`CreateInputInput`](crate::input::CreateInputInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
@@ -1448,6 +1457,7 @@ impl CreateInputInput {
 pub mod create_input_security_group_input {
     
     /// A builder for [`CreateInputSecurityGroupInput`](crate::input::CreateInputSecurityGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1579,6 +1589,7 @@ impl CreateInputSecurityGroupInput {
 pub mod create_multiplex_input {
     
     /// A builder for [`CreateMultiplexInput`](crate::input::CreateMultiplexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1749,6 +1760,7 @@ impl CreateMultiplexInput {
 pub mod create_multiplex_program_input {
     
     /// A builder for [`CreateMultiplexProgramInput`](crate::input::CreateMultiplexProgramInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_id: std::option::Option<std::string::String>,
@@ -1901,6 +1913,7 @@ impl CreateMultiplexProgramInput {
 pub mod create_partner_input_input {
     
     /// A builder for [`CreatePartnerInputInput`](crate::input::CreatePartnerInputInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_id: std::option::Option<std::string::String>,
@@ -2047,6 +2060,7 @@ impl CreatePartnerInputInput {
 pub mod create_tags_input {
     
     /// A builder for [`CreateTagsInput`](crate::input::CreateTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2178,6 +2192,7 @@ impl CreateTagsInput {
 pub mod delete_channel_input {
     
     /// A builder for [`DeleteChannelInput`](crate::input::DeleteChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -2287,6 +2302,7 @@ impl DeleteChannelInput {
 pub mod delete_input_input {
     
     /// A builder for [`DeleteInputInput`](crate::input::DeleteInputInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_id: std::option::Option<std::string::String>,
@@ -2396,6 +2412,7 @@ impl DeleteInputInput {
 pub mod delete_input_security_group_input {
     
     /// A builder for [`DeleteInputSecurityGroupInput`](crate::input::DeleteInputSecurityGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_security_group_id: std::option::Option<std::string::String>,
@@ -2505,6 +2522,7 @@ impl DeleteInputSecurityGroupInput {
 pub mod delete_multiplex_input {
     
     /// A builder for [`DeleteMultiplexInput`](crate::input::DeleteMultiplexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_id: std::option::Option<std::string::String>,
@@ -2614,6 +2632,7 @@ impl DeleteMultiplexInput {
 pub mod delete_multiplex_program_input {
     
     /// A builder for [`DeleteMultiplexProgramInput`](crate::input::DeleteMultiplexProgramInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_id: std::option::Option<std::string::String>,
@@ -2741,6 +2760,7 @@ impl DeleteMultiplexProgramInput {
 pub mod delete_reservation_input {
     
     /// A builder for [`DeleteReservationInput`](crate::input::DeleteReservationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reservation_id: std::option::Option<std::string::String>,
@@ -2850,6 +2870,7 @@ impl DeleteReservationInput {
 pub mod delete_schedule_input {
     
     /// A builder for [`DeleteScheduleInput`](crate::input::DeleteScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -2959,6 +2980,7 @@ impl DeleteScheduleInput {
 pub mod delete_tags_input {
     
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3096,6 +3118,7 @@ impl DeleteTagsInput {
 pub mod describe_channel_input {
     
     /// A builder for [`DescribeChannelInput`](crate::input::DescribeChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -3205,6 +3228,7 @@ impl DescribeChannelInput {
 pub mod describe_input_input {
     
     /// A builder for [`DescribeInputInput`](crate::input::DescribeInputInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_id: std::option::Option<std::string::String>,
@@ -3314,6 +3338,7 @@ impl DescribeInputInput {
 pub mod describe_input_device_input {
     
     /// A builder for [`DescribeInputDeviceInput`](crate::input::DescribeInputDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_device_id: std::option::Option<std::string::String>,
@@ -3423,6 +3448,7 @@ impl DescribeInputDeviceInput {
 pub mod describe_input_device_thumbnail_input {
     
     /// A builder for [`DescribeInputDeviceThumbnailInput`](crate::input::DescribeInputDeviceThumbnailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_device_id: std::option::Option<std::string::String>,
@@ -3545,6 +3571,7 @@ impl DescribeInputDeviceThumbnailInput {
 pub mod describe_input_security_group_input {
     
     /// A builder for [`DescribeInputSecurityGroupInput`](crate::input::DescribeInputSecurityGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_security_group_id: std::option::Option<std::string::String>,
@@ -3654,6 +3681,7 @@ impl DescribeInputSecurityGroupInput {
 pub mod describe_multiplex_input {
     
     /// A builder for [`DescribeMultiplexInput`](crate::input::DescribeMultiplexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_id: std::option::Option<std::string::String>,
@@ -3763,6 +3791,7 @@ impl DescribeMultiplexInput {
 pub mod describe_multiplex_program_input {
     
     /// A builder for [`DescribeMultiplexProgramInput`](crate::input::DescribeMultiplexProgramInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_id: std::option::Option<std::string::String>,
@@ -3890,6 +3919,7 @@ impl DescribeMultiplexProgramInput {
 pub mod describe_offering_input {
     
     /// A builder for [`DescribeOfferingInput`](crate::input::DescribeOfferingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
@@ -3999,6 +4029,7 @@ impl DescribeOfferingInput {
 pub mod describe_reservation_input {
     
     /// A builder for [`DescribeReservationInput`](crate::input::DescribeReservationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reservation_id: std::option::Option<std::string::String>,
@@ -4108,6 +4139,7 @@ impl DescribeReservationInput {
 pub mod describe_schedule_input {
     
     /// A builder for [`DescribeScheduleInput`](crate::input::DescribeScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -4255,6 +4287,7 @@ impl DescribeScheduleInput {
 pub mod list_channels_input {
     
     /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4384,6 +4417,7 @@ impl ListChannelsInput {
 pub mod list_input_devices_input {
     
     /// A builder for [`ListInputDevicesInput`](crate::input::ListInputDevicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4513,6 +4547,7 @@ impl ListInputDevicesInput {
 pub mod list_input_device_transfers_input {
     
     /// A builder for [`ListInputDeviceTransfersInput`](crate::input::ListInputDeviceTransfersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4660,6 +4695,7 @@ impl ListInputDeviceTransfersInput {
 pub mod list_inputs_input {
     
     /// A builder for [`ListInputsInput`](crate::input::ListInputsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4789,6 +4825,7 @@ impl ListInputsInput {
 pub mod list_input_security_groups_input {
     
     /// A builder for [`ListInputSecurityGroupsInput`](crate::input::ListInputSecurityGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4918,6 +4955,7 @@ impl ListInputSecurityGroupsInput {
 pub mod list_multiplexes_input {
     
     /// A builder for [`ListMultiplexesInput`](crate::input::ListMultiplexesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -5047,6 +5085,7 @@ impl ListMultiplexesInput {
 pub mod list_multiplex_programs_input {
     
     /// A builder for [`ListMultiplexProgramsInput`](crate::input::ListMultiplexProgramsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -5194,6 +5233,7 @@ impl ListMultiplexProgramsInput {
 pub mod list_offerings_input {
     
     /// A builder for [`ListOfferingsInput`](crate::input::ListOfferingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_class: std::option::Option<std::string::String>,
@@ -5493,6 +5533,7 @@ impl ListOfferingsInput {
 pub mod list_reservations_input {
     
     /// A builder for [`ListReservationsInput`](crate::input::ListReservationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_class: std::option::Option<std::string::String>,
@@ -5758,6 +5799,7 @@ impl ListReservationsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5867,6 +5909,7 @@ impl ListTagsForResourceInput {
 pub mod purchase_offering_input {
     
     /// A builder for [`PurchaseOfferingInput`](crate::input::PurchaseOfferingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -6062,6 +6105,7 @@ impl PurchaseOfferingInput {
 pub mod reboot_input_device_input {
     
     /// A builder for [`RebootInputDeviceInput`](crate::input::RebootInputDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) force: std::option::Option<crate::model::RebootInputDeviceForce>,
@@ -6187,6 +6231,7 @@ impl RebootInputDeviceInput {
 pub mod reject_input_device_transfer_input {
     
     /// A builder for [`RejectInputDeviceTransferInput`](crate::input::RejectInputDeviceTransferInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_device_id: std::option::Option<std::string::String>,
@@ -6296,6 +6341,7 @@ impl RejectInputDeviceTransferInput {
 pub mod start_channel_input {
     
     /// A builder for [`StartChannelInput`](crate::input::StartChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -6405,6 +6451,7 @@ impl StartChannelInput {
 pub mod start_input_device_maintenance_window_input {
     
     /// A builder for [`StartInputDeviceMaintenanceWindowInput`](crate::input::StartInputDeviceMaintenanceWindowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_device_id: std::option::Option<std::string::String>,
@@ -6514,6 +6561,7 @@ impl StartInputDeviceMaintenanceWindowInput {
 pub mod start_multiplex_input {
     
     /// A builder for [`StartMultiplexInput`](crate::input::StartMultiplexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_id: std::option::Option<std::string::String>,
@@ -6623,6 +6671,7 @@ impl StartMultiplexInput {
 pub mod stop_channel_input {
     
     /// A builder for [`StopChannelInput`](crate::input::StopChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -6732,6 +6781,7 @@ impl StopChannelInput {
 pub mod stop_multiplex_input {
     
     /// A builder for [`StopMultiplexInput`](crate::input::StopMultiplexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_id: std::option::Option<std::string::String>,
@@ -6841,6 +6891,7 @@ impl StopMultiplexInput {
 pub mod transfer_input_device_input {
     
     /// A builder for [`TransferInputDeviceInput`](crate::input::TransferInputDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_device_id: std::option::Option<std::string::String>,
@@ -6990,6 +7041,7 @@ impl TransferInputDeviceInput {
 pub mod update_channel_input {
     
     /// A builder for [`UpdateChannelInput`](crate::input::UpdateChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
@@ -7223,6 +7275,7 @@ impl UpdateChannelInput {
 pub mod update_channel_class_input {
     
     /// A builder for [`UpdateChannelClassInput`](crate::input::UpdateChannelClassInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_class: std::option::Option<crate::model::ChannelClass>,
@@ -7366,6 +7419,7 @@ impl UpdateChannelClassInput {
 pub mod update_input_input {
     
     /// A builder for [`UpdateInputInput`](crate::input::UpdateInputInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
@@ -7593,6 +7647,7 @@ impl UpdateInputInput {
 pub mod update_input_device_input {
     
     /// A builder for [`UpdateInputDeviceInput`](crate::input::UpdateInputDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hd_device_settings: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
@@ -7742,6 +7797,7 @@ impl UpdateInputDeviceInput {
 pub mod update_input_security_group_input {
     
     /// A builder for [`UpdateInputSecurityGroupInput`](crate::input::UpdateInputSecurityGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_security_group_id: std::option::Option<std::string::String>,
@@ -7891,6 +7947,7 @@ impl UpdateInputSecurityGroupInput {
 pub mod update_multiplex_input {
     
     /// A builder for [`UpdateMultiplexInput`](crate::input::UpdateMultiplexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_id: std::option::Option<std::string::String>,
@@ -8028,6 +8085,7 @@ impl UpdateMultiplexInput {
 pub mod update_multiplex_program_input {
     
     /// A builder for [`UpdateMultiplexProgramInput`](crate::input::UpdateMultiplexProgramInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_id: std::option::Option<std::string::String>,
@@ -8171,6 +8229,7 @@ impl UpdateMultiplexProgramInput {
 pub mod update_reservation_input {
     
     /// A builder for [`UpdateReservationInput`](crate::input::UpdateReservationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

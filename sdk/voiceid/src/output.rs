@@ -24,6 +24,7 @@ impl ListDomainsOutput {
 pub mod list_domains_output {
     
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_summaries: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
@@ -92,6 +93,7 @@ impl CreateDomainOutput {
 pub mod create_domain_output {
     
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<crate::model::Domain>,
@@ -133,6 +135,7 @@ pub struct DeleteDomainOutput  {
 pub mod delete_domain_output {
     
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -171,6 +174,7 @@ impl UpdateDomainOutput {
 pub mod update_domain_output {
     
     /// A builder for [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<crate::model::Domain>,
@@ -221,6 +225,7 @@ impl DescribeDomainOutput {
 pub mod describe_domain_output {
     
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<crate::model::Domain>,
@@ -262,6 +267,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -291,6 +297,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -329,6 +336,7 @@ impl StartSpeakerEnrollmentJobOutput {
 pub mod start_speaker_enrollment_job_output {
     
     /// A builder for [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::SpeakerEnrollmentJob>,
@@ -379,6 +387,7 @@ impl StartFraudsterRegistrationJobOutput {
 pub mod start_fraudster_registration_job_output {
     
     /// A builder for [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::FraudsterRegistrationJob>,
@@ -429,6 +438,7 @@ impl OptOutSpeakerOutput {
 pub mod opt_out_speaker_output {
     
     /// A builder for [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) speaker: std::option::Option<crate::model::Speaker>,
@@ -479,6 +489,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -542,6 +553,7 @@ impl ListSpeakersOutput {
 pub mod list_speakers_output {
     
     /// A builder for [`ListSpeakersOutput`](crate::output::ListSpeakersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) speaker_summaries: std::option::Option<std::vec::Vec<crate::model::SpeakerSummary>>,
@@ -617,6 +629,7 @@ impl ListSpeakerEnrollmentJobsOutput {
 pub mod list_speaker_enrollment_jobs_output {
     
     /// A builder for [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summaries: std::option::Option<std::vec::Vec<crate::model::SpeakerEnrollmentJobSummary>>,
@@ -692,6 +705,7 @@ impl ListFraudsterRegistrationJobsOutput {
 pub mod list_fraudster_registration_jobs_output {
     
     /// A builder for [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summaries: std::option::Option<std::vec::Vec<crate::model::FraudsterRegistrationJobSummary>>,
@@ -795,6 +809,7 @@ impl EvaluateSessionOutput {
 pub mod evaluate_session_output {
     
     /// A builder for [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -905,6 +920,7 @@ impl DescribeSpeakerEnrollmentJobOutput {
 pub mod describe_speaker_enrollment_job_output {
     
     /// A builder for [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::SpeakerEnrollmentJob>,
@@ -955,6 +971,7 @@ impl DescribeSpeakerOutput {
 pub mod describe_speaker_output {
     
     /// A builder for [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) speaker: std::option::Option<crate::model::Speaker>,
@@ -1005,6 +1022,7 @@ impl DescribeFraudsterRegistrationJobOutput {
 pub mod describe_fraudster_registration_job_output {
     
     /// A builder for [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::FraudsterRegistrationJob>,
@@ -1055,6 +1073,7 @@ impl DescribeFraudsterOutput {
 pub mod describe_fraudster_output {
     
     /// A builder for [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fraudster: std::option::Option<crate::model::Fraudster>,
@@ -1096,6 +1115,7 @@ pub struct DeleteSpeakerOutput  {
 pub mod delete_speaker_output {
     
     /// A builder for [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1125,6 +1145,7 @@ pub struct DeleteFraudsterOutput  {
 pub mod delete_fraudster_output {
     
     /// A builder for [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

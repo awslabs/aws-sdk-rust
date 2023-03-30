@@ -17,6 +17,7 @@ impl UpdateTableStorageOptimizerOutput {
 pub mod update_table_storage_optimizer_output {
     
     /// A builder for [`UpdateTableStorageOptimizerOutput`](crate::output::UpdateTableStorageOptimizerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
@@ -58,6 +59,7 @@ pub struct UpdateTableObjectsOutput  {
 pub mod update_table_objects_output {
     
     /// A builder for [`UpdateTableObjectsOutput`](crate::output::UpdateTableObjectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -87,6 +89,7 @@ pub struct UpdateResourceOutput  {
 pub mod update_resource_output {
     
     /// A builder for [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -116,6 +119,7 @@ pub struct UpdateLfTagOutput  {
 pub mod update_lf_tag_output {
     
     /// A builder for [`UpdateLfTagOutput`](crate::output::UpdateLfTagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -154,6 +158,7 @@ impl StartTransactionOutput {
 pub mod start_transaction_output {
     
     /// A builder for [`StartTransactionOutput`](crate::output::StartTransactionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -204,6 +209,7 @@ impl StartQueryPlanningOutput {
 pub mod start_query_planning_output {
     
     /// A builder for [`StartQueryPlanningOutput`](crate::output::StartQueryPlanningOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
@@ -261,6 +267,7 @@ impl SearchTablesByLfTagsOutput {
 pub mod search_tables_by_lf_tags_output {
     
     /// A builder for [`SearchTablesByLfTagsOutput`](crate::output::SearchTablesByLfTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -336,6 +343,7 @@ impl SearchDatabasesByLfTagsOutput {
 pub mod search_databases_by_lf_tags_output {
     
     /// A builder for [`SearchDatabasesByLfTagsOutput`](crate::output::SearchDatabasesByLfTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -395,6 +403,7 @@ pub struct RevokePermissionsOutput  {
 pub mod revoke_permissions_output {
     
     /// A builder for [`RevokePermissionsOutput`](crate::output::RevokePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -433,6 +442,7 @@ impl RemoveLfTagsFromResourceOutput {
 pub mod remove_lf_tags_from_resource_output {
     
     /// A builder for [`RemoveLfTagsFromResourceOutput`](crate::output::RemoveLfTagsFromResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::LfTagError>>,
@@ -480,6 +490,7 @@ pub struct RegisterResourceOutput  {
 pub mod register_resource_output {
     
     /// A builder for [`RegisterResourceOutput`](crate::output::RegisterResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -509,6 +520,7 @@ pub struct PutDataLakeSettingsOutput  {
 pub mod put_data_lake_settings_output {
     
     /// A builder for [`PutDataLakeSettingsOutput`](crate::output::PutDataLakeSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -554,6 +566,7 @@ impl ListTransactionsOutput {
 pub mod list_transactions_output {
     
     /// A builder for [`ListTransactionsOutput`](crate::output::ListTransactionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transactions: std::option::Option<std::vec::Vec<crate::model::TransactionDescription>>,
@@ -629,6 +642,7 @@ impl ListTableStorageOptimizersOutput {
 pub mod list_table_storage_optimizers_output {
     
     /// A builder for [`ListTableStorageOptimizersOutput`](crate::output::ListTableStorageOptimizersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_optimizer_list: std::option::Option<std::vec::Vec<crate::model::StorageOptimizer>>,
@@ -704,6 +718,7 @@ impl ListResourcesOutput {
 pub mod list_resources_output {
     
     /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_info_list: std::option::Option<std::vec::Vec<crate::model::ResourceInfo>>,
@@ -779,6 +794,7 @@ impl ListPermissionsOutput {
 pub mod list_permissions_output {
     
     /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principal_resource_permissions: std::option::Option<std::vec::Vec<crate::model::PrincipalResourcePermissions>>,
@@ -854,6 +870,7 @@ impl ListLfTagsOutput {
 pub mod list_lf_tags_output {
     
     /// A builder for [`ListLfTagsOutput`](crate::output::ListLfTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
@@ -929,6 +946,7 @@ impl ListDataCellsFilterOutput {
 pub mod list_data_cells_filter_output {
     
     /// A builder for [`ListDataCellsFilterOutput`](crate::output::ListDataCellsFilterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_cells_filters: std::option::Option<std::vec::Vec<crate::model::DataCellsFilter>>,
@@ -988,6 +1006,7 @@ pub struct GrantPermissionsOutput  {
 pub mod grant_permissions_output {
     
     /// A builder for [`GrantPermissionsOutput`](crate::output::GrantPermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1040,6 +1059,7 @@ impl GetWorkUnitsOutput {
 pub mod get_work_units_output {
     
     /// A builder for [`GetWorkUnitsOutput`](crate::output::GetWorkUnitsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1119,6 +1139,7 @@ impl GetWorkUnitResultsOutput {
 pub mod get_work_unit_results_output {
     
     /// A builder for [`GetWorkUnitResultsOutput`](crate::output::GetWorkUnitResultsOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -1191,6 +1212,7 @@ impl GetTemporaryGlueTableCredentialsOutput {
 pub mod get_temporary_glue_table_credentials_output {
     
     /// A builder for [`GetTemporaryGlueTableCredentialsOutput`](crate::output::GetTemporaryGlueTableCredentialsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -1298,6 +1320,7 @@ impl GetTemporaryGluePartitionCredentialsOutput {
 pub mod get_temporary_glue_partition_credentials_output {
     
     /// A builder for [`GetTemporaryGluePartitionCredentialsOutput`](crate::output::GetTemporaryGluePartitionCredentialsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -1391,6 +1414,7 @@ impl GetTableObjectsOutput {
 pub mod get_table_objects_output {
     
     /// A builder for [`GetTableObjectsOutput`](crate::output::GetTableObjectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) objects: std::option::Option<std::vec::Vec<crate::model::PartitionObjects>>,
@@ -1473,6 +1497,7 @@ impl GetResourceLfTagsOutput {
 pub mod get_resource_lf_tags_output {
     
     /// A builder for [`GetResourceLfTagsOutput`](crate::output::GetResourceLfTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lf_tag_on_database: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
@@ -1579,6 +1604,7 @@ impl GetQueryStatisticsOutput {
 pub mod get_query_statistics_output {
     
     /// A builder for [`GetQueryStatisticsOutput`](crate::output::GetQueryStatisticsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_statistics: std::option::Option<crate::model::ExecutionStatistics>,
@@ -1672,6 +1698,7 @@ impl GetQueryStateOutput {
 pub mod get_query_state_output {
     
     /// A builder for [`GetQueryStateOutput`](crate::output::GetQueryStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
@@ -1760,6 +1787,7 @@ impl GetLfTagOutput {
 pub mod get_lf_tag_output {
     
     /// A builder for [`GetLfTagOutput`](crate::output::GetLfTagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -1847,6 +1875,7 @@ impl GetEffectivePermissionsForPathOutput {
 pub mod get_effective_permissions_for_path_output {
     
     /// A builder for [`GetEffectivePermissionsForPathOutput`](crate::output::GetEffectivePermissionsForPathOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::PrincipalResourcePermissions>>,
@@ -1915,6 +1944,7 @@ impl GetDataLakeSettingsOutput {
 pub mod get_data_lake_settings_output {
     
     /// A builder for [`GetDataLakeSettingsOutput`](crate::output::GetDataLakeSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_lake_settings: std::option::Option<crate::model::DataLakeSettings>,
@@ -1956,6 +1986,7 @@ pub struct ExtendTransactionOutput  {
 pub mod extend_transaction_output {
     
     /// A builder for [`ExtendTransactionOutput`](crate::output::ExtendTransactionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1994,6 +2025,7 @@ impl DescribeTransactionOutput {
 pub mod describe_transaction_output {
     
     /// A builder for [`DescribeTransactionOutput`](crate::output::DescribeTransactionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_description: std::option::Option<crate::model::TransactionDescription>,
@@ -2044,6 +2076,7 @@ impl DescribeResourceOutput {
 pub mod describe_resource_output {
     
     /// A builder for [`DescribeResourceOutput`](crate::output::DescribeResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_info: std::option::Option<crate::model::ResourceInfo>,
@@ -2085,6 +2118,7 @@ pub struct DeregisterResourceOutput  {
 pub mod deregister_resource_output {
     
     /// A builder for [`DeregisterResourceOutput`](crate::output::DeregisterResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2114,6 +2148,7 @@ pub struct DeleteObjectsOnCancelOutput  {
 pub mod delete_objects_on_cancel_output {
     
     /// A builder for [`DeleteObjectsOnCancelOutput`](crate::output::DeleteObjectsOnCancelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2143,6 +2178,7 @@ pub struct DeleteLfTagOutput  {
 pub mod delete_lf_tag_output {
     
     /// A builder for [`DeleteLfTagOutput`](crate::output::DeleteLfTagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2172,6 +2208,7 @@ pub struct DeleteDataCellsFilterOutput  {
 pub mod delete_data_cells_filter_output {
     
     /// A builder for [`DeleteDataCellsFilterOutput`](crate::output::DeleteDataCellsFilterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2201,6 +2238,7 @@ pub struct CreateLfTagOutput  {
 pub mod create_lf_tag_output {
     
     /// A builder for [`CreateLfTagOutput`](crate::output::CreateLfTagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2230,6 +2268,7 @@ pub struct CreateDataCellsFilterOutput  {
 pub mod create_data_cells_filter_output {
     
     /// A builder for [`CreateDataCellsFilterOutput`](crate::output::CreateDataCellsFilterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2268,6 +2307,7 @@ impl CommitTransactionOutput {
 pub mod commit_transaction_output {
     
     /// A builder for [`CommitTransactionOutput`](crate::output::CommitTransactionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_status: std::option::Option<crate::model::TransactionStatus>,
@@ -2309,6 +2349,7 @@ pub struct CancelTransactionOutput  {
 pub mod cancel_transaction_output {
     
     /// A builder for [`CancelTransactionOutput`](crate::output::CancelTransactionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2347,6 +2388,7 @@ impl BatchRevokePermissionsOutput {
 pub mod batch_revoke_permissions_output {
     
     /// A builder for [`BatchRevokePermissionsOutput`](crate::output::BatchRevokePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsFailureEntry>>,
@@ -2403,6 +2445,7 @@ impl BatchGrantPermissionsOutput {
 pub mod batch_grant_permissions_output {
     
     /// A builder for [`BatchGrantPermissionsOutput`](crate::output::BatchGrantPermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsFailureEntry>>,
@@ -2480,6 +2523,7 @@ impl AssumeDecoratedRoleWithSamlOutput {
 pub mod assume_decorated_role_with_saml_output {
     
     /// A builder for [`AssumeDecoratedRoleWithSamlOutput`](crate::output::AssumeDecoratedRoleWithSamlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -2566,6 +2610,7 @@ impl AddLfTagsToResourceOutput {
 pub mod add_lf_tags_to_resource_output {
     
     /// A builder for [`AddLfTagsToResourceOutput`](crate::output::AddLfTagsToResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::LfTagError>>,

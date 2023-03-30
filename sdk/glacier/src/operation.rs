@@ -1025,7 +1025,7 @@ mod upload_archive_request_test {
             ("X-Amz-Glacier-Version", "2012-06-01")
         ];
         aws_smithy_protocol_test::assert_ok(
-        aws_smithy_protocol_test::validate_headers(&http_request.headers(), expected_headers)
+        aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers)
         );
         let body = http_request.body().bytes().expect("body should be strict");
         // No body
@@ -1064,7 +1064,7 @@ mod upload_archive_request_test {
             ("X-Amz-Content-Sha256", "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"),("X-Amz-Glacier-Version", "2012-06-01"),("X-Amz-Sha256-Tree-Hash", "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9")
         ];
         aws_smithy_protocol_test::assert_ok(
-        aws_smithy_protocol_test::validate_headers(&http_request.headers(), expected_headers)
+        aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers)
         );
         let body = http_request.body().bytes().expect("body should be strict");
         aws_smithy_protocol_test::assert_ok(
@@ -1101,7 +1101,7 @@ mod upload_archive_request_test {
             ("X-Amz-Glacier-Version", "2012-06-01")
         ];
         aws_smithy_protocol_test::assert_ok(
-        aws_smithy_protocol_test::validate_headers(&http_request.headers(), expected_headers)
+        aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers)
         );
         let body = http_request.body().bytes().expect("body should be strict");
         // No body
@@ -1135,7 +1135,7 @@ mod upload_archive_request_test {
             ("X-Amz-Glacier-Version", "2012-06-01")
         ];
         aws_smithy_protocol_test::assert_ok(
-        aws_smithy_protocol_test::validate_headers(&http_request.headers(), expected_headers)
+        aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers)
         );
         let body = http_request.body().bytes().expect("body should be strict");
         // No body
@@ -1216,7 +1216,7 @@ mod upload_multipart_part_request_test {
             ("X-Amz-Content-Sha256", "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"),("X-Amz-Glacier-Version", "2012-06-01"),("X-Amz-Sha256-Tree-Hash", "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9")
         ];
         aws_smithy_protocol_test::assert_ok(
-        aws_smithy_protocol_test::validate_headers(&http_request.headers(), expected_headers)
+        aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers)
         );
         let body = http_request.body().bytes().expect("body should be strict");
         aws_smithy_protocol_test::assert_ok(

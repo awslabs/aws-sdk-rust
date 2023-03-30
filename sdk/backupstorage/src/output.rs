@@ -17,6 +17,7 @@ impl StartObjectOutput {
 pub mod start_object_output {
     
     /// A builder for [`StartObjectOutput`](crate::output::StartObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upload_id: std::option::Option<std::string::String>,
@@ -88,6 +89,7 @@ impl PutObjectOutput {
 pub mod put_object_output {
     
     /// A builder for [`PutObjectOutput`](crate::output::PutObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inline_chunk_checksum: std::option::Option<std::string::String>,
@@ -181,6 +183,7 @@ impl PutChunkOutput {
 pub mod put_chunk_output {
     
     /// A builder for [`PutChunkOutput`](crate::output::PutChunkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chunk_checksum: std::option::Option<std::string::String>,
@@ -250,6 +253,7 @@ impl NotifyObjectCompleteOutput {
 pub mod notify_object_complete_output {
     
     /// A builder for [`NotifyObjectCompleteOutput`](crate::output::NotifyObjectCompleteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_checksum: std::option::Option<std::string::String>,
@@ -319,6 +323,7 @@ impl ListObjectsOutput {
 pub mod list_objects_output {
     
     /// A builder for [`ListObjectsOutput`](crate::output::ListObjectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_list: std::option::Option<std::vec::Vec<crate::model::BackupObject>>,
@@ -394,6 +399,7 @@ impl ListChunksOutput {
 pub mod list_chunks_output {
     
     /// A builder for [`ListChunksOutput`](crate::output::ListChunksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chunk_list: std::option::Option<std::vec::Vec<crate::model::Chunk>>,
@@ -489,6 +495,7 @@ impl GetObjectMetadataOutput {
 pub mod get_object_metadata_output {
     
     /// A builder for [`GetObjectMetadataOutput`](crate::output::GetObjectMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata_string: std::option::Option<std::string::String>,
@@ -609,6 +616,7 @@ impl GetChunkOutput {
 pub mod get_chunk_output {
     
     /// A builder for [`GetChunkOutput`](crate::output::GetChunkOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -688,6 +696,7 @@ pub struct DeleteObjectOutput  {
 pub mod delete_object_output {
     
     /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

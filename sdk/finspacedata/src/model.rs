@@ -289,6 +289,7 @@ impl SchemaUnion {
 pub mod schema_union {
     
     /// A builder for [`SchemaUnion`](crate::model::SchemaUnion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tabular_schema_config: std::option::Option<crate::model::SchemaDefinition>,
@@ -346,6 +347,7 @@ impl SchemaDefinition {
 pub mod schema_definition {
     
     /// A builder for [`SchemaDefinition`](crate::model::SchemaDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) columns: std::option::Option<std::vec::Vec<crate::model::ColumnDefinition>>,
@@ -440,6 +442,7 @@ impl ColumnDefinition {
 pub mod column_definition {
     
     /// A builder for [`ColumnDefinition`](crate::model::ColumnDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_type: std::option::Option<crate::model::ColumnDataType>,
@@ -841,6 +844,7 @@ impl  std::fmt::Debug for UserByPermissionGroup  {
 pub mod user_by_permission_group {
     
     /// A builder for [`UserByPermissionGroup`](crate::model::UserByPermissionGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -1341,6 +1345,7 @@ impl  std::fmt::Debug for User  {
 pub mod user {
     
     /// A builder for [`User`](crate::model::User).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -1618,6 +1623,7 @@ impl  std::fmt::Debug for PermissionGroupByUser  {
 pub mod permission_group_by_user {
     
     /// A builder for [`PermissionGroupByUser`](crate::model::PermissionGroupByUser).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
@@ -1798,6 +1804,7 @@ impl  std::fmt::Debug for PermissionGroup  {
 pub mod permission_group {
     
     /// A builder for [`PermissionGroup`](crate::model::PermissionGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
@@ -2070,6 +2077,7 @@ impl DataViewSummary {
 pub mod data_view_summary {
     
     /// A builder for [`DataViewSummary`](crate::model::DataViewSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_view_id: std::option::Option<std::string::String>,
@@ -2321,6 +2329,7 @@ impl DataViewDestinationTypeParams {
 pub mod data_view_destination_type_params {
     
     /// A builder for [`DataViewDestinationTypeParams`](crate::model::DataViewDestinationTypeParams).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_type: std::option::Option<std::string::String>,
@@ -2530,6 +2539,7 @@ impl DataViewErrorInfo {
 pub mod data_view_error_info {
     
     /// A builder for [`DataViewErrorInfo`](crate::model::DataViewErrorInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -2907,6 +2917,7 @@ impl Dataset {
 pub mod dataset {
     
     /// A builder for [`Dataset`](crate::model::Dataset).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -3098,6 +3109,7 @@ impl  std::fmt::Debug for DatasetOwnerInfo  {
 pub mod dataset_owner_info {
     
     /// A builder for [`DatasetOwnerInfo`](crate::model::DatasetOwnerInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3289,6 +3301,7 @@ impl ChangesetSummary {
 pub mod changeset_summary {
     
     /// A builder for [`ChangesetSummary`](crate::model::ChangesetSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) changeset_id: std::option::Option<std::string::String>,
@@ -3547,6 +3560,7 @@ impl ChangesetErrorInfo {
 pub mod changeset_error_info {
     
     /// A builder for [`ChangesetErrorInfo`](crate::model::ChangesetErrorInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -3909,6 +3923,7 @@ impl Credentials {
 pub mod credentials {
     
     /// A builder for [`Credentials`](crate::model::Credentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -3990,6 +4005,7 @@ impl S3Location {
 pub mod s3_location {
     
     /// A builder for [`S3Location`](crate::model::S3Location).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -4083,6 +4099,7 @@ impl  std::fmt::Debug for AwsCredentials  {
 pub mod aws_credentials {
     
     /// A builder for [`AwsCredentials`](crate::model::AwsCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -4281,6 +4298,7 @@ impl PermissionGroupParams {
 pub mod permission_group_params {
     
     /// A builder for [`PermissionGroupParams`](crate::model::PermissionGroupParams).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
@@ -4359,6 +4377,7 @@ impl ResourcePermission {
 pub mod resource_permission {
     
     /// A builder for [`ResourcePermission`](crate::model::ResourcePermission).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission: std::option::Option<std::string::String>,

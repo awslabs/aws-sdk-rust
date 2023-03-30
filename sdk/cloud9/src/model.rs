@@ -56,6 +56,7 @@ impl EnvironmentMember {
 pub mod environment_member {
     
     /// A builder for [`EnvironmentMember`](crate::model::EnvironmentMember).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions: std::option::Option<crate::model::Permissions>,
@@ -430,6 +431,7 @@ impl  std::fmt::Debug for Tag  {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -710,6 +712,7 @@ impl  std::fmt::Debug for Environment  {
 pub mod environment {
     
     /// A builder for [`Environment`](crate::model::Environment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1058,6 +1061,7 @@ impl EnvironmentLifecycle {
 pub mod environment_lifecycle {
     
     /// A builder for [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::EnvironmentLifecycleStatus>,

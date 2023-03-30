@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_aws_log_source_input {
     
     /// A builder for [`CreateAwsLogSourceInput`](crate::input::CreateAwsLogSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_order: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -172,6 +173,7 @@ impl CreateAwsLogSourceInput {
 pub mod create_custom_log_source_input {
     
     /// A builder for [`CreateCustomLogSourceInput`](crate::input::CreateCustomLogSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_source_name: std::option::Option<std::string::String>,
@@ -323,6 +325,7 @@ impl CreateCustomLogSourceInput {
 pub mod create_datalake_input {
     
     /// A builder for [`CreateDatalakeInput`](crate::input::CreateDatalakeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
@@ -478,6 +481,7 @@ impl CreateDatalakeInput {
 pub mod create_datalake_auto_enable_input {
     
     /// A builder for [`CreateDatalakeAutoEnableInput`](crate::input::CreateDatalakeAutoEnableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_for_new_accounts: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>,
@@ -591,6 +595,7 @@ impl CreateDatalakeAutoEnableInput {
 pub mod create_datalake_delegated_admin_input {
     
     /// A builder for [`CreateDatalakeDelegatedAdminInput`](crate::input::CreateDatalakeDelegatedAdminInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<std::string::String>,
@@ -698,6 +703,7 @@ impl CreateDatalakeDelegatedAdminInput {
 pub mod create_datalake_exceptions_subscription_input {
     
     /// A builder for [`CreateDatalakeExceptionsSubscriptionInput`](crate::input::CreateDatalakeExceptionsSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_protocol: std::option::Option<crate::model::SubscriptionProtocolType>,
@@ -817,6 +823,7 @@ impl CreateDatalakeExceptionsSubscriptionInput {
 pub mod create_subscriber_input {
     
     /// A builder for [`CreateSubscriberInput`](crate::input::CreateSubscriberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_types: std::option::Option<std::vec::Vec<crate::model::SourceType>>,
@@ -996,6 +1003,7 @@ impl CreateSubscriberInput {
 pub mod create_subscription_notification_configuration_input {
     
     /// A builder for [`CreateSubscriptionNotificationConfigurationInput`](crate::input::CreateSubscriptionNotificationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_id: std::option::Option<std::string::String>,
@@ -1181,6 +1189,7 @@ impl CreateSubscriptionNotificationConfigurationInput {
 pub mod delete_aws_log_source_input {
     
     /// A builder for [`DeleteAwsLogSourceInput`](crate::input::DeleteAwsLogSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_order: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -1348,6 +1357,7 @@ impl DeleteAwsLogSourceInput {
 pub mod delete_custom_log_source_input {
     
     /// A builder for [`DeleteCustomLogSourceInput`](crate::input::DeleteCustomLogSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_source_name: std::option::Option<std::string::String>,
@@ -1462,6 +1472,7 @@ impl DeleteCustomLogSourceInput {
 pub mod delete_datalake_input {
     
     /// A builder for [`DeleteDatalakeInput`](crate::input::DeleteDatalakeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1553,6 +1564,7 @@ impl DeleteDatalakeInput {
 pub mod delete_datalake_auto_enable_input {
     
     /// A builder for [`DeleteDatalakeAutoEnableInput`](crate::input::DeleteDatalakeAutoEnableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) remove_from_configuration_for_new_accounts: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>,
@@ -1666,6 +1678,7 @@ impl DeleteDatalakeAutoEnableInput {
 pub mod delete_datalake_delegated_admin_input {
     
     /// A builder for [`DeleteDatalakeDelegatedAdminInput`](crate::input::DeleteDatalakeDelegatedAdminInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<std::string::String>,
@@ -1775,6 +1788,7 @@ impl DeleteDatalakeDelegatedAdminInput {
 pub mod delete_datalake_exceptions_subscription_input {
     
     /// A builder for [`DeleteDatalakeExceptionsSubscriptionInput`](crate::input::DeleteDatalakeExceptionsSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1866,6 +1880,7 @@ impl DeleteDatalakeExceptionsSubscriptionInput {
 pub mod delete_subscriber_input {
     
     /// A builder for [`DeleteSubscriberInput`](crate::input::DeleteSubscriberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1980,6 +1995,7 @@ impl DeleteSubscriberInput {
 pub mod delete_subscription_notification_configuration_input {
     
     /// A builder for [`DeleteSubscriptionNotificationConfigurationInput`](crate::input::DeleteSubscriptionNotificationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_id: std::option::Option<std::string::String>,
@@ -2089,6 +2105,7 @@ impl DeleteSubscriptionNotificationConfigurationInput {
 pub mod get_datalake_input {
     
     /// A builder for [`GetDatalakeInput`](crate::input::GetDatalakeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2180,6 +2197,7 @@ impl GetDatalakeInput {
 pub mod get_datalake_auto_enable_input {
     
     /// A builder for [`GetDatalakeAutoEnableInput`](crate::input::GetDatalakeAutoEnableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2271,6 +2289,7 @@ impl GetDatalakeAutoEnableInput {
 pub mod get_datalake_exceptions_expiry_input {
     
     /// A builder for [`GetDatalakeExceptionsExpiryInput`](crate::input::GetDatalakeExceptionsExpiryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2362,6 +2381,7 @@ impl GetDatalakeExceptionsExpiryInput {
 pub mod get_datalake_exceptions_subscription_input {
     
     /// A builder for [`GetDatalakeExceptionsSubscriptionInput`](crate::input::GetDatalakeExceptionsSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2453,6 +2473,7 @@ impl GetDatalakeExceptionsSubscriptionInput {
 pub mod get_datalake_status_input {
     
     /// A builder for [`GetDatalakeStatusInput`](crate::input::GetDatalakeStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_set: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2592,6 +2613,7 @@ impl GetDatalakeStatusInput {
 pub mod get_subscriber_input {
     
     /// A builder for [`GetSubscriberInput`](crate::input::GetSubscriberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2701,6 +2723,7 @@ impl GetSubscriberInput {
 pub mod list_datalake_exceptions_input {
     
     /// A builder for [`ListDatalakeExceptionsInput`](crate::input::ListDatalakeExceptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_set: std::option::Option<std::vec::Vec<crate::model::Region>>,
@@ -2840,6 +2863,7 @@ impl ListDatalakeExceptionsInput {
 pub mod list_log_sources_input {
     
     /// A builder for [`ListLogSourcesInput`](crate::input::ListLogSourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_order: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -3031,6 +3055,7 @@ impl ListLogSourcesInput {
 pub mod list_subscribers_input {
     
     /// A builder for [`ListSubscribersInput`](crate::input::ListSubscribersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3161,6 +3186,7 @@ impl ListSubscribersInput {
 pub mod update_datalake_input {
     
     /// A builder for [`UpdateDatalakeInput`](crate::input::UpdateDatalakeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configurations: std::option::Option<std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationRequest>>,
@@ -3274,6 +3300,7 @@ impl UpdateDatalakeInput {
 pub mod update_datalake_exceptions_expiry_input {
     
     /// A builder for [`UpdateDatalakeExceptionsExpiryInput`](crate::input::UpdateDatalakeExceptionsExpiryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exception_message_expiry: std::option::Option<i64>,
@@ -3381,6 +3408,7 @@ impl UpdateDatalakeExceptionsExpiryInput {
 pub mod update_datalake_exceptions_subscription_input {
     
     /// A builder for [`UpdateDatalakeExceptionsSubscriptionInput`](crate::input::UpdateDatalakeExceptionsSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_protocol: std::option::Option<crate::model::SubscriptionProtocolType>,
@@ -3500,6 +3528,7 @@ impl UpdateDatalakeExceptionsSubscriptionInput {
 pub mod update_subscriber_input {
     
     /// A builder for [`UpdateSubscriberInput`](crate::input::UpdateSubscriberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3667,6 +3696,7 @@ impl UpdateSubscriberInput {
 pub mod update_subscription_notification_configuration_input {
     
     /// A builder for [`UpdateSubscriptionNotificationConfigurationInput`](crate::input::UpdateSubscriptionNotificationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_id: std::option::Option<std::string::String>,

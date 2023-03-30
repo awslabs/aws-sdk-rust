@@ -204,6 +204,7 @@ impl std::error::Error for ServiceUnavailableException {}
 pub mod service_unavailable_exception {
     
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -304,6 +305,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -404,6 +406,7 @@ impl std::error::Error for RequestTimeoutException {}
 pub mod request_timeout_exception {
     
     /// A builder for [`RequestTimeoutException`](crate::error::RequestTimeoutException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -504,6 +507,7 @@ impl std::error::Error for MissingParameterValueException {}
 pub mod missing_parameter_value_exception {
     
     /// A builder for [`MissingParameterValueException`](crate::error::MissingParameterValueException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -604,6 +608,7 @@ impl std::error::Error for InvalidParameterValueException {}
 pub mod invalid_parameter_value_exception {
     
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -1598,6 +1603,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
     
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -3051,6 +3057,7 @@ impl std::error::Error for PolicyEnforcedException {}
 pub mod policy_enforced_exception {
     
     /// A builder for [`PolicyEnforcedException`](crate::error::PolicyEnforcedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -3151,6 +3158,7 @@ impl std::error::Error for InsufficientCapacityException {}
 pub mod insufficient_capacity_exception {
     
     /// A builder for [`InsufficientCapacityException`](crate::error::InsufficientCapacityException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,

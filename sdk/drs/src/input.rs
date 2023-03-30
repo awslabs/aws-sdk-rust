@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_extended_source_server_input {
     
     /// A builder for [`CreateExtendedSourceServerInput`](crate::input::CreateExtendedSourceServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_arn: std::option::Option<std::string::String>,
@@ -138,6 +139,7 @@ impl CreateExtendedSourceServerInput {
 pub mod create_replication_configuration_template_input {
     
     /// A builder for [`CreateReplicationConfigurationTemplateInput`](crate::input::CreateReplicationConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) staging_area_subnet_id: std::option::Option<std::string::String>,
@@ -446,6 +448,7 @@ impl CreateReplicationConfigurationTemplateInput {
 pub mod delete_job_input {
     
     /// A builder for [`DeleteJobInput`](crate::input::DeleteJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -553,6 +556,7 @@ impl DeleteJobInput {
 pub mod delete_recovery_instance_input {
     
     /// A builder for [`DeleteRecoveryInstanceInput`](crate::input::DeleteRecoveryInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_instance_id: std::option::Option<std::string::String>,
@@ -660,6 +664,7 @@ impl DeleteRecoveryInstanceInput {
 pub mod delete_replication_configuration_template_input {
     
     /// A builder for [`DeleteReplicationConfigurationTemplateInput`](crate::input::DeleteReplicationConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_configuration_template_id: std::option::Option<std::string::String>,
@@ -767,6 +772,7 @@ impl DeleteReplicationConfigurationTemplateInput {
 pub mod delete_source_server_input {
     
     /// A builder for [`DeleteSourceServerInput`](crate::input::DeleteSourceServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -874,6 +880,7 @@ impl DeleteSourceServerInput {
 pub mod describe_job_log_items_input {
     
     /// A builder for [`DescribeJobLogItemsInput`](crate::input::DescribeJobLogItemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1006,6 +1013,7 @@ impl DescribeJobLogItemsInput {
 pub mod describe_jobs_input {
     
     /// A builder for [`DescribeJobsInput`](crate::input::DescribeJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::DescribeJobsRequestFilters>,
@@ -1138,6 +1146,7 @@ impl DescribeJobsInput {
 pub mod describe_recovery_instances_input {
     
     /// A builder for [`DescribeRecoveryInstancesInput`](crate::input::DescribeRecoveryInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::DescribeRecoveryInstancesRequestFilters>,
@@ -1270,6 +1279,7 @@ impl DescribeRecoveryInstancesInput {
 pub mod describe_recovery_snapshots_input {
     
     /// A builder for [`DescribeRecoverySnapshotsInput`](crate::input::DescribeRecoverySnapshotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -1426,6 +1436,7 @@ impl DescribeRecoverySnapshotsInput {
 pub mod describe_replication_configuration_templates_input {
     
     /// A builder for [`DescribeReplicationConfigurationTemplatesInput`](crate::input::DescribeReplicationConfigurationTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_configuration_template_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1564,6 +1575,7 @@ impl DescribeReplicationConfigurationTemplatesInput {
 pub mod describe_source_servers_input {
     
     /// A builder for [`DescribeSourceServersInput`](crate::input::DescribeSourceServersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::DescribeSourceServersRequestFilters>,
@@ -1696,6 +1708,7 @@ impl DescribeSourceServersInput {
 pub mod disconnect_recovery_instance_input {
     
     /// A builder for [`DisconnectRecoveryInstanceInput`](crate::input::DisconnectRecoveryInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_instance_id: std::option::Option<std::string::String>,
@@ -1803,6 +1816,7 @@ impl DisconnectRecoveryInstanceInput {
 pub mod disconnect_source_server_input {
     
     /// A builder for [`DisconnectSourceServerInput`](crate::input::DisconnectSourceServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -1910,6 +1924,7 @@ impl DisconnectSourceServerInput {
 pub mod get_failback_replication_configuration_input {
     
     /// A builder for [`GetFailbackReplicationConfigurationInput`](crate::input::GetFailbackReplicationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_instance_id: std::option::Option<std::string::String>,
@@ -2017,6 +2032,7 @@ impl GetFailbackReplicationConfigurationInput {
 pub mod get_launch_configuration_input {
     
     /// A builder for [`GetLaunchConfigurationInput`](crate::input::GetLaunchConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -2124,6 +2140,7 @@ impl GetLaunchConfigurationInput {
 pub mod get_replication_configuration_input {
     
     /// A builder for [`GetReplicationConfigurationInput`](crate::input::GetReplicationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -2231,6 +2248,7 @@ impl GetReplicationConfigurationInput {
 pub mod initialize_service_input {
     
     /// A builder for [`InitializeServiceInput`](crate::input::InitializeServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2322,6 +2340,7 @@ impl InitializeServiceInput {
 pub mod list_extensible_source_servers_input {
     
     /// A builder for [`ListExtensibleSourceServersInput`](crate::input::ListExtensibleSourceServersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) staging_account_id: std::option::Option<std::string::String>,
@@ -2454,6 +2473,7 @@ impl ListExtensibleSourceServersInput {
 pub mod list_staging_accounts_input {
     
     /// A builder for [`ListStagingAccountsInput`](crate::input::ListStagingAccountsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2584,6 +2604,7 @@ impl ListStagingAccountsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2693,6 +2714,7 @@ impl ListTagsForResourceInput {
 pub mod retry_data_replication_input {
     
     /// A builder for [`RetryDataReplicationInput`](crate::input::RetryDataReplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -2800,6 +2822,7 @@ impl RetryDataReplicationInput {
 pub mod reverse_replication_input {
     
     /// A builder for [`ReverseReplicationInput`](crate::input::ReverseReplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_instance_id: std::option::Option<std::string::String>,
@@ -2907,6 +2930,7 @@ impl ReverseReplicationInput {
 pub mod start_failback_launch_input {
     
     /// A builder for [`StartFailbackLaunchInput`](crate::input::StartFailbackLaunchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) recovery_instance_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3046,6 +3070,7 @@ impl StartFailbackLaunchInput {
 pub mod start_recovery_input {
     
     /// A builder for [`StartRecoveryInput`](crate::input::StartRecoveryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_servers: std::option::Option<std::vec::Vec<crate::model::StartRecoveryRequestSourceServer>>,
@@ -3198,6 +3223,7 @@ impl StartRecoveryInput {
 pub mod start_replication_input {
     
     /// A builder for [`StartReplicationInput`](crate::input::StartReplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -3305,6 +3331,7 @@ impl StartReplicationInput {
 pub mod stop_failback_input {
     
     /// A builder for [`StopFailbackInput`](crate::input::StopFailbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_instance_id: std::option::Option<std::string::String>,
@@ -3412,6 +3439,7 @@ impl StopFailbackInput {
 pub mod stop_replication_input {
     
     /// A builder for [`StopReplicationInput`](crate::input::StopReplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -3519,6 +3547,7 @@ impl StopReplicationInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3658,6 +3687,7 @@ impl TagResourceInput {
 pub mod terminate_recovery_instances_input {
     
     /// A builder for [`TerminateRecoveryInstancesInput`](crate::input::TerminateRecoveryInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_instance_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3771,6 +3801,7 @@ impl TerminateRecoveryInstancesInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3916,6 +3947,7 @@ impl UntagResourceInput {
 pub mod update_failback_replication_configuration_input {
     
     /// A builder for [`UpdateFailbackReplicationConfigurationInput`](crate::input::UpdateFailbackReplicationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_instance_id: std::option::Option<std::string::String>,
@@ -4060,6 +4092,7 @@ impl UpdateFailbackReplicationConfigurationInput {
 pub mod update_launch_configuration_input {
     
     /// A builder for [`UpdateLaunchConfigurationInput`](crate::input::UpdateLaunchConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -4239,6 +4272,7 @@ impl UpdateLaunchConfigurationInput {
 pub mod update_replication_configuration_input {
     
     /// A builder for [`UpdateReplicationConfigurationInput`](crate::input::UpdateReplicationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -4573,6 +4607,7 @@ impl UpdateReplicationConfigurationInput {
 pub mod update_replication_configuration_template_input {
     
     /// A builder for [`UpdateReplicationConfigurationTemplateInput`](crate::input::UpdateReplicationConfigurationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) replication_configuration_template_id: std::option::Option<std::string::String>,

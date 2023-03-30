@@ -80,6 +80,7 @@ impl UpdateRoomOutput {
 pub mod update_room_output {
     
     /// A builder for [`UpdateRoomOutput`](crate::output::UpdateRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -301,6 +302,7 @@ impl UpdateLoggingConfigurationOutput {
 pub mod update_logging_configuration_output {
     
     /// A builder for [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -432,6 +434,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -461,6 +464,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -499,6 +503,7 @@ impl SendEventOutput {
 pub mod send_event_output {
     
     /// A builder for [`SendEventOutput`](crate::output::SendEventOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -549,6 +554,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -612,6 +618,7 @@ impl ListRoomsOutput {
 pub mod list_rooms_output {
     
     /// A builder for [`ListRoomsOutput`](crate::output::ListRoomsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rooms: std::option::Option<std::vec::Vec<crate::model::RoomSummary>>,
@@ -687,6 +694,7 @@ impl ListLoggingConfigurationsOutput {
 pub mod list_logging_configurations_output {
     
     /// A builder for [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configurations: std::option::Option<std::vec::Vec<crate::model::LoggingConfigurationSummary>>,
@@ -818,6 +826,7 @@ impl GetRoomOutput {
 pub mod get_room_output {
     
     /// A builder for [`GetRoomOutput`](crate::output::GetRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1039,6 +1048,7 @@ impl GetLoggingConfigurationOutput {
 pub mod get_logging_configuration_output {
     
     /// A builder for [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1170,6 +1180,7 @@ pub struct DisconnectUserOutput  {
 pub mod disconnect_user_output {
     
     /// A builder for [`DisconnectUserOutput`](crate::output::DisconnectUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1199,6 +1210,7 @@ pub struct DeleteRoomOutput  {
 pub mod delete_room_output {
     
     /// A builder for [`DeleteRoomOutput`](crate::output::DeleteRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1237,6 +1249,7 @@ impl DeleteMessageOutput {
 pub mod delete_message_output {
     
     /// A builder for [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1278,6 +1291,7 @@ pub struct DeleteLoggingConfigurationOutput  {
 pub mod delete_logging_configuration_output {
     
     /// A builder for [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1379,6 +1393,7 @@ impl CreateRoomOutput {
 pub mod create_room_output {
     
     /// A builder for [`CreateRoomOutput`](crate::output::CreateRoomOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1600,6 +1615,7 @@ impl CreateLoggingConfigurationOutput {
 pub mod create_logging_configuration_output {
     
     /// A builder for [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1754,6 +1770,7 @@ impl CreateChatTokenOutput {
 pub mod create_chat_token_output {
     
     /// A builder for [`CreateChatTokenOutput`](crate::output::CreateChatTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token: std::option::Option<std::string::String>,

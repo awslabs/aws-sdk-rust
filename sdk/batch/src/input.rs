@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_job_input {
     
     /// A builder for [`CancelJobInput`](crate::input::CancelJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -124,6 +125,7 @@ impl CancelJobInput {
 pub mod create_compute_environment_input {
     
     /// A builder for [`CreateComputeEnvironmentInput`](crate::input::CreateComputeEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compute_environment_name: std::option::Option<std::string::String>,
@@ -341,6 +343,7 @@ impl CreateComputeEnvironmentInput {
 pub mod create_job_queue_input {
     
     /// A builder for [`CreateJobQueueInput`](crate::input::CreateJobQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_queue_name: std::option::Option<std::string::String>,
@@ -524,6 +527,7 @@ impl CreateJobQueueInput {
 pub mod create_scheduling_policy_input {
     
     /// A builder for [`CreateSchedulingPolicyInput`](crate::input::CreateSchedulingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -663,6 +667,7 @@ impl CreateSchedulingPolicyInput {
 pub mod delete_compute_environment_input {
     
     /// A builder for [`DeleteComputeEnvironmentInput`](crate::input::DeleteComputeEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compute_environment: std::option::Option<std::string::String>,
@@ -770,6 +775,7 @@ impl DeleteComputeEnvironmentInput {
 pub mod delete_job_queue_input {
     
     /// A builder for [`DeleteJobQueueInput`](crate::input::DeleteJobQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_queue: std::option::Option<std::string::String>,
@@ -877,6 +883,7 @@ impl DeleteJobQueueInput {
 pub mod delete_scheduling_policy_input {
     
     /// A builder for [`DeleteSchedulingPolicyInput`](crate::input::DeleteSchedulingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -984,6 +991,7 @@ impl DeleteSchedulingPolicyInput {
 pub mod deregister_job_definition_input {
     
     /// A builder for [`DeregisterJobDefinitionInput`](crate::input::DeregisterJobDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_definition: std::option::Option<std::string::String>,
@@ -1091,6 +1099,7 @@ impl DeregisterJobDefinitionInput {
 pub mod describe_compute_environments_input {
     
     /// A builder for [`DescribeComputeEnvironmentsInput`](crate::input::DescribeComputeEnvironmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compute_environments: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1232,6 +1241,7 @@ impl DescribeComputeEnvironmentsInput {
 pub mod describe_job_definitions_input {
     
     /// A builder for [`DescribeJobDefinitionsInput`](crate::input::DescribeJobDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1397,6 +1407,7 @@ impl DescribeJobDefinitionsInput {
 pub mod describe_job_queues_input {
     
     /// A builder for [`DescribeJobQueuesInput`](crate::input::DescribeJobQueuesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_queues: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1538,6 +1549,7 @@ impl DescribeJobQueuesInput {
 pub mod describe_jobs_input {
     
     /// A builder for [`DescribeJobsInput`](crate::input::DescribeJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1651,6 +1663,7 @@ impl DescribeJobsInput {
 pub mod describe_scheduling_policies_input {
     
     /// A builder for [`DescribeSchedulingPoliciesInput`](crate::input::DescribeSchedulingPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1764,6 +1777,7 @@ impl DescribeSchedulingPoliciesInput {
 pub mod list_jobs_input {
     
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_queue: std::option::Option<std::string::String>,
@@ -2005,6 +2019,7 @@ impl ListJobsInput {
 pub mod list_scheduling_policies_input {
     
     /// A builder for [`ListSchedulingPoliciesInput`](crate::input::ListSchedulingPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2128,6 +2143,7 @@ impl ListSchedulingPoliciesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2237,6 +2253,7 @@ impl ListTagsForResourceInput {
 pub mod register_job_definition_input {
     
     /// A builder for [`RegisterJobDefinitionInput`](crate::input::RegisterJobDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_definition_name: std::option::Option<std::string::String>,
@@ -2520,6 +2537,7 @@ impl RegisterJobDefinitionInput {
 pub mod submit_job_input {
     
     /// A builder for [`SubmitJobInput`](crate::input::SubmitJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -2819,6 +2837,7 @@ impl SubmitJobInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2950,6 +2969,7 @@ impl TagResourceInput {
 pub mod terminate_job_input {
     
     /// A builder for [`TerminateJobInput`](crate::input::TerminateJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3069,6 +3089,7 @@ impl TerminateJobInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3206,6 +3227,7 @@ impl UntagResourceInput {
 pub mod update_compute_environment_input {
     
     /// A builder for [`UpdateComputeEnvironmentInput`](crate::input::UpdateComputeEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compute_environment: std::option::Option<std::string::String>,
@@ -3387,6 +3409,7 @@ impl UpdateComputeEnvironmentInput {
 pub mod update_job_queue_input {
     
     /// A builder for [`UpdateJobQueueInput`](crate::input::UpdateJobQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_queue: std::option::Option<std::string::String>,
@@ -3552,6 +3575,7 @@ impl UpdateJobQueueInput {
 pub mod update_scheduling_policy_input {
     
     /// A builder for [`UpdateSchedulingPolicyInput`](crate::input::UpdateSchedulingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

@@ -164,6 +164,7 @@ impl std::error::Error for ServiceLinkedRoleFailure {}
 pub mod service_linked_role_failure {
     
     /// A builder for [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -224,6 +225,7 @@ impl std::error::Error for ScalingActivityInProgressFault {}
 pub mod scaling_activity_in_progress_fault {
     
     /// A builder for [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -284,6 +286,7 @@ impl std::error::Error for ResourceContentionFault {}
 pub mod resource_contention_fault {
     
     /// A builder for [`ResourceContentionFault`](crate::error::ResourceContentionFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -594,6 +597,7 @@ impl std::error::Error for ResourceInUseFault {}
 pub mod resource_in_use_fault {
     
     /// A builder for [`ResourceInUseFault`](crate::error::ResourceInUseFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -791,6 +795,7 @@ impl std::error::Error for LimitExceededFault {}
 pub mod limit_exceeded_fault {
     
     /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -851,6 +856,7 @@ impl std::error::Error for InstanceRefreshInProgressFault {}
 pub mod instance_refresh_in_progress_fault {
     
     /// A builder for [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1774,6 +1780,7 @@ impl std::error::Error for AlreadyExistsFault {}
 pub mod already_exists_fault {
     
     /// A builder for [`AlreadyExistsFault`](crate::error::AlreadyExistsFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3512,6 +3519,7 @@ impl std::error::Error for InvalidNextToken {}
 pub mod invalid_next_token {
     
     /// A builder for [`InvalidNextToken`](crate::error::InvalidNextToken).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7673,6 +7681,7 @@ impl std::error::Error for ActiveInstanceRefreshNotFoundFault {}
 pub mod active_instance_refresh_not_found_fault {
     
     /// A builder for [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

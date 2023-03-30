@@ -25,6 +25,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -178,6 +179,7 @@ impl RequestedServiceQuotaChange {
 pub mod requested_service_quota_change {
     
     /// A builder for [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -531,6 +533,7 @@ impl ServiceQuotaIncreaseRequestInTemplate {
 pub mod service_quota_increase_request_in_template {
     
     /// A builder for [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -673,6 +676,7 @@ impl ServiceInfo {
 pub mod service_info {
     
     /// A builder for [`ServiceInfo`](crate::model::ServiceInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -812,6 +816,7 @@ impl ServiceQuota {
 pub mod service_quota {
     
     /// A builder for [`ServiceQuota`](crate::model::ServiceQuota).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -1015,6 +1020,7 @@ impl ErrorReason {
 pub mod error_reason {
     
     /// A builder for [`ErrorReason`](crate::model::ErrorReason).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -1188,6 +1194,7 @@ impl QuotaPeriod {
 pub mod quota_period {
     
     /// A builder for [`QuotaPeriod`](crate::model::QuotaPeriod).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) period_value: std::option::Option<i32>,
@@ -1378,6 +1385,7 @@ impl MetricInfo {
 pub mod metric_info {
     
     /// A builder for [`MetricInfo`](crate::model::MetricInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_namespace: std::option::Option<std::string::String>,

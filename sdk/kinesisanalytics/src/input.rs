@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_application_cloud_watch_logging_option_input {
     
     /// A builder for [`AddApplicationCloudWatchLoggingOptionInput`](crate::input::AddApplicationCloudWatchLoggingOptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -141,6 +142,7 @@ impl AddApplicationCloudWatchLoggingOptionInput {
 pub mod add_application_input_input {
     
     /// A builder for [`AddApplicationInputInput`](crate::input::AddApplicationInputInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -277,6 +279,7 @@ impl AddApplicationInputInput {
 pub mod add_application_input_processing_configuration_input {
     
     /// A builder for [`AddApplicationInputProcessingConfigurationInput`](crate::input::AddApplicationInputProcessingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -425,6 +428,7 @@ impl AddApplicationInputProcessingConfigurationInput {
 pub mod add_application_output_input {
     
     /// A builder for [`AddApplicationOutputInput`](crate::input::AddApplicationOutputInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -561,6 +565,7 @@ impl AddApplicationOutputInput {
 pub mod add_application_reference_data_source_input {
     
     /// A builder for [`AddApplicationReferenceDataSourceInput`](crate::input::AddApplicationReferenceDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -697,6 +702,7 @@ impl AddApplicationReferenceDataSourceInput {
 pub mod create_application_input {
     
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -921,6 +927,7 @@ impl CreateApplicationInput {
 pub mod delete_application_input {
     
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -1045,6 +1052,7 @@ impl DeleteApplicationInput {
 pub mod delete_application_cloud_watch_logging_option_input {
     
     /// A builder for [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::input::DeleteApplicationCloudWatchLoggingOptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -1181,6 +1189,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
 pub mod delete_application_input_processing_configuration_input {
     
     /// A builder for [`DeleteApplicationInputProcessingConfigurationInput`](crate::input::DeleteApplicationInputProcessingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -1317,6 +1326,7 @@ impl DeleteApplicationInputProcessingConfigurationInput {
 pub mod delete_application_output_input {
     
     /// A builder for [`DeleteApplicationOutputInput`](crate::input::DeleteApplicationOutputInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -1453,6 +1463,7 @@ impl DeleteApplicationOutputInput {
 pub mod delete_application_reference_data_source_input {
     
     /// A builder for [`DeleteApplicationReferenceDataSourceInput`](crate::input::DeleteApplicationReferenceDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -1589,6 +1600,7 @@ impl DeleteApplicationReferenceDataSourceInput {
 pub mod describe_application_input {
     
     /// A builder for [`DescribeApplicationInput`](crate::input::DescribeApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -1701,6 +1713,7 @@ impl DescribeApplicationInput {
 pub mod discover_input_schema_input {
     
     /// A builder for [`DiscoverInputSchemaInput`](crate::input::DiscoverInputSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1861,6 +1874,7 @@ impl DiscoverInputSchemaInput {
 pub mod list_applications_input {
     
     /// A builder for [`ListApplicationsInput`](crate::input::ListApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
@@ -1985,6 +1999,7 @@ impl ListApplicationsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2097,6 +2112,7 @@ impl ListTagsForResourceInput {
 pub mod start_application_input {
     
     /// A builder for [`StartApplicationInput`](crate::input::StartApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -2227,6 +2243,7 @@ impl StartApplicationInput {
 pub mod stop_application_input {
     
     /// A builder for [`StopApplicationInput`](crate::input::StopApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -2339,6 +2356,7 @@ impl StopApplicationInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2469,6 +2487,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2599,6 +2618,7 @@ impl UntagResourceInput {
 pub mod update_application_input {
     
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,

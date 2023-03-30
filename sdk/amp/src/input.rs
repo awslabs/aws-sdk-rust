@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_alert_manager_definition_input {
     
     /// A builder for [`CreateAlertManagerDefinitionInput`](crate::input::CreateAlertManagerDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -145,6 +146,7 @@ impl CreateAlertManagerDefinitionInput {
 pub mod create_logging_configuration_input {
     
     /// A builder for [`CreateLoggingConfigurationInput`](crate::input::CreateLoggingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -285,6 +287,7 @@ impl CreateLoggingConfigurationInput {
 pub mod create_rule_groups_namespace_input {
     
     /// A builder for [`CreateRuleGroupsNamespaceInput`](crate::input::CreateRuleGroupsNamespaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -455,6 +458,7 @@ impl CreateRuleGroupsNamespaceInput {
 pub mod create_workspace_input {
     
     /// A builder for [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<std::string::String>,
@@ -595,6 +599,7 @@ impl CreateWorkspaceInput {
 pub mod delete_alert_manager_definition_input {
     
     /// A builder for [`DeleteAlertManagerDefinitionInput`](crate::input::DeleteAlertManagerDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -729,6 +734,7 @@ impl DeleteAlertManagerDefinitionInput {
 pub mod delete_logging_configuration_input {
     
     /// A builder for [`DeleteLoggingConfigurationInput`](crate::input::DeleteLoggingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -863,6 +869,7 @@ impl DeleteLoggingConfigurationInput {
 pub mod delete_rule_groups_namespace_input {
     
     /// A builder for [`DeleteRuleGroupsNamespaceInput`](crate::input::DeleteRuleGroupsNamespaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1015,6 +1022,7 @@ impl DeleteRuleGroupsNamespaceInput {
 pub mod delete_workspace_input {
     
     /// A builder for [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1149,6 +1157,7 @@ impl DeleteWorkspaceInput {
 pub mod describe_alert_manager_definition_input {
     
     /// A builder for [`DescribeAlertManagerDefinitionInput`](crate::input::DescribeAlertManagerDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1258,6 +1267,7 @@ impl DescribeAlertManagerDefinitionInput {
 pub mod describe_logging_configuration_input {
     
     /// A builder for [`DescribeLoggingConfigurationInput`](crate::input::DescribeLoggingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1367,6 +1377,7 @@ impl DescribeLoggingConfigurationInput {
 pub mod describe_rule_groups_namespace_input {
     
     /// A builder for [`DescribeRuleGroupsNamespaceInput`](crate::input::DescribeRuleGroupsNamespaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1494,6 +1505,7 @@ impl DescribeRuleGroupsNamespaceInput {
 pub mod describe_workspace_input {
     
     /// A builder for [`DescribeWorkspaceInput`](crate::input::DescribeWorkspaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1603,6 +1615,7 @@ impl DescribeWorkspaceInput {
 pub mod list_rule_groups_namespaces_input {
     
     /// A builder for [`ListRuleGroupsNamespacesInput`](crate::input::ListRuleGroupsNamespacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1768,6 +1781,7 @@ impl ListRuleGroupsNamespacesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1877,6 +1891,7 @@ impl ListTagsForResourceInput {
 pub mod list_workspaces_input {
     
     /// A builder for [`ListWorkspacesInput`](crate::input::ListWorkspacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2024,6 +2039,7 @@ impl ListWorkspacesInput {
 pub mod put_alert_manager_definition_input {
     
     /// A builder for [`PutAlertManagerDefinitionInput`](crate::input::PutAlertManagerDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -2164,6 +2180,7 @@ impl PutAlertManagerDefinitionInput {
 pub mod put_rule_groups_namespace_input {
     
     /// A builder for [`PutRuleGroupsNamespaceInput`](crate::input::PutRuleGroupsNamespaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -2322,6 +2339,7 @@ impl PutRuleGroupsNamespaceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2453,6 +2471,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2590,6 +2609,7 @@ impl UntagResourceInput {
 pub mod update_logging_configuration_input {
     
     /// A builder for [`UpdateLoggingConfigurationInput`](crate::input::UpdateLoggingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -2730,6 +2750,7 @@ impl UpdateLoggingConfigurationInput {
 pub mod update_workspace_alias_input {
     
     /// A builder for [`UpdateWorkspaceAliasInput`](crate::input::UpdateWorkspaceAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_attribute_group_input {
     
     /// A builder for [`AssociateAttributeGroupInput`](crate::input::AssociateAttributeGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -132,6 +133,7 @@ impl AssociateAttributeGroupInput {
 pub mod associate_resource_input {
     
     /// A builder for [`AssociateResourceInput`](crate::input::AssociateResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -277,6 +279,7 @@ impl AssociateResourceInput {
 pub mod create_application_input {
     
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -429,6 +432,7 @@ impl CreateApplicationInput {
 pub mod create_attribute_group_input {
     
     /// A builder for [`CreateAttributeGroupInput`](crate::input::CreateAttributeGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -593,6 +597,7 @@ impl CreateAttributeGroupInput {
 pub mod delete_application_input {
     
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -702,6 +707,7 @@ impl DeleteApplicationInput {
 pub mod delete_attribute_group_input {
     
     /// A builder for [`DeleteAttributeGroupInput`](crate::input::DeleteAttributeGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_group: std::option::Option<std::string::String>,
@@ -811,6 +817,7 @@ impl DeleteAttributeGroupInput {
 pub mod disassociate_attribute_group_input {
     
     /// A builder for [`DisassociateAttributeGroupInput`](crate::input::DisassociateAttributeGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -938,6 +945,7 @@ impl DisassociateAttributeGroupInput {
 pub mod disassociate_resource_input {
     
     /// A builder for [`DisassociateResourceInput`](crate::input::DisassociateResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -1083,6 +1091,7 @@ impl DisassociateResourceInput {
 pub mod get_application_input {
     
     /// A builder for [`GetApplicationInput`](crate::input::GetApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -1192,6 +1201,7 @@ impl GetApplicationInput {
 pub mod get_associated_resource_input {
     
     /// A builder for [`GetAssociatedResourceInput`](crate::input::GetAssociatedResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -1337,6 +1347,7 @@ impl GetAssociatedResourceInput {
 pub mod get_attribute_group_input {
     
     /// A builder for [`GetAttributeGroupInput`](crate::input::GetAttributeGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_group: std::option::Option<std::string::String>,
@@ -1446,6 +1457,7 @@ impl GetAttributeGroupInput {
 pub mod get_configuration_input {
     
     /// A builder for [`GetConfigurationInput`](crate::input::GetConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1537,6 +1549,7 @@ impl GetConfigurationInput {
 pub mod list_applications_input {
     
     /// A builder for [`ListApplicationsInput`](crate::input::ListApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1667,6 +1680,7 @@ impl ListApplicationsInput {
 pub mod list_associated_attribute_groups_input {
     
     /// A builder for [`ListAssociatedAttributeGroupsInput`](crate::input::ListAssociatedAttributeGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -1815,6 +1829,7 @@ impl ListAssociatedAttributeGroupsInput {
 pub mod list_associated_resources_input {
     
     /// A builder for [`ListAssociatedResourcesInput`](crate::input::ListAssociatedResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -1963,6 +1978,7 @@ impl ListAssociatedResourcesInput {
 pub mod list_attribute_groups_input {
     
     /// A builder for [`ListAttributeGroupsInput`](crate::input::ListAttributeGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2093,6 +2109,7 @@ impl ListAttributeGroupsInput {
 pub mod list_attribute_groups_for_application_input {
     
     /// A builder for [`ListAttributeGroupsForApplicationInput`](crate::input::ListAttributeGroupsForApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -2241,6 +2258,7 @@ impl ListAttributeGroupsForApplicationInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2350,6 +2368,7 @@ impl ListTagsForResourceInput {
 pub mod put_configuration_input {
     
     /// A builder for [`PutConfigurationInput`](crate::input::PutConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::AppRegistryConfiguration>,
@@ -2457,6 +2476,7 @@ impl PutConfigurationInput {
 pub mod sync_resource_input {
     
     /// A builder for [`SyncResourceInput`](crate::input::SyncResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -2584,6 +2604,7 @@ impl SyncResourceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2715,6 +2736,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2852,6 +2874,7 @@ impl UntagResourceInput {
 pub mod update_application_input {
     
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
@@ -2991,6 +3014,7 @@ impl UpdateApplicationInput {
 pub mod update_attribute_group_input {
     
     /// A builder for [`UpdateAttributeGroupInput`](crate::input::UpdateAttributeGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_group: std::option::Option<std::string::String>,

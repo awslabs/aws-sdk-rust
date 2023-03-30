@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod complete_attachment_upload_input {
     
     /// A builder for [`CompleteAttachmentUploadInput`](crate::input::CompleteAttachmentUploadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -146,6 +147,7 @@ impl CompleteAttachmentUploadInput {
 pub mod create_participant_connection_input {
     
     /// A builder for [`CreateParticipantConnectionInput`](crate::input::CreateParticipantConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::vec::Vec<crate::model::ConnectionType>>,
@@ -286,6 +288,7 @@ impl CreateParticipantConnectionInput {
 pub mod disconnect_participant_input {
     
     /// A builder for [`DisconnectParticipantInput`](crate::input::DisconnectParticipantInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -409,6 +412,7 @@ impl DisconnectParticipantInput {
 pub mod get_attachment_input {
     
     /// A builder for [`GetAttachmentInput`](crate::input::GetAttachmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
@@ -529,6 +533,7 @@ impl GetAttachmentInput {
 pub mod get_transcript_input {
     
     /// A builder for [`GetTranscriptInput`](crate::input::GetTranscriptInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -709,6 +714,7 @@ impl GetTranscriptInput {
 pub mod send_event_input {
     
     /// A builder for [`SendEventInput`](crate::input::SendEventInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -870,6 +876,7 @@ impl SendEventInput {
 pub mod send_message_input {
     
     /// A builder for [`SendMessageInput`](crate::input::SendMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -1025,6 +1032,7 @@ impl SendMessageInput {
 pub mod start_attachment_upload_input {
     
     /// A builder for [`StartAttachmentUploadInput`](crate::input::StartAttachmentUploadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,

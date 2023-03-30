@@ -38,6 +38,7 @@ impl FailureInfo {
 pub mod failure_info {
     
     /// A builder for [`FailureInfo`](crate::model::FailureInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<i32>,
@@ -209,6 +210,7 @@ impl ResourceTagMapping {
 pub mod resource_tag_mapping {
     
     /// A builder for [`ResourceTagMapping`](crate::model::ResourceTagMapping).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -303,6 +305,7 @@ impl ComplianceDetails {
 pub mod compliance_details {
     
     /// A builder for [`ComplianceDetails`](crate::model::ComplianceDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) noncompliant_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -396,6 +399,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -465,6 +469,7 @@ impl TagFilter {
 pub mod tag_filter {
     
     /// A builder for [`TagFilter`](crate::model::TagFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -568,6 +573,7 @@ impl Summary {
 pub mod summary {
     
     /// A builder for [`Summary`](crate::model::Summary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_updated: std::option::Option<std::string::String>,

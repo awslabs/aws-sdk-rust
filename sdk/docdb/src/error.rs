@@ -164,6 +164,7 @@ impl std::error::Error for InvalidDbInstanceStateFault {}
 pub mod invalid_db_instance_state_fault {
     
     /// A builder for [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -224,6 +225,7 @@ impl std::error::Error for InvalidDbClusterStateFault {}
 pub mod invalid_db_cluster_state_fault {
     
     /// A builder for [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -284,6 +286,7 @@ impl std::error::Error for DbClusterNotFoundFault {}
 pub mod db_cluster_not_found_fault {
     
     /// A builder for [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -762,6 +765,7 @@ impl std::error::Error for StorageQuotaExceededFault {}
 pub mod storage_quota_exceeded_fault {
     
     /// A builder for [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -822,6 +826,7 @@ impl std::error::Error for KmsKeyNotAccessibleFault {}
 pub mod kms_key_not_accessible_fault {
     
     /// A builder for [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -882,6 +887,7 @@ impl std::error::Error for InvalidVpcNetworkStateFault {}
 pub mod invalid_vpc_network_state_fault {
     
     /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -942,6 +948,7 @@ impl std::error::Error for InvalidSubnet {}
 pub mod invalid_subnet {
     
     /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1002,6 +1009,7 @@ impl std::error::Error for InvalidRestoreFault {}
 pub mod invalid_restore_fault {
     
     /// A builder for [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1062,6 +1070,7 @@ impl std::error::Error for InvalidDbSnapshotStateFault {}
 pub mod invalid_db_snapshot_state_fault {
     
     /// A builder for [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1122,6 +1131,7 @@ impl std::error::Error for InvalidDbClusterSnapshotStateFault {}
 pub mod invalid_db_cluster_snapshot_state_fault {
     
     /// A builder for [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1182,6 +1192,7 @@ impl std::error::Error for InsufficientStorageClusterCapacityFault {}
 pub mod insufficient_storage_cluster_capacity_fault {
     
     /// A builder for [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1242,6 +1253,7 @@ impl std::error::Error for InsufficientDbClusterCapacityFault {}
 pub mod insufficient_db_cluster_capacity_fault {
     
     /// A builder for [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1302,6 +1314,7 @@ impl std::error::Error for DbSubnetGroupNotFoundFault {}
 pub mod db_subnet_group_not_found_fault {
     
     /// A builder for [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1362,6 +1375,7 @@ impl std::error::Error for DbClusterSnapshotNotFoundFault {}
 pub mod db_cluster_snapshot_not_found_fault {
     
     /// A builder for [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1422,6 +1436,7 @@ impl std::error::Error for DbClusterQuotaExceededFault {}
 pub mod db_cluster_quota_exceeded_fault {
     
     /// A builder for [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1482,6 +1497,7 @@ impl std::error::Error for DbClusterAlreadyExistsFault {}
 pub mod db_cluster_already_exists_fault {
     
     /// A builder for [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1811,6 +1827,7 @@ impl std::error::Error for DbSnapshotNotFoundFault {}
 pub mod db_snapshot_not_found_fault {
     
     /// A builder for [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1996,6 +2013,7 @@ impl std::error::Error for InvalidDbParameterGroupStateFault {}
 pub mod invalid_db_parameter_group_state_fault {
     
     /// A builder for [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2056,6 +2074,7 @@ impl std::error::Error for DbParameterGroupNotFoundFault {}
 pub mod db_parameter_group_not_found_fault {
     
     /// A builder for [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2253,6 +2272,7 @@ impl std::error::Error for DbInstanceNotFoundFault {}
 pub mod db_instance_not_found_fault {
     
     /// A builder for [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2438,6 +2458,7 @@ impl std::error::Error for SubscriptionNotFoundFault {}
 pub mod subscription_not_found_fault {
     
     /// A builder for [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2498,6 +2519,7 @@ impl std::error::Error for SourceNotFoundFault {}
 pub mod source_not_found_fault {
     
     /// A builder for [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2695,6 +2717,7 @@ impl std::error::Error for InvalidGlobalClusterStateFault {}
 pub mod invalid_global_cluster_state_fault {
     
     /// A builder for [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2755,6 +2778,7 @@ impl std::error::Error for GlobalClusterNotFoundFault {}
 pub mod global_cluster_not_found_fault {
     
     /// A builder for [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3238,6 +3262,7 @@ impl std::error::Error for SubscriptionCategoryNotFoundFault {}
 pub mod subscription_category_not_found_fault {
     
     /// A builder for [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3298,6 +3323,7 @@ impl std::error::Error for SnsTopicArnNotFoundFault {}
 pub mod sns_topic_arn_not_found_fault {
     
     /// A builder for [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3358,6 +3384,7 @@ impl std::error::Error for SnsNoAuthorizationFault {}
 pub mod sns_no_authorization_fault {
     
     /// A builder for [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3418,6 +3445,7 @@ impl std::error::Error for SnsInvalidTopicFault {}
 pub mod sns_invalid_topic_fault {
     
     /// A builder for [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3478,6 +3506,7 @@ impl std::error::Error for EventSubscriptionQuotaExceededFault {}
 pub mod event_subscription_quota_exceeded_fault {
     
     /// A builder for [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3699,6 +3728,7 @@ impl std::error::Error for SubnetAlreadyInUse {}
 pub mod subnet_already_in_use {
     
     /// A builder for [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3759,6 +3789,7 @@ impl std::error::Error for DbSubnetQuotaExceededFault {}
 pub mod db_subnet_quota_exceeded_fault {
     
     /// A builder for [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3819,6 +3850,7 @@ impl std::error::Error for DbSubnetGroupDoesNotCoverEnoughAZs {}
 pub mod db_subnet_group_does_not_cover_enough_a_zs {
     
     /// A builder for [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4137,6 +4169,7 @@ impl std::error::Error for StorageTypeNotSupportedFault {}
 pub mod storage_type_not_supported_fault {
     
     /// A builder for [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4197,6 +4230,7 @@ impl std::error::Error for InvalidDbSecurityGroupStateFault {}
 pub mod invalid_db_security_group_state_fault {
     
     /// A builder for [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4257,6 +4291,7 @@ impl std::error::Error for InsufficientDbInstanceCapacityFault {}
 pub mod insufficient_db_instance_capacity_fault {
     
     /// A builder for [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4317,6 +4352,7 @@ impl std::error::Error for DbUpgradeDependencyFailureFault {}
 pub mod db_upgrade_dependency_failure_fault {
     
     /// A builder for [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4377,6 +4413,7 @@ impl std::error::Error for DbSecurityGroupNotFoundFault {}
 pub mod db_security_group_not_found_fault {
     
     /// A builder for [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4437,6 +4474,7 @@ impl std::error::Error for DbInstanceAlreadyExistsFault {}
 pub mod db_instance_already_exists_fault {
     
     /// A builder for [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4497,6 +4535,7 @@ impl std::error::Error for CertificateNotFoundFault {}
 pub mod certificate_not_found_fault {
     
     /// A builder for [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4558,6 +4597,7 @@ impl std::error::Error for AuthorizationNotFoundFault {}
 pub mod authorization_not_found_fault {
     
     /// A builder for [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4755,6 +4795,7 @@ impl std::error::Error for SharedSnapshotQuotaExceededFault {}
 pub mod shared_snapshot_quota_exceeded_fault {
     
     /// A builder for [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5173,6 +5214,7 @@ impl std::error::Error for InvalidDbSubnetGroupStateFault {}
 pub mod invalid_db_subnet_group_state_fault {
     
     /// A builder for [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5233,6 +5275,7 @@ impl std::error::Error for DbClusterParameterGroupNotFoundFault {}
 pub mod db_cluster_parameter_group_not_found_fault {
     
     /// A builder for [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5680,6 +5723,7 @@ impl std::error::Error for ResourceNotFoundFault {}
 pub mod resource_not_found_fault {
     
     /// A builder for [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7625,6 +7669,7 @@ impl std::error::Error for InvalidEventSubscriptionStateFault {}
 pub mod invalid_event_subscription_state_fault {
     
     /// A builder for [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7822,6 +7867,7 @@ impl std::error::Error for InvalidDbSubnetStateFault {}
 pub mod invalid_db_subnet_state_fault {
     
     /// A builder for [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8043,6 +8089,7 @@ impl std::error::Error for SnapshotQuotaExceededFault {}
 pub mod snapshot_quota_exceeded_fault {
     
     /// A builder for [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8103,6 +8150,7 @@ impl std::error::Error for DbSnapshotAlreadyExistsFault {}
 pub mod db_snapshot_already_exists_fault {
     
     /// A builder for [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8574,6 +8622,7 @@ impl std::error::Error for DbClusterSnapshotAlreadyExistsFault {}
 pub mod db_cluster_snapshot_already_exists_fault {
     
     /// A builder for [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8783,6 +8832,7 @@ impl std::error::Error for GlobalClusterQuotaExceededFault {}
 pub mod global_cluster_quota_exceeded_fault {
     
     /// A builder for [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8843,6 +8893,7 @@ impl std::error::Error for GlobalClusterAlreadyExistsFault {}
 pub mod global_cluster_already_exists_fault {
     
     /// A builder for [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9088,6 +9139,7 @@ impl std::error::Error for SubscriptionAlreadyExistFault {}
 pub mod subscription_already_exist_fault {
     
     /// A builder for [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9309,6 +9361,7 @@ impl std::error::Error for DbSubnetGroupQuotaExceededFault {}
 pub mod db_subnet_group_quota_exceeded_fault {
     
     /// A builder for [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9369,6 +9422,7 @@ impl std::error::Error for DbSubnetGroupAlreadyExistsFault {}
 pub mod db_subnet_group_already_exists_fault {
     
     /// A builder for [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9711,6 +9765,7 @@ impl std::error::Error for InstanceQuotaExceededFault {}
 pub mod instance_quota_exceeded_fault {
     
     /// A builder for [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10057,6 +10112,7 @@ impl std::error::Error for DbParameterGroupQuotaExceededFault {}
 pub mod db_parameter_group_quota_exceeded_fault {
     
     /// A builder for [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10117,6 +10173,7 @@ impl std::error::Error for DbParameterGroupAlreadyExistsFault {}
 pub mod db_parameter_group_already_exists_fault {
     
     /// A builder for [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

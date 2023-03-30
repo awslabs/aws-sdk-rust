@@ -17,6 +17,7 @@ impl UpdateReportDefinitionOutput {
 pub mod update_report_definition_output {
     
     /// A builder for [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -67,6 +68,7 @@ impl PutReportDefinitionOutput {
 pub mod put_report_definition_output {
     
     /// A builder for [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -124,6 +126,7 @@ impl ListReportDefinitionsOutput {
 pub mod list_report_definitions_output {
     
     /// A builder for [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_definitions: std::option::Option<std::vec::Vec<crate::model::ReportDefinition>>,
@@ -192,6 +195,7 @@ impl ImportApplicationUsageOutput {
 pub mod import_application_usage_output {
     
     /// A builder for [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
@@ -284,6 +288,7 @@ impl GetReportDefinitionOutput {
 pub mod get_report_definition_output {
     
     /// A builder for [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -406,6 +411,7 @@ impl DeleteReportDefinitionOutput {
 pub mod delete_report_definition_output {
     
     /// A builder for [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,

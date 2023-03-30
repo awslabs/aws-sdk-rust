@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod activate_type_input {
     
     /// A builder for [`ActivateTypeInput`](crate::input::ActivateTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ThirdPartyType>,
@@ -242,6 +243,7 @@ impl ActivateTypeInput {
 pub mod batch_describe_type_configurations_input {
     
     /// A builder for [`BatchDescribeTypeConfigurationsInput`](crate::input::BatchDescribeTypeConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_configuration_identifiers: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
@@ -355,6 +357,7 @@ impl BatchDescribeTypeConfigurationsInput {
 pub mod cancel_update_stack_input {
     
     /// A builder for [`CancelUpdateStackInput`](crate::input::CancelUpdateStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -474,6 +477,7 @@ impl CancelUpdateStackInput {
 pub mod continue_update_rollback_input {
     
     /// A builder for [`ContinueUpdateRollbackInput`](crate::input::ContinueUpdateRollbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -641,6 +645,7 @@ impl ContinueUpdateRollbackInput {
 pub mod create_change_set_input {
     
     /// A builder for [`CreateChangeSetInput`](crate::input::CreateChangeSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -1032,6 +1037,7 @@ impl CreateChangeSetInput {
 pub mod create_stack_input {
     
     /// A builder for [`CreateStackInput`](crate::input::CreateStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -1425,6 +1431,7 @@ impl CreateStackInput {
 pub mod create_stack_instances_input {
     
     /// A builder for [`CreateStackInstancesInput`](crate::input::CreateStackInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -1675,6 +1682,7 @@ impl CreateStackInstancesInput {
 pub mod create_stack_set_input {
     
     /// A builder for [`CreateStackSetInput`](crate::input::CreateStackSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -2047,6 +2055,7 @@ impl CreateStackSetInput {
 pub mod deactivate_type_input {
     
     /// A builder for [`DeactivateTypeInput`](crate::input::DeactivateTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -2184,6 +2193,7 @@ impl DeactivateTypeInput {
 pub mod delete_change_set_input {
     
     /// A builder for [`DeleteChangeSetInput`](crate::input::DeleteChangeSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_name: std::option::Option<std::string::String>,
@@ -2303,6 +2313,7 @@ impl DeleteChangeSetInput {
 pub mod delete_stack_input {
     
     /// A builder for [`DeleteStackInput`](crate::input::DeleteStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -2460,6 +2471,7 @@ impl DeleteStackInput {
 pub mod delete_stack_instances_input {
     
     /// A builder for [`DeleteStackInstancesInput`](crate::input::DeleteStackInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -2689,6 +2701,7 @@ impl DeleteStackInstancesInput {
 pub mod delete_stack_set_input {
     
     /// A builder for [`DeleteStackSetInput`](crate::input::DeleteStackSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -2818,6 +2831,7 @@ impl DeleteStackSetInput {
 pub mod deregister_type_input {
     
     /// A builder for [`DeregisterTypeInput`](crate::input::DeregisterTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2967,6 +2981,7 @@ impl DeregisterTypeInput {
 pub mod describe_account_limits_input {
     
     /// A builder for [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3074,6 +3089,7 @@ impl DescribeAccountLimitsInput {
 pub mod describe_change_set_input {
     
     /// A builder for [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_name: std::option::Option<std::string::String>,
@@ -3205,6 +3221,7 @@ impl DescribeChangeSetInput {
 pub mod describe_change_set_hooks_input {
     
     /// A builder for [`DescribeChangeSetHooksInput`](crate::input::DescribeChangeSetHooksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_name: std::option::Option<std::string::String>,
@@ -3348,6 +3365,7 @@ impl DescribeChangeSetHooksInput {
 pub mod describe_publisher_input {
     
     /// A builder for [`DescribePublisherInput`](crate::input::DescribePublisherInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) publisher_id: std::option::Option<std::string::String>,
@@ -3457,6 +3475,7 @@ impl DescribePublisherInput {
 pub mod describe_stack_drift_detection_status_input {
     
     /// A builder for [`DescribeStackDriftDetectionStatusInput`](crate::input::DescribeStackDriftDetectionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_drift_detection_id: std::option::Option<std::string::String>,
@@ -3566,6 +3585,7 @@ impl DescribeStackDriftDetectionStatusInput {
 pub mod describe_stack_events_input {
     
     /// A builder for [`DescribeStackEventsInput`](crate::input::DescribeStackEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -3695,6 +3715,7 @@ impl DescribeStackEventsInput {
 pub mod describe_stack_instance_input {
     
     /// A builder for [`DescribeStackInstanceInput`](crate::input::DescribeStackInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -3848,6 +3869,7 @@ impl DescribeStackInstanceInput {
 pub mod describe_stack_resource_input {
     
     /// A builder for [`DescribeStackResourceInput`](crate::input::DescribeStackResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -3979,6 +4001,7 @@ impl DescribeStackResourceInput {
 pub mod describe_stack_resource_drifts_input {
     
     /// A builder for [`DescribeStackResourceDriftsInput`](crate::input::DescribeStackResourceDriftsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -4140,6 +4163,7 @@ impl DescribeStackResourceDriftsInput {
 pub mod describe_stack_resources_input {
     
     /// A builder for [`DescribeStackResourcesInput`](crate::input::DescribeStackResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -4291,6 +4315,7 @@ impl DescribeStackResourcesInput {
 pub mod describe_stacks_input {
     
     /// A builder for [`DescribeStacksInput`](crate::input::DescribeStacksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -4420,6 +4445,7 @@ impl DescribeStacksInput {
 pub mod describe_stack_set_input {
     
     /// A builder for [`DescribeStackSetInput`](crate::input::DescribeStackSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -4549,6 +4575,7 @@ impl DescribeStackSetInput {
 pub mod describe_stack_set_operation_input {
     
     /// A builder for [`DescribeStackSetOperationInput`](crate::input::DescribeStackSetOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -4690,6 +4717,7 @@ impl DescribeStackSetOperationInput {
 pub mod describe_type_input {
     
     /// A builder for [`DescribeTypeInput`](crate::input::DescribeTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RegistryType>,
@@ -4867,6 +4895,7 @@ impl DescribeTypeInput {
 pub mod describe_type_registration_input {
     
     /// A builder for [`DescribeTypeRegistrationInput`](crate::input::DescribeTypeRegistrationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registration_token: std::option::Option<std::string::String>,
@@ -4976,6 +5005,7 @@ impl DescribeTypeRegistrationInput {
 pub mod detect_stack_drift_input {
     
     /// A builder for [`DetectStackDriftInput`](crate::input::DetectStackDriftInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -5101,6 +5131,7 @@ impl DetectStackDriftInput {
 pub mod detect_stack_resource_drift_input {
     
     /// A builder for [`DetectStackResourceDriftInput`](crate::input::DetectStackResourceDriftInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -5220,6 +5251,7 @@ impl DetectStackResourceDriftInput {
 pub mod detect_stack_set_drift_input {
     
     /// A builder for [`DetectStackSetDriftInput`](crate::input::DetectStackSetDriftInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -5378,6 +5410,7 @@ impl DetectStackSetDriftInput {
 pub mod estimate_template_cost_input {
     
     /// A builder for [`EstimateTemplateCostInput`](crate::input::EstimateTemplateCostInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_body: std::option::Option<std::string::String>,
@@ -5519,6 +5552,7 @@ impl EstimateTemplateCostInput {
 pub mod execute_change_set_input {
     
     /// A builder for [`ExecuteChangeSetInput`](crate::input::ExecuteChangeSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_name: std::option::Option<std::string::String>,
@@ -5664,6 +5698,7 @@ impl ExecuteChangeSetInput {
 pub mod get_stack_policy_input {
     
     /// A builder for [`GetStackPolicyInput`](crate::input::GetStackPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -5771,6 +5806,7 @@ impl GetStackPolicyInput {
 pub mod get_template_input {
     
     /// A builder for [`GetTemplateInput`](crate::input::GetTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -5914,6 +5950,7 @@ impl GetTemplateInput {
 pub mod get_template_summary_input {
     
     /// A builder for [`GetTemplateSummaryInput`](crate::input::GetTemplateSummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_body: std::option::Option<std::string::String>,
@@ -6087,6 +6124,7 @@ impl GetTemplateSummaryInput {
 pub mod import_stacks_to_stack_set_input {
     
     /// A builder for [`ImportStacksToStackSetInput`](crate::input::ImportStacksToStackSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -6295,6 +6333,7 @@ impl ImportStacksToStackSetInput {
 pub mod list_change_sets_input {
     
     /// A builder for [`ListChangeSetsInput`](crate::input::ListChangeSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -6414,6 +6453,7 @@ impl ListChangeSetsInput {
 pub mod list_exports_input {
     
     /// A builder for [`ListExportsInput`](crate::input::ListExportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6521,6 +6561,7 @@ impl ListExportsInput {
 pub mod list_imports_input {
     
     /// A builder for [`ListImportsInput`](crate::input::ListImportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_name: std::option::Option<std::string::String>,
@@ -6640,6 +6681,7 @@ impl ListImportsInput {
 pub mod list_stack_instances_input {
     
     /// A builder for [`ListStackInstancesInput`](crate::input::ListStackInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -6835,6 +6877,7 @@ impl ListStackInstancesInput {
 pub mod list_stack_resources_input {
     
     /// A builder for [`ListStackResourcesInput`](crate::input::ListStackResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -6964,6 +7007,7 @@ impl ListStackResourcesInput {
 pub mod list_stacks_input {
     
     /// A builder for [`ListStacksInput`](crate::input::ListStacksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7089,6 +7133,7 @@ impl ListStacksInput {
 pub mod list_stack_set_operation_results_input {
     
     /// A builder for [`ListStackSetOperationResultsInput`](crate::input::ListStackSetOperationResultsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -7272,6 +7317,7 @@ impl ListStackSetOperationResultsInput {
 pub mod list_stack_set_operations_input {
     
     /// A builder for [`ListStackSetOperationsInput`](crate::input::ListStackSetOperationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -7425,6 +7471,7 @@ impl ListStackSetOperationsInput {
 pub mod list_stack_sets_input {
     
     /// A builder for [`ListStackSetsInput`](crate::input::ListStackSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7578,6 +7625,7 @@ impl ListStackSetsInput {
 pub mod list_type_registrations_input {
     
     /// A builder for [`ListTypeRegistrationsInput`](crate::input::ListTypeRegistrationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RegistryType>,
@@ -7753,6 +7801,7 @@ impl ListTypeRegistrationsInput {
 pub mod list_types_input {
     
     /// A builder for [`ListTypesInput`](crate::input::ListTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
@@ -7978,6 +8027,7 @@ impl ListTypesInput {
 pub mod list_type_versions_input {
     
     /// A builder for [`ListTypeVersionsInput`](crate::input::ListTypeVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RegistryType>,
@@ -8177,6 +8227,7 @@ impl ListTypeVersionsInput {
 pub mod publish_type_input {
     
     /// A builder for [`PublishTypeInput`](crate::input::PublishTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ThirdPartyType>,
@@ -8336,6 +8387,7 @@ impl PublishTypeInput {
 pub mod record_handler_progress_input {
     
     /// A builder for [`RecordHandlerProgressInput`](crate::input::RecordHandlerProgressInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bearer_token: std::option::Option<std::string::String>,
@@ -8515,6 +8567,7 @@ impl RecordHandlerProgressInput {
 pub mod register_publisher_input {
     
     /// A builder for [`RegisterPublisherInput`](crate::input::RegisterPublisherInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_terms_and_conditions: std::option::Option<bool>,
@@ -8638,6 +8691,7 @@ impl RegisterPublisherInput {
 pub mod register_type_input {
     
     /// A builder for [`RegisterTypeInput`](crate::input::RegisterTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RegistryType>,
@@ -8847,6 +8901,7 @@ impl RegisterTypeInput {
 pub mod rollback_stack_input {
     
     /// A builder for [`RollbackStackInput`](crate::input::RollbackStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -8978,6 +9033,7 @@ impl RollbackStackInput {
 pub mod set_stack_policy_input {
     
     /// A builder for [`SetStackPolicyInput`](crate::input::SetStackPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -9109,6 +9165,7 @@ impl SetStackPolicyInput {
 pub mod set_type_configuration_input {
     
     /// A builder for [`SetTypeConfigurationInput`](crate::input::SetTypeConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_arn: std::option::Option<std::string::String>,
@@ -9276,6 +9333,7 @@ impl SetTypeConfigurationInput {
 pub mod set_type_default_version_input {
     
     /// A builder for [`SetTypeDefaultVersionInput`](crate::input::SetTypeDefaultVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -9425,6 +9483,7 @@ impl SetTypeDefaultVersionInput {
 pub mod signal_resource_input {
     
     /// A builder for [`SignalResourceInput`](crate::input::SignalResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -9568,6 +9627,7 @@ impl SignalResourceInput {
 pub mod stop_stack_set_operation_input {
     
     /// A builder for [`StopStackSetOperationInput`](crate::input::StopStackSetOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -9709,6 +9769,7 @@ impl StopStackSetOperationInput {
 pub mod test_type_input {
     
     /// A builder for [`TestTypeInput`](crate::input::TestTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -9888,6 +9949,7 @@ impl TestTypeInput {
 pub mod update_stack_input {
     
     /// A builder for [`UpdateStackInput`](crate::input::UpdateStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -10285,6 +10347,7 @@ impl UpdateStackInput {
 pub mod update_stack_instances_input {
     
     /// A builder for [`UpdateStackInstancesInput`](crate::input::UpdateStackInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -10533,6 +10596,7 @@ impl UpdateStackInstancesInput {
 pub mod update_stack_set_input {
     
     /// A builder for [`UpdateStackSetInput`](crate::input::UpdateStackSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -10995,6 +11059,7 @@ impl UpdateStackSetInput {
 pub mod update_termination_protection_input {
     
     /// A builder for [`UpdateTerminationProtectionInput`](crate::input::UpdateTerminationProtectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_termination_protection: std::option::Option<bool>,
@@ -11114,6 +11179,7 @@ impl UpdateTerminationProtectionInput {
 pub mod validate_template_input {
     
     /// A builder for [`ValidateTemplateInput`](crate::input::ValidateTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_body: std::option::Option<std::string::String>,

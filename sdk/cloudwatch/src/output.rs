@@ -8,6 +8,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct StopMetricStreamsOutput  {
 pub mod stop_metric_streams_output {
     
     /// A builder for [`StopMetricStreamsOutput`](crate::output::StopMetricStreamsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -95,6 +98,7 @@ pub struct StartMetricStreamsOutput  {
 pub mod start_metric_streams_output {
     
     /// A builder for [`StartMetricStreamsOutput`](crate::output::StartMetricStreamsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -124,6 +128,7 @@ pub struct SetAlarmStateOutput  {
 pub mod set_alarm_state_output {
     
     /// A builder for [`SetAlarmStateOutput`](crate::output::SetAlarmStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -162,6 +167,7 @@ impl PutMetricStreamOutput {
 pub mod put_metric_stream_output {
     
     /// A builder for [`PutMetricStreamOutput`](crate::output::PutMetricStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -203,6 +209,7 @@ pub struct PutMetricDataOutput  {
 pub mod put_metric_data_output {
     
     /// A builder for [`PutMetricDataOutput`](crate::output::PutMetricDataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -232,6 +239,7 @@ pub struct PutMetricAlarmOutput  {
 pub mod put_metric_alarm_output {
     
     /// A builder for [`PutMetricAlarmOutput`](crate::output::PutMetricAlarmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -270,6 +278,7 @@ impl PutManagedInsightRulesOutput {
 pub mod put_managed_insight_rules_output {
     
     /// A builder for [`PutManagedInsightRulesOutput`](crate::output::PutManagedInsightRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
@@ -317,6 +326,7 @@ pub struct PutInsightRuleOutput  {
 pub mod put_insight_rule_output {
     
     /// A builder for [`PutInsightRuleOutput`](crate::output::PutInsightRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -359,6 +369,7 @@ impl PutDashboardOutput {
 pub mod put_dashboard_output {
     
     /// A builder for [`PutDashboardOutput`](crate::output::PutDashboardOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_validation_messages: std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
@@ -410,6 +421,7 @@ pub struct PutCompositeAlarmOutput  {
 pub mod put_composite_alarm_output {
     
     /// A builder for [`PutCompositeAlarmOutput`](crate::output::PutCompositeAlarmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -439,6 +451,7 @@ pub struct PutAnomalyDetectorOutput  {
 pub mod put_anomaly_detector_output {
     
     /// A builder for [`PutAnomalyDetectorOutput`](crate::output::PutAnomalyDetectorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -477,6 +490,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -540,6 +554,7 @@ impl ListMetricStreamsOutput {
 pub mod list_metric_streams_output {
     
     /// A builder for [`ListMetricStreamsOutput`](crate::output::ListMetricStreamsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -624,6 +639,7 @@ impl ListMetricsOutput {
 pub mod list_metrics_output {
     
     /// A builder for [`ListMetricsOutput`](crate::output::ListMetricsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metrics: std::option::Option<std::vec::Vec<crate::model::Metric>>,
@@ -719,6 +735,7 @@ impl ListManagedInsightRulesOutput {
 pub mod list_managed_insight_rules_output {
     
     /// A builder for [`ListManagedInsightRulesOutput`](crate::output::ListManagedInsightRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_rules: std::option::Option<std::vec::Vec<crate::model::ManagedRuleDescription>>,
@@ -794,6 +811,7 @@ impl ListDashboardsOutput {
 pub mod list_dashboards_output {
     
     /// A builder for [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_entries: std::option::Option<std::vec::Vec<crate::model::DashboardEntry>>,
@@ -862,6 +880,7 @@ impl GetMetricWidgetImageOutput {
 pub mod get_metric_widget_image_output {
     
     /// A builder for [`GetMetricWidgetImageOutput`](crate::output::GetMetricWidgetImageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_widget_image: std::option::Option<aws_smithy_types::Blob>,
@@ -989,6 +1008,7 @@ impl GetMetricStreamOutput {
 pub mod get_metric_stream_output {
     
     /// A builder for [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1196,6 +1216,7 @@ impl GetMetricStatisticsOutput {
 pub mod get_metric_statistics_output {
     
     /// A builder for [`GetMetricStatisticsOutput`](crate::output::GetMetricStatisticsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label: std::option::Option<std::string::String>,
@@ -1280,6 +1301,7 @@ impl GetMetricDataOutput {
 pub mod get_metric_data_output {
     
     /// A builder for [`GetMetricDataOutput`](crate::output::GetMetricDataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_data_results: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
@@ -1403,6 +1425,7 @@ impl GetInsightRuleReportOutput {
 pub mod get_insight_rule_report_output {
     
     /// A builder for [`GetInsightRuleReportOutput`](crate::output::GetInsightRuleReportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1545,6 +1568,7 @@ impl GetDashboardOutput {
 pub mod get_dashboard_output {
     
     /// A builder for [`GetDashboardOutput`](crate::output::GetDashboardOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_arn: std::option::Option<std::string::String>,
@@ -1619,6 +1643,7 @@ impl EnableInsightRulesOutput {
 pub mod enable_insight_rules_output {
     
     /// A builder for [`EnableInsightRulesOutput`](crate::output::EnableInsightRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
@@ -1666,6 +1691,7 @@ pub struct EnableAlarmActionsOutput  {
 pub mod enable_alarm_actions_output {
     
     /// A builder for [`EnableAlarmActionsOutput`](crate::output::EnableAlarmActionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1704,6 +1730,7 @@ impl DisableInsightRulesOutput {
 pub mod disable_insight_rules_output {
     
     /// A builder for [`DisableInsightRulesOutput`](crate::output::DisableInsightRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
@@ -1751,6 +1778,7 @@ pub struct DisableAlarmActionsOutput  {
 pub mod disable_alarm_actions_output {
     
     /// A builder for [`DisableAlarmActionsOutput`](crate::output::DisableAlarmActionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1796,6 +1824,7 @@ impl DescribeInsightRulesOutput {
 pub mod describe_insight_rules_output {
     
     /// A builder for [`DescribeInsightRulesOutput`](crate::output::DescribeInsightRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1871,6 +1900,7 @@ impl DescribeAnomalyDetectorsOutput {
 pub mod describe_anomaly_detectors_output {
     
     /// A builder for [`DescribeAnomalyDetectorsOutput`](crate::output::DescribeAnomalyDetectorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detectors: std::option::Option<std::vec::Vec<crate::model::AnomalyDetector>>,
@@ -1939,6 +1969,7 @@ impl DescribeAlarmsForMetricOutput {
 pub mod describe_alarms_for_metric_output {
     
     /// A builder for [`DescribeAlarmsForMetricOutput`](crate::output::DescribeAlarmsForMetricOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_alarms: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>,
@@ -2009,6 +2040,7 @@ impl DescribeAlarmsOutput {
 pub mod describe_alarms_output {
     
     /// A builder for [`DescribeAlarmsOutput`](crate::output::DescribeAlarmsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) composite_alarms: std::option::Option<std::vec::Vec<crate::model::CompositeAlarm>>,
@@ -2102,6 +2134,7 @@ impl DescribeAlarmHistoryOutput {
 pub mod describe_alarm_history_output {
     
     /// A builder for [`DescribeAlarmHistoryOutput`](crate::output::DescribeAlarmHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_history_items: std::option::Option<std::vec::Vec<crate::model::AlarmHistoryItem>>,
@@ -2161,6 +2194,7 @@ pub struct DeleteMetricStreamOutput  {
 pub mod delete_metric_stream_output {
     
     /// A builder for [`DeleteMetricStreamOutput`](crate::output::DeleteMetricStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2199,6 +2233,7 @@ impl DeleteInsightRulesOutput {
 pub mod delete_insight_rules_output {
     
     /// A builder for [`DeleteInsightRulesOutput`](crate::output::DeleteInsightRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
@@ -2246,6 +2281,7 @@ pub struct DeleteDashboardsOutput  {
 pub mod delete_dashboards_output {
     
     /// A builder for [`DeleteDashboardsOutput`](crate::output::DeleteDashboardsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2275,6 +2311,7 @@ pub struct DeleteAnomalyDetectorOutput  {
 pub mod delete_anomaly_detector_output {
     
     /// A builder for [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2304,6 +2341,7 @@ pub struct DeleteAlarmsOutput  {
 pub mod delete_alarms_output {
     
     /// A builder for [`DeleteAlarmsOutput`](crate::output::DeleteAlarmsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

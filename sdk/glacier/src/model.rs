@@ -25,6 +25,7 @@ impl VaultNotificationConfig {
 pub mod vault_notification_config {
     
     /// A builder for [`VaultNotificationConfig`](crate::model::VaultNotificationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns_topic: std::option::Option<std::string::String>,
@@ -93,6 +94,7 @@ impl VaultAccessPolicy {
 pub mod vault_access_policy {
     
     /// A builder for [`VaultAccessPolicy`](crate::model::VaultAccessPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -143,6 +145,7 @@ impl DataRetrievalPolicy {
 pub mod data_retrieval_policy {
     
     /// A builder for [`DataRetrievalPolicy`](crate::model::DataRetrievalPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::DataRetrievalRule>>,
@@ -210,6 +213,7 @@ impl DataRetrievalRule {
 pub mod data_retrieval_rule {
     
     /// A builder for [`DataRetrievalRule`](crate::model::DataRetrievalRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) strategy: std::option::Option<std::string::String>,
@@ -311,6 +315,7 @@ impl DescribeVaultOutput {
 pub mod describe_vault_output {
     
     /// A builder for [`DescribeVaultOutput`](crate::model::DescribeVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vault_arn: std::option::Option<std::string::String>,
@@ -437,6 +442,7 @@ impl ProvisionedCapacityDescription {
 pub mod provisioned_capacity_description {
     
     /// A builder for [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_id: std::option::Option<std::string::String>,
@@ -518,6 +524,7 @@ impl PartListElement {
 pub mod part_list_element {
     
     /// A builder for [`PartListElement`](crate::model::PartListElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) range_in_bytes: std::option::Option<std::string::String>,
@@ -608,6 +615,7 @@ impl UploadListElement {
 pub mod upload_list_element {
     
     /// A builder for [`UploadListElement`](crate::model::UploadListElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multipart_upload_id: std::option::Option<std::string::String>,
@@ -873,6 +881,7 @@ impl GlacierJobDescription {
 pub mod glacier_job_description {
     
     /// A builder for [`GlacierJobDescription`](crate::model::GlacierJobDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1190,6 +1199,7 @@ impl OutputLocation {
 pub mod output_location {
     
     /// A builder for [`OutputLocation`](crate::model::OutputLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Location>,
@@ -1289,6 +1299,7 @@ impl S3Location {
 pub mod s3_location {
     
     /// A builder for [`S3Location`](crate::model::S3Location).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -1535,6 +1546,7 @@ impl Grant {
 pub mod grant {
     
     /// A builder for [`Grant`](crate::model::Grant).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grantee: std::option::Option<crate::model::Grantee>,
@@ -1722,6 +1734,7 @@ impl Grantee {
 pub mod grantee {
     
     /// A builder for [`Grantee`](crate::model::Grantee).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
@@ -2028,6 +2041,7 @@ impl Encryption {
 pub mod encryption {
     
     /// A builder for [`Encryption`](crate::model::Encryption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -2205,6 +2219,7 @@ impl SelectParameters {
 pub mod select_parameters {
     
     /// A builder for [`SelectParameters`](crate::model::SelectParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_serialization: std::option::Option<crate::model::InputSerialization>,
@@ -2291,6 +2306,7 @@ impl OutputSerialization {
 pub mod output_serialization {
     
     /// A builder for [`OutputSerialization`](crate::model::OutputSerialization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) csv: std::option::Option<crate::model::CsvOutput>,
@@ -2369,6 +2385,7 @@ impl CsvOutput {
 pub mod csv_output {
     
     /// A builder for [`CsvOutput`](crate::model::CsvOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quote_fields: std::option::Option<crate::model::QuoteFields>,
@@ -2626,6 +2643,7 @@ impl InputSerialization {
 pub mod input_serialization {
     
     /// A builder for [`InputSerialization`](crate::model::InputSerialization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) csv: std::option::Option<crate::model::CsvInput>,
@@ -2711,6 +2729,7 @@ impl CsvInput {
 pub mod csv_input {
     
     /// A builder for [`CsvInput`](crate::model::CsvInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_header_info: std::option::Option<crate::model::FileHeaderInfo>,
@@ -2936,6 +2955,7 @@ impl InventoryRetrievalJobDescription {
 pub mod inventory_retrieval_job_description {
     
     /// A builder for [`InventoryRetrievalJobDescription`](crate::model::InventoryRetrievalJobDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
@@ -3208,6 +3228,7 @@ impl VaultLockPolicy {
 pub mod vault_lock_policy {
     
     /// A builder for [`VaultLockPolicy`](crate::model::VaultLockPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -3323,6 +3344,7 @@ impl JobParameters {
 pub mod job_parameters {
     
     /// A builder for [`JobParameters`](crate::model::JobParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
@@ -3504,6 +3526,7 @@ impl InventoryRetrievalJobInput {
 pub mod inventory_retrieval_job_input {
     
     /// A builder for [`InventoryRetrievalJobInput`](crate::model::InventoryRetrievalJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_date: std::option::Option<std::string::String>,

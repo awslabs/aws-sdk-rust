@@ -39,6 +39,7 @@ impl StrategyOption {
 pub mod strategy_option {
     
     /// A builder for [`StrategyOption`](crate::model::StrategyOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) strategy: std::option::Option<crate::model::Strategy>,
@@ -699,6 +700,7 @@ impl SourceCode {
 pub mod source_code {
     
     /// A builder for [`SourceCode`](crate::model::SourceCode).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_control: std::option::Option<crate::model::VersionControl>,
@@ -961,6 +963,7 @@ impl Group {
 pub mod group {
     
     /// A builder for [`Group`](crate::model::Group).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::GroupName>,
@@ -1278,6 +1281,7 @@ impl AssessmentTarget {
 pub mod assessment_target {
     
     /// A builder for [`AssessmentTarget`](crate::model::AssessmentTarget).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) condition: std::option::Option<crate::model::Condition>,
@@ -1544,6 +1548,7 @@ impl DatabasePreferences {
 pub mod database_preferences {
     
     /// A builder for [`DatabasePreferences`](crate::model::DatabasePreferences).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database_management_preference: std::option::Option<crate::model::DatabaseManagementPreference>,
@@ -1660,6 +1665,7 @@ impl NoDatabaseMigrationPreference {
 pub mod no_database_migration_preference {
     
     /// A builder for [`NoDatabaseMigrationPreference`](crate::model::NoDatabaseMigrationPreference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_database_engine: std::option::Option<std::vec::Vec<crate::model::TargetDatabaseEngine>>,
@@ -1838,6 +1844,7 @@ impl Homogeneous {
 pub mod homogeneous {
     
     /// A builder for [`Homogeneous`](crate::model::Homogeneous).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_database_engine: std::option::Option<std::vec::Vec<crate::model::HomogeneousTargetDatabaseEngine>>,
@@ -1971,6 +1978,7 @@ impl Heterogeneous {
 pub mod heterogeneous {
     
     /// A builder for [`Heterogeneous`](crate::model::Heterogeneous).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_database_engine: std::option::Option<std::vec::Vec<crate::model::HeterogeneousTargetDatabaseEngine>>,
@@ -2236,6 +2244,7 @@ impl ApplicationPreferences {
 pub mod application_preferences {
     
     /// A builder for [`ApplicationPreferences`](crate::model::ApplicationPreferences).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) management_preference: std::option::Option<crate::model::ManagementPreference>,
@@ -2340,6 +2349,7 @@ impl NoManagementPreference {
 pub mod no_management_preference {
     
     /// A builder for [`NoManagementPreference`](crate::model::NoManagementPreference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_destination: std::option::Option<std::vec::Vec<crate::model::NoPreferenceTargetDestination>>,
@@ -2498,6 +2508,7 @@ impl SelfManageResources {
 pub mod self_manage_resources {
     
     /// A builder for [`SelfManageResources`](crate::model::SelfManageResources).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_destination: std::option::Option<std::vec::Vec<crate::model::SelfManageTargetDestination>>,
@@ -2646,6 +2657,7 @@ impl AwsManagedResources {
 pub mod aws_managed_resources {
     
     /// A builder for [`AwsManagedResources`](crate::model::AwsManagedResources).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_destination: std::option::Option<std::vec::Vec<crate::model::AwsManagedTargetDestination>>,
@@ -2789,6 +2801,7 @@ impl PrioritizeBusinessGoals {
 pub mod prioritize_business_goals {
     
     /// A builder for [`PrioritizeBusinessGoals`](crate::model::PrioritizeBusinessGoals).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) business_goals: std::option::Option<crate::model::BusinessGoals>,
@@ -2860,6 +2873,7 @@ impl BusinessGoals {
 pub mod business_goals {
     
     /// A builder for [`BusinessGoals`](crate::model::BusinessGoals).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) speed_of_migration: std::option::Option<i32>,
@@ -3037,6 +3051,7 @@ impl ServerDetail {
 pub mod server_detail {
     
     /// A builder for [`ServerDetail`](crate::model::ServerDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3255,6 +3270,7 @@ impl ServerError {
 pub mod server_error {
     
     /// A builder for [`ServerError`](crate::model::ServerError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_error_category: std::option::Option<crate::model::ServerErrorCategory>,
@@ -3496,6 +3512,7 @@ impl S3Object {
 pub mod s3_object {
     
     /// A builder for [`S3Object`](crate::model::S3Object).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -3565,6 +3582,7 @@ impl StrategySummary {
 pub mod strategy_summary {
     
     /// A builder for [`StrategySummary`](crate::model::StrategySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) strategy: std::option::Option<crate::model::Strategy>,
@@ -3648,6 +3666,7 @@ impl SystemInfo {
 pub mod system_info {
     
     /// A builder for [`SystemInfo`](crate::model::SystemInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) os_info: std::option::Option<crate::model::OsInfo>,
@@ -3761,6 +3780,7 @@ impl NetworkInfo {
 pub mod network_info {
     
     /// A builder for [`NetworkInfo`](crate::model::NetworkInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interface_name: std::option::Option<std::string::String>,
@@ -3854,6 +3874,7 @@ impl OsInfo {
 pub mod os_info {
     
     /// A builder for [`OsInfo`](crate::model::OsInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::OsType>,
@@ -4005,6 +4026,7 @@ impl AntipatternSeveritySummary {
 pub mod antipattern_severity_summary {
     
     /// A builder for [`AntipatternSeveritySummary`](crate::model::AntipatternSeveritySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) severity: std::option::Option<crate::model::Severity>,
@@ -4275,6 +4297,7 @@ impl RecommendationSet {
 pub mod recommendation_set {
     
     /// A builder for [`RecommendationSet`](crate::model::RecommendationSet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transformation_tool: std::option::Option<crate::model::TransformationTool>,
@@ -4363,6 +4386,7 @@ impl TransformationTool {
 pub mod transformation_tool {
     
     /// A builder for [`TransformationTool`](crate::model::TransformationTool).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::TransformationToolName>,
@@ -4696,6 +4720,7 @@ impl ImportFileTaskInformation {
 pub mod import_file_task_information {
     
     /// A builder for [`ImportFileTaskInformation`](crate::model::ImportFileTaskInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5027,6 +5052,7 @@ impl Collector {
 pub mod collector {
     
     /// A builder for [`Collector`](crate::model::Collector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collector_id: std::option::Option<std::string::String>,
@@ -5189,6 +5215,7 @@ impl ConfigurationSummary {
 pub mod configuration_summary {
     
     /// A builder for [`ConfigurationSummary`](crate::model::ConfigurationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vcenter_based_remote_info_list: std::option::Option<std::vec::Vec<crate::model::VcenterBasedRemoteInfo>>,
@@ -5311,6 +5338,7 @@ impl RemoteSourceCodeAnalysisServerInfo {
 pub mod remote_source_code_analysis_server_info {
     
     /// A builder for [`RemoteSourceCodeAnalysisServerInfo`](crate::model::RemoteSourceCodeAnalysisServerInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) remote_source_code_analysis_server_configuration_timestamp: std::option::Option<std::string::String>,
@@ -5368,6 +5396,7 @@ impl PipelineInfo {
 pub mod pipeline_info {
     
     /// A builder for [`PipelineInfo`](crate::model::PipelineInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_type: std::option::Option<crate::model::PipelineType>,
@@ -5514,6 +5543,7 @@ impl VersionControlInfo {
 pub mod version_control_info {
     
     /// A builder for [`VersionControlInfo`](crate::model::VersionControlInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_control_type: std::option::Option<crate::model::VersionControlType>,
@@ -5677,6 +5707,7 @@ impl IpAddressBasedRemoteInfo {
 pub mod ip_address_based_remote_info {
     
     /// A builder for [`IpAddressBasedRemoteInfo`](crate::model::IpAddressBasedRemoteInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address_configuration_time_stamp: std::option::Option<std::string::String>,
@@ -5845,6 +5876,7 @@ impl VcenterBasedRemoteInfo {
 pub mod vcenter_based_remote_info {
     
     /// A builder for [`VcenterBasedRemoteInfo`](crate::model::VcenterBasedRemoteInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vcenter_configuration_time_stamp: std::option::Option<std::string::String>,
@@ -6136,6 +6168,7 @@ impl ApplicationComponentDetail {
 pub mod application_component_detail {
     
     /// A builder for [`ApplicationComponentDetail`](crate::model::ApplicationComponentDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6450,6 +6483,7 @@ impl AppUnitError {
 pub mod app_unit_error {
     
     /// A builder for [`AppUnitError`](crate::model::AppUnitError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_unit_error_category: std::option::Option<crate::model::AppUnitErrorCategory>,
@@ -6797,6 +6831,7 @@ impl SourceCodeRepository {
 pub mod source_code_repository {
     
     /// A builder for [`SourceCodeRepository`](crate::model::SourceCodeRepository).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<std::string::String>,
@@ -6883,6 +6918,7 @@ impl DatabaseConfigDetail {
 pub mod database_config_detail {
     
     /// A builder for [`DatabaseConfigDetail`](crate::model::DatabaseConfigDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_name: std::option::Option<std::string::String>,
@@ -7173,6 +7209,7 @@ impl ServerStrategy {
 pub mod server_strategy {
     
     /// A builder for [`ServerStrategy`](crate::model::ServerStrategy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation: std::option::Option<crate::model::RecommendationSet>,
@@ -7358,6 +7395,7 @@ impl AssociatedApplication {
 pub mod associated_application {
     
     /// A builder for [`AssociatedApplication`](crate::model::AssociatedApplication).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7455,6 +7493,7 @@ impl RecommendationReportDetails {
 pub mod recommendation_report_details {
     
     /// A builder for [`RecommendationReportDetails`](crate::model::RecommendationReportDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::RecommendationReportStatus>,
@@ -7728,6 +7767,7 @@ impl AssessmentSummary {
 pub mod assessment_summary {
     
     /// A builder for [`AssessmentSummary`](crate::model::AssessmentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_server_strategy_summary: std::option::Option<std::vec::Vec<crate::model::StrategySummary>>,
@@ -7947,6 +7987,7 @@ impl ServerStatusSummary {
 pub mod server_status_summary {
     
     /// A builder for [`ServerStatusSummary`](crate::model::ServerStatusSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) run_time_assessment_status: std::option::Option<crate::model::RunTimeAssessmentStatus>,
@@ -8016,6 +8057,7 @@ impl ApplicationComponentStatusSummary {
 pub mod application_component_status_summary {
     
     /// A builder for [`ApplicationComponentStatusSummary`](crate::model::ApplicationComponentStatusSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) src_code_or_db_analysis_status: std::option::Option<crate::model::SrcCodeOrDbAnalysisStatus>,
@@ -8085,6 +8127,7 @@ impl ServerSummary {
 pub mod server_summary {
     
     /// A builder for [`ServerSummary`](crate::model::ServerSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_os_type: std::option::Option<crate::model::ServerOsType>,
@@ -8251,6 +8294,7 @@ impl ApplicationComponentSummary {
 pub mod application_component_summary {
     
     /// A builder for [`ApplicationComponentSummary`](crate::model::ApplicationComponentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_type: std::option::Option<crate::model::AppType>,
@@ -8362,6 +8406,7 @@ impl DataCollectionDetails {
 pub mod data_collection_details {
     
     /// A builder for [`DataCollectionDetails`](crate::model::DataCollectionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AssessmentStatus>,
@@ -8602,6 +8647,7 @@ impl ApplicationComponentStrategy {
 pub mod application_component_strategy {
     
     /// A builder for [`ApplicationComponentStrategy`](crate::model::ApplicationComponentStrategy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation: std::option::Option<crate::model::RecommendationSet>,

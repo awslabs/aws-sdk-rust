@@ -36,6 +36,7 @@ impl CognitoIdentityProvider {
 pub mod cognito_identity_provider {
     
     /// A builder for [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -132,6 +133,7 @@ impl RoleMapping {
 pub mod role_mapping {
     
     /// A builder for [`RoleMapping`](crate::model::RoleMapping).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RoleMappingType>,
@@ -212,6 +214,7 @@ impl RulesConfigurationType {
 pub mod rules_configuration_type {
     
     /// A builder for [`RulesConfigurationType`](crate::model::RulesConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::MappingRule>>,
@@ -291,6 +294,7 @@ impl MappingRule {
 pub mod mapping_rule {
     
     /// A builder for [`MappingRule`](crate::model::MappingRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) claim: std::option::Option<std::string::String>,
@@ -640,6 +644,7 @@ impl IdentityPoolShortDescription {
 pub mod identity_pool_short_description {
     
     /// A builder for [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -723,6 +728,7 @@ impl IdentityDescription {
 pub mod identity_description {
     
     /// A builder for [`IdentityDescription`](crate::model::IdentityDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
@@ -836,6 +842,7 @@ impl Credentials {
 pub mod credentials {
     
     /// A builder for [`Credentials`](crate::model::Credentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -929,6 +936,7 @@ impl UnprocessedIdentityId {
 pub mod unprocessed_identity_id {
     
     /// A builder for [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,

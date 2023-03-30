@@ -113,6 +113,7 @@ impl  std::fmt::Debug for ContactInformation  {
 pub mod contact_information {
     
     /// A builder for [`ContactInformation`](crate::model::ContactInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) full_name: std::option::Option<std::string::String>,
@@ -439,6 +440,7 @@ impl  std::fmt::Debug for AlternateContact  {
 pub mod alternate_contact {
     
     /// A builder for [`AlternateContact`](crate::model::AlternateContact).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

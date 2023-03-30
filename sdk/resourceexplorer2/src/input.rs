@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_default_view_input {
     
     /// A builder for [`AssociateDefaultViewInput`](crate::input::AssociateDefaultViewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,
@@ -111,6 +112,7 @@ impl AssociateDefaultViewInput {
 pub mod batch_get_view_input {
     
     /// A builder for [`BatchGetViewInput`](crate::input::BatchGetViewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -223,6 +225,7 @@ impl BatchGetViewInput {
 pub mod create_index_input {
     
     /// A builder for [`CreateIndexInput`](crate::input::CreateIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -350,6 +353,7 @@ impl CreateIndexInput {
 pub mod create_view_input {
     
     /// A builder for [`CreateViewInput`](crate::input::CreateViewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -540,6 +544,7 @@ impl CreateViewInput {
 pub mod delete_index_input {
     
     /// A builder for [`DeleteIndexInput`](crate::input::DeleteIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -646,6 +651,7 @@ impl DeleteIndexInput {
 pub mod delete_view_input {
     
     /// A builder for [`DeleteViewInput`](crate::input::DeleteViewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,
@@ -752,6 +758,7 @@ impl DeleteViewInput {
 pub mod disassociate_default_view_input {
     
     /// A builder for [`DisassociateDefaultViewInput`](crate::input::DisassociateDefaultViewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -842,6 +849,7 @@ impl DisassociateDefaultViewInput {
 pub mod get_default_view_input {
     
     /// A builder for [`GetDefaultViewInput`](crate::input::GetDefaultViewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -932,6 +940,7 @@ impl GetDefaultViewInput {
 pub mod get_index_input {
     
     /// A builder for [`GetIndexInput`](crate::input::GetIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1022,6 +1031,7 @@ impl GetIndexInput {
 pub mod get_view_input {
     
     /// A builder for [`GetViewInput`](crate::input::GetViewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,
@@ -1128,6 +1138,7 @@ impl GetViewInput {
 pub mod list_indexes_input {
     
     /// A builder for [`ListIndexesInput`](crate::input::ListIndexesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::IndexType>,
@@ -1282,6 +1293,7 @@ impl ListIndexesInput {
 pub mod list_supported_resource_types_input {
     
     /// A builder for [`ListSupportedResourceTypesInput`](crate::input::ListSupportedResourceTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1404,6 +1416,7 @@ impl ListSupportedResourceTypesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1512,6 +1525,7 @@ impl ListTagsForResourceInput {
 pub mod list_views_input {
     
     /// A builder for [`ListViewsInput`](crate::input::ListViewsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1634,6 +1648,7 @@ impl ListViewsInput {
 pub mod search_input {
     
     /// A builder for [`SearchInput`](crate::input::SearchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -1798,6 +1813,7 @@ impl SearchInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1928,6 +1944,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2064,6 +2081,7 @@ impl UntagResourceInput {
 pub mod update_index_type_input {
     
     /// A builder for [`UpdateIndexTypeInput`](crate::input::UpdateIndexTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2182,6 +2200,7 @@ impl UpdateIndexTypeInput {
 pub mod update_view_input {
     
     /// A builder for [`UpdateViewInput`](crate::input::UpdateViewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,

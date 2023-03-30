@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_encryption_config_input {
     
     /// A builder for [`AssociateEncryptionConfigInput`](crate::input::AssociateEncryptionConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -151,6 +152,7 @@ impl AssociateEncryptionConfigInput {
 pub mod associate_identity_provider_config_input {
     
     /// A builder for [`AssociateIdentityProviderConfigInput`](crate::input::AssociateIdentityProviderConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -309,6 +311,7 @@ impl AssociateIdentityProviderConfigInput {
 pub mod create_addon_input {
     
     /// A builder for [`CreateAddonInput`](crate::input::CreateAddonInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -531,6 +534,7 @@ impl CreateAddonInput {
 pub mod create_cluster_input {
     
     /// A builder for [`CreateClusterInput`](crate::input::CreateClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -769,6 +773,7 @@ impl CreateClusterInput {
 pub mod create_fargate_profile_input {
     
     /// A builder for [`CreateFargateProfileInput`](crate::input::CreateFargateProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fargate_profile_name: std::option::Option<std::string::String>,
@@ -975,6 +980,7 @@ impl CreateFargateProfileInput {
 pub mod create_nodegroup_input {
     
     /// A builder for [`CreateNodegroupInput`](crate::input::CreateNodegroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -1327,6 +1333,7 @@ impl CreateNodegroupInput {
 pub mod delete_addon_input {
     
     /// A builder for [`DeleteAddonInput`](crate::input::DeleteAddonInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -1475,6 +1482,7 @@ impl DeleteAddonInput {
 pub mod delete_cluster_input {
     
     /// A builder for [`DeleteClusterInput`](crate::input::DeleteClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1584,6 +1592,7 @@ impl DeleteClusterInput {
 pub mod delete_fargate_profile_input {
     
     /// A builder for [`DeleteFargateProfileInput`](crate::input::DeleteFargateProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -1711,6 +1720,7 @@ impl DeleteFargateProfileInput {
 pub mod delete_nodegroup_input {
     
     /// A builder for [`DeleteNodegroupInput`](crate::input::DeleteNodegroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -1838,6 +1848,7 @@ impl DeleteNodegroupInput {
 pub mod deregister_cluster_input {
     
     /// A builder for [`DeregisterClusterInput`](crate::input::DeregisterClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1947,6 +1958,7 @@ impl DeregisterClusterInput {
 pub mod describe_addon_input {
     
     /// A builder for [`DescribeAddonInput`](crate::input::DescribeAddonInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -2074,6 +2086,7 @@ impl DescribeAddonInput {
 pub mod describe_addon_configuration_input {
     
     /// A builder for [`DescribeAddonConfigurationInput`](crate::input::DescribeAddonConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addon_name: std::option::Option<std::string::String>,
@@ -2206,6 +2219,7 @@ impl DescribeAddonConfigurationInput {
 pub mod describe_addon_versions_input {
     
     /// A builder for [`DescribeAddonVersionsInput`](crate::input::DescribeAddonVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kubernetes_version: std::option::Option<std::string::String>,
@@ -2449,6 +2463,7 @@ impl DescribeAddonVersionsInput {
 pub mod describe_cluster_input {
     
     /// A builder for [`DescribeClusterInput`](crate::input::DescribeClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2558,6 +2573,7 @@ impl DescribeClusterInput {
 pub mod describe_fargate_profile_input {
     
     /// A builder for [`DescribeFargateProfileInput`](crate::input::DescribeFargateProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -2685,6 +2701,7 @@ impl DescribeFargateProfileInput {
 pub mod describe_identity_provider_config_input {
     
     /// A builder for [`DescribeIdentityProviderConfigInput`](crate::input::DescribeIdentityProviderConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -2810,6 +2827,7 @@ impl DescribeIdentityProviderConfigInput {
 pub mod describe_nodegroup_input {
     
     /// A builder for [`DescribeNodegroupInput`](crate::input::DescribeNodegroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -2937,6 +2955,7 @@ impl DescribeNodegroupInput {
 pub mod describe_update_input {
     
     /// A builder for [`DescribeUpdateInput`](crate::input::DescribeUpdateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3103,6 +3122,7 @@ impl DescribeUpdateInput {
 pub mod disassociate_identity_provider_config_input {
     
     /// A builder for [`DisassociateIdentityProviderConfigInput`](crate::input::DisassociateIdentityProviderConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -3243,6 +3263,7 @@ impl DisassociateIdentityProviderConfigInput {
 pub mod list_addons_input {
     
     /// A builder for [`ListAddonsInput`](crate::input::ListAddonsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -3395,6 +3416,7 @@ impl ListAddonsInput {
 pub mod list_clusters_input {
     
     /// A builder for [`ListClustersInput`](crate::input::ListClustersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3554,6 +3576,7 @@ impl ListClustersInput {
 pub mod list_fargate_profiles_input {
     
     /// A builder for [`ListFargateProfilesInput`](crate::input::ListFargateProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -3702,6 +3725,7 @@ impl ListFargateProfilesInput {
 pub mod list_identity_provider_configs_input {
     
     /// A builder for [`ListIdentityProviderConfigsInput`](crate::input::ListIdentityProviderConfigsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -3850,6 +3874,7 @@ impl ListIdentityProviderConfigsInput {
 pub mod list_nodegroups_input {
     
     /// A builder for [`ListNodegroupsInput`](crate::input::ListNodegroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -3998,6 +4023,7 @@ impl ListNodegroupsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4107,6 +4133,7 @@ impl ListTagsForResourceInput {
 pub mod list_updates_input {
     
     /// A builder for [`ListUpdatesInput`](crate::input::ListUpdatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4289,6 +4316,7 @@ impl ListUpdatesInput {
 pub mod register_cluster_input {
     
     /// A builder for [`RegisterClusterInput`](crate::input::RegisterClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4441,6 +4469,7 @@ impl RegisterClusterInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4572,6 +4601,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4709,6 +4739,7 @@ impl UntagResourceInput {
 pub mod update_addon_input {
     
     /// A builder for [`UpdateAddonInput`](crate::input::UpdateAddonInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -4917,6 +4948,7 @@ impl UpdateAddonInput {
 pub mod update_cluster_config_input {
     
     /// A builder for [`UpdateClusterConfigInput`](crate::input::UpdateClusterConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5073,6 +5105,7 @@ impl UpdateClusterConfigInput {
 pub mod update_cluster_version_input {
     
     /// A builder for [`UpdateClusterVersionInput`](crate::input::UpdateClusterVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5213,6 +5246,7 @@ impl UpdateClusterVersionInput {
 pub mod update_nodegroup_config_input {
     
     /// A builder for [`UpdateNodegroupConfigInput`](crate::input::UpdateNodegroupConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -5407,6 +5441,7 @@ impl UpdateNodegroupConfigInput {
 pub mod update_nodegroup_version_input {
     
     /// A builder for [`UpdateNodegroupVersionInput`](crate::input::UpdateNodegroupVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,

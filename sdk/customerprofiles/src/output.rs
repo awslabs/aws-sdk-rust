@@ -17,6 +17,7 @@ impl UpdateProfileOutput {
 pub mod update_profile_output {
     
     /// A builder for [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
@@ -118,6 +119,7 @@ impl UpdateDomainOutput {
 pub mod update_domain_output {
     
     /// A builder for [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -251,6 +253,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -280,6 +283,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -325,6 +329,7 @@ impl SearchProfilesOutput {
 pub mod search_profiles_output {
     
     /// A builder for [`SearchProfilesOutput`](crate::output::SearchProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Profile>>,
@@ -470,6 +475,7 @@ impl PutProfileObjectTypeOutput {
 pub mod put_profile_object_type_output {
     
     /// A builder for [`PutProfileObjectTypeOutput`](crate::output::PutProfileObjectTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_type_name: std::option::Option<std::string::String>,
@@ -671,6 +677,7 @@ impl PutProfileObjectOutput {
 pub mod put_profile_object_output {
     
     /// A builder for [`PutProfileObjectOutput`](crate::output::PutProfileObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_object_unique_key: std::option::Option<std::string::String>,
@@ -777,6 +784,7 @@ impl PutIntegrationOutput {
 pub mod put_integration_output {
     
     /// A builder for [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -935,6 +943,7 @@ impl MergeProfilesOutput {
 pub mod merge_profiles_output {
     
     /// A builder for [`MergeProfilesOutput`](crate::output::MergeProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -992,6 +1001,7 @@ impl ListWorkflowsOutput {
 pub mod list_workflows_output {
     
     /// A builder for [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListWorkflowsItem>>,
@@ -1060,6 +1070,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1123,6 +1134,7 @@ impl ListProfileObjectTypeTemplatesOutput {
 pub mod list_profile_object_type_templates_output {
     
     /// A builder for [`ListProfileObjectTypeTemplatesOutput`](crate::output::ListProfileObjectTypeTemplatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeTemplateItem>>,
@@ -1198,6 +1210,7 @@ impl ListProfileObjectTypesOutput {
 pub mod list_profile_object_types_output {
     
     /// A builder for [`ListProfileObjectTypesOutput`](crate::output::ListProfileObjectTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeItem>>,
@@ -1273,6 +1286,7 @@ impl ListProfileObjectsOutput {
 pub mod list_profile_objects_output {
     
     /// A builder for [`ListProfileObjectsOutput`](crate::output::ListProfileObjectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectsItem>>,
@@ -1348,6 +1362,7 @@ impl ListIntegrationsOutput {
 pub mod list_integrations_output {
     
     /// A builder for [`ListIntegrationsOutput`](crate::output::ListIntegrationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>,
@@ -1423,6 +1438,7 @@ impl ListIdentityResolutionJobsOutput {
 pub mod list_identity_resolution_jobs_output {
     
     /// A builder for [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_resolution_jobs_list: std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
@@ -1498,6 +1514,7 @@ impl ListDomainsOutput {
 pub mod list_domains_output {
     
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListDomainItem>>,
@@ -1573,6 +1590,7 @@ impl ListAccountIntegrationsOutput {
 pub mod list_account_integrations_output {
     
     /// A builder for [`ListAccountIntegrationsOutput`](crate::output::ListAccountIntegrationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>,
@@ -1662,6 +1680,7 @@ impl GetWorkflowStepsOutput {
 pub mod get_workflow_steps_output {
     
     /// A builder for [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -1803,6 +1822,7 @@ impl GetWorkflowOutput {
 pub mod get_workflow_output {
     
     /// A builder for [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -1979,6 +1999,7 @@ impl GetProfileObjectTypeTemplateOutput {
 pub mod get_profile_object_type_template_output {
     
     /// A builder for [`GetProfileObjectTypeTemplateOutput`](crate::output::GetProfileObjectTypeTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -2191,6 +2212,7 @@ impl GetProfileObjectTypeOutput {
 pub mod get_profile_object_type_output {
     
     /// A builder for [`GetProfileObjectTypeOutput`](crate::output::GetProfileObjectTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_type_name: std::option::Option<std::string::String>,
@@ -2413,6 +2435,7 @@ impl GetMatchesOutput {
 pub mod get_matches_output {
     
     /// A builder for [`GetMatchesOutput`](crate::output::GetMatchesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2561,6 +2584,7 @@ impl GetIntegrationOutput {
 pub mod get_integration_output {
     
     /// A builder for [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2807,6 +2831,7 @@ impl GetIdentityResolutionJobOutput {
 pub mod get_identity_resolution_job_output {
     
     /// A builder for [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3053,6 +3078,7 @@ impl GetDomainOutput {
 pub mod get_domain_output {
     
     /// A builder for [`GetDomainOutput`](crate::output::GetDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3228,6 +3254,7 @@ impl GetAutoMergingPreviewOutput {
 pub mod get_auto_merging_preview_output {
     
     /// A builder for [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3308,6 +3335,7 @@ pub struct DeleteWorkflowOutput  {
 pub mod delete_workflow_output {
     
     /// A builder for [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3346,6 +3374,7 @@ impl DeleteProfileObjectTypeOutput {
 pub mod delete_profile_object_type_output {
     
     /// A builder for [`DeleteProfileObjectTypeOutput`](crate::output::DeleteProfileObjectTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3396,6 +3425,7 @@ impl DeleteProfileObjectOutput {
 pub mod delete_profile_object_output {
     
     /// A builder for [`DeleteProfileObjectOutput`](crate::output::DeleteProfileObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3446,6 +3476,7 @@ impl DeleteProfileKeyOutput {
 pub mod delete_profile_key_output {
     
     /// A builder for [`DeleteProfileKeyOutput`](crate::output::DeleteProfileKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3496,6 +3527,7 @@ impl DeleteProfileOutput {
 pub mod delete_profile_output {
     
     /// A builder for [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3546,6 +3578,7 @@ impl DeleteIntegrationOutput {
 pub mod delete_integration_output {
     
     /// A builder for [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3596,6 +3629,7 @@ impl DeleteDomainOutput {
 pub mod delete_domain_output {
     
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3646,6 +3680,7 @@ impl CreateProfileOutput {
 pub mod create_profile_output {
     
     /// A builder for [`CreateProfileOutput`](crate::output::CreateProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
@@ -3703,6 +3738,7 @@ impl CreateIntegrationWorkflowOutput {
 pub mod create_integration_workflow_output {
     
     /// A builder for [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -3816,6 +3852,7 @@ impl CreateDomainOutput {
 pub mod create_domain_output {
     
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3965,6 +4002,7 @@ impl AddProfileKeyOutput {
 pub mod add_profile_key_output {
     
     /// A builder for [`AddProfileKeyOutput`](crate::output::AddProfileKeyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_name: std::option::Option<std::string::String>,

@@ -17,6 +17,7 @@ impl UpdateVpcAttachmentOutput {
 pub mod update_vpc_attachment_output {
     
     /// A builder for [`UpdateVpcAttachmentOutput`](crate::output::UpdateVpcAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
@@ -67,6 +68,7 @@ impl UpdateSiteOutput {
 pub mod update_site_output {
     
     /// A builder for [`UpdateSiteOutput`](crate::output::UpdateSiteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site: std::option::Option<crate::model::Site>,
@@ -124,6 +126,7 @@ impl UpdateNetworkResourceMetadataOutput {
 pub mod update_network_resource_metadata_output {
     
     /// A builder for [`UpdateNetworkResourceMetadataOutput`](crate::output::UpdateNetworkResourceMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -192,6 +195,7 @@ impl UpdateLinkOutput {
 pub mod update_link_output {
     
     /// A builder for [`UpdateLinkOutput`](crate::output::UpdateLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link: std::option::Option<crate::model::Link>,
@@ -242,6 +246,7 @@ impl UpdateGlobalNetworkOutput {
 pub mod update_global_network_output {
     
     /// A builder for [`UpdateGlobalNetworkOutput`](crate::output::UpdateGlobalNetworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network: std::option::Option<crate::model::GlobalNetwork>,
@@ -292,6 +297,7 @@ impl UpdateDeviceOutput {
 pub mod update_device_output {
     
     /// A builder for [`UpdateDeviceOutput`](crate::output::UpdateDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device: std::option::Option<crate::model::Device>,
@@ -342,6 +348,7 @@ impl UpdateCoreNetworkOutput {
 pub mod update_core_network_output {
     
     /// A builder for [`UpdateCoreNetworkOutput`](crate::output::UpdateCoreNetworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network: std::option::Option<crate::model::CoreNetwork>,
@@ -392,6 +399,7 @@ impl UpdateConnectionOutput {
 pub mod update_connection_output {
     
     /// A builder for [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::Connection>,
@@ -433,6 +441,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -462,6 +471,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -500,6 +510,7 @@ impl StartRouteAnalysisOutput {
 pub mod start_route_analysis_output {
     
     /// A builder for [`StartRouteAnalysisOutput`](crate::output::StartRouteAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_analysis: std::option::Option<crate::model::RouteAnalysis>,
@@ -550,6 +561,7 @@ impl StartOrganizationServiceAccessUpdateOutput {
 pub mod start_organization_service_access_update_output {
     
     /// A builder for [`StartOrganizationServiceAccessUpdateOutput`](crate::output::StartOrganizationServiceAccessUpdateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_status: std::option::Option<crate::model::OrganizationStatus>,
@@ -600,6 +612,7 @@ impl RestoreCoreNetworkPolicyVersionOutput {
 pub mod restore_core_network_policy_version_output {
     
     /// A builder for [`RestoreCoreNetworkPolicyVersionOutput`](crate::output::RestoreCoreNetworkPolicyVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
@@ -650,6 +663,7 @@ impl RejectAttachmentOutput {
 pub mod reject_attachment_output {
     
     /// A builder for [`RejectAttachmentOutput`](crate::output::RejectAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
@@ -700,6 +714,7 @@ impl RegisterTransitGatewayOutput {
 pub mod register_transit_gateway_output {
     
     /// A builder for [`RegisterTransitGatewayOutput`](crate::output::RegisterTransitGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_registration: std::option::Option<crate::model::TransitGatewayRegistration>,
@@ -741,6 +756,7 @@ pub struct PutResourcePolicyOutput  {
 pub mod put_resource_policy_output {
     
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -779,6 +795,7 @@ impl PutCoreNetworkPolicyOutput {
 pub mod put_core_network_policy_output {
     
     /// A builder for [`PutCoreNetworkPolicyOutput`](crate::output::PutCoreNetworkPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
@@ -829,6 +846,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -892,6 +910,7 @@ impl ListPeeringsOutput {
 pub mod list_peerings_output {
     
     /// A builder for [`ListPeeringsOutput`](crate::output::ListPeeringsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peerings: std::option::Option<std::vec::Vec<crate::model::Peering>>,
@@ -967,6 +986,7 @@ impl ListOrganizationServiceAccessStatusOutput {
 pub mod list_organization_service_access_status_output {
     
     /// A builder for [`ListOrganizationServiceAccessStatusOutput`](crate::output::ListOrganizationServiceAccessStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_status: std::option::Option<crate::model::OrganizationStatus>,
@@ -1036,6 +1056,7 @@ impl ListCoreNetworksOutput {
 pub mod list_core_networks_output {
     
     /// A builder for [`ListCoreNetworksOutput`](crate::output::ListCoreNetworksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_networks: std::option::Option<std::vec::Vec<crate::model::CoreNetworkSummary>>,
@@ -1111,6 +1132,7 @@ impl ListCoreNetworkPolicyVersionsOutput {
 pub mod list_core_network_policy_versions_output {
     
     /// A builder for [`ListCoreNetworkPolicyVersionsOutput`](crate::output::ListCoreNetworkPolicyVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_policy_versions: std::option::Option<std::vec::Vec<crate::model::CoreNetworkPolicyVersion>>,
@@ -1186,6 +1208,7 @@ impl ListConnectPeersOutput {
 pub mod list_connect_peers_output {
     
     /// A builder for [`ListConnectPeersOutput`](crate::output::ListConnectPeersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peers: std::option::Option<std::vec::Vec<crate::model::ConnectPeerSummary>>,
@@ -1261,6 +1284,7 @@ impl ListAttachmentsOutput {
 pub mod list_attachments_output {
     
     /// A builder for [`ListAttachmentsOutput`](crate::output::ListAttachmentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
@@ -1329,6 +1353,7 @@ impl GetVpcAttachmentOutput {
 pub mod get_vpc_attachment_output {
     
     /// A builder for [`GetVpcAttachmentOutput`](crate::output::GetVpcAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
@@ -1379,6 +1404,7 @@ impl GetTransitGatewayRouteTableAttachmentOutput {
 pub mod get_transit_gateway_route_table_attachment_output {
     
     /// A builder for [`GetTransitGatewayRouteTableAttachmentOutput`](crate::output::GetTransitGatewayRouteTableAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_route_table_attachment: std::option::Option<crate::model::TransitGatewayRouteTableAttachment>,
@@ -1436,6 +1462,7 @@ impl GetTransitGatewayRegistrationsOutput {
 pub mod get_transit_gateway_registrations_output {
     
     /// A builder for [`GetTransitGatewayRegistrationsOutput`](crate::output::GetTransitGatewayRegistrationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_registrations: std::option::Option<std::vec::Vec<crate::model::TransitGatewayRegistration>>,
@@ -1504,6 +1531,7 @@ impl GetTransitGatewayPeeringOutput {
 pub mod get_transit_gateway_peering_output {
     
     /// A builder for [`GetTransitGatewayPeeringOutput`](crate::output::GetTransitGatewayPeeringOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_peering: std::option::Option<crate::model::TransitGatewayPeering>,
@@ -1561,6 +1589,7 @@ impl GetTransitGatewayConnectPeerAssociationsOutput {
 pub mod get_transit_gateway_connect_peer_associations_output {
     
     /// A builder for [`GetTransitGatewayConnectPeerAssociationsOutput`](crate::output::GetTransitGatewayConnectPeerAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_connect_peer_associations: std::option::Option<std::vec::Vec<crate::model::TransitGatewayConnectPeerAssociation>>,
@@ -1629,6 +1658,7 @@ impl GetSiteToSiteVpnAttachmentOutput {
 pub mod get_site_to_site_vpn_attachment_output {
     
     /// A builder for [`GetSiteToSiteVpnAttachmentOutput`](crate::output::GetSiteToSiteVpnAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_to_site_vpn_attachment: std::option::Option<crate::model::SiteToSiteVpnAttachment>,
@@ -1686,6 +1716,7 @@ impl GetSitesOutput {
 pub mod get_sites_output {
     
     /// A builder for [`GetSitesOutput`](crate::output::GetSitesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sites: std::option::Option<std::vec::Vec<crate::model::Site>>,
@@ -1754,6 +1785,7 @@ impl GetRouteAnalysisOutput {
 pub mod get_route_analysis_output {
     
     /// A builder for [`GetRouteAnalysisOutput`](crate::output::GetRouteAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_analysis: std::option::Option<crate::model::RouteAnalysis>,
@@ -1804,6 +1836,7 @@ impl GetResourcePolicyOutput {
 pub mod get_resource_policy_output {
     
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_document: std::option::Option<std::string::String>,
@@ -1861,6 +1894,7 @@ impl GetNetworkTelemetryOutput {
 pub mod get_network_telemetry_output {
     
     /// A builder for [`GetNetworkTelemetryOutput`](crate::output::GetNetworkTelemetryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_telemetry: std::option::Option<std::vec::Vec<crate::model::NetworkTelemetry>>,
@@ -1957,6 +1991,7 @@ impl GetNetworkRoutesOutput {
 pub mod get_network_routes_output {
     
     /// A builder for [`GetNetworkRoutesOutput`](crate::output::GetNetworkRoutesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_table_arn: std::option::Option<std::string::String>,
@@ -2068,6 +2103,7 @@ impl GetNetworkResourcesOutput {
 pub mod get_network_resources_output {
     
     /// A builder for [`GetNetworkResourcesOutput`](crate::output::GetNetworkResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_resources: std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
@@ -2143,6 +2179,7 @@ impl GetNetworkResourceRelationshipsOutput {
 pub mod get_network_resource_relationships_output {
     
     /// A builder for [`GetNetworkResourceRelationshipsOutput`](crate::output::GetNetworkResourceRelationshipsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relationships: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
@@ -2218,6 +2255,7 @@ impl GetNetworkResourceCountsOutput {
 pub mod get_network_resource_counts_output {
     
     /// A builder for [`GetNetworkResourceCountsOutput`](crate::output::GetNetworkResourceCountsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_resource_counts: std::option::Option<std::vec::Vec<crate::model::NetworkResourceCount>>,
@@ -2293,6 +2331,7 @@ impl GetLinksOutput {
 pub mod get_links_output {
     
     /// A builder for [`GetLinksOutput`](crate::output::GetLinksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) links: std::option::Option<std::vec::Vec<crate::model::Link>>,
@@ -2368,6 +2407,7 @@ impl GetLinkAssociationsOutput {
 pub mod get_link_associations_output {
     
     /// A builder for [`GetLinkAssociationsOutput`](crate::output::GetLinkAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link_associations: std::option::Option<std::vec::Vec<crate::model::LinkAssociation>>,
@@ -2443,6 +2483,7 @@ impl GetDevicesOutput {
 pub mod get_devices_output {
     
     /// A builder for [`GetDevicesOutput`](crate::output::GetDevicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
@@ -2518,6 +2559,7 @@ impl GetCustomerGatewayAssociationsOutput {
 pub mod get_customer_gateway_associations_output {
     
     /// A builder for [`GetCustomerGatewayAssociationsOutput`](crate::output::GetCustomerGatewayAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_gateway_associations: std::option::Option<std::vec::Vec<crate::model::CustomerGatewayAssociation>>,
@@ -2586,6 +2628,7 @@ impl GetCoreNetworkPolicyOutput {
 pub mod get_core_network_policy_output {
     
     /// A builder for [`GetCoreNetworkPolicyOutput`](crate::output::GetCoreNetworkPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
@@ -2643,6 +2686,7 @@ impl GetCoreNetworkChangeSetOutput {
 pub mod get_core_network_change_set_output {
     
     /// A builder for [`GetCoreNetworkChangeSetOutput`](crate::output::GetCoreNetworkChangeSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_changes: std::option::Option<std::vec::Vec<crate::model::CoreNetworkChange>>,
@@ -2718,6 +2762,7 @@ impl GetCoreNetworkChangeEventsOutput {
 pub mod get_core_network_change_events_output {
     
     /// A builder for [`GetCoreNetworkChangeEventsOutput`](crate::output::GetCoreNetworkChangeEventsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_change_events: std::option::Option<std::vec::Vec<crate::model::CoreNetworkChangeEvent>>,
@@ -2786,6 +2831,7 @@ impl GetCoreNetworkOutput {
 pub mod get_core_network_output {
     
     /// A builder for [`GetCoreNetworkOutput`](crate::output::GetCoreNetworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network: std::option::Option<crate::model::CoreNetwork>,
@@ -2843,6 +2889,7 @@ impl GetConnectPeerAssociationsOutput {
 pub mod get_connect_peer_associations_output {
     
     /// A builder for [`GetConnectPeerAssociationsOutput`](crate::output::GetConnectPeerAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peer_associations: std::option::Option<std::vec::Vec<crate::model::ConnectPeerAssociation>>,
@@ -2911,6 +2958,7 @@ impl GetConnectPeerOutput {
 pub mod get_connect_peer_output {
     
     /// A builder for [`GetConnectPeerOutput`](crate::output::GetConnectPeerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peer: std::option::Option<crate::model::ConnectPeer>,
@@ -2968,6 +3016,7 @@ impl GetConnectionsOutput {
 pub mod get_connections_output {
     
     /// A builder for [`GetConnectionsOutput`](crate::output::GetConnectionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -3036,6 +3085,7 @@ impl GetConnectAttachmentOutput {
 pub mod get_connect_attachment_output {
     
     /// A builder for [`GetConnectAttachmentOutput`](crate::output::GetConnectAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_attachment: std::option::Option<crate::model::ConnectAttachment>,
@@ -3077,6 +3127,7 @@ pub struct ExecuteCoreNetworkChangeSetOutput  {
 pub mod execute_core_network_change_set_output {
     
     /// A builder for [`ExecuteCoreNetworkChangeSetOutput`](crate::output::ExecuteCoreNetworkChangeSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3115,6 +3166,7 @@ impl DisassociateTransitGatewayConnectPeerOutput {
 pub mod disassociate_transit_gateway_connect_peer_output {
     
     /// A builder for [`DisassociateTransitGatewayConnectPeerOutput`](crate::output::DisassociateTransitGatewayConnectPeerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_connect_peer_association: std::option::Option<crate::model::TransitGatewayConnectPeerAssociation>,
@@ -3165,6 +3217,7 @@ impl DisassociateLinkOutput {
 pub mod disassociate_link_output {
     
     /// A builder for [`DisassociateLinkOutput`](crate::output::DisassociateLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link_association: std::option::Option<crate::model::LinkAssociation>,
@@ -3215,6 +3268,7 @@ impl DisassociateCustomerGatewayOutput {
 pub mod disassociate_customer_gateway_output {
     
     /// A builder for [`DisassociateCustomerGatewayOutput`](crate::output::DisassociateCustomerGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_gateway_association: std::option::Option<crate::model::CustomerGatewayAssociation>,
@@ -3265,6 +3319,7 @@ impl DisassociateConnectPeerOutput {
 pub mod disassociate_connect_peer_output {
     
     /// A builder for [`DisassociateConnectPeerOutput`](crate::output::DisassociateConnectPeerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peer_association: std::option::Option<crate::model::ConnectPeerAssociation>,
@@ -3322,6 +3377,7 @@ impl DescribeGlobalNetworksOutput {
 pub mod describe_global_networks_output {
     
     /// A builder for [`DescribeGlobalNetworksOutput`](crate::output::DescribeGlobalNetworksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_networks: std::option::Option<std::vec::Vec<crate::model::GlobalNetwork>>,
@@ -3390,6 +3446,7 @@ impl DeregisterTransitGatewayOutput {
 pub mod deregister_transit_gateway_output {
     
     /// A builder for [`DeregisterTransitGatewayOutput`](crate::output::DeregisterTransitGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_registration: std::option::Option<crate::model::TransitGatewayRegistration>,
@@ -3440,6 +3497,7 @@ impl DeleteSiteOutput {
 pub mod delete_site_output {
     
     /// A builder for [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site: std::option::Option<crate::model::Site>,
@@ -3481,6 +3539,7 @@ pub struct DeleteResourcePolicyOutput  {
 pub mod delete_resource_policy_output {
     
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3519,6 +3578,7 @@ impl DeletePeeringOutput {
 pub mod delete_peering_output {
     
     /// A builder for [`DeletePeeringOutput`](crate::output::DeletePeeringOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peering: std::option::Option<crate::model::Peering>,
@@ -3569,6 +3629,7 @@ impl DeleteLinkOutput {
 pub mod delete_link_output {
     
     /// A builder for [`DeleteLinkOutput`](crate::output::DeleteLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link: std::option::Option<crate::model::Link>,
@@ -3619,6 +3680,7 @@ impl DeleteGlobalNetworkOutput {
 pub mod delete_global_network_output {
     
     /// A builder for [`DeleteGlobalNetworkOutput`](crate::output::DeleteGlobalNetworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network: std::option::Option<crate::model::GlobalNetwork>,
@@ -3669,6 +3731,7 @@ impl DeleteDeviceOutput {
 pub mod delete_device_output {
     
     /// A builder for [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device: std::option::Option<crate::model::Device>,
@@ -3719,6 +3782,7 @@ impl DeleteCoreNetworkPolicyVersionOutput {
 pub mod delete_core_network_policy_version_output {
     
     /// A builder for [`DeleteCoreNetworkPolicyVersionOutput`](crate::output::DeleteCoreNetworkPolicyVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
@@ -3769,6 +3833,7 @@ impl DeleteCoreNetworkOutput {
 pub mod delete_core_network_output {
     
     /// A builder for [`DeleteCoreNetworkOutput`](crate::output::DeleteCoreNetworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network: std::option::Option<crate::model::CoreNetwork>,
@@ -3819,6 +3884,7 @@ impl DeleteConnectPeerOutput {
 pub mod delete_connect_peer_output {
     
     /// A builder for [`DeleteConnectPeerOutput`](crate::output::DeleteConnectPeerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peer: std::option::Option<crate::model::ConnectPeer>,
@@ -3869,6 +3935,7 @@ impl DeleteConnectionOutput {
 pub mod delete_connection_output {
     
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::Connection>,
@@ -3919,6 +3986,7 @@ impl DeleteAttachmentOutput {
 pub mod delete_attachment_output {
     
     /// A builder for [`DeleteAttachmentOutput`](crate::output::DeleteAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
@@ -3969,6 +4037,7 @@ impl CreateVpcAttachmentOutput {
 pub mod create_vpc_attachment_output {
     
     /// A builder for [`CreateVpcAttachmentOutput`](crate::output::CreateVpcAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
@@ -4019,6 +4088,7 @@ impl CreateTransitGatewayRouteTableAttachmentOutput {
 pub mod create_transit_gateway_route_table_attachment_output {
     
     /// A builder for [`CreateTransitGatewayRouteTableAttachmentOutput`](crate::output::CreateTransitGatewayRouteTableAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_route_table_attachment: std::option::Option<crate::model::TransitGatewayRouteTableAttachment>,
@@ -4069,6 +4139,7 @@ impl CreateTransitGatewayPeeringOutput {
 pub mod create_transit_gateway_peering_output {
     
     /// A builder for [`CreateTransitGatewayPeeringOutput`](crate::output::CreateTransitGatewayPeeringOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_peering: std::option::Option<crate::model::TransitGatewayPeering>,
@@ -4119,6 +4190,7 @@ impl CreateSiteToSiteVpnAttachmentOutput {
 pub mod create_site_to_site_vpn_attachment_output {
     
     /// A builder for [`CreateSiteToSiteVpnAttachmentOutput`](crate::output::CreateSiteToSiteVpnAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_to_site_vpn_attachment: std::option::Option<crate::model::SiteToSiteVpnAttachment>,
@@ -4169,6 +4241,7 @@ impl CreateSiteOutput {
 pub mod create_site_output {
     
     /// A builder for [`CreateSiteOutput`](crate::output::CreateSiteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site: std::option::Option<crate::model::Site>,
@@ -4219,6 +4292,7 @@ impl CreateLinkOutput {
 pub mod create_link_output {
     
     /// A builder for [`CreateLinkOutput`](crate::output::CreateLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link: std::option::Option<crate::model::Link>,
@@ -4269,6 +4343,7 @@ impl CreateGlobalNetworkOutput {
 pub mod create_global_network_output {
     
     /// A builder for [`CreateGlobalNetworkOutput`](crate::output::CreateGlobalNetworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network: std::option::Option<crate::model::GlobalNetwork>,
@@ -4319,6 +4394,7 @@ impl CreateDeviceOutput {
 pub mod create_device_output {
     
     /// A builder for [`CreateDeviceOutput`](crate::output::CreateDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device: std::option::Option<crate::model::Device>,
@@ -4369,6 +4445,7 @@ impl CreateCoreNetworkOutput {
 pub mod create_core_network_output {
     
     /// A builder for [`CreateCoreNetworkOutput`](crate::output::CreateCoreNetworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network: std::option::Option<crate::model::CoreNetwork>,
@@ -4419,6 +4496,7 @@ impl CreateConnectPeerOutput {
 pub mod create_connect_peer_output {
     
     /// A builder for [`CreateConnectPeerOutput`](crate::output::CreateConnectPeerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peer: std::option::Option<crate::model::ConnectPeer>,
@@ -4469,6 +4547,7 @@ impl CreateConnectionOutput {
 pub mod create_connection_output {
     
     /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::Connection>,
@@ -4519,6 +4598,7 @@ impl CreateConnectAttachmentOutput {
 pub mod create_connect_attachment_output {
     
     /// A builder for [`CreateConnectAttachmentOutput`](crate::output::CreateConnectAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_attachment: std::option::Option<crate::model::ConnectAttachment>,
@@ -4569,6 +4649,7 @@ impl AssociateTransitGatewayConnectPeerOutput {
 pub mod associate_transit_gateway_connect_peer_output {
     
     /// A builder for [`AssociateTransitGatewayConnectPeerOutput`](crate::output::AssociateTransitGatewayConnectPeerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_connect_peer_association: std::option::Option<crate::model::TransitGatewayConnectPeerAssociation>,
@@ -4619,6 +4700,7 @@ impl AssociateLinkOutput {
 pub mod associate_link_output {
     
     /// A builder for [`AssociateLinkOutput`](crate::output::AssociateLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link_association: std::option::Option<crate::model::LinkAssociation>,
@@ -4669,6 +4751,7 @@ impl AssociateCustomerGatewayOutput {
 pub mod associate_customer_gateway_output {
     
     /// A builder for [`AssociateCustomerGatewayOutput`](crate::output::AssociateCustomerGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_gateway_association: std::option::Option<crate::model::CustomerGatewayAssociation>,
@@ -4719,6 +4802,7 @@ impl AssociateConnectPeerOutput {
 pub mod associate_connect_peer_output {
     
     /// A builder for [`AssociateConnectPeerOutput`](crate::output::AssociateConnectPeerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peer_association: std::option::Option<crate::model::ConnectPeerAssociation>,
@@ -4769,6 +4853,7 @@ impl AcceptAttachmentOutput {
 pub mod accept_attachment_output {
     
     /// A builder for [`AcceptAttachmentOutput`](crate::output::AcceptAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,

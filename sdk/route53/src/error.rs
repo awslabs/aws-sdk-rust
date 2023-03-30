@@ -188,6 +188,7 @@ impl std::error::Error for PriorRequestNotComplete {}
 pub mod prior_request_not_complete {
     
     /// A builder for [`PriorRequestNotComplete`](crate::error::PriorRequestNotComplete).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -248,6 +249,7 @@ impl std::error::Error for NoSuchTrafficPolicyInstance {}
 pub mod no_such_traffic_policy_instance {
     
     /// A builder for [`NoSuchTrafficPolicyInstance`](crate::error::NoSuchTrafficPolicyInstance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -308,6 +310,7 @@ impl std::error::Error for NoSuchTrafficPolicy {}
 pub mod no_such_traffic_policy {
     
     /// A builder for [`NoSuchTrafficPolicy`](crate::error::NoSuchTrafficPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -368,6 +371,7 @@ impl std::error::Error for InvalidInput {}
 pub mod invalid_input {
     
     /// A builder for [`InvalidInput`](crate::error::InvalidInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -428,6 +432,7 @@ impl std::error::Error for ConflictingTypes {}
 pub mod conflicting_types {
     
     /// A builder for [`ConflictingTypes`](crate::error::ConflictingTypes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -625,6 +630,7 @@ impl std::error::Error for ConcurrentModification {}
 pub mod concurrent_modification {
     
     /// A builder for [`ConcurrentModification`](crate::error::ConcurrentModification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -822,6 +828,7 @@ impl std::error::Error for NoSuchHostedZone {}
 pub mod no_such_hosted_zone {
     
     /// A builder for [`NoSuchHostedZone`](crate::error::NoSuchHostedZone).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1019,6 +1026,7 @@ impl std::error::Error for NoSuchHealthCheck {}
 pub mod no_such_health_check {
     
     /// A builder for [`NoSuchHealthCheck`](crate::error::NoSuchHealthCheck).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1079,6 +1087,7 @@ impl std::error::Error for HealthCheckVersionMismatch {}
 pub mod health_check_version_mismatch {
     
     /// A builder for [`HealthCheckVersionMismatch`](crate::error::HealthCheckVersionMismatch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1401,6 +1410,7 @@ impl std::error::Error for InvalidPaginationToken {}
 pub mod invalid_pagination_token {
     
     /// A builder for [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2259,6 +2269,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
     
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3105,6 +3116,7 @@ impl std::error::Error for InvalidDomainName {}
 pub mod invalid_domain_name {
     
     /// A builder for [`InvalidDomainName`](crate::error::InvalidDomainName).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3302,6 +3314,7 @@ impl std::error::Error for NoSuchDelegationSet {}
 pub mod no_such_delegation_set {
     
     /// A builder for [`NoSuchDelegationSet`](crate::error::NoSuchDelegationSet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3362,6 +3375,7 @@ impl std::error::Error for DelegationSetNotReusable {}
 pub mod delegation_set_not_reusable {
     
     /// A builder for [`DelegationSetNotReusable`](crate::error::DelegationSetNotReusable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3547,6 +3561,7 @@ impl std::error::Error for IncompatibleVersion {}
 pub mod incompatible_version {
     
     /// A builder for [`IncompatibleVersion`](crate::error::IncompatibleVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3845,6 +3860,7 @@ impl std::error::Error for NoSuchCidrCollectionException {}
 pub mod no_such_cidr_collection_exception {
     
     /// A builder for [`NoSuchCidrCollectionException`](crate::error::NoSuchCidrCollectionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4155,6 +4171,7 @@ impl std::error::Error for NoSuchCidrLocationException {}
 pub mod no_such_cidr_location_exception {
     
     /// A builder for [`NoSuchCidrLocationException`](crate::error::NoSuchCidrLocationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4953,6 +4970,7 @@ impl std::error::Error for NoSuchQueryLoggingConfig {}
 pub mod no_such_query_logging_config {
     
     /// A builder for [`NoSuchQueryLoggingConfig`](crate::error::NoSuchQueryLoggingConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5150,6 +5168,7 @@ impl std::error::Error for HostedZoneNotPrivate {}
 pub mod hosted_zone_not_private {
     
     /// A builder for [`HostedZoneNotPrivate`](crate::error::HostedZoneNotPrivate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6061,6 +6080,7 @@ impl std::error::Error for NoSuchGeoLocation {}
 pub mod no_such_geo_location {
     
     /// A builder for [`NoSuchGeoLocation`](crate::error::NoSuchGeoLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6258,6 +6278,7 @@ impl std::error::Error for InvalidArgument {}
 pub mod invalid_argument {
     
     /// A builder for [`InvalidArgument`](crate::error::InvalidArgument).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6544,6 +6565,7 @@ impl std::error::Error for NoSuchChange {}
 pub mod no_such_change {
     
     /// A builder for [`NoSuchChange`](crate::error::NoSuchChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6926,6 +6948,7 @@ impl std::error::Error for KeySigningKeyWithActiveStatusNotFound {}
 pub mod key_signing_key_with_active_status_not_found {
     
     /// A builder for [`KeySigningKeyWithActiveStatusNotFound`](crate::error::KeySigningKeyWithActiveStatusNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6986,6 +7009,7 @@ impl std::error::Error for InvalidKmsArn {}
 pub mod invalid_kms_arn {
     
     /// A builder for [`InvalidKmsArn`](crate::error::InvalidKmsArn).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7046,6 +7070,7 @@ impl std::error::Error for InvalidKeySigningKeyStatus {}
 pub mod invalid_key_signing_key_status {
     
     /// A builder for [`InvalidKeySigningKeyStatus`](crate::error::InvalidKeySigningKeyStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7106,6 +7131,7 @@ impl std::error::Error for HostedZonePartiallyDelegated {}
 pub mod hosted_zone_partially_delegated {
     
     /// A builder for [`HostedZonePartiallyDelegated`](crate::error::HostedZonePartiallyDelegated).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7166,6 +7192,7 @@ impl std::error::Error for DnssecNotFound {}
 pub mod dnssec_not_found {
     
     /// A builder for [`DnssecNotFound`](crate::error::DnssecNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7387,6 +7414,7 @@ impl std::error::Error for VpcAssociationNotFound {}
 pub mod vpc_association_not_found {
     
     /// A builder for [`VpcAssociationNotFound`](crate::error::VpcAssociationNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7447,6 +7475,7 @@ impl std::error::Error for LastVpcAssociation {}
 pub mod last_vpc_association {
     
     /// A builder for [`LastVpcAssociation`](crate::error::LastVpcAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7507,6 +7536,7 @@ impl std::error::Error for InvalidVpcId {}
 pub mod invalid_vpc_id {
     
     /// A builder for [`InvalidVpcId`](crate::error::InvalidVpcId).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7764,6 +7794,7 @@ impl std::error::Error for KeySigningKeyInParentDsRecord {}
 pub mod key_signing_key_in_parent_ds_record {
     
     /// A builder for [`KeySigningKeyInParentDsRecord`](crate::error::KeySigningKeyInParentDsRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7985,6 +8016,7 @@ impl std::error::Error for VpcAssociationAuthorizationNotFound {}
 pub mod vpc_association_authorization_not_found {
     
     /// A builder for [`VpcAssociationAuthorizationNotFound`](crate::error::VpcAssociationAuthorizationNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8331,6 +8363,7 @@ impl std::error::Error for TrafficPolicyInUse {}
 pub mod traffic_policy_in_use {
     
     /// A builder for [`TrafficPolicyInUse`](crate::error::TrafficPolicyInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8540,6 +8573,7 @@ impl std::error::Error for DelegationSetInUse {}
 pub mod delegation_set_in_use {
     
     /// A builder for [`DelegationSetInUse`](crate::error::DelegationSetInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8910,6 +8944,7 @@ impl std::error::Error for NoSuchKeySigningKey {}
 pub mod no_such_key_signing_key {
     
     /// A builder for [`NoSuchKeySigningKey`](crate::error::NoSuchKeySigningKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8970,6 +9005,7 @@ impl std::error::Error for InvalidSigningStatus {}
 pub mod invalid_signing_status {
     
     /// A builder for [`InvalidSigningStatus`](crate::error::InvalidSigningStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9191,6 +9227,7 @@ impl std::error::Error for HostedZoneNotEmpty {}
 pub mod hosted_zone_not_empty {
     
     /// A builder for [`HostedZoneNotEmpty`](crate::error::HostedZoneNotEmpty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9390,6 +9427,7 @@ impl std::error::Error for HealthCheckInUse {}
 pub mod health_check_in_use {
     
     /// A builder for [`HealthCheckInUse`](crate::error::HealthCheckInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9599,6 +9637,7 @@ impl std::error::Error for CidrCollectionInUseException {}
 pub mod cidr_collection_in_use_exception {
     
     /// A builder for [`CidrCollectionInUseException`](crate::error::CidrCollectionInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9844,6 +9883,7 @@ impl std::error::Error for KeySigningKeyInUse {}
 pub mod key_signing_key_in_use {
     
     /// A builder for [`KeySigningKeyInUse`](crate::error::KeySigningKeyInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10065,6 +10105,7 @@ impl std::error::Error for TooManyVpcAssociationAuthorizations {}
 pub mod too_many_vpc_association_authorizations {
     
     /// A builder for [`TooManyVpcAssociationAuthorizations`](crate::error::TooManyVpcAssociationAuthorizations).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10288,6 +10329,7 @@ impl std::error::Error for TooManyTrafficPolicyVersionsForCurrentPolicy {}
 pub mod too_many_traffic_policy_versions_for_current_policy {
     
     /// A builder for [`TooManyTrafficPolicyVersionsForCurrentPolicy`](crate::error::TooManyTrafficPolicyVersionsForCurrentPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10348,6 +10390,7 @@ impl std::error::Error for InvalidTrafficPolicyDocument {}
 pub mod invalid_traffic_policy_document {
     
     /// A builder for [`InvalidTrafficPolicyDocument`](crate::error::InvalidTrafficPolicyDocument).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10572,6 +10615,7 @@ impl std::error::Error for TrafficPolicyInstanceAlreadyExists {}
 pub mod traffic_policy_instance_already_exists {
     
     /// A builder for [`TrafficPolicyInstanceAlreadyExists`](crate::error::TrafficPolicyInstanceAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10635,6 +10679,7 @@ impl std::error::Error for TooManyTrafficPolicyInstances {}
 pub mod too_many_traffic_policy_instances {
     
     /// A builder for [`TooManyTrafficPolicyInstances`](crate::error::TooManyTrafficPolicyInstances).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10847,6 +10892,7 @@ impl std::error::Error for TrafficPolicyAlreadyExists {}
 pub mod traffic_policy_already_exists {
     
     /// A builder for [`TrafficPolicyAlreadyExists`](crate::error::TrafficPolicyAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10910,6 +10956,7 @@ impl std::error::Error for TooManyTrafficPolicies {}
 pub mod too_many_traffic_policies {
     
     /// A builder for [`TooManyTrafficPolicies`](crate::error::TooManyTrafficPolicies).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11155,6 +11202,7 @@ impl std::error::Error for LimitsExceeded {}
 pub mod limits_exceeded {
     
     /// A builder for [`LimitsExceeded`](crate::error::LimitsExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11215,6 +11263,7 @@ impl std::error::Error for HostedZoneNotFound {}
 pub mod hosted_zone_not_found {
     
     /// A builder for [`HostedZoneNotFound`](crate::error::HostedZoneNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11275,6 +11324,7 @@ impl std::error::Error for DelegationSetNotAvailable {}
 pub mod delegation_set_not_available {
     
     /// A builder for [`DelegationSetNotAvailable`](crate::error::DelegationSetNotAvailable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11335,6 +11385,7 @@ impl std::error::Error for DelegationSetAlreadyReusable {}
 pub mod delegation_set_already_reusable {
     
     /// A builder for [`DelegationSetAlreadyReusable`](crate::error::DelegationSetAlreadyReusable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11395,6 +11446,7 @@ impl std::error::Error for DelegationSetAlreadyCreated {}
 pub mod delegation_set_already_created {
     
     /// A builder for [`DelegationSetAlreadyCreated`](crate::error::DelegationSetAlreadyCreated).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11635,6 +11687,7 @@ impl std::error::Error for QueryLoggingConfigAlreadyExists {}
 pub mod query_logging_config_already_exists {
     
     /// A builder for [`QueryLoggingConfigAlreadyExists`](crate::error::QueryLoggingConfigAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11695,6 +11748,7 @@ impl std::error::Error for NoSuchCloudWatchLogsLogGroup {}
 pub mod no_such_cloud_watch_logs_log_group {
     
     /// A builder for [`NoSuchCloudWatchLogsLogGroup`](crate::error::NoSuchCloudWatchLogsLogGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11762,6 +11816,7 @@ impl std::error::Error for InsufficientCloudWatchLogsResourcePolicy {}
 pub mod insufficient_cloud_watch_logs_resource_policy {
     
     /// A builder for [`InsufficientCloudWatchLogsResourcePolicy`](crate::error::InsufficientCloudWatchLogsResourcePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12043,6 +12098,7 @@ impl std::error::Error for TooManyKeySigningKeys {}
 pub mod too_many_key_signing_keys {
     
     /// A builder for [`TooManyKeySigningKeys`](crate::error::TooManyKeySigningKeys).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12103,6 +12159,7 @@ impl std::error::Error for KeySigningKeyAlreadyExists {}
 pub mod key_signing_key_already_exists {
     
     /// A builder for [`KeySigningKeyAlreadyExists`](crate::error::KeySigningKeyAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12163,6 +12220,7 @@ impl std::error::Error for InvalidKeySigningKeyName {}
 pub mod invalid_key_signing_key_name {
     
     /// A builder for [`InvalidKeySigningKeyName`](crate::error::InvalidKeySigningKeyName).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12445,6 +12503,7 @@ impl std::error::Error for TooManyHostedZones {}
 pub mod too_many_hosted_zones {
     
     /// A builder for [`TooManyHostedZones`](crate::error::TooManyHostedZones).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12505,6 +12564,7 @@ impl std::error::Error for HostedZoneAlreadyExists {}
 pub mod hosted_zone_already_exists {
     
     /// A builder for [`HostedZoneAlreadyExists`](crate::error::HostedZoneAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12570,6 +12630,7 @@ impl std::error::Error for ConflictingDomainExists {}
 pub mod conflicting_domain_exists {
     
     /// A builder for [`ConflictingDomainExists`](crate::error::ConflictingDomainExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12777,6 +12838,7 @@ impl std::error::Error for TooManyHealthChecks {}
 pub mod too_many_health_checks {
     
     /// A builder for [`TooManyHealthChecks`](crate::error::TooManyHealthChecks).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12841,6 +12903,7 @@ impl std::error::Error for HealthCheckAlreadyExists {}
 pub mod health_check_already_exists {
     
     /// A builder for [`HealthCheckAlreadyExists`](crate::error::HealthCheckAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -13050,6 +13113,7 @@ impl std::error::Error for CidrCollectionAlreadyExistsException {}
 pub mod cidr_collection_already_exists_exception {
     
     /// A builder for [`CidrCollectionAlreadyExistsException`](crate::error::CidrCollectionAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -13441,6 +13505,7 @@ impl std::error::Error for InvalidChangeBatch {}
 pub mod invalid_change_batch {
     
     /// A builder for [`InvalidChangeBatch`](crate::error::InvalidChangeBatch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) messages: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13692,6 +13757,7 @@ impl std::error::Error for CidrCollectionVersionMismatchException {}
 pub mod cidr_collection_version_mismatch_exception {
     
     /// A builder for [`CidrCollectionVersionMismatchException`](crate::error::CidrCollectionVersionMismatchException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -13752,6 +13818,7 @@ impl std::error::Error for CidrBlockInUseException {}
 pub mod cidr_block_in_use_exception {
     
     /// A builder for [`CidrBlockInUseException`](crate::error::CidrBlockInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14014,6 +14081,7 @@ impl std::error::Error for PublicZoneVpcAssociation {}
 pub mod public_zone_vpc_association {
     
     /// A builder for [`PublicZoneVpcAssociation`](crate::error::PublicZoneVpcAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14074,6 +14142,7 @@ impl std::error::Error for NotAuthorizedException {}
 pub mod not_authorized_exception {
     
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

@@ -8,6 +8,7 @@ pub struct UpdateAutoScalingGroupOutput  {
 pub mod update_auto_scaling_group_output {
     
     /// A builder for [`UpdateAutoScalingGroupOutput`](crate::output::UpdateAutoScalingGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -46,6 +47,7 @@ impl TerminateInstanceInAutoScalingGroupOutput {
 pub mod terminate_instance_in_auto_scaling_group_output {
     
     /// A builder for [`TerminateInstanceInAutoScalingGroupOutput`](crate::output::TerminateInstanceInAutoScalingGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity: std::option::Option<crate::model::Activity>,
@@ -87,6 +89,7 @@ pub struct SuspendProcessesOutput  {
 pub mod suspend_processes_output {
     
     /// A builder for [`SuspendProcessesOutput`](crate::output::SuspendProcessesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -125,6 +128,7 @@ impl StartInstanceRefreshOutput {
 pub mod start_instance_refresh_output {
     
     /// A builder for [`StartInstanceRefreshOutput`](crate::output::StartInstanceRefreshOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_refresh_id: std::option::Option<std::string::String>,
@@ -166,6 +170,7 @@ pub struct SetInstanceProtectionOutput  {
 pub mod set_instance_protection_output {
     
     /// A builder for [`SetInstanceProtectionOutput`](crate::output::SetInstanceProtectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -195,6 +200,7 @@ pub struct SetInstanceHealthOutput  {
 pub mod set_instance_health_output {
     
     /// A builder for [`SetInstanceHealthOutput`](crate::output::SetInstanceHealthOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -224,6 +230,7 @@ pub struct SetDesiredCapacityOutput  {
 pub mod set_desired_capacity_output {
     
     /// A builder for [`SetDesiredCapacityOutput`](crate::output::SetDesiredCapacityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -253,6 +260,7 @@ pub struct ResumeProcessesOutput  {
 pub mod resume_processes_output {
     
     /// A builder for [`ResumeProcessesOutput`](crate::output::ResumeProcessesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -282,6 +290,7 @@ pub struct RecordLifecycleActionHeartbeatOutput  {
 pub mod record_lifecycle_action_heartbeat_output {
     
     /// A builder for [`RecordLifecycleActionHeartbeatOutput`](crate::output::RecordLifecycleActionHeartbeatOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -311,6 +320,7 @@ pub struct PutWarmPoolOutput  {
 pub mod put_warm_pool_output {
     
     /// A builder for [`PutWarmPoolOutput`](crate::output::PutWarmPoolOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -340,6 +350,7 @@ pub struct PutScheduledUpdateGroupActionOutput  {
 pub mod put_scheduled_update_group_action_output {
     
     /// A builder for [`PutScheduledUpdateGroupActionOutput`](crate::output::PutScheduledUpdateGroupActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -385,6 +396,7 @@ impl PutScalingPolicyOutput {
 pub mod put_scaling_policy_output {
     
     /// A builder for [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -444,6 +456,7 @@ pub struct PutNotificationConfigurationOutput  {
 pub mod put_notification_configuration_output {
     
     /// A builder for [`PutNotificationConfigurationOutput`](crate::output::PutNotificationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -473,6 +486,7 @@ pub struct PutLifecycleHookOutput  {
 pub mod put_lifecycle_hook_output {
     
     /// A builder for [`PutLifecycleHookOutput`](crate::output::PutLifecycleHookOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -525,6 +539,7 @@ impl GetPredictiveScalingForecastOutput {
 pub mod get_predictive_scaling_forecast_output {
     
     /// A builder for [`GetPredictiveScalingForecastOutput`](crate::output::GetPredictiveScalingForecastOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_forecast: std::option::Option<std::vec::Vec<crate::model::LoadForecast>>,
@@ -605,6 +620,7 @@ impl ExitStandbyOutput {
 pub mod exit_standby_output {
     
     /// A builder for [`ExitStandbyOutput`](crate::output::ExitStandbyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
@@ -652,6 +668,7 @@ pub struct ExecutePolicyOutput  {
 pub mod execute_policy_output {
     
     /// A builder for [`ExecutePolicyOutput`](crate::output::ExecutePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -690,6 +707,7 @@ impl EnterStandbyOutput {
 pub mod enter_standby_output {
     
     /// A builder for [`EnterStandbyOutput`](crate::output::EnterStandbyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
@@ -737,6 +755,7 @@ pub struct EnableMetricsCollectionOutput  {
 pub mod enable_metrics_collection_output {
     
     /// A builder for [`EnableMetricsCollectionOutput`](crate::output::EnableMetricsCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -766,6 +785,7 @@ pub struct DisableMetricsCollectionOutput  {
 pub mod disable_metrics_collection_output {
     
     /// A builder for [`DisableMetricsCollectionOutput`](crate::output::DisableMetricsCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -795,6 +815,7 @@ pub struct DetachTrafficSourcesOutput  {
 pub mod detach_traffic_sources_output {
     
     /// A builder for [`DetachTrafficSourcesOutput`](crate::output::DetachTrafficSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -824,6 +845,7 @@ pub struct DetachLoadBalancerTargetGroupsOutput  {
 pub mod detach_load_balancer_target_groups_output {
     
     /// A builder for [`DetachLoadBalancerTargetGroupsOutput`](crate::output::DetachLoadBalancerTargetGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -853,6 +875,7 @@ pub struct DetachLoadBalancersOutput  {
 pub mod detach_load_balancers_output {
     
     /// A builder for [`DetachLoadBalancersOutput`](crate::output::DetachLoadBalancersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -891,6 +914,7 @@ impl DetachInstancesOutput {
 pub mod detach_instances_output {
     
     /// A builder for [`DetachInstancesOutput`](crate::output::DetachInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
@@ -961,6 +985,7 @@ impl DescribeWarmPoolOutput {
 pub mod describe_warm_pool_output {
     
     /// A builder for [`DescribeWarmPoolOutput`](crate::output::DescribeWarmPoolOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) warm_pool_configuration: std::option::Option<crate::model::WarmPoolConfiguration>,
@@ -1048,6 +1073,7 @@ impl DescribeTrafficSourcesOutput {
 pub mod describe_traffic_sources_output {
     
     /// A builder for [`DescribeTrafficSourcesOutput`](crate::output::DescribeTrafficSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_sources: std::option::Option<std::vec::Vec<crate::model::TrafficSourceState>>,
@@ -1116,6 +1142,7 @@ impl DescribeTerminationPolicyTypesOutput {
 pub mod describe_termination_policy_types_output {
     
     /// A builder for [`DescribeTerminationPolicyTypesOutput`](crate::output::DescribeTerminationPolicyTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) termination_policy_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1179,6 +1206,7 @@ impl DescribeTagsOutput {
 pub mod describe_tags_output {
     
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
@@ -1254,6 +1282,7 @@ impl DescribeScheduledActionsOutput {
 pub mod describe_scheduled_actions_output {
     
     /// A builder for [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_update_group_actions: std::option::Option<std::vec::Vec<crate::model::ScheduledUpdateGroupAction>>,
@@ -1322,6 +1351,7 @@ impl DescribeScalingProcessTypesOutput {
 pub mod describe_scaling_process_types_output {
     
     /// A builder for [`DescribeScalingProcessTypesOutput`](crate::output::DescribeScalingProcessTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) processes: std::option::Option<std::vec::Vec<crate::model::ProcessType>>,
@@ -1385,6 +1415,7 @@ impl DescribeScalingActivitiesOutput {
 pub mod describe_scaling_activities_output {
     
     /// A builder for [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
@@ -1460,6 +1491,7 @@ impl DescribePoliciesOutput {
 pub mod describe_policies_output {
     
     /// A builder for [`DescribePoliciesOutput`](crate::output::DescribePoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
@@ -1535,6 +1567,7 @@ impl DescribeNotificationConfigurationsOutput {
 pub mod describe_notification_configurations_output {
     
     /// A builder for [`DescribeNotificationConfigurationsOutput`](crate::output::DescribeNotificationConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notification_configurations: std::option::Option<std::vec::Vec<crate::model::NotificationConfiguration>>,
@@ -1610,6 +1643,7 @@ impl DescribeMetricCollectionTypesOutput {
 pub mod describe_metric_collection_types_output {
     
     /// A builder for [`DescribeMetricCollectionTypesOutput`](crate::output::DescribeMetricCollectionTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metrics: std::option::Option<std::vec::Vec<crate::model::MetricCollectionType>>,
@@ -1691,6 +1725,7 @@ impl DescribeLoadBalancerTargetGroupsOutput {
 pub mod describe_load_balancer_target_groups_output {
     
     /// A builder for [`DescribeLoadBalancerTargetGroupsOutput`](crate::output::DescribeLoadBalancerTargetGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_target_groups: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTargetGroupState>>,
@@ -1766,6 +1801,7 @@ impl DescribeLoadBalancersOutput {
 pub mod describe_load_balancers_output {
     
     /// A builder for [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancerState>>,
@@ -1834,6 +1870,7 @@ impl DescribeLifecycleHookTypesOutput {
 pub mod describe_lifecycle_hook_types_output {
     
     /// A builder for [`DescribeLifecycleHookTypesOutput`](crate::output::DescribeLifecycleHookTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1890,6 +1927,7 @@ impl DescribeLifecycleHooksOutput {
 pub mod describe_lifecycle_hooks_output {
     
     /// A builder for [`DescribeLifecycleHooksOutput`](crate::output::DescribeLifecycleHooksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hooks: std::option::Option<std::vec::Vec<crate::model::LifecycleHook>>,
@@ -1953,6 +1991,7 @@ impl DescribeLaunchConfigurationsOutput {
 pub mod describe_launch_configurations_output {
     
     /// A builder for [`DescribeLaunchConfigurationsOutput`](crate::output::DescribeLaunchConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configurations: std::option::Option<std::vec::Vec<crate::model::LaunchConfiguration>>,
@@ -2028,6 +2067,7 @@ impl DescribeInstanceRefreshesOutput {
 pub mod describe_instance_refreshes_output {
     
     /// A builder for [`DescribeInstanceRefreshesOutput`](crate::output::DescribeInstanceRefreshesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_refreshes: std::option::Option<std::vec::Vec<crate::model::InstanceRefresh>>,
@@ -2096,6 +2136,7 @@ impl DescribeAutoScalingNotificationTypesOutput {
 pub mod describe_auto_scaling_notification_types_output {
     
     /// A builder for [`DescribeAutoScalingNotificationTypesOutput`](crate::output::DescribeAutoScalingNotificationTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_notification_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2159,6 +2200,7 @@ impl DescribeAutoScalingInstancesOutput {
 pub mod describe_auto_scaling_instances_output {
     
     /// A builder for [`DescribeAutoScalingInstancesOutput`](crate::output::DescribeAutoScalingInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_instances: std::option::Option<std::vec::Vec<crate::model::AutoScalingInstanceDetails>>,
@@ -2234,6 +2276,7 @@ impl DescribeAutoScalingGroupsOutput {
 pub mod describe_auto_scaling_groups_output {
     
     /// A builder for [`DescribeAutoScalingGroupsOutput`](crate::output::DescribeAutoScalingGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_groups: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -2302,6 +2345,7 @@ impl DescribeAdjustmentTypesOutput {
 pub mod describe_adjustment_types_output {
     
     /// A builder for [`DescribeAdjustmentTypesOutput`](crate::output::DescribeAdjustmentTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adjustment_types: std::option::Option<std::vec::Vec<crate::model::AdjustmentType>>,
@@ -2379,6 +2423,7 @@ impl DescribeAccountLimitsOutput {
 pub mod describe_account_limits_output {
     
     /// A builder for [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_number_of_auto_scaling_groups: std::option::Option<i32>,
@@ -2456,6 +2501,7 @@ pub struct DeleteWarmPoolOutput  {
 pub mod delete_warm_pool_output {
     
     /// A builder for [`DeleteWarmPoolOutput`](crate::output::DeleteWarmPoolOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2485,6 +2531,7 @@ pub struct DeleteTagsOutput  {
 pub mod delete_tags_output {
     
     /// A builder for [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2514,6 +2561,7 @@ pub struct DeleteScheduledActionOutput  {
 pub mod delete_scheduled_action_output {
     
     /// A builder for [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2543,6 +2591,7 @@ pub struct DeletePolicyOutput  {
 pub mod delete_policy_output {
     
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2572,6 +2621,7 @@ pub struct DeleteNotificationConfigurationOutput  {
 pub mod delete_notification_configuration_output {
     
     /// A builder for [`DeleteNotificationConfigurationOutput`](crate::output::DeleteNotificationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2601,6 +2651,7 @@ pub struct DeleteLifecycleHookOutput  {
 pub mod delete_lifecycle_hook_output {
     
     /// A builder for [`DeleteLifecycleHookOutput`](crate::output::DeleteLifecycleHookOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2630,6 +2681,7 @@ pub struct DeleteLaunchConfigurationOutput  {
 pub mod delete_launch_configuration_output {
     
     /// A builder for [`DeleteLaunchConfigurationOutput`](crate::output::DeleteLaunchConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2659,6 +2711,7 @@ pub struct DeleteAutoScalingGroupOutput  {
 pub mod delete_auto_scaling_group_output {
     
     /// A builder for [`DeleteAutoScalingGroupOutput`](crate::output::DeleteAutoScalingGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2688,6 +2741,7 @@ pub struct CreateOrUpdateTagsOutput  {
 pub mod create_or_update_tags_output {
     
     /// A builder for [`CreateOrUpdateTagsOutput`](crate::output::CreateOrUpdateTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2717,6 +2771,7 @@ pub struct CreateLaunchConfigurationOutput  {
 pub mod create_launch_configuration_output {
     
     /// A builder for [`CreateLaunchConfigurationOutput`](crate::output::CreateLaunchConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2746,6 +2801,7 @@ pub struct CreateAutoScalingGroupOutput  {
 pub mod create_auto_scaling_group_output {
     
     /// A builder for [`CreateAutoScalingGroupOutput`](crate::output::CreateAutoScalingGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2775,6 +2831,7 @@ pub struct CompleteLifecycleActionOutput  {
 pub mod complete_lifecycle_action_output {
     
     /// A builder for [`CompleteLifecycleActionOutput`](crate::output::CompleteLifecycleActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2813,6 +2870,7 @@ impl CancelInstanceRefreshOutput {
 pub mod cancel_instance_refresh_output {
     
     /// A builder for [`CancelInstanceRefreshOutput`](crate::output::CancelInstanceRefreshOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_refresh_id: std::option::Option<std::string::String>,
@@ -2863,6 +2921,7 @@ impl BatchPutScheduledUpdateGroupActionOutput {
 pub mod batch_put_scheduled_update_group_action_output {
     
     /// A builder for [`BatchPutScheduledUpdateGroupActionOutput`](crate::output::BatchPutScheduledUpdateGroupActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_scheduled_update_group_actions: std::option::Option<std::vec::Vec<crate::model::FailedScheduledUpdateGroupActionRequest>>,
@@ -2919,6 +2978,7 @@ impl BatchDeleteScheduledActionOutput {
 pub mod batch_delete_scheduled_action_output {
     
     /// A builder for [`BatchDeleteScheduledActionOutput`](crate::output::BatchDeleteScheduledActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_scheduled_actions: std::option::Option<std::vec::Vec<crate::model::FailedScheduledUpdateGroupActionRequest>>,
@@ -2966,6 +3026,7 @@ pub struct AttachTrafficSourcesOutput  {
 pub mod attach_traffic_sources_output {
     
     /// A builder for [`AttachTrafficSourcesOutput`](crate::output::AttachTrafficSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2995,6 +3056,7 @@ pub struct AttachLoadBalancerTargetGroupsOutput  {
 pub mod attach_load_balancer_target_groups_output {
     
     /// A builder for [`AttachLoadBalancerTargetGroupsOutput`](crate::output::AttachLoadBalancerTargetGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3024,6 +3086,7 @@ pub struct AttachLoadBalancersOutput  {
 pub mod attach_load_balancers_output {
     
     /// A builder for [`AttachLoadBalancersOutput`](crate::output::AttachLoadBalancersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3053,6 +3116,7 @@ pub struct AttachInstancesOutput  {
 pub mod attach_instances_output {
     
     /// A builder for [`AttachInstancesOutput`](crate::output::AttachInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

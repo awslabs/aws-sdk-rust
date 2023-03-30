@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod search_input {
     
     /// A builder for [`SearchInput`](crate::input::SearchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cursor: std::option::Option<std::string::String>,
@@ -439,6 +440,7 @@ impl SearchInput {
 pub mod suggest_input {
     
     /// A builder for [`SuggestInput`](crate::input::SuggestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query: std::option::Option<std::string::String>,
@@ -589,6 +591,7 @@ impl SuggestInput {
 pub mod upload_documents_input {
     
     /// A builder for [`UploadDocumentsInput`](crate::input::UploadDocumentsInput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) documents: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,

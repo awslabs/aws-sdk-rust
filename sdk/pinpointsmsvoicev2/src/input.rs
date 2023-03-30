@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_origination_identity_input {
     
     /// A builder for [`AssociateOriginationIdentityInput`](crate::input::AssociateOriginationIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_id: std::option::Option<std::string::String>,
@@ -156,6 +157,7 @@ impl AssociateOriginationIdentityInput {
 pub mod create_configuration_set_input {
     
     /// A builder for [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -301,6 +303,7 @@ impl CreateConfigurationSetInput {
 pub mod create_event_destination_input {
     
     /// A builder for [`CreateEventDestinationInput`](crate::input::CreateEventDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -494,6 +497,7 @@ impl CreateEventDestinationInput {
 pub mod create_opt_out_list_input {
     
     /// A builder for [`CreateOptOutListInput`](crate::input::CreateOptOutListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
@@ -639,6 +643,7 @@ impl CreateOptOutListInput {
 pub mod create_pool_input {
     
     /// A builder for [`CreatePoolInput`](crate::input::CreatePoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origination_identity: std::option::Option<std::string::String>,
@@ -820,6 +825,7 @@ impl CreatePoolInput {
 pub mod delete_configuration_set_input {
     
     /// A builder for [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -932,6 +938,7 @@ impl DeleteConfigurationSetInput {
 pub mod delete_default_message_type_input {
     
     /// A builder for [`DeleteDefaultMessageTypeInput`](crate::input::DeleteDefaultMessageTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -1044,6 +1051,7 @@ impl DeleteDefaultMessageTypeInput {
 pub mod delete_default_sender_id_input {
     
     /// A builder for [`DeleteDefaultSenderIdInput`](crate::input::DeleteDefaultSenderIdInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -1156,6 +1164,7 @@ impl DeleteDefaultSenderIdInput {
 pub mod delete_event_destination_input {
     
     /// A builder for [`DeleteEventDestinationInput`](crate::input::DeleteEventDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -1280,6 +1289,7 @@ impl DeleteEventDestinationInput {
 pub mod delete_keyword_input {
     
     /// A builder for [`DeleteKeywordInput`](crate::input::DeleteKeywordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origination_identity: std::option::Option<std::string::String>,
@@ -1404,6 +1414,7 @@ impl DeleteKeywordInput {
 pub mod delete_opted_out_number_input {
     
     /// A builder for [`DeleteOptedOutNumberInput`](crate::input::DeleteOptedOutNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
@@ -1528,6 +1539,7 @@ impl DeleteOptedOutNumberInput {
 pub mod delete_opt_out_list_input {
     
     /// A builder for [`DeleteOptOutListInput`](crate::input::DeleteOptOutListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
@@ -1640,6 +1652,7 @@ impl DeleteOptOutListInput {
 pub mod delete_pool_input {
     
     /// A builder for [`DeletePoolInput`](crate::input::DeletePoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_id: std::option::Option<std::string::String>,
@@ -1752,6 +1765,7 @@ impl DeletePoolInput {
 pub mod delete_text_message_spend_limit_override_input {
     
     /// A builder for [`DeleteTextMessageSpendLimitOverrideInput`](crate::input::DeleteTextMessageSpendLimitOverrideInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1849,6 +1863,7 @@ impl DeleteTextMessageSpendLimitOverrideInput {
 pub mod delete_voice_message_spend_limit_override_input {
     
     /// A builder for [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::input::DeleteVoiceMessageSpendLimitOverrideInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1946,6 +1961,7 @@ impl DeleteVoiceMessageSpendLimitOverrideInput {
 pub mod describe_account_attributes_input {
     
     /// A builder for [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2070,6 +2086,7 @@ impl DescribeAccountAttributesInput {
 pub mod describe_account_limits_input {
     
     /// A builder for [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2194,6 +2211,7 @@ impl DescribeAccountLimitsInput {
 pub mod describe_configuration_sets_input {
     
     /// A builder for [`DescribeConfigurationSetsInput`](crate::input::DescribeConfigurationSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2354,6 +2372,7 @@ impl DescribeConfigurationSetsInput {
 pub mod describe_keywords_input {
     
     /// A builder for [`DescribeKeywordsInput`](crate::input::DescribeKeywordsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origination_identity: std::option::Option<std::string::String>,
@@ -2526,6 +2545,7 @@ impl DescribeKeywordsInput {
 pub mod describe_opted_out_numbers_input {
     
     /// A builder for [`DescribeOptedOutNumbersInput`](crate::input::DescribeOptedOutNumbersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
@@ -2698,6 +2718,7 @@ impl DescribeOptedOutNumbersInput {
 pub mod describe_opt_out_lists_input {
     
     /// A builder for [`DescribeOptOutListsInput`](crate::input::DescribeOptOutListsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_out_list_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2840,6 +2861,7 @@ impl DescribeOptOutListsInput {
 pub mod describe_phone_numbers_input {
     
     /// A builder for [`DescribePhoneNumbersInput`](crate::input::DescribePhoneNumbersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3000,6 +3022,7 @@ impl DescribePhoneNumbersInput {
 pub mod describe_pools_input {
     
     /// A builder for [`DescribePoolsInput`](crate::input::DescribePoolsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3160,6 +3183,7 @@ impl DescribePoolsInput {
 pub mod describe_sender_ids_input {
     
     /// A builder for [`DescribeSenderIdsInput`](crate::input::DescribeSenderIdsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sender_ids: std::option::Option<std::vec::Vec<crate::model::SenderIdAndCountry>>,
@@ -3320,6 +3344,7 @@ impl DescribeSenderIdsInput {
 pub mod describe_spend_limits_input {
     
     /// A builder for [`DescribeSpendLimitsInput`](crate::input::DescribeSpendLimitsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3444,6 +3469,7 @@ impl DescribeSpendLimitsInput {
 pub mod disassociate_origination_identity_input {
     
     /// A builder for [`DisassociateOriginationIdentityInput`](crate::input::DisassociateOriginationIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_id: std::option::Option<std::string::String>,
@@ -3595,6 +3621,7 @@ impl DisassociateOriginationIdentityInput {
 pub mod list_pool_origination_identities_input {
     
     /// A builder for [`ListPoolOriginationIdentitiesInput`](crate::input::ListPoolOriginationIdentitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_id: std::option::Option<std::string::String>,
@@ -3749,6 +3776,7 @@ impl ListPoolOriginationIdentitiesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3861,6 +3889,7 @@ impl ListTagsForResourceInput {
 pub mod put_keyword_input {
     
     /// A builder for [`PutKeywordInput`](crate::input::PutKeywordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origination_identity: std::option::Option<std::string::String>,
@@ -4019,6 +4048,7 @@ impl PutKeywordInput {
 pub mod put_opted_out_number_input {
     
     /// A builder for [`PutOptedOutNumberInput`](crate::input::PutOptedOutNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
@@ -4143,6 +4173,7 @@ impl PutOptedOutNumberInput {
 pub mod release_phone_number_input {
     
     /// A builder for [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
@@ -4255,6 +4286,7 @@ impl ReleasePhoneNumberInput {
 pub mod request_phone_number_input {
     
     /// A builder for [`RequestPhoneNumberInput`](crate::input::RequestPhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iso_country_code: std::option::Option<std::string::String>,
@@ -4490,6 +4522,7 @@ impl RequestPhoneNumberInput {
 pub mod send_text_message_input {
     
     /// A builder for [`SendTextMessageInput`](crate::input::SendTextMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_phone_number: std::option::Option<std::string::String>,
@@ -4735,6 +4768,7 @@ impl SendTextMessageInput {
 pub mod send_voice_message_input {
     
     /// A builder for [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_phone_number: std::option::Option<std::string::String>,
@@ -4970,6 +5004,7 @@ impl SendVoiceMessageInput {
 pub mod set_default_message_type_input {
     
     /// A builder for [`SetDefaultMessageTypeInput`](crate::input::SetDefaultMessageTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -5094,6 +5129,7 @@ impl SetDefaultMessageTypeInput {
 pub mod set_default_sender_id_input {
     
     /// A builder for [`SetDefaultSenderIdInput`](crate::input::SetDefaultSenderIdInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -5218,6 +5254,7 @@ impl SetDefaultSenderIdInput {
 pub mod set_text_message_spend_limit_override_input {
     
     /// A builder for [`SetTextMessageSpendLimitOverrideInput`](crate::input::SetTextMessageSpendLimitOverrideInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monthly_limit: std::option::Option<i64>,
@@ -5330,6 +5367,7 @@ impl SetTextMessageSpendLimitOverrideInput {
 pub mod set_voice_message_spend_limit_override_input {
     
     /// A builder for [`SetVoiceMessageSpendLimitOverrideInput`](crate::input::SetVoiceMessageSpendLimitOverrideInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monthly_limit: std::option::Option<i64>,
@@ -5442,6 +5480,7 @@ impl SetVoiceMessageSpendLimitOverrideInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5572,6 +5611,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5702,6 +5742,7 @@ impl UntagResourceInput {
 pub mod update_event_destination_input {
     
     /// A builder for [`UpdateEventDestinationInput`](crate::input::UpdateEventDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -5892,6 +5933,7 @@ impl UpdateEventDestinationInput {
 pub mod update_phone_number_input {
     
     /// A builder for [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
@@ -6064,6 +6106,7 @@ impl UpdatePhoneNumberInput {
 pub mod update_pool_input {
     
     /// A builder for [`UpdatePoolInput`](crate::input::UpdatePoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_id: std::option::Option<std::string::String>,

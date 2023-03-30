@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod accept_shared_directory_input {
     
     /// A builder for [`AcceptSharedDirectoryInput`](crate::input::AcceptSharedDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shared_directory_id: std::option::Option<std::string::String>,
@@ -117,6 +118,7 @@ impl AcceptSharedDirectoryInput {
 pub mod add_ip_routes_input {
     
     /// A builder for [`AddIpRoutesInput`](crate::input::AddIpRoutesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -312,6 +314,7 @@ impl AddIpRoutesInput {
 pub mod add_region_input {
     
     /// A builder for [`AddRegionInput`](crate::input::AddRegionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -448,6 +451,7 @@ impl AddRegionInput {
 pub mod add_tags_to_resource_input {
     
     /// A builder for [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -578,6 +582,7 @@ impl AddTagsToResourceInput {
 pub mod cancel_schema_extension_input {
     
     /// A builder for [`CancelSchemaExtensionInput`](crate::input::CancelSchemaExtensionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -702,6 +707,7 @@ impl CancelSchemaExtensionInput {
 pub mod connect_directory_input {
     
     /// A builder for [`ConnectDirectoryInput`](crate::input::ConnectDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -905,6 +911,7 @@ impl ConnectDirectoryInput {
 pub mod create_alias_input {
     
     /// A builder for [`CreateAliasInput`](crate::input::CreateAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -1031,6 +1038,7 @@ impl CreateAliasInput {
 pub mod create_computer_input {
     
     /// A builder for [`CreateComputerInput`](crate::input::CreateComputerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -1208,6 +1216,7 @@ impl CreateComputerInput {
 pub mod create_conditional_forwarder_input {
     
     /// A builder for [`CreateConditionalForwarderInput`](crate::input::CreateConditionalForwarderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -1350,6 +1359,7 @@ impl CreateConditionalForwarderInput {
 pub mod create_directory_input {
     
     /// A builder for [`CreateDirectoryInput`](crate::input::CreateDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1579,6 +1589,7 @@ impl CreateDirectoryInput {
 pub mod create_log_subscription_input {
     
     /// A builder for [`CreateLogSubscriptionInput`](crate::input::CreateLogSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -1703,6 +1714,7 @@ impl CreateLogSubscriptionInput {
 pub mod create_microsoft_ad_input {
     
     /// A builder for [`CreateMicrosoftAdInput`](crate::input::CreateMicrosoftAdInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1908,6 +1920,7 @@ impl CreateMicrosoftAdInput {
 pub mod create_snapshot_input {
     
     /// A builder for [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -2032,6 +2045,7 @@ impl CreateSnapshotInput {
 pub mod create_trust_input {
     
     /// A builder for [`CreateTrustInput`](crate::input::CreateTrustInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -2235,6 +2249,7 @@ impl CreateTrustInput {
 pub mod delete_conditional_forwarder_input {
     
     /// A builder for [`DeleteConditionalForwarderInput`](crate::input::DeleteConditionalForwarderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -2359,6 +2374,7 @@ impl DeleteConditionalForwarderInput {
 pub mod delete_directory_input {
     
     /// A builder for [`DeleteDirectoryInput`](crate::input::DeleteDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -2471,6 +2487,7 @@ impl DeleteDirectoryInput {
 pub mod delete_log_subscription_input {
     
     /// A builder for [`DeleteLogSubscriptionInput`](crate::input::DeleteLogSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -2583,6 +2600,7 @@ impl DeleteLogSubscriptionInput {
 pub mod delete_snapshot_input {
     
     /// A builder for [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -2695,6 +2713,7 @@ impl DeleteSnapshotInput {
 pub mod delete_trust_input {
     
     /// A builder for [`DeleteTrustInput`](crate::input::DeleteTrustInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_id: std::option::Option<std::string::String>,
@@ -2820,6 +2839,7 @@ impl DeleteTrustInput {
 pub mod deregister_certificate_input {
     
     /// A builder for [`DeregisterCertificateInput`](crate::input::DeregisterCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -2944,6 +2964,7 @@ impl DeregisterCertificateInput {
 pub mod deregister_event_topic_input {
     
     /// A builder for [`DeregisterEventTopicInput`](crate::input::DeregisterEventTopicInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -3068,6 +3089,7 @@ impl DeregisterEventTopicInput {
 pub mod describe_certificate_input {
     
     /// A builder for [`DescribeCertificateInput`](crate::input::DescribeCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -3192,6 +3214,7 @@ impl DescribeCertificateInput {
 pub mod describe_client_authentication_settings_input {
     
     /// A builder for [`DescribeClientAuthenticationSettingsInput`](crate::input::DescribeClientAuthenticationSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -3340,6 +3363,7 @@ impl DescribeClientAuthenticationSettingsInput {
 pub mod describe_conditional_forwarders_input {
     
     /// A builder for [`DescribeConditionalForwardersInput`](crate::input::DescribeConditionalForwardersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -3470,6 +3494,7 @@ impl DescribeConditionalForwardersInput {
 pub mod describe_directories_input {
     
     /// A builder for [`DescribeDirectoriesInput`](crate::input::DescribeDirectoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3614,6 +3639,7 @@ impl DescribeDirectoriesInput {
 pub mod describe_domain_controllers_input {
     
     /// A builder for [`DescribeDomainControllersInput`](crate::input::DescribeDomainControllersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -3768,6 +3794,7 @@ impl DescribeDomainControllersInput {
 pub mod describe_event_topics_input {
     
     /// A builder for [`DescribeEventTopicsInput`](crate::input::DescribeEventTopicsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -3900,6 +3927,7 @@ impl DescribeEventTopicsInput {
 pub mod describe_ldaps_settings_input {
     
     /// A builder for [`DescribeLdapsSettingsInput`](crate::input::DescribeLdapsSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -4048,6 +4076,7 @@ impl DescribeLdapsSettingsInput {
 pub mod describe_regions_input {
     
     /// A builder for [`DescribeRegionsInput`](crate::input::DescribeRegionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -4184,6 +4213,7 @@ impl DescribeRegionsInput {
 pub mod describe_settings_input {
     
     /// A builder for [`DescribeSettingsInput`](crate::input::DescribeSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -4320,6 +4350,7 @@ impl DescribeSettingsInput {
 pub mod describe_shared_directories_input {
     
     /// A builder for [`DescribeSharedDirectoriesInput`](crate::input::DescribeSharedDirectoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_directory_id: std::option::Option<std::string::String>,
@@ -4474,6 +4505,7 @@ impl DescribeSharedDirectoriesInput {
 pub mod describe_snapshots_input {
     
     /// A builder for [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -4628,6 +4660,7 @@ impl DescribeSnapshotsInput {
 pub mod describe_trusts_input {
     
     /// A builder for [`DescribeTrustsInput`](crate::input::DescribeTrustsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -4784,6 +4817,7 @@ impl DescribeTrustsInput {
 pub mod describe_update_directory_input {
     
     /// A builder for [`DescribeUpdateDirectoryInput`](crate::input::DescribeUpdateDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -4932,6 +4966,7 @@ impl DescribeUpdateDirectoryInput {
 pub mod disable_client_authentication_input {
     
     /// A builder for [`DisableClientAuthenticationInput`](crate::input::DisableClientAuthenticationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -5056,6 +5091,7 @@ impl DisableClientAuthenticationInput {
 pub mod disable_ldaps_input {
     
     /// A builder for [`DisableLdapsInput`](crate::input::DisableLdapsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -5180,6 +5216,7 @@ impl DisableLdapsInput {
 pub mod disable_radius_input {
     
     /// A builder for [`DisableRadiusInput`](crate::input::DisableRadiusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -5292,6 +5329,7 @@ impl DisableRadiusInput {
 pub mod disable_sso_input {
     
     /// A builder for [`DisableSsoInput`](crate::input::DisableSsoInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -5439,6 +5477,7 @@ impl DisableSsoInput {
 pub mod enable_client_authentication_input {
     
     /// A builder for [`EnableClientAuthenticationInput`](crate::input::EnableClientAuthenticationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -5563,6 +5602,7 @@ impl EnableClientAuthenticationInput {
 pub mod enable_ldaps_input {
     
     /// A builder for [`EnableLdapsInput`](crate::input::EnableLdapsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -5687,6 +5727,7 @@ impl EnableLdapsInput {
 pub mod enable_radius_input {
     
     /// A builder for [`EnableRadiusInput`](crate::input::EnableRadiusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -5811,6 +5852,7 @@ impl EnableRadiusInput {
 pub mod enable_sso_input {
     
     /// A builder for [`EnableSsoInput`](crate::input::EnableSsoInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -5958,6 +6000,7 @@ impl EnableSsoInput {
 pub mod get_directory_limits_input {
     
     /// A builder for [`GetDirectoryLimitsInput`](crate::input::GetDirectoryLimitsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -6055,6 +6098,7 @@ impl GetDirectoryLimitsInput {
 pub mod get_snapshot_limits_input {
     
     /// A builder for [`GetSnapshotLimitsInput`](crate::input::GetSnapshotLimitsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -6167,6 +6211,7 @@ impl GetSnapshotLimitsInput {
 pub mod list_certificates_input {
     
     /// A builder for [`ListCertificatesInput`](crate::input::ListCertificatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -6303,6 +6348,7 @@ impl ListCertificatesInput {
 pub mod list_ip_routes_input {
     
     /// A builder for [`ListIpRoutesInput`](crate::input::ListIpRoutesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -6439,6 +6485,7 @@ impl ListIpRoutesInput {
 pub mod list_log_subscriptions_input {
     
     /// A builder for [`ListLogSubscriptionsInput`](crate::input::ListLogSubscriptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -6575,6 +6622,7 @@ impl ListLogSubscriptionsInput {
 pub mod list_schema_extensions_input {
     
     /// A builder for [`ListSchemaExtensionsInput`](crate::input::ListSchemaExtensionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -6711,6 +6759,7 @@ impl ListSchemaExtensionsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -6847,6 +6896,7 @@ impl ListTagsForResourceInput {
 pub mod register_certificate_input {
     
     /// A builder for [`RegisterCertificateInput`](crate::input::RegisterCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -6995,6 +7045,7 @@ impl RegisterCertificateInput {
 pub mod register_event_topic_input {
     
     /// A builder for [`RegisterEventTopicInput`](crate::input::RegisterEventTopicInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -7119,6 +7170,7 @@ impl RegisterEventTopicInput {
 pub mod reject_shared_directory_input {
     
     /// A builder for [`RejectSharedDirectoryInput`](crate::input::RejectSharedDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shared_directory_id: std::option::Option<std::string::String>,
@@ -7231,6 +7283,7 @@ impl RejectSharedDirectoryInput {
 pub mod remove_ip_routes_input {
     
     /// A builder for [`RemoveIpRoutesInput`](crate::input::RemoveIpRoutesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -7361,6 +7414,7 @@ impl RemoveIpRoutesInput {
 pub mod remove_region_input {
     
     /// A builder for [`RemoveRegionInput`](crate::input::RemoveRegionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -7473,6 +7527,7 @@ impl RemoveRegionInput {
 pub mod remove_tags_from_resource_input {
     
     /// A builder for [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -7603,6 +7658,7 @@ impl RemoveTagsFromResourceInput {
 pub mod reset_user_password_input {
     
     /// A builder for [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -7748,6 +7804,7 @@ impl ResetUserPasswordInput {
 pub mod restore_from_snapshot_input {
     
     /// A builder for [`RestoreFromSnapshotInput`](crate::input::RestoreFromSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -7860,6 +7917,7 @@ impl RestoreFromSnapshotInput {
 pub mod share_directory_input {
     
     /// A builder for [`ShareDirectoryInput`](crate::input::ShareDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -8018,6 +8076,7 @@ impl ShareDirectoryInput {
 pub mod start_schema_extension_input {
     
     /// A builder for [`StartSchemaExtensionInput`](crate::input::StartSchemaExtensionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -8167,6 +8226,7 @@ impl StartSchemaExtensionInput {
 pub mod unshare_directory_input {
     
     /// A builder for [`UnshareDirectoryInput`](crate::input::UnshareDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -8291,6 +8351,7 @@ impl UnshareDirectoryInput {
 pub mod update_conditional_forwarder_input {
     
     /// A builder for [`UpdateConditionalForwarderInput`](crate::input::UpdateConditionalForwarderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -8433,6 +8494,7 @@ impl UpdateConditionalForwarderInput {
 pub mod update_directory_setup_input {
     
     /// A builder for [`UpdateDirectorySetupInput`](crate::input::UpdateDirectorySetupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -8581,6 +8643,7 @@ impl UpdateDirectorySetupInput {
 pub mod update_number_of_domain_controllers_input {
     
     /// A builder for [`UpdateNumberOfDomainControllersInput`](crate::input::UpdateNumberOfDomainControllersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -8706,6 +8769,7 @@ impl UpdateNumberOfDomainControllersInput {
 pub mod update_radius_input {
     
     /// A builder for [`UpdateRadiusInput`](crate::input::UpdateRadiusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -8830,6 +8894,7 @@ impl UpdateRadiusInput {
 pub mod update_settings_input {
     
     /// A builder for [`UpdateSettingsInput`](crate::input::UpdateSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -8960,6 +9025,7 @@ impl UpdateSettingsInput {
 pub mod update_trust_input {
     
     /// A builder for [`UpdateTrustInput`](crate::input::UpdateTrustInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_id: std::option::Option<std::string::String>,
@@ -9084,6 +9150,7 @@ impl UpdateTrustInput {
 pub mod verify_trust_input {
     
     /// A builder for [`VerifyTrustInput`](crate::input::VerifyTrustInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_id: std::option::Option<std::string::String>,

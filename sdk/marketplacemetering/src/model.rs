@@ -26,6 +26,7 @@ impl UsageAllocation {
 pub mod usage_allocation {
     
     /// A builder for [`UsageAllocation`](crate::model::UsageAllocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allocated_usage_quantity: std::option::Option<i32>,
@@ -101,6 +102,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -194,6 +196,7 @@ impl UsageRecord {
 pub mod usage_record {
     
     /// A builder for [`UsageRecord`](crate::model::UsageRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -334,6 +337,7 @@ impl UsageRecordResult {
 pub mod usage_record_result {
     
     /// A builder for [`UsageRecordResult`](crate::model::UsageRecordResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_record: std::option::Option<crate::model::UsageRecord>,

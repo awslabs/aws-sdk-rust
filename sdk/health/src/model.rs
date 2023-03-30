@@ -34,6 +34,7 @@ impl EventType {
 pub mod event_type {
     
     /// A builder for [`EventType`](crate::model::EventType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<std::string::String>,
@@ -214,6 +215,7 @@ impl EventTypeFilter {
 pub mod event_type_filter {
     
     /// A builder for [`EventTypeFilter`](crate::model::EventTypeFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -383,6 +385,7 @@ impl OrganizationEvent {
 pub mod organization_event {
     
     /// A builder for [`OrganizationEvent`](crate::model::OrganizationEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -799,6 +802,7 @@ impl OrganizationEventFilter {
 pub mod organization_event_filter {
     
     /// A builder for [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1024,6 +1028,7 @@ impl DateTimeRange {
 pub mod date_time_range {
     
     /// A builder for [`DateTimeRange`](crate::model::DateTimeRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from: std::option::Option<aws_smithy_types::DateTime>,
@@ -1176,6 +1181,7 @@ impl Event {
 pub mod event {
     
     /// A builder for [`Event`](crate::model::Event).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1448,6 +1454,7 @@ impl EventFilter {
 pub mod event_filter {
     
     /// A builder for [`EventFilter`](crate::model::EventFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1761,6 +1768,7 @@ impl OrganizationEventDetailsErrorItem {
 pub mod organization_event_details_error_item {
     
     /// A builder for [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -1896,6 +1904,7 @@ impl OrganizationEventDetails {
 pub mod organization_event_details {
     
     /// A builder for [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -2000,6 +2009,7 @@ impl EventDescription {
 pub mod event_description {
     
     /// A builder for [`EventDescription`](crate::model::EventDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) latest_description: std::option::Option<std::string::String>,
@@ -2061,6 +2071,7 @@ impl EventAccountFilter {
 pub mod event_account_filter {
     
     /// A builder for [`EventAccountFilter`](crate::model::EventAccountFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arn: std::option::Option<std::string::String>,
@@ -2145,6 +2156,7 @@ impl EventDetailsErrorItem {
 pub mod event_details_error_item {
     
     /// A builder for [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arn: std::option::Option<std::string::String>,
@@ -2237,6 +2249,7 @@ impl EventDetails {
 pub mod event_details {
     
     /// A builder for [`EventDetails`](crate::model::EventDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event: std::option::Option<crate::model::Event>,
@@ -2324,6 +2337,7 @@ impl EventAggregate {
 pub mod event_aggregate {
     
     /// A builder for [`EventAggregate`](crate::model::EventAggregate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggregate_value: std::option::Option<std::string::String>,
@@ -2475,6 +2489,7 @@ impl EntityAggregate {
 pub mod entity_aggregate {
     
     /// A builder for [`EntityAggregate`](crate::model::EntityAggregate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arn: std::option::Option<std::string::String>,
@@ -2567,6 +2582,7 @@ impl OrganizationAffectedEntitiesErrorItem {
 pub mod organization_affected_entities_error_item {
     
     /// A builder for [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -2714,6 +2730,7 @@ impl AffectedEntity {
 pub mod affected_entity {
     
     /// A builder for [`AffectedEntity`](crate::model::AffectedEntity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_arn: std::option::Option<std::string::String>,
@@ -2988,6 +3005,7 @@ impl EntityFilter {
 pub mod entity_filter {
     
     /// A builder for [`EntityFilter`](crate::model::EntityFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arns: std::option::Option<std::vec::Vec<std::string::String>>,

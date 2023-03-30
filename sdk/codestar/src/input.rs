@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_team_member_input {
     
     /// A builder for [`AssociateTeamMemberInput`](crate::input::AssociateTeamMemberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
@@ -165,6 +166,7 @@ impl AssociateTeamMemberInput {
 pub mod create_project_input {
     
     /// A builder for [`CreateProjectInput`](crate::input::CreateProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -374,6 +376,7 @@ impl CreateProjectInput {
 pub mod create_user_profile_input {
     
     /// A builder for [`CreateUserProfileInput`](crate::input::CreateUserProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -532,6 +535,7 @@ impl CreateUserProfileInput {
 pub mod delete_project_input {
     
     /// A builder for [`DeleteProjectInput`](crate::input::DeleteProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -669,6 +673,7 @@ impl DeleteProjectInput {
 pub mod delete_user_profile_input {
     
     /// A builder for [`DeleteUserProfileInput`](crate::input::DeleteUserProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -781,6 +786,7 @@ impl DeleteUserProfileInput {
 pub mod describe_project_input {
     
     /// A builder for [`DescribeProjectInput`](crate::input::DescribeProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -893,6 +899,7 @@ impl DescribeProjectInput {
 pub mod describe_user_profile_input {
     
     /// A builder for [`DescribeUserProfileInput`](crate::input::DescribeUserProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -1005,6 +1012,7 @@ impl DescribeUserProfileInput {
 pub mod disassociate_team_member_input {
     
     /// A builder for [`DisassociateTeamMemberInput`](crate::input::DisassociateTeamMemberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
@@ -1129,6 +1137,7 @@ impl DisassociateTeamMemberInput {
 pub mod list_projects_input {
     
     /// A builder for [`ListProjectsInput`](crate::input::ListProjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1253,6 +1262,7 @@ impl ListProjectsInput {
 pub mod list_resources_input {
     
     /// A builder for [`ListResourcesInput`](crate::input::ListResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
@@ -1389,6 +1399,7 @@ impl ListResourcesInput {
 pub mod list_tags_for_project_input {
     
     /// A builder for [`ListTagsForProjectInput`](crate::input::ListTagsForProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1525,6 +1536,7 @@ impl ListTagsForProjectInput {
 pub mod list_team_members_input {
     
     /// A builder for [`ListTeamMembersInput`](crate::input::ListTeamMembersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
@@ -1661,6 +1673,7 @@ impl ListTeamMembersInput {
 pub mod list_user_profiles_input {
     
     /// A builder for [`ListUserProfilesInput`](crate::input::ListUserProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1785,6 +1798,7 @@ impl ListUserProfilesInput {
 pub mod tag_project_input {
     
     /// A builder for [`TagProjectInput`](crate::input::TagProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1915,6 +1929,7 @@ impl TagProjectInput {
 pub mod untag_project_input {
     
     /// A builder for [`UntagProjectInput`](crate::input::UntagProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2045,6 +2060,7 @@ impl UntagProjectInput {
 pub mod update_project_input {
     
     /// A builder for [`UpdateProjectInput`](crate::input::UpdateProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2190,6 +2206,7 @@ impl UpdateProjectInput {
 pub mod update_team_member_input {
     
     /// A builder for [`UpdateTeamMemberInput`](crate::input::UpdateTeamMemberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
@@ -2338,6 +2355,7 @@ impl UpdateTeamMemberInput {
 pub mod update_user_profile_input {
     
     /// A builder for [`UpdateUserProfileInput`](crate::input::UpdateUserProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,

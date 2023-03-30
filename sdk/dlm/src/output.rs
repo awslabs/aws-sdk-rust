@@ -8,6 +8,7 @@ pub struct UpdateLifecyclePolicyOutput  {
 pub mod update_lifecycle_policy_output {
     
     /// A builder for [`UpdateLifecyclePolicyOutput`](crate::output::UpdateLifecyclePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -104,6 +107,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -160,6 +164,7 @@ impl GetLifecyclePolicyOutput {
 pub mod get_lifecycle_policy_output {
     
     /// A builder for [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::LifecyclePolicy>,
@@ -210,6 +215,7 @@ impl GetLifecyclePoliciesOutput {
 pub mod get_lifecycle_policies_output {
     
     /// A builder for [`GetLifecyclePoliciesOutput`](crate::output::GetLifecyclePoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policies: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicySummary>>,
@@ -257,6 +263,7 @@ pub struct DeleteLifecyclePolicyOutput  {
 pub mod delete_lifecycle_policy_output {
     
     /// A builder for [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -295,6 +302,7 @@ impl CreateLifecyclePolicyOutput {
 pub mod create_lifecycle_policy_output {
     
     /// A builder for [`CreateLifecyclePolicyOutput`](crate::output::CreateLifecyclePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,

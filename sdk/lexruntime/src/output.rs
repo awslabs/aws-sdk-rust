@@ -146,6 +146,7 @@ impl  std::fmt::Debug for PutSessionOutput  {
 pub mod put_session_output {
     
     /// A builder for [`PutSessionOutput`](crate::output::PutSessionOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -538,6 +539,7 @@ impl  std::fmt::Debug for PostTextOutput  {
 pub mod post_text_output {
     
     /// A builder for [`PostTextOutput`](crate::output::PostTextOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) intent_name: std::option::Option<std::string::String>,
@@ -1039,6 +1041,7 @@ impl  std::fmt::Debug for PostContentOutput  {
 pub mod post_content_output {
     
     /// A builder for [`PostContentOutput`](crate::output::PostContentOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -1427,6 +1430,7 @@ impl  std::fmt::Debug for GetSessionOutput  {
 pub mod get_session_output {
     
     /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) recent_intent_summary_view: std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
@@ -1579,6 +1583,7 @@ impl DeleteSessionOutput {
 pub mod delete_session_output {
     
     /// A builder for [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,

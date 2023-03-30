@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_keyspace_input {
     
     /// A builder for [`CreateKeyspaceInput`](crate::input::CreateKeyspaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -137,6 +138,7 @@ impl CreateKeyspaceInput {
 pub mod create_table_input {
     
     /// A builder for [`CreateTableInput`](crate::input::CreateTableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -423,6 +425,7 @@ impl CreateTableInput {
 pub mod delete_keyspace_input {
     
     /// A builder for [`DeleteKeyspaceInput`](crate::input::DeleteKeyspaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -535,6 +538,7 @@ impl DeleteKeyspaceInput {
 pub mod delete_table_input {
     
     /// A builder for [`DeleteTableInput`](crate::input::DeleteTableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -659,6 +663,7 @@ impl DeleteTableInput {
 pub mod get_keyspace_input {
     
     /// A builder for [`GetKeyspaceInput`](crate::input::GetKeyspaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -771,6 +776,7 @@ impl GetKeyspaceInput {
 pub mod get_table_input {
     
     /// A builder for [`GetTableInput`](crate::input::GetTableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -895,6 +901,7 @@ impl GetTableInput {
 pub mod list_keyspaces_input {
     
     /// A builder for [`ListKeyspacesInput`](crate::input::ListKeyspacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1019,6 +1026,7 @@ impl ListKeyspacesInput {
 pub mod list_tables_input {
     
     /// A builder for [`ListTablesInput`](crate::input::ListTablesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1155,6 +1163,7 @@ impl ListTablesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1291,6 +1300,7 @@ impl ListTagsForResourceInput {
 pub mod restore_table_input {
     
     /// A builder for [`RestoreTableInput`](crate::input::RestoreTableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_keyspace_name: std::option::Option<std::string::String>,
@@ -1531,6 +1541,7 @@ impl RestoreTableInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1661,6 +1672,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1791,6 +1803,7 @@ impl UntagResourceInput {
 pub mod update_table_input {
     
     /// A builder for [`UpdateTableInput`](crate::input::UpdateTableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,

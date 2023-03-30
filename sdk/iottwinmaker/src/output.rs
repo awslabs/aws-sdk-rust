@@ -17,6 +17,7 @@ impl UpdateWorkspaceOutput {
 pub mod update_workspace_output {
     
     /// A builder for [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -67,6 +68,7 @@ impl UpdateSceneOutput {
 pub mod update_scene_output {
     
     /// A builder for [`UpdateSceneOutput`](crate::output::UpdateSceneOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -124,6 +126,7 @@ impl UpdatePricingPlanOutput {
 pub mod update_pricing_plan_output {
     
     /// A builder for [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) current_pricing_plan: std::option::Option<crate::model::PricingPlan>,
@@ -193,6 +196,7 @@ impl UpdateEntityOutput {
 pub mod update_entity_output {
     
     /// A builder for [`UpdateEntityOutput`](crate::output::UpdateEntityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -276,6 +280,7 @@ impl UpdateComponentTypeOutput {
 pub mod update_component_type_output {
     
     /// A builder for [`UpdateComponentTypeOutput`](crate::output::UpdateComponentTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -353,6 +358,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -382,6 +388,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -427,6 +434,7 @@ impl ListWorkspacesOutput {
 pub mod list_workspaces_output {
     
     /// A builder for [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_summaries: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
@@ -502,6 +510,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -577,6 +586,7 @@ impl ListSyncResourcesOutput {
 pub mod list_sync_resources_output {
     
     /// A builder for [`ListSyncResourcesOutput`](crate::output::ListSyncResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sync_resources: std::option::Option<std::vec::Vec<crate::model::SyncResourceSummary>>,
@@ -652,6 +662,7 @@ impl ListSyncJobsOutput {
 pub mod list_sync_jobs_output {
     
     /// A builder for [`ListSyncJobsOutput`](crate::output::ListSyncJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sync_job_summaries: std::option::Option<std::vec::Vec<crate::model::SyncJobSummary>>,
@@ -727,6 +738,7 @@ impl ListScenesOutput {
 pub mod list_scenes_output {
     
     /// A builder for [`ListScenesOutput`](crate::output::ListScenesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scene_summaries: std::option::Option<std::vec::Vec<crate::model::SceneSummary>>,
@@ -802,6 +814,7 @@ impl ListEntitiesOutput {
 pub mod list_entities_output {
     
     /// A builder for [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_summaries: std::option::Option<std::vec::Vec<crate::model::EntitySummary>>,
@@ -891,6 +904,7 @@ impl ListComponentTypesOutput {
 pub mod list_component_types_output {
     
     /// A builder for [`ListComponentTypesOutput`](crate::output::ListComponentTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1025,6 +1039,7 @@ impl GetWorkspaceOutput {
 pub mod get_workspace_output {
     
     /// A builder for [`GetWorkspaceOutput`](crate::output::GetWorkspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1193,6 +1208,7 @@ impl GetSyncJobOutput {
 pub mod get_sync_job_output {
     
     /// A builder for [`GetSyncJobOutput`](crate::output::GetSyncJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1368,6 +1384,7 @@ impl GetSceneOutput {
 pub mod get_scene_output {
     
     /// A builder for [`GetSceneOutput`](crate::output::GetSceneOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1515,6 +1532,7 @@ impl GetPropertyValueHistoryOutput {
 pub mod get_property_value_history_output {
     
     /// A builder for [`GetPropertyValueHistoryOutput`](crate::output::GetPropertyValueHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) property_values: std::option::Option<std::vec::Vec<crate::model::PropertyValueHistory>>,
@@ -1597,6 +1615,7 @@ impl GetPropertyValueOutput {
 pub mod get_property_value_output {
     
     /// A builder for [`GetPropertyValueOutput`](crate::output::GetPropertyValueOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) property_values: std::option::Option<std::collections::HashMap<std::string::String, crate::model::PropertyLatestValue>>,
@@ -1690,6 +1709,7 @@ impl GetPricingPlanOutput {
 pub mod get_pricing_plan_output {
     
     /// A builder for [`GetPricingPlanOutput`](crate::output::GetPricingPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) current_pricing_plan: std::option::Option<crate::model::PricingPlan>,
@@ -1829,6 +1849,7 @@ impl GetEntityOutput {
 pub mod get_entity_output {
     
     /// A builder for [`GetEntityOutput`](crate::output::GetEntityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -2124,6 +2145,7 @@ impl GetComponentTypeOutput {
 pub mod get_component_type_output {
     
     /// A builder for [`GetComponentTypeOutput`](crate::output::GetComponentTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -2394,6 +2416,7 @@ impl ExecuteQueryOutput {
 pub mod execute_query_output {
     
     /// A builder for [`ExecuteQueryOutput`](crate::output::ExecuteQueryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_descriptions: std::option::Option<std::vec::Vec<crate::model::ColumnDescription>>,
@@ -2471,6 +2494,7 @@ pub struct DeleteWorkspaceOutput  {
 pub mod delete_workspace_output {
     
     /// A builder for [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2509,6 +2533,7 @@ impl DeleteSyncJobOutput {
 pub mod delete_sync_job_output {
     
     /// A builder for [`DeleteSyncJobOutput`](crate::output::DeleteSyncJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::SyncJobState>,
@@ -2550,6 +2575,7 @@ pub struct DeleteSceneOutput  {
 pub mod delete_scene_output {
     
     /// A builder for [`DeleteSceneOutput`](crate::output::DeleteSceneOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2588,6 +2614,7 @@ impl DeleteEntityOutput {
 pub mod delete_entity_output {
     
     /// A builder for [`DeleteEntityOutput`](crate::output::DeleteEntityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::State>,
@@ -2638,6 +2665,7 @@ impl DeleteComponentTypeOutput {
 pub mod delete_component_type_output {
     
     /// A builder for [`DeleteComponentTypeOutput`](crate::output::DeleteComponentTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::State>,
@@ -2695,6 +2723,7 @@ impl CreateWorkspaceOutput {
 pub mod create_workspace_output {
     
     /// A builder for [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2771,6 +2800,7 @@ impl CreateSyncJobOutput {
 pub mod create_sync_job_output {
     
     /// A builder for [`CreateSyncJobOutput`](crate::output::CreateSyncJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2852,6 +2882,7 @@ impl CreateSceneOutput {
 pub mod create_scene_output {
     
     /// A builder for [`CreateSceneOutput`](crate::output::CreateSceneOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2935,6 +2966,7 @@ impl CreateEntityOutput {
 pub mod create_entity_output {
     
     /// A builder for [`CreateEntityOutput`](crate::output::CreateEntityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -3035,6 +3067,7 @@ impl CreateComponentTypeOutput {
 pub mod create_component_type_output {
     
     /// A builder for [`CreateComponentTypeOutput`](crate::output::CreateComponentTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3109,6 +3142,7 @@ impl BatchPutPropertyValuesOutput {
 pub mod batch_put_property_values_output {
     
     /// A builder for [`BatchPutPropertyValuesOutput`](crate::output::BatchPutPropertyValuesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::BatchPutPropertyErrorEntry>>,

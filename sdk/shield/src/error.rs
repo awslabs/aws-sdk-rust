@@ -197,6 +197,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -269,6 +270,7 @@ impl std::error::Error for OptimisticLockException {}
 pub mod optimistic_lock_exception {
     
     /// A builder for [`OptimisticLockException`](crate::error::OptimisticLockException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -329,6 +331,7 @@ impl std::error::Error for LockedSubscriptionException {}
 pub mod locked_subscription_exception {
     
     /// A builder for [`LockedSubscriptionException`](crate::error::LockedSubscriptionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -405,6 +408,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
     
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -495,6 +499,7 @@ impl std::error::Error for InternalErrorException {}
 pub mod internal_error_exception {
     
     /// A builder for [`InternalErrorException`](crate::error::InternalErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1014,6 +1019,7 @@ impl std::error::Error for InvalidOperationException {}
 pub mod invalid_operation_exception {
     
     /// A builder for [`InvalidOperationException`](crate::error::InvalidOperationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1223,6 +1229,7 @@ impl std::error::Error for InvalidResourceException {}
 pub mod invalid_resource_exception {
     
     /// A builder for [`InvalidResourceException`](crate::error::InvalidResourceException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1706,6 +1713,7 @@ impl std::error::Error for InvalidPaginationTokenException {}
 pub mod invalid_pagination_token_exception {
     
     /// A builder for [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2640,6 +2648,7 @@ impl std::error::Error for LimitsExceededException {}
 pub mod limits_exceeded_exception {
     
     /// A builder for [`LimitsExceededException`](crate::error::LimitsExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3208,6 +3217,7 @@ impl std::error::Error for NoAssociatedRoleException {}
 pub mod no_associated_role_exception {
     
     /// A builder for [`NoAssociatedRoleException`](crate::error::NoAssociatedRoleException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3268,6 +3278,7 @@ impl std::error::Error for AccessDeniedForDependencyException {}
 pub mod access_denied_for_dependency_exception {
     
     /// A builder for [`AccessDeniedForDependencyException`](crate::error::AccessDeniedForDependencyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4525,6 +4536,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
     
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5130,6 +5142,7 @@ impl std::error::Error for ResourceAlreadyExistsException {}
 pub mod resource_already_exists_exception {
     
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

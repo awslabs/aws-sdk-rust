@@ -35,6 +35,7 @@ impl  std::fmt::Debug for User  {
 pub mod user {
     
     /// A builder for [`User`](crate::model::User).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -124,6 +125,7 @@ impl  std::fmt::Debug for Item  {
 pub mod item {
     
     /// A builder for [`Item`](crate::model::Item).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) item_id: std::option::Option<std::string::String>,
@@ -275,6 +277,7 @@ impl  std::fmt::Debug for Event  {
 pub mod event {
     
     /// A builder for [`Event`](crate::model::Event).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
@@ -450,6 +453,7 @@ impl MetricAttribution {
 pub mod metric_attribution {
     
     /// A builder for [`MetricAttribution`](crate::model::MetricAttribution).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_attribution_source: std::option::Option<std::string::String>,

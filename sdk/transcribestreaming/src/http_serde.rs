@@ -7,7 +7,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_2 = inner_1.as_str();
                         if !formatted_2.is_empty() {
                             let header_value = formatted_2;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("language_code", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -22,7 +22,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_4 = encoder.encode();
                         if !formatted_4.is_empty() {
                             let header_value = formatted_4;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("media_sample_rate_hertz", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -36,7 +36,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_6 = inner_5.as_str();
                         if !formatted_6.is_empty() {
                             let header_value = formatted_6;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("media_encoding", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -50,7 +50,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_8 = inner_7.as_str();
                         if !formatted_8.is_empty() {
                             let header_value = formatted_8;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("vocabulary_name", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -64,7 +64,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_10 = inner_9.as_str();
                         if !formatted_10.is_empty() {
                             let header_value = formatted_10;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("session_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -78,7 +78,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_12 = inner_11.as_str();
                         if !formatted_12.is_empty() {
                             let header_value = formatted_12;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("vocabulary_filter_name", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -92,7 +92,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_14 = inner_13.as_str();
                         if !formatted_14.is_empty() {
                             let header_value = formatted_14;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("vocabulary_filter_method", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -106,7 +106,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_16 = inner_15.as_str();
                         if !formatted_16.is_empty() {
                             let header_value = formatted_16;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("language_model_name", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -121,7 +121,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_17 = encoder.encode();
                         if !formatted_17.is_empty() {
                             let header_value = formatted_17;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("enable_partial_results_stabilization", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -135,7 +135,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_19 = inner_18.as_str();
                         if !formatted_19.is_empty() {
                             let header_value = formatted_19;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("partial_results_stability", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -149,7 +149,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_21 = inner_20.as_str();
                         if !formatted_21.is_empty() {
                             let header_value = formatted_21;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("content_identification_type", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -163,7 +163,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_23 = inner_22.as_str();
                         if !formatted_23.is_empty() {
                             let header_value = formatted_23;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("content_redaction_type", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -177,7 +177,7 @@ pub fn add_headers_start_call_analytics_stream_transcription(
         let formatted_25 = inner_24.as_str();
                         if !formatted_25.is_empty() {
                             let header_value = formatted_25;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("pii_entity_types", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -198,7 +198,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_27 = inner_26.as_str();
                         if !formatted_27.is_empty() {
                             let header_value = formatted_27;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("language_code", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -213,7 +213,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_29 = encoder.encode();
                         if !formatted_29.is_empty() {
                             let header_value = formatted_29;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("media_sample_rate_hertz", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -227,7 +227,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_31 = inner_30.as_str();
                         if !formatted_31.is_empty() {
                             let header_value = formatted_31;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("media_encoding", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -241,7 +241,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_33 = inner_32.as_str();
                         if !formatted_33.is_empty() {
                             let header_value = formatted_33;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("vocabulary_name", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -255,7 +255,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_35 = inner_34.as_str();
                         if !formatted_35.is_empty() {
                             let header_value = formatted_35;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("specialty", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -269,7 +269,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_37 = inner_36.as_str();
                         if !formatted_37.is_empty() {
                             let header_value = formatted_37;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("r#type", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -284,7 +284,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_38 = encoder.encode();
                         if !formatted_38.is_empty() {
                             let header_value = formatted_38;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("show_speaker_label", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -298,7 +298,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_40 = inner_39.as_str();
                         if !formatted_40.is_empty() {
                             let header_value = formatted_40;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("session_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -313,7 +313,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_41 = encoder.encode();
                         if !formatted_41.is_empty() {
                             let header_value = formatted_41;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("enable_channel_identification", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -328,7 +328,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_43 = encoder.encode();
                         if !formatted_43.is_empty() {
                             let header_value = formatted_43;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("number_of_channels", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -342,7 +342,7 @@ pub fn add_headers_start_medical_stream_transcription(
         let formatted_45 = inner_44.as_str();
                         if !formatted_45.is_empty() {
                             let header_value = formatted_45;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("content_identification_type", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -363,7 +363,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_47 = inner_46.as_str();
                         if !formatted_47.is_empty() {
                             let header_value = formatted_47;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("language_code", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -378,7 +378,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_49 = encoder.encode();
                         if !formatted_49.is_empty() {
                             let header_value = formatted_49;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("media_sample_rate_hertz", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -392,7 +392,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_51 = inner_50.as_str();
                         if !formatted_51.is_empty() {
                             let header_value = formatted_51;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("media_encoding", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -406,7 +406,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_53 = inner_52.as_str();
                         if !formatted_53.is_empty() {
                             let header_value = formatted_53;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("vocabulary_name", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -420,7 +420,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_55 = inner_54.as_str();
                         if !formatted_55.is_empty() {
                             let header_value = formatted_55;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("session_id", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -434,7 +434,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_57 = inner_56.as_str();
                         if !formatted_57.is_empty() {
                             let header_value = formatted_57;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("vocabulary_filter_name", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -448,7 +448,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_59 = inner_58.as_str();
                         if !formatted_59.is_empty() {
                             let header_value = formatted_59;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("vocabulary_filter_method", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -463,7 +463,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_60 = encoder.encode();
                         if !formatted_60.is_empty() {
                             let header_value = formatted_60;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("show_speaker_label", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -478,7 +478,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_61 = encoder.encode();
                         if !formatted_61.is_empty() {
                             let header_value = formatted_61;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("enable_channel_identification", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -493,7 +493,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_63 = encoder.encode();
                         if !formatted_63.is_empty() {
                             let header_value = formatted_63;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("number_of_channels", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -508,7 +508,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_64 = encoder.encode();
                         if !formatted_64.is_empty() {
                             let header_value = formatted_64;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("enable_partial_results_stabilization", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -522,7 +522,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_66 = inner_65.as_str();
                         if !formatted_66.is_empty() {
                             let header_value = formatted_66;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("partial_results_stability", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -536,7 +536,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_68 = inner_67.as_str();
                         if !formatted_68.is_empty() {
                             let header_value = formatted_68;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("content_identification_type", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -550,7 +550,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_70 = inner_69.as_str();
                         if !formatted_70.is_empty() {
                             let header_value = formatted_70;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("content_redaction_type", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -564,7 +564,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_72 = inner_71.as_str();
                         if !formatted_72.is_empty() {
                             let header_value = formatted_72;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("pii_entity_types", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -578,7 +578,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_74 = inner_73.as_str();
                         if !formatted_74.is_empty() {
                             let header_value = formatted_74;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("language_model_name", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -593,7 +593,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_75 = encoder.encode();
                         if !formatted_75.is_empty() {
                             let header_value = formatted_75;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("identify_language", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -607,7 +607,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_77 = inner_76.as_str();
                         if !formatted_77.is_empty() {
                             let header_value = formatted_77;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("language_options", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -621,7 +621,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_79 = inner_78.as_str();
                         if !formatted_79.is_empty() {
                             let header_value = formatted_79;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("preferred_language", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -635,7 +635,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_81 = inner_80.as_str();
                         if !formatted_81.is_empty() {
                             let header_value = formatted_81;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("vocabulary_names", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -649,7 +649,7 @@ pub fn add_headers_start_stream_transcription(
         let formatted_83 = inner_82.as_str();
                         if !formatted_83.is_empty() {
                             let header_value = formatted_83;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("vocabulary_filter_names", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,

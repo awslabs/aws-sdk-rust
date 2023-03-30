@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod get_clip_input {
     
     /// A builder for [`GetClipInput`](crate::input::GetClipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -140,6 +141,7 @@ impl GetClipInput {
 pub mod get_dash_streaming_session_url_input {
     
     /// A builder for [`GetDashStreamingSessionUrlInput`](crate::input::GetDashStreamingSessionUrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -373,6 +375,7 @@ impl GetDashStreamingSessionUrlInput {
 pub mod get_hls_streaming_session_url_input {
     
     /// A builder for [`GetHlsStreamingSessionUrlInput`](crate::input::GetHlsStreamingSessionUrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -634,6 +637,7 @@ impl GetHlsStreamingSessionUrlInput {
 pub mod get_images_input {
     
     /// A builder for [`GetImagesInput`](crate::input::GetImagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -887,6 +891,7 @@ impl GetImagesInput {
 pub mod get_media_for_fragment_list_input {
     
     /// A builder for [`GetMediaForFragmentListInput`](crate::input::GetMediaForFragmentListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -1024,6 +1029,7 @@ impl GetMediaForFragmentListInput {
 pub mod list_fragments_input {
     
     /// A builder for [`ListFragmentsInput`](crate::input::ListFragmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,

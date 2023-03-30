@@ -18,6 +18,7 @@ impl LaunchOverrides {
 pub mod launch_overrides {
     
     /// A builder for [`LaunchOverrides`](crate::model::LaunchOverrides).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_commands: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -102,6 +103,7 @@ impl SimulationAppMetadata {
 pub mod simulation_app_metadata {
     
     /// A builder for [`SimulationAppMetadata`](crate::model::SimulationAppMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -396,6 +398,7 @@ impl SimulationAppEndpointInfo {
 pub mod simulation_app_endpoint_info {
     
     /// A builder for [`SimulationAppEndpointInfo`](crate::model::SimulationAppEndpointInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
@@ -471,6 +474,7 @@ impl SimulationAppPortMapping {
 pub mod simulation_app_port_mapping {
     
     /// A builder for [`SimulationAppPortMapping`](crate::model::SimulationAppPortMapping).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) declared: std::option::Option<i32>,
@@ -561,6 +565,7 @@ impl SimulationMetadata {
 pub mod simulation_metadata {
     
     /// A builder for [`SimulationMetadata`](crate::model::SimulationMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -870,6 +875,7 @@ impl S3Location {
 pub mod s3_location {
     
     /// A builder for [`S3Location`](crate::model::S3Location).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -943,6 +949,7 @@ impl LiveSimulationState {
 pub mod live_simulation_state {
     
     /// A builder for [`LiveSimulationState`](crate::model::LiveSimulationState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domains: std::option::Option<std::vec::Vec<crate::model::Domain>>,
@@ -1028,6 +1035,7 @@ impl SimulationClock {
 pub mod simulation_clock {
     
     /// A builder for [`SimulationClock`](crate::model::SimulationClock).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ClockStatus>,
@@ -1298,6 +1306,7 @@ impl Domain {
 pub mod domain {
     
     /// A builder for [`Domain`](crate::model::Domain).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1468,6 +1477,7 @@ impl LoggingConfiguration {
 pub mod logging_configuration {
     
     /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::LogDestination>>,
@@ -1524,6 +1534,7 @@ impl LogDestination {
 pub mod log_destination {
     
     /// A builder for [`LogDestination`](crate::model::LogDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_log_group: std::option::Option<crate::model::CloudWatchLogsLogGroup>,
@@ -1574,6 +1585,7 @@ impl CloudWatchLogsLogGroup {
 pub mod cloud_watch_logs_log_group {
     
     /// A builder for [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_arn: std::option::Option<std::string::String>,

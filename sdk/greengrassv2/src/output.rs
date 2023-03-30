@@ -24,6 +24,7 @@ impl UpdateConnectivityInfoOutput {
 pub mod update_connectivity_info_output {
     
     /// A builder for [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
@@ -77,6 +78,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -106,6 +108,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -144,6 +147,7 @@ impl ResolveComponentCandidatesOutput {
 pub mod resolve_component_candidates_output {
     
     /// A builder for [`ResolveComponentCandidatesOutput`](crate::output::ResolveComponentCandidatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolved_component_versions: std::option::Option<std::vec::Vec<crate::model::ResolvedComponentVersion>>,
@@ -200,6 +204,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -271,6 +276,7 @@ impl ListInstalledComponentsOutput {
 pub mod list_installed_components_output {
     
     /// A builder for [`ListInstalledComponentsOutput`](crate::output::ListInstalledComponentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) installed_components: std::option::Option<std::vec::Vec<crate::model::InstalledComponent>>,
@@ -354,6 +360,7 @@ impl ListEffectiveDeploymentsOutput {
 pub mod list_effective_deployments_output {
     
     /// A builder for [`ListEffectiveDeploymentsOutput`](crate::output::ListEffectiveDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) effective_deployments: std::option::Option<std::vec::Vec<crate::model::EffectiveDeployment>>,
@@ -429,6 +436,7 @@ impl ListDeploymentsOutput {
 pub mod list_deployments_output {
     
     /// A builder for [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
@@ -504,6 +512,7 @@ impl ListCoreDevicesOutput {
 pub mod list_core_devices_output {
     
     /// A builder for [`ListCoreDevicesOutput`](crate::output::ListCoreDevicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_devices: std::option::Option<std::vec::Vec<crate::model::CoreDevice>>,
@@ -579,6 +588,7 @@ impl ListComponentVersionsOutput {
 pub mod list_component_versions_output {
     
     /// A builder for [`ListComponentVersionsOutput`](crate::output::ListComponentVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_versions: std::option::Option<std::vec::Vec<crate::model::ComponentVersionListItem>>,
@@ -654,6 +664,7 @@ impl ListComponentsOutput {
 pub mod list_components_output {
     
     /// A builder for [`ListComponentsOutput`](crate::output::ListComponentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) components: std::option::Option<std::vec::Vec<crate::model::Component>>,
@@ -729,6 +740,7 @@ impl ListClientDevicesAssociatedWithCoreDeviceOutput {
 pub mod list_client_devices_associated_with_core_device_output {
     
     /// A builder for [`ListClientDevicesAssociatedWithCoreDeviceOutput`](crate::output::ListClientDevicesAssociatedWithCoreDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associated_client_devices: std::option::Option<std::vec::Vec<crate::model::AssociatedClientDevice>>,
@@ -804,6 +816,7 @@ impl GetServiceRoleForAccountOutput {
 pub mod get_service_role_for_account_output {
     
     /// A builder for [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associated_at: std::option::Option<std::string::String>,
@@ -957,6 +970,7 @@ impl GetDeploymentOutput {
 pub mod get_deployment_output {
     
     /// A builder for [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -1226,6 +1240,7 @@ impl GetCoreDeviceOutput {
 pub mod get_core_device_output {
     
     /// A builder for [`GetCoreDeviceOutput`](crate::output::GetCoreDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_device_thing_name: std::option::Option<std::string::String>,
@@ -1369,6 +1384,7 @@ impl GetConnectivityInfoOutput {
 pub mod get_connectivity_info_output {
     
     /// A builder for [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connectivity_info: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
@@ -1437,6 +1453,7 @@ impl GetComponentVersionArtifactOutput {
 pub mod get_component_version_artifact_output {
     
     /// A builder for [`GetComponentVersionArtifactOutput`](crate::output::GetComponentVersionArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pre_signed_url: std::option::Option<std::string::String>,
@@ -1501,6 +1518,7 @@ impl GetComponentOutput {
 pub mod get_component_output {
     
     /// A builder for [`GetComponentOutput`](crate::output::GetComponentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recipe_output_format: std::option::Option<crate::model::RecipeOutputFormat>,
@@ -1581,6 +1599,7 @@ impl DisassociateServiceRoleFromAccountOutput {
 pub mod disassociate_service_role_from_account_output {
     
     /// A builder for [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disassociated_at: std::option::Option<std::string::String>,
@@ -1687,6 +1706,7 @@ impl DescribeComponentOutput {
 pub mod describe_component_output {
     
     /// A builder for [`DescribeComponentOutput`](crate::output::DescribeComponentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1836,6 +1856,7 @@ pub struct DeleteDeploymentOutput  {
 pub mod delete_deployment_output {
     
     /// A builder for [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1865,6 +1886,7 @@ pub struct DeleteCoreDeviceOutput  {
 pub mod delete_core_device_output {
     
     /// A builder for [`DeleteCoreDeviceOutput`](crate::output::DeleteCoreDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1894,6 +1916,7 @@ pub struct DeleteComponentOutput  {
 pub mod delete_component_output {
     
     /// A builder for [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1946,6 +1969,7 @@ impl CreateDeploymentOutput {
 pub mod create_deployment_output {
     
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
@@ -2048,6 +2072,7 @@ impl CreateComponentVersionOutput {
 pub mod create_component_version_output {
     
     /// A builder for [`CreateComponentVersionOutput`](crate::output::CreateComponentVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2146,6 +2171,7 @@ impl CancelDeploymentOutput {
 pub mod cancel_deployment_output {
     
     /// A builder for [`CancelDeploymentOutput`](crate::output::CancelDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2196,6 +2222,7 @@ impl BatchDisassociateClientDeviceFromCoreDeviceOutput {
 pub mod batch_disassociate_client_device_from_core_device_output {
     
     /// A builder for [`BatchDisassociateClientDeviceFromCoreDeviceOutput`](crate::output::BatchDisassociateClientDeviceFromCoreDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry>>,
@@ -2252,6 +2279,7 @@ impl BatchAssociateClientDeviceWithCoreDeviceOutput {
 pub mod batch_associate_client_device_with_core_device_output {
     
     /// A builder for [`BatchAssociateClientDeviceWithCoreDeviceOutput`](crate::output::BatchAssociateClientDeviceWithCoreDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry>>,
@@ -2308,6 +2336,7 @@ impl AssociateServiceRoleToAccountOutput {
 pub mod associate_service_role_to_account_output {
     
     /// A builder for [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associated_at: std::option::Option<std::string::String>,

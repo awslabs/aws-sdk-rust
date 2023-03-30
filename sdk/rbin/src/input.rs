@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_rule_input {
     
     /// A builder for [`CreateRuleInput`](crate::input::CreateRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
@@ -188,6 +189,7 @@ impl CreateRuleInput {
 pub mod delete_rule_input {
     
     /// A builder for [`DeleteRuleInput`](crate::input::DeleteRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -297,6 +299,7 @@ impl DeleteRuleInput {
 pub mod get_rule_input {
     
     /// A builder for [`GetRuleInput`](crate::input::GetRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -406,6 +409,7 @@ impl GetRuleInput {
 pub mod list_rules_input {
     
     /// A builder for [`ListRulesInput`](crate::input::ListRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -567,6 +571,7 @@ impl ListRulesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -676,6 +681,7 @@ impl ListTagsForResourceInput {
 pub mod lock_rule_input {
     
     /// A builder for [`LockRuleInput`](crate::input::LockRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -801,6 +807,7 @@ impl LockRuleInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -932,6 +939,7 @@ impl TagResourceInput {
 pub mod unlock_rule_input {
     
     /// A builder for [`UnlockRuleInput`](crate::input::UnlockRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -1041,6 +1049,7 @@ impl UnlockRuleInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1178,6 +1187,7 @@ impl UntagResourceInput {
 pub mod update_rule_input {
     
     /// A builder for [`UpdateRuleInput`](crate::input::UpdateRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,

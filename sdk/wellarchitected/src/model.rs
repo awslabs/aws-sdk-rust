@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
     
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -223,6 +224,7 @@ impl WorkloadShare {
 pub mod workload_share {
     
     /// A builder for [`WorkloadShare`](crate::model::WorkloadShare).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_id: std::option::Option<std::string::String>,
@@ -773,6 +775,7 @@ impl Workload {
 pub mod workload {
     
     /// A builder for [`Workload`](crate::model::Workload).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -1224,6 +1227,7 @@ impl WorkloadDiscoveryConfig {
 pub mod workload_discovery_config {
     
     /// A builder for [`WorkloadDiscoveryConfig`](crate::model::WorkloadDiscoveryConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trusted_advisor_integration_status: std::option::Option<crate::model::TrustedAdvisorIntegrationStatus>,
@@ -1666,6 +1670,7 @@ impl ShareInvitation {
 pub mod share_invitation {
     
     /// A builder for [`ShareInvitation`](crate::model::ShareInvitation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_invitation_id: std::option::Option<std::string::String>,
@@ -2003,6 +2008,7 @@ impl LensReview {
 pub mod lens_review {
     
     /// A builder for [`LensReview`](crate::model::LensReview).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -2202,6 +2208,7 @@ impl PillarReviewSummary {
 pub mod pillar_review_summary {
     
     /// A builder for [`PillarReviewSummary`](crate::model::PillarReviewSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pillar_id: std::option::Option<std::string::String>,
@@ -2572,6 +2579,7 @@ impl Answer {
 pub mod answer {
     
     /// A builder for [`Answer`](crate::model::Answer).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) question_id: std::option::Option<std::string::String>,
@@ -2921,6 +2929,7 @@ impl ChoiceAnswer {
 pub mod choice_answer {
     
     /// A builder for [`ChoiceAnswer`](crate::model::ChoiceAnswer).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) choice_id: std::option::Option<std::string::String>,
@@ -3226,6 +3235,7 @@ impl Choice {
 pub mod choice {
     
     /// A builder for [`Choice`](crate::model::Choice).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) choice_id: std::option::Option<std::string::String>,
@@ -3349,6 +3359,7 @@ impl AdditionalResources {
 pub mod additional_resources {
     
     /// A builder for [`AdditionalResources`](crate::model::AdditionalResources).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AdditionalResourceType>,
@@ -3424,6 +3435,7 @@ impl ChoiceContent {
 pub mod choice_content {
     
     /// A builder for [`ChoiceContent`](crate::model::ChoiceContent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) display_text: std::option::Option<std::string::String>,
@@ -3582,6 +3594,7 @@ impl ChoiceUpdate {
 pub mod choice_update {
     
     /// A builder for [`ChoiceUpdate`](crate::model::ChoiceUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ChoiceStatus>,
@@ -3684,6 +3697,7 @@ impl WorkloadShareSummary {
 pub mod workload_share_summary {
     
     /// A builder for [`WorkloadShareSummary`](crate::model::WorkloadShareSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_id: std::option::Option<std::string::String>,
@@ -3833,6 +3847,7 @@ impl WorkloadSummary {
 pub mod workload_summary {
     
     /// A builder for [`WorkloadSummary`](crate::model::WorkloadSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -4039,6 +4054,7 @@ impl ShareInvitationSummary {
 pub mod share_invitation_summary {
     
     /// A builder for [`ShareInvitationSummary`](crate::model::ShareInvitationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_invitation_id: std::option::Option<std::string::String>,
@@ -4194,6 +4210,7 @@ impl NotificationSummary {
 pub mod notification_summary {
     
     /// A builder for [`NotificationSummary`](crate::model::NotificationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::NotificationType>,
@@ -4299,6 +4316,7 @@ impl LensUpgradeSummary {
 pub mod lens_upgrade_summary {
     
     /// A builder for [`LensUpgradeSummary`](crate::model::LensUpgradeSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -4524,6 +4542,7 @@ impl MilestoneSummary {
 pub mod milestone_summary {
     
     /// A builder for [`MilestoneSummary`](crate::model::MilestoneSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) milestone_number: std::option::Option<i32>,
@@ -4636,6 +4655,7 @@ impl LensShareSummary {
 pub mod lens_share_summary {
     
     /// A builder for [`LensShareSummary`](crate::model::LensShareSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_id: std::option::Option<std::string::String>,
@@ -4770,6 +4790,7 @@ impl LensReviewSummary {
 pub mod lens_review_summary {
     
     /// A builder for [`LensReviewSummary`](crate::model::LensReviewSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -4943,6 +4964,7 @@ impl ImprovementSummary {
 pub mod improvement_summary {
     
     /// A builder for [`ImprovementSummary`](crate::model::ImprovementSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) question_id: std::option::Option<std::string::String>,
@@ -5079,6 +5101,7 @@ impl ChoiceImprovementPlan {
 pub mod choice_improvement_plan {
     
     /// A builder for [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) choice_id: std::option::Option<std::string::String>,
@@ -5224,6 +5247,7 @@ impl LensSummary {
 pub mod lens_summary {
     
     /// A builder for [`LensSummary`](crate::model::LensSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_arn: std::option::Option<std::string::String>,
@@ -5634,6 +5658,7 @@ impl CheckSummary {
 pub mod check_summary {
     
     /// A builder for [`CheckSummary`](crate::model::CheckSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6072,6 +6097,7 @@ impl CheckDetail {
 pub mod check_detail {
     
     /// A builder for [`CheckDetail`](crate::model::CheckDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6421,6 +6447,7 @@ impl AnswerSummary {
 pub mod answer_summary {
     
     /// A builder for [`AnswerSummary`](crate::model::AnswerSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) question_id: std::option::Option<std::string::String>,
@@ -6604,6 +6631,7 @@ impl ChoiceAnswerSummary {
 pub mod choice_answer_summary {
     
     /// A builder for [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) choice_id: std::option::Option<std::string::String>,
@@ -6790,6 +6818,7 @@ impl Milestone {
 pub mod milestone {
     
     /// A builder for [`Milestone`](crate::model::Milestone).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) milestone_number: std::option::Option<i32>,
@@ -6881,6 +6910,7 @@ impl VersionDifferences {
 pub mod version_differences {
     
     /// A builder for [`VersionDifferences`](crate::model::VersionDifferences).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pillar_differences: std::option::Option<std::vec::Vec<crate::model::PillarDifference>>,
@@ -6960,6 +6990,7 @@ impl PillarDifference {
 pub mod pillar_difference {
     
     /// A builder for [`PillarDifference`](crate::model::PillarDifference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pillar_id: std::option::Option<std::string::String>,
@@ -7068,6 +7099,7 @@ impl QuestionDifference {
 pub mod question_difference {
     
     /// A builder for [`QuestionDifference`](crate::model::QuestionDifference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) question_id: std::option::Option<std::string::String>,
@@ -7251,6 +7283,7 @@ impl LensReviewReport {
 pub mod lens_review_report {
     
     /// A builder for [`LensReviewReport`](crate::model::LensReviewReport).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -7375,6 +7408,7 @@ impl Lens {
 pub mod lens {
     
     /// A builder for [`Lens`](crate::model::Lens).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_arn: std::option::Option<std::string::String>,

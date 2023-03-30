@@ -7,7 +7,7 @@ pub fn add_headers_complete_attachment_upload(
         let formatted_2 = inner_1.as_str();
                         if !formatted_2.is_empty() {
                             let header_value = formatted_2;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("connection_token", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -28,7 +28,7 @@ pub fn add_headers_create_participant_connection(
         let formatted_4 = inner_3.as_str();
                         if !formatted_4.is_empty() {
                             let header_value = formatted_4;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("participant_token", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -49,7 +49,7 @@ pub fn add_headers_disconnect_participant(
         let formatted_6 = inner_5.as_str();
                         if !formatted_6.is_empty() {
                             let header_value = formatted_6;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("connection_token", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -70,7 +70,7 @@ pub fn add_headers_get_attachment(
         let formatted_8 = inner_7.as_str();
                         if !formatted_8.is_empty() {
                             let header_value = formatted_8;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("connection_token", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -91,7 +91,7 @@ pub fn add_headers_get_transcript(
         let formatted_10 = inner_9.as_str();
                         if !formatted_10.is_empty() {
                             let header_value = formatted_10;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("connection_token", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -112,7 +112,7 @@ pub fn add_headers_send_event(
         let formatted_12 = inner_11.as_str();
                         if !formatted_12.is_empty() {
                             let header_value = formatted_12;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("connection_token", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -133,7 +133,7 @@ pub fn add_headers_send_message(
         let formatted_14 = inner_13.as_str();
                         if !formatted_14.is_empty() {
                             let header_value = formatted_14;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("connection_token", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -154,7 +154,7 @@ pub fn add_headers_start_attachment_upload(
         let formatted_16 = inner_15.as_str();
                         if !formatted_16.is_empty() {
                             let header_value = formatted_16;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("connection_token", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,

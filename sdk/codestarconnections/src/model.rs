@@ -39,6 +39,7 @@ impl VpcConfiguration {
 pub mod vpc_configuration {
     
     /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -145,6 +146,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -251,6 +253,7 @@ impl Host {
 pub mod host {
     
     /// A builder for [`Host`](crate::model::Host).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -500,6 +503,7 @@ impl Connection {
 pub mod connection {
     
     /// A builder for [`Connection`](crate::model::Connection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_name: std::option::Option<std::string::String>,

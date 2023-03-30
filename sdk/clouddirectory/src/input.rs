@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_facet_to_object_input {
     
     /// A builder for [`AddFacetToObjectInput`](crate::input::AddFacetToObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -155,6 +156,7 @@ impl AddFacetToObjectInput {
 pub mod apply_schema_input {
     
     /// A builder for [`ApplySchemaInput`](crate::input::ApplySchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) published_schema_arn: std::option::Option<std::string::String>,
@@ -275,6 +277,7 @@ impl ApplySchemaInput {
 pub mod attach_object_input {
     
     /// A builder for [`AttachObjectInput`](crate::input::AttachObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -419,6 +422,7 @@ impl AttachObjectInput {
 pub mod attach_policy_input {
     
     /// A builder for [`AttachPolicyInput`](crate::input::AttachPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -551,6 +555,7 @@ impl AttachPolicyInput {
 pub mod attach_to_index_input {
     
     /// A builder for [`AttachToIndexInput`](crate::input::AttachToIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -683,6 +688,7 @@ impl AttachToIndexInput {
 pub mod attach_typed_link_input {
     
     /// A builder for [`AttachTypedLinkInput`](crate::input::AttachTypedLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -845,6 +851,7 @@ impl AttachTypedLinkInput {
 pub mod batch_read_input {
     
     /// A builder for [`BatchReadInput`](crate::input::BatchReadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -983,6 +990,7 @@ impl BatchReadInput {
 pub mod batch_write_input {
     
     /// A builder for [`BatchWriteInput`](crate::input::BatchWriteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -1109,6 +1117,7 @@ impl BatchWriteInput {
 pub mod create_directory_input {
     
     /// A builder for [`CreateDirectoryInput`](crate::input::CreateDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1229,6 +1238,7 @@ impl CreateDirectoryInput {
 pub mod create_facet_input {
     
     /// A builder for [`CreateFacetInput`](crate::input::CreateFacetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -1415,6 +1425,7 @@ impl CreateFacetInput {
 pub mod create_index_input {
     
     /// A builder for [`CreateIndexInput`](crate::input::CreateIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -1578,6 +1589,7 @@ impl CreateIndexInput {
 pub mod create_object_input {
     
     /// A builder for [`CreateObjectInput`](crate::input::CreateObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -1746,6 +1758,7 @@ impl CreateObjectInput {
 pub mod create_schema_input {
     
     /// A builder for [`CreateSchemaInput`](crate::input::CreateSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1853,6 +1866,7 @@ impl CreateSchemaInput {
 pub mod create_typed_link_facet_input {
     
     /// A builder for [`CreateTypedLinkFacetInput`](crate::input::CreateTypedLinkFacetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -1973,6 +1987,7 @@ impl CreateTypedLinkFacetInput {
 pub mod delete_directory_input {
     
     /// A builder for [`DeleteDirectoryInput`](crate::input::DeleteDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -2077,6 +2092,7 @@ impl DeleteDirectoryInput {
 pub mod delete_facet_input {
     
     /// A builder for [`DeleteFacetInput`](crate::input::DeleteFacetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -2197,6 +2213,7 @@ impl DeleteFacetInput {
 pub mod delete_object_input {
     
     /// A builder for [`DeleteObjectInput`](crate::input::DeleteObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -2317,6 +2334,7 @@ impl DeleteObjectInput {
 pub mod delete_schema_input {
     
     /// A builder for [`DeleteSchemaInput`](crate::input::DeleteSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -2421,6 +2439,7 @@ impl DeleteSchemaInput {
 pub mod delete_typed_link_facet_input {
     
     /// A builder for [`DeleteTypedLinkFacetInput`](crate::input::DeleteTypedLinkFacetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -2541,6 +2560,7 @@ impl DeleteTypedLinkFacetInput {
 pub mod detach_from_index_input {
     
     /// A builder for [`DetachFromIndexInput`](crate::input::DetachFromIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -2673,6 +2693,7 @@ impl DetachFromIndexInput {
 pub mod detach_object_input {
     
     /// A builder for [`DetachObjectInput`](crate::input::DetachObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -2805,6 +2826,7 @@ impl DetachObjectInput {
 pub mod detach_policy_input {
     
     /// A builder for [`DetachPolicyInput`](crate::input::DetachPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -2937,6 +2959,7 @@ impl DetachPolicyInput {
 pub mod detach_typed_link_input {
     
     /// A builder for [`DetachTypedLinkInput`](crate::input::DetachTypedLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -3057,6 +3080,7 @@ impl DetachTypedLinkInput {
 pub mod disable_directory_input {
     
     /// A builder for [`DisableDirectoryInput`](crate::input::DisableDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -3161,6 +3185,7 @@ impl DisableDirectoryInput {
 pub mod enable_directory_input {
     
     /// A builder for [`EnableDirectoryInput`](crate::input::EnableDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -3265,6 +3290,7 @@ impl EnableDirectoryInput {
 pub mod get_applied_schema_version_input {
     
     /// A builder for [`GetAppliedSchemaVersionInput`](crate::input::GetAppliedSchemaVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -3372,6 +3398,7 @@ impl GetAppliedSchemaVersionInput {
 pub mod get_directory_input {
     
     /// A builder for [`GetDirectoryInput`](crate::input::GetDirectoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -3476,6 +3503,7 @@ impl GetDirectoryInput {
 pub mod get_facet_input {
     
     /// A builder for [`GetFacetInput`](crate::input::GetFacetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -3596,6 +3624,7 @@ impl GetFacetInput {
 pub mod get_link_attributes_input {
     
     /// A builder for [`GetLinkAttributesInput`](crate::input::GetLinkAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -3746,6 +3775,7 @@ impl GetLinkAttributesInput {
 pub mod get_object_attributes_input {
     
     /// A builder for [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -3908,6 +3938,7 @@ impl GetObjectAttributesInput {
 pub mod get_object_information_input {
     
     /// A builder for [`GetObjectInformationInput`](crate::input::GetObjectInformationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -4040,6 +4071,7 @@ impl GetObjectInformationInput {
 pub mod get_schema_as_json_input {
     
     /// A builder for [`GetSchemaAsJsonInput`](crate::input::GetSchemaAsJsonInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -4144,6 +4176,7 @@ impl GetSchemaAsJsonInput {
 pub mod get_typed_link_facet_information_input {
     
     /// A builder for [`GetTypedLinkFacetInformationInput`](crate::input::GetTypedLinkFacetInformationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -4264,6 +4297,7 @@ impl GetTypedLinkFacetInformationInput {
 pub mod list_applied_schema_arns_input {
     
     /// A builder for [`ListAppliedSchemaArnsInput`](crate::input::ListAppliedSchemaArnsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -4407,6 +4441,7 @@ impl ListAppliedSchemaArnsInput {
 pub mod list_attached_indices_input {
     
     /// A builder for [`ListAttachedIndicesInput`](crate::input::ListAttachedIndicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -4563,6 +4598,7 @@ impl ListAttachedIndicesInput {
 pub mod list_development_schema_arns_input {
     
     /// A builder for [`ListDevelopmentSchemaArnsInput`](crate::input::ListDevelopmentSchemaArnsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4682,6 +4718,7 @@ impl ListDevelopmentSchemaArnsInput {
 pub mod list_directories_input {
     
     /// A builder for [`ListDirectoriesInput`](crate::input::ListDirectoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4813,6 +4850,7 @@ impl ListDirectoriesInput {
 pub mod list_facet_attributes_input {
     
     /// A builder for [`ListFacetAttributesInput`](crate::input::ListFacetAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -4957,6 +4995,7 @@ impl ListFacetAttributesInput {
 pub mod list_facet_names_input {
     
     /// A builder for [`ListFacetNamesInput`](crate::input::ListFacetNamesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -5089,6 +5128,7 @@ impl ListFacetNamesInput {
 pub mod list_incoming_typed_links_input {
     
     /// A builder for [`ListIncomingTypedLinksInput`](crate::input::ListIncomingTypedLinksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -5275,6 +5315,7 @@ impl ListIncomingTypedLinksInput {
 pub mod list_index_input {
     
     /// A builder for [`ListIndexInput`](crate::input::ListIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -5449,6 +5490,7 @@ impl ListIndexInput {
 pub mod list_managed_schema_arns_input {
     
     /// A builder for [`ListManagedSchemaArnsInput`](crate::input::ListManagedSchemaArnsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -5580,6 +5622,7 @@ impl ListManagedSchemaArnsInput {
 pub mod list_object_attributes_input {
     
     /// A builder for [`ListObjectAttributesInput`](crate::input::ListObjectAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -5748,6 +5791,7 @@ impl ListObjectAttributesInput {
 pub mod list_object_children_input {
     
     /// A builder for [`ListObjectChildrenInput`](crate::input::ListObjectChildrenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -5904,6 +5948,7 @@ impl ListObjectChildrenInput {
 pub mod list_object_parent_paths_input {
     
     /// A builder for [`ListObjectParentPathsInput`](crate::input::ListObjectParentPathsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -6048,6 +6093,7 @@ impl ListObjectParentPathsInput {
 pub mod list_object_parents_input {
     
     /// A builder for [`ListObjectParentsInput`](crate::input::ListObjectParentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -6217,6 +6263,7 @@ impl ListObjectParentsInput {
 pub mod list_object_policies_input {
     
     /// A builder for [`ListObjectPoliciesInput`](crate::input::ListObjectPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -6373,6 +6420,7 @@ impl ListObjectPoliciesInput {
 pub mod list_outgoing_typed_links_input {
     
     /// A builder for [`ListOutgoingTypedLinksInput`](crate::input::ListOutgoingTypedLinksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -6559,6 +6607,7 @@ impl ListOutgoingTypedLinksInput {
 pub mod list_policy_attachments_input {
     
     /// A builder for [`ListPolicyAttachmentsInput`](crate::input::ListPolicyAttachmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -6715,6 +6764,7 @@ impl ListPolicyAttachmentsInput {
 pub mod list_published_schema_arns_input {
     
     /// A builder for [`ListPublishedSchemaArnsInput`](crate::input::ListPublishedSchemaArnsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -6846,6 +6896,7 @@ impl ListPublishedSchemaArnsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6977,6 +7028,7 @@ impl ListTagsForResourceInput {
 pub mod list_typed_link_facet_attributes_input {
     
     /// A builder for [`ListTypedLinkFacetAttributesInput`](crate::input::ListTypedLinkFacetAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -7121,6 +7173,7 @@ impl ListTypedLinkFacetAttributesInput {
 pub mod list_typed_link_facet_names_input {
     
     /// A builder for [`ListTypedLinkFacetNamesInput`](crate::input::ListTypedLinkFacetNamesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -7253,6 +7306,7 @@ impl ListTypedLinkFacetNamesInput {
 pub mod lookup_policy_input {
     
     /// A builder for [`LookupPolicyInput`](crate::input::LookupPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -7397,6 +7451,7 @@ impl LookupPolicyInput {
 pub mod publish_schema_input {
     
     /// A builder for [`PublishSchemaInput`](crate::input::PublishSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) development_schema_arn: std::option::Option<std::string::String>,
@@ -7541,6 +7596,7 @@ impl PublishSchemaInput {
 pub mod put_schema_from_json_input {
     
     /// A builder for [`PutSchemaFromJsonInput`](crate::input::PutSchemaFromJsonInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -7661,6 +7717,7 @@ impl PutSchemaFromJsonInput {
 pub mod remove_facet_from_object_input {
     
     /// A builder for [`RemoveFacetFromObjectInput`](crate::input::RemoveFacetFromObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -7793,6 +7850,7 @@ impl RemoveFacetFromObjectInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -7918,6 +7976,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -8043,6 +8102,7 @@ impl UntagResourceInput {
 pub mod update_facet_input {
     
     /// A builder for [`UpdateFacetInput`](crate::input::UpdateFacetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -8193,6 +8253,7 @@ impl UpdateFacetInput {
 pub mod update_link_attributes_input {
     
     /// A builder for [`UpdateLinkAttributesInput`](crate::input::UpdateLinkAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -8331,6 +8392,7 @@ impl UpdateLinkAttributesInput {
 pub mod update_object_attributes_input {
     
     /// A builder for [`UpdateObjectAttributesInput`](crate::input::UpdateObjectAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -8469,6 +8531,7 @@ impl UpdateObjectAttributesInput {
 pub mod update_schema_input {
     
     /// A builder for [`UpdateSchemaInput`](crate::input::UpdateSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -8589,6 +8652,7 @@ impl UpdateSchemaInput {
 pub mod update_typed_link_facet_input {
     
     /// A builder for [`UpdateTypedLinkFacetInput`](crate::input::UpdateTypedLinkFacetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -8745,6 +8809,7 @@ impl UpdateTypedLinkFacetInput {
 pub mod upgrade_applied_schema_input {
     
     /// A builder for [`UpgradeAppliedSchemaInput`](crate::input::UpgradeAppliedSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) published_schema_arn: std::option::Option<std::string::String>,
@@ -8877,6 +8942,7 @@ impl UpgradeAppliedSchemaInput {
 pub mod upgrade_published_schema_input {
     
     /// A builder for [`UpgradePublishedSchemaInput`](crate::input::UpgradePublishedSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) development_schema_arn: std::option::Option<std::string::String>,

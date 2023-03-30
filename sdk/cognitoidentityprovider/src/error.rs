@@ -284,6 +284,7 @@ impl std::error::Error for UserNotFoundException {}
 pub mod user_not_found_exception {
     
     /// A builder for [`UserNotFoundException`](crate::error::UserNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -344,6 +345,7 @@ impl std::error::Error for UserNotConfirmedException {}
 pub mod user_not_confirmed_exception {
     
     /// A builder for [`UserNotConfirmedException`](crate::error::UserNotConfirmedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -404,6 +406,7 @@ impl std::error::Error for TooManyRequestsException {}
 pub mod too_many_requests_exception {
     
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -464,6 +467,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -524,6 +528,7 @@ impl std::error::Error for PasswordResetRequiredException {}
 pub mod password_reset_required_exception {
     
     /// A builder for [`PasswordResetRequiredException`](crate::error::PasswordResetRequiredException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -584,6 +589,7 @@ impl std::error::Error for NotAuthorizedException {}
 pub mod not_authorized_exception {
     
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -644,6 +650,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
     
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -704,6 +711,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
     
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -764,6 +772,7 @@ impl std::error::Error for InternalErrorException {}
 pub mod internal_error_exception {
     
     /// A builder for [`InternalErrorException`](crate::error::InternalErrorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -824,6 +833,7 @@ impl std::error::Error for ForbiddenException {}
 pub mod forbidden_exception {
     
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -884,6 +894,7 @@ impl std::error::Error for ExpiredCodeException {}
 pub mod expired_code_exception {
     
     /// A builder for [`ExpiredCodeException`](crate::error::ExpiredCodeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -944,6 +955,7 @@ impl std::error::Error for CodeMismatchException {}
 pub mod code_mismatch_exception {
     
     /// A builder for [`CodeMismatchException`](crate::error::CodeMismatchException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1004,6 +1016,7 @@ impl std::error::Error for AliasExistsException {}
 pub mod alias_exists_exception {
     
     /// A builder for [`AliasExistsException`](crate::error::AliasExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1321,6 +1334,7 @@ impl std::error::Error for SoftwareTokenMfaNotFoundException {}
 pub mod software_token_mfa_not_found_exception {
     
     /// A builder for [`SoftwareTokenMfaNotFoundException`](crate::error::SoftwareTokenMfaNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1381,6 +1395,7 @@ impl std::error::Error for InvalidUserPoolConfigurationException {}
 pub mod invalid_user_pool_configuration_exception {
     
     /// A builder for [`InvalidUserPoolConfigurationException`](crate::error::InvalidUserPoolConfigurationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1441,6 +1456,7 @@ impl std::error::Error for EnableSoftwareTokenMfaException {}
 pub mod enable_software_token_mfa_exception {
     
     /// A builder for [`EnableSoftwareTokenMfaException`](crate::error::EnableSoftwareTokenMfaException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1859,6 +1875,7 @@ impl std::error::Error for ScopeDoesNotExistException {}
 pub mod scope_does_not_exist_exception {
     
     /// A builder for [`ScopeDoesNotExistException`](crate::error::ScopeDoesNotExistException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1919,6 +1936,7 @@ impl std::error::Error for InvalidOAuthFlowException {}
 pub mod invalid_o_auth_flow_exception {
     
     /// A builder for [`InvalidOAuthFlowException`](crate::error::InvalidOAuthFlowException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1979,6 +1997,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
     
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2272,6 +2291,7 @@ impl std::error::Error for UserPoolTaggingException {}
 pub mod user_pool_tagging_exception {
     
     /// A builder for [`UserPoolTaggingException`](crate::error::UserPoolTaggingException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2332,6 +2352,7 @@ impl std::error::Error for UserImportInProgressException {}
 pub mod user_import_in_progress_exception {
     
     /// A builder for [`UserImportInProgressException`](crate::error::UserImportInProgressException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2392,6 +2413,7 @@ impl std::error::Error for InvalidSmsRoleTrustRelationshipException {}
 pub mod invalid_sms_role_trust_relationship_exception {
     
     /// A builder for [`InvalidSmsRoleTrustRelationshipException`](crate::error::InvalidSmsRoleTrustRelationshipException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2452,6 +2474,7 @@ impl std::error::Error for InvalidSmsRoleAccessPolicyException {}
 pub mod invalid_sms_role_access_policy_exception {
     
     /// A builder for [`InvalidSmsRoleAccessPolicyException`](crate::error::InvalidSmsRoleAccessPolicyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2512,6 +2535,7 @@ impl std::error::Error for InvalidEmailRoleAccessPolicyException {}
 pub mod invalid_email_role_access_policy_exception {
     
     /// A builder for [`InvalidEmailRoleAccessPolicyException`](crate::error::InvalidEmailRoleAccessPolicyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2901,6 +2925,7 @@ impl std::error::Error for UserLambdaValidationException {}
 pub mod user_lambda_validation_exception {
     
     /// A builder for [`UserLambdaValidationException`](crate::error::UserLambdaValidationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2961,6 +2986,7 @@ impl std::error::Error for UnexpectedLambdaException {}
 pub mod unexpected_lambda_exception {
     
     /// A builder for [`UnexpectedLambdaException`](crate::error::UnexpectedLambdaException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3021,6 +3047,7 @@ impl std::error::Error for InvalidLambdaResponseException {}
 pub mod invalid_lambda_response_exception {
     
     /// A builder for [`InvalidLambdaResponseException`](crate::error::InvalidLambdaResponseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3081,6 +3108,7 @@ impl std::error::Error for CodeDeliveryFailureException {}
 pub mod code_delivery_failure_exception {
     
     /// A builder for [`CodeDeliveryFailureException`](crate::error::CodeDeliveryFailureException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3487,6 +3515,7 @@ impl std::error::Error for UnsupportedIdentityProviderException {}
 pub mod unsupported_identity_provider_exception {
     
     /// A builder for [`UnsupportedIdentityProviderException`](crate::error::UnsupportedIdentityProviderException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4114,6 +4143,7 @@ impl std::error::Error for UserPoolAddOnNotEnabledException {}
 pub mod user_pool_add_on_not_enabled_exception {
     
     /// A builder for [`UserPoolAddOnNotEnabledException`](crate::error::UserPoolAddOnNotEnabledException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4669,6 +4699,7 @@ impl std::error::Error for PreconditionNotMetException {}
 pub mod precondition_not_met_exception {
     
     /// A builder for [`PreconditionNotMetException`](crate::error::PreconditionNotMetException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5183,6 +5214,7 @@ impl std::error::Error for UsernameExistsException {}
 pub mod username_exists_exception {
     
     /// A builder for [`UsernameExistsException`](crate::error::UsernameExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5243,6 +5275,7 @@ impl std::error::Error for InvalidPasswordException {}
 pub mod invalid_password_exception {
     
     /// A builder for [`InvalidPasswordException`](crate::error::InvalidPasswordException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6425,6 +6458,7 @@ impl std::error::Error for UnsupportedTokenTypeException {}
 pub mod unsupported_token_type_exception {
     
     /// A builder for [`UnsupportedTokenTypeException`](crate::error::UnsupportedTokenTypeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6485,6 +6519,7 @@ impl std::error::Error for UnsupportedOperationException {}
 pub mod unsupported_operation_exception {
     
     /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6545,6 +6580,7 @@ impl std::error::Error for UnauthorizedException {}
 pub mod unauthorized_exception {
     
     /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6958,6 +6994,7 @@ impl std::error::Error for MfaMethodNotFoundException {}
 pub mod mfa_method_not_found_exception {
     
     /// A builder for [`MfaMethodNotFoundException`](crate::error::MfaMethodNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15283,6 +15320,7 @@ impl std::error::Error for DuplicateProviderException {}
 pub mod duplicate_provider_exception {
     
     /// A builder for [`DuplicateProviderException`](crate::error::DuplicateProviderException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15528,6 +15566,7 @@ impl std::error::Error for GroupExistsException {}
 pub mod group_exists_exception {
     
     /// A builder for [`GroupExistsException`](crate::error::GroupExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15869,6 +15908,7 @@ impl std::error::Error for TooManyFailedAttemptsException {}
 pub mod too_many_failed_attempts_exception {
     
     /// A builder for [`TooManyFailedAttemptsException`](crate::error::TooManyFailedAttemptsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21709,6 +21749,7 @@ impl std::error::Error for UnsupportedUserStateException {}
 pub mod unsupported_user_state_exception {
     
     /// A builder for [`UnsupportedUserStateException`](crate::error::UnsupportedUserStateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

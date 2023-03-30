@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod delete_object_input {
     
     /// A builder for [`DeleteObjectInput`](crate::input::DeleteObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -126,6 +127,7 @@ impl DeleteObjectInput {
 pub mod describe_object_input {
     
     /// A builder for [`DescribeObjectInput`](crate::input::DescribeObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -247,6 +249,7 @@ impl DescribeObjectInput {
 pub mod get_object_input {
     
     /// A builder for [`GetObjectInput`](crate::input::GetObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -393,6 +396,7 @@ impl GetObjectInput {
 pub mod list_items_input {
     
     /// A builder for [`ListItemsInput`](crate::input::ListItemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -556,6 +560,7 @@ impl ListItemsInput {
 pub mod put_object_input {
     
     /// A builder for [`PutObjectInput`](crate::input::PutObjectInput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,

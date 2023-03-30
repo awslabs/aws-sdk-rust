@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_created_artifact_input {
     
     /// A builder for [`AssociateCreatedArtifactInput`](crate::input::AssociateCreatedArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -154,6 +155,7 @@ impl AssociateCreatedArtifactInput {
 pub mod associate_discovered_resource_input {
     
     /// A builder for [`AssociateDiscoveredResourceInput`](crate::input::AssociateDiscoveredResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -303,6 +305,7 @@ impl AssociateDiscoveredResourceInput {
 pub mod create_progress_update_stream_input {
     
     /// A builder for [`CreateProgressUpdateStreamInput`](crate::input::CreateProgressUpdateStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream_name: std::option::Option<std::string::String>,
@@ -428,6 +431,7 @@ impl CreateProgressUpdateStreamInput {
 pub mod delete_progress_update_stream_input {
     
     /// A builder for [`DeleteProgressUpdateStreamInput`](crate::input::DeleteProgressUpdateStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream_name: std::option::Option<std::string::String>,
@@ -553,6 +557,7 @@ impl DeleteProgressUpdateStreamInput {
 pub mod describe_application_state_input {
     
     /// A builder for [`DescribeApplicationStateInput`](crate::input::DescribeApplicationStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -665,6 +670,7 @@ impl DescribeApplicationStateInput {
 pub mod describe_migration_task_input {
     
     /// A builder for [`DescribeMigrationTaskInput`](crate::input::DescribeMigrationTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -789,6 +795,7 @@ impl DescribeMigrationTaskInput {
 pub mod disassociate_created_artifact_input {
     
     /// A builder for [`DisassociateCreatedArtifactInput`](crate::input::DisassociateCreatedArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -938,6 +945,7 @@ impl DisassociateCreatedArtifactInput {
 pub mod disassociate_discovered_resource_input {
     
     /// A builder for [`DisassociateDiscoveredResourceInput`](crate::input::DisassociateDiscoveredResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -1087,6 +1095,7 @@ impl DisassociateDiscoveredResourceInput {
 pub mod import_migration_task_input {
     
     /// A builder for [`ImportMigrationTaskInput`](crate::input::ImportMigrationTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -1224,6 +1233,7 @@ impl ImportMigrationTaskInput {
 pub mod list_application_states_input {
     
     /// A builder for [`ListApplicationStatesInput`](crate::input::ListApplicationStatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1366,6 +1376,7 @@ impl ListApplicationStatesInput {
 pub mod list_created_artifacts_input {
     
     /// A builder for [`ListCreatedArtifactsInput`](crate::input::ListCreatedArtifactsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -1514,6 +1525,7 @@ impl ListCreatedArtifactsInput {
 pub mod list_discovered_resources_input {
     
     /// A builder for [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -1662,6 +1674,7 @@ impl ListDiscoveredResourcesInput {
 pub mod list_migration_tasks_input {
     
     /// A builder for [`ListMigrationTasksInput`](crate::input::ListMigrationTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1798,6 +1811,7 @@ impl ListMigrationTasksInput {
 pub mod list_progress_update_streams_input {
     
     /// A builder for [`ListProgressUpdateStreamsInput`](crate::input::ListProgressUpdateStreamsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1922,6 +1936,7 @@ impl ListProgressUpdateStreamsInput {
 pub mod notify_application_state_input {
     
     /// A builder for [`NotifyApplicationStateInput`](crate::input::NotifyApplicationStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2071,6 +2086,7 @@ impl NotifyApplicationStateInput {
 pub mod notify_migration_task_state_input {
     
     /// A builder for [`NotifyMigrationTaskStateInput`](crate::input::NotifyMigrationTaskStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -2245,6 +2261,7 @@ impl NotifyMigrationTaskStateInput {
 pub mod put_resource_attributes_input {
     
     /// A builder for [`PutResourceAttributesInput`](crate::input::PutResourceAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,

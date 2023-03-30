@@ -66,6 +66,7 @@ impl UpdateSchemaOutput {
 pub mod update_schema_output {
     
     /// A builder for [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -227,6 +228,7 @@ impl UpdateRegistryOutput {
 pub mod update_registry_output {
     
     /// A builder for [`UpdateRegistryOutput`](crate::output::UpdateRegistryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -361,6 +363,7 @@ impl UpdateDiscovererOutput {
 pub mod update_discoverer_output {
     
     /// A builder for [`UpdateDiscovererOutput`](crate::output::UpdateDiscovererOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -481,6 +484,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -510,6 +514,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -555,6 +560,7 @@ impl StopDiscovererOutput {
 pub mod stop_discoverer_output {
     
     /// A builder for [`StopDiscovererOutput`](crate::output::StopDiscovererOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
@@ -624,6 +630,7 @@ impl StartDiscovererOutput {
 pub mod start_discoverer_output {
     
     /// A builder for [`StartDiscovererOutput`](crate::output::StartDiscovererOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
@@ -693,6 +700,7 @@ impl SearchSchemasOutput {
 pub mod search_schemas_output {
     
     /// A builder for [`SearchSchemasOutput`](crate::output::SearchSchemasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -768,6 +776,7 @@ impl PutResourcePolicyOutput {
 pub mod put_resource_policy_output {
     
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -851,6 +860,7 @@ impl PutCodeBindingOutput {
 pub mod put_code_binding_output {
     
     /// A builder for [`PutCodeBindingOutput`](crate::output::PutCodeBindingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -937,6 +947,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1000,6 +1011,7 @@ impl ListSchemaVersionsOutput {
 pub mod list_schema_versions_output {
     
     /// A builder for [`ListSchemaVersionsOutput`](crate::output::ListSchemaVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1075,6 +1087,7 @@ impl ListSchemasOutput {
 pub mod list_schemas_output {
     
     /// A builder for [`ListSchemasOutput`](crate::output::ListSchemasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1150,6 +1163,7 @@ impl ListRegistriesOutput {
 pub mod list_registries_output {
     
     /// A builder for [`ListRegistriesOutput`](crate::output::ListRegistriesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1225,6 +1239,7 @@ impl ListDiscoverersOutput {
 pub mod list_discoverers_output {
     
     /// A builder for [`ListDiscoverersOutput`](crate::output::ListDiscoverersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverers: std::option::Option<std::vec::Vec<crate::model::DiscovererSummary>>,
@@ -1300,6 +1315,7 @@ impl GetResourcePolicyOutput {
 pub mod get_resource_policy_output {
     
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1362,6 +1378,7 @@ impl GetDiscoveredSchemaOutput {
 pub mod get_discovered_schema_output {
     
     /// A builder for [`GetDiscoveredSchemaOutput`](crate::output::GetDiscoveredSchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1412,6 +1429,7 @@ impl GetCodeBindingSourceOutput {
 pub mod get_code_binding_source_output {
     
     /// A builder for [`GetCodeBindingSourceOutput`](crate::output::GetCodeBindingSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
@@ -1490,6 +1508,7 @@ impl ExportSchemaOutput {
 pub mod export_schema_output {
     
     /// A builder for [`ExportSchemaOutput`](crate::output::ExportSchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1644,6 +1663,7 @@ impl DescribeSchemaOutput {
 pub mod describe_schema_output {
     
     /// A builder for [`DescribeSchemaOutput`](crate::output::DescribeSchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1817,6 +1837,7 @@ impl DescribeRegistryOutput {
 pub mod describe_registry_output {
     
     /// A builder for [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1951,6 +1972,7 @@ impl DescribeDiscovererOutput {
 pub mod describe_discoverer_output {
     
     /// A builder for [`DescribeDiscovererOutput`](crate::output::DescribeDiscovererOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2101,6 +2123,7 @@ impl DescribeCodeBindingOutput {
 pub mod describe_code_binding_output {
     
     /// A builder for [`DescribeCodeBindingOutput`](crate::output::DescribeCodeBindingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2178,6 +2201,7 @@ pub struct DeleteSchemaVersionOutput  {
 pub mod delete_schema_version_output {
     
     /// A builder for [`DeleteSchemaVersionOutput`](crate::output::DeleteSchemaVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2207,6 +2231,7 @@ pub struct DeleteSchemaOutput  {
 pub mod delete_schema_output {
     
     /// A builder for [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2236,6 +2261,7 @@ pub struct DeleteResourcePolicyOutput  {
 pub mod delete_resource_policy_output {
     
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2265,6 +2291,7 @@ pub struct DeleteRegistryOutput  {
 pub mod delete_registry_output {
     
     /// A builder for [`DeleteRegistryOutput`](crate::output::DeleteRegistryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2294,6 +2321,7 @@ pub struct DeleteDiscovererOutput  {
 pub mod delete_discoverer_output {
     
     /// A builder for [`DeleteDiscovererOutput`](crate::output::DeleteDiscovererOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2381,6 +2409,7 @@ impl CreateSchemaOutput {
 pub mod create_schema_output {
     
     /// A builder for [`CreateSchemaOutput`](crate::output::CreateSchemaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2542,6 +2571,7 @@ impl CreateRegistryOutput {
 pub mod create_registry_output {
     
     /// A builder for [`CreateRegistryOutput`](crate::output::CreateRegistryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2676,6 +2706,7 @@ impl CreateDiscovererOutput {
 pub mod create_discoverer_output {
     
     /// A builder for [`CreateDiscovererOutput`](crate::output::CreateDiscovererOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,

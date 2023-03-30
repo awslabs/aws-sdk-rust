@@ -8,6 +8,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -75,6 +77,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -138,6 +141,7 @@ impl DescribeSavingsPlansOfferingsOutput {
 pub mod describe_savings_plans_offerings_output {
     
     /// A builder for [`DescribeSavingsPlansOfferingsOutput`](crate::output::DescribeSavingsPlansOfferingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOffering>>,
@@ -213,6 +217,7 @@ impl DescribeSavingsPlansOfferingRatesOutput {
 pub mod describe_savings_plans_offering_rates_output {
     
     /// A builder for [`DescribeSavingsPlansOfferingRatesOutput`](crate::output::DescribeSavingsPlansOfferingRatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRate>>,
@@ -288,6 +293,7 @@ impl DescribeSavingsPlansOutput {
 pub mod describe_savings_plans_output {
     
     /// A builder for [`DescribeSavingsPlansOutput`](crate::output::DescribeSavingsPlansOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plans: std::option::Option<std::vec::Vec<crate::model::SavingsPlan>>,
@@ -370,6 +376,7 @@ impl DescribeSavingsPlanRatesOutput {
 pub mod describe_savings_plan_rates_output {
     
     /// A builder for [`DescribeSavingsPlanRatesOutput`](crate::output::DescribeSavingsPlanRatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_id: std::option::Option<std::string::String>,
@@ -441,6 +448,7 @@ pub struct DeleteQueuedSavingsPlanOutput  {
 pub mod delete_queued_savings_plan_output {
     
     /// A builder for [`DeleteQueuedSavingsPlanOutput`](crate::output::DeleteQueuedSavingsPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -479,6 +487,7 @@ impl CreateSavingsPlanOutput {
 pub mod create_savings_plan_output {
     
     /// A builder for [`CreateSavingsPlanOutput`](crate::output::CreateSavingsPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_id: std::option::Option<std::string::String>,

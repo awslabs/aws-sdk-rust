@@ -102,6 +102,7 @@ impl QualificationType {
 pub mod qualification_type {
     
     /// A builder for [`QualificationType`](crate::model::QualificationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
@@ -409,6 +410,7 @@ impl NotificationSpecification {
 pub mod notification_specification {
     
     /// A builder for [`NotificationSpecification`](crate::model::NotificationSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<std::string::String>,
@@ -744,6 +746,7 @@ impl NotifyWorkersFailureStatus {
 pub mod notify_workers_failure_status {
     
     /// A builder for [`NotifyWorkersFailureStatus`](crate::model::NotifyWorkersFailureStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notify_workers_failure_code: std::option::Option<crate::model::NotifyWorkersFailureCode>,
@@ -935,6 +938,7 @@ impl Qualification {
 pub mod qualification {
     
     /// A builder for [`Qualification`](crate::model::Qualification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
@@ -1134,6 +1138,7 @@ impl Locale {
 pub mod locale {
     
     /// A builder for [`Locale`](crate::model::Locale).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) country: std::option::Option<std::string::String>,
@@ -1203,6 +1208,7 @@ impl WorkerBlock {
 pub mod worker_block {
     
     /// A builder for [`WorkerBlock`](crate::model::WorkerBlock).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_id: std::option::Option<std::string::String>,
@@ -1272,6 +1278,7 @@ impl ReviewReport {
 pub mod review_report {
     
     /// A builder for [`ReviewReport`](crate::model::ReviewReport).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) review_results: std::option::Option<std::vec::Vec<crate::model::ReviewResultDetail>>,
@@ -1395,6 +1402,7 @@ impl ReviewActionDetail {
 pub mod review_action_detail {
     
     /// A builder for [`ReviewActionDetail`](crate::model::ReviewActionDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
@@ -1656,6 +1664,7 @@ impl ReviewResultDetail {
 pub mod review_result_detail {
     
     /// A builder for [`ReviewResultDetail`](crate::model::ReviewResultDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
@@ -1773,6 +1782,7 @@ impl ReviewPolicy {
 pub mod review_policy {
     
     /// A builder for [`ReviewPolicy`](crate::model::ReviewPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -1855,6 +1865,7 @@ impl PolicyParameter {
 pub mod policy_parameter {
     
     /// A builder for [`PolicyParameter`](crate::model::PolicyParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1948,6 +1959,7 @@ impl ParameterMapEntry {
 pub mod parameter_map_entry {
     
     /// A builder for [`ParameterMapEntry`](crate::model::ParameterMapEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2238,6 +2250,7 @@ impl Hit {
 pub mod hit {
     
     /// A builder for [`Hit`](crate::model::Hit).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
@@ -2663,6 +2676,7 @@ impl QualificationRequirement {
 pub mod qualification_requirement {
     
     /// A builder for [`QualificationRequirement`](crate::model::QualificationRequirement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
@@ -3210,6 +3224,7 @@ impl QualificationRequest {
 pub mod qualification_request {
     
     /// A builder for [`QualificationRequest`](crate::model::QualificationRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_request_id: std::option::Option<std::string::String>,
@@ -3348,6 +3363,7 @@ impl BonusPayment {
 pub mod bonus_payment {
     
     /// A builder for [`BonusPayment`](crate::model::BonusPayment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_id: std::option::Option<std::string::String>,
@@ -3523,6 +3539,7 @@ impl Assignment {
 pub mod assignment {
     
     /// A builder for [`Assignment`](crate::model::Assignment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assignment_id: std::option::Option<std::string::String>,
@@ -3799,6 +3816,7 @@ impl HitLayoutParameter {
 pub mod hit_layout_parameter {
     
     /// A builder for [`HitLayoutParameter`](crate::model::HitLayoutParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

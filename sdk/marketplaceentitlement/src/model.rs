@@ -46,6 +46,7 @@ impl Entitlement {
 pub mod entitlement {
     
     /// A builder for [`Entitlement`](crate::model::Entitlement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
@@ -165,6 +166,7 @@ impl EntitlementValue {
 pub mod entitlement_value {
     
     /// A builder for [`EntitlementValue`](crate::model::EntitlementValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) integer_value: std::option::Option<i32>,

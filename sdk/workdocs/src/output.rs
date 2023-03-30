@@ -17,6 +17,7 @@ impl UpdateUserOutput {
 pub mod update_user_output {
     
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
@@ -58,6 +59,7 @@ pub struct UpdateFolderOutput  {
 pub mod update_folder_output {
     
     /// A builder for [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -87,6 +89,7 @@ pub struct UpdateDocumentVersionOutput  {
 pub mod update_document_version_output {
     
     /// A builder for [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -116,6 +119,7 @@ pub struct UpdateDocumentOutput  {
 pub mod update_document_output {
     
     /// A builder for [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -145,6 +149,7 @@ pub struct RestoreDocumentVersionsOutput  {
 pub mod restore_document_versions_output {
     
     /// A builder for [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -174,6 +179,7 @@ pub struct RemoveResourcePermissionOutput  {
 pub mod remove_resource_permission_output {
     
     /// A builder for [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -203,6 +209,7 @@ pub struct RemoveAllResourcePermissionsOutput  {
 pub mod remove_all_resource_permissions_output {
     
     /// A builder for [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -248,6 +255,7 @@ impl InitiateDocumentVersionUploadOutput {
 pub mod initiate_document_version_upload_output {
     
     /// A builder for [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -324,6 +332,7 @@ impl GetResourcesOutput {
 pub mod get_resources_output {
     
     /// A builder for [`GetResourcesOutput`](crate::output::GetResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
@@ -410,6 +419,7 @@ impl GetFolderPathOutput {
 pub mod get_folder_path_output {
     
     /// A builder for [`GetFolderPathOutput`](crate::output::GetFolderPathOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<crate::model::ResourcePath>,
@@ -467,6 +477,7 @@ impl GetFolderOutput {
 pub mod get_folder_output {
     
     /// A builder for [`GetFolderOutput`](crate::output::GetFolderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<crate::model::FolderMetadata>,
@@ -542,6 +553,7 @@ impl GetDocumentVersionOutput {
 pub mod get_document_version_output {
     
     /// A builder for [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<crate::model::DocumentVersionMetadata>,
@@ -610,6 +622,7 @@ impl GetDocumentPathOutput {
 pub mod get_document_path_output {
     
     /// A builder for [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<crate::model::ResourcePath>,
@@ -667,6 +680,7 @@ impl GetDocumentOutput {
 pub mod get_document_output {
     
     /// A builder for [`GetDocumentOutput`](crate::output::GetDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -735,6 +749,7 @@ impl GetCurrentUserOutput {
 pub mod get_current_user_output {
     
     /// A builder for [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
@@ -801,6 +816,7 @@ impl DescribeUsersOutput {
 pub mod describe_users_output {
     
     /// A builder for [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -890,6 +906,7 @@ impl DescribeRootFoldersOutput {
 pub mod describe_root_folders_output {
     
     /// A builder for [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
@@ -965,6 +982,7 @@ impl DescribeResourcePermissionsOutput {
 pub mod describe_resource_permissions_output {
     
     /// A builder for [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -1040,6 +1058,7 @@ impl DescribeNotificationSubscriptionsOutput {
 pub mod describe_notification_subscriptions_output {
     
     /// A builder for [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
@@ -1115,6 +1134,7 @@ impl DescribeGroupsOutput {
 pub mod describe_groups_output {
     
     /// A builder for [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
@@ -1197,6 +1217,7 @@ impl DescribeFolderContentsOutput {
 pub mod describe_folder_contents_output {
     
     /// A builder for [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
@@ -1290,6 +1311,7 @@ impl DescribeDocumentVersionsOutput {
 pub mod describe_document_versions_output {
     
     /// A builder for [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_versions: std::option::Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>,
@@ -1365,6 +1387,7 @@ impl DescribeCommentsOutput {
 pub mod describe_comments_output {
     
     /// A builder for [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comments: std::option::Option<std::vec::Vec<crate::model::Comment>>,
@@ -1440,6 +1463,7 @@ impl DescribeActivitiesOutput {
 pub mod describe_activities_output {
     
     /// A builder for [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
@@ -1499,6 +1523,7 @@ pub struct DeleteUserOutput  {
 pub mod delete_user_output {
     
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1528,6 +1553,7 @@ pub struct DeleteNotificationSubscriptionOutput  {
 pub mod delete_notification_subscription_output {
     
     /// A builder for [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1557,6 +1583,7 @@ pub struct DeleteLabelsOutput  {
 pub mod delete_labels_output {
     
     /// A builder for [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1586,6 +1613,7 @@ pub struct DeleteFolderContentsOutput  {
 pub mod delete_folder_contents_output {
     
     /// A builder for [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1615,6 +1643,7 @@ pub struct DeleteFolderOutput  {
 pub mod delete_folder_output {
     
     /// A builder for [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1644,6 +1673,7 @@ pub struct DeleteDocumentVersionOutput  {
 pub mod delete_document_version_output {
     
     /// A builder for [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1673,6 +1703,7 @@ pub struct DeleteDocumentOutput  {
 pub mod delete_document_output {
     
     /// A builder for [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1702,6 +1733,7 @@ pub struct DeleteCustomMetadataOutput  {
 pub mod delete_custom_metadata_output {
     
     /// A builder for [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1731,6 +1763,7 @@ pub struct DeleteCommentOutput  {
 pub mod delete_comment_output {
     
     /// A builder for [`DeleteCommentOutput`](crate::output::DeleteCommentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1760,6 +1793,7 @@ pub struct DeactivateUserOutput  {
 pub mod deactivate_user_output {
     
     /// A builder for [`DeactivateUserOutput`](crate::output::DeactivateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1798,6 +1832,7 @@ impl CreateUserOutput {
 pub mod create_user_output {
     
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
@@ -1848,6 +1883,7 @@ impl CreateNotificationSubscriptionOutput {
 pub mod create_notification_subscription_output {
     
     /// A builder for [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription: std::option::Option<crate::model::Subscription>,
@@ -1889,6 +1925,7 @@ pub struct CreateLabelsOutput  {
 pub mod create_labels_output {
     
     /// A builder for [`CreateLabelsOutput`](crate::output::CreateLabelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1927,6 +1964,7 @@ impl CreateFolderOutput {
 pub mod create_folder_output {
     
     /// A builder for [`CreateFolderOutput`](crate::output::CreateFolderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<crate::model::FolderMetadata>,
@@ -1968,6 +2006,7 @@ pub struct CreateCustomMetadataOutput  {
 pub mod create_custom_metadata_output {
     
     /// A builder for [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2006,6 +2045,7 @@ impl CreateCommentOutput {
 pub mod create_comment_output {
     
     /// A builder for [`CreateCommentOutput`](crate::output::CreateCommentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<crate::model::Comment>,
@@ -2056,6 +2096,7 @@ impl AddResourcePermissionsOutput {
 pub mod add_resource_permissions_output {
     
     /// A builder for [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_results: std::option::Option<std::vec::Vec<crate::model::ShareResult>>,
@@ -2112,6 +2153,7 @@ impl ActivateUserOutput {
 pub mod activate_user_output {
     
     /// A builder for [`ActivateUserOutput`](crate::output::ActivateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
@@ -2153,6 +2195,7 @@ pub struct AbortDocumentVersionUploadOutput  {
 pub mod abort_document_version_upload_output {
     
     /// A builder for [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

@@ -31,6 +31,7 @@ impl UpdateReportPlanOutput {
 pub mod update_report_plan_output {
     
     /// A builder for [`UpdateReportPlanOutput`](crate::output::UpdateReportPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_plan_name: std::option::Option<std::string::String>,
@@ -96,6 +97,7 @@ pub struct UpdateRegionSettingsOutput  {
 pub mod update_region_settings_output {
     
     /// A builder for [`UpdateRegionSettingsOutput`](crate::output::UpdateRegionSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -159,6 +161,7 @@ impl UpdateRecoveryPointLifecycleOutput {
 pub mod update_recovery_point_lifecycle_output {
     
     /// A builder for [`UpdateRecoveryPointLifecycleOutput`](crate::output::UpdateRecoveryPointLifecycleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
@@ -240,6 +243,7 @@ pub struct UpdateGlobalSettingsOutput  {
 pub mod update_global_settings_output {
     
     /// A builder for [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -292,6 +296,7 @@ impl UpdateFrameworkOutput {
 pub mod update_framework_output {
     
     /// A builder for [`UpdateFrameworkOutput`](crate::output::UpdateFrameworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework_name: std::option::Option<std::string::String>,
@@ -394,6 +399,7 @@ impl UpdateBackupPlanOutput {
 pub mod update_backup_plan_output {
     
     /// A builder for [`UpdateBackupPlanOutput`](crate::output::UpdateBackupPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
@@ -489,6 +495,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -518,6 +525,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -547,6 +555,7 @@ pub struct StopBackupJobOutput  {
 pub mod stop_backup_job_output {
     
     /// A builder for [`StopBackupJobOutput`](crate::output::StopBackupJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -585,6 +594,7 @@ impl StartRestoreJobOutput {
 pub mod start_restore_job_output {
     
     /// A builder for [`StartRestoreJobOutput`](crate::output::StartRestoreJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) restore_job_id: std::option::Option<std::string::String>,
@@ -635,6 +645,7 @@ impl StartReportJobOutput {
 pub mod start_report_job_output {
     
     /// A builder for [`StartReportJobOutput`](crate::output::StartReportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_job_id: std::option::Option<std::string::String>,
@@ -699,6 +710,7 @@ impl StartCopyJobOutput {
 pub mod start_copy_job_output {
     
     /// A builder for [`StartCopyJobOutput`](crate::output::StartCopyJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) copy_job_id: std::option::Option<std::string::String>,
@@ -795,6 +807,7 @@ impl StartBackupJobOutput {
 pub mod start_backup_job_output {
     
     /// A builder for [`StartBackupJobOutput`](crate::output::StartBackupJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_job_id: std::option::Option<std::string::String>,
@@ -873,6 +886,7 @@ pub struct PutBackupVaultNotificationsOutput  {
 pub mod put_backup_vault_notifications_output {
     
     /// A builder for [`PutBackupVaultNotificationsOutput`](crate::output::PutBackupVaultNotificationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -902,6 +916,7 @@ pub struct PutBackupVaultLockConfigurationOutput  {
 pub mod put_backup_vault_lock_configuration_output {
     
     /// A builder for [`PutBackupVaultLockConfigurationOutput`](crate::output::PutBackupVaultLockConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -931,6 +946,7 @@ pub struct PutBackupVaultAccessPolicyOutput  {
 pub mod put_backup_vault_access_policy_output {
     
     /// A builder for [`PutBackupVaultAccessPolicyOutput`](crate::output::PutBackupVaultAccessPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -984,6 +1000,7 @@ impl  std::fmt::Debug for ListTagsOutput  {
 pub mod list_tags_output {
     
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1067,6 +1084,7 @@ impl ListRestoreJobsOutput {
 pub mod list_restore_jobs_output {
     
     /// A builder for [`ListRestoreJobsOutput`](crate::output::ListRestoreJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) restore_jobs: std::option::Option<std::vec::Vec<crate::model::RestoreJobsListMember>>,
@@ -1142,6 +1160,7 @@ impl ListReportPlansOutput {
 pub mod list_report_plans_output {
     
     /// A builder for [`ListReportPlansOutput`](crate::output::ListReportPlansOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_plans: std::option::Option<std::vec::Vec<crate::model::ReportPlan>>,
@@ -1217,6 +1236,7 @@ impl ListReportJobsOutput {
 pub mod list_report_jobs_output {
     
     /// A builder for [`ListReportJobsOutput`](crate::output::ListReportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_jobs: std::option::Option<std::vec::Vec<crate::model::ReportJob>>,
@@ -1296,6 +1316,7 @@ impl ListRecoveryPointsByResourceOutput {
 pub mod list_recovery_points_by_resource_output {
     
     /// A builder for [`ListRecoveryPointsByResourceOutput`](crate::output::ListRecoveryPointsByResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1375,6 +1396,7 @@ impl ListRecoveryPointsByLegalHoldOutput {
 pub mod list_recovery_points_by_legal_hold_output {
     
     /// A builder for [`ListRecoveryPointsByLegalHoldOutput`](crate::output::ListRecoveryPointsByLegalHoldOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_points: std::option::Option<std::vec::Vec<crate::model::RecoveryPointMember>>,
@@ -1450,6 +1472,7 @@ impl ListRecoveryPointsByBackupVaultOutput {
 pub mod list_recovery_points_by_backup_vault_output {
     
     /// A builder for [`ListRecoveryPointsByBackupVaultOutput`](crate::output::ListRecoveryPointsByBackupVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1525,6 +1548,7 @@ impl ListProtectedResourcesOutput {
 pub mod list_protected_resources_output {
     
     /// A builder for [`ListProtectedResourcesOutput`](crate::output::ListProtectedResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::ProtectedResource>>,
@@ -1600,6 +1624,7 @@ impl ListLegalHoldsOutput {
 pub mod list_legal_holds_output {
     
     /// A builder for [`ListLegalHoldsOutput`](crate::output::ListLegalHoldsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1675,6 +1700,7 @@ impl ListFrameworksOutput {
 pub mod list_frameworks_output {
     
     /// A builder for [`ListFrameworksOutput`](crate::output::ListFrameworksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) frameworks: std::option::Option<std::vec::Vec<crate::model::Framework>>,
@@ -1750,6 +1776,7 @@ impl ListCopyJobsOutput {
 pub mod list_copy_jobs_output {
     
     /// A builder for [`ListCopyJobsOutput`](crate::output::ListCopyJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) copy_jobs: std::option::Option<std::vec::Vec<crate::model::CopyJob>>,
@@ -1825,6 +1852,7 @@ impl ListBackupVaultsOutput {
 pub mod list_backup_vaults_output {
     
     /// A builder for [`ListBackupVaultsOutput`](crate::output::ListBackupVaultsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_vault_list: std::option::Option<std::vec::Vec<crate::model::BackupVaultListMember>>,
@@ -1900,6 +1928,7 @@ impl ListBackupSelectionsOutput {
 pub mod list_backup_selections_output {
     
     /// A builder for [`ListBackupSelectionsOutput`](crate::output::ListBackupSelectionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1975,6 +2004,7 @@ impl ListBackupPlanVersionsOutput {
 pub mod list_backup_plan_versions_output {
     
     /// A builder for [`ListBackupPlanVersionsOutput`](crate::output::ListBackupPlanVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2050,6 +2080,7 @@ impl ListBackupPlanTemplatesOutput {
 pub mod list_backup_plan_templates_output {
     
     /// A builder for [`ListBackupPlanTemplatesOutput`](crate::output::ListBackupPlanTemplatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2125,6 +2156,7 @@ impl ListBackupPlansOutput {
 pub mod list_backup_plans_output {
     
     /// A builder for [`ListBackupPlansOutput`](crate::output::ListBackupPlansOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2200,6 +2232,7 @@ impl ListBackupJobsOutput {
 pub mod list_backup_jobs_output {
     
     /// A builder for [`ListBackupJobsOutput`](crate::output::ListBackupJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_jobs: std::option::Option<std::vec::Vec<crate::model::BackupJob>>,
@@ -2292,6 +2325,7 @@ impl GetSupportedResourceTypesOutput {
 pub mod get_supported_resource_types_output {
     
     /// A builder for [`GetSupportedResourceTypesOutput`](crate::output::GetSupportedResourceTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2395,6 +2429,7 @@ impl  std::fmt::Debug for GetRecoveryPointRestoreMetadataOutput  {
 pub mod get_recovery_point_restore_metadata_output {
     
     /// A builder for [`GetRecoveryPointRestoreMetadataOutput`](crate::output::GetRecoveryPointRestoreMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
@@ -2547,6 +2582,7 @@ impl GetLegalHoldOutput {
 pub mod get_legal_hold_output {
     
     /// A builder for [`GetLegalHoldOutput`](crate::output::GetLegalHoldOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
@@ -2726,6 +2762,7 @@ impl GetBackupVaultNotificationsOutput {
 pub mod get_backup_vault_notifications_output {
     
     /// A builder for [`GetBackupVaultNotificationsOutput`](crate::output::GetBackupVaultNotificationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
@@ -2832,6 +2869,7 @@ impl GetBackupVaultAccessPolicyOutput {
 pub mod get_backup_vault_access_policy_output {
     
     /// A builder for [`GetBackupVaultAccessPolicyOutput`](crate::output::GetBackupVaultAccessPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
@@ -2934,6 +2972,7 @@ impl GetBackupSelectionOutput {
 pub mod get_backup_selection_output {
     
     /// A builder for [`GetBackupSelectionOutput`](crate::output::GetBackupSelectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_selection: std::option::Option<crate::model::BackupSelection>,
@@ -3032,6 +3071,7 @@ impl GetBackupPlanFromTemplateOutput {
 pub mod get_backup_plan_from_template_output {
     
     /// A builder for [`GetBackupPlanFromTemplateOutput`](crate::output::GetBackupPlanFromTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_plan_document: std::option::Option<crate::model::BackupPlan>,
@@ -3082,6 +3122,7 @@ impl GetBackupPlanFromJsonOutput {
 pub mod get_backup_plan_from_json_output {
     
     /// A builder for [`GetBackupPlanFromJsonOutput`](crate::output::GetBackupPlanFromJsonOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_plan: std::option::Option<crate::model::BackupPlan>,
@@ -3188,6 +3229,7 @@ impl GetBackupPlanOutput {
 pub mod get_backup_plan_output {
     
     /// A builder for [`GetBackupPlanOutput`](crate::output::GetBackupPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_plan: std::option::Option<crate::model::BackupPlan>,
@@ -3344,6 +3386,7 @@ impl ExportBackupPlanTemplateOutput {
 pub mod export_backup_plan_template_output {
     
     /// A builder for [`ExportBackupPlanTemplateOutput`](crate::output::ExportBackupPlanTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_plan_template_json: std::option::Option<std::string::String>,
@@ -3389,6 +3432,7 @@ pub struct DisassociateRecoveryPointFromParentOutput  {
 pub mod disassociate_recovery_point_from_parent_output {
     
     /// A builder for [`DisassociateRecoveryPointFromParentOutput`](crate::output::DisassociateRecoveryPointFromParentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3418,6 +3462,7 @@ pub struct DisassociateRecoveryPointOutput  {
 pub mod disassociate_recovery_point_output {
     
     /// A builder for [`DisassociateRecoveryPointOutput`](crate::output::DisassociateRecoveryPointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3540,6 +3585,7 @@ impl DescribeRestoreJobOutput {
 pub mod describe_restore_job_output {
     
     /// A builder for [`DescribeRestoreJobOutput`](crate::output::DescribeRestoreJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3734,6 +3780,7 @@ impl DescribeReportPlanOutput {
 pub mod describe_report_plan_output {
     
     /// A builder for [`DescribeReportPlanOutput`](crate::output::DescribeReportPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_plan: std::option::Option<crate::model::ReportPlan>,
@@ -3784,6 +3831,7 @@ impl DescribeReportJobOutput {
 pub mod describe_report_job_output {
     
     /// A builder for [`DescribeReportJobOutput`](crate::output::DescribeReportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_job: std::option::Option<crate::model::ReportJob>,
@@ -3847,6 +3895,7 @@ impl DescribeRegionSettingsOutput {
 pub mod describe_region_settings_output {
     
     /// A builder for [`DescribeRegionSettingsOutput`](crate::output::DescribeRegionSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type_opt_in_preference: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -4086,6 +4135,7 @@ impl DescribeRecoveryPointOutput {
 pub mod describe_recovery_point_output {
     
     /// A builder for [`DescribeRecoveryPointOutput`](crate::output::DescribeRecoveryPointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
@@ -4416,6 +4466,7 @@ impl DescribeProtectedResourceOutput {
 pub mod describe_protected_resource_output {
     
     /// A builder for [`DescribeProtectedResourceOutput`](crate::output::DescribeProtectedResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4497,6 +4548,7 @@ impl DescribeGlobalSettingsOutput {
 pub mod describe_global_settings_output {
     
     /// A builder for [`DescribeGlobalSettingsOutput`](crate::output::DescribeGlobalSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_settings: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4628,6 +4680,7 @@ impl DescribeFrameworkOutput {
 pub mod describe_framework_output {
     
     /// A builder for [`DescribeFrameworkOutput`](crate::output::DescribeFrameworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework_name: std::option::Option<std::string::String>,
@@ -4782,6 +4835,7 @@ impl DescribeCopyJobOutput {
 pub mod describe_copy_job_output {
     
     /// A builder for [`DescribeCopyJobOutput`](crate::output::DescribeCopyJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) copy_job: std::option::Option<crate::model::CopyJob>,
@@ -4903,6 +4957,7 @@ impl DescribeBackupVaultOutput {
 pub mod describe_backup_vault_output {
     
     /// A builder for [`DescribeBackupVaultOutput`](crate::output::DescribeBackupVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
@@ -5231,6 +5286,7 @@ impl DescribeBackupJobOutput {
 pub mod describe_backup_job_output {
     
     /// A builder for [`DescribeBackupJobOutput`](crate::output::DescribeBackupJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -5561,6 +5617,7 @@ pub struct DeleteReportPlanOutput  {
 pub mod delete_report_plan_output {
     
     /// A builder for [`DeleteReportPlanOutput`](crate::output::DeleteReportPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5590,6 +5647,7 @@ pub struct DeleteRecoveryPointOutput  {
 pub mod delete_recovery_point_output {
     
     /// A builder for [`DeleteRecoveryPointOutput`](crate::output::DeleteRecoveryPointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5619,6 +5677,7 @@ pub struct DeleteFrameworkOutput  {
 pub mod delete_framework_output {
     
     /// A builder for [`DeleteFrameworkOutput`](crate::output::DeleteFrameworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5648,6 +5707,7 @@ pub struct DeleteBackupVaultNotificationsOutput  {
 pub mod delete_backup_vault_notifications_output {
     
     /// A builder for [`DeleteBackupVaultNotificationsOutput`](crate::output::DeleteBackupVaultNotificationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5677,6 +5737,7 @@ pub struct DeleteBackupVaultLockConfigurationOutput  {
 pub mod delete_backup_vault_lock_configuration_output {
     
     /// A builder for [`DeleteBackupVaultLockConfigurationOutput`](crate::output::DeleteBackupVaultLockConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5706,6 +5767,7 @@ pub struct DeleteBackupVaultAccessPolicyOutput  {
 pub mod delete_backup_vault_access_policy_output {
     
     /// A builder for [`DeleteBackupVaultAccessPolicyOutput`](crate::output::DeleteBackupVaultAccessPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5735,6 +5797,7 @@ pub struct DeleteBackupVaultOutput  {
 pub mod delete_backup_vault_output {
     
     /// A builder for [`DeleteBackupVaultOutput`](crate::output::DeleteBackupVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5764,6 +5827,7 @@ pub struct DeleteBackupSelectionOutput  {
 pub mod delete_backup_selection_output {
     
     /// A builder for [`DeleteBackupSelectionOutput`](crate::output::DeleteBackupSelectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5823,6 +5887,7 @@ impl DeleteBackupPlanOutput {
 pub mod delete_backup_plan_output {
     
     /// A builder for [`DeleteBackupPlanOutput`](crate::output::DeleteBackupPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
@@ -5923,6 +5988,7 @@ impl CreateReportPlanOutput {
 pub mod create_report_plan_output {
     
     /// A builder for [`CreateReportPlanOutput`](crate::output::CreateReportPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_plan_name: std::option::Option<std::string::String>,
@@ -6039,6 +6105,7 @@ impl CreateLegalHoldOutput {
 pub mod create_legal_hold_output {
     
     /// A builder for [`CreateLegalHoldOutput`](crate::output::CreateLegalHoldOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
@@ -6168,6 +6235,7 @@ impl CreateFrameworkOutput {
 pub mod create_framework_output {
     
     /// A builder for [`CreateFrameworkOutput`](crate::output::CreateFrameworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework_name: std::option::Option<std::string::String>,
@@ -6244,6 +6312,7 @@ impl CreateBackupVaultOutput {
 pub mod create_backup_vault_output {
     
     /// A builder for [`CreateBackupVaultOutput`](crate::output::CreateBackupVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
@@ -6332,6 +6401,7 @@ impl CreateBackupSelectionOutput {
 pub mod create_backup_selection_output {
     
     /// A builder for [`CreateBackupSelectionOutput`](crate::output::CreateBackupSelectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selection_id: std::option::Option<std::string::String>,
@@ -6434,6 +6504,7 @@ impl CreateBackupPlanOutput {
 pub mod create_backup_plan_output {
     
     /// A builder for [`CreateBackupPlanOutput`](crate::output::CreateBackupPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
@@ -6529,6 +6600,7 @@ pub struct CancelLegalHoldOutput  {
 pub mod cancel_legal_hold_output {
     
     /// A builder for [`CancelLegalHoldOutput`](crate::output::CancelLegalHoldOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

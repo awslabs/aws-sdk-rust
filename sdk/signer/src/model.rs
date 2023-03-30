@@ -18,6 +18,7 @@ impl Destination {
 pub mod destination {
     
     /// A builder for [`Destination`](crate::model::Destination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Destination>,
@@ -75,6 +76,7 @@ impl S3Destination {
 pub mod s3_destination {
     
     /// A builder for [`S3Destination`](crate::model::S3Destination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -137,6 +139,7 @@ impl Source {
 pub mod source {
     
     /// A builder for [`Source`](crate::model::Source).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Source>,
@@ -201,6 +204,7 @@ impl S3Source {
 pub mod s3_source {
     
     /// A builder for [`S3Source`](crate::model::S3Source).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -282,6 +286,7 @@ impl SigningPlatformOverrides {
 pub mod signing_platform_overrides {
     
     /// A builder for [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signing_configuration: std::option::Option<crate::model::SigningConfigurationOverrides>,
@@ -438,6 +443,7 @@ impl SigningConfigurationOverrides {
 pub mod signing_configuration_overrides {
     
     /// A builder for [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithm>,
@@ -671,6 +677,7 @@ impl SignatureValidityPeriod {
 pub mod signature_validity_period {
     
     /// A builder for [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i32>,
@@ -821,6 +828,7 @@ impl SigningMaterial {
 pub mod signing_material {
     
     /// A builder for [`SigningMaterial`](crate::model::SigningMaterial).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -941,6 +949,7 @@ impl SigningProfile {
 pub mod signing_profile {
     
     /// A builder for [`SigningProfile`](crate::model::SigningProfile).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -1266,6 +1275,7 @@ impl SigningPlatform {
 pub mod signing_platform {
     
     /// A builder for [`SigningPlatform`](crate::model::SigningPlatform).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_id: std::option::Option<std::string::String>,
@@ -1421,6 +1431,7 @@ impl SigningImageFormat {
 pub mod signing_image_format {
     
     /// A builder for [`SigningImageFormat`](crate::model::SigningImageFormat).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) supported_formats: std::option::Option<std::vec::Vec<crate::model::ImageFormat>>,
@@ -1496,6 +1507,7 @@ impl SigningConfiguration {
 pub mod signing_configuration {
     
     /// A builder for [`SigningConfiguration`](crate::model::SigningConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_algorithm_options: std::option::Option<crate::model::EncryptionAlgorithmOptions>,
@@ -1565,6 +1577,7 @@ impl HashAlgorithmOptions {
 pub mod hash_algorithm_options {
     
     /// A builder for [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_values: std::option::Option<std::vec::Vec<crate::model::HashAlgorithm>>,
@@ -1640,6 +1653,7 @@ impl EncryptionAlgorithmOptions {
 pub mod encryption_algorithm_options {
     
     /// A builder for [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_values: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithm>>,
@@ -1876,6 +1890,7 @@ impl SigningJob {
 pub mod signing_job {
     
     /// A builder for [`SigningJob`](crate::model::SigningJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2170,6 +2185,7 @@ impl SignedObject {
 pub mod signed_object {
     
     /// A builder for [`SignedObject`](crate::model::SignedObject).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3SignedObject>,
@@ -2227,6 +2243,7 @@ impl S3SignedObject {
 pub mod s3_signed_object {
     
     /// A builder for [`S3SignedObject`](crate::model::S3SignedObject).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -2310,6 +2327,7 @@ impl Permission {
 pub mod permission {
     
     /// A builder for [`Permission`](crate::model::Permission).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
@@ -2410,6 +2428,7 @@ impl SigningProfileRevocationRecord {
 pub mod signing_profile_revocation_record {
     
     /// A builder for [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revocation_effective_from: std::option::Option<aws_smithy_types::DateTime>,
@@ -2498,6 +2517,7 @@ impl SigningJobRevocationRecord {
 pub mod signing_job_revocation_record {
     
     /// A builder for [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,

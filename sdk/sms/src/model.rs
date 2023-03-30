@@ -107,6 +107,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -183,6 +184,7 @@ impl ServerGroup {
 pub mod server_group {
     
     /// A builder for [`ServerGroup`](crate::model::ServerGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
@@ -291,6 +293,7 @@ impl Server {
 pub mod server {
     
     /// A builder for [`Server`](crate::model::Server).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
@@ -417,6 +420,7 @@ impl VmServer {
 pub mod vm_server {
     
     /// A builder for [`VmServer`](crate::model::VmServer).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vm_server_address: std::option::Option<crate::model::VmServerAddress>,
@@ -609,6 +613,7 @@ impl VmServerAddress {
 pub mod vm_server_address {
     
     /// A builder for [`VmServerAddress`](crate::model::VmServerAddress).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vm_manager_id: std::option::Option<std::string::String>,
@@ -874,6 +879,7 @@ impl AppSummary {
 pub mod app_summary {
     
     /// A builder for [`AppSummary`](crate::model::AppSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1154,6 +1160,7 @@ impl LaunchDetails {
 pub mod launch_details {
     
     /// A builder for [`LaunchDetails`](crate::model::LaunchDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) latest_launch_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1800,6 +1807,7 @@ impl ServerGroupValidationConfiguration {
 pub mod server_group_validation_configuration {
     
     /// A builder for [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
@@ -1896,6 +1904,7 @@ impl ServerValidationConfiguration {
 pub mod server_validation_configuration {
     
     /// A builder for [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
@@ -2001,6 +2010,7 @@ impl UserDataValidationParameters {
 pub mod user_data_validation_parameters {
     
     /// A builder for [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::Source>,
@@ -2145,6 +2155,7 @@ impl Source {
 pub mod source {
     
     /// A builder for [`Source`](crate::model::Source).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3Location>,
@@ -2202,6 +2213,7 @@ impl S3Location {
 pub mod s3_location {
     
     /// A builder for [`S3Location`](crate::model::S3Location).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2362,6 +2374,7 @@ impl AppValidationConfiguration {
 pub mod app_validation_configuration {
     
     /// A builder for [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_id: std::option::Option<std::string::String>,
@@ -2483,6 +2496,7 @@ impl SsmValidationParameters {
 pub mod ssm_validation_parameters {
     
     /// A builder for [`SsmValidationParameters`](crate::model::SsmValidationParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::Source>,
@@ -2678,6 +2692,7 @@ impl ServerGroupReplicationConfiguration {
 pub mod server_group_replication_configuration {
     
     /// A builder for [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
@@ -2753,6 +2768,7 @@ impl ServerReplicationConfiguration {
 pub mod server_replication_configuration {
     
     /// A builder for [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
@@ -2871,6 +2887,7 @@ impl ServerReplicationParameters {
 pub mod server_replication_parameters {
     
     /// A builder for [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) seed_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3021,6 +3038,7 @@ impl ServerGroupLaunchConfiguration {
 pub mod server_group_launch_configuration {
     
     /// A builder for [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
@@ -3178,6 +3196,7 @@ impl ServerLaunchConfiguration {
 pub mod server_launch_configuration {
     
     /// A builder for [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
@@ -3360,6 +3379,7 @@ impl UserData {
 pub mod user_data {
     
     /// A builder for [`UserData`](crate::model::UserData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3Location>,
@@ -3424,6 +3444,7 @@ impl NotificationContext {
 pub mod notification_context {
     
     /// A builder for [`NotificationContext`](crate::model::NotificationContext).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_id: std::option::Option<std::string::String>,
@@ -3776,6 +3797,7 @@ impl ReplicationRun {
 pub mod replication_run {
     
     /// A builder for [`ReplicationRun`](crate::model::ReplicationRun).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_run_id: std::option::Option<std::string::String>,
@@ -3967,6 +3989,7 @@ impl ReplicationRunStageDetails {
 pub mod replication_run_stage_details {
     
     /// A builder for [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stage: std::option::Option<std::string::String>,
@@ -4351,6 +4374,7 @@ impl ReplicationJob {
 pub mod replication_job {
     
     /// A builder for [`ReplicationJob`](crate::model::ReplicationJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_job_id: std::option::Option<std::string::String>,
@@ -4800,6 +4824,7 @@ impl Connector {
 pub mod connector {
     
     /// A builder for [`Connector`](crate::model::Connector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_id: std::option::Option<std::string::String>,
@@ -5185,6 +5210,7 @@ impl ValidationOutput {
 pub mod validation_output {
     
     /// A builder for [`ValidationOutput`](crate::model::ValidationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_id: std::option::Option<std::string::String>,
@@ -5307,6 +5333,7 @@ impl ServerValidationOutput {
 pub mod server_validation_output {
     
     /// A builder for [`ServerValidationOutput`](crate::model::ServerValidationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
@@ -5357,6 +5384,7 @@ impl AppValidationOutput {
 pub mod app_validation_output {
     
     /// A builder for [`AppValidationOutput`](crate::model::AppValidationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ssm_output: std::option::Option<crate::model::SsmOutput>,
@@ -5407,6 +5435,7 @@ impl SsmOutput {
 pub mod ssm_output {
     
     /// A builder for [`SsmOutput`](crate::model::SsmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3Location>,

@@ -8,6 +8,7 @@ pub struct UpdateDestinationOutput  {
 pub mod update_destination_output {
     
     /// A builder for [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UntagDeliveryStreamOutput  {
 pub mod untag_delivery_stream_output {
     
     /// A builder for [`UntagDeliveryStreamOutput`](crate::output::UntagDeliveryStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct TagDeliveryStreamOutput  {
 pub mod tag_delivery_stream_output {
     
     /// A builder for [`TagDeliveryStreamOutput`](crate::output::TagDeliveryStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -95,6 +98,7 @@ pub struct StopDeliveryStreamEncryptionOutput  {
 pub mod stop_delivery_stream_encryption_output {
     
     /// A builder for [`StopDeliveryStreamEncryptionOutput`](crate::output::StopDeliveryStreamEncryptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -124,6 +128,7 @@ pub struct StartDeliveryStreamEncryptionOutput  {
 pub mod start_delivery_stream_encryption_output {
     
     /// A builder for [`StartDeliveryStreamEncryptionOutput`](crate::output::StartDeliveryStreamEncryptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -176,6 +181,7 @@ impl PutRecordBatchOutput {
 pub mod put_record_batch_output {
     
     /// A builder for [`PutRecordBatchOutput`](crate::output::PutRecordBatchOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_put_count: std::option::Option<i32>,
@@ -263,6 +269,7 @@ impl PutRecordOutput {
 pub mod put_record_output {
     
     /// A builder for [`PutRecordOutput`](crate::output::PutRecordOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_id: std::option::Option<std::string::String>,
@@ -332,6 +339,7 @@ impl ListTagsForDeliveryStreamOutput {
 pub mod list_tags_for_delivery_stream_output {
     
     /// A builder for [`ListTagsForDeliveryStreamOutput`](crate::output::ListTagsForDeliveryStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -407,6 +415,7 @@ impl ListDeliveryStreamsOutput {
 pub mod list_delivery_streams_output {
     
     /// A builder for [`ListDeliveryStreamsOutput`](crate::output::ListDeliveryStreamsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -475,6 +484,7 @@ impl DescribeDeliveryStreamOutput {
 pub mod describe_delivery_stream_output {
     
     /// A builder for [`DescribeDeliveryStreamOutput`](crate::output::DescribeDeliveryStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_description: std::option::Option<crate::model::DeliveryStreamDescription>,
@@ -516,6 +526,7 @@ pub struct DeleteDeliveryStreamOutput  {
 pub mod delete_delivery_stream_output {
     
     /// A builder for [`DeleteDeliveryStreamOutput`](crate::output::DeleteDeliveryStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -554,6 +565,7 @@ impl CreateDeliveryStreamOutput {
 pub mod create_delivery_stream_output {
     
     /// A builder for [`CreateDeliveryStreamOutput`](crate::output::CreateDeliveryStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_arn: std::option::Option<std::string::String>,

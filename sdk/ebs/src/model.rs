@@ -485,6 +485,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -718,6 +719,7 @@ impl Block {
 pub mod block {
     
     /// A builder for [`Block`](crate::model::Block).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_index: std::option::Option<i32>,
@@ -803,6 +805,7 @@ impl  std::fmt::Debug for ChangedBlock  {
 pub mod changed_block {
     
     /// A builder for [`ChangedBlock`](crate::model::ChangedBlock).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) block_index: std::option::Option<i32>,

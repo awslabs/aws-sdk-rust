@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod configure_logs_input {
     
     /// A builder for [`ConfigureLogsInput`](crate::input::ConfigureLogsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
@@ -130,6 +131,7 @@ impl ConfigureLogsInput {
 pub mod create_asset_input {
     
     /// A builder for [`CreateAssetInput`](crate::input::CreateAssetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -303,6 +305,7 @@ impl CreateAssetInput {
 pub mod create_packaging_configuration_input {
     
     /// A builder for [`CreatePackagingConfigurationInput`](crate::input::CreatePackagingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cmaf_package: std::option::Option<crate::model::CmafPackage>,
@@ -488,6 +491,7 @@ impl CreatePackagingConfigurationInput {
 pub mod create_packaging_group_input {
     
     /// A builder for [`CreatePackagingGroupInput`](crate::input::CreatePackagingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
@@ -637,6 +641,7 @@ impl CreatePackagingGroupInput {
 pub mod delete_asset_input {
     
     /// A builder for [`DeleteAssetInput`](crate::input::DeleteAssetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -746,6 +751,7 @@ impl DeleteAssetInput {
 pub mod delete_packaging_configuration_input {
     
     /// A builder for [`DeletePackagingConfigurationInput`](crate::input::DeletePackagingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -855,6 +861,7 @@ impl DeletePackagingConfigurationInput {
 pub mod delete_packaging_group_input {
     
     /// A builder for [`DeletePackagingGroupInput`](crate::input::DeletePackagingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -964,6 +971,7 @@ impl DeletePackagingGroupInput {
 pub mod describe_asset_input {
     
     /// A builder for [`DescribeAssetInput`](crate::input::DescribeAssetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1073,6 +1081,7 @@ impl DescribeAssetInput {
 pub mod describe_packaging_configuration_input {
     
     /// A builder for [`DescribePackagingConfigurationInput`](crate::input::DescribePackagingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1182,6 +1191,7 @@ impl DescribePackagingConfigurationInput {
 pub mod describe_packaging_group_input {
     
     /// A builder for [`DescribePackagingGroupInput`](crate::input::DescribePackagingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1291,6 +1301,7 @@ impl DescribePackagingGroupInput {
 pub mod list_assets_input {
     
     /// A builder for [`ListAssetsInput`](crate::input::ListAssetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1437,6 +1448,7 @@ impl ListAssetsInput {
 pub mod list_packaging_configurations_input {
     
     /// A builder for [`ListPackagingConfigurationsInput`](crate::input::ListPackagingConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1583,6 +1595,7 @@ impl ListPackagingConfigurationsInput {
 pub mod list_packaging_groups_input {
     
     /// A builder for [`ListPackagingGroupsInput`](crate::input::ListPackagingGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1712,6 +1725,7 @@ impl ListPackagingGroupsInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1821,6 +1835,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1952,6 +1967,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2089,6 +2105,7 @@ impl UntagResourceInput {
 pub mod update_packaging_group_input {
     
     /// A builder for [`UpdatePackagingGroupInput`](crate::input::UpdatePackagingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,

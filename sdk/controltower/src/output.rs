@@ -24,6 +24,7 @@ impl ListEnabledControlsOutput {
 pub mod list_enabled_controls_output {
     
     /// A builder for [`ListEnabledControlsOutput`](crate::output::ListEnabledControlsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled_controls: std::option::Option<std::vec::Vec<crate::model::EnabledControlSummary>>,
@@ -92,6 +93,7 @@ impl GetControlOperationOutput {
 pub mod get_control_operation_output {
     
     /// A builder for [`GetControlOperationOutput`](crate::output::GetControlOperationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_operation: std::option::Option<crate::model::ControlOperation>,
@@ -142,6 +144,7 @@ impl EnableControlOutput {
 pub mod enable_control_output {
     
     /// A builder for [`EnableControlOutput`](crate::output::EnableControlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_identifier: std::option::Option<std::string::String>,
@@ -192,6 +195,7 @@ impl DisableControlOutput {
 pub mod disable_control_output {
     
     /// A builder for [`DisableControlOutput`](crate::output::DisableControlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_identifier: std::option::Option<std::string::String>,

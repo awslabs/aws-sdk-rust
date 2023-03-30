@@ -164,6 +164,7 @@ impl std::error::Error for ServiceNotFound {}
 pub mod service_not_found {
     
     /// A builder for [`ServiceNotFound`](crate::error::ServiceNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -224,6 +225,7 @@ impl std::error::Error for InvalidInput {}
 pub mod invalid_input {
     
     /// A builder for [`InvalidInput`](crate::error::InvalidInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -293,6 +295,7 @@ impl std::error::Error for DuplicateRequest {}
 pub mod duplicate_request {
     
     /// A builder for [`DuplicateRequest`](crate::error::DuplicateRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -514,6 +517,7 @@ impl std::error::Error for ResourceInUse {}
 pub mod resource_in_use {
     
     /// A builder for [`ResourceInUse`](crate::error::ResourceInUse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -574,6 +578,7 @@ impl std::error::Error for NamespaceNotFound {}
 pub mod namespace_not_found {
     
     /// A builder for [`NamespaceNotFound`](crate::error::NamespaceNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -932,6 +937,7 @@ impl std::error::Error for InstanceNotFound {}
 pub mod instance_not_found {
     
     /// A builder for [`InstanceNotFound`](crate::error::InstanceNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -992,6 +998,7 @@ impl std::error::Error for CustomHealthNotFound {}
 pub mod custom_health_not_found {
     
     /// A builder for [`CustomHealthNotFound`](crate::error::CustomHealthNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1326,6 +1333,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1532,6 +1540,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
     
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1765,6 +1774,7 @@ impl std::error::Error for ResourceLimitExceeded {}
 pub mod resource_limit_exceeded {
     
     /// A builder for [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2664,6 +2674,7 @@ impl std::error::Error for OperationNotFound {}
 pub mod operation_not_found {
     
     /// A builder for [`OperationNotFound`](crate::error::OperationNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3272,6 +3283,7 @@ impl std::error::Error for RequestLimitExceeded {}
 pub mod request_limit_exceeded {
     
     /// A builder for [`RequestLimitExceeded`](crate::error::RequestLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3956,6 +3968,7 @@ impl std::error::Error for ServiceAlreadyExists {}
 pub mod service_already_exists {
     
     /// A builder for [`ServiceAlreadyExists`](crate::error::ServiceAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4217,6 +4230,7 @@ impl std::error::Error for NamespaceAlreadyExists {}
 pub mod namespace_already_exists {
     
     /// A builder for [`NamespaceAlreadyExists`](crate::error::NamespaceAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

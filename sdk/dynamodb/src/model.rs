@@ -25,6 +25,7 @@ impl TimeToLiveSpecification {
 pub mod time_to_live_specification {
     
     /// A builder for [`TimeToLiveSpecification`](crate::model::TimeToLiveSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -113,6 +114,7 @@ impl TableAutoScalingDescription {
 pub mod table_auto_scaling_description {
     
     /// A builder for [`TableAutoScalingDescription`](crate::model::TableAutoScalingDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -245,6 +247,7 @@ impl ReplicaAutoScalingDescription {
 pub mod replica_auto_scaling_description {
     
     /// A builder for [`ReplicaAutoScalingDescription`](crate::model::ReplicaAutoScalingDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -496,6 +499,7 @@ impl AutoScalingSettingsDescription {
 pub mod auto_scaling_settings_description {
     
     /// A builder for [`AutoScalingSettingsDescription`](crate::model::AutoScalingSettingsDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) minimum_units: std::option::Option<i64>,
@@ -607,6 +611,7 @@ impl AutoScalingPolicyDescription {
 pub mod auto_scaling_policy_description {
     
     /// A builder for [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -690,6 +695,7 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
 pub mod auto_scaling_target_tracking_scaling_policy_configuration_description {
     
     /// A builder for [`AutoScalingTargetTrackingScalingPolicyConfigurationDescription`](crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disable_scale_in: std::option::Option<bool>,
@@ -809,6 +815,7 @@ impl ReplicaGlobalSecondaryIndexAutoScalingDescription {
 pub mod replica_global_secondary_index_auto_scaling_description {
     
     /// A builder for [`ReplicaGlobalSecondaryIndexAutoScalingDescription`](crate::model::ReplicaGlobalSecondaryIndexAutoScalingDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -1120,6 +1127,7 @@ impl ReplicaAutoScalingUpdate {
 pub mod replica_auto_scaling_update {
     
     /// A builder for [`ReplicaAutoScalingUpdate`](crate::model::ReplicaAutoScalingUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -1228,6 +1236,7 @@ impl AutoScalingSettingsUpdate {
 pub mod auto_scaling_settings_update {
     
     /// A builder for [`AutoScalingSettingsUpdate`](crate::model::AutoScalingSettingsUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) minimum_units: std::option::Option<i64>,
@@ -1333,6 +1342,7 @@ impl AutoScalingPolicyUpdate {
 pub mod auto_scaling_policy_update {
     
     /// A builder for [`AutoScalingPolicyUpdate`](crate::model::AutoScalingPolicyUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -1416,6 +1426,7 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
 pub mod auto_scaling_target_tracking_scaling_policy_configuration_update {
     
     /// A builder for [`AutoScalingTargetTrackingScalingPolicyConfigurationUpdate`](crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disable_scale_in: std::option::Option<bool>,
@@ -1509,6 +1520,7 @@ impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
 pub mod replica_global_secondary_index_auto_scaling_update {
     
     /// A builder for [`ReplicaGlobalSecondaryIndexAutoScalingUpdate`](crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -1578,6 +1590,7 @@ impl GlobalSecondaryIndexAutoScalingUpdate {
 pub mod global_secondary_index_auto_scaling_update {
     
     /// A builder for [`GlobalSecondaryIndexAutoScalingUpdate`](crate::model::GlobalSecondaryIndexAutoScalingUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -1937,6 +1950,7 @@ impl TableDescription {
 pub mod table_description {
     
     /// A builder for [`TableDescription`](crate::model::TableDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_definitions: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
@@ -2426,6 +2440,7 @@ impl TableClassSummary {
 pub mod table_class_summary {
     
     /// A builder for [`TableClassSummary`](crate::model::TableClassSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_class: std::option::Option<crate::model::TableClass>,
@@ -2590,6 +2605,7 @@ impl ArchivalSummary {
 pub mod archival_summary {
     
     /// A builder for [`ArchivalSummary`](crate::model::ArchivalSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archival_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2705,6 +2721,7 @@ impl SseDescription {
 pub mod sse_description {
     
     /// A builder for [`SseDescription`](crate::model::SseDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SseStatus>,
@@ -3005,6 +3022,7 @@ impl RestoreSummary {
 pub mod restore_summary {
     
     /// A builder for [`RestoreSummary`](crate::model::RestoreSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_backup_arn: std::option::Option<std::string::String>,
@@ -3171,6 +3189,7 @@ impl ReplicaDescription {
 pub mod replica_description {
     
     /// A builder for [`ReplicaDescription`](crate::model::ReplicaDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -3354,6 +3373,7 @@ impl ReplicaGlobalSecondaryIndexDescription {
 pub mod replica_global_secondary_index_description {
     
     /// A builder for [`ReplicaGlobalSecondaryIndexDescription`](crate::model::ReplicaGlobalSecondaryIndexDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -3416,6 +3436,7 @@ impl ProvisionedThroughputOverride {
 pub mod provisioned_throughput_override {
     
     /// A builder for [`ProvisionedThroughputOverride`](crate::model::ProvisionedThroughputOverride).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_capacity_units: std::option::Option<i64>,
@@ -3485,6 +3506,7 @@ impl StreamSpecification {
 pub mod stream_specification {
     
     /// A builder for [`StreamSpecification`](crate::model::StreamSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_enabled: std::option::Option<bool>,
@@ -3741,6 +3763,7 @@ impl GlobalSecondaryIndexDescription {
 pub mod global_secondary_index_description {
     
     /// A builder for [`GlobalSecondaryIndexDescription`](crate::model::GlobalSecondaryIndexDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -3955,6 +3978,7 @@ impl ProvisionedThroughputDescription {
 pub mod provisioned_throughput_description {
     
     /// A builder for [`ProvisionedThroughputDescription`](crate::model::ProvisionedThroughputDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_increase_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4072,6 +4096,7 @@ impl Projection {
 pub mod projection {
     
     /// A builder for [`Projection`](crate::model::Projection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) projection_type: std::option::Option<crate::model::ProjectionType>,
@@ -4262,6 +4287,7 @@ impl KeySchemaElement {
 pub mod key_schema_element {
     
     /// A builder for [`KeySchemaElement`](crate::model::KeySchemaElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -4469,6 +4495,7 @@ impl LocalSecondaryIndexDescription {
 pub mod local_secondary_index_description {
     
     /// A builder for [`LocalSecondaryIndexDescription`](crate::model::LocalSecondaryIndexDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -4616,6 +4643,7 @@ impl BillingModeSummary {
 pub mod billing_mode_summary {
     
     /// A builder for [`BillingModeSummary`](crate::model::BillingModeSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_mode: std::option::Option<crate::model::BillingMode>,
@@ -4785,6 +4813,7 @@ impl AttributeDefinition {
 pub mod attribute_definition {
     
     /// A builder for [`AttributeDefinition`](crate::model::AttributeDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -4965,6 +4994,7 @@ impl ReplicationGroupUpdate {
 pub mod replication_group_update {
     
     /// A builder for [`ReplicationGroupUpdate`](crate::model::ReplicationGroupUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create: std::option::Option<crate::model::CreateReplicationGroupMemberAction>,
@@ -5039,6 +5069,7 @@ impl DeleteReplicationGroupMemberAction {
 pub mod delete_replication_group_member_action {
     
     /// A builder for [`DeleteReplicationGroupMemberAction`](crate::model::DeleteReplicationGroupMemberAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -5117,6 +5148,7 @@ impl UpdateReplicationGroupMemberAction {
 pub mod update_replication_group_member_action {
     
     /// A builder for [`UpdateReplicationGroupMemberAction`](crate::model::UpdateReplicationGroupMemberAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -5228,6 +5260,7 @@ impl ReplicaGlobalSecondaryIndex {
 pub mod replica_global_secondary_index {
     
     /// A builder for [`ReplicaGlobalSecondaryIndex`](crate::model::ReplicaGlobalSecondaryIndex).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -5318,6 +5351,7 @@ impl CreateReplicationGroupMemberAction {
 pub mod create_replication_group_member_action {
     
     /// A builder for [`CreateReplicationGroupMemberAction`](crate::model::CreateReplicationGroupMemberAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -5442,6 +5476,7 @@ impl SseSpecification {
 pub mod sse_specification {
     
     /// A builder for [`SseSpecification`](crate::model::SseSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -5555,6 +5590,7 @@ impl GlobalSecondaryIndexUpdate {
 pub mod global_secondary_index_update {
     
     /// A builder for [`GlobalSecondaryIndexUpdate`](crate::model::GlobalSecondaryIndexUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update: std::option::Option<crate::model::UpdateGlobalSecondaryIndexAction>,
@@ -5643,6 +5679,7 @@ impl DeleteGlobalSecondaryIndexAction {
 pub mod delete_global_secondary_index_action {
     
     /// A builder for [`DeleteGlobalSecondaryIndexAction`](crate::model::DeleteGlobalSecondaryIndexAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -5716,6 +5753,7 @@ impl CreateGlobalSecondaryIndexAction {
 pub mod create_global_secondary_index_action {
     
     /// A builder for [`CreateGlobalSecondaryIndexAction`](crate::model::CreateGlobalSecondaryIndexAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -5822,6 +5860,7 @@ impl ProvisionedThroughput {
 pub mod provisioned_throughput {
     
     /// A builder for [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_capacity_units: std::option::Option<i64>,
@@ -5897,6 +5936,7 @@ impl UpdateGlobalSecondaryIndexAction {
 pub mod update_global_secondary_index_action {
     
     /// A builder for [`UpdateGlobalSecondaryIndexAction`](crate::model::UpdateGlobalSecondaryIndexAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -5970,6 +6010,7 @@ impl ItemCollectionMetrics {
 pub mod item_collection_metrics {
     
     /// A builder for [`ItemCollectionMetrics`](crate::model::ItemCollectionMetrics).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item_collection_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -6233,6 +6274,7 @@ impl ConsumedCapacity {
 pub mod consumed_capacity {
     
     /// A builder for [`ConsumedCapacity`](crate::model::ConsumedCapacity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -6381,6 +6423,7 @@ impl Capacity {
 pub mod capacity {
     
     /// A builder for [`Capacity`](crate::model::Capacity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_capacity_units: std::option::Option<f64>,
@@ -6929,6 +6972,7 @@ impl ExpectedAttributeValue {
 pub mod expected_attribute_value {
     
     /// A builder for [`ExpectedAttributeValue`](crate::model::ExpectedAttributeValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<crate::model::AttributeValue>,
@@ -7286,6 +7330,7 @@ impl AttributeValueUpdate {
 pub mod attribute_value_update {
     
     /// A builder for [`AttributeValueUpdate`](crate::model::AttributeValueUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<crate::model::AttributeValue>,
@@ -7545,6 +7590,7 @@ impl ReplicaSettingsDescription {
 pub mod replica_settings_description {
     
     /// A builder for [`ReplicaSettingsDescription`](crate::model::ReplicaSettingsDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -7756,6 +7802,7 @@ impl ReplicaGlobalSecondaryIndexSettingsDescription {
 pub mod replica_global_secondary_index_settings_description {
     
     /// A builder for [`ReplicaGlobalSecondaryIndexSettingsDescription`](crate::model::ReplicaGlobalSecondaryIndexSettingsDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -7906,6 +7953,7 @@ impl ReplicaSettingsUpdate {
 pub mod replica_settings_update {
     
     /// A builder for [`ReplicaSettingsUpdate`](crate::model::ReplicaSettingsUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -8024,6 +8072,7 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdate {
 pub mod replica_global_secondary_index_settings_update {
     
     /// A builder for [`ReplicaGlobalSecondaryIndexSettingsUpdate`](crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -8112,6 +8161,7 @@ impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
 pub mod global_table_global_secondary_index_settings_update {
     
     /// A builder for [`GlobalTableGlobalSecondaryIndexSettingsUpdate`](crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -8226,6 +8276,7 @@ impl GlobalTableDescription {
 pub mod global_table_description {
     
     /// A builder for [`GlobalTableDescription`](crate::model::GlobalTableDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group: std::option::Option<std::vec::Vec<crate::model::ReplicaDescription>>,
@@ -8446,6 +8497,7 @@ impl ReplicaUpdate {
 pub mod replica_update {
     
     /// A builder for [`ReplicaUpdate`](crate::model::ReplicaUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create: std::option::Option<crate::model::CreateReplicaAction>,
@@ -8508,6 +8560,7 @@ impl DeleteReplicaAction {
 pub mod delete_replica_action {
     
     /// A builder for [`DeleteReplicaAction`](crate::model::DeleteReplicaAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -8558,6 +8611,7 @@ impl CreateReplicaAction {
 pub mod create_replica_action {
     
     /// A builder for [`CreateReplicaAction`](crate::model::CreateReplicaAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -8794,6 +8848,7 @@ impl ContinuousBackupsDescription {
 pub mod continuous_backups_description {
     
     /// A builder for [`ContinuousBackupsDescription`](crate::model::ContinuousBackupsDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) continuous_backups_status: std::option::Option<crate::model::ContinuousBackupsStatus>,
@@ -8878,6 +8933,7 @@ impl PointInTimeRecoveryDescription {
 pub mod point_in_time_recovery_description {
     
     /// A builder for [`PointInTimeRecoveryDescription`](crate::model::PointInTimeRecoveryDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) point_in_time_recovery_status: std::option::Option<crate::model::PointInTimeRecoveryStatus>,
@@ -9124,6 +9180,7 @@ impl PointInTimeRecoverySpecification {
 pub mod point_in_time_recovery_specification {
     
     /// A builder for [`PointInTimeRecoverySpecification`](crate::model::PointInTimeRecoverySpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) point_in_time_recovery_enabled: std::option::Option<bool>,
@@ -9188,6 +9245,7 @@ impl CancellationReason {
 pub mod cancellation_reason {
     
     /// A builder for [`CancellationReason`](crate::model::CancellationReason).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -9289,6 +9347,7 @@ impl TransactWriteItem {
 pub mod transact_write_item {
     
     /// A builder for [`TransactWriteItem`](crate::model::TransactWriteItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) condition_check: std::option::Option<crate::model::ConditionCheck>,
@@ -9417,6 +9476,7 @@ impl Update {
 pub mod update {
     
     /// A builder for [`Update`](crate::model::Update).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -9674,6 +9734,7 @@ impl Delete {
 pub mod delete {
     
     /// A builder for [`Delete`](crate::model::Delete).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -9837,6 +9898,7 @@ impl Put {
 pub mod put {
     
     /// A builder for [`Put`](crate::model::Put).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -10000,6 +10062,7 @@ impl ConditionCheck {
 pub mod condition_check {
     
     /// A builder for [`ConditionCheck`](crate::model::ConditionCheck).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -10128,6 +10191,7 @@ impl ItemResponse {
 pub mod item_response {
     
     /// A builder for [`ItemResponse`](crate::model::ItemResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -10184,6 +10248,7 @@ impl TransactGetItem {
 pub mod transact_get_item {
     
     /// A builder for [`TransactGetItem`](crate::model::TransactGetItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) get: std::option::Option<crate::model::Get>,
@@ -10255,6 +10320,7 @@ impl Get {
 pub mod get {
     
     /// A builder for [`Get`](crate::model::Get).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -10362,6 +10428,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -10487,6 +10554,7 @@ impl Condition {
 pub mod condition {
     
     /// A builder for [`Condition`](crate::model::Condition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_value_list: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
@@ -10727,6 +10795,7 @@ impl LocalSecondaryIndex {
 pub mod local_secondary_index {
     
     /// A builder for [`LocalSecondaryIndex`](crate::model::LocalSecondaryIndex).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -10858,6 +10927,7 @@ impl GlobalSecondaryIndex {
 pub mod global_secondary_index {
     
     /// A builder for [`GlobalSecondaryIndex`](crate::model::GlobalSecondaryIndex).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -11015,6 +11085,7 @@ impl ImportSummary {
 pub mod import_summary {
     
     /// A builder for [`ImportSummary`](crate::model::ImportSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_arn: std::option::Option<std::string::String>,
@@ -11250,6 +11321,7 @@ impl S3BucketSource {
 pub mod s3_bucket_source {
     
     /// A builder for [`S3BucketSource`](crate::model::S3BucketSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket_owner: std::option::Option<std::string::String>,
@@ -11428,6 +11500,7 @@ impl GlobalTable {
 pub mod global_table {
     
     /// A builder for [`GlobalTable`](crate::model::GlobalTable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
@@ -11496,6 +11569,7 @@ impl Replica {
 pub mod replica {
     
     /// A builder for [`Replica`](crate::model::Replica).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -11553,6 +11627,7 @@ impl ExportSummary {
 pub mod export_summary {
     
     /// A builder for [`ExportSummary`](crate::model::ExportSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_arn: std::option::Option<std::string::String>,
@@ -11716,6 +11791,7 @@ impl ContributorInsightsSummary {
 pub mod contributor_insights_summary {
     
     /// A builder for [`ContributorInsightsSummary`](crate::model::ContributorInsightsSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -11863,6 +11939,7 @@ impl BackupSummary {
 pub mod backup_summary {
     
     /// A builder for [`BackupSummary`](crate::model::BackupSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -12423,6 +12500,7 @@ impl ImportTableDescription {
 pub mod import_table_description {
     
     /// A builder for [`ImportTableDescription`](crate::model::ImportTableDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_arn: std::option::Option<std::string::String>,
@@ -12736,6 +12814,7 @@ impl TableCreationParameters {
 pub mod table_creation_parameters {
     
     /// A builder for [`TableCreationParameters`](crate::model::TableCreationParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -12965,6 +13044,7 @@ impl InputFormatOptions {
 pub mod input_format_options {
     
     /// A builder for [`InputFormatOptions`](crate::model::InputFormatOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) csv: std::option::Option<crate::model::CsvOptions>,
@@ -13022,6 +13102,7 @@ impl CsvOptions {
 pub mod csv_options {
     
     /// A builder for [`CsvOptions`](crate::model::CsvOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delimiter: std::option::Option<std::string::String>,
@@ -13224,6 +13305,7 @@ impl ExportDescription {
 pub mod export_description {
     
     /// A builder for [`ExportDescription`](crate::model::ExportDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_arn: std::option::Option<std::string::String>,
@@ -13669,6 +13751,7 @@ impl ParameterizedStatement {
 pub mod parameterized_statement {
     
     /// A builder for [`ParameterizedStatement`](crate::model::ParameterizedStatement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement: std::option::Option<std::string::String>,
@@ -13841,6 +13924,7 @@ impl TimeToLiveDescription {
 pub mod time_to_live_description {
     
     /// A builder for [`TimeToLiveDescription`](crate::model::TimeToLiveDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_to_live_status: std::option::Option<crate::model::TimeToLiveStatus>,
@@ -14009,6 +14093,7 @@ impl KinesisDataStreamDestination {
 pub mod kinesis_data_stream_destination {
     
     /// A builder for [`KinesisDataStreamDestination`](crate::model::KinesisDataStreamDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -14090,6 +14175,7 @@ impl Endpoint {
 pub mod endpoint {
     
     /// A builder for [`Endpoint`](crate::model::Endpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
@@ -14160,6 +14246,7 @@ impl FailureException {
 pub mod failure_exception {
     
     /// A builder for [`FailureException`](crate::model::FailureException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exception_name: std::option::Option<std::string::String>,
@@ -14236,6 +14323,7 @@ impl BackupDescription {
 pub mod backup_description {
     
     /// A builder for [`BackupDescription`](crate::model::BackupDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_details: std::option::Option<crate::model::BackupDetails>,
@@ -14338,6 +14426,7 @@ impl SourceTableFeatureDetails {
 pub mod source_table_feature_details {
     
     /// A builder for [`SourceTableFeatureDetails`](crate::model::SourceTableFeatureDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) local_secondary_indexes: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndexInfo>>,
@@ -14483,6 +14572,7 @@ impl GlobalSecondaryIndexInfo {
 pub mod global_secondary_index_info {
     
     /// A builder for [`GlobalSecondaryIndexInfo`](crate::model::GlobalSecondaryIndexInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -14617,6 +14707,7 @@ impl LocalSecondaryIndexInfo {
 pub mod local_secondary_index_info {
     
     /// A builder for [`LocalSecondaryIndexInfo`](crate::model::LocalSecondaryIndexInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -14775,6 +14866,7 @@ impl SourceTableDetails {
 pub mod source_table_details {
     
     /// A builder for [`SourceTableDetails`](crate::model::SourceTableDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -14987,6 +15079,7 @@ impl BackupDetails {
 pub mod backup_details {
     
     /// A builder for [`BackupDetails`](crate::model::BackupDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_arn: std::option::Option<std::string::String>,
@@ -15126,6 +15219,7 @@ impl WriteRequest {
 pub mod write_request {
     
     /// A builder for [`WriteRequest`](crate::model::WriteRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) put_request: std::option::Option<crate::model::PutRequest>,
@@ -15188,6 +15282,7 @@ impl DeleteRequest {
 pub mod delete_request {
     
     /// A builder for [`DeleteRequest`](crate::model::DeleteRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -15244,6 +15339,7 @@ impl PutRequest {
 pub mod put_request {
     
     /// A builder for [`PutRequest`](crate::model::PutRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -15373,6 +15469,7 @@ impl KeysAndAttributes {
 pub mod keys_and_attributes {
     
     /// A builder for [`KeysAndAttributes`](crate::model::KeysAndAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keys: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>,
@@ -15547,6 +15644,7 @@ impl BatchStatementResponse {
 pub mod batch_statement_response {
     
     /// A builder for [`BatchStatementResponse`](crate::model::BatchStatementResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<crate::model::BatchStatementError>,
@@ -15634,6 +15732,7 @@ impl BatchStatementError {
 pub mod batch_statement_error {
     
     /// A builder for [`BatchStatementError`](crate::model::BatchStatementError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::BatchStatementErrorCodeEnum>,
@@ -15837,6 +15936,7 @@ impl BatchStatementRequest {
 pub mod batch_statement_request {
     
     /// A builder for [`BatchStatementRequest`](crate::model::BatchStatementRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement: std::option::Option<std::string::String>,

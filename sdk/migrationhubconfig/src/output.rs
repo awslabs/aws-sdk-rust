@@ -17,6 +17,7 @@ impl GetHomeRegionOutput {
 pub mod get_home_region_output {
     
     /// A builder for [`GetHomeRegionOutput`](crate::output::GetHomeRegionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) home_region: std::option::Option<std::string::String>,
@@ -74,6 +75,7 @@ impl DescribeHomeRegionControlsOutput {
 pub mod describe_home_region_controls_output {
     
     /// A builder for [`DescribeHomeRegionControlsOutput`](crate::output::DescribeHomeRegionControlsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) home_region_controls: std::option::Option<std::vec::Vec<crate::model::HomeRegionControl>>,
@@ -142,6 +144,7 @@ impl CreateHomeRegionControlOutput {
 pub mod create_home_region_control_output {
     
     /// A builder for [`CreateHomeRegionControlOutput`](crate::output::CreateHomeRegionControlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) home_region_control: std::option::Option<crate::model::HomeRegionControl>,

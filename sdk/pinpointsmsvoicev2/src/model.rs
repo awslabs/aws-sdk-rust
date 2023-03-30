@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
     
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1126,6 +1127,7 @@ impl EventDestination {
 pub mod event_destination {
     
     /// A builder for [`EventDestination`](crate::model::EventDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
@@ -1242,6 +1244,7 @@ impl SnsDestination {
 pub mod sns_destination {
     
     /// A builder for [`SnsDestination`](crate::model::SnsDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -1300,6 +1303,7 @@ impl KinesisFirehoseDestination {
 pub mod kinesis_firehose_destination {
     
     /// A builder for [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
@@ -1369,6 +1373,7 @@ impl CloudWatchLogsDestination {
 pub mod cloud_watch_logs_destination {
     
     /// A builder for [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
@@ -1772,6 +1777,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2560,6 +2566,7 @@ impl OriginationIdentityMetadata {
 pub mod origination_identity_metadata {
     
     /// A builder for [`OriginationIdentityMetadata`](crate::model::OriginationIdentityMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origination_identity_arn: std::option::Option<std::string::String>,
@@ -2659,6 +2666,7 @@ impl PoolOriginationIdentitiesFilter {
 pub mod pool_origination_identities_filter {
     
     /// A builder for [`PoolOriginationIdentitiesFilter`](crate::model::PoolOriginationIdentitiesFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::PoolOriginationIdentitiesFilterName>,
@@ -2830,6 +2838,7 @@ impl SpendLimit {
 pub mod spend_limit {
     
     /// A builder for [`SpendLimit`](crate::model::SpendLimit).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SpendLimitName>,
@@ -3029,6 +3038,7 @@ impl SenderIdInformation {
 pub mod sender_id_information {
     
     /// A builder for [`SenderIdInformation`](crate::model::SenderIdInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sender_id_arn: std::option::Option<std::string::String>,
@@ -3140,6 +3150,7 @@ impl SenderIdFilter {
 pub mod sender_id_filter {
     
     /// A builder for [`SenderIdFilter`](crate::model::SenderIdFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SenderIdFilterName>,
@@ -3302,6 +3313,7 @@ impl SenderIdAndCountry {
 pub mod sender_id_and_country {
     
     /// A builder for [`SenderIdAndCountry`](crate::model::SenderIdAndCountry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sender_id: std::option::Option<std::string::String>,
@@ -3436,6 +3448,7 @@ impl PoolInformation {
 pub mod pool_information {
     
     /// A builder for [`PoolInformation`](crate::model::PoolInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_arn: std::option::Option<std::string::String>,
@@ -3619,6 +3632,7 @@ impl PoolFilter {
 pub mod pool_filter {
     
     /// A builder for [`PoolFilter`](crate::model::PoolFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::PoolFilterName>,
@@ -3899,6 +3913,7 @@ impl PhoneNumberInformation {
 pub mod phone_number_information {
     
     /// A builder for [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_arn: std::option::Option<std::string::String>,
@@ -4145,6 +4160,7 @@ impl PhoneNumberFilter {
 pub mod phone_number_filter {
     
     /// A builder for [`PhoneNumberFilter`](crate::model::PhoneNumberFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::PhoneNumberFilterName>,
@@ -4344,6 +4360,7 @@ impl OptOutListInformation {
 pub mod opt_out_list_information {
     
     /// A builder for [`OptOutListInformation`](crate::model::OptOutListInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_out_list_arn: std::option::Option<std::string::String>,
@@ -4432,6 +4449,7 @@ impl OptedOutNumberInformation {
 pub mod opted_out_number_information {
     
     /// A builder for [`OptedOutNumberInformation`](crate::model::OptedOutNumberInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opted_out_number: std::option::Option<std::string::String>,
@@ -4514,6 +4532,7 @@ impl OptedOutFilter {
 pub mod opted_out_filter {
     
     /// A builder for [`OptedOutFilter`](crate::model::OptedOutFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::OptedOutFilterName>,
@@ -4673,6 +4692,7 @@ impl KeywordInformation {
 pub mod keyword_information {
     
     /// A builder for [`KeywordInformation`](crate::model::KeywordInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyword: std::option::Option<std::string::String>,
@@ -4754,6 +4774,7 @@ impl KeywordFilter {
 pub mod keyword_filter {
     
     /// A builder for [`KeywordFilter`](crate::model::KeywordFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::KeywordFilterName>,
@@ -4934,6 +4955,7 @@ impl ConfigurationSetInformation {
 pub mod configuration_set_information {
     
     /// A builder for [`ConfigurationSetInformation`](crate::model::ConfigurationSetInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_arn: std::option::Option<std::string::String>,
@@ -5057,6 +5079,7 @@ impl ConfigurationSetFilter {
 pub mod configuration_set_filter {
     
     /// A builder for [`ConfigurationSetFilter`](crate::model::ConfigurationSetFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ConfigurationSetFilterName>,
@@ -5231,6 +5254,7 @@ impl AccountLimit {
 pub mod account_limit {
     
     /// A builder for [`AccountLimit`](crate::model::AccountLimit).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::AccountLimitName>,
@@ -5406,6 +5430,7 @@ impl AccountAttribute {
 pub mod account_attribute {
     
     /// A builder for [`AccountAttribute`](crate::model::AccountAttribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::AccountAttributeName>,

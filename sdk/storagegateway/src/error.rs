@@ -161,6 +161,7 @@ impl std::error::Error for InvalidGatewayRequestException {}
 pub mod invalid_gateway_request_exception {
     
     /// A builder for [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -242,6 +243,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
     
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9710,6 +9712,7 @@ impl std::error::Error for ServiceUnavailableError {}
 pub mod service_unavailable_error {
     
     /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

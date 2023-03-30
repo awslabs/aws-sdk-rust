@@ -18,6 +18,7 @@ impl DocumentServiceWarning {
 pub mod document_service_warning {
     
     /// A builder for [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -164,6 +165,7 @@ impl SuggestModel {
 pub mod suggest_model {
     
     /// A builder for [`SuggestModel`](crate::model::SuggestModel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query: std::option::Option<std::string::String>,
@@ -259,6 +261,7 @@ impl SuggestionMatch {
 pub mod suggestion_match {
     
     /// A builder for [`SuggestionMatch`](crate::model::SuggestionMatch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggestion: std::option::Option<std::string::String>,
@@ -341,6 +344,7 @@ impl SuggestStatus {
 pub mod suggest_status {
     
     /// A builder for [`SuggestStatus`](crate::model::SuggestStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timems: std::option::Option<i64>,
@@ -459,6 +463,7 @@ impl FieldStats {
 pub mod field_stats {
     
     /// A builder for [`FieldStats`](crate::model::FieldStats).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<std::string::String>,
@@ -604,6 +609,7 @@ impl BucketInfo {
 pub mod bucket_info {
     
     /// A builder for [`BucketInfo`](crate::model::BucketInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
@@ -667,6 +673,7 @@ impl Bucket {
 pub mod bucket {
     
     /// A builder for [`Bucket`](crate::model::Bucket).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -751,6 +758,7 @@ impl Hits {
 pub mod hits {
     
     /// A builder for [`Hits`](crate::model::Hits).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) found: std::option::Option<i64>,
@@ -866,6 +874,7 @@ impl Hit {
 pub mod hit {
     
     /// A builder for [`Hit`](crate::model::Hit).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -977,6 +986,7 @@ impl SearchStatus {
 pub mod search_status {
     
     /// A builder for [`SearchStatus`](crate::model::SearchStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timems: std::option::Option<i64>,

@@ -24,6 +24,7 @@ impl ListScheduleGroupsOutput {
 pub mod list_schedule_groups_output {
     
     /// A builder for [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -92,6 +93,7 @@ impl CreateScheduleGroupOutput {
 pub mod create_schedule_group_output {
     
     /// A builder for [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_group_arn: std::option::Option<std::string::String>,
@@ -133,6 +135,7 @@ pub struct DeleteScheduleGroupOutput  {
 pub mod delete_schedule_group_output {
     
     /// A builder for [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -199,6 +202,7 @@ impl GetScheduleGroupOutput {
 pub mod get_schedule_group_output {
     
     /// A builder for [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -304,6 +308,7 @@ impl ListSchedulesOutput {
 pub mod list_schedules_output {
     
     /// A builder for [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -372,6 +377,7 @@ impl CreateScheduleOutput {
 pub mod create_schedule_output {
     
     /// A builder for [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_arn: std::option::Option<std::string::String>,
@@ -413,6 +419,7 @@ pub struct DeleteScheduleOutput  {
 pub mod delete_schedule_output {
     
     /// A builder for [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -451,6 +458,7 @@ impl UpdateScheduleOutput {
 pub mod update_schedule_output {
     
     /// A builder for [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_arn: std::option::Option<std::string::String>,
@@ -610,6 +618,7 @@ impl GetScheduleOutput {
 pub mod get_schedule_output {
     
     /// A builder for [`GetScheduleOutput`](crate::output::GetScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -825,6 +834,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -854,6 +864,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -892,6 +903,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,

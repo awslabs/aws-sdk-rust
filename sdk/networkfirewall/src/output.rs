@@ -42,6 +42,7 @@ impl UpdateSubnetChangeProtectionOutput {
 pub mod update_subnet_change_protection_output {
     
     /// A builder for [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -142,6 +143,7 @@ impl UpdateRuleGroupOutput {
 pub mod update_rule_group_output {
     
     /// A builder for [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -220,6 +222,7 @@ impl UpdateLoggingConfigurationOutput {
 pub mod update_logging_configuration_output {
     
     /// A builder for [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -319,6 +322,7 @@ impl UpdateFirewallPolicyChangeProtectionOutput {
 pub mod update_firewall_policy_change_protection_output {
     
     /// A builder for [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -419,6 +423,7 @@ impl UpdateFirewallPolicyOutput {
 pub mod update_firewall_policy_output {
     
     /// A builder for [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -508,6 +513,7 @@ impl UpdateFirewallEncryptionConfigurationOutput {
 pub mod update_firewall_encryption_configuration_output {
     
     /// A builder for [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -623,6 +629,7 @@ impl UpdateFirewallDescriptionOutput {
 pub mod update_firewall_description_output {
     
     /// A builder for [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -738,6 +745,7 @@ impl UpdateFirewallDeleteProtectionOutput {
 pub mod update_firewall_delete_protection_output {
     
     /// A builder for [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -820,6 +828,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -849,6 +858,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -878,6 +888,7 @@ pub struct PutResourcePolicyOutput  {
 pub mod put_resource_policy_output {
     
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -923,6 +934,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -998,6 +1010,7 @@ impl ListRuleGroupsOutput {
 pub mod list_rule_groups_output {
     
     /// A builder for [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1073,6 +1086,7 @@ impl ListFirewallsOutput {
 pub mod list_firewalls_output {
     
     /// A builder for [`ListFirewallsOutput`](crate::output::ListFirewallsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1148,6 +1162,7 @@ impl ListFirewallPoliciesOutput {
 pub mod list_firewall_policies_output {
     
     /// A builder for [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1241,6 +1256,7 @@ impl DisassociateSubnetsOutput {
 pub mod disassociate_subnets_output {
     
     /// A builder for [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -1389,6 +1405,7 @@ impl DescribeRuleGroupMetadataOutput {
 pub mod describe_rule_group_metadata_output {
     
     /// A builder for [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -1541,6 +1558,7 @@ impl DescribeRuleGroupOutput {
 pub mod describe_rule_group_output {
     
     /// A builder for [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -1621,6 +1639,7 @@ impl DescribeResourcePolicyOutput {
 pub mod describe_resource_policy_output {
     
     /// A builder for [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1678,6 +1697,7 @@ impl DescribeLoggingConfigurationOutput {
 pub mod describe_logging_configuration_output {
     
     /// A builder for [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -1756,6 +1776,7 @@ impl DescribeFirewallPolicyOutput {
 pub mod describe_firewall_policy_output {
     
     /// A builder for [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -1850,6 +1871,7 @@ impl DescribeFirewallOutput {
 pub mod describe_firewall_output {
     
     /// A builder for [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -1928,6 +1950,7 @@ impl DeleteRuleGroupOutput {
 pub mod delete_rule_group_output {
     
     /// A builder for [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
@@ -1969,6 +1992,7 @@ pub struct DeleteResourcePolicyOutput  {
 pub mod delete_resource_policy_output {
     
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2007,6 +2031,7 @@ impl DeleteFirewallPolicyOutput {
 pub mod delete_firewall_policy_output {
     
     /// A builder for [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
@@ -2066,6 +2091,7 @@ impl DeleteFirewallOutput {
 pub mod delete_firewall_output {
     
     /// A builder for [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall: std::option::Option<crate::model::Firewall>,
@@ -2139,6 +2165,7 @@ impl CreateRuleGroupOutput {
 pub mod create_rule_group_output {
     
     /// A builder for [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -2212,6 +2239,7 @@ impl CreateFirewallPolicyOutput {
 pub mod create_firewall_policy_output {
     
     /// A builder for [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -2283,6 +2311,7 @@ impl CreateFirewallOutput {
 pub mod create_firewall_output {
     
     /// A builder for [`CreateFirewallOutput`](crate::output::CreateFirewallOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall: std::option::Option<crate::model::Firewall>,
@@ -2370,6 +2399,7 @@ impl AssociateSubnetsOutput {
 pub mod associate_subnets_output {
     
     /// A builder for [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -2491,6 +2521,7 @@ impl AssociateFirewallPolicyOutput {
 pub mod associate_firewall_policy_output {
     
     /// A builder for [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,

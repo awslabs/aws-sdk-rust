@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod delete_report_definition_input {
     
     /// A builder for [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_name: std::option::Option<std::string::String>,
@@ -117,6 +118,7 @@ impl DeleteReportDefinitionInput {
 pub mod describe_report_definitions_input {
     
     /// A builder for [`DescribeReportDefinitionsInput`](crate::input::DescribeReportDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -241,6 +243,7 @@ impl DescribeReportDefinitionsInput {
 pub mod modify_report_definition_input {
     
     /// A builder for [`ModifyReportDefinitionInput`](crate::input::ModifyReportDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_name: std::option::Option<std::string::String>,
@@ -365,6 +368,7 @@ impl ModifyReportDefinitionInput {
 pub mod put_report_definition_input {
     
     /// A builder for [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_definition: std::option::Option<crate::model::ReportDefinition>,

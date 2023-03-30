@@ -39,6 +39,7 @@ impl Site {
 pub mod site {
     
     /// A builder for [`Site`](crate::model::Site).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -167,6 +168,7 @@ impl WorkerFleet {
 pub mod worker_fleet {
     
     /// A builder for [`WorkerFleet`](crate::model::WorkerFleet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -338,6 +340,7 @@ impl Destination {
 pub mod destination {
     
     /// A builder for [`Destination`](crate::model::Destination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -606,6 +609,7 @@ impl CartesianCoordinates {
 pub mod cartesian_coordinates {
     
     /// A builder for [`CartesianCoordinates`](crate::model::CartesianCoordinates).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) x: std::option::Option<f64>,
@@ -701,6 +705,7 @@ impl VendorProperties {
 pub mod vendor_properties {
     
     /// A builder for [`VendorProperties`](crate::model::VendorProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vendor_worker_id: std::option::Option<std::string::String>,
@@ -897,6 +902,7 @@ impl Worker {
 pub mod worker {
     
     /// A builder for [`Worker`](crate::model::Worker).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
     
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -215,6 +216,7 @@ impl VehicleSummary {
 pub mod vehicle_summary {
     
     /// A builder for [`VehicleSummary`](crate::model::VehicleSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
@@ -332,6 +334,7 @@ impl Tag {
 pub mod tag {
     
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -689,6 +692,7 @@ impl Attribute {
 pub mod attribute {
     
     /// A builder for [`Attribute`](crate::model::Attribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fully_qualified_name: std::option::Option<std::string::String>,
@@ -1103,6 +1107,7 @@ impl Actuator {
 pub mod actuator {
     
     /// A builder for [`Actuator`](crate::model::Actuator).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fully_qualified_name: std::option::Option<std::string::String>,
@@ -1289,6 +1294,7 @@ impl Sensor {
 pub mod sensor {
     
     /// A builder for [`Sensor`](crate::model::Sensor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fully_qualified_name: std::option::Option<std::string::String>,
@@ -1424,6 +1430,7 @@ impl Branch {
 pub mod branch {
     
     /// A builder for [`Branch`](crate::model::Branch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fully_qualified_name: std::option::Option<std::string::String>,
@@ -1493,6 +1500,7 @@ impl InvalidSignal {
 pub mod invalid_signal {
     
     /// A builder for [`InvalidSignal`](crate::model::InvalidSignal).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1609,6 +1617,7 @@ impl SignalCatalogSummary {
 pub mod signal_catalog_summary {
     
     /// A builder for [`SignalCatalogSummary`](crate::model::SignalCatalogSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1723,6 +1732,7 @@ impl NodeCounts {
 pub mod node_counts {
     
     /// A builder for [`NodeCounts`](crate::model::NodeCounts).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_nodes: std::option::Option<i32>,
@@ -1868,6 +1878,7 @@ impl ModelManifestSummary {
 pub mod model_manifest_summary {
     
     /// A builder for [`ModelManifestSummary`](crate::model::ModelManifestSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2108,6 +2119,7 @@ impl FleetSummary {
 pub mod fleet_summary {
     
     /// A builder for [`FleetSummary`](crate::model::FleetSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2246,6 +2258,7 @@ impl SignalDecoder {
 pub mod signal_decoder {
     
     /// A builder for [`SignalDecoder`](crate::model::SignalDecoder).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fully_qualified_name: std::option::Option<std::string::String>,
@@ -2400,6 +2413,7 @@ impl ObdSignal {
 pub mod obd_signal {
     
     /// A builder for [`ObdSignal`](crate::model::ObdSignal).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pid_response_length: std::option::Option<i32>,
@@ -2600,6 +2614,7 @@ impl CanSignal {
 pub mod can_signal {
     
     /// A builder for [`CanSignal`](crate::model::CanSignal).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<i32>,
@@ -2843,6 +2858,7 @@ impl NetworkInterface {
 pub mod network_interface {
     
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interface_id: std::option::Option<std::string::String>,
@@ -2971,6 +2987,7 @@ impl ObdInterface {
 pub mod obd_interface {
     
     /// A builder for [`ObdInterface`](crate::model::ObdInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3112,6 +3129,7 @@ impl CanInterface {
 pub mod can_interface {
     
     /// A builder for [`CanInterface`](crate::model::CanInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3275,6 +3293,7 @@ impl InvalidNetworkInterface {
 pub mod invalid_network_interface {
     
     /// A builder for [`InvalidNetworkInterface`](crate::model::InvalidNetworkInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interface_id: std::option::Option<std::string::String>,
@@ -3446,6 +3465,7 @@ impl InvalidSignalDecoder {
 pub mod invalid_signal_decoder {
     
     /// A builder for [`InvalidSignalDecoder`](crate::model::InvalidSignalDecoder).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3672,6 +3692,7 @@ impl CanDbcDefinition {
 pub mod can_dbc_definition {
     
     /// A builder for [`CanDbcDefinition`](crate::model::CanDbcDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_interface: std::option::Option<std::string::String>,
@@ -3800,6 +3821,7 @@ impl DecoderManifestSummary {
 pub mod decoder_manifest_summary {
     
     /// A builder for [`DecoderManifestSummary`](crate::model::DecoderManifestSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3984,6 +4006,7 @@ impl CampaignSummary {
 pub mod campaign_summary {
     
     /// A builder for [`CampaignSummary`](crate::model::CampaignSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4290,6 +4313,7 @@ impl ConditionBasedCollectionScheme {
 pub mod condition_based_collection_scheme {
     
     /// A builder for [`ConditionBasedCollectionScheme`](crate::model::ConditionBasedCollectionScheme).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -4462,6 +4486,7 @@ impl TimeBasedCollectionScheme {
 pub mod time_based_collection_scheme {
     
     /// A builder for [`TimeBasedCollectionScheme`](crate::model::TimeBasedCollectionScheme).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) period_ms: std::option::Option<i64>,
@@ -4530,6 +4555,7 @@ impl SignalInformation {
 pub mod signal_information {
     
     /// A builder for [`SignalInformation`](crate::model::SignalInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4947,6 +4973,7 @@ impl IamResources {
 pub mod iam_resources {
     
     /// A builder for [`IamResources`](crate::model::IamResources).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -5004,6 +5031,7 @@ impl TimestreamResources {
 pub mod timestream_resources {
     
     /// A builder for [`TimestreamResources`](crate::model::TimestreamResources).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestream_database_name: std::option::Option<std::string::String>,
@@ -5160,6 +5188,7 @@ impl CloudWatchLogDeliveryOptions {
 pub mod cloud_watch_log_delivery_options {
     
     /// A builder for [`CloudWatchLogDeliveryOptions`](crate::model::CloudWatchLogDeliveryOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_type: std::option::Option<crate::model::LogType>,
@@ -5332,6 +5361,7 @@ impl VehicleStatus {
 pub mod vehicle_status {
     
     /// A builder for [`VehicleStatus`](crate::model::VehicleStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_name: std::option::Option<std::string::String>,
@@ -5531,6 +5561,7 @@ impl IamRegistrationResponse {
 pub mod iam_registration_response {
     
     /// A builder for [`IamRegistrationResponse`](crate::model::IamRegistrationResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -5640,6 +5671,7 @@ impl TimestreamRegistrationResponse {
 pub mod timestream_registration_response {
     
     /// A builder for [`TimestreamRegistrationResponse`](crate::model::TimestreamRegistrationResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestream_database_name: std::option::Option<std::string::String>,
@@ -5764,6 +5796,7 @@ impl UpdateVehicleError {
 pub mod update_vehicle_error {
     
     /// A builder for [`UpdateVehicleError`](crate::model::UpdateVehicleError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
@@ -5846,6 +5879,7 @@ impl UpdateVehicleResponseItem {
 pub mod update_vehicle_response_item {
     
     /// A builder for [`UpdateVehicleResponseItem`](crate::model::UpdateVehicleResponseItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
@@ -5940,6 +5974,7 @@ impl UpdateVehicleRequestItem {
 pub mod update_vehicle_request_item {
     
     /// A builder for [`UpdateVehicleRequestItem`](crate::model::UpdateVehicleRequestItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
@@ -6062,6 +6097,7 @@ impl CreateVehicleError {
 pub mod create_vehicle_error {
     
     /// A builder for [`CreateVehicleError`](crate::model::CreateVehicleError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
@@ -6150,6 +6186,7 @@ impl CreateVehicleResponseItem {
 pub mod create_vehicle_response_item {
     
     /// A builder for [`CreateVehicleResponseItem`](crate::model::CreateVehicleResponseItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
@@ -6259,6 +6296,7 @@ impl CreateVehicleRequestItem {
 pub mod create_vehicle_request_item {
     
     /// A builder for [`CreateVehicleRequestItem`](crate::model::CreateVehicleRequestItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,

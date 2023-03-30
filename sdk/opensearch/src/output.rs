@@ -53,6 +53,7 @@ impl UpgradeDomainOutput {
 pub mod upgrade_domain_output {
     
     /// A builder for [`UpgradeDomainOutput`](crate::output::UpgradeDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upgrade_id: std::option::Option<std::string::String>,
@@ -169,6 +170,7 @@ impl UpdateVpcEndpointOutput {
 pub mod update_vpc_endpoint_output {
     
     /// A builder for [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
@@ -219,6 +221,7 @@ impl UpdatePackageOutput {
 pub mod update_package_output {
     
     /// A builder for [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details: std::option::Option<crate::model::PackageDetails>,
@@ -283,6 +286,7 @@ impl UpdateDomainConfigOutput {
 pub mod update_domain_config_output {
     
     /// A builder for [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_config: std::option::Option<crate::model::DomainConfig>,
@@ -357,6 +361,7 @@ impl StartServiceSoftwareUpdateOutput {
 pub mod start_service_software_update_output {
     
     /// A builder for [`StartServiceSoftwareUpdateOutput`](crate::output::StartServiceSoftwareUpdateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
@@ -398,6 +403,7 @@ pub struct RevokeVpcEndpointAccessOutput  {
 pub mod revoke_vpc_endpoint_access_output {
     
     /// A builder for [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -427,6 +433,7 @@ pub struct RemoveTagsOutput  {
 pub mod remove_tags_output {
     
     /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -465,6 +472,7 @@ impl RejectInboundConnectionOutput {
 pub mod reject_inbound_connection_output {
     
     /// A builder for [`RejectInboundConnectionOutput`](crate::output::RejectInboundConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::InboundConnection>,
@@ -522,6 +530,7 @@ impl PurchaseReservedInstanceOfferingOutput {
 pub mod purchase_reserved_instance_offering_output {
     
     /// A builder for [`PurchaseReservedInstanceOfferingOutput`](crate::output::PurchaseReservedInstanceOfferingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_instance_id: std::option::Option<std::string::String>,
@@ -591,6 +600,7 @@ impl ListVpcEndpointsForDomainOutput {
 pub mod list_vpc_endpoints_for_domain_output {
     
     /// A builder for [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_summary_list: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
@@ -666,6 +676,7 @@ impl ListVpcEndpointsOutput {
 pub mod list_vpc_endpoints_output {
     
     /// A builder for [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_summary_list: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
@@ -741,6 +752,7 @@ impl ListVpcEndpointAccessOutput {
 pub mod list_vpc_endpoint_access_output {
     
     /// A builder for [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorized_principal_list: std::option::Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>,
@@ -816,6 +828,7 @@ impl ListVersionsOutput {
 pub mod list_versions_output {
     
     /// A builder for [`ListVersionsOutput`](crate::output::ListVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) versions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -884,6 +897,7 @@ impl ListTagsOutput {
 pub mod list_tags_output {
     
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -947,6 +961,7 @@ impl ListPackagesForDomainOutput {
 pub mod list_packages_for_domain_output {
     
     /// A builder for [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details_list: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
@@ -1022,6 +1037,7 @@ impl ListInstanceTypeDetailsOutput {
 pub mod list_instance_type_details_output {
     
     /// A builder for [`ListInstanceTypeDetailsOutput`](crate::output::ListInstanceTypeDetailsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_type_details: std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>,
@@ -1097,6 +1113,7 @@ impl ListDomainsForPackageOutput {
 pub mod list_domains_for_package_output {
     
     /// A builder for [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details_list: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
@@ -1165,6 +1182,7 @@ impl ListDomainNamesOutput {
 pub mod list_domain_names_output {
     
     /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
@@ -1235,6 +1253,7 @@ impl GetUpgradeStatusOutput {
 pub mod get_upgrade_status_output {
     
     /// A builder for [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upgrade_step: std::option::Option<crate::model::UpgradeStep>,
@@ -1316,6 +1335,7 @@ impl GetUpgradeHistoryOutput {
 pub mod get_upgrade_history_output {
     
     /// A builder for [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upgrade_histories: std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>,
@@ -1398,6 +1418,7 @@ impl GetPackageVersionHistoryOutput {
 pub mod get_package_version_history_output {
     
     /// A builder for [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -1478,6 +1499,7 @@ impl GetCompatibleVersionsOutput {
 pub mod get_compatible_versions_output {
     
     /// A builder for [`GetCompatibleVersionsOutput`](crate::output::GetCompatibleVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compatible_versions: std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
@@ -1534,6 +1556,7 @@ impl DissociatePackageOutput {
 pub mod dissociate_package_output {
     
     /// A builder for [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
@@ -1591,6 +1614,7 @@ impl DescribeVpcEndpointsOutput {
 pub mod describe_vpc_endpoints_output {
     
     /// A builder for [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoints: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
@@ -1672,6 +1696,7 @@ impl DescribeReservedInstancesOutput {
 pub mod describe_reserved_instances_output {
     
     /// A builder for [`DescribeReservedInstancesOutput`](crate::output::DescribeReservedInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1747,6 +1772,7 @@ impl DescribeReservedInstanceOfferingsOutput {
 pub mod describe_reserved_instance_offerings_output {
     
     /// A builder for [`DescribeReservedInstanceOfferingsOutput`](crate::output::DescribeReservedInstanceOfferingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1822,6 +1848,7 @@ impl DescribePackagesOutput {
 pub mod describe_packages_output {
     
     /// A builder for [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details_list: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
@@ -1897,6 +1924,7 @@ impl DescribeOutboundConnectionsOutput {
 pub mod describe_outbound_connections_output {
     
     /// A builder for [`DescribeOutboundConnectionsOutput`](crate::output::DescribeOutboundConnectionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::OutboundConnection>>,
@@ -1965,6 +1993,7 @@ impl DescribeInstanceTypeLimitsOutput {
 pub mod describe_instance_type_limits_output {
     
     /// A builder for [`DescribeInstanceTypeLimitsOutput`](crate::output::DescribeInstanceTypeLimitsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limits_by_role: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Limits>>,
@@ -2028,6 +2057,7 @@ impl DescribeInboundConnectionsOutput {
 pub mod describe_inbound_connections_output {
     
     /// A builder for [`DescribeInboundConnectionsOutput`](crate::output::DescribeInboundConnectionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::InboundConnection>>,
@@ -2110,6 +2140,7 @@ impl DescribeDryRunProgressOutput {
 pub mod describe_dry_run_progress_output {
     
     /// A builder for [`DescribeDryRunProgressOutput`](crate::output::DescribeDryRunProgressOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dry_run_progress_status: std::option::Option<crate::model::DryRunProgressStatus>,
@@ -2184,6 +2215,7 @@ impl DescribeDomainsOutput {
 pub mod describe_domains_output {
     
     /// A builder for [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status_list: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
@@ -2240,6 +2272,7 @@ impl DescribeDomainConfigOutput {
 pub mod describe_domain_config_output {
     
     /// A builder for [`DescribeDomainConfigOutput`](crate::output::DescribeDomainConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_config: std::option::Option<crate::model::DomainConfig>,
@@ -2290,6 +2323,7 @@ impl DescribeDomainChangeProgressOutput {
 pub mod describe_domain_change_progress_output {
     
     /// A builder for [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_progress_status: std::option::Option<crate::model::ChangeProgressStatusDetails>,
@@ -2347,6 +2381,7 @@ impl DescribeDomainAutoTunesOutput {
 pub mod describe_domain_auto_tunes_output {
     
     /// A builder for [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_tunes: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
@@ -2415,6 +2450,7 @@ impl DescribeDomainOutput {
 pub mod describe_domain_output {
     
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
@@ -2465,6 +2501,7 @@ impl DeleteVpcEndpointOutput {
 pub mod delete_vpc_endpoint_output {
     
     /// A builder for [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_summary: std::option::Option<crate::model::VpcEndpointSummary>,
@@ -2515,6 +2552,7 @@ impl DeletePackageOutput {
 pub mod delete_package_output {
     
     /// A builder for [`DeletePackageOutput`](crate::output::DeletePackageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details: std::option::Option<crate::model::PackageDetails>,
@@ -2565,6 +2603,7 @@ impl DeleteOutboundConnectionOutput {
 pub mod delete_outbound_connection_output {
     
     /// A builder for [`DeleteOutboundConnectionOutput`](crate::output::DeleteOutboundConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::OutboundConnection>,
@@ -2615,6 +2654,7 @@ impl DeleteInboundConnectionOutput {
 pub mod delete_inbound_connection_output {
     
     /// A builder for [`DeleteInboundConnectionOutput`](crate::output::DeleteInboundConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::InboundConnection>,
@@ -2665,6 +2705,7 @@ impl DeleteDomainOutput {
 pub mod delete_domain_output {
     
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
@@ -2715,6 +2756,7 @@ impl CreateVpcEndpointOutput {
 pub mod create_vpc_endpoint_output {
     
     /// A builder for [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
@@ -2765,6 +2807,7 @@ impl CreatePackageOutput {
 pub mod create_package_output {
     
     /// A builder for [`CreatePackageOutput`](crate::output::CreatePackageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details: std::option::Option<crate::model::PackageDetails>,
@@ -2843,6 +2886,7 @@ impl CreateOutboundConnectionOutput {
 pub mod create_outbound_connection_output {
     
     /// A builder for [`CreateOutboundConnectionOutput`](crate::output::CreateOutboundConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
@@ -2941,6 +2985,7 @@ impl CreateDomainOutput {
 pub mod create_domain_output {
     
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
@@ -2991,6 +3036,7 @@ impl CancelServiceSoftwareUpdateOutput {
 pub mod cancel_service_software_update_output {
     
     /// A builder for [`CancelServiceSoftwareUpdateOutput`](crate::output::CancelServiceSoftwareUpdateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
@@ -3041,6 +3087,7 @@ impl AuthorizeVpcEndpointAccessOutput {
 pub mod authorize_vpc_endpoint_access_output {
     
     /// A builder for [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorized_principal: std::option::Option<crate::model::AuthorizedPrincipal>,
@@ -3091,6 +3138,7 @@ impl AssociatePackageOutput {
 pub mod associate_package_output {
     
     /// A builder for [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
@@ -3132,6 +3180,7 @@ pub struct AddTagsOutput  {
 pub mod add_tags_output {
     
     /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3170,6 +3219,7 @@ impl AcceptInboundConnectionOutput {
 pub mod accept_inbound_connection_output {
     
     /// A builder for [`AcceptInboundConnectionOutput`](crate::output::AcceptInboundConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::InboundConnection>,

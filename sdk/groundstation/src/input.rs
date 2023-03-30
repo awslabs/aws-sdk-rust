@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_contact_input {
     
     /// A builder for [`CancelContactInput`](crate::input::CancelContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -114,6 +115,7 @@ impl CancelContactInput {
 pub mod create_config_input {
     
     /// A builder for [`CreateConfigInput`](crate::input::CreateConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -251,6 +253,7 @@ impl CreateConfigInput {
 pub mod create_dataflow_endpoint_group_input {
     
     /// A builder for [`CreateDataflowEndpointGroupInput`](crate::input::CreateDataflowEndpointGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_details: std::option::Option<std::vec::Vec<crate::model::EndpointDetails>>,
@@ -406,6 +409,7 @@ impl CreateDataflowEndpointGroupInput {
 pub mod create_ephemeris_input {
     
     /// A builder for [`CreateEphemerisInput`](crate::input::CreateEphemerisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) satellite_id: std::option::Option<std::string::String>,
@@ -609,6 +613,7 @@ impl CreateEphemerisInput {
 pub mod create_mission_profile_input {
     
     /// A builder for [`CreateMissionProfileInput`](crate::input::CreateMissionProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -800,6 +805,7 @@ impl CreateMissionProfileInput {
 pub mod delete_config_input {
     
     /// A builder for [`DeleteConfigInput`](crate::input::DeleteConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -927,6 +933,7 @@ impl DeleteConfigInput {
 pub mod delete_dataflow_endpoint_group_input {
     
     /// A builder for [`DeleteDataflowEndpointGroupInput`](crate::input::DeleteDataflowEndpointGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
@@ -1036,6 +1043,7 @@ impl DeleteDataflowEndpointGroupInput {
 pub mod delete_ephemeris_input {
     
     /// A builder for [`DeleteEphemerisInput`](crate::input::DeleteEphemerisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ephemeris_id: std::option::Option<std::string::String>,
@@ -1145,6 +1153,7 @@ impl DeleteEphemerisInput {
 pub mod delete_mission_profile_input {
     
     /// A builder for [`DeleteMissionProfileInput`](crate::input::DeleteMissionProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
@@ -1254,6 +1263,7 @@ impl DeleteMissionProfileInput {
 pub mod describe_contact_input {
     
     /// A builder for [`DescribeContactInput`](crate::input::DescribeContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -1363,6 +1373,7 @@ impl DescribeContactInput {
 pub mod describe_ephemeris_input {
     
     /// A builder for [`DescribeEphemerisInput`](crate::input::DescribeEphemerisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ephemeris_id: std::option::Option<std::string::String>,
@@ -1472,6 +1483,7 @@ impl DescribeEphemerisInput {
 pub mod get_config_input {
     
     /// A builder for [`GetConfigInput`](crate::input::GetConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -1599,6 +1611,7 @@ impl GetConfigInput {
 pub mod get_dataflow_endpoint_group_input {
     
     /// A builder for [`GetDataflowEndpointGroupInput`](crate::input::GetDataflowEndpointGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
@@ -1708,6 +1721,7 @@ impl GetDataflowEndpointGroupInput {
 pub mod get_minute_usage_input {
     
     /// A builder for [`GetMinuteUsageInput`](crate::input::GetMinuteUsageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) month: std::option::Option<i32>,
@@ -1827,6 +1841,7 @@ impl GetMinuteUsageInput {
 pub mod get_mission_profile_input {
     
     /// A builder for [`GetMissionProfileInput`](crate::input::GetMissionProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
@@ -1936,6 +1951,7 @@ impl GetMissionProfileInput {
 pub mod get_satellite_input {
     
     /// A builder for [`GetSatelliteInput`](crate::input::GetSatelliteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) satellite_id: std::option::Option<std::string::String>,
@@ -2045,6 +2061,7 @@ impl GetSatelliteInput {
 pub mod list_configs_input {
     
     /// A builder for [`ListConfigsInput`](crate::input::ListConfigsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2175,6 +2192,7 @@ impl ListConfigsInput {
 pub mod list_contacts_input {
     
     /// A builder for [`ListContactsInput`](crate::input::ListContactsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2372,6 +2390,7 @@ impl ListContactsInput {
 pub mod list_dataflow_endpoint_groups_input {
     
     /// A builder for [`ListDataflowEndpointGroupsInput`](crate::input::ListDataflowEndpointGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2502,6 +2521,7 @@ impl ListDataflowEndpointGroupsInput {
 pub mod list_ephemerides_input {
     
     /// A builder for [`ListEphemeridesInput`](crate::input::ListEphemeridesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) satellite_id: std::option::Option<std::string::String>,
@@ -2690,6 +2710,7 @@ impl ListEphemeridesInput {
 pub mod list_ground_stations_input {
     
     /// A builder for [`ListGroundStationsInput`](crate::input::ListGroundStationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) satellite_id: std::option::Option<std::string::String>,
@@ -2837,6 +2858,7 @@ impl ListGroundStationsInput {
 pub mod list_mission_profiles_input {
     
     /// A builder for [`ListMissionProfilesInput`](crate::input::ListMissionProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2967,6 +2989,7 @@ impl ListMissionProfilesInput {
 pub mod list_satellites_input {
     
     /// A builder for [`ListSatellitesInput`](crate::input::ListSatellitesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3097,6 +3120,7 @@ impl ListSatellitesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3206,6 +3230,7 @@ impl ListTagsForResourceInput {
 pub mod reserve_contact_input {
     
     /// A builder for [`ReserveContactInput`](crate::input::ReserveContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
@@ -3379,6 +3404,7 @@ impl ReserveContactInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3510,6 +3536,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3647,6 +3674,7 @@ impl UntagResourceInput {
 pub mod update_config_input {
     
     /// A builder for [`UpdateConfigInput`](crate::input::UpdateConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -3802,6 +3830,7 @@ impl UpdateConfigInput {
 pub mod update_ephemeris_input {
     
     /// A builder for [`UpdateEphemerisInput`](crate::input::UpdateEphemerisInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ephemeris_id: std::option::Option<std::string::String>,
@@ -3955,6 +3984,7 @@ impl UpdateEphemerisInput {
 pub mod update_mission_profile_input {
     
     /// A builder for [`UpdateMissionProfileInput`](crate::input::UpdateMissionProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,

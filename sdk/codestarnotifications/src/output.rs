@@ -8,6 +8,7 @@ pub struct UpdateNotificationRuleOutput  {
 pub mod update_notification_rule_output {
     
     /// A builder for [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -75,6 +77,7 @@ impl UnsubscribeOutput {
 pub mod unsubscribe_output {
     
     /// A builder for [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -125,6 +128,7 @@ impl TagResourceOutput {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -181,6 +185,7 @@ impl SubscribeOutput {
 pub mod subscribe_output {
     
     /// A builder for [`SubscribeOutput`](crate::output::SubscribeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -238,6 +243,7 @@ impl ListTargetsOutput {
 pub mod list_targets_output {
     
     /// A builder for [`ListTargetsOutput`](crate::output::ListTargetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
@@ -306,6 +312,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -369,6 +376,7 @@ impl ListNotificationRulesOutput {
 pub mod list_notification_rules_output {
     
     /// A builder for [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -444,6 +452,7 @@ impl ListEventTypesOutput {
 pub mod list_event_types_output {
     
     /// A builder for [`ListEventTypesOutput`](crate::output::ListEventTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_types: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
@@ -599,6 +608,7 @@ impl  std::fmt::Debug for DescribeNotificationRuleOutput  {
 pub mod describe_notification_rule_output {
     
     /// A builder for [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -795,6 +805,7 @@ pub struct DeleteTargetOutput  {
 pub mod delete_target_output {
     
     /// A builder for [`DeleteTargetOutput`](crate::output::DeleteTargetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -833,6 +844,7 @@ impl DeleteNotificationRuleOutput {
 pub mod delete_notification_rule_output {
     
     /// A builder for [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -883,6 +895,7 @@ impl CreateNotificationRuleOutput {
 pub mod create_notification_rule_output {
     
     /// A builder for [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod accept_portfolio_share_input {
     
     /// A builder for [`AcceptPortfolioShareInput`](crate::input::AcceptPortfolioShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -163,6 +164,7 @@ impl AcceptPortfolioShareInput {
 pub mod associate_budget_with_resource_input {
     
     /// A builder for [`AssociateBudgetWithResourceInput`](crate::input::AssociateBudgetWithResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budget_name: std::option::Option<std::string::String>,
@@ -287,6 +289,7 @@ impl AssociateBudgetWithResourceInput {
 pub mod associate_principal_with_portfolio_input {
     
     /// A builder for [`AssociatePrincipalWithPortfolioInput`](crate::input::AssociatePrincipalWithPortfolioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -447,6 +450,7 @@ impl AssociatePrincipalWithPortfolioInput {
 pub mod associate_product_with_portfolio_input {
     
     /// A builder for [`AssociateProductWithPortfolioInput`](crate::input::AssociateProductWithPortfolioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -605,6 +609,7 @@ impl AssociateProductWithPortfolioInput {
 pub mod associate_service_action_with_provisioning_artifact_input {
     
     /// A builder for [`AssociateServiceActionWithProvisioningArtifactInput`](crate::input::AssociateServiceActionWithProvisioningArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_id: std::option::Option<std::string::String>,
@@ -763,6 +768,7 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
 pub mod associate_tag_option_with_resource_input {
     
     /// A builder for [`AssociateTagOptionWithResourceInput`](crate::input::AssociateTagOptionWithResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -887,6 +893,7 @@ impl AssociateTagOptionWithResourceInput {
 pub mod batch_associate_service_action_with_provisioning_artifact_input {
     
     /// A builder for [`BatchAssociateServiceActionWithProvisioningArtifactInput`](crate::input::BatchAssociateServiceActionWithProvisioningArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_action_associations: std::option::Option<std::vec::Vec<crate::model::ServiceActionAssociation>>,
@@ -1027,6 +1034,7 @@ impl BatchAssociateServiceActionWithProvisioningArtifactInput {
 pub mod batch_disassociate_service_action_from_provisioning_artifact_input {
     
     /// A builder for [`BatchDisassociateServiceActionFromProvisioningArtifactInput`](crate::input::BatchDisassociateServiceActionFromProvisioningArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_action_associations: std::option::Option<std::vec::Vec<crate::model::ServiceActionAssociation>>,
@@ -1167,6 +1175,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
 pub mod copy_product_input {
     
     /// A builder for [`CopyProductInput`](crate::input::CopyProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -1376,6 +1385,7 @@ impl CopyProductInput {
 pub mod create_constraint_input {
     
     /// A builder for [`CreateConstraintInput`](crate::input::CreateConstraintInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -1683,6 +1693,7 @@ impl CreateConstraintInput {
 pub mod create_portfolio_input {
     
     /// A builder for [`CreatePortfolioInput`](crate::input::CreatePortfolioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -1874,6 +1885,7 @@ impl CreatePortfolioInput {
 pub mod create_portfolio_share_input {
     
     /// A builder for [`CreatePortfolioShareInput`](crate::input::CreatePortfolioShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -2060,6 +2072,7 @@ impl CreatePortfolioShareInput {
 pub mod create_product_input {
     
     /// A builder for [`CreateProductInput`](crate::input::CreateProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -2345,6 +2358,7 @@ impl CreateProductInput {
 pub mod create_provisioned_product_plan_input {
     
     /// A builder for [`CreateProvisionedProductPlanInput`](crate::input::CreateProvisionedProductPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -2610,6 +2624,7 @@ impl CreateProvisionedProductPlanInput {
 pub mod create_provisioning_artifact_input {
     
     /// A builder for [`CreateProvisioningArtifactInput`](crate::input::CreateProvisioningArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -2771,6 +2786,7 @@ impl CreateProvisioningArtifactInput {
 pub mod create_service_action_input {
     
     /// A builder for [`CreateServiceActionInput`](crate::input::CreateServiceActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3020,6 +3036,7 @@ impl CreateServiceActionInput {
 pub mod create_tag_option_input {
     
     /// A builder for [`CreateTagOptionInput`](crate::input::CreateTagOptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -3144,6 +3161,7 @@ impl CreateTagOptionInput {
 pub mod delete_constraint_input {
     
     /// A builder for [`DeleteConstraintInput`](crate::input::DeleteConstraintInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -3278,6 +3296,7 @@ impl DeleteConstraintInput {
 pub mod delete_portfolio_input {
     
     /// A builder for [`DeletePortfolioInput`](crate::input::DeletePortfolioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -3412,6 +3431,7 @@ impl DeletePortfolioInput {
 pub mod delete_portfolio_share_input {
     
     /// A builder for [`DeletePortfolioShareInput`](crate::input::DeletePortfolioShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -3570,6 +3590,7 @@ impl DeletePortfolioShareInput {
 pub mod delete_product_input {
     
     /// A builder for [`DeleteProductInput`](crate::input::DeleteProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -3704,6 +3725,7 @@ impl DeleteProductInput {
 pub mod delete_provisioned_product_plan_input {
     
     /// A builder for [`DeleteProvisionedProductPlanInput`](crate::input::DeleteProvisionedProductPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -3851,6 +3873,7 @@ impl DeleteProvisionedProductPlanInput {
 pub mod delete_provisioning_artifact_input {
     
     /// A builder for [`DeleteProvisioningArtifactInput`](crate::input::DeleteProvisioningArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -3997,6 +4020,7 @@ impl DeleteProvisioningArtifactInput {
 pub mod delete_service_action_input {
     
     /// A builder for [`DeleteServiceActionInput`](crate::input::DeleteServiceActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4131,6 +4155,7 @@ impl DeleteServiceActionInput {
 pub mod delete_tag_option_input {
     
     /// A builder for [`DeleteTagOptionInput`](crate::input::DeleteTagOptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4243,6 +4268,7 @@ impl DeleteTagOptionInput {
 pub mod describe_constraint_input {
     
     /// A builder for [`DescribeConstraintInput`](crate::input::DescribeConstraintInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -4377,6 +4403,7 @@ impl DescribeConstraintInput {
 pub mod describe_copy_product_status_input {
     
     /// A builder for [`DescribeCopyProductStatusInput`](crate::input::DescribeCopyProductStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -4511,6 +4538,7 @@ impl DescribeCopyProductStatusInput {
 pub mod describe_portfolio_input {
     
     /// A builder for [`DescribePortfolioInput`](crate::input::DescribePortfolioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -4645,6 +4673,7 @@ impl DescribePortfolioInput {
 pub mod describe_portfolio_shares_input {
     
     /// A builder for [`DescribePortfolioSharesInput`](crate::input::DescribePortfolioSharesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_id: std::option::Option<std::string::String>,
@@ -4802,6 +4831,7 @@ impl DescribePortfolioSharesInput {
 pub mod describe_portfolio_share_status_input {
     
     /// A builder for [`DescribePortfolioShareStatusInput`](crate::input::DescribePortfolioShareStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_share_token: std::option::Option<std::string::String>,
@@ -4914,6 +4944,7 @@ impl DescribePortfolioShareStatusInput {
 pub mod describe_product_input {
     
     /// A builder for [`DescribeProductInput`](crate::input::DescribeProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -5060,6 +5091,7 @@ impl DescribeProductInput {
 pub mod describe_product_as_admin_input {
     
     /// A builder for [`DescribeProductAsAdminInput`](crate::input::DescribeProductAsAdminInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -5220,6 +5252,7 @@ impl DescribeProductAsAdminInput {
 pub mod describe_product_view_input {
     
     /// A builder for [`DescribeProductViewInput`](crate::input::DescribeProductViewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -5354,6 +5387,7 @@ impl DescribeProductViewInput {
 pub mod describe_provisioned_product_input {
     
     /// A builder for [`DescribeProvisionedProductInput`](crate::input::DescribeProvisionedProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -5504,6 +5538,7 @@ impl DescribeProvisionedProductInput {
 pub mod describe_provisioned_product_plan_input {
     
     /// A builder for [`DescribeProvisionedProductPlanInput`](crate::input::DescribeProvisionedProductPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -5663,6 +5698,7 @@ impl DescribeProvisionedProductPlanInput {
 pub mod describe_provisioning_artifact_input {
     
     /// A builder for [`DescribeProvisioningArtifactInput`](crate::input::DescribeProvisioningArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -5846,6 +5882,7 @@ impl DescribeProvisioningArtifactInput {
 pub mod describe_provisioning_parameters_input {
     
     /// A builder for [`DescribeProvisioningParametersInput`](crate::input::DescribeProvisioningParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -6040,6 +6077,7 @@ impl DescribeProvisioningParametersInput {
 pub mod describe_record_input {
     
     /// A builder for [`DescribeRecordInput`](crate::input::DescribeRecordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -6199,6 +6237,7 @@ impl DescribeRecordInput {
 pub mod describe_service_action_input {
     
     /// A builder for [`DescribeServiceActionInput`](crate::input::DescribeServiceActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6333,6 +6372,7 @@ impl DescribeServiceActionInput {
 pub mod describe_service_action_execution_parameters_input {
     
     /// A builder for [`DescribeServiceActionExecutionParametersInput`](crate::input::DescribeServiceActionExecutionParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_product_id: std::option::Option<std::string::String>,
@@ -6479,6 +6519,7 @@ impl DescribeServiceActionExecutionParametersInput {
 pub mod describe_tag_option_input {
     
     /// A builder for [`DescribeTagOptionInput`](crate::input::DescribeTagOptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6591,6 +6632,7 @@ impl DescribeTagOptionInput {
 pub mod disable_aws_organizations_access_input {
     
     /// A builder for [`DisableAwsOrganizationsAccessInput`](crate::input::DisableAwsOrganizationsAccessInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -6688,6 +6730,7 @@ impl DisableAwsOrganizationsAccessInput {
 pub mod disassociate_budget_from_resource_input {
     
     /// A builder for [`DisassociateBudgetFromResourceInput`](crate::input::DisassociateBudgetFromResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budget_name: std::option::Option<std::string::String>,
@@ -6812,6 +6855,7 @@ impl DisassociateBudgetFromResourceInput {
 pub mod disassociate_principal_from_portfolio_input {
     
     /// A builder for [`DisassociatePrincipalFromPortfolioInput`](crate::input::DisassociatePrincipalFromPortfolioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -6970,6 +7014,7 @@ impl DisassociatePrincipalFromPortfolioInput {
 pub mod disassociate_product_from_portfolio_input {
     
     /// A builder for [`DisassociateProductFromPortfolioInput`](crate::input::DisassociateProductFromPortfolioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -7116,6 +7161,7 @@ impl DisassociateProductFromPortfolioInput {
 pub mod disassociate_service_action_from_provisioning_artifact_input {
     
     /// A builder for [`DisassociateServiceActionFromProvisioningArtifactInput`](crate::input::DisassociateServiceActionFromProvisioningArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_id: std::option::Option<std::string::String>,
@@ -7274,6 +7320,7 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
 pub mod disassociate_tag_option_from_resource_input {
     
     /// A builder for [`DisassociateTagOptionFromResourceInput`](crate::input::DisassociateTagOptionFromResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -7398,6 +7445,7 @@ impl DisassociateTagOptionFromResourceInput {
 pub mod enable_aws_organizations_access_input {
     
     /// A builder for [`EnableAwsOrganizationsAccessInput`](crate::input::EnableAwsOrganizationsAccessInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -7495,6 +7543,7 @@ impl EnableAwsOrganizationsAccessInput {
 pub mod execute_provisioned_product_plan_input {
     
     /// A builder for [`ExecuteProvisionedProductPlanInput`](crate::input::ExecuteProvisionedProductPlanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -7644,6 +7693,7 @@ impl ExecuteProvisionedProductPlanInput {
 pub mod execute_provisioned_product_service_action_input {
     
     /// A builder for [`ExecuteProvisionedProductServiceActionInput`](crate::input::ExecuteProvisionedProductServiceActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_product_id: std::option::Option<std::string::String>,
@@ -7823,6 +7873,7 @@ impl ExecuteProvisionedProductServiceActionInput {
 pub mod get_aws_organizations_access_status_input {
     
     /// A builder for [`GetAwsOrganizationsAccessStatusInput`](crate::input::GetAwsOrganizationsAccessStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -7920,6 +7971,7 @@ impl GetAwsOrganizationsAccessStatusInput {
 pub mod get_provisioned_product_outputs_input {
     
     /// A builder for [`GetProvisionedProductOutputsInput`](crate::input::GetProvisionedProductOutputsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -8109,6 +8161,7 @@ impl GetProvisionedProductOutputsInput {
 pub mod import_as_provisioned_product_input {
     
     /// A builder for [`ImportAsProvisionedProductInput`](crate::input::ImportAsProvisionedProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -8294,6 +8347,7 @@ impl ImportAsProvisionedProductInput {
 pub mod list_accepted_portfolio_shares_input {
     
     /// A builder for [`ListAcceptedPortfolioSharesInput`](crate::input::ListAcceptedPortfolioSharesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -8463,6 +8517,7 @@ impl ListAcceptedPortfolioSharesInput {
 pub mod list_budgets_for_resource_input {
     
     /// A builder for [`ListBudgetsForResourceInput`](crate::input::ListBudgetsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -8622,6 +8677,7 @@ impl ListBudgetsForResourceInput {
 pub mod list_constraints_for_portfolio_input {
     
     /// A builder for [`ListConstraintsForPortfolioInput`](crate::input::ListConstraintsForPortfolioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -8793,6 +8849,7 @@ impl ListConstraintsForPortfolioInput {
 pub mod list_launch_paths_input {
     
     /// A builder for [`ListLaunchPathsInput`](crate::input::ListLaunchPathsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -8952,6 +9009,7 @@ impl ListLaunchPathsInput {
 pub mod list_organization_portfolio_access_input {
     
     /// A builder for [`ListOrganizationPortfolioAccessInput`](crate::input::ListOrganizationPortfolioAccessInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -9133,6 +9191,7 @@ impl ListOrganizationPortfolioAccessInput {
 pub mod list_portfolio_access_input {
     
     /// A builder for [`ListPortfolioAccessInput`](crate::input::ListPortfolioAccessInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -9304,6 +9363,7 @@ impl ListPortfolioAccessInput {
 pub mod list_portfolios_input {
     
     /// A builder for [`ListPortfoliosInput`](crate::input::ListPortfoliosInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -9451,6 +9511,7 @@ impl ListPortfoliosInput {
 pub mod list_portfolios_for_product_input {
     
     /// A builder for [`ListPortfoliosForProductInput`](crate::input::ListPortfoliosForProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -9610,6 +9671,7 @@ impl ListPortfoliosForProductInput {
 pub mod list_principals_for_portfolio_input {
     
     /// A builder for [`ListPrincipalsForPortfolioInput`](crate::input::ListPrincipalsForPortfolioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -9769,6 +9831,7 @@ impl ListPrincipalsForPortfolioInput {
 pub mod list_provisioned_product_plans_input {
     
     /// A builder for [`ListProvisionedProductPlansInput`](crate::input::ListProvisionedProductPlansInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -9940,6 +10003,7 @@ impl ListProvisionedProductPlansInput {
 pub mod list_provisioning_artifacts_input {
     
     /// A builder for [`ListProvisioningArtifactsInput`](crate::input::ListProvisioningArtifactsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -10074,6 +10138,7 @@ impl ListProvisioningArtifactsInput {
 pub mod list_provisioning_artifacts_for_service_action_input {
     
     /// A builder for [`ListProvisioningArtifactsForServiceActionInput`](crate::input::ListProvisioningArtifactsForServiceActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_action_id: std::option::Option<std::string::String>,
@@ -10233,6 +10298,7 @@ impl ListProvisioningArtifactsForServiceActionInput {
 pub mod list_record_history_input {
     
     /// A builder for [`ListRecordHistoryInput`](crate::input::ListRecordHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -10404,6 +10470,7 @@ impl ListRecordHistoryInput {
 pub mod list_resources_for_tag_option_input {
     
     /// A builder for [`ListResourcesForTagOptionInput`](crate::input::ListResourcesForTagOptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_option_id: std::option::Option<std::string::String>,
@@ -10561,6 +10628,7 @@ impl ListResourcesForTagOptionInput {
 pub mod list_service_actions_input {
     
     /// A builder for [`ListServiceActionsInput`](crate::input::ListServiceActionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -10708,6 +10776,7 @@ impl ListServiceActionsInput {
 pub mod list_service_actions_for_provisioning_artifact_input {
     
     /// A builder for [`ListServiceActionsForProvisioningArtifactInput`](crate::input::ListServiceActionsForProvisioningArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_id: std::option::Option<std::string::String>,
@@ -10879,6 +10948,7 @@ impl ListServiceActionsForProvisioningArtifactInput {
 pub mod list_stack_instances_for_provisioned_product_input {
     
     /// A builder for [`ListStackInstancesForProvisionedProductInput`](crate::input::ListStackInstancesForProvisionedProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -11038,6 +11108,7 @@ impl ListStackInstancesForProvisionedProductInput {
 pub mod list_tag_options_input {
     
     /// A builder for [`ListTagOptionsInput`](crate::input::ListTagOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::ListTagOptionsFilters>,
@@ -11175,6 +11246,7 @@ impl ListTagOptionsInput {
 pub mod provision_product_input {
     
     /// A builder for [`ProvisionProductInput`](crate::input::ProvisionProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -11462,6 +11534,7 @@ impl ProvisionProductInput {
 pub mod reject_portfolio_share_input {
     
     /// A builder for [`RejectPortfolioShareInput`](crate::input::RejectPortfolioShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -11620,6 +11693,7 @@ impl RejectPortfolioShareInput {
 pub mod scan_provisioned_products_input {
     
     /// A builder for [`ScanProvisionedProductsInput`](crate::input::ScanProvisionedProductsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -11779,6 +11853,7 @@ impl ScanProvisionedProductsInput {
 pub mod search_products_input {
     
     /// A builder for [`SearchProductsInput`](crate::input::SearchProductsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -11968,6 +12043,7 @@ impl SearchProductsInput {
 pub mod search_products_as_admin_input {
     
     /// A builder for [`SearchProductsAsAdminInput`](crate::input::SearchProductsAsAdminInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -12181,6 +12257,7 @@ impl SearchProductsAsAdminInput {
 pub mod search_provisioned_products_input {
     
     /// A builder for [`SearchProvisionedProductsInput`](crate::input::SearchProvisionedProductsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -12386,6 +12463,7 @@ impl SearchProvisionedProductsInput {
 pub mod terminate_provisioned_product_input {
     
     /// A builder for [`TerminateProvisionedProductInput`](crate::input::TerminateProvisionedProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_product_name: std::option::Option<std::string::String>,
@@ -12573,6 +12651,7 @@ impl TerminateProvisionedProductInput {
 pub mod update_constraint_input {
     
     /// A builder for [`UpdateConstraintInput`](crate::input::UpdateConstraintInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -12827,6 +12906,7 @@ impl UpdateConstraintInput {
 pub mod update_portfolio_input {
     
     /// A builder for [`UpdatePortfolioInput`](crate::input::UpdatePortfolioInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -13033,6 +13113,7 @@ impl UpdatePortfolioInput {
 pub mod update_portfolio_share_input {
     
     /// A builder for [`UpdatePortfolioShareInput`](crate::input::UpdatePortfolioShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -13215,6 +13296,7 @@ impl UpdatePortfolioShareInput {
 pub mod update_product_input {
     
     /// A builder for [`UpdateProductInput`](crate::input::UpdateProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -13489,6 +13571,7 @@ impl UpdateProductInput {
 pub mod update_provisioned_product_input {
     
     /// A builder for [`UpdateProvisionedProductInput`](crate::input::UpdateProvisionedProductInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -13770,6 +13853,7 @@ impl UpdateProvisionedProductInput {
 pub mod update_provisioned_product_properties_input {
     
     /// A builder for [`UpdateProvisionedProductPropertiesInput`](crate::input::UpdateProvisionedProductPropertiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -13945,6 +14029,7 @@ impl UpdateProvisionedProductPropertiesInput {
 pub mod update_provisioning_artifact_input {
     
     /// A builder for [`UpdateProvisioningArtifactInput`](crate::input::UpdateProvisioningArtifactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accept_language: std::option::Option<std::string::String>,
@@ -14145,6 +14230,7 @@ impl UpdateProvisioningArtifactInput {
 pub mod update_service_action_input {
     
     /// A builder for [`UpdateServiceActionInput`](crate::input::UpdateServiceActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -14321,6 +14407,7 @@ impl UpdateServiceActionInput {
 pub mod update_tag_option_input {
     
     /// A builder for [`UpdateTagOptionInput`](crate::input::UpdateTagOptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

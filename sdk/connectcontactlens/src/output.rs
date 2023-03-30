@@ -34,6 +34,7 @@ impl ListRealtimeContactAnalysisSegmentsOutput {
 pub mod list_realtime_contact_analysis_segments_output {
     
     /// A builder for [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segments: std::option::Option<std::vec::Vec<crate::model::RealtimeContactAnalysisSegment>>,

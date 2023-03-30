@@ -17,6 +17,7 @@ impl UpdateGroupQueryOutput {
 pub mod update_group_query_output {
     
     /// A builder for [`UpdateGroupQueryOutput`](crate::output::UpdateGroupQueryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_query: std::option::Option<crate::model::GroupQuery>,
@@ -67,6 +68,7 @@ impl UpdateGroupOutput {
 pub mod update_group_output {
     
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
@@ -117,6 +119,7 @@ impl UpdateAccountSettingsOutput {
 pub mod update_account_settings_output {
     
     /// A builder for [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_settings: std::option::Option<crate::model::AccountSettings>,
@@ -174,6 +177,7 @@ impl UntagOutput {
 pub mod untag_output {
     
     /// A builder for [`UntagOutput`](crate::output::UntagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -256,6 +260,7 @@ impl UngroupResourcesOutput {
 pub mod ungroup_resources_output {
     
     /// A builder for [`UngroupResourcesOutput`](crate::output::UngroupResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -355,6 +360,7 @@ impl TagOutput {
 pub mod tag_output {
     
     /// A builder for [`TagOutput`](crate::output::TagOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -447,6 +453,7 @@ impl SearchResourcesOutput {
 pub mod search_resources_output {
     
     /// A builder for [`SearchResourcesOutput`](crate::output::SearchResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifiers: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
@@ -534,6 +541,7 @@ pub struct PutGroupConfigurationOutput  {
 pub mod put_group_configuration_output {
     
     /// A builder for [`PutGroupConfigurationOutput`](crate::output::PutGroupConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -592,6 +600,7 @@ impl ListGroupsOutput {
 pub mod list_groups_output {
     
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_identifiers: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
@@ -711,6 +720,7 @@ impl ListGroupResourcesOutput {
 pub mod list_group_resources_output {
     
     /// A builder for [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::ListGroupResourcesItem>>,
@@ -835,6 +845,7 @@ impl GroupResourcesOutput {
 pub mod group_resources_output {
     
     /// A builder for [`GroupResourcesOutput`](crate::output::GroupResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -934,6 +945,7 @@ impl GetTagsOutput {
 pub mod get_tags_output {
     
     /// A builder for [`GetTagsOutput`](crate::output::GetTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1002,6 +1014,7 @@ impl GetGroupQueryOutput {
 pub mod get_group_query_output {
     
     /// A builder for [`GetGroupQueryOutput`](crate::output::GetGroupQueryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_query: std::option::Option<crate::model::GroupQuery>,
@@ -1052,6 +1065,7 @@ impl GetGroupConfigurationOutput {
 pub mod get_group_configuration_output {
     
     /// A builder for [`GetGroupConfigurationOutput`](crate::output::GetGroupConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_configuration: std::option::Option<crate::model::GroupConfiguration>,
@@ -1102,6 +1116,7 @@ impl GetGroupOutput {
 pub mod get_group_output {
     
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
@@ -1152,6 +1167,7 @@ impl GetAccountSettingsOutput {
 pub mod get_account_settings_output {
     
     /// A builder for [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_settings: std::option::Option<crate::model::AccountSettings>,
@@ -1202,6 +1218,7 @@ impl DeleteGroupOutput {
 pub mod delete_group_output {
     
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
@@ -1273,6 +1290,7 @@ impl CreateGroupOutput {
 pub mod create_group_output {
     
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod describe_accelerator_offerings_input {
     
     /// A builder for [`DescribeAcceleratorOfferingsInput`](crate::input::DescribeAcceleratorOfferingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_type: std::option::Option<crate::model::LocationType>,
@@ -130,6 +131,7 @@ impl DescribeAcceleratorOfferingsInput {
 pub mod describe_accelerators_input {
     
     /// A builder for [`DescribeAcceleratorsInput`](crate::input::DescribeAcceleratorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -286,6 +288,7 @@ impl DescribeAcceleratorsInput {
 pub mod describe_accelerator_types_input {
     
     /// A builder for [`DescribeAcceleratorTypesInput`](crate::input::DescribeAcceleratorTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -377,6 +380,7 @@ impl DescribeAcceleratorTypesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -486,6 +490,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -617,6 +622,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

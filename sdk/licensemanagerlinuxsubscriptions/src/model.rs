@@ -117,6 +117,7 @@ impl LinuxSubscriptionsDiscoverySettings {
 pub mod linux_subscriptions_discovery_settings {
     
     /// A builder for [`LinuxSubscriptionsDiscoverySettings`](crate::model::LinuxSubscriptionsDiscoverySettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_regions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -363,6 +364,7 @@ impl Subscription {
 pub mod subscription {
     
     /// A builder for [`Subscription`](crate::model::Subscription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -451,6 +453,7 @@ impl Filter {
 pub mod filter {
     
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -681,6 +684,7 @@ impl Instance {
 pub mod instance {
     
     /// A builder for [`Instance`](crate::model::Instance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ami_id: std::option::Option<std::string::String>,

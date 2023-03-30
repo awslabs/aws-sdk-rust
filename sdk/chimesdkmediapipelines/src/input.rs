@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_media_capture_pipeline_input {
     
     /// A builder for [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
@@ -206,6 +207,7 @@ impl CreateMediaCapturePipelineInput {
 pub mod create_media_concatenation_pipeline_input {
     
     /// A builder for [`CreateMediaConcatenationPipelineInput`](crate::input::CreateMediaConcatenationPipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::ConcatenationSource>>,
@@ -380,6 +382,7 @@ impl CreateMediaConcatenationPipelineInput {
 pub mod create_media_live_connector_pipeline_input {
     
     /// A builder for [`CreateMediaLiveConnectorPipelineInput`](crate::input::CreateMediaLiveConnectorPipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::LiveConnectorSourceConfiguration>>,
@@ -554,6 +557,7 @@ impl CreateMediaLiveConnectorPipelineInput {
 pub mod delete_media_capture_pipeline_input {
     
     /// A builder for [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
@@ -663,6 +667,7 @@ impl DeleteMediaCapturePipelineInput {
 pub mod delete_media_pipeline_input {
     
     /// A builder for [`DeleteMediaPipelineInput`](crate::input::DeleteMediaPipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
@@ -772,6 +777,7 @@ impl DeleteMediaPipelineInput {
 pub mod get_media_capture_pipeline_input {
     
     /// A builder for [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
@@ -881,6 +887,7 @@ impl GetMediaCapturePipelineInput {
 pub mod get_media_pipeline_input {
     
     /// A builder for [`GetMediaPipelineInput`](crate::input::GetMediaPipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
@@ -990,6 +997,7 @@ impl GetMediaPipelineInput {
 pub mod list_media_capture_pipelines_input {
     
     /// A builder for [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1120,6 +1128,7 @@ impl ListMediaCapturePipelinesInput {
 pub mod list_media_pipelines_input {
     
     /// A builder for [`ListMediaPipelinesInput`](crate::input::ListMediaPipelinesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1250,6 +1259,7 @@ impl ListMediaPipelinesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1364,6 +1374,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1495,6 +1506,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod assign_instance_input {
     
     /// A builder for [`AssignInstanceInput`](crate::input::AssignInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -135,6 +136,7 @@ impl AssignInstanceInput {
 pub mod assign_volume_input {
     
     /// A builder for [`AssignVolumeInput`](crate::input::AssignVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_id: std::option::Option<std::string::String>,
@@ -259,6 +261,7 @@ impl AssignVolumeInput {
 pub mod associate_elastic_ip_input {
     
     /// A builder for [`AssociateElasticIpInput`](crate::input::AssociateElasticIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ip: std::option::Option<std::string::String>,
@@ -383,6 +386,7 @@ impl AssociateElasticIpInput {
 pub mod attach_elastic_load_balancer_input {
     
     /// A builder for [`AttachElasticLoadBalancerInput`](crate::input::AttachElasticLoadBalancerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_load_balancer_name: std::option::Option<std::string::String>,
@@ -507,6 +511,7 @@ impl AttachElasticLoadBalancerInput {
 pub mod clone_stack_input {
     
     /// A builder for [`CloneStackInput`](crate::input::CloneStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_stack_id: std::option::Option<std::string::String>,
@@ -989,6 +994,7 @@ impl CloneStackInput {
 pub mod create_app_input {
     
     /// A builder for [`CreateAppInput`](crate::input::CreateAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -1263,6 +1269,7 @@ impl CreateAppInput {
 pub mod create_deployment_input {
     
     /// A builder for [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -1463,6 +1470,7 @@ impl CreateDeploymentInput {
 pub mod create_instance_input {
     
     /// A builder for [`CreateInstanceInput`](crate::input::CreateInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -1829,6 +1837,7 @@ impl CreateInstanceInput {
 pub mod create_layer_input {
     
     /// A builder for [`CreateLayerInput`](crate::input::CreateLayerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -2177,6 +2186,7 @@ impl CreateLayerInput {
 pub mod create_stack_input {
     
     /// A builder for [`CreateStackInput`](crate::input::CreateStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2613,6 +2623,7 @@ impl CreateStackInput {
 pub mod create_user_profile_input {
     
     /// A builder for [`CreateUserProfileInput`](crate::input::CreateUserProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_user_arn: std::option::Option<std::string::String>,
@@ -2761,6 +2772,7 @@ impl CreateUserProfileInput {
 pub mod delete_app_input {
     
     /// A builder for [`DeleteAppInput`](crate::input::DeleteAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2873,6 +2885,7 @@ impl DeleteAppInput {
 pub mod delete_instance_input {
     
     /// A builder for [`DeleteInstanceInput`](crate::input::DeleteInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -3009,6 +3022,7 @@ impl DeleteInstanceInput {
 pub mod delete_layer_input {
     
     /// A builder for [`DeleteLayerInput`](crate::input::DeleteLayerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_id: std::option::Option<std::string::String>,
@@ -3121,6 +3135,7 @@ impl DeleteLayerInput {
 pub mod delete_stack_input {
     
     /// A builder for [`DeleteStackInput`](crate::input::DeleteStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -3233,6 +3248,7 @@ impl DeleteStackInput {
 pub mod delete_user_profile_input {
     
     /// A builder for [`DeleteUserProfileInput`](crate::input::DeleteUserProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_user_arn: std::option::Option<std::string::String>,
@@ -3345,6 +3361,7 @@ impl DeleteUserProfileInput {
 pub mod deregister_ecs_cluster_input {
     
     /// A builder for [`DeregisterEcsClusterInput`](crate::input::DeregisterEcsClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecs_cluster_arn: std::option::Option<std::string::String>,
@@ -3457,6 +3474,7 @@ impl DeregisterEcsClusterInput {
 pub mod deregister_elastic_ip_input {
     
     /// A builder for [`DeregisterElasticIpInput`](crate::input::DeregisterElasticIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ip: std::option::Option<std::string::String>,
@@ -3569,6 +3587,7 @@ impl DeregisterElasticIpInput {
 pub mod deregister_instance_input {
     
     /// A builder for [`DeregisterInstanceInput`](crate::input::DeregisterInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -3681,6 +3700,7 @@ impl DeregisterInstanceInput {
 pub mod deregister_rds_db_instance_input {
     
     /// A builder for [`DeregisterRdsDbInstanceInput`](crate::input::DeregisterRdsDbInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rds_db_instance_arn: std::option::Option<std::string::String>,
@@ -3793,6 +3813,7 @@ impl DeregisterRdsDbInstanceInput {
 pub mod deregister_volume_input {
     
     /// A builder for [`DeregisterVolumeInput`](crate::input::DeregisterVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_id: std::option::Option<std::string::String>,
@@ -3905,6 +3926,7 @@ impl DeregisterVolumeInput {
 pub mod describe_agent_versions_input {
     
     /// A builder for [`DescribeAgentVersionsInput`](crate::input::DescribeAgentVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -4029,6 +4051,7 @@ impl DescribeAgentVersionsInput {
 pub mod describe_apps_input {
     
     /// A builder for [`DescribeAppsInput`](crate::input::DescribeAppsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -4159,6 +4182,7 @@ impl DescribeAppsInput {
 pub mod describe_commands_input {
     
     /// A builder for [`DescribeCommandsInput`](crate::input::DescribeCommandsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
@@ -4301,6 +4325,7 @@ impl DescribeCommandsInput {
 pub mod describe_deployments_input {
     
     /// A builder for [`DescribeDeploymentsInput`](crate::input::DescribeDeploymentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -4443,6 +4468,7 @@ impl DescribeDeploymentsInput {
 pub mod describe_ecs_clusters_input {
     
     /// A builder for [`DescribeEcsClustersInput`](crate::input::DescribeEcsClustersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecs_cluster_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4597,6 +4623,7 @@ impl DescribeEcsClustersInput {
 pub mod describe_elastic_ips_input {
     
     /// A builder for [`DescribeElasticIpsInput`](crate::input::DescribeElasticIpsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -4739,6 +4766,7 @@ impl DescribeElasticIpsInput {
 pub mod describe_elastic_load_balancers_input {
     
     /// A builder for [`DescribeElasticLoadBalancersInput`](crate::input::DescribeElasticLoadBalancersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -4869,6 +4897,7 @@ impl DescribeElasticLoadBalancersInput {
 pub mod describe_instances_input {
     
     /// A builder for [`DescribeInstancesInput`](crate::input::DescribeInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -5011,6 +5040,7 @@ impl DescribeInstancesInput {
 pub mod describe_layers_input {
     
     /// A builder for [`DescribeLayersInput`](crate::input::DescribeLayersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -5141,6 +5171,7 @@ impl DescribeLayersInput {
 pub mod describe_load_based_auto_scaling_input {
     
     /// A builder for [`DescribeLoadBasedAutoScalingInput`](crate::input::DescribeLoadBasedAutoScalingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5259,6 +5290,7 @@ impl DescribeLoadBasedAutoScalingInput {
 pub mod describe_my_user_profile_input {
     
     /// A builder for [`DescribeMyUserProfileInput`](crate::input::DescribeMyUserProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5356,6 +5388,7 @@ impl DescribeMyUserProfileInput {
 pub mod describe_operating_systems_input {
     
     /// A builder for [`DescribeOperatingSystemsInput`](crate::input::DescribeOperatingSystemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5453,6 +5486,7 @@ impl DescribeOperatingSystemsInput {
 pub mod describe_permissions_input {
     
     /// A builder for [`DescribePermissionsInput`](crate::input::DescribePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_user_arn: std::option::Option<std::string::String>,
@@ -5577,6 +5611,7 @@ impl DescribePermissionsInput {
 pub mod describe_raid_arrays_input {
     
     /// A builder for [`DescribeRaidArraysInput`](crate::input::DescribeRaidArraysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -5719,6 +5754,7 @@ impl DescribeRaidArraysInput {
 pub mod describe_rds_db_instances_input {
     
     /// A builder for [`DescribeRdsDbInstancesInput`](crate::input::DescribeRdsDbInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -5849,6 +5885,7 @@ impl DescribeRdsDbInstancesInput {
 pub mod describe_service_errors_input {
     
     /// A builder for [`DescribeServiceErrorsInput`](crate::input::DescribeServiceErrorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -5991,6 +6028,7 @@ impl DescribeServiceErrorsInput {
 pub mod describe_stack_provisioning_parameters_input {
     
     /// A builder for [`DescribeStackProvisioningParametersInput`](crate::input::DescribeStackProvisioningParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -6103,6 +6141,7 @@ impl DescribeStackProvisioningParametersInput {
 pub mod describe_stacks_input {
     
     /// A builder for [`DescribeStacksInput`](crate::input::DescribeStacksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6221,6 +6260,7 @@ impl DescribeStacksInput {
 pub mod describe_stack_summary_input {
     
     /// A builder for [`DescribeStackSummaryInput`](crate::input::DescribeStackSummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -6333,6 +6373,7 @@ impl DescribeStackSummaryInput {
 pub mod describe_time_based_auto_scaling_input {
     
     /// A builder for [`DescribeTimeBasedAutoScalingInput`](crate::input::DescribeTimeBasedAutoScalingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6451,6 +6492,7 @@ impl DescribeTimeBasedAutoScalingInput {
 pub mod describe_user_profiles_input {
     
     /// A builder for [`DescribeUserProfilesInput`](crate::input::DescribeUserProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_user_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6569,6 +6611,7 @@ impl DescribeUserProfilesInput {
 pub mod describe_volumes_input {
     
     /// A builder for [`DescribeVolumesInput`](crate::input::DescribeVolumesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -6723,6 +6766,7 @@ impl DescribeVolumesInput {
 pub mod detach_elastic_load_balancer_input {
     
     /// A builder for [`DetachElasticLoadBalancerInput`](crate::input::DetachElasticLoadBalancerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_load_balancer_name: std::option::Option<std::string::String>,
@@ -6847,6 +6891,7 @@ impl DetachElasticLoadBalancerInput {
 pub mod disassociate_elastic_ip_input {
     
     /// A builder for [`DisassociateElasticIpInput`](crate::input::DisassociateElasticIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ip: std::option::Option<std::string::String>,
@@ -6959,6 +7004,7 @@ impl DisassociateElasticIpInput {
 pub mod get_hostname_suggestion_input {
     
     /// A builder for [`GetHostnameSuggestionInput`](crate::input::GetHostnameSuggestionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_id: std::option::Option<std::string::String>,
@@ -7071,6 +7117,7 @@ impl GetHostnameSuggestionInput {
 pub mod grant_access_input {
     
     /// A builder for [`GrantAccessInput`](crate::input::GrantAccessInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -7195,6 +7242,7 @@ impl GrantAccessInput {
 pub mod list_tags_input {
     
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -7332,6 +7380,7 @@ impl ListTagsInput {
 pub mod reboot_instance_input {
     
     /// A builder for [`RebootInstanceInput`](crate::input::RebootInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -7444,6 +7493,7 @@ impl RebootInstanceInput {
 pub mod register_ecs_cluster_input {
     
     /// A builder for [`RegisterEcsClusterInput`](crate::input::RegisterEcsClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecs_cluster_arn: std::option::Option<std::string::String>,
@@ -7568,6 +7618,7 @@ impl RegisterEcsClusterInput {
 pub mod register_elastic_ip_input {
     
     /// A builder for [`RegisterElasticIpInput`](crate::input::RegisterElasticIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ip: std::option::Option<std::string::String>,
@@ -7692,6 +7743,7 @@ impl RegisterElasticIpInput {
 pub mod register_instance_input {
     
     /// A builder for [`RegisterInstanceInput`](crate::input::RegisterInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -7876,6 +7928,7 @@ impl RegisterInstanceInput {
 pub mod register_rds_db_instance_input {
     
     /// A builder for [`RegisterRdsDbInstanceInput`](crate::input::RegisterRdsDbInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -8024,6 +8077,7 @@ impl RegisterRdsDbInstanceInput {
 pub mod register_volume_input {
     
     /// A builder for [`RegisterVolumeInput`](crate::input::RegisterVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_volume_id: std::option::Option<std::string::String>,
@@ -8148,6 +8202,7 @@ impl RegisterVolumeInput {
 pub mod set_load_based_auto_scaling_input {
     
     /// A builder for [`SetLoadBasedAutoScalingInput`](crate::input::SetLoadBasedAutoScalingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_id: std::option::Option<std::string::String>,
@@ -8296,6 +8351,7 @@ impl SetLoadBasedAutoScalingInput {
 pub mod set_permission_input {
     
     /// A builder for [`SetPermissionInput`](crate::input::SetPermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -8472,6 +8528,7 @@ impl SetPermissionInput {
 pub mod set_time_based_auto_scaling_input {
     
     /// A builder for [`SetTimeBasedAutoScalingInput`](crate::input::SetTimeBasedAutoScalingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -8596,6 +8653,7 @@ impl SetTimeBasedAutoScalingInput {
 pub mod start_instance_input {
     
     /// A builder for [`StartInstanceInput`](crate::input::StartInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -8708,6 +8766,7 @@ impl StartInstanceInput {
 pub mod start_stack_input {
     
     /// A builder for [`StartStackInput`](crate::input::StartStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -8820,6 +8879,7 @@ impl StartStackInput {
 pub mod stop_instance_input {
     
     /// A builder for [`StopInstanceInput`](crate::input::StopInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -8944,6 +9004,7 @@ impl StopInstanceInput {
 pub mod stop_stack_input {
     
     /// A builder for [`StopStackInput`](crate::input::StopStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -9056,6 +9117,7 @@ impl StopStackInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -9200,6 +9262,7 @@ impl TagResourceInput {
 pub mod unassign_instance_input {
     
     /// A builder for [`UnassignInstanceInput`](crate::input::UnassignInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -9312,6 +9375,7 @@ impl UnassignInstanceInput {
 pub mod unassign_volume_input {
     
     /// A builder for [`UnassignVolumeInput`](crate::input::UnassignVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_id: std::option::Option<std::string::String>,
@@ -9424,6 +9488,7 @@ impl UnassignVolumeInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -9554,6 +9619,7 @@ impl UntagResourceInput {
 pub mod update_app_input {
     
     /// A builder for [`UpdateAppInput`](crate::input::UpdateAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -9816,6 +9882,7 @@ impl UpdateAppInput {
 pub mod update_elastic_ip_input {
     
     /// A builder for [`UpdateElasticIpInput`](crate::input::UpdateElasticIpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ip: std::option::Option<std::string::String>,
@@ -9940,6 +10007,7 @@ impl UpdateElasticIpInput {
 pub mod update_instance_input {
     
     /// A builder for [`UpdateInstanceInput`](crate::input::UpdateInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -10228,6 +10296,7 @@ impl UpdateInstanceInput {
 pub mod update_layer_input {
     
     /// A builder for [`UpdateLayerInput`](crate::input::UpdateLayerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_id: std::option::Option<std::string::String>,
@@ -10562,6 +10631,7 @@ impl UpdateLayerInput {
 pub mod update_my_user_profile_input {
     
     /// A builder for [`UpdateMyUserProfileInput`](crate::input::UpdateMyUserProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ssh_public_key: std::option::Option<std::string::String>,
@@ -10674,6 +10744,7 @@ impl UpdateMyUserProfileInput {
 pub mod update_rds_db_instance_input {
     
     /// A builder for [`UpdateRdsDbInstanceInput`](crate::input::UpdateRdsDbInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rds_db_instance_arn: std::option::Option<std::string::String>,
@@ -10810,6 +10881,7 @@ impl UpdateRdsDbInstanceInput {
 pub mod update_stack_input {
     
     /// A builder for [`UpdateStackInput`](crate::input::UpdateStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -11208,6 +11280,7 @@ impl UpdateStackInput {
 pub mod update_user_profile_input {
     
     /// A builder for [`UpdateUserProfileInput`](crate::input::UpdateUserProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_user_arn: std::option::Option<std::string::String>,
@@ -11356,6 +11429,7 @@ impl UpdateUserProfileInput {
 pub mod update_volume_input {
     
     /// A builder for [`UpdateVolumeInput`](crate::input::UpdateVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_id: std::option::Option<std::string::String>,

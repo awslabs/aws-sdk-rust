@@ -17,6 +17,7 @@ impl UpdateEnvironmentOutput {
 pub mod update_environment_output {
     
     /// A builder for [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment: std::option::Option<crate::model::Environment>,
@@ -58,6 +59,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -87,6 +89,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -125,6 +128,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -188,6 +192,7 @@ impl ListEnvironmentsOutput {
 pub mod list_environments_output {
     
     /// A builder for [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environments: std::option::Option<std::vec::Vec<crate::model::Environment>>,
@@ -256,6 +261,7 @@ impl GetEnvironmentOutput {
 pub mod get_environment_output {
     
     /// A builder for [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment: std::option::Option<crate::model::Environment>,
@@ -297,6 +303,7 @@ pub struct DeleteEnvironmentOutput  {
 pub mod delete_environment_output {
     
     /// A builder for [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -349,6 +356,7 @@ impl CreateEnvironmentOutput {
 pub mod create_environment_output {
     
     /// A builder for [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,

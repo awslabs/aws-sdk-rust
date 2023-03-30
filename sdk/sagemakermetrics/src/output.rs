@@ -17,6 +17,7 @@ impl BatchPutMetricsOutput {
 pub mod batch_put_metrics_output {
     
     /// A builder for [`BatchPutMetricsOutput`](crate::output::BatchPutMetricsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchPutMetricsError>>,

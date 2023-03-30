@@ -8,6 +8,7 @@ pub struct UpdateThingRuntimeConfigurationOutput  {
 pub mod update_thing_runtime_configuration_output {
     
     /// A builder for [`UpdateThingRuntimeConfigurationOutput`](crate::output::UpdateThingRuntimeConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct UpdateSubscriptionDefinitionOutput  {
 pub mod update_subscription_definition_output {
     
     /// A builder for [`UpdateSubscriptionDefinitionOutput`](crate::output::UpdateSubscriptionDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -66,6 +68,7 @@ pub struct UpdateResourceDefinitionOutput  {
 pub mod update_resource_definition_output {
     
     /// A builder for [`UpdateResourceDefinitionOutput`](crate::output::UpdateResourceDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -95,6 +98,7 @@ pub struct UpdateLoggerDefinitionOutput  {
 pub mod update_logger_definition_output {
     
     /// A builder for [`UpdateLoggerDefinitionOutput`](crate::output::UpdateLoggerDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -147,6 +151,7 @@ impl UpdateGroupCertificateConfigurationOutput {
 pub mod update_group_certificate_configuration_output {
     
     /// A builder for [`UpdateGroupCertificateConfigurationOutput`](crate::output::UpdateGroupCertificateConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_expiry_in_milliseconds: std::option::Option<std::string::String>,
@@ -212,6 +217,7 @@ pub struct UpdateGroupOutput  {
 pub mod update_group_output {
     
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -241,6 +247,7 @@ pub struct UpdateFunctionDefinitionOutput  {
 pub mod update_function_definition_output {
     
     /// A builder for [`UpdateFunctionDefinitionOutput`](crate::output::UpdateFunctionDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -270,6 +277,7 @@ pub struct UpdateDeviceDefinitionOutput  {
 pub mod update_device_definition_output {
     
     /// A builder for [`UpdateDeviceDefinitionOutput`](crate::output::UpdateDeviceDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -299,6 +307,7 @@ pub struct UpdateCoreDefinitionOutput  {
 pub mod update_core_definition_output {
     
     /// A builder for [`UpdateCoreDefinitionOutput`](crate::output::UpdateCoreDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -328,6 +337,7 @@ pub struct UpdateConnectorDefinitionOutput  {
 pub mod update_connector_definition_output {
     
     /// A builder for [`UpdateConnectorDefinitionOutput`](crate::output::UpdateConnectorDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -373,6 +383,7 @@ impl UpdateConnectivityInfoOutput {
 pub mod update_connectivity_info_output {
     
     /// A builder for [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -426,6 +437,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -455,6 +467,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -484,6 +497,7 @@ pub struct StopBulkDeploymentOutput  {
 pub mod stop_bulk_deployment_output {
     
     /// A builder for [`StopBulkDeploymentOutput`](crate::output::StopBulkDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -529,6 +543,7 @@ impl StartBulkDeploymentOutput {
 pub mod start_bulk_deployment_output {
     
     /// A builder for [`StartBulkDeploymentOutput`](crate::output::StartBulkDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bulk_deployment_arn: std::option::Option<std::string::String>,
@@ -598,6 +613,7 @@ impl ResetDeploymentsOutput {
 pub mod reset_deployments_output {
     
     /// A builder for [`ResetDeploymentsOutput`](crate::output::ResetDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_arn: std::option::Option<std::string::String>,
@@ -660,6 +676,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -723,6 +740,7 @@ impl ListSubscriptionDefinitionVersionsOutput {
 pub mod list_subscription_definition_versions_output {
     
     /// A builder for [`ListSubscriptionDefinitionVersionsOutput`](crate::output::ListSubscriptionDefinitionVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -798,6 +816,7 @@ impl ListSubscriptionDefinitionsOutput {
 pub mod list_subscription_definitions_output {
     
     /// A builder for [`ListSubscriptionDefinitionsOutput`](crate::output::ListSubscriptionDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -873,6 +892,7 @@ impl ListResourceDefinitionVersionsOutput {
 pub mod list_resource_definition_versions_output {
     
     /// A builder for [`ListResourceDefinitionVersionsOutput`](crate::output::ListResourceDefinitionVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -948,6 +968,7 @@ impl ListResourceDefinitionsOutput {
 pub mod list_resource_definitions_output {
     
     /// A builder for [`ListResourceDefinitionsOutput`](crate::output::ListResourceDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -1023,6 +1044,7 @@ impl ListLoggerDefinitionVersionsOutput {
 pub mod list_logger_definition_versions_output {
     
     /// A builder for [`ListLoggerDefinitionVersionsOutput`](crate::output::ListLoggerDefinitionVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1098,6 +1120,7 @@ impl ListLoggerDefinitionsOutput {
 pub mod list_logger_definitions_output {
     
     /// A builder for [`ListLoggerDefinitionsOutput`](crate::output::ListLoggerDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -1173,6 +1196,7 @@ impl ListGroupVersionsOutput {
 pub mod list_group_versions_output {
     
     /// A builder for [`ListGroupVersionsOutput`](crate::output::ListGroupVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1248,6 +1272,7 @@ impl ListGroupsOutput {
 pub mod list_groups_output {
     
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupInformation>>,
@@ -1316,6 +1341,7 @@ impl ListGroupCertificateAuthoritiesOutput {
 pub mod list_group_certificate_authorities_output {
     
     /// A builder for [`ListGroupCertificateAuthoritiesOutput`](crate::output::ListGroupCertificateAuthoritiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_certificate_authorities: std::option::Option<std::vec::Vec<crate::model::GroupCertificateAuthorityProperties>>,
@@ -1379,6 +1405,7 @@ impl ListFunctionDefinitionVersionsOutput {
 pub mod list_function_definition_versions_output {
     
     /// A builder for [`ListFunctionDefinitionVersionsOutput`](crate::output::ListFunctionDefinitionVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1454,6 +1481,7 @@ impl ListFunctionDefinitionsOutput {
 pub mod list_function_definitions_output {
     
     /// A builder for [`ListFunctionDefinitionsOutput`](crate::output::ListFunctionDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -1529,6 +1557,7 @@ impl ListDeviceDefinitionVersionsOutput {
 pub mod list_device_definition_versions_output {
     
     /// A builder for [`ListDeviceDefinitionVersionsOutput`](crate::output::ListDeviceDefinitionVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1604,6 +1633,7 @@ impl ListDeviceDefinitionsOutput {
 pub mod list_device_definitions_output {
     
     /// A builder for [`ListDeviceDefinitionsOutput`](crate::output::ListDeviceDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -1679,6 +1709,7 @@ impl ListDeploymentsOutput {
 pub mod list_deployments_output {
     
     /// A builder for [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
@@ -1754,6 +1785,7 @@ impl ListCoreDefinitionVersionsOutput {
 pub mod list_core_definition_versions_output {
     
     /// A builder for [`ListCoreDefinitionVersionsOutput`](crate::output::ListCoreDefinitionVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1829,6 +1861,7 @@ impl ListCoreDefinitionsOutput {
 pub mod list_core_definitions_output {
     
     /// A builder for [`ListCoreDefinitionsOutput`](crate::output::ListCoreDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -1904,6 +1937,7 @@ impl ListConnectorDefinitionVersionsOutput {
 pub mod list_connector_definition_versions_output {
     
     /// A builder for [`ListConnectorDefinitionVersionsOutput`](crate::output::ListConnectorDefinitionVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1979,6 +2013,7 @@ impl ListConnectorDefinitionsOutput {
 pub mod list_connector_definitions_output {
     
     /// A builder for [`ListConnectorDefinitionsOutput`](crate::output::ListConnectorDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -2054,6 +2089,7 @@ impl ListBulkDeploymentsOutput {
 pub mod list_bulk_deployments_output {
     
     /// A builder for [`ListBulkDeploymentsOutput`](crate::output::ListBulkDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bulk_deployments: std::option::Option<std::vec::Vec<crate::model::BulkDeployment>>,
@@ -2129,6 +2165,7 @@ impl ListBulkDeploymentDetailedReportsOutput {
 pub mod list_bulk_deployment_detailed_reports_output {
     
     /// A builder for [`ListBulkDeploymentDetailedReportsOutput`](crate::output::ListBulkDeploymentDetailedReportsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::BulkDeploymentResult>>,
@@ -2197,6 +2234,7 @@ impl GetThingRuntimeConfigurationOutput {
 pub mod get_thing_runtime_configuration_output {
     
     /// A builder for [`GetThingRuntimeConfigurationOutput`](crate::output::GetThingRuntimeConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
@@ -2282,6 +2320,7 @@ impl GetSubscriptionDefinitionVersionOutput {
 pub mod get_subscription_definition_version_output {
     
     /// A builder for [`GetSubscriptionDefinitionVersionOutput`](crate::output::GetSubscriptionDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2441,6 +2480,7 @@ impl GetSubscriptionDefinitionOutput {
 pub mod get_subscription_definition_output {
     
     /// A builder for [`GetSubscriptionDefinitionOutput`](crate::output::GetSubscriptionDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2588,6 +2628,7 @@ impl GetServiceRoleForAccountOutput {
 pub mod get_service_role_for_account_output {
     
     /// A builder for [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associated_at: std::option::Option<std::string::String>,
@@ -2678,6 +2719,7 @@ impl GetResourceDefinitionVersionOutput {
 pub mod get_resource_definition_version_output {
     
     /// A builder for [`GetResourceDefinitionVersionOutput`](crate::output::GetResourceDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2825,6 +2867,7 @@ impl GetResourceDefinitionOutput {
 pub mod get_resource_definition_output {
     
     /// A builder for [`GetResourceDefinitionOutput`](crate::output::GetResourceDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2993,6 +3036,7 @@ impl GetLoggerDefinitionVersionOutput {
 pub mod get_logger_definition_version_output {
     
     /// A builder for [`GetLoggerDefinitionVersionOutput`](crate::output::GetLoggerDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3140,6 +3184,7 @@ impl GetLoggerDefinitionOutput {
 pub mod get_logger_definition_output {
     
     /// A builder for [`GetLoggerDefinitionOutput`](crate::output::GetLoggerDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3308,6 +3353,7 @@ impl GetGroupVersionOutput {
 pub mod get_group_version_output {
     
     /// A builder for [`GetGroupVersionOutput`](crate::output::GetGroupVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3420,6 +3466,7 @@ impl GetGroupCertificateConfigurationOutput {
 pub mod get_group_certificate_configuration_output {
     
     /// A builder for [`GetGroupCertificateConfigurationOutput`](crate::output::GetGroupCertificateConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_expiry_in_milliseconds: std::option::Option<std::string::String>,
@@ -3508,6 +3555,7 @@ impl GetGroupCertificateAuthorityOutput {
 pub mod get_group_certificate_authority_output {
     
     /// A builder for [`GetGroupCertificateAuthorityOutput`](crate::output::GetGroupCertificateAuthorityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_certificate_authority_arn: std::option::Option<std::string::String>,
@@ -3631,6 +3679,7 @@ impl GetGroupOutput {
 pub mod get_group_output {
     
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3806,6 +3855,7 @@ impl GetFunctionDefinitionVersionOutput {
 pub mod get_function_definition_version_output {
     
     /// A builder for [`GetFunctionDefinitionVersionOutput`](crate::output::GetFunctionDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3965,6 +4015,7 @@ impl GetFunctionDefinitionOutput {
 pub mod get_function_definition_output {
     
     /// A builder for [`GetFunctionDefinitionOutput`](crate::output::GetFunctionDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4140,6 +4191,7 @@ impl GetDeviceDefinitionVersionOutput {
 pub mod get_device_definition_version_output {
     
     /// A builder for [`GetDeviceDefinitionVersionOutput`](crate::output::GetDeviceDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4299,6 +4351,7 @@ impl GetDeviceDefinitionOutput {
 pub mod get_device_definition_output {
     
     /// A builder for [`GetDeviceDefinitionOutput`](crate::output::GetDeviceDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4467,6 +4520,7 @@ impl GetDeploymentStatusOutput {
 pub mod get_deployment_status_output {
     
     /// A builder for [`GetDeploymentStatusOutput`](crate::output::GetDeploymentStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_status: std::option::Option<std::string::String>,
@@ -4606,6 +4660,7 @@ impl GetCoreDefinitionVersionOutput {
 pub mod get_core_definition_version_output {
     
     /// A builder for [`GetCoreDefinitionVersionOutput`](crate::output::GetCoreDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4765,6 +4820,7 @@ impl GetCoreDefinitionOutput {
 pub mod get_core_definition_output {
     
     /// A builder for [`GetCoreDefinitionOutput`](crate::output::GetCoreDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4940,6 +4996,7 @@ impl GetConnectorDefinitionVersionOutput {
 pub mod get_connector_definition_version_output {
     
     /// A builder for [`GetConnectorDefinitionVersionOutput`](crate::output::GetConnectorDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5099,6 +5156,7 @@ impl GetConnectorDefinitionOutput {
 pub mod get_connector_definition_output {
     
     /// A builder for [`GetConnectorDefinitionOutput`](crate::output::GetConnectorDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5246,6 +5304,7 @@ impl GetConnectivityInfoOutput {
 pub mod get_connectivity_info_output {
     
     /// A builder for [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connectivity_info: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
@@ -5349,6 +5408,7 @@ impl GetBulkDeploymentStatusOutput {
 pub mod get_bulk_deployment_status_output {
     
     /// A builder for [`GetBulkDeploymentStatusOutput`](crate::output::GetBulkDeploymentStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bulk_deployment_metrics: std::option::Option<crate::model::BulkDeploymentMetrics>,
@@ -5478,6 +5538,7 @@ impl GetAssociatedRoleOutput {
 pub mod get_associated_role_output {
     
     /// A builder for [`GetAssociatedRoleOutput`](crate::output::GetAssociatedRoleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associated_at: std::option::Option<std::string::String>,
@@ -5540,6 +5601,7 @@ impl DisassociateServiceRoleFromAccountOutput {
 pub mod disassociate_service_role_from_account_output {
     
     /// A builder for [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disassociated_at: std::option::Option<std::string::String>,
@@ -5590,6 +5652,7 @@ impl DisassociateRoleFromGroupOutput {
 pub mod disassociate_role_from_group_output {
     
     /// A builder for [`DisassociateRoleFromGroupOutput`](crate::output::DisassociateRoleFromGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disassociated_at: std::option::Option<std::string::String>,
@@ -5631,6 +5694,7 @@ pub struct DeleteSubscriptionDefinitionOutput  {
 pub mod delete_subscription_definition_output {
     
     /// A builder for [`DeleteSubscriptionDefinitionOutput`](crate::output::DeleteSubscriptionDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5660,6 +5724,7 @@ pub struct DeleteResourceDefinitionOutput  {
 pub mod delete_resource_definition_output {
     
     /// A builder for [`DeleteResourceDefinitionOutput`](crate::output::DeleteResourceDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5689,6 +5754,7 @@ pub struct DeleteLoggerDefinitionOutput  {
 pub mod delete_logger_definition_output {
     
     /// A builder for [`DeleteLoggerDefinitionOutput`](crate::output::DeleteLoggerDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5718,6 +5784,7 @@ pub struct DeleteGroupOutput  {
 pub mod delete_group_output {
     
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5747,6 +5814,7 @@ pub struct DeleteFunctionDefinitionOutput  {
 pub mod delete_function_definition_output {
     
     /// A builder for [`DeleteFunctionDefinitionOutput`](crate::output::DeleteFunctionDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5776,6 +5844,7 @@ pub struct DeleteDeviceDefinitionOutput  {
 pub mod delete_device_definition_output {
     
     /// A builder for [`DeleteDeviceDefinitionOutput`](crate::output::DeleteDeviceDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5805,6 +5874,7 @@ pub struct DeleteCoreDefinitionOutput  {
 pub mod delete_core_definition_output {
     
     /// A builder for [`DeleteCoreDefinitionOutput`](crate::output::DeleteCoreDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5834,6 +5904,7 @@ pub struct DeleteConnectorDefinitionOutput  {
 pub mod delete_connector_definition_output {
     
     /// A builder for [`DeleteConnectorDefinitionOutput`](crate::output::DeleteConnectorDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -5893,6 +5964,7 @@ impl CreateSubscriptionDefinitionVersionOutput {
 pub mod create_subscription_definition_version_output {
     
     /// A builder for [`CreateSubscriptionDefinitionVersionOutput`](crate::output::CreateSubscriptionDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6021,6 +6093,7 @@ impl CreateSubscriptionDefinitionOutput {
 pub mod create_subscription_definition_output {
     
     /// A builder for [`CreateSubscriptionDefinitionOutput`](crate::output::CreateSubscriptionDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6157,6 +6230,7 @@ impl CreateSoftwareUpdateJobOutput {
 pub mod create_software_update_job_output {
     
     /// A builder for [`CreateSoftwareUpdateJobOutput`](crate::output::CreateSoftwareUpdateJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iot_job_arn: std::option::Option<std::string::String>,
@@ -6252,6 +6326,7 @@ impl CreateResourceDefinitionVersionOutput {
 pub mod create_resource_definition_version_output {
     
     /// A builder for [`CreateResourceDefinitionVersionOutput`](crate::output::CreateResourceDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6380,6 +6455,7 @@ impl CreateResourceDefinitionOutput {
 pub mod create_resource_definition_output {
     
     /// A builder for [`CreateResourceDefinitionOutput`](crate::output::CreateResourceDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6523,6 +6599,7 @@ impl CreateLoggerDefinitionVersionOutput {
 pub mod create_logger_definition_version_output {
     
     /// A builder for [`CreateLoggerDefinitionVersionOutput`](crate::output::CreateLoggerDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6651,6 +6728,7 @@ impl CreateLoggerDefinitionOutput {
 pub mod create_logger_definition_output {
     
     /// A builder for [`CreateLoggerDefinitionOutput`](crate::output::CreateLoggerDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6794,6 +6872,7 @@ impl CreateGroupVersionOutput {
 pub mod create_group_version_output {
     
     /// A builder for [`CreateGroupVersionOutput`](crate::output::CreateGroupVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6880,6 +6959,7 @@ impl CreateGroupCertificateAuthorityOutput {
 pub mod create_group_certificate_authority_output {
     
     /// A builder for [`CreateGroupCertificateAuthorityOutput`](crate::output::CreateGroupCertificateAuthorityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_certificate_authority_arn: std::option::Option<std::string::String>,
@@ -6972,6 +7052,7 @@ impl CreateGroupOutput {
 pub mod create_group_output {
     
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7115,6 +7196,7 @@ impl CreateFunctionDefinitionVersionOutput {
 pub mod create_function_definition_version_output {
     
     /// A builder for [`CreateFunctionDefinitionVersionOutput`](crate::output::CreateFunctionDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7243,6 +7325,7 @@ impl CreateFunctionDefinitionOutput {
 pub mod create_function_definition_output {
     
     /// A builder for [`CreateFunctionDefinitionOutput`](crate::output::CreateFunctionDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7386,6 +7469,7 @@ impl CreateDeviceDefinitionVersionOutput {
 pub mod create_device_definition_version_output {
     
     /// A builder for [`CreateDeviceDefinitionVersionOutput`](crate::output::CreateDeviceDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7514,6 +7598,7 @@ impl CreateDeviceDefinitionOutput {
 pub mod create_device_definition_output {
     
     /// A builder for [`CreateDeviceDefinitionOutput`](crate::output::CreateDeviceDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7643,6 +7728,7 @@ impl CreateDeploymentOutput {
 pub mod create_deployment_output {
     
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_arn: std::option::Option<std::string::String>,
@@ -7726,6 +7812,7 @@ impl CreateCoreDefinitionVersionOutput {
 pub mod create_core_definition_version_output {
     
     /// A builder for [`CreateCoreDefinitionVersionOutput`](crate::output::CreateCoreDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7854,6 +7941,7 @@ impl CreateCoreDefinitionOutput {
 pub mod create_core_definition_output {
     
     /// A builder for [`CreateCoreDefinitionOutput`](crate::output::CreateCoreDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7997,6 +8085,7 @@ impl CreateConnectorDefinitionVersionOutput {
 pub mod create_connector_definition_version_output {
     
     /// A builder for [`CreateConnectorDefinitionVersionOutput`](crate::output::CreateConnectorDefinitionVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -8125,6 +8214,7 @@ impl CreateConnectorDefinitionOutput {
 pub mod create_connector_definition_output {
     
     /// A builder for [`CreateConnectorDefinitionOutput`](crate::output::CreateConnectorDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -8247,6 +8337,7 @@ impl AssociateServiceRoleToAccountOutput {
 pub mod associate_service_role_to_account_output {
     
     /// A builder for [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associated_at: std::option::Option<std::string::String>,
@@ -8297,6 +8388,7 @@ impl AssociateRoleToGroupOutput {
 pub mod associate_role_to_group_output {
     
     /// A builder for [`AssociateRoleToGroupOutput`](crate::output::AssociateRoleToGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associated_at: std::option::Option<std::string::String>,

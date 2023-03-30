@@ -8,6 +8,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -89,6 +91,7 @@ impl StartFhirImportJobOutput {
 pub mod start_fhir_import_job_output {
     
     /// A builder for [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -177,6 +180,7 @@ impl StartFhirExportJobOutput {
 pub mod start_fhir_export_job_output {
     
     /// A builder for [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -251,6 +255,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -314,6 +319,7 @@ impl ListFhirImportJobsOutput {
 pub mod list_fhir_import_jobs_output {
     
     /// A builder for [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>,
@@ -389,6 +395,7 @@ impl ListFhirExportJobsOutput {
 pub mod list_fhir_export_jobs_output {
     
     /// A builder for [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>,
@@ -464,6 +471,7 @@ impl ListFhirDatastoresOutput {
 pub mod list_fhir_datastores_output {
     
     /// A builder for [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_properties_list: std::option::Option<std::vec::Vec<crate::model::DatastoreProperties>>,
@@ -532,6 +540,7 @@ impl DescribeFhirImportJobOutput {
 pub mod describe_fhir_import_job_output {
     
     /// A builder for [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_job_properties: std::option::Option<crate::model::ImportJobProperties>,
@@ -582,6 +591,7 @@ impl DescribeFhirExportJobOutput {
 pub mod describe_fhir_export_job_output {
     
     /// A builder for [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_job_properties: std::option::Option<crate::model::ExportJobProperties>,
@@ -632,6 +642,7 @@ impl DescribeFhirDatastoreOutput {
 pub mod describe_fhir_datastore_output {
     
     /// A builder for [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_properties: std::option::Option<crate::model::DatastoreProperties>,
@@ -703,6 +714,7 @@ impl DeleteFhirDatastoreOutput {
 pub mod delete_fhir_datastore_output {
     
     /// A builder for [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,
@@ -810,6 +822,7 @@ impl CreateFhirDatastoreOutput {
 pub mod create_fhir_datastore_output {
     
     /// A builder for [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,

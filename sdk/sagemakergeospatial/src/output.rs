@@ -8,6 +8,7 @@ pub struct StopVectorEnrichmentJobOutput  {
 pub mod stop_vector_enrichment_job_output {
     
     /// A builder for [`StopVectorEnrichmentJobOutput`](crate::output::StopVectorEnrichmentJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -74,6 +75,7 @@ impl ExportVectorEnrichmentJobOutput {
 pub mod export_vector_enrichment_job_output {
     
     /// A builder for [`ExportVectorEnrichmentJobOutput`](crate::output::ExportVectorEnrichmentJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -187,6 +189,7 @@ impl  std::fmt::Debug for ListVectorEnrichmentJobsOutput  {
 pub mod list_vector_enrichment_jobs_output {
     
     /// A builder for [`ListVectorEnrichmentJobsOutput`](crate::output::ListVectorEnrichmentJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) vector_enrichment_job_summaries: std::option::Option<std::vec::Vec<crate::model::ListVectorEnrichmentJobOutputConfig>>,
@@ -333,6 +336,7 @@ impl StartVectorEnrichmentJobOutput {
 pub mod start_vector_enrichment_job_output {
     
     /// A builder for [`StartVectorEnrichmentJobOutput`](crate::output::StartVectorEnrichmentJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -500,6 +504,7 @@ pub struct DeleteVectorEnrichmentJobOutput  {
 pub mod delete_vector_enrichment_job_output {
     
     /// A builder for [`DeleteVectorEnrichmentJobOutput`](crate::output::DeleteVectorEnrichmentJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -629,6 +634,7 @@ impl GetVectorEnrichmentJobOutput {
 pub mod get_vector_enrichment_job_output {
     
     /// A builder for [`GetVectorEnrichmentJobOutput`](crate::output::GetVectorEnrichmentJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -864,6 +870,7 @@ impl  std::fmt::Debug for SearchRasterDataCollectionOutput  {
 pub mod search_raster_data_collection_output {
     
     /// A builder for [`SearchRasterDataCollectionOutput`](crate::output::SearchRasterDataCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) approximate_result_count: std::option::Option<i32>,
@@ -968,6 +975,7 @@ impl  std::fmt::Debug for ListRasterDataCollectionsOutput  {
 pub mod list_raster_data_collections_output {
     
     /// A builder for [`ListRasterDataCollectionsOutput`](crate::output::ListRasterDataCollectionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) raster_data_collection_summaries: std::option::Option<std::vec::Vec<crate::model::RasterDataCollectionMetadata>>,
@@ -1093,6 +1101,7 @@ impl GetRasterDataCollectionOutput {
 pub mod get_raster_data_collection_output {
     
     /// A builder for [`GetRasterDataCollectionOutput`](crate::output::GetRasterDataCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1236,6 +1245,7 @@ pub struct StopEarthObservationJobOutput  {
 pub mod stop_earth_observation_job_output {
     
     /// A builder for [`StopEarthObservationJobOutput`](crate::output::StopEarthObservationJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1273,6 +1283,7 @@ impl GetTileOutput {
 pub mod get_tile_output {
     
     /// A builder for [`GetTileOutput`](crate::output::GetTileOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) binary_file: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -1359,6 +1370,7 @@ impl ExportEarthObservationJobOutput {
 pub mod export_earth_observation_job_output {
     
     /// A builder for [`ExportEarthObservationJobOutput`](crate::output::ExportEarthObservationJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1484,6 +1496,7 @@ impl  std::fmt::Debug for ListEarthObservationJobsOutput  {
 pub mod list_earth_observation_jobs_output {
     
     /// A builder for [`ListEarthObservationJobsOutput`](crate::output::ListEarthObservationJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) earth_observation_job_summaries: std::option::Option<std::vec::Vec<crate::model::ListEarthObservationJobOutputConfig>>,
@@ -1623,6 +1636,7 @@ impl StartEarthObservationJobOutput {
 pub mod start_earth_observation_job_output {
     
     /// A builder for [`StartEarthObservationJobOutput`](crate::output::StartEarthObservationJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1778,6 +1792,7 @@ pub struct DeleteEarthObservationJobOutput  {
 pub mod delete_earth_observation_job_output {
     
     /// A builder for [`DeleteEarthObservationJobOutput`](crate::output::DeleteEarthObservationJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1907,6 +1922,7 @@ impl GetEarthObservationJobOutput {
 pub mod get_earth_observation_job_output {
     
     /// A builder for [`GetEarthObservationJobOutput`](crate::output::GetEarthObservationJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2116,6 +2132,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2145,6 +2162,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2183,6 +2201,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,

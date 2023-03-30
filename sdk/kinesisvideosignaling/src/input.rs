@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod get_ice_server_config_input {
     
     /// A builder for [`GetIceServerConfigInput`](crate::input::GetIceServerConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -148,6 +149,7 @@ impl GetIceServerConfigInput {
 pub mod send_alexa_offer_to_master_input {
     
     /// A builder for [`SendAlexaOfferToMasterInput`](crate::input::SendAlexaOfferToMasterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,

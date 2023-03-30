@@ -7,7 +7,7 @@ pub fn add_headers_add_facet_to_object(
         let formatted_2 = inner_1.as_str();
                         if !formatted_2.is_empty() {
                             let header_value = formatted_2;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -28,7 +28,7 @@ pub fn add_headers_apply_schema(
         let formatted_4 = inner_3.as_str();
                         if !formatted_4.is_empty() {
                             let header_value = formatted_4;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -49,7 +49,7 @@ pub fn add_headers_attach_object(
         let formatted_6 = inner_5.as_str();
                         if !formatted_6.is_empty() {
                             let header_value = formatted_6;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -70,7 +70,7 @@ pub fn add_headers_attach_policy(
         let formatted_8 = inner_7.as_str();
                         if !formatted_8.is_empty() {
                             let header_value = formatted_8;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -91,7 +91,7 @@ pub fn add_headers_attach_to_index(
         let formatted_10 = inner_9.as_str();
                         if !formatted_10.is_empty() {
                             let header_value = formatted_10;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -112,7 +112,7 @@ pub fn add_headers_attach_typed_link(
         let formatted_12 = inner_11.as_str();
                         if !formatted_12.is_empty() {
                             let header_value = formatted_12;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -133,7 +133,7 @@ pub fn add_headers_batch_read(
         let formatted_14 = inner_13.as_str();
                         if !formatted_14.is_empty() {
                             let header_value = formatted_14;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -147,7 +147,7 @@ pub fn add_headers_batch_read(
         let formatted_16 = inner_15.as_str();
                         if !formatted_16.is_empty() {
                             let header_value = formatted_16;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("consistency_level", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -168,7 +168,7 @@ pub fn add_headers_batch_write(
         let formatted_18 = inner_17.as_str();
                         if !formatted_18.is_empty() {
                             let header_value = formatted_18;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -189,7 +189,7 @@ pub fn add_headers_create_directory(
         let formatted_20 = inner_19.as_str();
                         if !formatted_20.is_empty() {
                             let header_value = formatted_20;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -210,7 +210,7 @@ pub fn add_headers_create_facet(
         let formatted_22 = inner_21.as_str();
                         if !formatted_22.is_empty() {
                             let header_value = formatted_22;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -231,7 +231,7 @@ pub fn add_headers_create_index(
         let formatted_24 = inner_23.as_str();
                         if !formatted_24.is_empty() {
                             let header_value = formatted_24;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -252,7 +252,7 @@ pub fn add_headers_create_object(
         let formatted_26 = inner_25.as_str();
                         if !formatted_26.is_empty() {
                             let header_value = formatted_26;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -273,7 +273,7 @@ pub fn add_headers_create_typed_link_facet(
         let formatted_28 = inner_27.as_str();
                         if !formatted_28.is_empty() {
                             let header_value = formatted_28;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -294,7 +294,7 @@ pub fn add_headers_delete_directory(
         let formatted_30 = inner_29.as_str();
                         if !formatted_30.is_empty() {
                             let header_value = formatted_30;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -315,7 +315,7 @@ pub fn add_headers_delete_facet(
         let formatted_32 = inner_31.as_str();
                         if !formatted_32.is_empty() {
                             let header_value = formatted_32;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -336,7 +336,7 @@ pub fn add_headers_delete_object(
         let formatted_34 = inner_33.as_str();
                         if !formatted_34.is_empty() {
                             let header_value = formatted_34;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -357,7 +357,7 @@ pub fn add_headers_delete_schema(
         let formatted_36 = inner_35.as_str();
                         if !formatted_36.is_empty() {
                             let header_value = formatted_36;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -378,7 +378,7 @@ pub fn add_headers_delete_typed_link_facet(
         let formatted_38 = inner_37.as_str();
                         if !formatted_38.is_empty() {
                             let header_value = formatted_38;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -399,7 +399,7 @@ pub fn add_headers_detach_from_index(
         let formatted_40 = inner_39.as_str();
                         if !formatted_40.is_empty() {
                             let header_value = formatted_40;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -420,7 +420,7 @@ pub fn add_headers_detach_object(
         let formatted_42 = inner_41.as_str();
                         if !formatted_42.is_empty() {
                             let header_value = formatted_42;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -441,7 +441,7 @@ pub fn add_headers_detach_policy(
         let formatted_44 = inner_43.as_str();
                         if !formatted_44.is_empty() {
                             let header_value = formatted_44;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -462,7 +462,7 @@ pub fn add_headers_detach_typed_link(
         let formatted_46 = inner_45.as_str();
                         if !formatted_46.is_empty() {
                             let header_value = formatted_46;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -483,7 +483,7 @@ pub fn add_headers_disable_directory(
         let formatted_48 = inner_47.as_str();
                         if !formatted_48.is_empty() {
                             let header_value = formatted_48;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -504,7 +504,7 @@ pub fn add_headers_enable_directory(
         let formatted_50 = inner_49.as_str();
                         if !formatted_50.is_empty() {
                             let header_value = formatted_50;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -525,7 +525,7 @@ pub fn add_headers_get_directory(
         let formatted_52 = inner_51.as_str();
                         if !formatted_52.is_empty() {
                             let header_value = formatted_52;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -546,7 +546,7 @@ pub fn add_headers_get_facet(
         let formatted_54 = inner_53.as_str();
                         if !formatted_54.is_empty() {
                             let header_value = formatted_54;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -567,7 +567,7 @@ pub fn add_headers_get_link_attributes(
         let formatted_56 = inner_55.as_str();
                         if !formatted_56.is_empty() {
                             let header_value = formatted_56;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -588,7 +588,7 @@ pub fn add_headers_get_object_attributes(
         let formatted_58 = inner_57.as_str();
                         if !formatted_58.is_empty() {
                             let header_value = formatted_58;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -602,7 +602,7 @@ pub fn add_headers_get_object_attributes(
         let formatted_60 = inner_59.as_str();
                         if !formatted_60.is_empty() {
                             let header_value = formatted_60;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("consistency_level", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -623,7 +623,7 @@ pub fn add_headers_get_object_information(
         let formatted_62 = inner_61.as_str();
                         if !formatted_62.is_empty() {
                             let header_value = formatted_62;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -637,7 +637,7 @@ pub fn add_headers_get_object_information(
         let formatted_64 = inner_63.as_str();
                         if !formatted_64.is_empty() {
                             let header_value = formatted_64;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("consistency_level", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -658,7 +658,7 @@ pub fn add_headers_get_schema_as_json(
         let formatted_66 = inner_65.as_str();
                         if !formatted_66.is_empty() {
                             let header_value = formatted_66;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -679,7 +679,7 @@ pub fn add_headers_get_typed_link_facet_information(
         let formatted_68 = inner_67.as_str();
                         if !formatted_68.is_empty() {
                             let header_value = formatted_68;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -700,7 +700,7 @@ pub fn add_headers_list_attached_indices(
         let formatted_70 = inner_69.as_str();
                         if !formatted_70.is_empty() {
                             let header_value = formatted_70;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -714,7 +714,7 @@ pub fn add_headers_list_attached_indices(
         let formatted_72 = inner_71.as_str();
                         if !formatted_72.is_empty() {
                             let header_value = formatted_72;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("consistency_level", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -735,7 +735,7 @@ pub fn add_headers_list_facet_attributes(
         let formatted_74 = inner_73.as_str();
                         if !formatted_74.is_empty() {
                             let header_value = formatted_74;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -756,7 +756,7 @@ pub fn add_headers_list_facet_names(
         let formatted_76 = inner_75.as_str();
                         if !formatted_76.is_empty() {
                             let header_value = formatted_76;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -777,7 +777,7 @@ pub fn add_headers_list_incoming_typed_links(
         let formatted_78 = inner_77.as_str();
                         if !formatted_78.is_empty() {
                             let header_value = formatted_78;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -798,7 +798,7 @@ pub fn add_headers_list_index(
         let formatted_80 = inner_79.as_str();
                         if !formatted_80.is_empty() {
                             let header_value = formatted_80;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -812,7 +812,7 @@ pub fn add_headers_list_index(
         let formatted_82 = inner_81.as_str();
                         if !formatted_82.is_empty() {
                             let header_value = formatted_82;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("consistency_level", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -833,7 +833,7 @@ pub fn add_headers_list_object_attributes(
         let formatted_84 = inner_83.as_str();
                         if !formatted_84.is_empty() {
                             let header_value = formatted_84;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -847,7 +847,7 @@ pub fn add_headers_list_object_attributes(
         let formatted_86 = inner_85.as_str();
                         if !formatted_86.is_empty() {
                             let header_value = formatted_86;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("consistency_level", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -868,7 +868,7 @@ pub fn add_headers_list_object_children(
         let formatted_88 = inner_87.as_str();
                         if !formatted_88.is_empty() {
                             let header_value = formatted_88;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -882,7 +882,7 @@ pub fn add_headers_list_object_children(
         let formatted_90 = inner_89.as_str();
                         if !formatted_90.is_empty() {
                             let header_value = formatted_90;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("consistency_level", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -903,7 +903,7 @@ pub fn add_headers_list_object_parent_paths(
         let formatted_92 = inner_91.as_str();
                         if !formatted_92.is_empty() {
                             let header_value = formatted_92;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -924,7 +924,7 @@ pub fn add_headers_list_object_parents(
         let formatted_94 = inner_93.as_str();
                         if !formatted_94.is_empty() {
                             let header_value = formatted_94;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -938,7 +938,7 @@ pub fn add_headers_list_object_parents(
         let formatted_96 = inner_95.as_str();
                         if !formatted_96.is_empty() {
                             let header_value = formatted_96;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("consistency_level", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -959,7 +959,7 @@ pub fn add_headers_list_object_policies(
         let formatted_98 = inner_97.as_str();
                         if !formatted_98.is_empty() {
                             let header_value = formatted_98;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -973,7 +973,7 @@ pub fn add_headers_list_object_policies(
         let formatted_100 = inner_99.as_str();
                         if !formatted_100.is_empty() {
                             let header_value = formatted_100;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("consistency_level", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -994,7 +994,7 @@ pub fn add_headers_list_outgoing_typed_links(
         let formatted_102 = inner_101.as_str();
                         if !formatted_102.is_empty() {
                             let header_value = formatted_102;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1015,7 +1015,7 @@ pub fn add_headers_list_policy_attachments(
         let formatted_104 = inner_103.as_str();
                         if !formatted_104.is_empty() {
                             let header_value = formatted_104;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1029,7 +1029,7 @@ pub fn add_headers_list_policy_attachments(
         let formatted_106 = inner_105.as_str();
                         if !formatted_106.is_empty() {
                             let header_value = formatted_106;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("consistency_level", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1050,7 +1050,7 @@ pub fn add_headers_list_typed_link_facet_attributes(
         let formatted_108 = inner_107.as_str();
                         if !formatted_108.is_empty() {
                             let header_value = formatted_108;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1071,7 +1071,7 @@ pub fn add_headers_list_typed_link_facet_names(
         let formatted_110 = inner_109.as_str();
                         if !formatted_110.is_empty() {
                             let header_value = formatted_110;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1092,7 +1092,7 @@ pub fn add_headers_lookup_policy(
         let formatted_112 = inner_111.as_str();
                         if !formatted_112.is_empty() {
                             let header_value = formatted_112;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1113,7 +1113,7 @@ pub fn add_headers_publish_schema(
         let formatted_114 = inner_113.as_str();
                         if !formatted_114.is_empty() {
                             let header_value = formatted_114;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("development_schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1134,7 +1134,7 @@ pub fn add_headers_put_schema_from_json(
         let formatted_116 = inner_115.as_str();
                         if !formatted_116.is_empty() {
                             let header_value = formatted_116;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1155,7 +1155,7 @@ pub fn add_headers_remove_facet_from_object(
         let formatted_118 = inner_117.as_str();
                         if !formatted_118.is_empty() {
                             let header_value = formatted_118;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1176,7 +1176,7 @@ pub fn add_headers_update_facet(
         let formatted_120 = inner_119.as_str();
                         if !formatted_120.is_empty() {
                             let header_value = formatted_120;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1197,7 +1197,7 @@ pub fn add_headers_update_link_attributes(
         let formatted_122 = inner_121.as_str();
                         if !formatted_122.is_empty() {
                             let header_value = formatted_122;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1218,7 +1218,7 @@ pub fn add_headers_update_object_attributes(
         let formatted_124 = inner_123.as_str();
                         if !formatted_124.is_empty() {
                             let header_value = formatted_124;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("directory_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1239,7 +1239,7 @@ pub fn add_headers_update_schema(
         let formatted_126 = inner_125.as_str();
                         if !formatted_126.is_empty() {
                             let header_value = formatted_126;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,
@@ -1260,7 +1260,7 @@ pub fn add_headers_update_typed_link_facet(
         let formatted_128 = inner_127.as_str();
                         if !formatted_128.is_empty() {
                             let header_value = formatted_128;
-                            let header_value = http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
                                 aws_smithy_http::operation::error::BuildError::invalid_field("schema_arn", format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value,

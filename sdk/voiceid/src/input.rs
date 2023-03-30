@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_domain_input {
     
     /// A builder for [`CreateDomainInput`](crate::input::CreateDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -185,6 +186,7 @@ impl CreateDomainInput {
 pub mod delete_domain_input {
     
     /// A builder for [`DeleteDomainInput`](crate::input::DeleteDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -297,6 +299,7 @@ impl DeleteDomainInput {
 pub mod delete_fraudster_input {
     
     /// A builder for [`DeleteFraudsterInput`](crate::input::DeleteFraudsterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -429,6 +432,7 @@ impl DeleteFraudsterInput {
 pub mod delete_speaker_input {
     
     /// A builder for [`DeleteSpeakerInput`](crate::input::DeleteSpeakerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -561,6 +565,7 @@ impl DeleteSpeakerInput {
 pub mod describe_domain_input {
     
     /// A builder for [`DescribeDomainInput`](crate::input::DescribeDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -673,6 +678,7 @@ impl DescribeDomainInput {
 pub mod describe_fraudster_input {
     
     /// A builder for [`DescribeFraudsterInput`](crate::input::DescribeFraudsterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -805,6 +811,7 @@ impl DescribeFraudsterInput {
 pub mod describe_fraudster_registration_job_input {
     
     /// A builder for [`DescribeFraudsterRegistrationJobInput`](crate::input::DescribeFraudsterRegistrationJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -929,6 +936,7 @@ impl DescribeFraudsterRegistrationJobInput {
 pub mod describe_speaker_input {
     
     /// A builder for [`DescribeSpeakerInput`](crate::input::DescribeSpeakerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1061,6 +1069,7 @@ impl DescribeSpeakerInput {
 pub mod describe_speaker_enrollment_job_input {
     
     /// A builder for [`DescribeSpeakerEnrollmentJobInput`](crate::input::DescribeSpeakerEnrollmentJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1185,6 +1194,7 @@ impl DescribeSpeakerEnrollmentJobInput {
 pub mod evaluate_session_input {
     
     /// A builder for [`EvaluateSessionInput`](crate::input::EvaluateSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1309,6 +1319,7 @@ impl EvaluateSessionInput {
 pub mod list_domains_input {
     
     /// A builder for [`ListDomainsInput`](crate::input::ListDomainsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1433,6 +1444,7 @@ impl ListDomainsInput {
 pub mod list_fraudster_registration_jobs_input {
     
     /// A builder for [`ListFraudsterRegistrationJobsInput`](crate::input::ListFraudsterRegistrationJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1581,6 +1593,7 @@ impl ListFraudsterRegistrationJobsInput {
 pub mod list_speaker_enrollment_jobs_input {
     
     /// A builder for [`ListSpeakerEnrollmentJobsInput`](crate::input::ListSpeakerEnrollmentJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1729,6 +1742,7 @@ impl ListSpeakerEnrollmentJobsInput {
 pub mod list_speakers_input {
     
     /// A builder for [`ListSpeakersInput`](crate::input::ListSpeakersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1865,6 +1879,7 @@ impl ListSpeakersInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1977,6 +1992,7 @@ impl ListTagsForResourceInput {
 pub mod opt_out_speaker_input {
     
     /// A builder for [`OptOutSpeakerInput`](crate::input::OptOutSpeakerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -2109,6 +2125,7 @@ impl OptOutSpeakerInput {
 pub mod start_fraudster_registration_job_input {
     
     /// A builder for [`StartFraudsterRegistrationJobInput`](crate::input::StartFraudsterRegistrationJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -2309,6 +2326,7 @@ impl StartFraudsterRegistrationJobInput {
 pub mod start_speaker_enrollment_job_input {
     
     /// A builder for [`StartSpeakerEnrollmentJobInput`](crate::input::StartSpeakerEnrollmentJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -2509,6 +2527,7 @@ impl StartSpeakerEnrollmentJobInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2639,6 +2658,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2769,6 +2789,7 @@ impl UntagResourceInput {
 pub mod update_domain_input {
     
     /// A builder for [`UpdateDomainInput`](crate::input::UpdateDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,

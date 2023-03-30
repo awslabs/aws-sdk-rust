@@ -87,6 +87,7 @@ impl UpdateRevisionOutput {
 pub mod update_revision_output {
     
     /// A builder for [`UpdateRevisionOutput`](crate::output::UpdateRevisionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -294,6 +295,7 @@ impl UpdateEventActionOutput {
 pub mod update_event_action_output {
     
     /// A builder for [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
@@ -467,6 +469,7 @@ impl UpdateDataSetOutput {
 pub mod update_data_set_output {
     
     /// A builder for [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -688,6 +691,7 @@ impl UpdateAssetOutput {
 pub mod update_asset_output {
     
     /// A builder for [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -837,6 +841,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -866,6 +871,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -895,6 +901,7 @@ pub struct StartJobOutput  {
 pub mod start_job_output {
     
     /// A builder for [`StartJobOutput`](crate::output::StartJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -940,6 +947,7 @@ impl SendApiAssetOutput {
 pub mod send_api_asset_output {
     
     /// A builder for [`SendApiAssetOutput`](crate::output::SendApiAssetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
@@ -1078,6 +1086,7 @@ impl RevokeRevisionOutput {
 pub mod revoke_revision_output {
     
     /// A builder for [`RevokeRevisionOutput`](crate::output::RevokeRevisionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1250,6 +1259,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1313,6 +1323,7 @@ impl ListRevisionAssetsOutput {
 pub mod list_revision_assets_output {
     
     /// A builder for [`ListRevisionAssetsOutput`](crate::output::ListRevisionAssetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::AssetEntry>>,
@@ -1388,6 +1399,7 @@ impl ListJobsOutput {
 pub mod list_jobs_output {
     
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::JobEntry>>,
@@ -1463,6 +1475,7 @@ impl ListEventActionsOutput {
 pub mod list_event_actions_output {
     
     /// A builder for [`ListEventActionsOutput`](crate::output::ListEventActionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_actions: std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
@@ -1538,6 +1551,7 @@ impl ListDataSetsOutput {
 pub mod list_data_sets_output {
     
     /// A builder for [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_sets: std::option::Option<std::vec::Vec<crate::model::DataSetEntry>>,
@@ -1613,6 +1627,7 @@ impl ListDataSetRevisionsOutput {
 pub mod list_data_set_revisions_output {
     
     /// A builder for [`ListDataSetRevisionsOutput`](crate::output::ListDataSetRevisionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1758,6 +1773,7 @@ impl GetRevisionOutput {
 pub mod get_revision_output {
     
     /// A builder for [`GetRevisionOutput`](crate::output::GetRevisionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1997,6 +2013,7 @@ impl GetJobOutput {
 pub mod get_job_output {
     
     /// A builder for [`GetJobOutput`](crate::output::GetJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2172,6 +2189,7 @@ impl GetEventActionOutput {
 pub mod get_event_action_output {
     
     /// A builder for [`GetEventActionOutput`](crate::output::GetEventActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
@@ -2352,6 +2370,7 @@ impl GetDataSetOutput {
 pub mod get_data_set_output {
     
     /// A builder for [`GetDataSetOutput`](crate::output::GetDataSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2591,6 +2610,7 @@ impl GetAssetOutput {
 pub mod get_asset_output {
     
     /// A builder for [`GetAssetOutput`](crate::output::GetAssetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2740,6 +2760,7 @@ pub struct DeleteRevisionOutput  {
 pub mod delete_revision_output {
     
     /// A builder for [`DeleteRevisionOutput`](crate::output::DeleteRevisionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2769,6 +2790,7 @@ pub struct DeleteEventActionOutput  {
 pub mod delete_event_action_output {
     
     /// A builder for [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2798,6 +2820,7 @@ pub struct DeleteDataSetOutput  {
 pub mod delete_data_set_output {
     
     /// A builder for [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2827,6 +2850,7 @@ pub struct DeleteAssetOutput  {
 pub mod delete_asset_output {
     
     /// A builder for [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -2942,6 +2966,7 @@ impl CreateRevisionOutput {
 pub mod create_revision_output {
     
     /// A builder for [`CreateRevisionOutput`](crate::output::CreateRevisionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3181,6 +3206,7 @@ impl CreateJobOutput {
 pub mod create_job_output {
     
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3356,6 +3382,7 @@ impl CreateEventActionOutput {
 pub mod create_event_action_output {
     
     /// A builder for [`CreateEventActionOutput`](crate::output::CreateEventActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
@@ -3536,6 +3563,7 @@ impl CreateDataSetOutput {
 pub mod create_data_set_output {
     
     /// A builder for [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3703,6 +3731,7 @@ pub struct CancelJobOutput  {
 pub mod cancel_job_output {
     
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

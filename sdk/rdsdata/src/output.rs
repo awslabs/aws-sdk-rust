@@ -18,6 +18,7 @@ impl RollbackTransactionOutput {
 pub mod rollback_transaction_output {
     
     /// A builder for [`RollbackTransactionOutput`](crate::output::RollbackTransactionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_status: std::option::Option<std::string::String>,
@@ -102,6 +103,7 @@ impl ExecuteStatementOutput {
 pub mod execute_statement_output {
     
     /// A builder for [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
@@ -225,6 +227,7 @@ impl ExecuteSqlOutput {
 pub mod execute_sql_output {
     
     /// A builder for [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_statement_results: std::option::Option<std::vec::Vec<crate::model::SqlStatementResult>>,
@@ -281,6 +284,7 @@ impl CommitTransactionOutput {
 pub mod commit_transaction_output {
     
     /// A builder for [`CommitTransactionOutput`](crate::output::CommitTransactionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_status: std::option::Option<std::string::String>,
@@ -331,6 +335,7 @@ impl BeginTransactionOutput {
 pub mod begin_transaction_output {
     
     /// A builder for [`BeginTransactionOutput`](crate::output::BeginTransactionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -381,6 +386,7 @@ impl BatchExecuteStatementOutput {
 pub mod batch_execute_statement_output {
     
     /// A builder for [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_results: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>,

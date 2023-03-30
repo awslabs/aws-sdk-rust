@@ -45,6 +45,7 @@ impl UpdateConnectionOutput {
 pub mod update_connection_output {
     
     /// A builder for [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -164,6 +165,7 @@ impl UpdateArchiveOutput {
 pub mod update_archive_output {
     
     /// A builder for [`UpdateArchiveOutput`](crate::output::UpdateArchiveOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_arn: std::option::Option<std::string::String>,
@@ -271,6 +273,7 @@ impl UpdateApiDestinationOutput {
 pub mod update_api_destination_output {
     
     /// A builder for [`UpdateApiDestinationOutput`](crate::output::UpdateApiDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_destination_arn: std::option::Option<std::string::String>,
@@ -348,6 +351,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -386,6 +390,7 @@ impl TestEventPatternOutput {
 pub mod test_event_pattern_output {
     
     /// A builder for [`TestEventPatternOutput`](crate::output::TestEventPatternOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<bool>,
@@ -428,6 +433,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -487,6 +493,7 @@ impl StartReplayOutput {
 pub mod start_replay_output {
     
     /// A builder for [`StartReplayOutput`](crate::output::StartReplayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replay_arn: std::option::Option<std::string::String>,
@@ -580,6 +587,7 @@ impl RemoveTargetsOutput {
 pub mod remove_targets_output {
     
     /// A builder for [`RemoveTargetsOutput`](crate::output::RemoveTargetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entry_count: std::option::Option<i32>,
@@ -640,6 +648,7 @@ pub struct RemovePermissionOutput  {
 pub mod remove_permission_output {
     
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -685,6 +694,7 @@ impl PutTargetsOutput {
 pub mod put_targets_output {
     
     /// A builder for [`PutTargetsOutput`](crate::output::PutTargetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entry_count: std::option::Option<i32>,
@@ -754,6 +764,7 @@ impl PutRuleOutput {
 pub mod put_rule_output {
     
     /// A builder for [`PutRuleOutput`](crate::output::PutRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_arn: std::option::Option<std::string::String>,
@@ -795,6 +806,7 @@ pub struct PutPermissionOutput  {
 pub mod put_permission_output {
     
     /// A builder for [`PutPermissionOutput`](crate::output::PutPermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -840,6 +852,7 @@ impl PutPartnerEventsOutput {
 pub mod put_partner_events_output {
     
     /// A builder for [`PutPartnerEventsOutput`](crate::output::PutPartnerEventsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entry_count: std::option::Option<i32>,
@@ -916,6 +929,7 @@ impl PutEventsOutput {
 pub mod put_events_output {
     
     /// A builder for [`PutEventsOutput`](crate::output::PutEventsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entry_count: std::option::Option<i32>,
@@ -992,6 +1006,7 @@ impl ListTargetsByRuleOutput {
 pub mod list_targets_by_rule_output {
     
     /// A builder for [`ListTargetsByRuleOutput`](crate::output::ListTargetsByRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -1060,6 +1075,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1123,6 +1139,7 @@ impl ListRulesOutput {
 pub mod list_rules_output {
     
     /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -1198,6 +1215,7 @@ impl ListRuleNamesByTargetOutput {
 pub mod list_rule_names_by_target_output {
     
     /// A builder for [`ListRuleNamesByTargetOutput`](crate::output::ListRuleNamesByTargetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1273,6 +1291,7 @@ impl ListReplaysOutput {
 pub mod list_replays_output {
     
     /// A builder for [`ListReplaysOutput`](crate::output::ListReplaysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replays: std::option::Option<std::vec::Vec<crate::model::Replay>>,
@@ -1348,6 +1367,7 @@ impl ListPartnerEventSourcesOutput {
 pub mod list_partner_event_sources_output {
     
     /// A builder for [`ListPartnerEventSourcesOutput`](crate::output::ListPartnerEventSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) partner_event_sources: std::option::Option<std::vec::Vec<crate::model::PartnerEventSource>>,
@@ -1423,6 +1443,7 @@ impl ListPartnerEventSourceAccountsOutput {
 pub mod list_partner_event_source_accounts_output {
     
     /// A builder for [`ListPartnerEventSourceAccountsOutput`](crate::output::ListPartnerEventSourceAccountsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) partner_event_source_accounts: std::option::Option<std::vec::Vec<crate::model::PartnerEventSourceAccount>>,
@@ -1498,6 +1519,7 @@ impl ListEventSourcesOutput {
 pub mod list_event_sources_output {
     
     /// A builder for [`ListEventSourcesOutput`](crate::output::ListEventSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_sources: std::option::Option<std::vec::Vec<crate::model::EventSource>>,
@@ -1573,6 +1595,7 @@ impl ListEventBusesOutput {
 pub mod list_event_buses_output {
     
     /// A builder for [`ListEventBusesOutput`](crate::output::ListEventBusesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_buses: std::option::Option<std::vec::Vec<crate::model::EventBus>>,
@@ -1648,6 +1671,7 @@ impl ListConnectionsOutput {
 pub mod list_connections_output {
     
     /// A builder for [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -1723,6 +1747,7 @@ impl ListArchivesOutput {
 pub mod list_archives_output {
     
     /// A builder for [`ListArchivesOutput`](crate::output::ListArchivesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archives: std::option::Option<std::vec::Vec<crate::model::Archive>>,
@@ -1798,6 +1823,7 @@ impl ListApiDestinationsOutput {
 pub mod list_api_destinations_output {
     
     /// A builder for [`ListApiDestinationsOutput`](crate::output::ListApiDestinationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_destinations: std::option::Option<std::vec::Vec<crate::model::ApiDestination>>,
@@ -1857,6 +1883,7 @@ pub struct EnableRuleOutput  {
 pub mod enable_rule_output {
     
     /// A builder for [`EnableRuleOutput`](crate::output::EnableRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1886,6 +1913,7 @@ pub struct DisableRuleOutput  {
 pub mod disable_rule_output {
     
     /// A builder for [`DisableRuleOutput`](crate::output::DisableRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1987,6 +2015,7 @@ impl DescribeRuleOutput {
 pub mod describe_rule_output {
     
     /// A builder for [`DescribeRuleOutput`](crate::output::DescribeRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2222,6 +2251,7 @@ impl DescribeReplayOutput {
 pub mod describe_replay_output {
     
     /// A builder for [`DescribeReplayOutput`](crate::output::DescribeReplayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replay_name: std::option::Option<std::string::String>,
@@ -2411,6 +2441,7 @@ impl DescribePartnerEventSourceOutput {
 pub mod describe_partner_event_source_output {
     
     /// A builder for [`DescribePartnerEventSourceOutput`](crate::output::DescribePartnerEventSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2508,6 +2539,7 @@ impl DescribeEventSourceOutput {
 pub mod describe_event_source_output {
     
     /// A builder for [`DescribeEventSourceOutput`](crate::output::DescribeEventSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2632,6 +2664,7 @@ impl DescribeEventBusOutput {
 pub mod describe_event_bus_output {
     
     /// A builder for [`DescribeEventBusOutput`](crate::output::DescribeEventBusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2776,6 +2809,7 @@ impl DescribeConnectionOutput {
 pub mod describe_connection_output {
     
     /// A builder for [`DescribeConnectionOutput`](crate::output::DescribeConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -3016,6 +3050,7 @@ impl DescribeArchiveOutput {
 pub mod describe_archive_output {
     
     /// A builder for [`DescribeArchiveOutput`](crate::output::DescribeArchiveOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_arn: std::option::Option<std::string::String>,
@@ -3251,6 +3286,7 @@ impl DescribeApiDestinationOutput {
 pub mod describe_api_destination_output {
     
     /// A builder for [`DescribeApiDestinationOutput`](crate::output::DescribeApiDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_destination_arn: std::option::Option<std::string::String>,
@@ -3400,6 +3436,7 @@ pub struct DeleteRuleOutput  {
 pub mod delete_rule_output {
     
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3429,6 +3466,7 @@ pub struct DeletePartnerEventSourceOutput  {
 pub mod delete_partner_event_source_output {
     
     /// A builder for [`DeletePartnerEventSourceOutput`](crate::output::DeletePartnerEventSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3458,6 +3496,7 @@ pub struct DeleteEventBusOutput  {
 pub mod delete_event_bus_output {
     
     /// A builder for [`DeleteEventBusOutput`](crate::output::DeleteEventBusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3524,6 +3563,7 @@ impl DeleteConnectionOutput {
 pub mod delete_connection_output {
     
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -3613,6 +3653,7 @@ pub struct DeleteArchiveOutput  {
 pub mod delete_archive_output {
     
     /// A builder for [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3642,6 +3683,7 @@ pub struct DeleteApiDestinationOutput  {
 pub mod delete_api_destination_output {
     
     /// A builder for [`DeleteApiDestinationOutput`](crate::output::DeleteApiDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3708,6 +3750,7 @@ impl DeauthorizeConnectionOutput {
 pub mod deauthorize_connection_output {
     
     /// A builder for [`DeauthorizeConnectionOutput`](crate::output::DeauthorizeConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -3797,6 +3840,7 @@ pub struct DeactivateEventSourceOutput  {
 pub mod deactivate_event_source_output {
     
     /// A builder for [`DeactivateEventSourceOutput`](crate::output::DeactivateEventSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -3835,6 +3879,7 @@ impl CreatePartnerEventSourceOutput {
 pub mod create_partner_event_source_output {
     
     /// A builder for [`CreatePartnerEventSourceOutput`](crate::output::CreatePartnerEventSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
@@ -3885,6 +3930,7 @@ impl CreateEventBusOutput {
 pub mod create_event_bus_output {
     
     /// A builder for [`CreateEventBusOutput`](crate::output::CreateEventBusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_bus_arn: std::option::Option<std::string::String>,
@@ -3956,6 +4002,7 @@ impl CreateConnectionOutput {
 pub mod create_connection_output {
     
     /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -4063,6 +4110,7 @@ impl CreateArchiveOutput {
 pub mod create_archive_output {
     
     /// A builder for [`CreateArchiveOutput`](crate::output::CreateArchiveOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_arn: std::option::Option<std::string::String>,
@@ -4170,6 +4218,7 @@ impl CreateApiDestinationOutput {
 pub mod create_api_destination_output {
     
     /// A builder for [`CreateApiDestinationOutput`](crate::output::CreateApiDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_destination_arn: std::option::Option<std::string::String>,
@@ -4270,6 +4319,7 @@ impl CancelReplayOutput {
 pub mod cancel_replay_output {
     
     /// A builder for [`CancelReplayOutput`](crate::output::CancelReplayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replay_arn: std::option::Option<std::string::String>,
@@ -4335,6 +4385,7 @@ pub struct ActivateEventSourceOutput  {
 pub mod activate_event_source_output {
     
     /// A builder for [`ActivateEventSourceOutput`](crate::output::ActivateEventSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }

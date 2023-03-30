@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_profile_permission_input {
     
     /// A builder for [`AddProfilePermissionInput`](crate::input::AddProfilePermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -178,6 +179,7 @@ impl AddProfilePermissionInput {
 pub mod cancel_signing_profile_input {
     
     /// A builder for [`CancelSigningProfileInput`](crate::input::CancelSigningProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -287,6 +289,7 @@ impl CancelSigningProfileInput {
 pub mod describe_signing_job_input {
     
     /// A builder for [`DescribeSigningJobInput`](crate::input::DescribeSigningJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -396,6 +399,7 @@ impl DescribeSigningJobInput {
 pub mod get_signing_platform_input {
     
     /// A builder for [`GetSigningPlatformInput`](crate::input::GetSigningPlatformInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_id: std::option::Option<std::string::String>,
@@ -505,6 +509,7 @@ impl GetSigningPlatformInput {
 pub mod get_signing_profile_input {
     
     /// A builder for [`GetSigningProfileInput`](crate::input::GetSigningProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -636,6 +641,7 @@ impl GetSigningProfileInput {
 pub mod list_profile_permissions_input {
     
     /// A builder for [`ListProfilePermissionsInput`](crate::input::ListProfilePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -767,6 +773,7 @@ impl ListProfilePermissionsInput {
 pub mod list_signing_jobs_input {
     
     /// A builder for [`ListSigningJobsInput`](crate::input::ListSigningJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SigningStatus>,
@@ -1015,6 +1022,7 @@ impl ListSigningJobsInput {
 pub mod list_signing_platforms_input {
     
     /// A builder for [`ListSigningPlatformsInput`](crate::input::ListSigningPlatformsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<std::string::String>,
@@ -1196,6 +1204,7 @@ impl ListSigningPlatformsInput {
 pub mod list_signing_profiles_input {
     
     /// A builder for [`ListSigningProfilesInput`](crate::input::ListSigningProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) include_canceled: std::option::Option<bool>,
@@ -1384,6 +1393,7 @@ impl ListSigningProfilesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1493,6 +1503,7 @@ impl ListTagsForResourceInput {
 pub mod put_signing_profile_input {
     
     /// A builder for [`PutSigningProfileInput`](crate::input::PutSigningProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -1690,6 +1701,7 @@ impl PutSigningProfileInput {
 pub mod remove_profile_permission_input {
     
     /// A builder for [`RemoveProfilePermissionInput`](crate::input::RemoveProfilePermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -1840,6 +1852,7 @@ impl RemoveProfilePermissionInput {
 pub mod revoke_signature_input {
     
     /// A builder for [`RevokeSignatureInput`](crate::input::RevokeSignatureInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1977,6 +1990,7 @@ impl RevokeSignatureInput {
 pub mod revoke_signing_profile_input {
     
     /// A builder for [`RevokeSigningProfileInput`](crate::input::RevokeSigningProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -2126,6 +2140,7 @@ impl RevokeSigningProfileInput {
 pub mod start_signing_job_input {
     
     /// A builder for [`StartSigningJobInput`](crate::input::StartSigningJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::Source>,
@@ -2284,6 +2299,7 @@ impl StartSigningJobInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2415,6 +2431,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

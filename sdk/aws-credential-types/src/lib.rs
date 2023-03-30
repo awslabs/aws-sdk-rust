@@ -8,6 +8,7 @@
 //! * An opaque struct representing credentials
 //! * Concrete implementations of credentials caching
 
+#![allow(clippy::derive_partial_eq_without_eq)]
 #![warn(
     missing_debug_implementations,
     missing_docs,

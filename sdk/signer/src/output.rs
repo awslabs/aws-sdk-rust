@@ -8,6 +8,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -37,6 +38,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -82,6 +84,7 @@ impl StartSigningJobOutput {
 pub mod start_signing_job_output {
     
     /// A builder for [`StartSigningJobOutput`](crate::output::StartSigningJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -135,6 +138,7 @@ pub struct RevokeSigningProfileOutput  {
 pub mod revoke_signing_profile_output {
     
     /// A builder for [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -164,6 +168,7 @@ pub struct RevokeSignatureOutput  {
 pub mod revoke_signature_output {
     
     /// A builder for [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -202,6 +207,7 @@ impl RemoveProfilePermissionOutput {
 pub mod remove_profile_permission_output {
     
     /// A builder for [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
@@ -266,6 +272,7 @@ impl PutSigningProfileOutput {
 pub mod put_signing_profile_output {
     
     /// A builder for [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -340,6 +347,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -403,6 +411,7 @@ impl ListSigningProfilesOutput {
 pub mod list_signing_profiles_output {
     
     /// A builder for [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiles: std::option::Option<std::vec::Vec<crate::model::SigningProfile>>,
@@ -478,6 +487,7 @@ impl ListSigningPlatformsOutput {
 pub mod list_signing_platforms_output {
     
     /// A builder for [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platforms: std::option::Option<std::vec::Vec<crate::model::SigningPlatform>>,
@@ -553,6 +563,7 @@ impl ListSigningJobsOutput {
 pub mod list_signing_jobs_output {
     
     /// A builder for [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::SigningJob>>,
@@ -642,6 +653,7 @@ impl ListProfilePermissionsOutput {
 pub mod list_profile_permissions_output {
     
     /// A builder for [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
@@ -826,6 +838,7 @@ impl GetSigningProfileOutput {
 pub mod get_signing_profile_output {
     
     /// A builder for [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -1100,6 +1113,7 @@ impl GetSigningPlatformOutput {
 pub mod get_signing_platform_output {
     
     /// A builder for [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_id: std::option::Option<std::string::String>,
@@ -1374,6 +1388,7 @@ impl DescribeSigningJobOutput {
 pub mod describe_signing_job_output {
     
     /// A builder for [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1637,6 +1652,7 @@ pub struct CancelSigningProfileOutput  {
 pub mod cancel_signing_profile_output {
     
     /// A builder for [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -1675,6 +1691,7 @@ impl AddProfilePermissionOutput {
 pub mod add_profile_permission_output {
     
     /// A builder for [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,

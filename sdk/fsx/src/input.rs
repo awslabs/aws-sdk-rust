@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_file_system_aliases_input {
     
     /// A builder for [`AssociateFileSystemAliasesInput`](crate::input::AssociateFileSystemAliasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -164,6 +165,7 @@ impl AssociateFileSystemAliasesInput {
 pub mod cancel_data_repository_task_input {
     
     /// A builder for [`CancelDataRepositoryTaskInput`](crate::input::CancelDataRepositoryTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -276,6 +278,7 @@ impl CancelDataRepositoryTaskInput {
 pub mod copy_backup_input {
     
     /// A builder for [`CopyBackupInput`](crate::input::CopyBackupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -473,6 +476,7 @@ impl CopyBackupInput {
 pub mod create_backup_input {
     
     /// A builder for [`CreateBackupInput`](crate::input::CreateBackupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -630,6 +634,7 @@ impl CreateBackupInput {
 pub mod create_data_repository_association_input {
     
     /// A builder for [`CreateDataRepositoryAssociationInput`](crate::input::CreateDataRepositoryAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -843,6 +848,7 @@ impl CreateDataRepositoryAssociationInput {
 pub mod create_data_repository_task_input {
     
     /// A builder for [`CreateDataRepositoryTaskInput`](crate::input::CreateDataRepositoryTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DataRepositoryTaskType>,
@@ -1050,6 +1056,7 @@ impl CreateDataRepositoryTaskInput {
 pub mod create_file_cache_input {
     
     /// A builder for [`CreateFileCacheInput`](crate::input::CreateFileCacheInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -1323,6 +1330,7 @@ impl CreateFileCacheInput {
 pub mod create_file_system_input {
     
     /// A builder for [`CreateFileSystemInput`](crate::input::CreateFileSystemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -1682,6 +1690,7 @@ impl CreateFileSystemInput {
 pub mod create_file_system_from_backup_input {
     
     /// A builder for [`CreateFileSystemFromBackupInput`](crate::input::CreateFileSystemFromBackupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -1997,6 +2006,7 @@ impl CreateFileSystemFromBackupInput {
 pub mod create_snapshot_input {
     
     /// A builder for [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -2154,6 +2164,7 @@ impl CreateSnapshotInput {
 pub mod create_storage_virtual_machine_input {
     
     /// A builder for [`CreateStorageVirtualMachineInput`](crate::input::CreateStorageVirtualMachineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) active_directory_configuration: std::option::Option<crate::model::CreateSvmActiveDirectoryConfiguration>,
@@ -2370,6 +2381,7 @@ impl CreateStorageVirtualMachineInput {
 pub mod create_volume_input {
     
     /// A builder for [`CreateVolumeInput`](crate::input::CreateVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -2551,6 +2563,7 @@ impl CreateVolumeInput {
 pub mod create_volume_from_backup_input {
     
     /// A builder for [`CreateVolumeFromBackupInput`](crate::input::CreateVolumeFromBackupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -2720,6 +2733,7 @@ impl CreateVolumeFromBackupInput {
 pub mod delete_backup_input {
     
     /// A builder for [`DeleteBackupInput`](crate::input::DeleteBackupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -2847,6 +2861,7 @@ impl DeleteBackupInput {
 pub mod delete_data_repository_association_input {
     
     /// A builder for [`DeleteDataRepositoryAssociationInput`](crate::input::DeleteDataRepositoryAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -2986,6 +3001,7 @@ impl DeleteDataRepositoryAssociationInput {
 pub mod delete_file_cache_input {
     
     /// A builder for [`DeleteFileCacheInput`](crate::input::DeleteFileCacheInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_cache_id: std::option::Option<std::string::String>,
@@ -3113,6 +3129,7 @@ impl DeleteFileCacheInput {
 pub mod delete_file_system_input {
     
     /// A builder for [`DeleteFileSystemInput`](crate::input::DeleteFileSystemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -3276,6 +3293,7 @@ impl DeleteFileSystemInput {
 pub mod delete_snapshot_input {
     
     /// A builder for [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -3403,6 +3421,7 @@ impl DeleteSnapshotInput {
 pub mod delete_storage_virtual_machine_input {
     
     /// A builder for [`DeleteStorageVirtualMachineInput`](crate::input::DeleteStorageVirtualMachineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -3530,6 +3549,7 @@ impl DeleteStorageVirtualMachineInput {
 pub mod delete_volume_input {
     
     /// A builder for [`DeleteVolumeInput`](crate::input::DeleteVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -3681,6 +3701,7 @@ impl DeleteVolumeInput {
 pub mod describe_backups_input {
     
     /// A builder for [`DescribeBackupsInput`](crate::input::DescribeBackupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3841,6 +3862,7 @@ impl DescribeBackupsInput {
 pub mod describe_data_repository_associations_input {
     
     /// A builder for [`DescribeDataRepositoryAssociationsInput`](crate::input::DescribeDataRepositoryAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4001,6 +4023,7 @@ impl DescribeDataRepositoryAssociationsInput {
 pub mod describe_data_repository_tasks_input {
     
     /// A builder for [`DescribeDataRepositoryTasksInput`](crate::input::DescribeDataRepositoryTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4161,6 +4184,7 @@ impl DescribeDataRepositoryTasksInput {
 pub mod describe_file_caches_input {
     
     /// A builder for [`DescribeFileCachesInput`](crate::input::DescribeFileCachesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_cache_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4303,6 +4327,7 @@ impl DescribeFileCachesInput {
 pub mod describe_file_system_aliases_input {
     
     /// A builder for [`DescribeFileSystemAliasesInput`](crate::input::DescribeFileSystemAliasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -4454,6 +4479,7 @@ impl DescribeFileSystemAliasesInput {
 pub mod describe_file_systems_input {
     
     /// A builder for [`DescribeFileSystemsInput`](crate::input::DescribeFileSystemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4596,6 +4622,7 @@ impl DescribeFileSystemsInput {
 pub mod describe_snapshots_input {
     
     /// A builder for [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4756,6 +4783,7 @@ impl DescribeSnapshotsInput {
 pub mod describe_storage_virtual_machines_input {
     
     /// A builder for [`DescribeStorageVirtualMachinesInput`](crate::input::DescribeStorageVirtualMachinesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_virtual_machine_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4916,6 +4944,7 @@ impl DescribeStorageVirtualMachinesInput {
 pub mod describe_volumes_input {
     
     /// A builder for [`DescribeVolumesInput`](crate::input::DescribeVolumesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5076,6 +5105,7 @@ impl DescribeVolumesInput {
 pub mod disassociate_file_system_aliases_input {
     
     /// A builder for [`DisassociateFileSystemAliasesInput`](crate::input::DisassociateFileSystemAliasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -5221,6 +5251,7 @@ impl DisassociateFileSystemAliasesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5357,6 +5388,7 @@ impl ListTagsForResourceInput {
 pub mod release_file_system_nfs_v3_locks_input {
     
     /// A builder for [`ReleaseFileSystemNfsV3LocksInput`](crate::input::ReleaseFileSystemNfsV3LocksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -5484,6 +5516,7 @@ impl ReleaseFileSystemNfsV3LocksInput {
 pub mod restore_volume_from_snapshot_input {
     
     /// A builder for [`RestoreVolumeFromSnapshotInput`](crate::input::RestoreVolumeFromSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -5649,6 +5682,7 @@ impl RestoreVolumeFromSnapshotInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5779,6 +5813,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5909,6 +5944,7 @@ impl UntagResourceInput {
 pub mod update_data_repository_association_input {
     
     /// A builder for [`UpdateDataRepositoryAssociationInput`](crate::input::UpdateDataRepositoryAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -6062,6 +6098,7 @@ impl UpdateDataRepositoryAssociationInput {
 pub mod update_file_cache_input {
     
     /// A builder for [`UpdateFileCacheInput`](crate::input::UpdateFileCacheInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_cache_id: std::option::Option<std::string::String>,
@@ -6201,6 +6238,7 @@ impl UpdateFileCacheInput {
 pub mod update_file_system_input {
     
     /// A builder for [`UpdateFileSystemInput`](crate::input::UpdateFileSystemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -6410,6 +6448,7 @@ impl UpdateFileSystemInput {
 pub mod update_snapshot_input {
     
     /// A builder for [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -6549,6 +6588,7 @@ impl UpdateSnapshotInput {
 pub mod update_storage_virtual_machine_input {
     
     /// A builder for [`UpdateStorageVirtualMachineInput`](crate::input::UpdateStorageVirtualMachineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) active_directory_configuration: std::option::Option<crate::model::UpdateSvmActiveDirectoryConfiguration>,
@@ -6710,6 +6750,7 @@ impl UpdateStorageVirtualMachineInput {
 pub mod update_volume_input {
     
     /// A builder for [`UpdateVolumeInput`](crate::input::UpdateVolumeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,

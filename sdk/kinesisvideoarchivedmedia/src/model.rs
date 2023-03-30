@@ -46,6 +46,7 @@ impl Fragment {
 pub mod fragment {
     
     /// A builder for [`Fragment`](crate::model::Fragment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragment_number: std::option::Option<std::string::String>,
@@ -161,6 +162,7 @@ impl FragmentSelector {
 pub mod fragment_selector {
     
     /// A builder for [`FragmentSelector`](crate::model::FragmentSelector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragment_selector_type: std::option::Option<crate::model::FragmentSelectorType>,
@@ -230,6 +232,7 @@ impl TimestampRange {
 pub mod timestamp_range {
     
     /// A builder for [`TimestampRange`](crate::model::TimestampRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -400,6 +403,7 @@ impl Image {
 pub mod image {
     
     /// A builder for [`Image`](crate::model::Image).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_stamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1077,6 +1081,7 @@ impl HlsFragmentSelector {
 pub mod hls_fragment_selector {
     
     /// A builder for [`HlsFragmentSelector`](crate::model::HlsFragmentSelector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragment_selector_type: std::option::Option<crate::model::HlsFragmentSelectorType>,
@@ -1169,6 +1174,7 @@ impl HlsTimestampRange {
 pub mod hls_timestamp_range {
     
     /// A builder for [`HlsTimestampRange`](crate::model::HlsTimestampRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1429,6 +1435,7 @@ impl DashFragmentSelector {
 pub mod dash_fragment_selector {
     
     /// A builder for [`DashFragmentSelector`](crate::model::DashFragmentSelector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragment_selector_type: std::option::Option<crate::model::DashFragmentSelectorType>,
@@ -1522,6 +1529,7 @@ impl DashTimestampRange {
 pub mod dash_timestamp_range {
     
     /// A builder for [`DashTimestampRange`](crate::model::DashTimestampRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1937,6 +1945,7 @@ impl ClipFragmentSelector {
 pub mod clip_fragment_selector {
     
     /// A builder for [`ClipFragmentSelector`](crate::model::ClipFragmentSelector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragment_selector_type: std::option::Option<crate::model::ClipFragmentSelectorType>,
@@ -2012,6 +2021,7 @@ impl ClipTimestampRange {
 pub mod clip_timestamp_range {
     
     /// A builder for [`ClipTimestampRange`](crate::model::ClipTimestampRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,

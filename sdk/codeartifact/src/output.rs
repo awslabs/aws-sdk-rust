@@ -17,6 +17,7 @@ impl UpdateRepositoryOutput {
 pub mod update_repository_output {
     
     /// A builder for [`UpdateRepositoryOutput`](crate::output::UpdateRepositoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
@@ -74,6 +75,7 @@ impl UpdatePackageVersionsStatusOutput {
 pub mod update_package_versions_status_output {
     
     /// A builder for [`UpdatePackageVersionsStatusOutput`](crate::output::UpdatePackageVersionsStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_versions: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>>,
@@ -139,6 +141,7 @@ pub struct UntagResourceOutput  {
 pub mod untag_resource_output {
     
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -168,6 +171,7 @@ pub struct TagResourceOutput  {
 pub mod tag_resource_output {
     
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
     }
@@ -206,6 +210,7 @@ impl PutRepositoryPermissionsPolicyOutput {
 pub mod put_repository_permissions_policy_output {
     
     /// A builder for [`PutRepositoryPermissionsPolicyOutput`](crate::output::PutRepositoryPermissionsPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::ResourcePolicy>,
@@ -256,6 +261,7 @@ impl PutPackageOriginConfigurationOutput {
 pub mod put_package_origin_configuration_output {
     
     /// A builder for [`PutPackageOriginConfigurationOutput`](crate::output::PutPackageOriginConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origin_configuration: std::option::Option<crate::model::PackageOriginConfiguration>,
@@ -306,6 +312,7 @@ impl PutDomainPermissionsPolicyOutput {
 pub mod put_domain_permissions_policy_output {
     
     /// A builder for [`PutDomainPermissionsPolicyOutput`](crate::output::PutDomainPermissionsPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::ResourcePolicy>,
@@ -356,6 +363,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -419,6 +427,7 @@ impl ListRepositoriesInDomainOutput {
 pub mod list_repositories_in_domain_output {
     
     /// A builder for [`ListRepositoriesInDomainOutput`](crate::output::ListRepositoriesInDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repositories: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
@@ -494,6 +503,7 @@ impl ListRepositoriesOutput {
 pub mod list_repositories_output {
     
     /// A builder for [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repositories: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
@@ -615,6 +625,7 @@ impl ListPackageVersionsOutput {
 pub mod list_package_versions_output {
     
     /// A builder for [`ListPackageVersionsOutput`](crate::output::ListPackageVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_display_version: std::option::Option<std::string::String>,
@@ -801,6 +812,7 @@ impl ListPackageVersionDependenciesOutput {
 pub mod list_package_version_dependencies_output {
     
     /// A builder for [`ListPackageVersionDependenciesOutput`](crate::output::ListPackageVersionDependenciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<crate::model::PackageFormat>,
@@ -991,6 +1003,7 @@ impl ListPackageVersionAssetsOutput {
 pub mod list_package_version_assets_output {
     
     /// A builder for [`ListPackageVersionAssetsOutput`](crate::output::ListPackageVersionAssetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<crate::model::PackageFormat>,
@@ -1136,6 +1149,7 @@ impl ListPackagesOutput {
 pub mod list_packages_output {
     
     /// A builder for [`ListPackagesOutput`](crate::output::ListPackagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) packages: std::option::Option<std::vec::Vec<crate::model::PackageSummary>>,
@@ -1211,6 +1225,7 @@ impl ListDomainsOutput {
 pub mod list_domains_output {
     
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
@@ -1279,6 +1294,7 @@ impl GetRepositoryPermissionsPolicyOutput {
 pub mod get_repository_permissions_policy_output {
     
     /// A builder for [`GetRepositoryPermissionsPolicyOutput`](crate::output::GetRepositoryPermissionsPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::ResourcePolicy>,
@@ -1329,6 +1345,7 @@ impl GetRepositoryEndpointOutput {
 pub mod get_repository_endpoint_output {
     
     /// A builder for [`GetRepositoryEndpointOutput`](crate::output::GetRepositoryEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_endpoint: std::option::Option<std::string::String>,
@@ -1424,6 +1441,7 @@ impl GetPackageVersionReadmeOutput {
 pub mod get_package_version_readme_output {
     
     /// A builder for [`GetPackageVersionReadmeOutput`](crate::output::GetPackageVersionReadmeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<crate::model::PackageFormat>,
@@ -1564,6 +1582,7 @@ impl GetPackageVersionAssetOutput {
 pub mod get_package_version_asset_output {
     
     /// A builder for [`GetPackageVersionAssetOutput`](crate::output::GetPackageVersionAssetOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -1651,6 +1670,7 @@ impl GetDomainPermissionsPolicyOutput {
 pub mod get_domain_permissions_policy_output {
     
     /// A builder for [`GetDomainPermissionsPolicyOutput`](crate::output::GetDomainPermissionsPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::ResourcePolicy>,
@@ -1708,6 +1728,7 @@ impl GetAuthorizationTokenOutput {
 pub mod get_authorization_token_output {
     
     /// A builder for [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_token: std::option::Option<std::string::String>,
@@ -1793,6 +1814,7 @@ impl DisposePackageVersionsOutput {
 pub mod dispose_package_versions_output {
     
     /// A builder for [`DisposePackageVersionsOutput`](crate::output::DisposePackageVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_versions: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>>,
@@ -1883,6 +1905,7 @@ impl DisassociateExternalConnectionOutput {
 pub mod disassociate_external_connection_output {
     
     /// A builder for [`DisassociateExternalConnectionOutput`](crate::output::DisassociateExternalConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
@@ -1933,6 +1956,7 @@ impl DescribeRepositoryOutput {
 pub mod describe_repository_output {
     
     /// A builder for [`DescribeRepositoryOutput`](crate::output::DescribeRepositoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
@@ -1983,6 +2007,7 @@ impl DescribePackageVersionOutput {
 pub mod describe_package_version_output {
     
     /// A builder for [`DescribePackageVersionOutput`](crate::output::DescribePackageVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_version: std::option::Option<crate::model::PackageVersionDescription>,
@@ -2033,6 +2058,7 @@ impl DescribePackageOutput {
 pub mod describe_package_output {
     
     /// A builder for [`DescribePackageOutput`](crate::output::DescribePackageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package: std::option::Option<crate::model::PackageDescription>,
@@ -2083,6 +2109,7 @@ impl DescribeDomainOutput {
 pub mod describe_domain_output {
     
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<crate::model::DomainDescription>,
@@ -2133,6 +2160,7 @@ impl DeleteRepositoryPermissionsPolicyOutput {
 pub mod delete_repository_permissions_policy_output {
     
     /// A builder for [`DeleteRepositoryPermissionsPolicyOutput`](crate::output::DeleteRepositoryPermissionsPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::ResourcePolicy>,
@@ -2183,6 +2211,7 @@ impl DeleteRepositoryOutput {
 pub mod delete_repository_output {
     
     /// A builder for [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
@@ -2256,6 +2285,7 @@ impl DeletePackageVersionsOutput {
 pub mod delete_package_versions_output {
     
     /// A builder for [`DeletePackageVersionsOutput`](crate::output::DeletePackageVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_versions: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>>,
@@ -2346,6 +2376,7 @@ impl DeleteDomainPermissionsPolicyOutput {
 pub mod delete_domain_permissions_policy_output {
     
     /// A builder for [`DeleteDomainPermissionsPolicyOutput`](crate::output::DeleteDomainPermissionsPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::ResourcePolicy>,
@@ -2396,6 +2427,7 @@ impl DeleteDomainOutput {
 pub mod delete_domain_output {
     
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<crate::model::DomainDescription>,
@@ -2446,6 +2478,7 @@ impl CreateRepositoryOutput {
 pub mod create_repository_output {
     
     /// A builder for [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
@@ -2496,6 +2529,7 @@ impl CreateDomainOutput {
 pub mod create_domain_output {
     
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<crate::model::DomainDescription>,
@@ -2569,6 +2603,7 @@ impl CopyPackageVersionsOutput {
 pub mod copy_package_versions_output {
     
     /// A builder for [`CopyPackageVersionsOutput`](crate::output::CopyPackageVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_versions: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>>,
@@ -2659,6 +2694,7 @@ impl AssociateExternalConnectionOutput {
 pub mod associate_external_connection_output {
     
     /// A builder for [`AssociateExternalConnectionOutput`](crate::output::AssociateExternalConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,

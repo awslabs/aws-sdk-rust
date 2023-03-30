@@ -197,6 +197,7 @@ impl std::error::Error for ServiceTemporarilyUnavailableException {}
 pub mod service_temporarily_unavailable_exception {
     
     /// A builder for [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -285,6 +286,7 @@ impl std::error::Error for NoSuchEntityException {}
 pub mod no_such_entity_exception {
     
     /// A builder for [`NoSuchEntityException`](crate::error::NoSuchEntityException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -385,6 +387,7 @@ impl std::error::Error for InvalidInputException {}
 pub mod invalid_input_exception {
     
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -478,6 +481,7 @@ impl std::error::Error for InternalException {}
 pub mod internal_exception {
     
     /// A builder for [`InternalException`](crate::error::InternalException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -566,6 +570,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
     
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1000,6 +1005,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
     
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1458,6 +1464,7 @@ impl std::error::Error for InvalidCrossAccountRoleException {}
 pub mod invalid_cross_account_role_exception {
     
     /// A builder for [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1565,6 +1572,7 @@ impl std::error::Error for AgentsAlreadyRunningAssessmentException {}
 pub mod agents_already_running_assessment_exception {
     
     /// A builder for [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4120,6 +4128,7 @@ impl std::error::Error for UnsupportedFeatureException {}
 pub mod unsupported_feature_exception {
     
     /// A builder for [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4215,6 +4224,7 @@ impl std::error::Error for AssessmentRunInProgressException {}
 pub mod assessment_run_in_progress_exception {
     
     /// A builder for [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6158,6 +6168,7 @@ impl std::error::Error for PreviewGenerationInProgressException {}
 pub mod preview_generation_in_progress_exception {
     
     /// A builder for [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

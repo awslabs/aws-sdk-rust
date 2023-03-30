@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_cluster_input {
     
     /// A builder for [`CreateClusterInput`](crate::input::CreateClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -145,6 +146,7 @@ impl CreateClusterInput {
 pub mod create_control_panel_input {
     
     /// A builder for [`CreateControlPanelInput`](crate::input::CreateControlPanelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -297,6 +299,7 @@ impl CreateControlPanelInput {
 pub mod create_routing_control_input {
     
     /// A builder for [`CreateRoutingControlInput`](crate::input::CreateRoutingControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -443,6 +446,7 @@ impl CreateRoutingControlInput {
 pub mod create_safety_rule_input {
     
     /// A builder for [`CreateSafetyRuleInput`](crate::input::CreateSafetyRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assertion_rule: std::option::Option<crate::model::NewAssertionRule>,
@@ -595,6 +599,7 @@ impl CreateSafetyRuleInput {
 pub mod delete_cluster_input {
     
     /// A builder for [`DeleteClusterInput`](crate::input::DeleteClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -704,6 +709,7 @@ impl DeleteClusterInput {
 pub mod delete_control_panel_input {
     
     /// A builder for [`DeleteControlPanelInput`](crate::input::DeleteControlPanelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -813,6 +819,7 @@ impl DeleteControlPanelInput {
 pub mod delete_routing_control_input {
     
     /// A builder for [`DeleteRoutingControlInput`](crate::input::DeleteRoutingControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
@@ -922,6 +929,7 @@ impl DeleteRoutingControlInput {
 pub mod delete_safety_rule_input {
     
     /// A builder for [`DeleteSafetyRuleInput`](crate::input::DeleteSafetyRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) safety_rule_arn: std::option::Option<std::string::String>,
@@ -1031,6 +1039,7 @@ impl DeleteSafetyRuleInput {
 pub mod describe_cluster_input {
     
     /// A builder for [`DescribeClusterInput`](crate::input::DescribeClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -1140,6 +1149,7 @@ impl DescribeClusterInput {
 pub mod describe_control_panel_input {
     
     /// A builder for [`DescribeControlPanelInput`](crate::input::DescribeControlPanelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -1249,6 +1259,7 @@ impl DescribeControlPanelInput {
 pub mod describe_routing_control_input {
     
     /// A builder for [`DescribeRoutingControlInput`](crate::input::DescribeRoutingControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
@@ -1358,6 +1369,7 @@ impl DescribeRoutingControlInput {
 pub mod describe_safety_rule_input {
     
     /// A builder for [`DescribeSafetyRuleInput`](crate::input::DescribeSafetyRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) safety_rule_arn: std::option::Option<std::string::String>,
@@ -1467,6 +1479,7 @@ impl DescribeSafetyRuleInput {
 pub mod list_associated_route53_health_checks_input {
     
     /// A builder for [`ListAssociatedRoute53HealthChecksInput`](crate::input::ListAssociatedRoute53HealthChecksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1614,6 +1627,7 @@ impl ListAssociatedRoute53HealthChecksInput {
 pub mod list_clusters_input {
     
     /// A builder for [`ListClustersInput`](crate::input::ListClustersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1743,6 +1757,7 @@ impl ListClustersInput {
 pub mod list_control_panels_input {
     
     /// A builder for [`ListControlPanelsInput`](crate::input::ListControlPanelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -1889,6 +1904,7 @@ impl ListControlPanelsInput {
 pub mod list_routing_controls_input {
     
     /// A builder for [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -2036,6 +2052,7 @@ impl ListRoutingControlsInput {
 pub mod list_safety_rules_input {
     
     /// A builder for [`ListSafetyRulesInput`](crate::input::ListSafetyRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -2183,6 +2200,7 @@ impl ListSafetyRulesInput {
 pub mod list_tags_for_resource_input {
     
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2292,6 +2310,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
     
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2423,6 +2442,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2560,6 +2580,7 @@ impl UntagResourceInput {
 pub mod update_control_panel_input {
     
     /// A builder for [`UpdateControlPanelInput`](crate::input::UpdateControlPanelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -2679,6 +2700,7 @@ impl UpdateControlPanelInput {
 pub mod update_routing_control_input {
     
     /// A builder for [`UpdateRoutingControlInput`](crate::input::UpdateRoutingControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
@@ -2798,6 +2820,7 @@ impl UpdateRoutingControlInput {
 pub mod update_safety_rule_input {
     
     /// A builder for [`UpdateSafetyRuleInput`](crate::input::UpdateSafetyRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assertion_rule_update: std::option::Option<crate::model::AssertionRuleUpdate>,

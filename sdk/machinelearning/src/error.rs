@@ -173,6 +173,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
     
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -255,6 +256,7 @@ impl std::error::Error for InvalidInputException {}
 pub mod invalid_input_exception {
     
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -337,6 +339,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
     
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -982,6 +985,7 @@ impl std::error::Error for PredictorNotMountedException {}
 pub mod predictor_not_mounted_exception {
     
     /// A builder for [`PredictorNotMountedException`](crate::error::PredictorNotMountedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1051,6 +1055,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
     
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2458,6 +2463,7 @@ impl std::error::Error for InvalidTagException {}
 pub mod invalid_tag_exception {
     
     /// A builder for [`InvalidTagException`](crate::error::InvalidTagException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3486,6 +3492,7 @@ impl std::error::Error for IdempotentParameterMismatchException {}
 pub mod idempotent_parameter_mismatch_exception {
     
     /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4405,6 +4412,7 @@ impl std::error::Error for TagLimitExceededException {}
 pub mod tag_limit_exceeded_exception {
     
     /// A builder for [`TagLimitExceededException`](crate::error::TagLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

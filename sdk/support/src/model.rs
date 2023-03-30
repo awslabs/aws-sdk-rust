@@ -46,6 +46,7 @@ impl TrustedAdvisorCheckRefreshStatus {
 pub mod trusted_advisor_check_refresh_status {
     
     /// A builder for [`TrustedAdvisorCheckRefreshStatus`](crate::model::TrustedAdvisorCheckRefreshStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_id: std::option::Option<std::string::String>,
@@ -170,6 +171,7 @@ impl TrustedAdvisorCheckSummary {
 pub mod trusted_advisor_check_summary {
     
     /// A builder for [`TrustedAdvisorCheckSummary`](crate::model::TrustedAdvisorCheckSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_id: std::option::Option<std::string::String>,
@@ -281,6 +283,7 @@ impl TrustedAdvisorCategorySpecificSummary {
 pub mod trusted_advisor_category_specific_summary {
     
     /// A builder for [`TrustedAdvisorCategorySpecificSummary`](crate::model::TrustedAdvisorCategorySpecificSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_optimizing: std::option::Option<crate::model::TrustedAdvisorCostOptimizingSummary>,
@@ -338,6 +341,7 @@ impl TrustedAdvisorCostOptimizingSummary {
 pub mod trusted_advisor_cost_optimizing_summary {
     
     /// A builder for [`TrustedAdvisorCostOptimizingSummary`](crate::model::TrustedAdvisorCostOptimizingSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) estimated_monthly_savings: std::option::Option<f64>,
@@ -423,6 +427,7 @@ impl TrustedAdvisorResourcesSummary {
 pub mod trusted_advisor_resources_summary {
     
     /// A builder for [`TrustedAdvisorResourcesSummary`](crate::model::TrustedAdvisorResourcesSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources_processed: std::option::Option<i64>,
@@ -541,6 +546,7 @@ impl TrustedAdvisorCheckDescription {
 pub mod trusted_advisor_check_description {
     
     /// A builder for [`TrustedAdvisorCheckDescription`](crate::model::TrustedAdvisorCheckDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -680,6 +686,7 @@ impl TrustedAdvisorCheckResult {
 pub mod trusted_advisor_check_result {
     
     /// A builder for [`TrustedAdvisorCheckResult`](crate::model::TrustedAdvisorCheckResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_id: std::option::Option<std::string::String>,
@@ -824,6 +831,7 @@ impl TrustedAdvisorResourceDetail {
 pub mod trusted_advisor_resource_detail {
     
     /// A builder for [`TrustedAdvisorResourceDetail`](crate::model::TrustedAdvisorResourceDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -960,6 +968,7 @@ impl SeverityLevel {
 pub mod severity_level {
     
     /// A builder for [`SeverityLevel`](crate::model::SeverityLevel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1060,6 +1069,7 @@ impl Service {
 pub mod service {
     
     /// A builder for [`Service`](crate::model::Service).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1147,6 +1157,7 @@ impl Category {
 pub mod category {
     
     /// A builder for [`Category`](crate::model::Category).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1241,6 +1252,7 @@ impl Communication {
 pub mod communication {
     
     /// A builder for [`Communication`](crate::model::Communication).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id: std::option::Option<std::string::String>,
@@ -1356,6 +1368,7 @@ impl AttachmentDetails {
 pub mod attachment_details {
     
     /// A builder for [`AttachmentDetails`](crate::model::AttachmentDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
@@ -1535,6 +1548,7 @@ impl CaseDetails {
 pub mod case_details {
     
     /// A builder for [`CaseDetails`](crate::model::CaseDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id: std::option::Option<std::string::String>,
@@ -1748,6 +1762,7 @@ impl RecentCaseCommunications {
 pub mod recent_case_communications {
     
     /// A builder for [`RecentCaseCommunications`](crate::model::RecentCaseCommunications).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) communications: std::option::Option<std::vec::Vec<crate::model::Communication>>,
@@ -1823,6 +1838,7 @@ impl Attachment {
 pub mod attachment {
     
     /// A builder for [`Attachment`](crate::model::Attachment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_name: std::option::Option<std::string::String>,

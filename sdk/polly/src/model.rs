@@ -1189,6 +1189,7 @@ impl SynthesisTask {
 pub mod synthesis_task {
     
     /// A builder for [`SynthesisTask`](crate::model::SynthesisTask).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<crate::model::Engine>,
@@ -1525,6 +1526,7 @@ impl LexiconDescription {
 pub mod lexicon_description {
     
     /// A builder for [`LexiconDescription`](crate::model::LexiconDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1622,6 +1624,7 @@ impl LexiconAttributes {
 pub mod lexicon_attributes {
     
     /// A builder for [`LexiconAttributes`](crate::model::LexiconAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alphabet: std::option::Option<std::string::String>,
@@ -1749,6 +1752,7 @@ impl  std::fmt::Debug for Lexicon  {
 pub mod lexicon {
     
     /// A builder for [`Lexicon`](crate::model::Lexicon).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1863,6 +1867,7 @@ impl Voice {
 pub mod voice {
     
     /// A builder for [`Voice`](crate::model::Voice).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gender: std::option::Option<crate::model::Gender>,

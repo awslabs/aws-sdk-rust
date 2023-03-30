@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_acknowledge_alarm_input {
     
     /// A builder for [`BatchAcknowledgeAlarmInput`](crate::input::BatchAcknowledgeAlarmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acknowledge_action_requests: std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
@@ -118,6 +119,7 @@ impl BatchAcknowledgeAlarmInput {
 pub mod batch_delete_detector_input {
     
     /// A builder for [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detectors: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
@@ -231,6 +233,7 @@ impl BatchDeleteDetectorInput {
 pub mod batch_disable_alarm_input {
     
     /// A builder for [`BatchDisableAlarmInput`](crate::input::BatchDisableAlarmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disable_action_requests: std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
@@ -344,6 +347,7 @@ impl BatchDisableAlarmInput {
 pub mod batch_enable_alarm_input {
     
     /// A builder for [`BatchEnableAlarmInput`](crate::input::BatchEnableAlarmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_action_requests: std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
@@ -457,6 +461,7 @@ impl BatchEnableAlarmInput {
 pub mod batch_put_message_input {
     
     /// A builder for [`BatchPutMessageInput`](crate::input::BatchPutMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -570,6 +575,7 @@ impl BatchPutMessageInput {
 pub mod batch_reset_alarm_input {
     
     /// A builder for [`BatchResetAlarmInput`](crate::input::BatchResetAlarmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reset_action_requests: std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
@@ -683,6 +689,7 @@ impl BatchResetAlarmInput {
 pub mod batch_snooze_alarm_input {
     
     /// A builder for [`BatchSnoozeAlarmInput`](crate::input::BatchSnoozeAlarmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snooze_action_requests: std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
@@ -796,6 +803,7 @@ impl BatchSnoozeAlarmInput {
 pub mod batch_update_detector_input {
     
     /// A builder for [`BatchUpdateDetectorInput`](crate::input::BatchUpdateDetectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detectors: std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
@@ -909,6 +917,7 @@ impl BatchUpdateDetectorInput {
 pub mod describe_alarm_input {
     
     /// A builder for [`DescribeAlarmInput`](crate::input::DescribeAlarmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
@@ -1040,6 +1049,7 @@ impl DescribeAlarmInput {
 pub mod describe_detector_input {
     
     /// A builder for [`DescribeDetectorInput`](crate::input::DescribeDetectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
@@ -1171,6 +1181,7 @@ impl DescribeDetectorInput {
 pub mod list_alarms_input {
     
     /// A builder for [`ListAlarmsInput`](crate::input::ListAlarmsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
@@ -1319,6 +1330,7 @@ impl ListAlarmsInput {
 pub mod list_detectors_input {
     
     /// A builder for [`ListDetectorsInput`](crate::input::ListDetectorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
